@@ -1,2 +1,6 @@
-# analysis -- main program
+# ------------------------------------------------------------------------------
+# main program.R
+#
+# analysis code to estimate vaccine averted AMR health burden
+# ------------------------------------------------------------------------------
 
