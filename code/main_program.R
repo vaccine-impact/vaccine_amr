@@ -28,8 +28,10 @@ setwd ("../")
 # and (4) World Bank income levels
 regional_classification_file       <- file.path ("data", "regional_classification.csv")
 country_income_classification_file <- file.path ("data", "country_income_classification.csv")
-create_country_table (regional_classification_file,
-                      country_income_classification_file)
+
+country_dt <- create_country_table (
+  regional_classification_file       = regional_classification_file,
+  country_income_classification_file = country_income_classification_file)
 
 # ------------------------------------------------------------------------------
 

@@ -1,4 +1,4 @@
-﻿country_name,iso3_code,World_Bank_region,income_group
+﻿country_name,iso3_code,World_Bank_region,World_Bank_income_group
 Aruba,ABW,Latin America & Caribbean,High income
 Afghanistan,AFG,South Asia,Low income
 Angola,AGO,Sub-Saharan Africa,Lower middle income
@@ -206,7 +206,7 @@ Uruguay,URY,Latin America & Caribbean,High income
 United States,USA,North America,High income
 Uzbekistan,UZB,Europe & Central Asia,Lower middle income
 St. Vincent and the Grenadines,VCT,Latin America & Caribbean,Upper middle income
-"Venezuela, RB",VEN,Latin America & Caribbean,
+"Venezuela, RB",VEN,Latin America & Caribbean,Upper middle income
 British Virgin Islands,VGB,Latin America & Caribbean,High income
 Virgin Islands (U.S.),VIR,Latin America & Caribbean,High income
 Vietnam,VNM,East Asia & Pacific,Lower middle income
@@ -217,3 +217,5 @@ Kosovo,XKX,Europe & Central Asia,Upper middle income
 South Africa,ZAF,Sub-Saharan Africa,Upper middle income
 Zambia,ZMB,Sub-Saharan Africa,Lower middle income
 Zimbabwe,ZWE,Sub-Saharan Africa,Lower middle income
+Cook Islands,COK,,High income
+Niue,NIU,,Upper middle income
