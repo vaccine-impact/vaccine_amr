@@ -5,8 +5,8 @@
 # ------------------------------------------------------------------------------
 
 # load libraries
-library (countrycode)         # country codes
-library (data.table)          # data table
+library(countrycode)         # country codes
+library(data.table)          # data table
 
 # remove all objects from workspace
 rm (list = ls ())
