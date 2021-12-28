@@ -1,7 +1,7 @@
 # ------------------------------------------------------------------------------
-# population data
+# population data from UN WPP (World Population Prospects)
 #
-# from UN WPP (World Population Prospects)
+# 1950 - 2100
 # ------------------------------------------------------------------------------
 # load libraries
 library (dplyr)
@@ -9,23 +9,27 @@ library (readxl)
 library (reshape2)
 library (data.table)
 
-
 # move to base directory (run code from source directory)
 # setwd("~/GitHub/vaccine_amr/code")
+source_wd <- getwd ()
+setwd ("../")
+# ------------------------------------------------------------------------------
 
 # create demography 
 create_demography <- function (country_dt,
                                pop_file) {
-  
-  source_wd <- getwd ()
-  setwd ("../")
-  # ------------------------------------------------------------------------------
   # "WPP2019_INT_F03_1_POPULATION_BY_AGE_ANNUAL_BOTH_SEXES.xlsx" data cleaning
-  population_file <- read_excel("~/GitHub/vaccine_amr/data/WPP2019_INT_F03_1_POPULATION_BY_AGE_ANNUAL_BOTH_SEXES.xlsx", 
-                                col_names = FALSE)
-  names(population_file) <- lapply(population_file[13, ], as.character)
+  population_file_a <- read_excel("~/GitHub/vaccine_amr/data/WPP2019_INT_F03_1_POPULATION_BY_AGE_ANNUAL_BOTH_SEXES.xlsx", 
+                                  col_names = FALSE)
+  population_file_b  <- read_excel("~/GitHub/vaccine_amr/data/WPP2019_INT_F03_1_POPULATION_BY_AGE_ANNUAL_BOTH_SEXES.xlsx", 
+                                   sheet = "MEDIUM VARIANT", col_names = FALSE)
+  population_file <- rbind(population_file_a, population_file_b)
   
-  population_file <-population_file %>% filter(Type=="Country/Area")
+  names(population_file) <- lapply(population_file[13, ], as.character)
+  population_file <- population_file %>% filter(Type=="Country/Area")
+  
+  # Removing duplicates (year of 2020)
+  population_file <- population_file[!(population_file$Variant == "Medium variant" & population_file$"Reference date (as of 1 July)" == "2020"), ]
   
   # ------------------------------------------------------------------------------
   # "WPP2019_F01_LOCATIONS.XLSX" data cleaning
@@ -49,13 +53,11 @@ create_demography <- function (country_dt,
   
   # ------------------------------------------------------------------------------
   # WHO 194 countries only
-  WHO194 <- country_dt[,c(1,6)]
+  WHO194 <- country_dt[,c(1)]
   WHO_poulation <- right_join(population_iso3, WHO194, by=c("iso3_code"="iso3_code"))
-  WHO_poulation <- WHO_poulation[,-5]
   View(WHO_poulation)
-  WHO_poulation %>% count(iso3_code)
   
-  fwrite (x =    WHO_poulation, 
+  fwrite (x = WHO_poulation, 
           file = pop_file)
   
   # go back to source directory
