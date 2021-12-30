@@ -51,6 +51,8 @@ create_demography <- function (country_dt,
   names(population_iso3) <- c("iso3_code","year","age","population")
   population_iso3 <- population_iso3%>%arrange(iso3_code,year,age)
   
+  # changing population to the actual value
+  population_iso3$population <- as.numeric(population_iso3$population) * 1000 
   # ------------------------------------------------------------------------------
   # WHO 194 countries only
   WHO194 <- country_dt[,c(1)]
