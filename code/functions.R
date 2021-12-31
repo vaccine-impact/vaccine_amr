@@ -9,7 +9,8 @@
 # create data table of (194) WHO countries classified by (6) WHO regions 
 # and (4) World Bank income levels
 create_country_table <- function (regional_classification_file,
-                                  country_income_classification_file) {
+                                  country_income_classification_file, 
+                                  country_region_income_classification_file) {
   
   # open files for WHO country-region and WB country-income classifications
   regional_dt <- fread (file = regional_classification_file)
@@ -28,6 +29,10 @@ create_country_table <- function (regional_classification_file,
                        by.y  = "iso3_code", 
                        all.x = TRUE,
                        all.y = FALSE)
+  
+  # save country region income classification file
+  fwrite (x    = country_dt, 
+          file = country_region_income_classification_file)
   
   # return data table of of (194) WHO countries classified by (6) WHO regions 
   # and (4) World Bank income levels

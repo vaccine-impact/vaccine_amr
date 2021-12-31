@@ -5,8 +5,8 @@
 # ------------------------------------------------------------------------------
 
 # load libraries
-library(countrycode)         # country codes
-library(data.table)          # data table
+library (countrycode)  # country codes
+library (data.table)   # data table
 
 # remove all objects from workspace
 rm (list = ls ())
@@ -30,9 +30,9 @@ regional_classification_file       <- file.path ("data", "regional_classificatio
 country_income_classification_file <- file.path ("data", "country_income_classification.csv")
 
 country_dt <- create_country_table (
-  regional_classification_file       = regional_classification_file,
-  country_income_classification_file = country_income_classification_file)
-
+  regional_classification_file              = regional_classification_file,
+  country_income_classification_file        = country_income_classification_file, 
+  country_region_income_classification_file = file.path ("data", "country_income_region_classification.csv"))
 # ------------------------------------------------------------------------------
 
 # return to source directory

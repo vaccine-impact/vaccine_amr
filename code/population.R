@@ -9,15 +9,21 @@ library (readxl)
 library (reshape2)
 library (data.table)
 
-# move to base directory (run code from source directory)
-# setwd("~/GitHub/vaccine_amr/code")
-source_wd <- getwd ()
-setwd ("../")
-# ------------------------------------------------------------------------------
+# clear workspace
+rm (list = ls ())
 
+
+# ------------------------------------------------------------------------------
 # create demography 
-create_demography <- function (country_dt,
+create_demography <- function (country_file,
                                pop_file) {
+  
+  # move to base directory (one directory above)
+  source_wd <- getwd ()
+  setwd ("../")
+  
+  country_dt <- fread (country_file)
+  
   # "WPP2019_INT_F03_1_POPULATION_BY_AGE_ANNUAL_BOTH_SEXES.xlsx" data cleaning
   population_file_a <- read_excel("~/GitHub/vaccine_amr/data/WPP2019_INT_F03_1_POPULATION_BY_AGE_ANNUAL_BOTH_SEXES.xlsx", 
                                   col_names = FALSE)
@@ -56,10 +62,11 @@ create_demography <- function (country_dt,
   # ------------------------------------------------------------------------------
   # WHO 194 countries only
   WHO194 <- country_dt[,c(1)]
-  WHO_poulation <- right_join(population_iso3, WHO194, by=c("iso3_code"="iso3_code"))
-  View(WHO_poulation)
+  WHO_population <- right_join(population_iso3, WHO194, by=c("iso3_code"="iso3_code"))
+  # View (WHO_population)
   
-  fwrite (x = WHO_poulation, 
+  # save populatin demography file
+  fwrite (x    = WHO_population, 
           file = pop_file)
   
   # go back to source directory
@@ -70,5 +77,5 @@ create_demography <- function (country_dt,
 } # end of function -- create_demography
 
 # create demography 
-create_demography (country_dt = country_dt,
-                   pop_file   = "data/population.csv")
+create_demography (country_file = file.path ("data", "country_income_region_classification.csv"),
+                   pop_file     = file.path ("data", "population.csv"))
