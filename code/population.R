@@ -12,7 +12,6 @@ library (data.table)
 # clear workspace
 rm (list = ls ())
 
-
 # ------------------------------------------------------------------------------
 # create demography 
 create_demography <- function (country_file,
