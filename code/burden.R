@@ -34,7 +34,10 @@ IHME_tuberculosis <- IHME_tuberculosis[c(4<IHME_tuberculosis$age_id & IHME_tuber
 
 IHME_tuberculosis <- IHME_tuberculosis[,c("ISO3","measure_name", "age_id", "age_name", "cause_id", "cause_name", "val")]
 
-#WHO region
+IHME_tuberculosis[IHME_tuberculosis$measure_name == "DALYs (Disability-Adjusted Life Years)", "measure_name"] = "DALYs"
+                            
+                            
+#Using WHO region countries only
 WHOregion <- read_csv("regional_classification.csv")
 WHOregion <- WHOregion[, c("iso3_code", "WHO_region")]
 
@@ -55,7 +58,7 @@ resistant_tb <- IHME_tuberculosis %>%
   mutate(vaccine_averted_val = val - vaccinated_val)
 
 
-# Chage age to 1 to 99
+# Chage age scale to 1~99
 resistant_tb$age_name <- factor(resistant_tb$age_name, 
                                           levels=c("<1 year","1 to 4","5 to 9","10 to 14","15 to 19","20 to 24","25 to 29","30 to 34","35 to 39","40 to 44","45 to 49", 
                                                                  "50 to 54","55 to 59","60 to 64","65 to 69","70 to 74","75 to 79","80 plus"), order=T)
@@ -90,27 +93,35 @@ ggplot(resistant_tb_SLE, aes(x=age)) +
 resistant_tb_burden <- resistant_tb %>% group_by(measure_name, WHO_region, ISO3) %>%
   summarise(vaccine_averted_val = sum(vaccine_averted_val))
 
-resistant_tb_incidence <- resistant_tb_burden[resistant_tb_burden$measure_name=="Incidence",]
-resistant_tb_deaths <- resistant_tb_burden[resistant_tb_burden$measure_name=="Deaths",]
-resistant_tb_DALYs <- resistant_tb_burden[resistant_tb_burden$measure_name=="DALYs (Disability-Adjusted Life Years)",]
-
-fwrite (x    = resistant_tb_incidence, 
-        file = "resistant_tb_incidence.csv")
-
+fwrite (x    = resistant_tb_burden, 
+        file = "resistant_tb_burden.csv")
 # ------------------------------------------------------------------------------
 # number of avertible incidence per 100,000
 
-ggplot(resistant_tb_incidence) +
+region_boxplot <- function(df,burden_type){
+ 
+ df<- df[df$measure_name==burden_type,]
+ 
+ ggplot(df) +
  aes(x = WHO_region, y = vaccine_averted_val) +
  geom_boxplot(shape = "circle", 
  fill = "#797D86") +
- labs(x = "WHO region", y = "Nuber of avertible incidence per 100,000") +
+ labs(x = "WHO region", y = paste("Number of Avertible", burden_type, "per 100,000")) +
  theme_bw() +
  ylim(0, 3000)
+ }
+
+region_boxplot(resistant_tb_burden,	
+               "Incidence")
+region_boxplot(resistant_tb_burden,	
+               "Deaths")
+region_boxplot(resistant_tb_burden,	
+               "DALYs")
+
 # ------------------------------------------------------------------------------
 # ------------------------------------------------------------------------------
 
-# Create map of incidence averted (AMR tuberculosis)
+# Create map of the number of avertible burden in 2019 (AMR tuberculosis)
 
 # load libraries
 library (ggplot2)
@@ -125,13 +136,18 @@ library (stats)
 
 # ------------------------------------------------------------------------------
 
-create_map <- function (burden_file, 
+create_map <- function (burden_file,  
+                        burden_type,
                         map_file) {
   
   # read results for burden averted
   table <- fread (file = burden_file)
   
-  # map tutorial
+  # separating burden type
+  table <- table[table$measure_name == burden_type,]
+  
+  
+  # map
   world <- ne_countries (scale       = "medium", 
                          returnclass = "sf")
   setDT (world)
@@ -149,7 +165,7 @@ create_map <- function (burden_file,
     geom_sf (aes (fill = vaccine_averted_val, geometry = geometry)) + 
     scale_fill_viridis_c (option = "viridis", direction = -1, na.value = "grey90") +
     # scale_fill_viridis_c (option = "plasma", direction = -1, na.value = "grey90") +
-    ggtitle ("Incidence averted per 100,000 fully vaccinated individuals") + 
+    ggtitle (paste("Number of Avertible", burden_type, "per 100,000")) + 
     theme (legend.title = element_blank()) + 
     theme (axis.text.x = element_blank(), axis.ticks = element_blank()) + 
     theme (axis.text.y = element_blank(), axis.ticks = element_blank()) + 
@@ -166,9 +182,17 @@ create_map <- function (burden_file,
   
 } # end of function -- create_map
 # ------------------------------------------------------------------------------
-# create map of daly results
-create_map (burden_file = "resistant_tb_incidence.csv", 
+# create map of results
+create_map (burden_file = "resistant_tb_burden.csv", 
+            burden_type = "Incidence",
             map_file  = "IncidenceAvertedPer100,000.png")
 
+create_map (burden_file = "resistant_tb_burden.csv", 
+            burden_type = "Deaths",
+            map_file  = "DeathsAvertedPer100,000.png")
+
+create_map (burden_file = "resistant_tb_burden.csv", 
+            burden_type = "DALYs",
+            map_file  = "DALYsAvertedPer100,000.png")
 # ------------------------------------------------------------------------------
 # ------------------------------------------------------------------------------
