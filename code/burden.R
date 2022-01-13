@@ -49,7 +49,7 @@ tb_vaccine_duration <- 10
 
 # data frame for the AMR tuberculosis health burden 
 resistant_tb <- IHME_tuberculosis %>%
-  group_by(ISO3, measure_name, age_id, age_name) %>%
+  group_by(WHO_region, ISO3, measure_name, age_id, age_name) %>%
   summarise(val = sum(val)) %>%   # multidrug-resistant tuberculosis + extensively drug-resistant Tuberculosis
   mutate(vaccinated_val = val * (1 - tb_vaccine_coverage * tb_vaccine_efficacy)) %>%
   mutate(vaccine_averted_val = val - vaccinated_val)
@@ -87,7 +87,7 @@ ggplot(resistant_tb_SLE, aes(x=age)) +
   expand_limits(y=0)
 # ------------------------------------------------------------------------------
 # saving cvs file: vaccine averted resistant burden
-resistant_tb_burden <- resistant_tb %>% group_by(measure_name, ISO3) %>%
+resistant_tb_burden <- resistant_tb %>% group_by(measure_name, WHO_region, ISO3) %>%
   summarise(vaccine_averted_val = sum(vaccine_averted_val))
 
 resistant_tb_incidence <- resistant_tb_burden[resistant_tb_burden$measure_name=="Incidence",]
@@ -97,8 +97,16 @@ resistant_tb_DALYs <- resistant_tb_burden[resistant_tb_burden$measure_name=="DAL
 fwrite (x    = resistant_tb_incidence, 
         file = "resistant_tb_incidence.csv")
 
-resistant_tb_incidence$vaccine_averted_val
+# ------------------------------------------------------------------------------
+# number of avertible incidence per 100,000
 
+ggplot(resistant_tb_incidence) +
+ aes(x = WHO_region, y = vaccine_averted_val) +
+ geom_boxplot(shape = "circle", 
+ fill = "#797D86") +
+ labs(x = "WHO region", y = "Nuber of avertible incidence per 100,000") +
+ theme_bw() +
+ ylim(0, 3000)
 # ------------------------------------------------------------------------------
 # ------------------------------------------------------------------------------
 
@@ -120,7 +128,7 @@ library (stats)
 create_map <- function (burden_file, 
                         map_file) {
   
-  # read results for dalys averted
+  # read results for burden averted
   table <- fread (file = burden_file)
   
   # map tutorial
@@ -134,9 +142,9 @@ create_map <- function (burden_file,
                y    = world, 
                by.x = "ISO3", 
                by.y = "iso_a3", 
-               all  = F ) # why it doesn't work when all=T or all.x=T??
+               all.x  = T ) # why it doesn't work when all=T or all.x=T??
   
-  # generate map of dalys averted per 1000 vaccinated individuals
+  # generate map of burden averted per 100,000 vaccinated individuals
   plot <- ggplot (data = dt) +
     geom_sf (aes (fill = vaccine_averted_val, geometry = geometry)) + 
     scale_fill_viridis_c (option = "viridis", direction = -1, na.value = "grey90") +
@@ -158,10 +166,9 @@ create_map <- function (burden_file,
   
 } # end of function -- create_map
 # ------------------------------------------------------------------------------
-
-
-# ------------------------------------------------------------------------------
 # create map of daly results
 create_map (burden_file = "resistant_tb_incidence.csv", 
             map_file  = "IncidenceAvertedPer100,000.png")
+
+# ------------------------------------------------------------------------------
 # ------------------------------------------------------------------------------
