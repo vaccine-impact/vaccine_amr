@@ -34,6 +34,13 @@ IHME_tuberculosis <- IHME_tuberculosis[c(4<IHME_tuberculosis$age_id & IHME_tuber
 
 IHME_tuberculosis <- IHME_tuberculosis[,c("ISO3","measure_name", "age_id", "age_name", "cause_id", "cause_name", "val")]
 
+#WHO region
+WHOregion <- read_csv("regional_classification.csv")
+WHOregion <- WHOregion[, c("iso3_code", "WHO_region")]
+
+IHME_tuberculosis <- left_join(IHME_tuberculosis, WHOregion, by=c("ISO3"="iso3_code"))
+IHME_tuberculosis <- IHME_tuberculosis %>% filter(!is.na(WHO_region))
+IHME_tuberculosis <- IHME_tuberculosis %>% filter(WHO_region!="Not Classified" & !is.na(WHO_region))
 # ------------------------------------------------------------------------------
 # target population: all ages
 tb_vaccine_coverage <- 0.7
@@ -62,7 +69,7 @@ resistant_tb <- mutate(resistant_tb, frequency = if(age_name == "<1 year"){frequ
 
 resistant_tb <- resistant_tb[rep(row.names(resistant_tb), resistant_tb$frequency), 1:8]
 
-resistant_tb$age <- rep(0:99, 612)
+resistant_tb$age <- rep(0:99, 582)
 
 # ------------------------------------------------------------------------------
 # ------------------------------------------------------------------------------
@@ -127,14 +134,14 @@ create_map <- function (burden_file,
                y    = world, 
                by.x = "ISO3", 
                by.y = "iso_a3", 
-               all  = F ) # why it doesn't work when all=T or all.x=T
+               all  = F ) # why it doesn't work when all=T or all.x=T??
   
   # generate map of dalys averted per 1000 vaccinated individuals
   plot <- ggplot (data = dt) +
     geom_sf (aes (fill = vaccine_averted_val, geometry = geometry)) + 
     scale_fill_viridis_c (option = "viridis", direction = -1, na.value = "grey90") +
     # scale_fill_viridis_c (option = "plasma", direction = -1, na.value = "grey90") +
-    ggtitle ("DALYS averted per 1000 fully vaccinated individuals") + 
+    ggtitle ("Incidence averted per 100,000 fully vaccinated individuals") + 
     theme (legend.title = element_blank()) + 
     theme (axis.text.x = element_blank(), axis.ticks = element_blank()) + 
     theme (axis.text.y = element_blank(), axis.ticks = element_blank()) + 
