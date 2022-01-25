@@ -13,4 +13,4 @@ Salmonella Paratyphi,0.7,0.9,5,All,4 week (effective at 6 week),Yes
 Salmonella Typhi,0.85,0.7,20,All,12 weeks,Yes
 Shigella spp.,0.6,0.7,5,Diarrhoea,4 week (effective at 6 week),Yes
 Staphylococcus aureus,0.6,0.7,2,All,"4 week (effective at 6 week), 60 or above",Yes
-Streptococcus pneumoniae,0.7,0.9,2,"All, but 50% for LRI and throx infections",4 week (effective at 6 week),Yes
+Streptococcus pneumoniae,0.7,0.9,2,All (50% for LRI and throx infections),4 week (effective at 6 week),Yes

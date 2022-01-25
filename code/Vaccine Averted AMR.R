@@ -9,6 +9,7 @@ library (ggplot2)
 library (reshape2)
 library (tidyverse)
 library (data.table)
+library (ggplot2)
 
 # clear workspace
 rm (list = ls ())
@@ -85,7 +86,7 @@ WHO_region <- as.vector(unlist(WHO_region[,"WHO_region"]))
 burden_type <- names(IHME_AMR_burden)[5:13]
 # ------------------------------------------------------------------------------
 
-## the death trend across all age groups
+## Death trend across all age groups: the outputs were used to decide the age of vaccination
 
 GlobalTrend <- function(pathogen){
   x <- IHME_AMR_burden[IHME_AMR_burden$Pathogen == pathogen,]
@@ -121,9 +122,8 @@ lapply(pathogenlist, GlobalTrend)
 
 # ------------------------------------------------------------------------------
 
-
 # ------------------------------------------------------------------------------
-
+# vaccine avertable attributable resistance mean
 burden_vaccine_profile <- left_join(IHME_AMR_burden, Vaccine_profile, by=c("Pathogen" = "Pathogen"))
   
 burden_vaccine_profile <- burden_vaccine_profile %>%
@@ -132,19 +132,26 @@ burden_vaccine_profile <- burden_vaccine_profile %>%
                     ifelse(Vaccination=="4 week (effective at 6 week)" & Duration=="5" & Age_group == "1 to 4", Attributable_resistance_mean * Efficacy * Coverage,
                     ifelse(Vaccination=="4 week (effective at 6 week)" & Duration=="5" & Age_group == "5 to 9", Attributable_resistance_mean * Efficacy * Coverage * 1/5*5/52,
                            
-             ifelse(Vaccination=="4 week (effective at 6 week)" & Duration=="2" & Age_group == "Post Neonatal", Attributable_resistance_mean * Efficacy * Coverage * 47/48,
-                    ifelse(Vaccination=="4 week (effective at 6 week)" & Duration=="2" & Age_group == "1 to 4", Attributable_resistance_mean * Efficacy * Coverage * 1/4*5/52,
-                           
+             ifelse(Vaccination=="4 week (effective at 6 week)" & Duration=="2" & Age_group == "Post Neonatal" & Pathogen != "Streptococcus pneumoniae", Attributable_resistance_mean * Efficacy * Coverage * 47/48,
+                    ifelse(Vaccination=="4 week (effective at 6 week)" & Duration=="2" & Age_group == "1 to 4" & Pathogen != "Streptococcus pneumoniae", Attributable_resistance_mean * Efficacy * Coverage * 1/4*5/52,
+ 
+             ifelse(Vaccination=="4 week (effective at 6 week)" & Duration=="2" & Age_group == "Post Neonatal" & Pathogen == "Streptococcus pneumoniae" & Disease_presentation == "LRI and thorax infections",  Attributable_resistance_mean * 0.5 * Coverage * 47/48,
+                    ifelse(Vaccination=="4 week (effective at 6 week)" & Duration=="2" & Age_group == "1 to 4" & Pathogen == "Streptococcus pneumoniae" & Disease_presentation == "LRI and thorax infections", Attributable_resistance_mean * 0.5 * Coverage * 1/4*5/52,
+
+             ifelse(Vaccination=="4 week (effective at 6 week)" & Duration=="2" & Age_group == "Post Neonatal" & Pathogen == "Streptococcus pneumoniae" & Disease_presentation != "LRI and thorax infections",  Attributable_resistance_mean * Efficacy * Coverage * 47/48,
+                    ifelse(Vaccination=="4 week (effective at 6 week)" & Duration=="2" & Age_group == "1 to 4" & Pathogen == "Streptococcus pneumoniae" & Disease_presentation != "LRI and thorax infections", Attributable_resistance_mean * Efficacy * Coverage * 1/4*5/52,
+                                         
+                                                                    
              ifelse(Vaccination=="4 week (effective at 6 week), 60 or above" & Duration=="2" & Age_group == "Post Neonatal", Attributable_resistance_mean * Efficacy * Coverage * 47/48,
                     ifelse(Vaccination=="4 week (effective at 6 week), 60 or above" & Duration=="2" & Age_group == "1 to 4", Attributable_resistance_mean * Efficacy * Coverage * 1/4*5/52,
-                    ifelse(Vaccination=="4 week (effective at 6 week), 60 or above" & Duration=="2" & Age_group == "60 to 64", Attributable_resistance_mean * Efficacy * Coverage * (52+5)/(52*5),
+                    ifelse(Vaccination=="4 week (effective at 6 week), 60 or above" & Duration=="2" & Age_group == "60 to 64", Attributable_resistance_mean * Efficacy * Coverage * 2/5,
 
-              ifelse(Vaccination=="12 weeks" & Duration=="20" & Age_group == "Post Neonatal", Attributable_resistance_mean * Efficacy * Coverage * 39/48,
-                                  ifelse(Vaccination=="12 weeks" & Duration=="20" & Age_group == "1 to 4", Attributable_resistance_mean * Efficacy * Coverage,
-                                         ifelse(Vaccination=="12 weeks" & Duration=="20" & Age_group == "5 to 9", Attributable_resistance_mean * Efficacy * Coverage,
-                                                ifelse(Vaccination=="12 weeks" & Duration=="20" & Age_group == "10 to 14", Attributable_resistance_mean * Efficacy * Coverage,
-                                                       ifelse(Vaccination=="12 weeks" & Duration=="20" & Age_group == "15 to 19", Attributable_resistance_mean * Efficacy * Coverage,
-                                                              ifelse(Vaccination=="12 weeks" & Duration=="20" & Age_group == "20 to 24", Attributable_resistance_mean * Efficacy * Coverage * 1/5 * 13/52,
+             ifelse(Vaccination=="12 weeks" & Duration=="20" & Age_group == "Post Neonatal", Attributable_resistance_mean * Efficacy * Coverage * 39/48,
+                    ifelse(Vaccination=="12 weeks" & Duration=="20" & Age_group == "1 to 4", Attributable_resistance_mean * Efficacy * Coverage,
+                    ifelse(Vaccination=="12 weeks" & Duration=="20" & Age_group == "5 to 9", Attributable_resistance_mean * Efficacy * Coverage,
+                    ifelse(Vaccination=="12 weeks" & Duration=="20" & Age_group == "10 to 14", Attributable_resistance_mean * Efficacy * Coverage,
+                    ifelse(Vaccination=="12 weeks" & Duration=="20" & Age_group == "15 to 19", Attributable_resistance_mean * Efficacy * Coverage,
+                    ifelse(Vaccination=="12 weeks" & Duration=="20" & Age_group == "20 to 24", Attributable_resistance_mean * Efficacy * Coverage * 1/5 * 13/52,
                                                                      
              ifelse(Vaccination=="10 or above" & Duration=="10" & Age_group == "10 to 14", Attributable_resistance_mean * Efficacy * Coverage,
                     ifelse(Vaccination=="10 or above" & Duration=="10" & Age_group == "15 to 19", Attributable_resistance_mean * Efficacy * Coverage,
@@ -158,47 +165,171 @@ burden_vaccine_profile <- burden_vaccine_profile %>%
                     
              ifelse(Vaccination=="60 or above" & Duration=="1" & Age_group == "60 to 64", Attributable_resistance_mean * Efficacy * Coverage * 1/5,
  
-                        Attributable_resistance_mean))))))))))))))))))))),
+                        Attributable_resistance_mean))))))))))))))))))))))))),
              va_Attributable_resistance_mean = Attributable_resistance_mean - v_Attributable_resistance_mean)
+
+Disease_presentation <- function(pathogen){
+  x <- burden_vaccine_profile[burden_vaccine_profile$Pathogen == pathogen, ]
   
-BurdenAverted <- function(pathogen){
-  x <- burden_vaccine_profile[burden_vaccine_profile$Pathogen == pathogen,]
+  x <- if(x$DiseasePresentation[1]=="BSI") {
+    x[x$Disease_presentation == "BSI",]
+  } else if(x$DiseasePresentation[1]=="Diarrhoea") {
+    x[x$Disease_presentation == "Diarrhoea",]
+  } else if(x$DiseasePresentation[1]=="UTI") {
+    x[x$Disease_presentation == "UTI",]
+  } else if(x$DiseasePresentation[1]=="BSI, LRI and thorax infections") {
+    x[x$Disease_presentation == "BSI"|x$Disease_presentation == "LRI and thorax infections",]
+  } else {
+    x
+  }
   
-  x <- x %>%
-    group_by(WHO_region) %>%
-    summarise(averted_burden=sum(va_Attributable_resistance_mean), .groups = 'drop')
+  return(x)
+}
+  
+BurdenAverted_df <- lapply(pathogenlist, Disease_presentation)
 
-  x <- x[, 2]
+BurdenAverted_df <- do.call(rbind.data.frame, BurdenAverted_df)
 
-  colnames(x) <- pathogen
+BurdenAverted_df <- BurdenAverted_df %>%
+  filter(BurdenAverted_df$WHO_region != "unclassified")
+# ------------------------------------------------------------------------------
+# vaccine avertable associated resistance mean
+burden_vaccine_profile_a <- left_join(IHME_AMR_burden, Vaccine_profile, by=c("Pathogen" = "Pathogen"))
 
-  return(x)}
+burden_vaccine_profile_a <- burden_vaccine_profile_a %>%
+  mutate(v_Associated_resistant_mean 
+         = ifelse(Vaccination=="4 week (effective at 6 week)" & Duration=="5" & Age_group == "Post Neonatal", Associated_resistant_mean * Efficacy * Coverage * 47/48,
+                  ifelse(Vaccination=="4 week (effective at 6 week)" & Duration=="5" & Age_group == "1 to 4", Associated_resistant_mean * Efficacy * Coverage,
+                  ifelse(Vaccination=="4 week (effective at 6 week)" & Duration=="5" & Age_group == "5 to 9", Associated_resistant_mean * Efficacy * Coverage * 1/5*5/52,
+                                
+           ifelse(Vaccination=="4 week (effective at 6 week)" & Duration=="2" & Age_group == "Post Neonatal" & Pathogen != "Streptococcus pneumoniae", Associated_resistant_mean * Efficacy * Coverage * 47/48,
+                  ifelse(Vaccination=="4 week (effective at 6 week)" & Duration=="2" & Age_group == "1 to 4" & Pathogen != "Streptococcus pneumoniae", Associated_resistant_mean * Efficacy * Coverage * 1/4*5/52,
+                                              
+           ifelse(Vaccination=="4 week (effective at 6 week)" & Duration=="2" & Age_group == "Post Neonatal" & Pathogen == "Streptococcus pneumoniae" & Disease_presentation == "LRI and thorax infections",  Associated_resistant_mean * 0.5 * Coverage * 47/48,
+                  ifelse(Vaccination=="4 week (effective at 6 week)" & Duration=="2" & Age_group == "1 to 4" & Pathogen == "Streptococcus pneumoniae" & Disease_presentation == "LRI and thorax infections", Associated_resistant_mean * 0.5 * Coverage * 1/4*5/52,
+                                                            
+           ifelse(Vaccination=="4 week (effective at 6 week)" & Duration=="2" & Age_group == "Post Neonatal" & Pathogen == "Streptococcus pneumoniae" & Disease_presentation != "LRI and thorax infections",  Associated_resistant_mean * Efficacy * Coverage * 47/48,
+                  ifelse(Vaccination=="4 week (effective at 6 week)" & Duration=="2" & Age_group == "1 to 4" & Pathogen == "Streptococcus pneumoniae" & Disease_presentation != "LRI and thorax infections", Associated_resistant_mean * Efficacy * Coverage * 1/4*5/52,
+                                                                          
+                                                                          
+           ifelse(Vaccination=="4 week (effective at 6 week), 60 or above" & Duration=="2" & Age_group == "Post Neonatal", Associated_resistant_mean * Efficacy * Coverage * 47/48,
+                  ifelse(Vaccination=="4 week (effective at 6 week), 60 or above" & Duration=="2" & Age_group == "1 to 4", Associated_resistant_mean * Efficacy * Coverage * 1/4*5/52,
+                  ifelse(Vaccination=="4 week (effective at 6 week), 60 or above" & Duration=="2" & Age_group == "60 to 64", Associated_resistant_mean * Efficacy * Coverage * 2/5,
+                                                                                               
+           ifelse(Vaccination=="12 weeks" & Duration=="20" & Age_group == "Post Neonatal", Associated_resistant_mean * Efficacy * Coverage * 39/48,
+                  ifelse(Vaccination=="12 weeks" & Duration=="20" & Age_group == "1 to 4", Associated_resistant_mean * Efficacy * Coverage,
+                  ifelse(Vaccination=="12 weeks" & Duration=="20" & Age_group == "5 to 9", Associated_resistant_mean * Efficacy * Coverage,
+                  ifelse(Vaccination=="12 weeks" & Duration=="20" & Age_group == "10 to 14", Associated_resistant_mean * Efficacy * Coverage,
+                  ifelse(Vaccination=="12 weeks" & Duration=="20" & Age_group == "15 to 19", Associated_resistant_mean * Efficacy * Coverage,
+                  ifelse(Vaccination=="12 weeks" & Duration=="20" & Age_group == "20 to 24", Associated_resistant_mean * Efficacy * Coverage * 1/5 * 13/52,
+                                                                                                                                         
+           ifelse(Vaccination=="10 or above" & Duration=="10" & Age_group == "10 to 14", Associated_resistant_mean * Efficacy * Coverage,
+                  ifelse(Vaccination=="10 or above" & Duration=="10" & Age_group == "15 to 19", Associated_resistant_mean * Efficacy * Coverage,
+                                                                                                                                                       
+           ifelse(Vaccination=="60 or above" & Duration=="10" & Age_group == "60 to 64", Associated_resistant_mean * Efficacy * Coverage,
+                  ifelse(Vaccination=="60 or above" & Duration=="10" & Age_group == "65 to 69", Associated_resistant_mean * Efficacy * Coverage,
+                                                                                                                                                                     
+           ifelse(Vaccination=="60 or above" & Duration=="5" & Age_group == "60 to 64", Associated_resistant_mean * Efficacy * Coverage,
+                                                                                                                                                                            
+           ifelse(Vaccination=="60 or above" & Duration=="2" & Age_group == "60 to 64", Associated_resistant_mean * Efficacy * Coverage * 2/5,
+                                                                                                                                                                                   
+           ifelse(Vaccination=="60 or above" & Duration=="1" & Age_group == "60 to 64", Associated_resistant_mean * Efficacy * Coverage * 1/5,
+                                                                                                                                                                                          
+                      Associated_resistant_mean))))))))))))))))))))))))),
+         va_Associated_resistant_mean = Associated_resistant_mean - v_Associated_resistant_mean)
 
-BurdenAverted_df <- lapply(pathogenlist, BurdenAverted)
+Disease_presentation_a <- function(pathogen){
+  x <- burden_vaccine_profile_a[burden_vaccine_profile_a$Pathogen == pathogen, ]
+  
+  x <- if(x$DiseasePresentation[1]=="BSI") {
+    x[x$Disease_presentation == "BSI",]
+  } else if(x$DiseasePresentation[1]=="Diarrhoea") {
+    x[x$Disease_presentation == "Diarrhoea",]
+  } else if(x$DiseasePresentation[1]=="UTI") {
+    x[x$Disease_presentation == "UTI",]
+  } else if(x$DiseasePresentation[1]=="BSI, LRI and thorax infections") {
+    x[x$Disease_presentation == "BSI"|x$Disease_presentation == "LRI and thorax infections",]
+  } else {
+    x
+  }
+  
+  return(x)
+}
 
-BurdenAverted_df <- do.call(cbind.data.frame, BurdenAverted_df)
+BurdenAverted_associated_df <- lapply(pathogenlist, Disease_presentation_a)
 
-BurdenAverted_df$WHO_region <- WHO_region
+BurdenAverted_associated_df <- do.call(rbind.data.frame, BurdenAverted_associated_df)
+
+BurdenAverted_associated_df <- BurdenAverted_associated_df %>%
+  filter(BurdenAverted_associated_df$WHO_region != "unclassified")
+# ------------------------------------------------------------------------------
+# Uncertainty analysis: using log normal
+
+?qnorm
+
 # ------------------------------------------------------------------------------
 # Table 2
-Death_Averted <- BurdenAverted_df %>% 
-  mutate(sum = rowSums(.[1:14]))
 
-Death_Averted <- Death_Averted[-6,c("WHO_region", "sum")]
+AttributableResistance <-  BurdenAverted_df%>%
+  group_by(WHO_region) %>%
+  summarise(averted_burden=sum(va_Attributable_resistance_mean), .groups = 'drop')
 
-fwrite (x    = Death_Averted,
-        file = "Death.Averted.csv")
+AssociatedResistant <- BurdenAverted_associated_df %>%
+  group_by(WHO_region) %>%
+  summarise(averted_burden=sum(va_Associated_resistant_mean), .groups = 'drop')
+
+Averted_Death <- left_join(AttributableResistance, AssociatedResistant, by=c("WHO_region" = "WHO_region"))
+
+Averted_Death <- Averted_Death %>% 
+  rename("Attributable to Resistance" = "averted_burden.x",
+         "Associted to Resistance" = "averted_burden.y")
+
+fwrite (x    = Averted_Death,
+        file = "Averted_Death.csv")
 
 # ------------------------------------------------------------------------------
 # Figure 1
-ggplot(Death_Averted) +
-  aes(x = WHO_region, weight = sum) +
-  geom_bar(fill = "#8DA5B6") +
-  labs(x = "WHO region", y = "Vaccine Averted Deaths") +
-  theme_classic()
+DeathAverted_Region <- rbind(AttributableResistance %>% mutate(Resistance = "Atributable to resistance"), 
+      AssociatedResistant %>% mutate(Resistance = "Associated with resistance"))
+
+ggplot(DeathAverted_Region, aes(x = WHO_region, y=averted_burden, fill=Resistance)) +
+ geom_bar(stat = "identity", position="dodge") +
+ scale_fill_manual(values = c("#D4E3FF","#054C70")) +
+ labs(x = "WHO region", y = "Vaccine Avertable Deaths") + 
+ theme_bw()
 
 # ------------------------------------------------------------------------------
 # Figure 2
+DeathAverted_Syndrome <- rbind(
+ BurdenAverted_df %>%
+  mutate(Resistance = "Atributable to resistance") %>%
+  group_by(Disease_presentation, Resistance) %>%
+  summarise(averted_burden=sum(va_Attributable_resistance_mean),.groups = 'drop'), 
+ BurdenAverted_associated_df %>%
+  mutate(Resistance = "Associated with resistance") %>%
+  group_by(Disease_presentation, Resistance) %>%
+  summarise(averted_burden=sum(va_Associated_resistant_mean),.groups = 'drop'))
+
+ggplot(DeathAverted_Syndrome, aes(x = reorder(Disease_presentation,-averted_burden), y=averted_burden, fill=Resistance)) +
+  geom_bar(stat = "identity", position="dodge") +
+  scale_fill_manual(values = c("#D4E3FF","#054C70")) +
+  labs(x = "Infectious syndrome", y = "Vaccine Avertable Deaths") + 
+  theme_bw(base_size=8.15)
 
 # ------------------------------------------------------------------------------
 # Figure 3
+DeathAverted_Pathogen <- rbind(
+  BurdenAverted_df %>%
+    mutate(Resistance = "Atributable to resistance") %>%
+    group_by(Pathogen, Resistance) %>%
+    summarise(averted_burden=sum(va_Attributable_resistance_mean),.groups = 'drop'),
+  BurdenAverted_associated_df %>%
+    mutate(Resistance = "Associated with resistance") %>%
+    group_by(Pathogen, Resistance) %>%
+    summarise(averted_burden=sum(va_Associated_resistant_mean),.groups = 'drop'))
+
+ggplot(DeathAverted_Pathogen, aes(x = reorder(Pathogen,-averted_burden), y=averted_burden, fill=Resistance)) +
+  geom_bar(stat = "identity", position="dodge") +
+  scale_fill_manual(values = c("#D4E3FF","#054C70")) +
+  labs(x = "Pathogen", y = "Vaccine Avertable Deaths") +
+  theme_bw(base_size=8.13)
