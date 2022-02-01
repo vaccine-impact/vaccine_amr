@@ -1,34 +1,15 @@
 # ------------------------------------------------------------------------------
-# vaccine impact estimates using IHME AMR burden (Deaths)
+# function.R
+#
+# functions for analysis to estimate vaccine averted AMR health burden
 # ------------------------------------------------------------------------------
-# load libraries
-library (readr)
-library (readxl)
-library (dplyr)
-library (ggplot2)
-library (reshape2)
-library (tidyverse)
-library (data.table)
-library (ggplot2)
 
-# clear workspace
-rm (list = ls ())
 
-# set working directory
-setwd("~/GitHub/vaccine_amr/data")
 # ------------------------------------------------------------------------------
-## IHME data on the burden ##
-# WHO region: Africa, Americas, Eastern Mediterranean, Europe, South-East Asia, 
-#             Western Pacific, Unclassified 
-# year: ?
-# sex: both
-# ------------------------------------------------------------------------------
-# Import IME AMR burden
+# create and clean up the data frame of AMR burden (deaths)
 
-IHME_AMR_burden <- read_excel("IHME AMR burden.xlsx", 
-                              col_names = FALSE)
-# Data cleaning
-names(IHME_AMR_burden) <- c("WHO_region", "Disease_presentation","Age_group","Pathogen", 
+create_death_burden_table <- function(AMR_death_burden){
+  names(AMR_death_burden) <- c("WHO_region", "Disease_presentation","Age_group","Pathogen", 
                             "Associated_suscetible_mean","Associated_suscetible_lower",
                             "Associated_suscetible_upper","Associated_resistant_mean", 
                             "Associated_resistant_lower","Associated_resistant_upper",
@@ -36,77 +17,74 @@ names(IHME_AMR_burden) <- c("WHO_region", "Disease_presentation","Age_group","Pa
                             "Attributable_resistance_upper")
 
 
-IHME_AMR_burden <- IHME_AMR_burden[-c(1:2),]
+  AMR_death_burden <- AMR_death_burden[-c(1:2),]
 
-IHME_AMR_burden[,5:13] <- lapply(IHME_AMR_burden[,5:13], as.numeric)
+  AMR_death_burden[,5:13] <- lapply(AMR_death_burden[,5:13], as.numeric)
+  
+  AMR_death_burden$Age_group <- factor(AMR_death_burden$Age_group, 
+                                levels=c(as.vector(unlist(AMR_death_burden[1:23,"Age_group"]))), order=T)
 
-IHME_AMR_burden$Age_group <- factor(IHME_AMR_burden$Age_group, 
-                                levels=c(as.vector(unlist(IHME_AMR_burden[1:23,"Age_group"]))), order=T)
-
-levels(IHME_AMR_burden$Age_group) <- c("EN", "LN", "PN",  "1 to 4", "5 to 9","10 to 14",
+  levels(AMR_death_burden$Age_group) <- c("EN", "LN", "PN",  "1 to 4", "5 to 9","10 to 14",
                                        "15 to 19", "20 to 24"  ,"25 to 29",  "30 to 34",
                                        "35 to 39", "40 to 44", "45 to 49",  "50 to 54" ,      
                                        "55 to 59", "60 to 64", "65 to 69", "70 to 74",
-                                       "75 to 79", "80 to 84", "85 to 89", "90 to 94", "95 plus")      
+                                       "75 to 79", "80 to 84", "85 to 89", "90 to 94", "95 plus")
+  
+  AMR_death_burden <- AMR_death_burden %>%
+    filter(AMR_death_burden$WHO_region != "unclassified")
+
+  fwrite (x    = AMR_death_burden, 
+          file = "AMR_death_burden.csv")
+  
+  return(AMR_death_burden)
+  }
+
 # ------------------------------------------------------------------------------
-# Import WHO vaccine profile
-Vaccine_profile <- read_excel("Vaccine profile for IHME burden.xlsx", 
-                              sheet = "Vaccine profile assumptions")
+# create and clean up the data frame of WHO vaccine profile
+  
+create_vaccine_profile_table <- function(vaccine_profile){
+    
+  vaccine_profile <- vaccine_profile[,c(3, 4, 5, 6, 9, 10,12)]
 
-Vaccine_profile <- Vaccine_profile[,c(3, 4, 5, 6, 9, 10,12)]
-
-Vaccine_profile <- Vaccine_profile %>%
+  vaccine_profile <- vaccine_profile %>%
   rename("Efficacy" = "Efficacy (%)",
          "Coverage" = "Coverage in target group",
          "Duration" = "Duration of protection (year)", 
          "DiseasePresentation" = "Disease presentation")
 
-Vaccine_profile$Efficacy <- Vaccine_profile$Efficacy * 1/100
-Vaccine_profile$Coverage <- Vaccine_profile$Coverage * 1/100
+  vaccine_profile$Efficacy <- vaccine_profile$Efficacy * 1/100
+  vaccine_profile$Coverage <- vaccine_profile$Coverage * 1/100
 
-Vaccine_profile <- Vaccine_profile %>% filter(Selection == "Yes")
+  vaccine_profile <- vaccine_profile %>% filter(Selection == "Yes")
 
-fwrite (x    = Vaccine_profile, 
+  fwrite (x    = vaccine_profile, 
         file = "Vaccine_profile.csv")
+
+  return(vaccine_profile)
+  }
+
 # ------------------------------------------------------------------------------
-# Key element vectors
+# create graph of death trend by pathogen across all age groups
 
-reference <- IHME_AMR_burden %>% count(Pathogen, Disease_presentation)
-reference
-
-pathogenlist <- IHME_AMR_burden %>% count(Pathogen)
-pathogenlist <- as.vector(unlist(pathogenlist[,"Pathogen"]))
-
-burden <- IHME_AMR_burden %>% count(Disease_presentation)
-burden <- as.vector(unlist(burden[,"Disease_presentation"]))
-
-WHO_region <- IHME_AMR_burden %>% count(WHO_region)
-WHO_region <- as.vector(unlist(WHO_region[,"WHO_region"]))
-
-burden_type <- names(IHME_AMR_burden)[5:13]
-# ------------------------------------------------------------------------------
-
-## Death trend across all age groups: the outputs were used to decide the age of vaccination
-
-GlobalTrend <- function(pathogen){
-  x <- IHME_AMR_burden[IHME_AMR_burden$Pathogen == pathogen,]
+create_death_by_pathogen_graph <- function(pathogen){
+  dt <- death_burden_dt[death_burden_dt$Pathogen == pathogen,]
   
-  x <- left_join(x, Vaccine_profile, by=c("Pathogen" = "Pathogen"))
+  dt <- left_join(dt, vaccine_profile_dt, by=c("Pathogen" = "Pathogen"))
   
-  x <- x %>% 
+  dt <- dt %>% 
     group_by(Pathogen, Efficacy, Coverage, Age_group) %>%
     summarise(sum_Attributable_resistance_mean=sum(Attributable_resistance_mean), .groups = 'drop') 
   
-  x <- x %>% 
+  dt <- dt %>% 
     mutate(v_Attributable_resistance_mean = sum_Attributable_resistance_mean * Efficacy * Coverage,
            va_Attributable_resistance_mean = v_Attributable_resistance_mean-sum_Attributable_resistance_mean)
   
-  ggplot(x, aes(x=Age_group)) +
+  ggplot(dt, aes(x=Age_group)) +
     geom_line(aes(y=sum_Attributable_resistance_mean, group=1, colour="non-vaccinated")) +
     ylab("Number of Vaccine Attributable Deaths") + 
     xlab("Age") +
     ggtitle(paste(pathogen,"(global)")) +
-    theme_bw() +
+    theme_classic() +
     theme(plot.title = element_text(hjust = 0.5)) +
     expand_limits(y=0)
   
@@ -118,15 +96,19 @@ GlobalTrend <- function(pathogen){
           )
 }
 
-lapply(pathogenlist, GlobalTrend)
-
 # ------------------------------------------------------------------------------
 
+
+
 # ------------------------------------------------------------------------------
-# vaccine avertable attributable resistance mean
-burden_vaccine_profile <- left_join(IHME_AMR_burden, Vaccine_profile, by=c("Pathogen" = "Pathogen"))
+# vaccine avertable deaths attributable to resistance
+
+# take into account vaccine target age group
+estimate_vaccine_impact_a <- function(){
   
-burden_vaccine_profile <- burden_vaccine_profile %>%
+  vaccine_avertable_deaths_a <- left_join(death_burden_dt, vaccine_profile_dt, by=c("Pathogen" = "Pathogen"))
+  
+  vaccine_avertable_deaths_a <- vaccine_avertable_deaths_a %>%
     mutate(v_Attributable_resistance_mean 
            = ifelse(Vaccination=="4 week (effective at 6 week)" & Duration=="5" & Age_group == "Post Neonatal", Attributable_resistance_mean * Efficacy * Coverage * 47/48,
                     ifelse(Vaccination=="4 week (effective at 6 week)" & Duration=="5" & Age_group == "1 to 4", Attributable_resistance_mean * Efficacy * Coverage,
@@ -168,35 +150,44 @@ burden_vaccine_profile <- burden_vaccine_profile %>%
                         Attributable_resistance_mean))))))))))))))))))))))))),
              va_Attributable_resistance_mean = Attributable_resistance_mean - v_Attributable_resistance_mean)
 
-Disease_presentation <- function(pathogen){
-  x <- burden_vaccine_profile[burden_vaccine_profile$Pathogen == pathogen, ]
+# take into account vaccine target pathogen
+  vaccine_avertable_deaths_b <- vaccine_avertable_deaths_a [0, ]
+
+  for(i in pathogenlist){
+    dt <- vaccine_avertable_deaths_a[vaccine_avertable_deaths_a$Pathogen == i, ]
   
-  x <- if(x$DiseasePresentation[1]=="BSI") {
-    x[x$Disease_presentation == "BSI",]
-  } else if(x$DiseasePresentation[1]=="Diarrhoea") {
-    x[x$Disease_presentation == "Diarrhoea",]
-  } else if(x$DiseasePresentation[1]=="UTI") {
-    x[x$Disease_presentation == "UTI",]
-  } else if(x$DiseasePresentation[1]=="BSI, LRI and thorax infections") {
-    x[x$Disease_presentation == "BSI"|x$Disease_presentation == "LRI and thorax infections",]
-  } else {
-    x
+    dt <- if(dt$DiseasePresentation[1]=="BSI") {
+      dt[dt$Disease_presentation == "BSI",]
+    } else if(dt$DiseasePresentation[1]=="Diarrhoea") {
+      dt[dt$Disease_presentation == "Diarrhoea",]
+    } else if(dt$DiseasePresentation[1]=="UTI") {
+      dt[dt$Disease_presentation == "UTI",]
+    } else if(dt$DiseasePresentation[1]=="BSI, LRI and thorax infections") {
+      dt[dt$Disease_presentation == "BSI"|dt$Disease_presentation == "LRI and thorax infections",]
+    } else {
+      dt
+    }
+  vaccine_avertable_deaths_b <- rbindlist (list (vaccine_avertable_deaths_b, dt),
+                                   use.names = TRUE)
   }
-  
-  return(x)
-}
-  
-BurdenAverted_df <- lapply(pathogenlist, Disease_presentation)
 
-BurdenAverted_df <- do.call(rbind.data.frame, BurdenAverted_df)
+  vaccine_avertable_deaths_b <- vaccine_avertable_deaths_b %>%
+    filter(vaccine_avertable_deaths_b$WHO_region != "unclassified")
+  
+  return(vaccine_avertable_deaths_b)
+  }
 
-BurdenAverted_df <- BurdenAverted_df %>%
-  filter(BurdenAverted_df$WHO_region != "unclassified")
+# ------------------------------------------------------------------------------
+
+
 # ------------------------------------------------------------------------------
 # vaccine avertable associated resistance mean
-burden_vaccine_profile_a <- left_join(IHME_AMR_burden, Vaccine_profile, by=c("Pathogen" = "Pathogen"))
 
-burden_vaccine_profile_a <- burden_vaccine_profile_a %>%
+estimate_vaccine_impact_b <- function() {
+  
+  vaccine_avertable_deaths_b <- left_join(death_burden_dt, vaccine_profile_dt, by=c("Pathogen" = "Pathogen"))
+
+vaccine_avertable_deaths_b <- vaccine_avertable_deaths_b %>%
   mutate(v_Associated_resistant_mean 
          = ifelse(Vaccination=="4 week (effective at 6 week)" & Duration=="5" & Age_group == "Post Neonatal", Associated_resistant_mean * Efficacy * Coverage * 47/48,
                   ifelse(Vaccination=="4 week (effective at 6 week)" & Duration=="5" & Age_group == "1 to 4", Associated_resistant_mean * Efficacy * Coverage,
@@ -239,7 +230,7 @@ burden_vaccine_profile_a <- burden_vaccine_profile_a %>%
          va_Associated_resistant_mean = Associated_resistant_mean - v_Associated_resistant_mean)
 
 Disease_presentation_a <- function(pathogen){
-  x <- burden_vaccine_profile_a[burden_vaccine_profile_a$Pathogen == pathogen, ]
+  x <- vaccine_avertable_deaths_b[vaccine_avertable_deaths_b$Pathogen == pathogen, ]
   
   x <- if(x$DiseasePresentation[1]=="BSI") {
     x[x$Disease_presentation == "BSI",]
@@ -256,25 +247,24 @@ Disease_presentation_a <- function(pathogen){
   return(x)
 }
 
-BurdenAverted_associated_df <- lapply(pathogenlist, Disease_presentation_a)
+vaccine_avertable_deaths_b <- vaccine_avertable_deaths_b %>%
+  filter(vaccine_avertable_deaths_b$WHO_region != "unclassified")
 
-BurdenAverted_associated_df <- do.call(rbind.data.frame, BurdenAverted_associated_df)
+return(vaccine_avertable_deaths_b)}
 
-BurdenAverted_associated_df <- BurdenAverted_associated_df %>%
-  filter(BurdenAverted_associated_df$WHO_region != "unclassified")
 # ------------------------------------------------------------------------------
-# Uncertainty analysis: using log normal
 
-?qnorm
+
+
 
 # ------------------------------------------------------------------------------
 # Table 2
 
-AttributableResistance <-  BurdenAverted_df%>%
+AttributableResistance <-  BurdenAverted_attributable_dt%>%
   group_by(WHO_region) %>%
   summarise(averted_burden=sum(va_Attributable_resistance_mean), .groups = 'drop')
 
-AssociatedResistant <- BurdenAverted_associated_df %>%
+AssociatedResistant <- BurdenAverted_associated_dt %>%
   group_by(WHO_region) %>%
   summarise(averted_burden=sum(va_Associated_resistant_mean), .groups = 'drop')
 
@@ -296,7 +286,7 @@ ggplot(DeathAverted_Region, aes(x = WHO_region, y=averted_burden, fill=Resistanc
  geom_bar(stat = "identity", position="dodge") +
  scale_fill_manual(values = c("#D4E3FF","#054C70")) +
  labs(x = "WHO region", y = "Vaccine Avertable Deaths") + 
- theme_bw()
+ theme_classic()
 
 # ------------------------------------------------------------------------------
 # Figure 2
@@ -314,16 +304,16 @@ ggplot(DeathAverted_Syndrome, aes(x = reorder(Disease_presentation,-averted_burd
   geom_bar(stat = "identity", position="dodge") +
   scale_fill_manual(values = c("#D4E3FF","#054C70")) +
   labs(x = "Infectious syndrome", y = "Vaccine Avertable Deaths") + 
-  theme_bw(base_size=8.15)
+  theme_classic(base_size=8.15)
 
 # ------------------------------------------------------------------------------
 # Figure 3
 DeathAverted_Pathogen <- rbind(
-  BurdenAverted_df %>%
+  BurdenAverted_attributable_dt %>%
     mutate(Resistance = "Atributable to resistance") %>%
     group_by(Pathogen, Resistance) %>%
     summarise(averted_burden=sum(va_Attributable_resistance_mean),.groups = 'drop'),
-  BurdenAverted_associated_df %>%
+  BurdenAverted_associated_dt %>%
     mutate(Resistance = "Associated with resistance") %>%
     group_by(Pathogen, Resistance) %>%
     summarise(averted_burden=sum(va_Associated_resistant_mean),.groups = 'drop'))
@@ -332,4 +322,4 @@ ggplot(DeathAverted_Pathogen, aes(x = reorder(Pathogen,-averted_burden), y=avert
   geom_bar(stat = "identity", position="dodge") +
   scale_fill_manual(values = c("#D4E3FF","#054C70")) +
   labs(x = "Pathogen", y = "Vaccine Avertable Deaths") +
-  theme_bw(base_size=8.13)
+  theme_classic(base_size=8.13)
