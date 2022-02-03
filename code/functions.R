@@ -92,8 +92,7 @@ create_death_by_pathogen_graph <- function(pathogen){
   ggsave (filename = paste(pathogen,"_global.png"),
           width = 15, 
           height = 6, 
-          dpi = 600
-  )
+          dpi = 600)
 }
 
 # ------------------------------------------------------------------------------
@@ -312,48 +311,154 @@ Death_Aveted <- Death_Aveted[,c("Counts", "2.5%", "50%", "97.5%")]
 return(Death_Aveted)}
 
 # ------------------------------------------------------------------------------
-# Figure 1
-DeathAverted_Region <- rbind(AttributableResistance %>% mutate(Resistance = "Atributable to resistance"), 
-      AssociatedResistant %>% mutate(Resistance = "Associated with resistance"))
+# Figure 1 -- Create vaccine averted burden by region
 
-ggplot(DeathAverted_Region, aes(x = WHO_region, y=averted_burden, fill=Resistance)) +
- geom_bar(stat = "identity", position="dodge") +
- scale_fill_manual(values = c("#D4E3FF","#054C70")) +
- labs(x = "WHO region", y = "Vaccine Avertable Deaths") + 
- theme_classic()
+create_burden_averted_by_region_graph <- function(Attributable_burden_averted,
+                                                  Associated_burden_averted){
+
+Associated_burden_averted$Resistance <- "Associated with resistance" 
+
+Attributable_burden_averted$Resistance <- "Attributable to resistance" 
+  
+  
+burden_averted_by_region <- rbind(Associated_burden_averted, Attributable_burden_averted)
+
+burden_averted_by_region <- burden_averted_by_region %>% rename("lower_value" = "2.5%",
+                                                                "mean_value"  = "50%",
+                                                                "upper_value" = "97.5%")
+
+burden_averted_by_region  <- burden_averted_by_region %>% filter(Counts != "Global")
+                   
+ggplot(burden_averted_by_region, aes(x = reorder(Counts, -mean_value), y=mean_value, fill=Resistance)) +
+  geom_bar(stat = "identity", position="dodge") +
+  ylim(0,100000) +
+  scale_fill_manual(values = c("#D4E3FF","#054C70")) +
+  labs(x = "WHO region", y = "Vaccine Avertable Deaths") + 
+  geom_errorbar(aes(ymin=lower_value, ymax=upper_value), width=0.25,
+                size=0.5, position=position_dodge(0.9)) +
+  theme_classic() +
+  theme(legend.position = c(0.9, 0.9))
+
+ggsave (filename = "Figure 1.png",
+        width = 15, 
+        height = 6, 
+        dpi = 600)
+
+}
 
 # ------------------------------------------------------------------------------
-# Figure 2
-DeathAverted_Syndrome <- rbind(
- BurdenAverted_df %>%
-  mutate(Resistance = "Atributable to resistance") %>%
-  group_by(Disease_presentation, Resistance) %>%
-  summarise(averted_burden=sum(va_Attributable_resistance_mean),.groups = 'drop'), 
- BurdenAverted_associated_df %>%
-  mutate(Resistance = "Associated with resistance") %>%
-  group_by(Disease_presentation, Resistance) %>%
-  summarise(averted_burden=sum(va_Associated_resistant_mean),.groups = 'drop'))
+# Figure 2 Create vaccine averted burden by disease presentation
 
-ggplot(DeathAverted_Syndrome, aes(x = reorder(Disease_presentation,-averted_burden), y=averted_burden, fill=Resistance)) +
-  geom_bar(stat = "identity", position="dodge") +
-  scale_fill_manual(values = c("#D4E3FF","#054C70")) +
-  labs(x = "Infectious syndrome", y = "Vaccine Avertable Deaths") + 
-  theme_classic(base_size=8.15)
+aggregate_impact_by_dp <- function(impact_by_dp){
+  
+  DiseasePresentation <- unique(death_burden_dt$Disease_presentation)
+    
+  death_averted_dp <- data.table("50%"=numeric(), "2.5%"=numeric(), "97.5%"=numeric())
+  
+  impact_by_dp_dt <- impact_by_dp
+  
+  for(i in DiseasePresentation){
+    dt <- impact_by_dp_dt %>% filter(Disease_presentation == i)
+    dt <- quantile(x = dt$averted_burden, probs = c (0.5, 0.025, 0.975))
+    dt <- data.table(t(dt))
+    death_averted_dp <- rbindlist (list (death_averted_dp, dt),
+                                     use.names = FALSE)
+  }
+  
+  Death_Aveted <- cbind(data.table(Counts=DiseasePresentation, death_averted_dp))
+  
+  Death_Aveted <- Death_Aveted[,c("Counts", "2.5%", "50%", "97.5%")]
+  
+  return(Death_Aveted)}
+
+
+# create Figure 2
+
+create_burden_averted_by_dp_graph <- function(Attributable_burden_averted,
+                                              Associated_burden_averted){
+  
+  Associated_burden_averted$Resistance <- "Associated with resistance" 
+  
+  Attributable_burden_averted$Resistance <- "Attributable to resistance" 
+  
+  
+    burden_averted_by_dp <- rbind(Associated_burden_averted, Attributable_burden_averted)
+  
+    burden_averted_by_dp<-  burden_averted_by_dp %>% rename("lower_value"="2.5%",
+                                 "mean_value"="50%",
+                                 "upper_value"="97.5%")
+  
+  ggplot(  burden_averted_by_dp, aes(x = reorder(Counts, -mean_value), y=mean_value, fill=Resistance)) +
+    geom_bar(stat = "identity", position="dodge") +
+    ylim(0,120000) +
+    scale_fill_manual(values = c("#D4E3FF","#054C70")) +
+    labs(x = "Infectious syndrome", y = "Vaccine Avertable Deaths") + 
+    geom_errorbar(aes(ymin=lower_value, ymax=upper_value), width=0.25,
+                  size=0.5, position=position_dodge(0.9)) +
+    theme_classic(base_size=9) +
+    theme(legend.position = c(0.9, 0.9))
+  
+  ggsave (filename = "Figure 3.png",
+          width = 15, 
+          height = 6, 
+          dpi = 600)
+  }
 
 # ------------------------------------------------------------------------------
-# Figure 3
-DeathAverted_Pathogen <- rbind(
-  BurdenAverted_df %>%
-    mutate(Resistance = "Atributable to resistance") %>%
-    group_by(Pathogen, Resistance) %>%
-    summarise(averted_burden=sum(va_Attributable_resistance_mean),.groups = 'drop'),
-  BurdenAverted_associated_df %>%
-    mutate(Resistance = "Associated with resistance") %>%
-    group_by(Pathogen, Resistance) %>%
-    summarise(averted_burden=sum(va_Associated_resistant_mean),.groups = 'drop'))
+# Figure 3 Create vaccine averted burden by pathogen
 
-ggplot(DeathAverted_Pathogen, aes(x = reorder(Pathogen,-averted_burden), y=averted_burden, fill=Resistance)) +
-  geom_bar(stat = "identity", position="dodge") +
-  scale_fill_manual(values = c("#D4E3FF","#054C70")) +
-  labs(x = "Pathogen", y = "Vaccine Avertable Deaths") +
-  theme_classic(base_size=8.13)
+aggregate_impact_by_pathogen <- function(impact_by_pathogen){
+ 
+  death_averted_pathogen <- data.table("50%"=numeric(), "2.5%"=numeric(), "97.5%"=numeric())
+  
+  impact_by_pathogen_dt <- impact_by_pathogen
+  
+  for(i in pathogenlist){
+    dt <- impact_by_pathogen_dt %>% filter(Pathogen == i)
+    dt <- quantile(x = dt$averted_burden, probs = c (0.5, 0.025, 0.975))
+    dt <- data.table(t(dt))
+    death_averted_pathogen <- rbindlist (list (death_averted_pathogen, dt),
+                                         use.names = FALSE)
+  }
+  
+  Death_Aveted <- cbind(data.table(Counts=pathogenlist, death_averted_pathogen))
+  
+  Death_Aveted <- Death_Aveted[,c("Counts", "2.5%", "50%", "97.5%")]
+  
+  return(Death_Aveted)}
+
+
+# create Figure 3
+
+create_burden_averted_by_pathogen_graph <- function(Attributable_burden_averted,
+                                                    Associated_burden_averted){
+  
+  Associated_burden_averted$Resistance <- "Associated with resistance" 
+  
+  Attributable_burden_averted$Resistance <- "Attributable to resistance" 
+  
+  
+  burden_averted_by_pathogen <- rbind(Associated_burden_averted, Attributable_burden_averted)
+  
+  burden_averted_by_pathogen<-  burden_averted_by_pathogen %>% rename("lower_value"="2.5%",
+                                                                      "mean_value"="50%",
+                                                                      "upper_value"="97.5%")
+  
+  ggplot(burden_averted_by_pathogen, aes(x = reorder(Counts, -mean_value), y=mean_value, fill=Resistance)) +
+    geom_bar(stat = "identity", position="dodge") +
+    ylim(0,100000) +
+    scale_fill_manual(values = c("#D4E3FF","#054C70")) +
+    labs(x = "Pathogen", y = "Vaccine Avertable Deaths") + 
+    geom_errorbar(aes(ymin=lower_value, ymax=upper_value), width=0.25,
+                  size=0.5, position=position_dodge(0.9)) +
+    theme_classic(base_size=7.5) +
+    theme(legend.position = c(0.9, 0.9))
+  
+  ggsave (filename = "Figure 3.png",
+          width = 15, 
+          height = 6, 
+          dpi = 600)
+}
+
+
+# ------------------------------------------------------------------------------

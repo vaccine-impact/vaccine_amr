@@ -23,7 +23,7 @@ start_time <- Sys.time ()
 print (paste0 ("start time = ", start_time))
 
 # source functions
-source ("function.ua.R")
+source ("functions.R")
 
 # move to base directory (run code from source directory)
 source_wd <- getwd ()
@@ -77,6 +77,9 @@ deaths_associated_psa <- uncertainty_analysis_baseline(psa   = run,
                                                        data  = read_csv("associated_burden.csv"))
 
 # ------------------------------------------------------------------------------
+# [table 2] Deaths and DALYs associated with and attributable to bacterial antimicrobial resistance
+# globally and by WHO_region, 2019
+
 # vaccine impact by region for deaths attributable to AMR  
 impact_by_region_attributable <- data.table(WHO_region     = character(), 
                                             averted_burden = numeric(), 
@@ -105,26 +108,109 @@ for(i in 1:run){
                                          use.names = TRUE) 
 }
 
-# ------------------------------------------------------------------------------
-# [table 2] Deaths and DALYs associated with and attributable to bacterial antimicrobial resistance
-# globally and by WHO_region, 2019
 
 Attributable_death_averted <- aggregate_impact_by_region(impact_by_region=impact_by_region_attributable)
 
 Associated_death_averted <- aggregate_impact_by_region(impact_by_region=impact_by_region_associated)
 
 # combine into one table
-Deaths_Averted <- left_join(Attributable_death_averted, Associated_death_averted, 
+Deaths_Averted <- left_join(Associated_death_averted, Attributable_death_averted,
                             by=c("Counts" = "Counts"))
 
 fwrite (x    = Deaths_Averted,
         file = "Deaths_Averted.csv")
 # ------------------------------------------------------------------------------
+# Figure 1: vaccine avertable attributable to and associated with 
+# bacterial antimicrobial resistance by GBD  region, 2019
+
+create_burden_averted_by_region_graph(Attributable_burden_averted = Attributable_death_averted,
+                                      Associated_burden_averted   = Associated_death_averted)
 
 
 
 
+# ------------------------------------------------------------------------------
+# Figure 2: Global vaccine avertable deaths (counts) attributable to and associated with 
+# bacterial antimicrobial resistance by infectious syndrome, 2019
 
+# create table for avertable deaths attributable to AMR by disease presentation
+impact_by_dp_attributable <- data.table(Disease_presentation = character(), 
+                                        averted_burden       = numeric(), 
+                                        run_id               = numeric())
+
+for(i in 1:run){
+  dt <- estimate_vaccine_impact(i, data=deaths_attributable_psa)
+  dt <- dt %>%
+    group_by(Disease_presentation, run_id) %>%
+    summarise(averted_burden = sum(va_health_burden), .groups = 'drop')
+    impact_by_dp_attributable <- rbindlist (list (impact_by_dp_attributable, dt),
+                                              use.names = TRUE) 
+}
+
+# create table for avertable deaths associated with AMR by disease presentation 
+impact_by_dp_associated <- data.table(Disease_presentation = character(), 
+                                      averted_burden       = numeric(), 
+                                      run_id               = numeric())
+
+for(i in 1:run){
+  dt <- estimate_vaccine_impact(i, data=deaths_associated_psa)
+  dt <-  dt %>%
+    group_by(Disease_presentation, run_id) %>%
+    summarise(averted_burden=sum(va_health_burden), .groups = 'drop')
+    impact_by_dp_associated <- rbindlist (list (impact_by_dp_associated, dt),
+                                            use.names = TRUE) 
+}
+
+# aggregate the data
+Attributable_death_averted_dp <- aggregate_impact_by_dp(impact_by_dp=impact_by_dp_attributable)
+
+Associated_death_averted_dp <- aggregate_impact_by_dp(impact_by_dp=impact_by_dp_associated)
+
+# create Figure 2
+create_burden_averted_by_dp_graph(Attributable_burden_averted = Attributable_death_averted_dp,
+                                  Associated_burden_averted   = Associated_death_averted_dp)
+
+
+# ------------------------------------------------------------------------------
+# Figure 3: Global vaccine avertable deaths (counts) attributable to and associated with 
+# bacterial antimicrobial resistance by pathogen, 2019
+
+# create table for avertable deaths attributable to AMR by pathogen
+impact_by_pathogen_attributable <- data.table(Pathogen = character(), 
+                                              averted_burden       = numeric(), 
+                                              run_id               = numeric())
+
+for(i in 1:run){
+  dt <- estimate_vaccine_impact(i, data=deaths_attributable_psa)
+  dt <- dt %>%
+    group_by(Pathogen, run_id) %>%
+    summarise(averted_burden = sum(va_health_burden), .groups = 'drop')
+  impact_by_pathogen_attributable <- rbindlist (list (impact_by_pathogen_attributable, dt),
+                                                use.names = TRUE) 
+}
+
+# create table for avertable deaths associated with AMR by pathogen
+impact_by_pathogen_associated <- data.table(Pathogen = character(), 
+                                            averted_burden       = numeric(), 
+                                            run_id               = numeric())
+
+for(i in 1:run){
+  dt <- estimate_vaccine_impact(i, data=deaths_associated_psa)
+  dt <-  dt %>%
+    group_by(Pathogen, run_id) %>%
+    summarise(averted_burden=sum(va_health_burden), .groups = 'drop')
+  impact_by_pathogen_associated <- rbindlist (list (impact_by_pathogen_associated, dt),
+                                              use.names = TRUE) 
+}
+
+# aggregate the data
+Attributable_death_averted_pathogen <- aggregate_impact_by_pathogen(impact_by_pathogen=impact_by_pathogen_attributable)
+
+Associated_death_averted_pathogen <- aggregate_impact_by_pathogen(impact_by_pathogen=impact_by_pathogen_associated)
+
+# create Figure 3
+create_burden_averted_by_pathogen_graph(Attributable_burden_averted = Attributable_death_averted_pathogen,
+                                        Associated_burden_averted   = Associated_death_averted_pathogen)
 
 # ------------------------------------------------------------------------------
 # return to source directory
