@@ -1,5 +1,5 @@
 # ------------------------------------------------------------------------------
-# function.R
+# functions.R
 #
 # functions for analysis to estimate vaccine averted AMR health burden
 # ------------------------------------------------------------------------------
@@ -37,7 +37,7 @@ create_death_burden_table <- function(AMR_death_burden){
           file = "AMR_death_burden.csv")
   
   return(AMR_death_burden)
-}
+} # end of function -- create_death_burden_table
 
 # ------------------------------------------------------------------------------
 # create and clean up the data frame of WHO vaccine profile
@@ -61,7 +61,7 @@ create_vaccine_profile_table <- function(vaccine_profile){
           file = "Vaccine_profile.csv")
   
   return(vaccine_profile)
-}
+} # end of function -- create_vaccine_profile_table
 
 # ------------------------------------------------------------------------------
 # create graph of death trend by pathogen across all age groups
@@ -93,7 +93,7 @@ create_death_by_pathogen_graph <- function(pathogen){
           width = 15, 
           height = 6, 
           dpi = 600)
-}
+} # end of function -- create_death_by_pathogen_graph
 
 # ------------------------------------------------------------------------------
 
@@ -132,7 +132,7 @@ create_combined_table <- function(death_burden_dt,
   
   return(combined_table)
   
-}
+} # end of function -- create_combined_table 
 
 
 # ------------------------------------------------------------------------------
@@ -195,7 +195,7 @@ uncertainty_analysis_baseline <- function(psa,
   
   return(vaccine_impact_psa)
   
-} # end of function -- create_uncertainty_analysis_baseline
+} # end of function -- uncertainty_analysis_baseline
 
 # ----------------------------------------------------------------------------
 # applying vaccine impact on vaccine target population
@@ -210,25 +210,25 @@ estimate_vaccine_impact <- function(i, data){
   
   vaccine_target_age <- vaccine_target_age %>%
     mutate(v_health_burden =
-            ifelse(Vaccination=="4 week (effective at 6 week)" & Duration=="5" & Age_group == "Post Neonatal", random_attributable * Efficacy * Coverage * 47/48,
+            ifelse(Vaccination=="4 week (effective at 6 week)" & Duration=="5" & Age_group == "PN", random_attributable * Efficacy * Coverage * 47/48,
             ifelse(Vaccination=="4 week (effective at 6 week)" & Duration=="5" & Age_group == "1 to 4", random_attributable * Efficacy * Coverage,
             ifelse(Vaccination=="4 week (effective at 6 week)" & Duration=="5" & Age_group == "5 to 9", random_attributable * Efficacy * Coverage * 1/5*5/52,
                                         
-            ifelse(Vaccination=="4 week (effective at 6 week)" & Duration=="2" & Age_group == "Post Neonatal" & Pathogen != "Streptococcus pneumoniae", random_attributable * Efficacy * Coverage * 47/48,
+            ifelse(Vaccination=="4 week (effective at 6 week)" & Duration=="2" & Age_group == "PN" & Pathogen != "Streptococcus pneumoniae", random_attributable * Efficacy * Coverage * 47/48,
             ifelse(Vaccination=="4 week (effective at 6 week)" & Duration=="2" & Age_group == "1 to 4" & Pathogen != "Streptococcus pneumoniae", random_attributable * Efficacy * Coverage * 1/4*5/52,
                                                       
-            ifelse(Vaccination=="4 week (effective at 6 week)" & Duration=="2" & Age_group == "Post Neonatal" & Pathogen == "Streptococcus pneumoniae" & Disease_presentation == "LRI and thorax infections", random_attributable * 0.5 * Coverage * 47/48,
+            ifelse(Vaccination=="4 week (effective at 6 week)" & Duration=="2" & Age_group == "PN" & Pathogen == "Streptococcus pneumoniae" & Disease_presentation == "LRI and thorax infections", random_attributable * 0.5 * Coverage * 47/48,
             ifelse(Vaccination=="4 week (effective at 6 week)" & Duration=="2" & Age_group == "1 to 4" & Pathogen == "Streptococcus pneumoniae" & Disease_presentation == "LRI and thorax infections", random_attributable * 0.5 * Coverage * 1/4*5/52,
                                                                     
-            ifelse(Vaccination=="4 week (effective at 6 week)" & Duration=="2" & Age_group == "Post Neonatal" & Pathogen == "Streptococcus pneumoniae" & Disease_presentation != "LRI and thorax infections", random_attributable * Efficacy * Coverage * 47/48,
+            ifelse(Vaccination=="4 week (effective at 6 week)" & Duration=="2" & Age_group == "PN" & Pathogen == "Streptococcus pneumoniae" & Disease_presentation != "LRI and thorax infections", random_attributable * Efficacy * Coverage * 47/48,
             ifelse(Vaccination=="4 week (effective at 6 week)" & Duration=="2" & Age_group == "1 to 4" & Pathogen == "Streptococcus pneumoniae" & Disease_presentation != "LRI and thorax infections", random_attributable * Efficacy * Coverage * 1/4*5/52,
                                                                                   
                                                                                   
-            ifelse(Vaccination=="4 week (effective at 6 week), 60 or above" & Duration=="2" & Age_group == "Post Neonatal", random_attributable * Efficacy * Coverage * 47/48,
+            ifelse(Vaccination=="4 week (effective at 6 week), 60 or above" & Duration=="2" & Age_group == "PN", random_attributable * Efficacy * Coverage * 47/48,
             ifelse(Vaccination=="4 week (effective at 6 week), 60 or above" & Duration=="2" & Age_group == "1 to 4", random_attributable * Efficacy * Coverage * 1/4*5/52,
             ifelse(Vaccination=="4 week (effective at 6 week), 60 or above" & Duration=="2" & Age_group == "60 to 64", random_attributable * Efficacy * Coverage * 2/5,
                                                                                                        
-            ifelse(Vaccination=="12 weeks" & Duration=="20" & Age_group == "Post Neonatal", random_attributable * Efficacy * Coverage * 39/48,
+            ifelse(Vaccination=="12 weeks" & Duration=="20" & Age_group == "PN", random_attributable * Efficacy * Coverage * 39/48,
             ifelse(Vaccination=="12 weeks" & Duration=="20" & Age_group == "1 to 4", random_attributable * Efficacy * Coverage,
             ifelse(Vaccination=="12 weeks" & Duration=="20" & Age_group == "5 to 9", random_attributable * Efficacy * Coverage,
             ifelse(Vaccination=="12 weeks" & Duration=="20" & Age_group == "10 to 14", random_attributable * Efficacy * Coverage,
@@ -308,7 +308,7 @@ Death_Aveted <- cbind(data.table(Counts=c("Global", WHOregion)), Death_Aveted)
 
 Death_Aveted <- Death_Aveted[,c("Counts", "2.5%", "50%", "97.5%")]
 
-return(Death_Aveted)}
+return(Death_Aveted)} # end of function -- aggregate_impact_by_region
 
 # ------------------------------------------------------------------------------
 # Figure 1 -- Create vaccine averted burden by region
@@ -331,9 +331,9 @@ burden_averted_by_region  <- burden_averted_by_region %>% filter(Counts != "Glob
                    
 ggplot(burden_averted_by_region, aes(x = reorder(Counts, -mean_value), y=mean_value, fill=Resistance)) +
   geom_bar(stat = "identity", position="dodge") +
-  ylim(0,100000) +
   scale_fill_manual(values = c("#D4E3FF","#054C70")) +
-  labs(x = "WHO region", y = "Vaccine Avertable Deaths") + 
+  labs(x = "WHO region", y = "Vaccine Avertable Deaths") +
+  ylim(0,150000) +
   geom_errorbar(aes(ymin=lower_value, ymax=upper_value), width=0.25,
                 size=0.5, position=position_dodge(0.9)) +
   theme_classic() +
@@ -344,7 +344,7 @@ ggsave (filename = "Figure 1.png",
         height = 6, 
         dpi = 600)
 
-}
+} # end of function -- create_burden_averted_by_region_graph
 
 # ------------------------------------------------------------------------------
 # Figure 2 Create vaccine averted burden by disease presentation
@@ -369,7 +369,7 @@ aggregate_impact_by_dp <- function(impact_by_dp){
   
   Death_Aveted <- Death_Aveted[,c("Counts", "2.5%", "50%", "97.5%")]
   
-  return(Death_Aveted)}
+  return(Death_Aveted)} # end of function -- aggregate_impact_by_dp
 
 
 # create Figure 2
@@ -390,19 +390,19 @@ create_burden_averted_by_dp_graph <- function(Attributable_burden_averted,
   
   ggplot(  burden_averted_by_dp, aes(x = reorder(Counts, -mean_value), y=mean_value, fill=Resistance)) +
     geom_bar(stat = "identity", position="dodge") +
-    ylim(0,120000) +
     scale_fill_manual(values = c("#D4E3FF","#054C70")) +
     labs(x = "Infectious syndrome", y = "Vaccine Avertable Deaths") + 
+    ylim(0,200000) +
     geom_errorbar(aes(ymin=lower_value, ymax=upper_value), width=0.25,
                   size=0.5, position=position_dodge(0.9)) +
     theme_classic(base_size=9) +
     theme(legend.position = c(0.9, 0.9))
   
-  ggsave (filename = "Figure 3.png",
+  ggsave (filename = "Figure 2.png",
           width = 15, 
           height = 6, 
           dpi = 600)
-  }
+  } # end of function -- create_burden_averted_by_dp_graph
 
 # ------------------------------------------------------------------------------
 # Figure 3 Create vaccine averted burden by pathogen
@@ -425,7 +425,7 @@ aggregate_impact_by_pathogen <- function(impact_by_pathogen){
   
   Death_Aveted <- Death_Aveted[,c("Counts", "2.5%", "50%", "97.5%")]
   
-  return(Death_Aveted)}
+  return(Death_Aveted)} # end of function -- aggregate_impact_by_pathogen
 
 
 # create Figure 3
@@ -446,19 +446,19 @@ create_burden_averted_by_pathogen_graph <- function(Attributable_burden_averted,
   
   ggplot(burden_averted_by_pathogen, aes(x = reorder(Counts, -mean_value), y=mean_value, fill=Resistance)) +
     geom_bar(stat = "identity", position="dodge") +
-    ylim(0,100000) +
     scale_fill_manual(values = c("#D4E3FF","#054C70")) +
     labs(x = "Pathogen", y = "Vaccine Avertable Deaths") + 
+    ylim(0,150000) +
     geom_errorbar(aes(ymin=lower_value, ymax=upper_value), width=0.25,
                   size=0.5, position=position_dodge(0.9)) +
     theme_classic(base_size=7.5) +
     theme(legend.position = c(0.9, 0.9))
   
+  
   ggsave (filename = "Figure 3.png",
           width = 15, 
           height = 6, 
           dpi = 600)
-}
-
-
+  
+} # end of function -- create_burden_averted_by_pathogen_graph
 # ------------------------------------------------------------------------------

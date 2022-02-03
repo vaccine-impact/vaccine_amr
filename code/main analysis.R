@@ -26,7 +26,6 @@ print (paste0 ("start time = ", start_time))
 source ("functions.R")
 
 # move to base directory (run code from source directory)
-source_wd <- getwd ()
 setwd("~/GitHub/vaccine_amr/data")
 
 # ------------------------------------------------------------------------------
@@ -67,7 +66,8 @@ lapply(pathogenlist, create_death_by_pathogen_graph)
 # ------------------------------------------------------------------------------
 # estimate vaccine averted AMR deaths & uncertainty analysis
 
-run <- 100
+set.seed (3)  # seed for random number generator
+run <- 100 # number of runs for probabilistic sensitivity analysis
 
 deaths_attributable_psa <- uncertainty_analysis_baseline(psa   = run, 
                                                          data  = read_csv("attributable_burden.csv"))
@@ -125,9 +125,6 @@ fwrite (x    = Deaths_Averted,
 
 create_burden_averted_by_region_graph(Attributable_burden_averted = Attributable_death_averted,
                                       Associated_burden_averted   = Associated_death_averted)
-
-
-
 
 # ------------------------------------------------------------------------------
 # Figure 2: Global vaccine avertable deaths (counts) attributable to and associated with 
@@ -214,7 +211,7 @@ create_burden_averted_by_pathogen_graph(Attributable_burden_averted = Attributab
 
 # ------------------------------------------------------------------------------
 # return to source directory
-setwd (source_wd)
+setwd("~/GitHub/vaccine_amr/code")
 
 # end time
 end_time <- Sys.time ()
