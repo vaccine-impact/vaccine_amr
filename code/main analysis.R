@@ -67,7 +67,7 @@ lapply(pathogenlist, create_death_by_pathogen_graph)
 # estimate vaccine averted AMR deaths & uncertainty analysis
 
 set.seed (3)  # seed for random number generator
-run <- 100 # number of runs for probabilistic sensitivity analysis
+run <- 200 # number of runs for probabilistic sensitivity analysis
 
 deaths_attributable_psa <- uncertainty_analysis_baseline(psa   = run, 
                                                          data  = read_csv("attributable_burden.csv"))
@@ -77,12 +77,12 @@ deaths_associated_psa <- uncertainty_analysis_baseline(psa   = run,
                                                        data  = read_csv("associated_burden.csv"))
 
 # ------------------------------------------------------------------------------
-# [table 2] Deaths and DALYs associated with and attributable to bacterial antimicrobial resistance
-# globally and by WHO_region, 2019
+# Deaths and DALYs associated with and attributable to 
+# AMR globally and by WHO region, 2019
 
-# vaccine impact by region for deaths attributable to AMR  
-impact_by_region_attributable <- data.table(WHO_region     = character(), 
-                                            averted_burden = numeric(), 
+# vaccine impact by region for deaths attributable to AMR
+impact_by_region_attributable <- data.table(WHO_region     = character(),
+                                            averted_burden = numeric(),
                                             run_id         = numeric())
 
 for(i in 1:run){
@@ -108,14 +108,25 @@ for(i in 1:run){
                                          use.names = TRUE) 
 }
 
-
 Attributable_death_averted <- aggregate_impact_by_region(impact_by_region=impact_by_region_attributable)
 
 Associated_death_averted <- aggregate_impact_by_region(impact_by_region=impact_by_region_associated)
 
 # combine into one table
-Deaths_Averted <- left_join(Associated_death_averted, Attributable_death_averted,
+Death_Averted <- left_join(Associated_death_averted, Attributable_death_averted,
                             by=c("Counts" = "Counts"))
+
+# ------------------------------------------------------------------------------
+# [table 2] Deaths and DALYs associated with and attributable to 
+# bacterial antimicrobial resistance globally and by WHO region, 2019
+
+Death_Averted[,2:7] <- round(Death_Averted[,2:7], 0)
+
+Death_Averted [,"Associated with resistance":= paste(Death_Averted$"50%.x","(",Death_Averted$"2.5%.x","-",Death_Averted$"97.5%.x",")")]
+                                                     
+Death_Averted [,"Attributable to resistance":= paste(Death_Averted$"50%.y","(",Death_Averted$"2.5%.y","-",Death_Averted$"97.5%.y",")")]
+
+Death_Averted [, c("Counts", "Associated with resistance", "Attributable to resistance")]
 
 fwrite (x    = Deaths_Averted,
         file = "Deaths_Averted.csv")
@@ -173,7 +184,7 @@ create_burden_averted_by_dp_graph(Attributable_burden_averted = Attributable_dea
 # bacterial antimicrobial resistance by pathogen, 2019
 
 # create table for avertable deaths attributable to AMR by pathogen
-impact_by_pathogen_attributable <- data.table(Pathogen = character(), 
+impact_by_pathogen_attributable <- data.table(Pathogen             = character(), 
                                               averted_burden       = numeric(), 
                                               run_id               = numeric())
 
