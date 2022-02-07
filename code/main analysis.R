@@ -77,41 +77,6 @@ deaths_associated_psa <- uncertainty_analysis_baseline(psa   = run,
                                                        data  = read_csv("associated_burden.csv"))
 
 # ------------------------------------------------------------------------------
-# [table in appendix] vaccine avertable health burdens associated with and attributable
-# to AMR by WHO region, pathogen, disease presentation, and age group
-
-Associated_death_averted_all <- create_burden_averted_all(deaths_associated_psa)
-
-Associated_death_averted_all <- Associated_death_averted_all %>% 
-  rename("vaccine avertable deaths associated with resistance (median)" = "50%",
-         "vaccine avertable deaths associated with resistance (lower)" = "2.5%",
-         "vaccine avertable deaths associated with resistance (upper)" = "97.5%")
-
-Attributable_death_averted_all <- create_burden_averted_all(deaths_attributable_psa)
-
-Attributable_death_averted_all <- Attributable_death_averted_all %>% 
-  rename("vaccine avertable deaths attributable to resistance (median)" = "50%",
-         "vaccine avertable deaths attributable to resistance (lower)" = "2.5%",
-         "vaccine avertable deaths attributable to resistance (upper)" = "97.5%")
-
-# combine into one table
-death_burden_updated <- cbind(Associated_death_averted_all, Attributable_death_averted_all)
-
-death_burden_updated <- cbind(death_burden_dt, death_burden_updated)
-
-death_burden_updated <- death_burden_updated %>%
-  rename("deaths associated with resistance (median)" =  "Associated_resistant_mean",
-         "deaths associated with resistance (lower)"  =  "Associated_resistant_lower",
-         "deaths associated with resistance (upper)"  =  "Associated_resistant_upper",
-         "deaths attributable to resistance (median)" =  "Attributable_resistance_mean",
-         "deaths attributable to resistance (lower)" =  "Attributable_resistance_lower",
-         "deaths attributable to resistance (upper)" =  "Attributable_resistance_upper")
-
-# save as cvs
-fwrite (x    = death_burden_updated,
-        file = "death_burden_updated.csv")
-
-# ------------------------------------------------------------------------------
 # Deaths and DALYs associated with and attributable to 
 # AMR globally and by WHO region, 2019
 
@@ -233,9 +198,9 @@ for(i in 1:run){
 }
 
 # create table for avertable deaths associated with AMR by pathogen
-impact_by_pathogen_associated <- data.table(Pathogen = character(), 
-                                            averted_burden       = numeric(), 
-                                            run_id               = numeric())
+impact_by_pathogen_associated <- data.table(Pathogen         = character(), 
+                                            averted_burden     = numeric(), 
+                                            run_id           = numeric())
 
 for(i in 1:run){
   dt <- estimate_vaccine_impact(i, data=deaths_associated_psa)

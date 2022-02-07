@@ -211,7 +211,7 @@ estimate_vaccine_impact <- function(i, data){
   }
   
   vaccine_target_age <- vaccine_target_age %>%
-    mutate(v_health_burden =
+    mutate(va_health_burden_age =
             ifelse(Vaccination=="4 week (effective at 6 week)" & Duration=="5" & Age_group == "PN", burden_psa * Efficacy * Coverage * 47/48,
             ifelse(Vaccination=="4 week (effective at 6 week)" & Duration=="5" & Age_group == "1 to 4", burden_psa * Efficacy * Coverage,
             ifelse(Vaccination=="4 week (effective at 6 week)" & Duration=="5" & Age_group == "5 to 9", burden_psa * Efficacy * Coverage * 1/5*5/52,
@@ -249,8 +249,7 @@ estimate_vaccine_impact <- function(i, data){
                                                                                                                                                                                            
             ifelse(Vaccination=="60 or above" & Duration=="1" & Age_group == "60 to 64", burden_psa * Efficacy * Coverage * 1/5,
                    
-                   burden_psa))))))))))))))))))))))))),
-            va_health_burden_age = burden_psa - v_health_burden)
+                   0))))))))))))))))))))))))))
 
 # applying vaccine target pathogen
   vaccine_impact <- vaccine_target_age %>%
@@ -266,32 +265,6 @@ estimate_vaccine_impact <- function(i, data){
 return(vaccine_impact)
 
  } # end of function -- estimate_vaccine_impact
-
-
-# ------------------------------------------------------------------------------
-# [table in appendix] vaccine avertable health burdens associated with and attributable
-# to AMR by WHO region, pathogen, disease presentation, and age group
-
-# vaccine impact on burden attributable to AMR
-
-create_burden_averted_all <- function(data_input){
-  
-  burden_averted_dt <- estimate_vaccine_impact(i = "number", data = data_input)
-  
-  burden_averted_dt$idcode <- rep(1:8514, 200)
-  
-  burden_averted_all <- data.table("50%"=numeric(), "2.5%"=numeric(), "97.5%"=numeric())
-  
-  for(i in 1:8514){
-    dt <- burden_averted_dt %>% filter(idcode == i)
-    dt <- quantile(x = dt$va_health_burden, probs = c (0.5, 0.025, 0.975))
-    dt <- data.table(t(dt))
-    burden_averted_all <- rbindlist (list (burden_averted_all, dt), use.names = FALSE)
-  }
-  
-  return(burden_averted_all)
-  
-}
 
 # ------------------------------------------------------------------------------
 # [table 2] Deaths and DALYs associated with and attributable to bacterial antimicrobial resistance
@@ -351,7 +324,7 @@ ggplot(burden_averted_by_region, aes(x = reorder(Counts, -median_value), y=media
   geom_bar(stat = "identity", position="dodge") +
   scale_fill_manual(values = c("#D4E3FF","#054C70")) +
   labs(x = "WHO region", y = "Vaccine Avertable Deaths") +
-  ylim(0,150000) +
+  ylim(0,80000) +
   geom_errorbar(aes(ymin=lower_value, ymax=upper_value), width=0.25,
                 size=0.5, position=position_dodge(0.9)) +
   theme_classic() +
@@ -410,7 +383,7 @@ create_burden_averted_by_dp_graph <- function(Attributable_burden_averted,
     geom_bar(stat = "identity", position="dodge") +
     scale_fill_manual(values = c("#D4E3FF","#054C70")) +
     labs(x = "Infectious syndrome", y = "Vaccine Avertable Deaths") + 
-    ylim(0,200000) +
+    ylim(0,80000) +
     geom_errorbar(aes(ymin=lower_value, ymax=upper_value), width=0.25,
                   size=0.5, position=position_dodge(0.9)) +
     theme_classic(base_size=9) +
@@ -459,14 +432,14 @@ create_burden_averted_by_pathogen_graph <- function(Attributable_burden_averted,
   burden_averted_by_pathogen <- rbind(Associated_burden_averted, Attributable_burden_averted)
   
   burden_averted_by_pathogen<-  burden_averted_by_pathogen %>% rename("lower_value" = "2.5%",
-                                                                      "median_value"  = "50%",
+                                                                      "median_value" = "50%",
                                                                       "upper_value" = "97.5%")
   
   ggplot(burden_averted_by_pathogen, aes(x = reorder(Counts, -median_value), y=median_value, fill=Resistance)) +
     geom_bar(stat = "identity", position="dodge") +
     scale_fill_manual(values = c("#D4E3FF","#054C70")) +
     labs(x = "Pathogen", y = "Vaccine Avertable Deaths") + 
-    ylim(0,150000) +
+    ylim(0,60000) +
     geom_errorbar(aes(ymin = lower_value, ymax = upper_value), width=0.25,
                   size=0.5, position=position_dodge(0.9)) +
     theme_classic(base_size=7.5) +
@@ -480,3 +453,4 @@ create_burden_averted_by_pathogen_graph <- function(Attributable_burden_averted,
   
 } # end of function -- create_burden_averted_by_pathogen_graph
 # ------------------------------------------------------------------------------
+
