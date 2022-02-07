@@ -1,8 +1,8 @@
-Counts,median(2.5%-97.5%).x,median(2.5%-97.5%).y
-Global,NA ( NA - NA ),NA ( NA - NA )
-Africa,NA ( NA - NA ),NA ( NA - NA )
-Americas,NA ( NA - NA ),NA ( NA - NA )
-Eastern Mediterranean,NA ( NA - NA ),NA ( NA - NA )
-Europe,NA ( NA - NA ),NA ( NA - NA )
-South-East Asia,NA ( NA - NA ),NA ( NA - NA )
-Western Pacific,NA ( NA - NA ),NA ( NA - NA )
+Counts,Associated with resistance,Attributable to resistance
+Global,341583 ( 324891 - 359550 ),81997 ( 76044 - 88970 )
+Africa,128091 ( 116646 - 142164 ),27457 ( 23454 - 31905 )
+Americas,22620 ( 20979 - 25158 ),5772 ( 5107 - 6653 )
+Eastern Mediterranean,44645 ( 40457 - 48709 ),10953 ( 9625 - 12289 )
+Europe,17375 ( 15811 - 19199 ),4671 ( 4215 - 5381 )
+South-East Asia,93689 ( 83769 - 104182 ),23883 ( 20836 - 28536 )
+Western Pacific,34716 ( 31573 - 39577 ),8925 ( 7825 - 10513 )

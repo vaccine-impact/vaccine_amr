@@ -53,7 +53,7 @@ vaccine_profile_dt <- create_vaccine_profile_table(vaccine_profile_file)
 # create separate burden file for health burdens attributable to AMR and associated with AMR  
 
 combined_dt <- create_combined_table(death_burden_dt    = death_burden_dt, 
-                         vaccine_profile_dt = vaccine_profile_dt)
+                                     vaccine_profile_dt = vaccine_profile_dt)
 
 # ------------------------------------------------------------------------------
 # Death trend by pathogen across all age groups
@@ -75,6 +75,41 @@ deaths_attributable_psa <- uncertainty_analysis_baseline(psa   = run,
 
 deaths_associated_psa <- uncertainty_analysis_baseline(psa   = run, 
                                                        data  = read_csv("associated_burden.csv"))
+
+# ------------------------------------------------------------------------------
+# [table in appendix] vaccine avertable health burdens associated with and attributable
+# to AMR by WHO region, pathogen, disease presentation, and age group
+
+Associated_death_averted_all <- create_burden_averted_all(deaths_associated_psa)
+
+Associated_death_averted_all <- Associated_death_averted_all %>% 
+  rename("vaccine avertable deaths associated with resistance (median)" = "50%",
+         "vaccine avertable deaths associated with resistance (lower)" = "2.5%",
+         "vaccine avertable deaths associated with resistance (upper)" = "97.5%")
+
+Attributable_death_averted_all <- create_burden_averted_all(deaths_attributable_psa)
+
+Attributable_death_averted_all <- Attributable_death_averted_all %>% 
+  rename("vaccine avertable deaths attributable to resistance (median)" = "50%",
+         "vaccine avertable deaths attributable to resistance (lower)" = "2.5%",
+         "vaccine avertable deaths attributable to resistance (upper)" = "97.5%")
+
+# combine into one table
+death_burden_updated <- cbind(Associated_death_averted_all, Attributable_death_averted_all)
+
+death_burden_updated <- cbind(death_burden_dt, death_burden_updated)
+
+death_burden_updated <- death_burden_updated %>%
+  rename("deaths associated with resistance (median)" =  "Associated_resistant_mean",
+         "deaths associated with resistance (lower)"  =  "Associated_resistant_lower",
+         "deaths associated with resistance (upper)"  =  "Associated_resistant_upper",
+         "deaths attributable to resistance (median)" =  "Attributable_resistance_mean",
+         "deaths attributable to resistance (lower)" =  "Attributable_resistance_lower",
+         "deaths attributable to resistance (upper)" =  "Attributable_resistance_upper")
+
+# save as cvs
+fwrite (x    = death_burden_updated,
+        file = "death_burden_updated.csv")
 
 # ------------------------------------------------------------------------------
 # Deaths and DALYs associated with and attributable to 
@@ -126,9 +161,9 @@ Death_Averted [,"Associated with resistance":= paste(Death_Averted$"50%.x","(",D
                                                      
 Death_Averted [,"Attributable to resistance":= paste(Death_Averted$"50%.y","(",Death_Averted$"2.5%.y","-",Death_Averted$"97.5%.y",")")]
 
-Death_Averted [, c("Counts", "Associated with resistance", "Attributable to resistance")]
+Death_Averted <- Death_Averted [, c("Counts", "Associated with resistance", "Attributable to resistance")]
 
-fwrite (x    = Deaths_Averted,
+fwrite (x    = Death_Averted,
         file = "Deaths_Averted.csv")
 # ------------------------------------------------------------------------------
 # Figure 1: vaccine avertable attributable to and associated with 
