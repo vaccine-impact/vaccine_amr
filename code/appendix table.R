@@ -1,7 +1,8 @@
 # [table in appendix] vaccine avertable health burdens associated with and attributable
 # to AMR by WHO region, pathogen, disease presentation, and age group
 
-head(combined_dt)
+update_death_burden <- function(combined_dt,
+                                death_burden_dt){
 
 a <- combined_dt[, c("WHO_region", "Disease_presentation", "Age_group", "Pathogen", 
                      "Efficacy", "Coverage", "Duration", "DiseasePresentation", "Vaccination", "Associated_resistant_mean")]
@@ -61,3 +62,5 @@ AMR_burden_data_updated <- AMR_burden_data_updated %>%
 # save as xlsx
 fwrite (x    = AMR_burden_data_updated,
         file = "AMR burden data_updated.csv")
+
+return(AMR_burden_data_updated)}

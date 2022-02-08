@@ -24,6 +24,7 @@ print (paste0 ("start time = ", start_time))
 
 # source functions
 source ("functions.R")
+source ("appendix table.R")
 
 # move to base directory (run code from source directory)
 setwd("~/GitHub/vaccine_amr/data")
@@ -219,6 +220,11 @@ Associated_death_averted_pathogen <- aggregate_impact_by_pathogen(impact_by_path
 # create Figure 3
 create_burden_averted_by_pathogen_graph(Attributable_burden_averted = Attributable_death_averted_pathogen,
                                         Associated_burden_averted   = Associated_death_averted_pathogen)
+# ------------------------------------------------------------------------------
+# [table in appendix] vaccine avertable health burdens associated with and attributable
+# to AMR by WHO region, pathogen, disease presentation, and age group
+AMR_burden_data_updated <- update_death_burden(combined_dt     = combined_dt,
+                                               death_burden_dt = death_burden_dt)
 
 # ------------------------------------------------------------------------------
 # return to source directory

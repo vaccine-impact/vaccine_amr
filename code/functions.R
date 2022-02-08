@@ -89,6 +89,7 @@ create_death_by_pathogen_graph <- function(pathogen){
   
   # save plot
   ggsave (filename = paste(pathogen,"_global.png"),
+          path = "figures",
           width = 15, 
           height = 6, 
           dpi = 600)
@@ -331,6 +332,7 @@ ggplot(burden_averted_by_region, aes(x = reorder(Counts, -median_value), y=media
   theme(legend.position = c(0.9, 0.9))
 
 ggsave (filename = "Figure 1.png",
+        path = "figures",
         width = 15, 
         height = 6, 
         dpi = 600)
@@ -390,6 +392,7 @@ create_burden_averted_by_dp_graph <- function(Attributable_burden_averted,
     theme(legend.position = c(0.9, 0.9))
   
   ggsave (filename = "Figure 2.png",
+          path = "figures",
           width = 15, 
           height = 6, 
           dpi = 600)
@@ -447,6 +450,7 @@ create_burden_averted_by_pathogen_graph <- function(Attributable_burden_averted,
   
   
   ggsave (filename = "Figure 3.png",
+          path = "figures",
           width = 15, 
           height = 6, 
           dpi = 600)
