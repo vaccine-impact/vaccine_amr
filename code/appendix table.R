@@ -2,7 +2,8 @@
 # to AMR by WHO region, pathogen, disease presentation, and age group
 
 update_death_burden <- function(combined_dt,
-                                death_burden_dt){
+                                death_burden_dt,
+                                AMR_burden_data_updated_file){
 
 a <- combined_dt[, c("WHO_region", "Disease_presentation", "Age_group", "Pathogen", 
                      "Efficacy", "Coverage", "Duration", "DiseasePresentation", "Vaccination", "Associated_resistant_mean")]
@@ -61,6 +62,6 @@ AMR_burden_data_updated <- AMR_burden_data_updated %>%
 
 # save as xlsx
 fwrite (x    = AMR_burden_data_updated,
-        file = "AMR burden data_updated.csv")
+        file = AMR_burden_data_updated_file)
 
 return(AMR_burden_data_updated)}

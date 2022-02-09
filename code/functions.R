@@ -8,7 +8,8 @@
 # ------------------------------------------------------------------------------
 # create and clean up the data frame of AMR burden (deaths)
 
-create_death_burden_table <- function(AMR_death_burden){
+create_death_burden_table <- function(AMR_death_burden,
+                                      death_burden_file){
   names(AMR_death_burden) <- c("WHO_region", "Disease_presentation","Age_group","Pathogen", 
                                "Associated_suscetible_mean","Associated_suscetible_lower",
                                "Associated_suscetible_upper","Associated_resistant_mean", 
@@ -33,7 +34,7 @@ create_death_burden_table <- function(AMR_death_burden){
     filter(AMR_death_burden$WHO_region != "unclassified")
   
   fwrite (x    = AMR_death_burden, 
-          file = "AMR_death_burden.csv")
+          file = death_burden_file)
   
   return(AMR_death_burden)
 } # end of function -- create_death_burden_table
@@ -41,7 +42,8 @@ create_death_burden_table <- function(AMR_death_burden){
 # ------------------------------------------------------------------------------
 # create and clean up the data frame of WHO vaccine profile
 
-create_vaccine_profile_table <- function(vaccine_profile){
+create_vaccine_profile_table <- function(vaccine_profile,
+                                         vaccine_profile_file){
   
   vaccine_profile <- vaccine_profile[,c(3, 4, 5, 6, 9, 10,12)]
   
@@ -57,7 +59,7 @@ create_vaccine_profile_table <- function(vaccine_profile){
   vaccine_profile <- vaccine_profile %>% filter(Selection == "Yes")
   
   fwrite (x    = vaccine_profile, 
-          file = "Vaccine_profile.csv")
+          file = vaccine_profile_file)
   
   return(vaccine_profile)
 } # end of function -- create_vaccine_profile_table
@@ -103,7 +105,9 @@ create_death_by_pathogen_graph <- function(pathogen){
 # create combined table: disease burden + vaccine profile
 
 create_combined_table <- function(death_burden_dt, 
-                                  vaccine_profile_dt){
+                                  vaccine_profile_dt,
+                                  attributable_burden_file,
+                                  associated_burden_file){
   
 # create combined table  
   combined_table <- left_join(death_burden_dt, vaccine_profile_dt, by=c("Pathogen" = "Pathogen"))
@@ -119,7 +123,7 @@ create_combined_table <- function(death_burden_dt,
            "burden_upper_value" = "Attributable_resistance_upper")
   
    fwrite (x    = attributable_burden,
-          file = "attributable_burden.csv")
+           file = attributable_burden_file)
   
   associated_burden <- combined_table[, -c(5:7, 11:13)] 
   associated_burden <- associated_burden %>%
@@ -128,7 +132,7 @@ create_combined_table <- function(death_burden_dt,
            "burden_upper_value" = "Associated_resistant_upper")
   
   fwrite (x    = associated_burden,
-          file = "associated_burden.csv")
+          file = associated_burden_file)
   
   return(combined_table)
   
