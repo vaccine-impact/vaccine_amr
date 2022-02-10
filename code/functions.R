@@ -142,7 +142,7 @@ create_combined_table <- function(death_burden_dt,
 # log-normal distribution
 # error in row 505
 uncertainty_analysis_baseline <- function(psa, 
-                                          data){ 
+                                          data){
   
   burden_dt <- data.table(data)
   
@@ -195,7 +195,7 @@ uncertainty_analysis_baseline <- function(psa,
                         rlnorm ( n       = psa,
                                  meanlog = mean (burden_mean_log),
                                  sdlog   = mean (burden_sd_log)),
-                      by = .(WHO_region,Disease_presentation,Age_group,Pathogen) ]
+                      by = .(WHO_region,Disease_presentation,Age_group,Pathogen)]
   
   
   return(vaccine_impact_psa)
@@ -206,7 +206,7 @@ uncertainty_analysis_baseline <- function(psa,
 # applying vaccine impact on vaccine target population
 
 # applying vaccine target age group
-estimate_vaccine_impact <- function(i, data){
+  estimate_vaccine_impact <- function(i, data, burden_psa = burden_psa){
   
   if(is.numeric(i) == TRUE) {
     vaccine_target_age <- data %>%
@@ -217,61 +217,160 @@ estimate_vaccine_impact <- function(i, data){
   
   vaccine_target_age <- vaccine_target_age %>%
     mutate(va_health_burden_age =
-            ifelse(Vaccination=="4 week (effective at 6 week)" & Duration=="5" & Age_group == "PN", burden_psa * Efficacy * Coverage * 47/48,
-            ifelse(Vaccination=="4 week (effective at 6 week)" & Duration=="5" & Age_group == "1 to 4", burden_psa * Efficacy * Coverage,
-            ifelse(Vaccination=="4 week (effective at 6 week)" & Duration=="5" & Age_group == "5 to 9", burden_psa * Efficacy * Coverage * 1/5*5/52,
+            ifelse(Vaccination=="4 week (effective at 6 week)" & Duration=="5" 
+                   & Age_group == "PN", 
+                   burden_psa * Efficacy * Coverage * 47/48,
+            ifelse(Vaccination=="4 week (effective at 6 week)" & Duration=="5" 
+                   & Age_group == "1 to 4", 
+                   burden_psa * Efficacy * Coverage,
+            ifelse(Vaccination=="4 week (effective at 6 week)" & Duration=="5"
+                   & Age_group == "5 to 9", 
+                   burden_psa * Efficacy * Coverage * 1/5*5/52,
                                         
-            ifelse(Vaccination=="4 week (effective at 6 week)" & Duration=="2" & Age_group == "PN" & Pathogen != "Streptococcus pneumoniae", burden_psa * Efficacy * Coverage * 47/48,
-            ifelse(Vaccination=="4 week (effective at 6 week)" & Duration=="2" & Age_group == "1 to 4" & Pathogen != "Streptococcus pneumoniae", burden_psa * Efficacy * Coverage * 1/4*5/52,
+            ifelse(Vaccination=="4 week (effective at 6 week)" & Duration=="2" 
+                   & Age_group == "PN"& Pathogen != "Streptococcus pneumoniae", 
+                   burden_psa * Efficacy * Coverage * 47/48,
+            ifelse(Vaccination=="4 week (effective at 6 week)" & Duration=="2" 
+                   & Age_group == "1 to 4" & Pathogen != "Streptococcus pneumoniae", 
+                   burden_psa * Efficacy * Coverage * 1/4*5/52,
                                                       
-            ifelse(Vaccination=="4 week (effective at 6 week)" & Duration=="2" & Age_group == "PN" & Pathogen == "Streptococcus pneumoniae" & Disease_presentation == "LRI and thorax infections", burden_psa * 0.5 * Coverage * 47/48,
-            ifelse(Vaccination=="4 week (effective at 6 week)" & Duration=="2" & Age_group == "1 to 4" & Pathogen == "Streptococcus pneumoniae" & Disease_presentation == "LRI and thorax infections", burden_psa * 0.5 * Coverage * 1/4*5/52,
+            ifelse(Vaccination=="4 week (effective at 6 week)" & Duration=="2" 
+                   & Age_group == "PN" & Pathogen == "Streptococcus pneumoniae" 
+                   & Disease_presentation == "LRI and thorax infections", 
+                   burden_psa * 0.5 * Coverage * 47/48,
+            ifelse(Vaccination=="4 week (effective at 6 week)" & Duration=="2" 
+                   & Age_group == "1 to 4" & Pathogen == "Streptococcus pneumoniae" 
+                   & Disease_presentation == "LRI and thorax infections", 
+                   burden_psa * 0.5 * Coverage * 1/4*5/52,
                                                                     
-            ifelse(Vaccination=="4 week (effective at 6 week)" & Duration=="2" & Age_group == "PN" & Pathogen == "Streptococcus pneumoniae" & Disease_presentation != "LRI and thorax infections", burden_psa * Efficacy * Coverage * 47/48,
-            ifelse(Vaccination=="4 week (effective at 6 week)" & Duration=="2" & Age_group == "1 to 4" & Pathogen == "Streptococcus pneumoniae" & Disease_presentation != "LRI and thorax infections", burden_psa * Efficacy * Coverage * 1/4*5/52,
+            ifelse(Vaccination=="4 week (effective at 6 week)" & Duration=="2" 
+                   & Age_group == "PN" & Pathogen == "Streptococcus pneumoniae" 
+                   & Disease_presentation != "LRI and thorax infections", 
+                   burden_psa * Efficacy * Coverage * 47/48,
+            ifelse(Vaccination=="4 week (effective at 6 week)" & Duration=="2" 
+                   & Age_group == "1 to 4" & Pathogen == "Streptococcus pneumoniae" 
+                   & Disease_presentation != "LRI and thorax infections", 
+                   burden_psa * Efficacy * Coverage * 1/4*5/52,
                                                                                   
                                                                                   
-            ifelse(Vaccination=="4 week (effective at 6 week), 60 or above" & Duration=="2" & Age_group == "PN", burden_psa * Efficacy * Coverage * 47/48,
-            ifelse(Vaccination=="4 week (effective at 6 week), 60 or above" & Duration=="2" & Age_group == "1 to 4", burden_psa * Efficacy * Coverage * 1/4*5/52,
-            ifelse(Vaccination=="4 week (effective at 6 week), 60 or above" & Duration=="2" & Age_group == "60 to 64", burden_psa * Efficacy * Coverage * 2/5,
+            ifelse(Vaccination=="4 week (effective at 6 week), 60 or above" 
+                   & Duration=="2" & Age_group == "PN", 
+                   burden_psa * Efficacy * Coverage * 47/48,
+            ifelse(Vaccination=="4 week (effective at 6 week), 60 or above" 
+                   & Duration=="2" & Age_group == "1 to 4", 
+                   burden_psa * Efficacy * Coverage * 1/4*5/52,
+            ifelse(Vaccination=="4 week (effective at 6 week), 60 or above" 
+                   & Duration=="2" & Age_group == "60 to 64", 
+                   burden_psa * Efficacy * Coverage * 2/5,
                                                                                                        
-            ifelse(Vaccination=="12 weeks" & Duration=="20" & Age_group == "PN", burden_psa * Efficacy * Coverage * 39/48,
-            ifelse(Vaccination=="12 weeks" & Duration=="20" & Age_group == "1 to 4", burden_psa * Efficacy * Coverage,
-            ifelse(Vaccination=="12 weeks" & Duration=="20" & Age_group == "5 to 9", burden_psa * Efficacy * Coverage,
-            ifelse(Vaccination=="12 weeks" & Duration=="20" & Age_group == "10 to 14", burden_psa * Efficacy * Coverage,
-            ifelse(Vaccination=="12 weeks" & Duration=="20" & Age_group == "15 to 19", burden_psa * Efficacy * Coverage,
-            ifelse(Vaccination=="12 weeks" & Duration=="20" & Age_group == "20 to 24", burden_psa * Efficacy * Coverage * 1/5 * 13/52,
+            ifelse(Vaccination=="12 weeks" & Duration=="20" & Age_group == "PN", 
+                   burden_psa * Efficacy * Coverage * 39/48,
+            ifelse(Vaccination=="12 weeks" & Duration=="20" & Age_group == "1 to 4", 
+                   burden_psa * Efficacy * Coverage,
+            ifelse(Vaccination=="12 weeks" & Duration=="20" & Age_group == "5 to 9", 
+                   burden_psa * Efficacy * Coverage,
+            ifelse(Vaccination=="12 weeks" & Duration=="20" & Age_group == "10 to 14", 
+                   burden_psa * Efficacy * Coverage,
+            ifelse(Vaccination=="12 weeks" & Duration=="20" & Age_group == "15 to 19", 
+                   burden_psa * Efficacy * Coverage,
+            ifelse(Vaccination=="12 weeks" & Duration=="20" & Age_group == "20 to 24", 
+                   burden_psa * Efficacy * Coverage * 1/5 * 13/52,
                                                                                                                                                  
-            ifelse(Vaccination=="10 or above" & Duration=="10" & Age_group == "10 to 14", burden_psa * Efficacy * Coverage,
-            ifelse(Vaccination=="10 or above" & Duration=="10" & Age_group == "15 to 19", burden_psa * Efficacy * Coverage,
+            ifelse(Vaccination=="10 or above" & Duration=="10" & Age_group == "10 to 14", 
+                   burden_psa * Efficacy * Coverage,
+            ifelse(Vaccination=="10 or above" & Duration=="10" & Age_group == "15 to 19", 
+                   burden_psa * Efficacy * Coverage,
                                                                                                                                                                
-            ifelse(Vaccination=="60 or above" & Duration=="10" & Age_group == "60 to 64", burden_psa * Efficacy * Coverage,
-            ifelse(Vaccination=="60 or above" & Duration=="10" & Age_group == "65 to 69", burden_psa * Efficacy * Coverage,
+            ifelse(Vaccination=="60 or above" & Duration=="10" & Age_group == "60 to 64", 
+                   burden_psa * Efficacy * Coverage,
+            ifelse(Vaccination=="60 or above" & Duration=="10" & Age_group == "65 to 69", 
+                   burden_psa * Efficacy * Coverage,
                                                                                                                                                                              
-            ifelse(Vaccination=="60 or above" & Duration=="5" & Age_group == "60 to 64", burden_psa * Efficacy * Coverage,
+            ifelse(Vaccination=="60 or above" & Duration=="5" & Age_group == "60 to 64", 
+                   burden_psa * Efficacy * Coverage,
                                                                                                                                                                                     
-            ifelse(Vaccination=="60 or above" & Duration=="2" & Age_group == "60 to 64", burden_psa * Efficacy * Coverage * 2/5,
+            ifelse(Vaccination=="60 or above" & Duration=="2" & Age_group == "60 to 64", 
+                   burden_psa * Efficacy * Coverage * 2/5,
                                                                                                                                                                                            
-            ifelse(Vaccination=="60 or above" & Duration=="1" & Age_group == "60 to 64", burden_psa * Efficacy * Coverage * 1/5,
+            ifelse(Vaccination=="60 or above" & Duration=="1" & Age_group == "60 to 64", 
+                   burden_psa * Efficacy * Coverage * 1/5,
                    
                    0))))))))))))))))))))))))))
 
-# applying vaccine target pathogen
-  vaccine_impact <- vaccine_target_age %>%
-    mutate(va_health_burden =
-            ifelse(DiseasePresentation  == "All" | DiseasePresentation  == "All (50% for LRI and throx infections)", va_health_burden_age,
-            ifelse(DiseasePresentation  == "BSI" & Disease_presentation == "BSI", va_health_burden_age, 
-            ifelse(DiseasePresentation  == "Diarrhoea" & Disease_presentation == "Diarrhoea", va_health_burden_age,
-            ifelse(DiseasePresentation  == "UTI" & Disease_presentation == "UTI", va_health_burden_age,
-            ifelse(DiseasePresentation  == "BSI, LRI and thorax infections" & 
-                  (Disease_presentation == "BSI" | Disease_presentation =="LRI and thorax infections"), va_health_burden_age,
-                    0))))))
+  # applying vaccine target pathogen
+  vaccine_impact <- data.table(vaccine_target_age)
+  vaccine_impact[, va_health_burden := 0]
+  vaccine_impact[DiseasePresentation  == "All" | DiseasePresentation  == "All (50% for LRI and throx infections)" |
+                (DiseasePresentation  == "BSI" & Disease_presentation == "BSI") |
+                (DiseasePresentation  == "Diarrhoea" & Disease_presentation == "Diarrhoea") |  
+                (DiseasePresentation  == "UTI" & Disease_presentation == "UTI") |
+                (DiseasePresentation  == "BSI, LRI and thorax infections" & 
+                (Disease_presentation == "BSI" | Disease_presentation == "LRI and thorax infections")),
+                 va_health_burden := va_health_burden_age]
   
-return(vaccine_impact)
+  return(vaccine_impact)
 
  } # end of function -- estimate_vaccine_impact
 
 # ------------------------------------------------------------------------------
+
+  
+  
+#-------------------------------------------------------------------------------
+# [table in appendix] vaccine avertable health burdens associated with and attributable
+# to AMR by WHO region, pathogen, disease presentation, and age group
+  
+  update_death_burden <- function(combined_dt,
+                                  death_burden_dt,
+                                  AMR_burden_data_updated_file){
+    
+  associated_mean     <- estimate_vaccine_impact(i = "ANY", data = combined_dt, 
+                                                 burden_psa = combined_dt$Associated_resistant_mean)[,va_health_burden]
+    
+    
+  associated_lower    <- estimate_vaccine_impact(i = "ANY", data = combined_dt, 
+                                                 burden_psa = combined_dt$Associated_resistant_lower)[,va_health_burden]
+    
+  associated_upper    <- estimate_vaccine_impact(i = "ANY", data = combined_dt,
+                                                 burden_psa = combined_dt$Associated_resistant_upper)[,va_health_burden]
+    
+    
+  attributable_mean   <- estimate_vaccine_impact(i = "ANY", data = combined_dt, 
+                                                 burden_psa = combined_dt$Attributable_resistance_mean)[,va_health_burden]
+    
+    
+  attributable_lower  <- estimate_vaccine_impact(i = "ANY", data = combined_dt, 
+                                                 burden_psa = combined_dt$Attributable_resistance_lower)[,va_health_burden]
+    
+    
+  attributable_upper  <- estimate_vaccine_impact(i = "ANY", data = combined_dt, 
+                                                 burden_psa = combined_dt$Attributable_resistance_upper)[,va_health_burden]
+    
+  x <- data.frame("vaccine_avertable_deaths_associated_with_resistance (mean)"   =  associated_mean,
+                  "vaccine_avertable_deaths_associated_with_resistance (lower)"  =  associated_lower,
+                  "vaccine_avertable_deaths_associated_with_resistance (upper)"  =  associated_upper,
+                  "vaccine_avertable_deaths_attributable_to_resistance (mean)"   =  attributable_mean,
+                  "vaccine_avertable_deaths_attributable_to_resistance (lower)"  =  attributable_lower,
+                  "vaccine_avertable_deaths_attributable_to_resistance (upper)"  =  attributable_upper)
+    
+  AMR_burden_data_updated <- cbind(death_burden_dt, x)
+    
+  AMR_burden_data_updated <- AMR_burden_data_updated[, -c(5:7)]
+    
+  AMR_burden_data_updated <- AMR_burden_data_updated %>%
+    rename("deaths associated with resistance (mean)"   =  "Associated_resistant_mean",
+           "deaths associated with resistance (lower)"  =  "Associated_resistant_lower",
+           "deaths associated with resistance (upper)"  =  "Associated_resistant_upper",
+           "deaths attributable to resistance (mean)"   =  "Attributable_resistance_mean",
+           "deaths attributable to resistance (lower)"  =  "Attributable_resistance_lower",
+           "deaths attributable to resistance (upper)"  =  "Attributable_resistance_upper")
+    
+    # save as xlsx
+  fwrite (x    = AMR_burden_data_updated,
+          file = AMR_burden_data_updated_file)
+    
+ return(AMR_burden_data_updated)}
+#-------------------------------------------------------------------------------
 # [table 2] Deaths and DALYs associated with and attributable to bacterial antimicrobial resistance
 # globally and by WHO_region, 2019
 

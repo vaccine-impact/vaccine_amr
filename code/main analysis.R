@@ -126,7 +126,14 @@ Death_Averted <- left_join(Associated_death_averted, Attributable_death_averted,
 # [table 2] Deaths and DALYs associated with and attributable to 
 # bacterial antimicrobial resistance globally and by WHO region, 2019
 
-Death_Averted[,2:7] <- round(Death_Averted[,2:7], 0)
+library(formattable)
+
+Death_Averted$`2.5%.x`  <- comma(Death_Averted$`2.5%.x`, format = "d")
+Death_Averted$`50%.x`   <- comma(Death_Averted$`50%.x`, format = "d")
+Death_Averted$`97.5%.x` <- comma(Death_Averted$`97.5%.x`, format = "d")
+Death_Averted$`2.5%.y`  <- comma(Death_Averted$`2.5%.y`, format = "d")
+Death_Averted$`50%.y`   <- comma(Death_Averted$`50%.y`, format = "d")
+Death_Averted$`97.5%.y` <- comma(Death_Averted$`97.5%.y`, format = "d")
 
 Death_Averted [,"Associated with resistance":= paste(Death_Averted$"50%.x","(",Death_Averted$"2.5%.x","-",Death_Averted$"97.5%.x",")")]
                                                      
@@ -183,7 +190,6 @@ Associated_death_averted_dp <- aggregate_impact_by_dp(impact_by_dp=impact_by_dp_
 # create Figure 2
 create_burden_averted_by_dp_graph(Attributable_burden_averted = Attributable_death_averted_dp,
                                   Associated_burden_averted   = Associated_death_averted_dp)
-
 
 # ------------------------------------------------------------------------------
 # Figure 3: Global vaccine avertable deaths (counts) attributable to and associated with 
