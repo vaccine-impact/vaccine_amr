@@ -3,7 +3,6 @@
 #
 # analysis code to estimate vaccine averted AMR health burden
 # ------------------------------------------------------------------------------
-
 # load libraries
 library (readr)
 library (readxl)
@@ -14,6 +13,7 @@ library (tidyverse)
 library (data.table)
 library (ggplot2)
 library (rriskDistributions)
+library (formattable)
 
 # remove all objects from workspace
 rm (list = ls ())
@@ -24,7 +24,6 @@ print (paste0 ("start time = ", start_time))
 
 # source functions
 source ("functions.R")
-source ("appendix table.R")
 
 # move to base directory (run code from source directory)
 source_wd <- getwd ()
@@ -56,16 +55,16 @@ vaccine_profile_dt <- create_vaccine_profile_table(vaccine_profile = vaccine_pro
 # create combined table: vaccine profile + disease burden
 # create separate burden file for health burdens attributable to AMR and associated with AMR  
 
-combined_dt <- create_combined_table(death_burden_dt    = death_burden_dt, 
-                                     vaccine_profile_dt = vaccine_profile_dt,
+combined_dt <- create_combined_table(death_burden_dt          = death_burden_dt, 
+                                     vaccine_profile_dt       = vaccine_profile_dt,
                                      attributable_burden_file = file.path("tables", "attributable_burden.csv"),
-                                     associated_burden_file = file.path("tables", "associated_burden.csv"))
+                                     associated_burden_file   = file.path("tables", "associated_burden.csv"))
 
 # ------------------------------------------------------------------------------
 # Death trend by pathogen across all age groups
 # the outputs were used to decide the age of vaccination
 
-pathogenlist <- unique(death_burden_dt$Pathogen) 
+pathogenlist <- unique(death_burden_dt$Pathogen)
 
 lapply(pathogenlist, create_death_by_pathogen_graph)
 
@@ -116,23 +115,21 @@ for(i in 1:run){
 
 Attributable_death_averted <- aggregate_impact_by_region(impact_by_region=impact_by_region_attributable)
 
-Associated_death_averted <- aggregate_impact_by_region(impact_by_region=impact_by_region_associated)
+Associated_death_averted   <- aggregate_impact_by_region(impact_by_region=impact_by_region_associated)
 
 # combine into one table
 Death_Averted <- left_join(Associated_death_averted, Attributable_death_averted,
-                            by=c("Counts" = "Counts"))
+                           by=c("Counts" = "Counts"))
 
 # ------------------------------------------------------------------------------
 # [table 2] Deaths and DALYs associated with and attributable to 
 # bacterial antimicrobial resistance globally and by WHO region, 2019
 
-library(formattable)
-
-Death_Averted$`2.5%.x`  <- comma(Death_Averted$`2.5%.x`, format = "d")
-Death_Averted$`50%.x`   <- comma(Death_Averted$`50%.x`, format = "d")
+Death_Averted$`2.5%.x`  <- comma(Death_Averted$`2.5%.x`,  format = "d")
+Death_Averted$`50%.x`   <- comma(Death_Averted$`50%.x`,   format = "d")
 Death_Averted$`97.5%.x` <- comma(Death_Averted$`97.5%.x`, format = "d")
-Death_Averted$`2.5%.y`  <- comma(Death_Averted$`2.5%.y`, format = "d")
-Death_Averted$`50%.y`   <- comma(Death_Averted$`50%.y`, format = "d")
+Death_Averted$`2.5%.y`  <- comma(Death_Averted$`2.5%.y`,  format = "d")
+Death_Averted$`50%.y`   <- comma(Death_Averted$`50%.y`,   format = "d")
 Death_Averted$`97.5%.y` <- comma(Death_Averted$`97.5%.y`, format = "d")
 
 Death_Averted [,"Associated with resistance":= paste(Death_Averted$"50%.x","(",Death_Averted$"2.5%.x","-",Death_Averted$"97.5%.x",")")]
@@ -140,6 +137,8 @@ Death_Averted [,"Associated with resistance":= paste(Death_Averted$"50%.x","(",D
 Death_Averted [,"Attributable to resistance":= paste(Death_Averted$"50%.y","(",Death_Averted$"2.5%.y","-",Death_Averted$"97.5%.y",")")]
 
 Death_Averted <- Death_Averted [, c("Counts", "Associated with resistance", "Attributable to resistance")]
+
+Death_Averted <- Death_Averted [c(2,3,4,5,6,7,1),]
 
 fwrite (x    = Death_Averted,
         file = file.path ("tables", "Deaths_Averted.csv"))
@@ -179,7 +178,7 @@ for(i in 1:run){
     group_by(Disease_presentation, run_id) %>%
     summarise(averted_burden=sum(va_health_burden), .groups = 'drop')
     impact_by_dp_associated <- rbindlist (list (impact_by_dp_associated, dt),
-                                            use.names = TRUE) 
+                                            use.names = TRUE)
 }
 
 # aggregate the data

@@ -252,7 +252,6 @@ uncertainty_analysis_baseline <- function(psa,
                    & Disease_presentation != "LRI and thorax infections", 
                    burden_psa * Efficacy * Coverage * 1/4*5/52,
                                                                                   
-                                                                                  
             ifelse(Vaccination=="4 week (effective at 6 week), 60 or above" 
                    & Duration=="2" & Age_group == "PN", 
                    burden_psa * Efficacy * Coverage * 47/48,
@@ -262,20 +261,39 @@ uncertainty_analysis_baseline <- function(psa,
             ifelse(Vaccination=="4 week (effective at 6 week), 60 or above" 
                    & Duration=="2" & Age_group == "60 to 64", 
                    burden_psa * Efficacy * Coverage * 2/5,
-                                                                                                       
-            ifelse(Vaccination=="12 weeks" & Duration=="20" & Age_group == "PN", 
-                   burden_psa * Efficacy * Coverage * 39/48,
-            ifelse(Vaccination=="12 weeks" & Duration=="20" & Age_group == "1 to 4", 
+                              
+                                                                                            
+            ifelse(Vaccination=="14 week (effective at 16 week)" & Duration=="5"
+                   & Age_group == "PN",
+                   burden_psa * Efficacy * Coverage * 37/48,
+            ifelse(Vaccination=="14 week (effective at 16 week)" & Duration=="5" 
+                   & Age_group == "1 to 4", 
                    burden_psa * Efficacy * Coverage,
-            ifelse(Vaccination=="12 weeks" & Duration=="20" & Age_group == "5 to 9", 
+            ifelse(Vaccination=="14 week (effective at 16 week)" & Duration=="5" 
+                   & Age_group == "5 to 9", 
+                   burden_psa * Efficacy * Coverage * 1/5 * 15/52,
+                   
+                   
+            ifelse(Vaccination=="9 month" & Duration=="20"
+                   & Age_group == "PN",
+                   burden_psa * Efficacy * Coverage * 14/48,
+            ifelse(Vaccination=="9 month" & Duration=="20" 
+                   & Age_group == "1 to 4", 
                    burden_psa * Efficacy * Coverage,
-            ifelse(Vaccination=="12 weeks" & Duration=="20" & Age_group == "10 to 14", 
+            ifelse(Vaccination=="9 month" & Duration=="20" 
+                   & Age_group == "5 to 9", 
                    burden_psa * Efficacy * Coverage,
-            ifelse(Vaccination=="12 weeks" & Duration=="20" & Age_group == "15 to 19", 
+            ifelse(Vaccination=="9 month" & Duration=="20" 
+                   & Age_group == "10 to 14", 
                    burden_psa * Efficacy * Coverage,
-            ifelse(Vaccination=="12 weeks" & Duration=="20" & Age_group == "20 to 24", 
-                   burden_psa * Efficacy * Coverage * 1/5 * 13/52,
-                                                                                                                                                 
+            ifelse(Vaccination=="9 month" & Duration=="20" 
+                   & Age_group == "15 to 19", 
+                   burden_psa * Efficacy * Coverage,
+            ifelse(Vaccination=="9 month" & Duration=="20" 
+                   & Age_group == "20 to 24", 
+                   burden_psa * Efficacy * Coverage * 1/5 * 38/52,
+                                                             
+                                                                                                                                                                    
             ifelse(Vaccination=="10 or above" & Duration=="10" & Age_group == "10 to 14", 
                    burden_psa * Efficacy * Coverage,
             ifelse(Vaccination=="10 or above" & Duration=="10" & Age_group == "15 to 19", 
@@ -295,7 +313,7 @@ uncertainty_analysis_baseline <- function(psa,
             ifelse(Vaccination=="60 or above" & Duration=="1" & Age_group == "60 to 64", 
                    burden_psa * Efficacy * Coverage * 1/5,
                    
-                   0))))))))))))))))))))))))))
+                   0)))))))))))))))))))))))))))))
 
   # applying vaccine target pathogen
   vaccine_impact <- data.table(vaccine_target_age)
@@ -346,12 +364,12 @@ uncertainty_analysis_baseline <- function(psa,
   attributable_upper  <- estimate_vaccine_impact(i = "ANY", data = combined_dt, 
                                                  burden_psa = combined_dt$Attributable_resistance_upper)[,va_health_burden]
     
-  x <- data.frame("vaccine_avertable_deaths_associated_with_resistance (mean)"   =  associated_mean,
-                  "vaccine_avertable_deaths_associated_with_resistance (lower)"  =  associated_lower,
-                  "vaccine_avertable_deaths_associated_with_resistance (upper)"  =  associated_upper,
-                  "vaccine_avertable_deaths_attributable_to_resistance (mean)"   =  attributable_mean,
-                  "vaccine_avertable_deaths_attributable_to_resistance (lower)"  =  attributable_lower,
-                  "vaccine_avertable_deaths_attributable_to_resistance (upper)"  =  attributable_upper)
+  x <- data.frame("vaccine_avertable_deaths_associated_with_resistance_(mean)"   =  associated_mean,
+                  "vaccine_avertable_deaths_associated_with_resistance_(lower)"  =  associated_lower,
+                  "vaccine_avertable_deaths_associated_with_resistance_(upper)"  =  associated_upper,
+                  "vaccine_avertable_deaths_attributable_to_resistance_(mean)"   =  attributable_mean,
+                  "vaccine_avertable_deaths_attributable_to_resistance_(lower)"  =  attributable_lower,
+                  "vaccine_avertable_deaths_attributable_to_resistance_(upper)"  =  attributable_upper)
     
   AMR_burden_data_updated <- cbind(death_burden_dt, x)
     
@@ -408,10 +426,10 @@ return(Death_Averted)} # end of function -- aggregate_impact_by_region
 # ------------------------------------------------------------------------------
 # Figure 1 -- Create vaccine averted burden by region
 
-create_burden_averted_by_region_graph <- function(Attributable_burden_averted,
-                                                  Associated_burden_averted){
+create_burden_averted_by_region_graph  <- function(Attributable_burden_averted,
+                                                   Associated_burden_averted){
 
-Associated_burden_averted$Resistance <- "Associated with resistance" 
+Associated_burden_averted$Resistance   <- "Associated with resistance" 
 
 Attributable_burden_averted$Resistance <- "Attributable to resistance" 
   
@@ -530,9 +548,9 @@ aggregate_impact_by_pathogen <- function(impact_by_pathogen){
 create_burden_averted_by_pathogen_graph <- function(Attributable_burden_averted,
                                                     Associated_burden_averted){
   
-  Associated_burden_averted$Resistance <- "Associated with resistance" 
+  Associated_burden_averted$Resistance    <- "Associated with resistance" 
   
-  Attributable_burden_averted$Resistance <- "Attributable to resistance" 
+  Attributable_burden_averted$Resistance  <- "Attributable to resistance" 
   
   
   burden_averted_by_pathogen <- rbind(Associated_burden_averted, Attributable_burden_averted)
