@@ -23,11 +23,6 @@ create_burden_table <- function(AMR_burden,
   AMR_burden[,5:13] <- lapply(AMR_burden[,5:13], function(x) gsub(",", "", x))
   
   AMR_burden[,5:13] <- lapply(AMR_burden[,5:13], as.numeric)
-  
-#  AMR_burden <- AMR_burden %>% arrange(WHO_region, Pathogen, Disease_presentation)
-  
-#  AMR_burden$Age_group <- factor(AMR_burden$Age_group, 
-#                          levels=c(as.vector(unlist(AMR_burden[1:23,"Age_group"]))), order=T)
 
   AMR_burden$Age_group <- factor(AMR_burden$Age_group, 
                           levels=unique(AMR_burden$Age_group), order=T)
@@ -146,6 +141,121 @@ create_combined_table <- function(death_burden_dt,
   return(combined_table)
   
 } # end of function -- create_combined_table
+
+# ------------------------------------------------------------------------------
+
+
+
+# ------------------------------------------------------------------------------
+# 2019 vaccine coverage for existing vaccine: Hib vaccine, PCV
+existing_vaccine_coverage <- function(hib_coverage_file, pcv_coverage_file) {
+  
+  
+  # "WPP2019_INT_F03_1_POPULATION_BY_AGE_ANNUAL_BOTH_SEXES.xlsx" data cleaning
+  population_file <- read_excel("data/WPP2019 population by age.xlsx", 
+                                col_names = FALSE)
+  
+  names(population_file) <- lapply(population_file[13, ], as.character)
+  population_file <- population_file %>% filter(Type=="Country/Area")
+  
+  # Removing duplicates (year of 2020)
+  population_file <- population_file[population_file$`Reference date (as of 1 July)` == "2019", 
+                                     c("Region, subregion, country or area *", 
+                                       "Reference date (as of 1 July)", "0")]
+  
+  # ----------------------------------------------------------------------------
+  # "WPP2019_F01_LOCATIONS.XLSX" data cleaning
+  WPP_iso3 <- read_excel("data/WPP2019 locations.XLSX", 
+                         col_names = FALSE)
+  names(WPP_iso3) <- lapply(WPP_iso3[13, ], as.character)
+  WPP_iso3 <- WPP_iso3[-c(1:13),c(2,5)]
+  
+  # ----------------------------------------------------------------------------
+  # adding ISO3 to WPP2019_POPULATION data frame
+  population_iso3 <- left_join(population_file, WPP_iso3, 
+                               by=c("Region, subregion, country or area *"
+                                    = "Region, subregion, country or area*"))
+  
+  # changing population to the actual value
+  population_iso3$`0`<- as.numeric(population_iso3$`0`) * 1000
+  
+  population_iso3 <- rename(population_iso3, "Population" = "0")
+  
+  # ----------------------------------------------------------------------------
+  # Import WUENIC vaccine coverage data for HIB vaccine and PCV
+  WUENIC <- read_excel("data/WUENIC.xlsx", sheet = "WUENIC_input_to_PDF")
+  WUENIC <- WUENIC[, c("ISOCountryCode", "Year", "Vaccine", "WUENIC")]
+  
+  WUENIC <- WUENIC %>% filter(Year == "2019")
+  
+  WUENIC$"ISOCountryCode" = toupper(WUENIC$"ISOCountryCode")
+  
+  WUENIC_hib <- WUENIC %>% filter(Year == "2019" & Vaccine == "hib3")
+  WUENIC_pcv <- WUENIC %>% filter(Year == "2019" & Vaccine == "pcv3")
+  
+  # ----------------------------------------------------------------------------
+  # Import WHO region classification data
+  country_region <- read_csv("data/country_income_region_classification.csv")
+  country_region <- country_region[, c("iso3_code", "WHO_region")]
+  
+  # ----------------------------------------------------------------------------
+  # Combine population data with current vaccine coverage data
+  WUENIC_WPP_hib <- left_join(WUENIC_hib, population_iso3, by=c("ISOCountryCode" = "ISO3 Alpha-code"))
+  WUENIC_WPP_pcv <- left_join(WUENIC_pcv, population_iso3, by=c("ISOCountryCode" = "ISO3 Alpha-code"))
+  
+  # Add region
+  WUENIC_WPP_hib <- left_join(WUENIC_WPP_hib, country_region, by=c("ISOCountryCode" = "iso3_code"))
+  WUENIC_WPP_pcv <- left_join(WUENIC_WPP_pcv, country_region, by=c("ISOCountryCode" = "iso3_code"))
+  
+  # Remove NA
+  # population data is missiong for some countries / Palestine is not a member state of WHO
+  WUENIC_WPP_hib <- na.omit(WUENIC_WPP_hib)
+  WUENIC_WPP_pcv <- na.omit(WUENIC_WPP_pcv)
+  
+  # ----------------------------------------------------------------------------
+  # Estimate regional coverage - Hib vaccine
+  WUENIC_WPP_hib$vaccinated_pop <- WUENIC_WPP_hib$WUENIC * 1/100 * WUENIC_WPP_hib$Population 
+  
+  hib_vaccinated <- WUENIC_WPP_hib %>% 
+    group_by(WHO_region) %>%
+    summarise(vaccinated_pop = sum(vaccinated_pop))
+  
+  hib_total_pop <- WUENIC_WPP_hib %>% 
+    group_by(WHO_region) %>%
+    summarise(total_pop = sum(Population))
+  
+  hib_vaccinated$total_pop <- hib_total_pop$total_pop
+  
+  hib_vaccinated$vaccine_coverage <- hib_vaccinated$vaccinated_pop / hib_vaccinated$total_pop
+  
+  # Estimate regional coverage - PCV
+  WUENIC_WPP_pcv$vaccinated_pop <- WUENIC_WPP_pcv$WUENIC * 1/100 * WUENIC_WPP_pcv$Population 
+  
+  pcv_vaccinated <- WUENIC_WPP_pcv %>% 
+    group_by(WHO_region) %>%
+    summarise(vaccinated_pop = sum(vaccinated_pop))
+  
+  pcv_total_pop <- WUENIC_WPP_pcv %>% 
+    group_by(WHO_region) %>%
+    summarise(total_pop = sum(Population))
+  
+  pcv_vaccinated$total_pop <- pcv_total_pop$total_pop
+  
+  pcv_vaccinated$vaccine_coverage <- pcv_vaccinated$vaccinated_pop / pcv_vaccinated$total_pop
+  
+  # save regional vaccine coverage for existing vaccine
+  fwrite (x    = hib_vaccinated, 
+          file = hib_coverage_file)
+  
+  fwrite (x    = pcv_vaccinated, 
+          file = pcv_coverage_file)
+  
+  return ()
+  
+} # end of function -- existing_vaccine_coverage
+# ------------------------------------------------------------------------------
+
+
 
 # ------------------------------------------------------------------------------
 # log-normal distribution

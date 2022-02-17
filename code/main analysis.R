@@ -60,7 +60,6 @@ daly_burden_dt <- create_burden_table(AMR_burden = daly_burden_dt,
 daly_burden_dt <- daly_burden_dt[!(daly_burden_dt$Pathogen == "Neisseria gonorrhoeae"),]
 
 # ------------------------------------------------------------------------------
-
 # create data table of vaccine profile
 vaccine_profile_file <- read_excel(file.path("data", "Vaccine profile for IHME burden.xlsx"), 
                                    sheet = "Vaccine profile assumptions")
@@ -84,7 +83,12 @@ daly_combined_dt <- create_combined_table(death_burden_dt     = daly_burden_dt,
                                      attributable_burden_file = file.path("tables", "daly_attributable_burden.csv"),
                                      associated_burden_file   = file.path("tables", "daly_associated_burden.csv"))
 # ------------------------------------------------------------------------------
+# 2019 vaccine coverage for existing vaccines: HIB vaccine, PCV
+ existing_vaccine_coverage (hib_coverage_file = file.path("tables", "hib coverage.csv"),
+                            pcv_coverage_file = file.path("tables", "pcv coverage.csv"))
 
+
+# Estimate pre-vaccine burden for existing vaccines: HIB vaccine, PCV
 
 
 # ------------------------------------------------------------------------------
