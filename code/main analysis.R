@@ -37,6 +37,13 @@ setwd ("../")
 # year: 2019
 # sex: both
 # ------------------------------------------------------------------------------
+
+# 2019 vaccine coverage for existing vaccines: HIB vaccine, PCV
+existing_vaccine_coverage (hib_coverage_file = file.path("tables", "hib coverage.csv"),
+                           pcv_coverage_file = file.path("tables", "pcv coverage.csv"))
+
+# ------------------------------------------------------------------------------
+
 # create data table of AMR burden (deaths) classified by pathogen, 
 # and disease presentation, age groups
 
@@ -83,12 +90,7 @@ daly_combined_dt <- create_combined_table(death_burden_dt     = daly_burden_dt,
                                      attributable_burden_file = file.path("tables", "daly_attributable_burden.csv"),
                                      associated_burden_file   = file.path("tables", "daly_associated_burden.csv"))
 # ------------------------------------------------------------------------------
-# 2019 vaccine coverage for existing vaccines: HIB vaccine, PCV
- existing_vaccine_coverage (hib_coverage_file = file.path("tables", "hib coverage.csv"),
-                            pcv_coverage_file = file.path("tables", "pcv coverage.csv"))
 
-
-# Estimate pre-vaccine burden for existing vaccines: HIB vaccine, PCV
 
 
 # ------------------------------------------------------------------------------
