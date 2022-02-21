@@ -68,8 +68,8 @@ daly_burden_dt <- daly_burden_dt[!(daly_burden_dt$Pathogen == "Neisseria gonorrh
 
 # ------------------------------------------------------------------------------
 # create data table of vaccine profile
-vaccine_profile_file <- read_excel(file.path("data", "Vaccine profile for IHME burden.xlsx"), 
-                                   sheet = "Vaccine profile assumptions")
+vaccine_profile_file <- read_excel(file.path("data", "Vaccine profile assumptions.xlsx"), 
+                                   sheet = "Vaccine profile _ input")
 
 vaccine_profile_dt <- create_vaccine_profile_table(vaccine_profile = vaccine_profile_file,
                                                    vaccine_profile_file = file.path("tables", "vaccine_profile.csv"))
@@ -167,6 +167,7 @@ fwrite (x    = Table2_avertible_burden_by_region,
 # ------------------------------------------------------------------------------
 # Figure 1: vaccine avertable burden attributable to and associated with 
 # bacterial antimicrobial resistance by GBD  region, 2019
+options(scipen=999)
 
 death_averted_by_region_graph <- create_burden_averted_by_region_graph(
                                     Attributable_burden_averted = Attributable_death_averted,
@@ -174,7 +175,6 @@ death_averted_by_region_graph <- create_burden_averted_by_region_graph(
                                     ylim_max                    = 80000,
                                     ylabel                      = "Vaccine Avertable Deaths")
 
-options(scipen=999)
 
 daly_averted_by_region_graph <- create_burden_averted_by_region_graph(
                                     Attributable_burden_averted = Attributable_daly_averted,
@@ -261,7 +261,7 @@ ggsave (filename = "Figure3_burden_averted_by_pathogen.png",
 # ------------------------------------------------------------------------------
 # [table in appendix] vaccine avertable health burdens associated with and attributable
 # to AMR by WHO region, pathogen, disease presentation, and age group
-AMR_burden_data_updated <- update_death_burden(combined_dt     = combined_dt,
+ AMR_burden_data_updated <- update_death_burden(combined_dt     = combined_dt,
                                                death_burden_dt = death_burden_dt,
                                                AMR_burden_data_updated_file = file.path ("tables", "AMR burden data_updated.csv"))
 
