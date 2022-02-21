@@ -337,8 +337,9 @@ create_combined_table <- function(death_burden_dt,
                                   attributable_burden_file,
                                   associated_burden_file){
   
-# create combined table  
-  combined_table <- left_join(death_burden_dt, vaccine_profile_dt, by=c("Pathogen" = "Pathogen"))
+# create combined table
+  combined_table <- left_join(death_burden_dt, vaccine_profile_dt, 
+                              by=c("Pathogen" = "Pathogen"))
   combined_table <- data.table(combined_table)
   
 # Streptococcus pneumoniae vaccine specification
@@ -380,7 +381,7 @@ create_combined_table <- function(death_burden_dt,
 # create graph of death trend by pathogen across all age groups
 
 create_death_by_pathogen_graph <- function(pathogen){
-  dt <- death_burden_dt[death_burden_dt$Pathogen == pathogen,]
+  dt <- death_burden_dt[death_burden_dt$Pathogen == pathogen, ]
   
   dt <- left_join(dt, vaccine_profile_dt, by=c("Pathogen" = "Pathogen"))
   
@@ -490,16 +491,78 @@ create_death_by_pathogen_graph <- function(pathogen){
 # applying vaccine impact on vaccine target population
 
 # applying vaccine target age group
-  estimate_vaccine_impact <- function(i, data, burden_psa = burden_psa){
+  estimate_vaccine_impact <- function(i, data, burden_psa = burden_psa,
+                                      scenario = "conservative"){
   
   if(is.numeric(i) == TRUE) {
-    vaccine_target_age <- data %>%
+    vaccine_age <- data %>%
       filter(run_id == i)
   } else {
-    vaccine_target_age <- data
+    vaccine_age <- data
   }
   
-  vaccine_age <- vaccine_target_age %>%
+  if((scenario == "optimistic") == TRUE){
+  vaccine_age <- vaccine_age %>%
+    mutate(va_age =
+
+             ifelse(((VC=="4 week (effective at 6 week)" & VO=="under 5") |
+                     (VC=="4 week (effective at 6 week), 60 year" &
+                      VO == "under 5, 60 years and above")) & 
+                     Age_group == "PN", 
+                     burden_psa * Efficacy * Coverage * 47/48,
+             ifelse(((VC=="4 week (effective at 6 week)" & VO=="under 5") |
+                     (VC=="4 week (effective at 6 week), 60 year" &
+                      VO == "under 5, 60 years and above")) &
+                     Age_group == "1 to 4", 
+                     burden_psa * Efficacy * Coverage,
+             ifelse(((VC=="4 week (effective at 6 week)" & VO=="under 5") |
+                     (VC=="4 week (effective at 6 week), 60 year" &
+                      VO == "under 5, 60 years and above")) & 
+                     Duration=="5 years" & Age_group == "5 to 9", 
+                     burden_psa * Efficacy * Coverage * 1/5 *5/52,
+                                                
+                                                              
+             ifelse(VC=="10 week (effective at 12 week)" & VO=="under 5" &
+                    Age_group == "PN",
+                    burden_psa * Efficacy * Coverage * 41/48,
+             ifelse(VC=="10 week (effective at 12 week)" & VO=="under 5" & 
+                    Age_group == "1 to 4", 
+                    burden_psa * Efficacy * Coverage,
+             ifelse(VC=="10 week (effective at 12 week)" & VO=="under 5" & 
+                    Age_group == "5 to 9", 
+                    burden_psa * Efficacy * Coverage * 1/5 * 11/52,
+
+             ifelse(VC=="9 month" & VO=="below 35" & 
+                    Age_group == "PN",
+                    burden_psa * Efficacy * Coverage * 4/11,
+             ifelse(VC=="9 month" & VO=="below 35" & 
+                   (Age_group == "1 to 4"   | Age_group == "5 to 9"|
+                    Age_group == "10 to 14" | Age_group == "15 to 19"|
+                    Age_group == "20 to 24" | Age_group == "25 to 29"|
+                    Age_group == "30 to 34"), 
+                    burden_psa * Efficacy * Coverage,
+                    
+             ifelse((VO=="above 10") & 
+                   (Age_group == "10 to 14"| Age_group == "14 to 19"|
+                    Age_group == "20 to 24"| Age_group == "25 to 29"|
+                    Age_group == "30 to 34"| Age_group == "35 to 39"| 
+                    Age_group == "40 to 44"| Age_group == "45 to 49"|
+                    Age_group == "50 to 54"| Age_group == "55 to 59"),
+                    burden_psa * Efficacy * Coverage,                         
+                                                                                                       
+                                                                                  
+             ifelse((VO=="60 years and above"|VO=="under 5, 60 years and above"|
+                     VO=="above 10") & 
+                   (Age_group == "60 to 64"| Age_group == "65 to 69"|
+                    Age_group == "70 to 74"| Age_group == "75 to 79"| 
+                    Age_group == "80 to 84"| Age_group == "85 to 89"|
+                    Age_group == "90 to 94"| Age_group == "95 plus"),
+                    burden_psa * Efficacy * Coverage,                    
+                                                                                                                                    
+                     0)))))))))))
+    
+  } else {
+  vaccine_age <- vaccine_age %>%
     mutate(va_age =
             ifelse((VC=="4 week (effective at 6 week)" | 
                    VC == "4 week (effective at 6 week), 60 year") &
@@ -572,7 +635,7 @@ create_death_by_pathogen_graph <- function(pathogen){
                   burden_psa * Efficacy * Coverage,
                                  
                    0))))))))))))))))))
-
+  }
   
   # applying vaccine target disease presentation
   vaccine_impact <- data.table(vaccine_age)
@@ -665,14 +728,14 @@ create_death_by_pathogen_graph <- function(pathogen){
 # [table 2] Deaths and DALYs associated with and attributable to bacterial antimicrobial resistance
 # globally and by WHO_region, 2019
 
-  aggregate_impact_by_region <- function(input_data){
+  aggregate_impact_by_region <- function(input_data, input_scenario = "conservative"){
     
     impact_by_region <- data.table(WHO_region     = character(),
                                    averted_burden = numeric(),
                                    run_id         = numeric())
     
     for(i in 1:run){
-      dt <- estimate_vaccine_impact(i, data= input_data)
+      dt <- estimate_vaccine_impact(i, data= input_data, scenario = input_scenario)
       dt <- dt %>%
         group_by(WHO_region, run_id) %>%
         summarise(averted_burden=sum(va_health_burden), .groups = 'drop')
@@ -770,7 +833,7 @@ ggplot(burden_averted_by_region, aes(x = reorder(Counts, -median_value), y=media
 # ------------------------------------------------------------------------------
 # Figure 2 Create vaccine averted burden by disease presentation
 
-aggregate_impact_by_dp <- function(data_input){
+aggregate_impact_by_dp <- function(data_input, input_scenario = "conservative"){
   
   # create table for avertable burden to AMR by disease presentation
   impact_by_dp <- data.table(Disease_presentation = character(), 
@@ -778,7 +841,7 @@ aggregate_impact_by_dp <- function(data_input){
                              run_id               = numeric())
   
   for(i in 1:run){
-    dt <- estimate_vaccine_impact(i, data=data_input)
+    dt <- estimate_vaccine_impact(i, data = data_input, scenario = input_scenario)
     dt <- dt %>%
       group_by(Disease_presentation, run_id) %>%
       summarise(averted_burden = sum(va_health_burden), .groups = 'drop')
@@ -870,14 +933,14 @@ create_burden_averted_by_dp_graph <- function(Attributable_burden_averted,
 # ------------------------------------------------------------------------------
 # Figure 3 Create vaccine averted burden by pathogen
 
-aggregate_impact_by_pathogen <- function(data_input){
+aggregate_impact_by_pathogen <- function(data_input, input_scenario = "conservative"){
   
   impact_by_pathogen <- data.table(Pathogen             = character(), 
                                    averted_burden       = numeric(), 
                                    run_id               = numeric())
   
   for(i in 1:run){
-    dt <- estimate_vaccine_impact(i, data=data_input)
+    dt <- estimate_vaccine_impact(i, data = data_input, scenario = input_scenario)
     dt <- dt %>%
       group_by(Pathogen, run_id) %>%
       summarise(averted_burden = sum(va_health_burden), .groups = 'drop')
