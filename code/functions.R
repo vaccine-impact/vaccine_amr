@@ -862,7 +862,7 @@ aggregate_impact_by_dp <- function(data_input, input_scenario = "conservative"){
   
   DiseasePresentation <- unique(death_burden_dt$Disease_presentation)
   
-  death_averted_dp    <- data.table("50%"=numeric(), "2.5%"=numeric(), "97.5%"=numeric())
+  burden_averted_dp    <- data.table("50%"=numeric(), "2.5%"=numeric(), "97.5%"=numeric())
   
   impact_by_dp_dt     <- impact_by_dp
   
@@ -870,15 +870,15 @@ aggregate_impact_by_dp <- function(data_input, input_scenario = "conservative"){
     dt <- impact_by_dp_dt %>% filter(Disease_presentation == i)
     dt <- quantile(x = dt$averted_burden, probs = c (0.5, 0.025, 0.975))
     dt <- data.table(t(dt))
-    death_averted_dp <- rbindlist (list (death_averted_dp, dt),
+    burden_averted_dp <- rbindlist (list (burden_averted_dp, dt),
                                    use.names = FALSE)
   }
   
-  Death_Aveted <- cbind(data.table(Counts=DiseasePresentation, death_averted_dp))
+  burden_averted <- cbind(data.table(Counts=DiseasePresentation, burden_averted_dp))
   
-  Death_Aveted <- Death_Aveted[, c("Counts", "2.5%", "50%", "97.5%")]
+  burden_averted <- burden_averted[, c("Counts", "2.5%", "50%", "97.5%")]
   
-  return(Death_Aveted)} # end of function -- aggregate_impact_by_dp
+  return(burden_averted)} # end of function -- aggregate_impact_by_dp
 
 
 # create Figure 2
