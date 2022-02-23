@@ -206,7 +206,7 @@ options(scipen=999)
 death_averted_by_region_graph <- create_burden_averted_by_region_graph(
                                     Attributable_burden_averted = Attributable_death_averted,
                                     Associated_burden_averted   = Associated_death_averted,
-                                    ylim_max                    = 125000,
+                                    ylim_max                    = 130000,
                                     ylabel                      = "Vaccine Avertable Deaths")
 
 
@@ -274,7 +274,7 @@ Associated_daly_averted_dp   <- aggregate_impact_by_dp(data_input = daly_associa
 daly_averted_by_dp_graph <- create_burden_averted_by_dp_graph(
                               Attributable_burden_averted = Attributable_daly_averted_dp,
                               Associated_burden_averted   = Associated_daly_averted_dp,
-                              ylim_max = 12000000,
+                              ylim_max = 12500000,
                               ylabel = "Vaccine Avertable DALYs")
 
 # Figure 2 - (1)
@@ -401,11 +401,69 @@ ggsave (filename = "Figure3_burden_averted_by_pathogen_opt.png",
         dpi = 600)
 
 # ------------------------------------------------------------------------------
+# Further analysis for pathogen with multiple vaccine options
+
+# vaccine profile with multiple options
+vaccine_profile_dt_add <- read_csv(file.path("tables", "vaccine_profile.csv"))
+
+vaccine_profile_dt_add <- vaccine_profile_dt_add %>%
+  filter(Pathogen == "Acinetobacter baumannii"|
+           Pathogen == "Escherichia coli"|
+           Pathogen == "Klebsiella pneumoniae"|
+           Pathogen == "Mycobacterium tuberculosis"|
+           Pathogen == "Streptococcus pneumoniae")
+
+# Generate vaccine impact table for pathogen with multiple vaccine impact options
+vaccine_impact_add <- bind_rows(list(
+  
+  create_burden_table_add(pathogen_input = "Acinetobacter baumannii",
+                          vaccine_type_input = vaccine_profile_dt_add[1,]),
+  
+  create_burden_table_add(pathogen_input = "Acinetobacter baumannii",
+                          vaccine_type_input = vaccine_profile_dt_add[2,]),
+  
+  create_burden_table_add(pathogen_input = "Escherichia coli",
+                          vaccine_type_input = vaccine_profile_dt_add[3,]),
+  
+  create_burden_table_add(pathogen_input = "Escherichia coli",
+                          vaccine_type_input = vaccine_profile_dt_add[4,]),
+  
+  create_burden_table_add(pathogen_input = "Escherichia coli",
+                          vaccine_type_input = vaccine_profile_dt_add[5,]),
+  
+  create_burden_table_add(pathogen_input = "Klebsiella pneumoniae",
+                          vaccine_type_input = vaccine_profile_dt_add[6,]),
+  
+  create_burden_table_add(pathogen_input = "Klebsiella pneumoniae",
+                          vaccine_type_input = vaccine_profile_dt_add[7,]),
+  
+  create_burden_table_add(pathogen_input = "Mycobacterium tuberculosis",
+                          vaccine_type_input = vaccine_profile_dt_add[8,]),
+  
+  create_burden_table_add(pathogen_input = "Mycobacterium tuberculosis",
+                          vaccine_type_input = vaccine_profile_dt_add[9,]),
+  
+  create_burden_table_add(pathogen_input = "Streptococcus pneumoniae",
+                          vaccine_type_input = vaccine_profile_dt_add[10,]),
+  
+  create_burden_table_add(pathogen_input = "Streptococcus pneumoniae",
+                          vaccine_type_input = vaccine_profile_dt_add[11,])))
+
+vaccine_impact_table_add <- cbind(vaccine_profile_dt_add, vaccine_impact_add)
+
+fwrite (x    = vaccine_impact_table_add, 
+        file = file.path("tables", "Table_vaccine_impact_for_multiple_vaccine_profiles.csv"))
+
+# ------------------------------------------------------------------------------
 # [table in appendix] vaccine avertable health burdens associated with and attributable
 # to AMR by WHO region, pathogen, disease presentation, and age group
- AMR_burden_data_updated <- update_death_burden(combined_dt     = combined_dt,
+ AMR_death_data_updated <- update_death_burden(combined_dt     = combined_dt,
                                                death_burden_dt = death_burden_dt,
-                                               AMR_burden_data_updated_file = file.path ("tables", "AMR burden data_updated.csv"))
+                                               AMR_burden_data_updated_file = file.path ("tables", "AMR deaths data_updated.csv"))
+
+ AMR_daly_data_updated <- update_death_burden(combined_dt     = daly_combined_dt,
+                                               death_burden_dt = daly_burden_dt,
+                                               AMR_burden_data_updated_file = file.path ("tables", "AMR dalys data_updated.csv"))
 
 # ------------------------------------------------------------------------------
 # return to source directory
