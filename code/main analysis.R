@@ -33,17 +33,20 @@ setwd ("../")
 # ------------------------------------------------------------------------------
 ## IHME data on the AMR burden ##
 # WHO regions: Africa, Americas, Eastern Mediterranean, Europe, South-East Asia, 
-#             Western Pacific, Unclassified 
+#              Western Pacific, Unclassified 
 # year: 2019
 # sex: both
 # ------------------------------------------------------------------------------
-
 # 2019 vaccine coverage for existing vaccines: HIB vaccine, PCV
-existing_vaccine_coverage (hib_coverage_file = file.path("tables", "hib coverage.csv"),
-                           pcv_coverage_file = file.path("tables", "pcv coverage.csv"))
+existing_vaccine_coverage (year = "2019",
+                           hib_coverage_file = file.path("tables", "hib coverage 2019.csv"),
+                           pcv_coverage_file = file.path("tables", "pcv coverage 2019.csv"))
+
+existing_vaccine_coverage (year = "2018",
+                           hib_coverage_file = file.path("tables", "hib coverage 2018.csv"),
+                           pcv_coverage_file = file.path("tables", "pcv coverage 2018.csv"))
 
 # ------------------------------------------------------------------------------
-
 # create data table of AMR burden (deaths) classified by pathogen, 
 # and disease presentation, age groups
 
@@ -52,7 +55,6 @@ death_burden_dt <- read_excel(file.path("data", "IHME AMR burden.xlsx"),
 
 death_burden_dt <- create_burden_table(AMR_burden = death_burden_dt,
                                        burden_file = file.path ("tables", "AMR_death_burden.csv"))
-
 
 # create data table of AMR burden (DALYs) classified by pathogen, 
 # and disease presentation, age groups
