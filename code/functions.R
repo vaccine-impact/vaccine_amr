@@ -461,7 +461,6 @@ create_death_by_pathogen_graph <- function(pathogen){
                                                                                      tol         = tolerance) ["meanlog"]) ),
              by = .(WHO_region,Disease_presentation,Age_group,Pathogen)]
   
-  
   # ----------------------------------------------------------------------------
   # create the table for psa
   
@@ -740,7 +739,8 @@ create_death_by_pathogen_graph <- function(pathogen){
 # [table 2] Deaths and DALYs associated with and attributable to bacterial antimicrobial resistance
 # globally and by WHO_region, 2019
 
-  aggregate_impact_by_region <- function(input_data, input_scenario = "conservative"){
+  aggregate_impact_by_region <- function(input_data, 
+                                         input_scenario = "conservative"){
     
     impact_by_region <- data.table(WHO_region     = character(),
                                    averted_burden = numeric(),
@@ -816,7 +816,8 @@ create_death_by_pathogen_graph <- function(pathogen){
 create_burden_averted_by_region_graph  <- function(Attributable_burden_averted,
                                                    Associated_burden_averted,
                                                    ylim_max,
-                                                   ylabel){
+                                                   ylabel,
+                                                   title_name){
 
 Associated_burden_averted$Resistance   <- "Associated with resistance" 
 
@@ -838,14 +839,17 @@ ggplot(burden_averted_by_region, aes(x = reorder(Counts, -median_value), y=media
   geom_errorbar(aes(ymin=lower_value, ymax=upper_value), width=0.25,
                 size=0.5, position=position_dodge(0.9)) +
   theme_classic() +
-  theme(legend.position = c(0.8, 0.9))
+  theme(legend.position = c(0.8, 0.9)) +
+  ggtitle(title_name) +
+  theme(plot.title = element_text(hjust=-0.2, vjust=3, size = 20))
 
 } # end of function -- create_burden_averted_by_region_graph
 
 # ------------------------------------------------------------------------------
 # Figure 2 Create vaccine averted burden by disease presentation
 
-aggregate_impact_by_dp <- function(data_input, input_scenario = "conservative"){
+aggregate_impact_by_dp <- function(data_input, 
+                                   input_scenario = "conservative"){
   
   # create table for avertable burden to AMR by disease presentation
   impact_by_dp <- data.table(Disease_presentation = character(), 
@@ -889,7 +893,8 @@ aggregate_impact_by_dp <- function(data_input, input_scenario = "conservative"){
 create_burden_averted_by_dp_graph <- function(Attributable_burden_averted,
                                               Associated_burden_averted,
                                               ylim_max,
-                                              ylabel){
+                                              ylabel,
+                                              title_name){
   
   Associated_burden_averted$Resistance   <- "Associated with resistance" 
   
@@ -937,15 +942,19 @@ create_burden_averted_by_dp_graph <- function(Attributable_burden_averted,
     geom_errorbar(aes(ymin=lower_value, ymax=upper_value), width=0.25,
                   size=0.5, position=position_dodge(0.9)) +
     theme_classic() +
-    theme(legend.position = c(0.9, 0.9))
-  
+    theme(legend.position = c(0.9, 0.9)) +
+    ggtitle(title_name) +
+    theme(plot.title = element_text(hjust=-0.05, vjust=3, size = 20))
+    
   return(burden_averted_by_dp_graph)
   } # end of function -- create_burden_averted_by_dp_graph
 
 # ------------------------------------------------------------------------------
 # Figure 3 Create vaccine averted burden by pathogen
 
-aggregate_impact_by_pathogen <- function(data_input, input_scenario = "conservative"){
+aggregate_impact_by_pathogen <- function(data_input, 
+                                         input_scenario = "conservative",
+                                         title_name){
   
   impact_by_pathogen <- data.table(Pathogen             = character(), 
                                    averted_burden       = numeric(), 
@@ -983,7 +992,8 @@ aggregate_impact_by_pathogen <- function(data_input, input_scenario = "conservat
 create_burden_averted_by_pathogen_graph <- function(Attributable_burden_averted,
                                                     Associated_burden_averted,
                                                     ylim_max,
-                                                    ylabel){
+                                                    ylabel,
+                                                    title_name){
   
   Associated_burden_averted$Resistance    <- "Associated with resistance" 
   
@@ -1005,8 +1015,11 @@ create_burden_averted_by_pathogen_graph <- function(Attributable_burden_averted,
     ylim(0,ylim_max) +
     geom_errorbar(aes(ymin = lower_value, ymax = upper_value), width=0.25,
                   size=0.5, position=position_dodge(0.9)) +
-    theme_classic(base_size=8) +
-    theme(legend.position = c(0.9, 0.9))
+    theme_classic() +
+    theme(legend.position = c(0.9, 0.9)) +
+    ggtitle(title_name) +
+    theme(plot.title = element_text(hjust=-0.05, vjust=3, size = 20)) +
+    theme(axis.text.x = element_text(angle = 30, vjust = 1, hjust=1))
   
   return(burden_averted_by_pathogen_graph)
 } # end of function -- create_burden_averted_by_pathogen_graph
