@@ -65,9 +65,6 @@ daly_burden_dt <- read_excel(file.path("data", "IHME AMR burden_DALYs.xlsx"),
 daly_burden_dt <- create_burden_table(AMR_burden = daly_burden_dt,
                                       burden_file = file.path ("tables", "AMR_daly_burden.csv"))
 
-# will add analysis for Neisseria gonorrhoeae later
-daly_burden_dt <- daly_burden_dt[!(daly_burden_dt$Pathogen == "Neisseria gonorrhoeae"),]
-
 # ------------------------------------------------------------------------------
 # create data table of vaccine profile
 vaccine_profile_file <- read_excel(file.path("data", "Vaccine profile assumptions.xlsx"), 
@@ -99,9 +96,10 @@ daly_combined_dt <- create_combined_table(death_burden_dt     = daly_burden_dt,
 # Death trend by pathogen across all age groups
 # the outputs were used to decide the age of vaccination
 
-pathogenlist <- unique(death_burden_dt$Pathogen)
+pathogenlist_death <- unique(death_burden_dt$Pathogen)
+pathogenlist_daly <- unique(daly_burden_dt$Pathogen)
 
-lapply(pathogenlist, create_death_by_pathogen_graph)
+lapply(pathogenlist_death, create_death_by_pathogen_graph)
 
 # ------------------------------------------------------------------------------
 
@@ -249,12 +247,17 @@ ggsave (filename = "Figure1_burden_averted_by_region.png",
 # Figure 2: Global vaccine avertable deaths (counts) attributable to and associated with 
 # bacterial antimicrobial resistance by infectious syndrome, 2019
 
+DiseasePresentation_death <- unique(death_burden_dt$Disease_presentation)
+DiseasePresentation_daly  <- unique(daly_burden_dt$Disease_presentation)
+
 # Conservative scenario
 
 # create table for avertable deaths attributable to AMR by disease presentation
-Attributable_death_averted_dp <- aggregate_impact_by_dp(data_input = deaths_attributable_psa)
+Attributable_death_averted_dp <- aggregate_impact_by_dp(data_input          = deaths_attributable_psa,
+                                                        DiseasePresentation = DiseasePresentation_death)
 
-Associated_death_averted_dp   <- aggregate_impact_by_dp(data_input = deaths_associated_psa)
+Associated_death_averted_dp   <- aggregate_impact_by_dp(data_input          = deaths_associated_psa,
+                                                        DiseasePresentation = DiseasePresentation_death)
 
 death_averted_by_dp_graph <- create_burden_averted_by_dp_graph(
                               Attributable_burden_averted = Attributable_death_averted_dp,
@@ -265,9 +268,11 @@ death_averted_by_dp_graph <- create_burden_averted_by_dp_graph(
 
 # create table for avertable DALYs attributable to AMR by disease presentation
 
-Attributable_daly_averted_dp <- aggregate_impact_by_dp(data_input = daly_attributable_psa)
+Attributable_daly_averted_dp <- aggregate_impact_by_dp(data_input          = daly_attributable_psa,
+                                                       DiseasePresentation = DiseasePresentation_daly)
 
-Associated_daly_averted_dp   <- aggregate_impact_by_dp(data_input = daly_associated_psa)
+Associated_daly_averted_dp   <- aggregate_impact_by_dp(data_input          = daly_associated_psa,
+                                                       DiseasePresentation = DiseasePresentation_daly)
 
 daly_averted_by_dp_graph <- create_burden_averted_by_dp_graph(
                               Attributable_burden_averted = Attributable_daly_averted_dp,
@@ -279,11 +284,13 @@ daly_averted_by_dp_graph <- create_burden_averted_by_dp_graph(
 # Optimistic scenario
 
 # create table for avertable deaths attributable to AMR by disease presentation
-Attributable_death_averted_dp_opt <- aggregate_impact_by_dp(data_input = deaths_attributable_psa,
-                                                            input_scenario="optimistic")
+Attributable_death_averted_dp_opt <- aggregate_impact_by_dp(data_input          = deaths_attributable_psa,
+                                                            input_scenario      = "optimistic",
+                                                            DiseasePresentation = DiseasePresentation_death)
 
-Associated_death_averted_dp_opt   <- aggregate_impact_by_dp(data_input = deaths_associated_psa,
-                                                            input_scenario="optimistic")
+Associated_death_averted_dp_opt   <- aggregate_impact_by_dp(data_input          = deaths_associated_psa,
+                                                            input_scenario      = "optimistic",
+                                                            DiseasePresentation = DiseasePresentation_death)
 
 death_averted_by_dp_graph_opt <- create_burden_averted_by_dp_graph(
   Attributable_burden_averted = Attributable_death_averted_dp_opt,
@@ -294,11 +301,13 @@ death_averted_by_dp_graph_opt <- create_burden_averted_by_dp_graph(
 
 # create table for avertable DALYs attributable to AMR by disease presentation
 
-Attributable_daly_averted_dp_opt <- aggregate_impact_by_dp(data_input = daly_attributable_psa,
-                                                           input_scenario="optimistic")
+Attributable_daly_averted_dp_opt <- aggregate_impact_by_dp(data_input          = daly_attributable_psa,
+                                                           input_scenario      = "optimistic",
+                                                           DiseasePresentation = DiseasePresentation_daly)
 
-Associated_daly_averted_dp_opt   <- aggregate_impact_by_dp(data_input = daly_associated_psa,
-                                                           input_scenario="optimistic")
+Associated_daly_averted_dp_opt   <- aggregate_impact_by_dp(data_input          = daly_associated_psa,
+                                                           input_scenario      = "optimistic",
+                                                           DiseasePresentation = DiseasePresentation_daly)
 
 daly_averted_by_dp_graph_opt <- create_burden_averted_by_dp_graph(
   Attributable_burden_averted = Attributable_daly_averted_dp_opt,
@@ -324,9 +333,11 @@ ggsave (filename = "Figure 2_burden_averted_by_dp.png",
 # Conservative scenario
 
 # create table for avertable deaths attributable to AMR by pathogen
-Attributable_death_averted_pathogen <- aggregate_impact_by_pathogen(data_input=deaths_attributable_psa)
+Attributable_death_averted_pathogen <- aggregate_impact_by_pathogen(data_input=deaths_attributable_psa,
+                                                                    pathogenlist=pathogenlist_death)
 
-Associated_death_averted_pathogen <- aggregate_impact_by_pathogen(data_input=deaths_associated_psa)
+Associated_death_averted_pathogen <- aggregate_impact_by_pathogen(data_input=deaths_associated_psa,
+                                                                  pathogenlist=pathogenlist_death)
 
 death_averted_by_pathogen_graph <- create_burden_averted_by_pathogen_graph(
                                     Attributable_burden_averted = Attributable_death_averted_pathogen,
@@ -336,9 +347,11 @@ death_averted_by_pathogen_graph <- create_burden_averted_by_pathogen_graph(
                                     title_name = "Conservative Scenario")
 
 # create table for avertable DALYs attributable to AMR by pathogen
-Attributable_daly_averted_pathogen <- aggregate_impact_by_pathogen(data_input=daly_attributable_psa)
+Attributable_daly_averted_pathogen <- aggregate_impact_by_pathogen(data_input=daly_attributable_psa,
+                                                                   pathogenlist=pathogenlist_daly)
 
-Associated_daly_averted_pathogen <- aggregate_impact_by_pathogen(data_input=daly_associated_psa)
+Associated_daly_averted_pathogen <- aggregate_impact_by_pathogen(data_input=daly_associated_psa,
+                                                                 pathogenlist=pathogenlist_daly)
 
 daly_averted_by_pathogen_graph <- create_burden_averted_by_pathogen_graph(
                                     Attributable_burden_averted = Attributable_daly_averted_pathogen,
@@ -350,11 +363,13 @@ daly_averted_by_pathogen_graph <- create_burden_averted_by_pathogen_graph(
 # Optimistic scenario
 
 # create table for avertable deaths attributable to AMR by pathogen
-Attributable_death_averted_pathogen_opt <- aggregate_impact_by_pathogen(data_input = deaths_attributable_psa,
-                                                                        input_scenario = "optimistic")
+Attributable_death_averted_pathogen_opt <- aggregate_impact_by_pathogen(data_input     = deaths_attributable_psa,
+                                                                        input_scenario = "optimistic",
+                                                                        pathogenlist   = pathogenlist_death)
 
-Associated_death_averted_pathogen_opt <- aggregate_impact_by_pathogen(data_input = deaths_associated_psa,
-                                                                      input_scenario = "optimistic")
+Associated_death_averted_pathogen_opt <- aggregate_impact_by_pathogen(data_input     = deaths_associated_psa,
+                                                                      input_scenario = "optimistic",
+                                                                      pathogenlist   = pathogenlist_death)
 
 
 death_averted_by_pathogen_graph_opt <- create_burden_averted_by_pathogen_graph(
@@ -365,11 +380,13 @@ death_averted_by_pathogen_graph_opt <- create_burden_averted_by_pathogen_graph(
   title_name = "Optimistic Scenario")
 
 # create table for avertable DALYs attributable to AMR by pathogen
-Attributable_daly_averted_pathogen_opt <- aggregate_impact_by_pathogen(data_input=daly_attributable_psa,
-                                                                       input_scenario = "optimistic")
+Attributable_daly_averted_pathogen_opt <- aggregate_impact_by_pathogen(data_input     = daly_attributable_psa,
+                                                                       input_scenario = "optimistic",
+                                                                       pathogenlist   = pathogenlist_daly)
 
-Associated_daly_averted_pathogen_opt <- aggregate_impact_by_pathogen(data_input=daly_associated_psa,
-                                                                     input_scenario = "optimistic")
+Associated_daly_averted_pathogen_opt   <- aggregate_impact_by_pathogen(data_input     = daly_associated_psa,
+                                                                       input_scenario = "optimistic",
+                                                                       pathogenlist   = pathogenlist_daly)
 
 daly_averted_by_pathogen_graph_opt <- create_burden_averted_by_pathogen_graph(
   Attributable_burden_averted = Attributable_daly_averted_pathogen_opt,

@@ -8,8 +8,8 @@
 # ------------------------------------------------------------------------------
 # 2019 vaccine coverage for existing vaccine: Hib vaccine, PCV
 existing_vaccine_coverage <- function(year,
-                                      hib_coverage_file, 
-                                      pcv_coverage_file) {
+                                      hib_coverage_file,
+                                      pcv_coverage_file){
   
   # Import WPP population data
   population_file <- read_excel("data/WPP population by age.xlsx",
@@ -525,7 +525,6 @@ create_death_by_pathogen_graph <- function(pathogen){
                      Duration=="5 years" & Age_group == "5 to 9", 
                      burden_psa * Efficacy * Coverage * 1/5 *5/52,
                                                 
-                                                              
              ifelse(VC=="10 week (effective at 12 week)" & VO=="under 5" &
                     Age_group == "PN",
                     burden_psa * Efficacy * Coverage * 41/48,
@@ -545,16 +544,19 @@ create_death_by_pathogen_graph <- function(pathogen){
                     Age_group == "20 to 24" | Age_group == "25 to 29"|
                     Age_group == "30 to 34"), 
                     burden_psa * Efficacy * Coverage,
-                    
-             ifelse((VO=="above 10") & 
-                   (Age_group == "10 to 14"| Age_group == "14 to 19"|
+
+             ifelse((VO == "10 to 34 year" | VO == "above 10") & 
+                   (Age_group == "10 to 14"| Age_group == "15 to 19"|
                     Age_group == "20 to 24"| Age_group == "25 to 29"|
-                    Age_group == "30 to 34"| Age_group == "35 to 39"| 
+                    Age_group == "30 to 34"),
+                    burden_psa * Efficacy * Coverage,                   
+                                       
+             ifelse(VO == "above 10" &
+                   (Age_group == "35 to 39"| 
                     Age_group == "40 to 44"| Age_group == "45 to 49"|
                     Age_group == "50 to 54"| Age_group == "55 to 59"),
                     burden_psa * Efficacy * Coverage,                         
-                                                                                                       
-                                                                                  
+    
              ifelse((VO=="60 years and above"|VO=="under 5, 60 years and above"|
                      VO=="above 10") & 
                    (Age_group == "60 to 64"| Age_group == "65 to 69"|
@@ -563,12 +565,12 @@ create_death_by_pathogen_graph <- function(pathogen){
                     Age_group == "90 to 94"| Age_group == "95 plus"),
                     burden_psa * Efficacy * Coverage,                    
                                                                                                                                     
-                     0)))))))))))
+                     0))))))))))))
     
   } else {
   vaccine_age <- vaccine_age %>%
     mutate(va_age =
-            ifelse(VC=="0" & Duration=="6 months" & 
+            ifelse(VC=="0" & Duration=="6 months" &
                    (Age_group=="EN" | Age_group=="LN"),
                    burden_psa * Efficacy * Coverage,
             ifelse(VC=="0" & Duration=="6 months" & 
@@ -628,8 +630,11 @@ create_death_by_pathogen_graph <- function(pathogen){
             ifelse(VC=="9 month" & Duration=="20 years" 
                    & Age_group == "20 to 24", 
                    burden_psa * Efficacy * Coverage * 1/5 * 8/12,
+                   
+            ifelse(VC == "10 year" & Duration=="10 years" & 
+                  (Age_group == "10 to 14"| Age_group == "15 to 19"),
+                  burden_psa * Efficacy * Coverage,
                                                              
-                                                                                                                                                                    
             ifelse(VC=="4 week (effective at 6 week), 60 year" & 
                    Duration=="2 years" & Age_group == "60 to 64", 
                    burden_psa * Efficacy * Coverage * 2/5,                    
@@ -645,7 +650,7 @@ create_death_by_pathogen_graph <- function(pathogen){
                    (Age_group == "60 to 64"| Age_group == "65 to 69"), 
                   burden_psa * Efficacy * Coverage,
                                  
-                   0))))))))))))))))))))
+                   0)))))))))))))))))))))
   }
   
   # applying vaccine target disease presentation
@@ -739,7 +744,7 @@ create_death_by_pathogen_graph <- function(pathogen){
 # [table 2] Deaths and DALYs associated with and attributable to bacterial antimicrobial resistance
 # globally and by WHO_region, 2019
 
-  aggregate_impact_by_region <- function(input_data, 
+  aggregate_impact_by_region <- function(input_data,
                                          input_scenario = "conservative"){
     
     impact_by_region <- data.table(WHO_region     = character(),
@@ -849,11 +854,12 @@ ggplot(burden_averted_by_region, aes(x = reorder(Counts, -median_value), y=media
 # Figure 2 Create vaccine averted burden by disease presentation
 
 aggregate_impact_by_dp <- function(data_input, 
-                                   input_scenario = "conservative"){
+                                   input_scenario = "conservative",
+                                   DiseasePresentation){
   
   # create table for avertable burden to AMR by disease presentation
-  impact_by_dp <- data.table(Disease_presentation = character(), 
-                             averted_burden       = numeric(), 
+  impact_by_dp <- data.table(Disease_presentation = character(),
+                             averted_burden       = numeric(),
                              run_id               = numeric())
   
   for(i in 1:run){
@@ -866,8 +872,6 @@ aggregate_impact_by_dp <- function(data_input,
   }
   
   # -------------------------------------------------------------------------
-  
-  DiseasePresentation <- unique(death_burden_dt$Disease_presentation)
   
   burden_averted_dp    <- data.table("50%"=numeric(), "2.5%"=numeric(), "97.5%"=numeric())
   
@@ -919,7 +923,7 @@ create_burden_averted_by_dp_graph <- function(Attributable_burden_averted,
     burden_averted_by_dp$Counts <- gsub("Intra-abdominal infections", "Intra-abdominal",
                                         burden_averted_by_dp$Counts)
     
-    burden_averted_by_dp$Counts <- gsub("TB", "Tuberculosis",
+    burden_averted_by_dp$Counts <- gsub("TB", "TB",
                                         burden_averted_by_dp$Counts)
     
     burden_averted_by_dp$Counts <- gsub("LRI and thorax infections", "LRI+",
@@ -928,9 +932,12 @@ create_burden_averted_by_dp_graph <- function(Attributable_burden_averted,
     burden_averted_by_dp$Counts <- gsub("Bacterial skin infections", "Skin",
                                         burden_averted_by_dp$Counts)
     
-    burden_averted_by_dp$Counts <- gsub("Typhoid, paratyphoid, and iNTS", "TF-PF-iNTS",
+    burden_averted_by_dp$Counts <- gsub("Typhoid, paratyphoid, and iNTS", "TF/PF/iNTS",
                                         burden_averted_by_dp$Counts)
-      
+    
+    burden_averted_by_dp$Counts <- gsub("Gonorrhoea and chlamydia", "GC/CT",
+                                        burden_averted_by_dp$Counts)
+    
     burden_averted_by_dp_graph <- ggplot(burden_averted_by_dp, 
                                        aes(x = reorder(Counts, -median_value), 
                                            y = median_value, fill = Resistance)) +
@@ -954,7 +961,7 @@ create_burden_averted_by_dp_graph <- function(Attributable_burden_averted,
 
 aggregate_impact_by_pathogen <- function(data_input, 
                                          input_scenario = "conservative",
-                                         title_name){
+                                         pathogenlist){
   
   impact_by_pathogen <- data.table(Pathogen             = character(), 
                                    averted_burden       = numeric(), 
@@ -1052,8 +1059,9 @@ estimate_burden_averted_add  <- function(pathogen,
                           Efficacy := 0.5]   
   
   burden_averted_add <- 
-    aggregate_impact_by_pathogen(data_input=burden_attributable_add,
-                                 input_scenario = scenario_input)
+    aggregate_impact_by_pathogen(data_input = burden_attributable_add,
+                                 input_scenario = scenario_input,
+                                 pathogenlist = pathogen)
   
   burden_averted_add <- 
     burden_averted_add %>% filter(Counts == pathogen)
@@ -1073,7 +1081,7 @@ estimate_burden_averted_add  <- function(pathogen,
 
 create_burden_table_add <- function(pathogen_input,
                                     vaccine_type_input){
-  
+
   deaths_attributable <- 
     estimate_burden_averted_add(pathogen = pathogen_input,
                                 vaccine_type = vaccine_type_input,
@@ -1125,17 +1133,17 @@ create_burden_table_add <- function(pathogen_input,
                                 input_data = daly_associated_psa,
                                 name_value = "daly_associated_opt",
                                 scenario_input = "optimistic")
-  
+
   burden_table_add <- 
     data.table(pathogen                 = pathogen_input,
-               deaths_attributable      = deaths_attributable$"deaths_attributable",
                deaths_associated        = deaths_associated$"deaths_associated",
-               daly_attributable        = daly_attributable$"daly_attributable",
+               deaths_attributable      = deaths_attributable$"deaths_attributable",
                daly_associated          = daly_associated$"daly_associated",
-               deaths_attributable_opt  = deaths_attributable_opt$"deaths_attributable_opt",
+               daly_attributable        = daly_attributable$"daly_attributable",
                deaths_associated_opt    = deaths_associated_opt$"deaths_associated_opt",
-               daly_attributable_opt    = daly_attributable_opt$"daly_attributable_opt",
-               daly_associated_opt      = daly_associated_opt$"daly_associated_opt")
+               deaths_attributable_opt  = deaths_attributable_opt$"deaths_attributable_opt",
+               daly_associated_opt      = daly_associated_opt$"daly_associated_opt",
+               daly_attributable_opt    = daly_attributable_opt$"daly_attributable_opt")
   
   return(burden_table_add)} # end of function -- create_burden_table_add
 
