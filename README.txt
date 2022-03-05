@@ -1,13 +1,21 @@
-Vaccine averted AMR health burden
+--------------------------------------------------------------------------------  
+Vaccine Avertable AMR Health Burden
+--------------------------------------------------------------------------------  
+Folders: 
 
-- code (folder)
-    main analysis.R -- main program
-    functions.R -- functions
-    
-- data (folder)
-    IHME AMR burden.xlsx -- AMR burden data
-    Vaccine profile for IHME burden -- vaccine profile data
+- code
+main analysis.R
+Run analysis to estimate the vaccine avertable bacterial antimicrobial resistance burden 
+based on profiles of existing and future vaccines at the global and regional levels
 
-- figures (folder)
+functions.R 
+All functions for the main analysis
+     
+- data
+Input data used for the analysis
 
-- tables (folders)
+- figures
+Figures in the paper (main part, appendix) 
+
+- tables
+Tables in the paper (main part, appendix)
