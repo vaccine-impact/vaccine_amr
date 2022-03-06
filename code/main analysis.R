@@ -97,13 +97,19 @@ daly_combined_dt <- create_combined_table(death_burden_dt     = daly_burden_dt,
 
 
 # ------------------------------------------------------------------------------
-# AMR burden trend by pathogen across all age groups:
+# AMR burden by pathogen across all age groups:
 # the outputs were used to find out the age group with the highest burdens
 
 pathogenlist_death <- unique(death_burden_dt$Pathogen)
 pathogenlist_daly <- unique(daly_burden_dt$Pathogen)
 
-lapply(pathogenlist_death, create_death_by_pathogen_graph)
+lapply(pathogenlist_death, create_burden_by_pathogen_graph, 
+       input_data = combined_dt, ylabel = "Number of Death Associated with AMR",
+       burden_type = "deaths")
+
+lapply(pathogenlist_daly, create_burden_by_pathogen_graph, 
+       input_data = daly_combined_dt, ylabel = "Number of DALY Associated with AMR",
+       burden_type = "dalys")
 
 # ------------------------------------------------------------------------------
 

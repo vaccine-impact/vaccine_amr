@@ -147,7 +147,7 @@ create_burden_table <- function(AMR_burden,
                                  levels=unique(AMR_burden$Age_group), order=T)
   
   levels(AMR_burden$Age_group) <- c("EN", "LN", "PN",  "1 to 4", "5 to 9","10 to 14",
-                                    "15 to 19", "20 to 24"  ,"25 to 29",  "30 to 34",
+                                    "15 to 19", "20 to 24", "25 to 29",  "30 to 34",
                                     "35 to 39", "40 to 44", "45 to 49",  "50 to 54" ,      
                                     "55 to 59", "60 to 64", "65 to 69", "70 to 74",
                                     "75 to 79", "80 to 84", "85 to 89", "90 to 94", "95 plus")
@@ -185,13 +185,13 @@ create_burden_table <- function(AMR_burden,
   # apply pre-vaccine burden to HIB burden
   AMR_burden[Pathogen  == "Haemophilus influenzae" & Age_group == "PN",
              Associated_resistant_mean := Associated_resistant_mean /
-               (3/48 + 4/48 * (1 - hib_vaccine_coverage_2019 * 0.59) + 
+               (3/48 + 4/48 * (1 - hib_vaccine_coverage_2019 * 0.59) +
                   4/48 * (1 - hib_vaccine_coverage_2019 * 0.92) + 
                   37/48 * (1 - hib_vaccine_coverage_2019 * 0.93))]
   
   AMR_burden[Pathogen  == "Haemophilus influenzae" & Age_group == "PN",
              Associated_resistant_lower := Associated_resistant_lower /
-               (3/48 + 4/48 * (1 - hib_vaccine_coverage_2019 * 0.59) + 
+               (3/48 + 4/48 * (1 - hib_vaccine_coverage_2019 * 0.59) +
                   4/48 * (1 - hib_vaccine_coverage_2019 * 0.92) + 
                   37/48 * (1 - hib_vaccine_coverage_2019 * 0.93))]
   
@@ -352,7 +352,7 @@ create_combined_table <- function(death_burden_dt,
                                   vaccine_profile_dt,
                                   attributable_burden_file,
                                   associated_burden_file){
-  
+
 # create combined table
   combined_table <- left_join(death_burden_dt, vaccine_profile_dt, 
                               by=c("Pathogen" = "Pathogen"))
@@ -394,37 +394,33 @@ create_combined_table <- function(death_burden_dt,
 } # end of function -- create_combined_table
 
 # ------------------------------------------------------------------------------
-# create graph of death trend by pathogen across all age groups
+# create burden trend graph by pathogen across all age groups
 
-create_death_by_pathogen_graph <- function(pathogen){
-  dt <- death_burden_dt[death_burden_dt$Pathogen == pathogen, ]
+create_burden_by_pathogen_graph <- function(pathogen,
+                                            input_data,
+                                            ylabel,
+                                            burden_type){
+  burden_data <- input_data[input_data$Pathogen == pathogen, ]
   
-  dt <- left_join(dt, vaccine_profile_dt, by=c("Pathogen" = "Pathogen"))
+  burden_data <- burden_data %>% 
+    group_by(Pathogen, WHO_region, Age_group) %>%
+    summarise(Associated_resistant_mean=sum(Associated_resistant_mean), .groups = 'drop') 
   
-  dt <- dt %>% 
-    group_by(Pathogen, Efficacy, Coverage, Age_group) %>%
-    summarise(sum_Attributable_resistance_mean=sum(Attributable_resistance_mean), .groups = 'drop') 
-  
-  dt <- dt %>% 
-    mutate(v_Attributable_resistance_mean = sum_Attributable_resistance_mean * Efficacy * Coverage,
-           va_Attributable_resistance_mean = v_Attributable_resistance_mean-sum_Attributable_resistance_mean)
-  
-  ggplot(dt, aes(x=Age_group)) +
-    geom_line(aes(y=sum_Attributable_resistance_mean, group=1, colour="non-vaccinated")) +
-    ylab("Number of Vaccine Attributable Deaths") + 
-    xlab("Age") +
-    ggtitle(paste(pathogen,"(global)")) +
+  ggplot(burden_data, aes(x=Age_group)) +
+    geom_line(aes(y=Associated_resistant_mean, group=WHO_region, colour=WHO_region)) +
+    ylab(paste(ylabel)) + 
+    xlab("Age Group") +
+    ggtitle(paste(pathogen)) +
     theme_classic() +
-    theme(plot.title = element_text(hjust = 0.5)) +
-    expand_limits(y=0)
+    theme(plot.title = element_text(hjust = 0.5))
   
   # save plot
-  ggsave (filename = paste(pathogen,"_global.png"),
+  ggsave (filename = paste(pathogen,"_",burden_type,".png"),
           path = "figures",
-          width = 15, 
-          height = 6, 
+          width = 15,
+          height = 6,
           dpi = 600)
-} # end of function -- create_death_by_pathogen_graph
+} # end of function -- create_burden_by_pathogen_graph
 
 # ------------------------------------------------------------------------------
 
@@ -449,7 +445,7 @@ create_death_by_pathogen_graph <- function(pathogen){
   burden_dt [burden_mean_value == burden_upper_value, 
              burden_upper_value := burden_upper_value * 1.0025]
   
-  # + 0.5 for the value which is 0 (attributable to resistance)
+  # add a small value to zero values to avoid log(0)
   
   burden_dt$burden_lower_value <- burden_dt$burden_lower_value + 0.5
   
