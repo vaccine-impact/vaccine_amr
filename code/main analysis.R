@@ -36,7 +36,7 @@ setwd ("../")
 # ------------------------------------------------------------------------------
 ## IHME data on the AMR burden ##
 # WHO regions: Africa, Americas, Eastern Mediterranean, Europe, South-East Asia, 
-#              Western Pacific, Unclassified 
+#              Western Pacific, Unclassified
 # year: 2019
 # sex: both
 # ------------------------------------------------------------------------------
@@ -71,27 +71,31 @@ daly_burden_dt <- create_burden_table(AMR_burden = daly_burden_dt,
 
 # ------------------------------------------------------------------------------
 # create data table of vaccine profile
-vaccine_profile_file <- read_excel(file.path("data", "Vaccine profile assumptions.xlsx"), 
-                                   sheet = "Vaccine profile _ input")
+vaccine_profile_file <- 
+  read_excel(file.path("data", "Vaccine profile assumptions.xlsx"), 
+             sheet = "Vaccine profile _ input")
 
-vaccine_profile_dt <- create_vaccine_profile_table(vaccine_profile = vaccine_profile_file,
-                                                   vaccine_profile_file = file.path("tables", "vaccine_profile.csv"))
+vaccine_profile_dt <- 
+  create_vaccine_profile_table(vaccine_profile = vaccine_profile_file,
+                               vaccine_profile_file = file.path("tables", "vaccine_profile.csv"))
 
 # ------------------------------------------------------------------------------
 # create combined table: vaccine profile + disease burden (deaths)
 # create separate burden file for health burdens attributable to AMR and associated with AMR  
 
-combined_dt <- create_combined_table(death_burden_dt          = death_burden_dt, 
-                                     vaccine_profile_dt       = vaccine_profile_dt,
-                                     attributable_burden_file = file.path("tables", "attributable_burden.csv"),
-                                     associated_burden_file   = file.path("tables", "associated_burden.csv"))
+combined_dt <- 
+  create_combined_table(death_burden_dt          = death_burden_dt, 
+                        vaccine_profile_dt       = vaccine_profile_dt,
+                        attributable_burden_file = file.path("tables", "attributable_burden.csv"),
+                        associated_burden_file   = file.path("tables", "associated_burden.csv"))
 
 # create combined table: vaccine profile + disease burden (DALYs)
 # create separate burden file for health burdens attributable to AMR and associated with AMR  
-daly_combined_dt <- create_combined_table(death_burden_dt     = daly_burden_dt, 
-                                     vaccine_profile_dt       = vaccine_profile_dt,
-                                     attributable_burden_file = file.path("tables", "daly_attributable_burden.csv"),
-                                     associated_burden_file   = file.path("tables", "daly_associated_burden.csv"))
+daly_combined_dt <- 
+  create_combined_table(death_burden_dt          = daly_burden_dt, 
+                        vaccine_profile_dt       = vaccine_profile_dt,
+                        attributable_burden_file = file.path("tables", "daly_attributable_burden.csv"),
+                        associated_burden_file   = file.path("tables", "daly_associated_burden.csv"))
 # ------------------------------------------------------------------------------
 
 
@@ -99,6 +103,7 @@ daly_combined_dt <- create_combined_table(death_burden_dt     = daly_burden_dt,
 # ------------------------------------------------------------------------------
 # AMR burden by pathogen across all age groups:
 # the outputs were used to find out the age group with the highest burdens
+options(scipen=999)
 
 pathogenlist_death <- unique(death_burden_dt$Pathogen)
 pathogenlist_daly <- unique(daly_burden_dt$Pathogen)
@@ -123,128 +128,120 @@ run <- 400 # number of runs for probabilistic sensitivity analysis
 
 # psa for deaths attributable to and associated with AMR
 deaths_associated_psa <- uncertainty_analysis_baseline(
-  psa       = run, 
-  tolerance = 0.0016,
-  data      = read_csv(file.path("tables", "associated_burden.csv")))
+  psa       = run,
+  tolerance = 0.001,
+  data      = read_csv(file.path("tables", "associated_burden.csv")),
+  mode      = "death")
 
 deaths_attributable_psa <- uncertainty_analysis_baseline(
-  psa       = run, 
+  psa       = run,
   tolerance = 0.0016,
-  data      = read_csv(file.path("tables", "attributable_burden.csv")))
-
+  data      = read_csv(file.path("tables", "attributable_burden.csv")),
+  mode      = "death")
 
 # psa for DALYs attributable to and associated with AMR
-daly_attributable_psa <- uncertainty_analysis_baseline(
-  psa       = run,
-  tolerance = 0.0126,
-  data      = read_csv(file.path("tables", "daly_attributable_burden.csv")))
-
 daly_associated_psa <- uncertainty_analysis_baseline(
   psa       = run, 
-  tolerance = 0.028,
-  data      = read_csv(file.path("tables", "daly_associated_burden.csv")))
+  tolerance = 0.001,
+  data      = read_csv(file.path("tables", "daly_associated_burden.csv")),
+  mode      = "daly")
+
+daly_attributable_psa <- uncertainty_analysis_baseline(
+  psa       = run,
+  tolerance = 0.001,
+  data      = read_csv(file.path("tables", "daly_attributable_burden.csv")),
+  mode      = "daly")
 
 # ------------------------------------------------------------------------------
-# deaths and DALYs associated with and attributable to 
-# AMR globally and by WHO region, 2019
+# deaths and DALYs associated with and attributable to AMR
+# globally and by WHO region, 2019
 
-# Conservative scenario - vaccine impact on deaths by region
+# create table for avertable death estimates by region
+# -- conservative scenario
 
-Associated_death_averted   <- aggregate_impact_by_region(input_data=deaths_associated_psa)
+Associated_death_averted_re <- 
+  aggregate_impact_by_region(input_data=deaths_associated_psa)
 
-Attributable_death_averted <- aggregate_impact_by_region(input_data=deaths_attributable_psa)
+Attributable_death_averted_re <- 
+  aggregate_impact_by_region(input_data=deaths_attributable_psa)
 
-Death_Averted              <- left_join(Associated_death_averted, Attributable_death_averted,
-                                        by=c("Counts" = "Counts"))
+# create table for avertable DALY estimates by region
+# -- conservative scenario
 
-# Conservative scenario - vaccine impact on DALYs by region
+Associated_daly_averted_re <- 
+  aggregate_impact_by_region(input_data = daly_associated_psa)
 
-Associated_daly_averted   <- aggregate_impact_by_region(input_data = daly_associated_psa)
+Attributable_daly_averted_re <- 
+  aggregate_impact_by_region(input_data = daly_attributable_psa)
 
-Attributable_daly_averted <- aggregate_impact_by_region(input_data = daly_attributable_psa)
+# create table for avertable death estimates by region
+# -- optimistic scenario
 
-DALY_Averted <- left_join(Associated_daly_averted, Attributable_daly_averted,
-                          by=c("Counts" = "Counts"))
+Associated_death_averted_re_opt <- 
+  aggregate_impact_by_region(input_data=deaths_associated_psa,
+                             input_scenario="optimistic")
 
-# Optimistic scenario - vaccine impact on deaths by region
+Attributable_death_averted_re_opt <- 
+  aggregate_impact_by_region(input_data=deaths_attributable_psa,
+                             input_scenario="optimistic")
 
-Associated_death_averted_opt   <- aggregate_impact_by_region(input_data=deaths_associated_psa,
-                                                         input_scenario="optimistic")
+# create table for avertable DALY estimates by region
+# -- optimistic scenario
 
-Attributable_death_averted_opt <- aggregate_impact_by_region(input_data=deaths_attributable_psa,
-                                                             input_scenario="optimistic")
+Associated_daly_averted_re_opt    <- 
+  aggregate_impact_by_region(input_data = daly_associated_psa,
+                             input_scenario = "optimistic")
 
-Death_Averted_opt              <- left_join(Associated_death_averted_opt, Attributable_death_averted_opt,
-                                            by=c("Counts" = "Counts"))
-
-# Optimistic scenario - vaccine impact on DALYs by region
-Associated_daly_averted_opt    <- aggregate_impact_by_region(input_data = daly_associated_psa,
-                                                            input_scenario = "optimistic")
-
-Attributable_daly_averted_opt  <- aggregate_impact_by_region(input_data = daly_attributable_psa,
-                                                             input_scenario = "optimistic")
-
-DALY_Averted_opt               <- left_join(Associated_daly_averted_opt, Attributable_daly_averted_opt,
-                                           by=c("Counts" = "Counts"))
+Attributable_daly_averted_re_opt  <- 
+  aggregate_impact_by_region(input_data = daly_attributable_psa,
+                             input_scenario = "optimistic")
 
 # ------------------------------------------------------------------------------
-# [table 2] vaccine avertable deaths and DALYs associated with and attributable to 
-# bacterial antimicrobial resistance globally and by WHO region, 2019
+# Table 2: vaccine avertable AMR health burden globally and by WHO region, 2019
 
-# avertable AMR burden by region -- conservative scenario
-Death_Averted <- estimate_bruden_averted_by_region(input_data = Death_Averted)
+Table_avertible_burden_by_region <- create_avertable_burden_table(
+  Associated_death_averted       = Associated_death_averted_re,
+  Attributable_death_averted     = Attributable_death_averted_re,
+  Attributable_daly_averted      = Attributable_daly_averted_re,
+  Associated_daly_averted        = Associated_daly_averted_re,
+  Attributable_death_averted_opt = Attributable_death_averted_re_opt, 
+  Associated_death_averted_opt   = Associated_death_averted_re_opt,
+  Attributable_daly_averted_opt  = Attributable_daly_averted_re_opt, 
+  Associated_daly_averted_opt    = Associated_daly_averted_re_opt)
 
-DALY_Averted  <- estimate_bruden_averted_by_region(input_data = DALY_Averted)
-
-Table2_avertible_burden_by_region <- left_join(Death_Averted, DALY_Averted,
-                                               by=c("Counts" = "Counts"))
-
-fwrite (x    = Table2_avertible_burden_by_region,
+fwrite (x    = Table_avertible_burden_by_region,
         file = file.path("tables", "Table2_avertible_burden_by_region.csv"))
 
-# avertable AMR burden by reigion -- optimistic scenario
-Death_Averted_opt <- estimate_bruden_averted_by_region(input_data = Death_Averted_opt)
-
-DALY_Averted_opt  <- estimate_bruden_averted_by_region(input_data = DALY_Averted_opt)
-
-Table2_avertible_burden_by_region_opt <- left_join(Death_Averted_opt, DALY_Averted_opt,
-                                               by=c("Counts" = "Counts"))
-
-fwrite (x    = Table2_avertible_burden_by_region_opt, 
-        file = file.path("tables", "Table2_avertible_burden_by_region_opt.csv"))
-
 # ------------------------------------------------------------------------------
-# Figure 1: vaccine avertable burden attributable to and associated with 
-# bacterial antimicrobial resistance by GBD  region, 2019
-options(scipen=999)
+# Figure 1: Vaccine impact by WHO region, 2019
 
 # create graph with avertable AMR burden by region -- conservative scenario
 death_averted_by_region_graph <- create_burden_averted_by_region_graph(
-                                    Attributable_burden_averted = Attributable_death_averted,
-                                    Associated_burden_averted   = Associated_death_averted,
-                                    ylim_max                    = 130000,
-                                    ylabel                      = "Vaccine Avertable Deaths",
-                                    title_name                  = "Conservative Scenario")
+  Attributable_burden_averted = Attributable_death_averted_re,
+  Associated_burden_averted   = Associated_death_averted_re,
+  ylim_max                    = 130000,
+  ylabel                      = "Vaccine Avertable Deaths",
+  title_name                  = "Conservative Scenario")
 
 daly_averted_by_region_graph <- create_burden_averted_by_region_graph(
-                                    Attributable_burden_averted = Attributable_daly_averted,
-                                    Associated_burden_averted   = Associated_daly_averted,
-                                    ylim_max                    = 11000000,
-                                    ylabel                      = "Vaccine Avertable DALYs",
-                                    title_name                  = " ")
+  Attributable_burden_averted = Attributable_daly_averted_re,
+  Associated_burden_averted   = Associated_daly_averted_re,
+  ylim_max                    = 11000000,
+  ylabel                      = "Vaccine Avertable DALYs",
+  title_name                  = " ")
 
-## create graph with avertable AMR burden by region -- optimistic scenario
+# create graph with avertable AMR burden by region -- optimistic scenario
 death_averted_by_region_graph_opt <- create_burden_averted_by_region_graph(
-  Attributable_burden_averted = Attributable_death_averted_opt,
-  Associated_burden_averted   = Associated_death_averted_opt,
+  Attributable_burden_averted = Attributable_death_averted_re_opt,
+  Associated_burden_averted   = Associated_death_averted_re_opt,
   ylim_max                    = 280000,
   ylabel                      = "Vaccine Avertable Deaths",
   title_name                  = "Optimistic Scenario")
 
 
 daly_averted_by_region_graph_opt <- create_burden_averted_by_region_graph(
-  Attributable_burden_averted = Attributable_daly_averted_opt,
-  Associated_burden_averted   = Associated_daly_averted_opt,
+  Attributable_burden_averted = Attributable_daly_averted_re_opt,
+  Associated_burden_averted   = Associated_daly_averted_re_opt,
   ylim_max                    = 15000000,
   ylabel                      = "Vaccine Avertable DALYs",
   title_name                  = " ")
@@ -261,46 +258,35 @@ ggsave (filename = "Figure1_burden_averted_by_region.png",
         dpi = 600)
 
 # ------------------------------------------------------------------------------
-# Figure 2: Global vaccine avertable deaths (counts) attributable to and associated with 
+# global vaccine avertable deaths and DALYs attributable to and associated with 
 # bacterial antimicrobial resistance by infectious syndrome, 2019
 
-# disease presentation - Neisseria gonorrhoeae data is only available for DALYs
+# disease presentation -- Neisseria gonorrhoeae data is only available for DALYs
 DiseasePresentation_death <- unique(death_burden_dt$Disease_presentation)
 DiseasePresentation_daly  <- unique(daly_burden_dt$Disease_presentation)
 
-
-# create table for avertable deaths attributable to AMR by disease presentation
+# create table for avertable death estimates by disease presentation
 # -- conservative scenario
-Associated_death_averted_dp   <- aggregate_impact_by_dp(data_input          = deaths_associated_psa,
-                                                        DiseasePresentation = DiseasePresentation_death)
+Associated_death_averted_dp   <- 
+  aggregate_impact_by_dp(data_input          = deaths_associated_psa,
+                         DiseasePresentation = DiseasePresentation_death)
 
-Attributable_death_averted_dp <- aggregate_impact_by_dp(data_input          = deaths_attributable_psa,
-                                                        DiseasePresentation = DiseasePresentation_death)
+Attributable_death_averted_dp <- 
+  aggregate_impact_by_dp(data_input          = deaths_attributable_psa,
+                         DiseasePresentation = DiseasePresentation_death)
 
-death_averted_by_dp_graph <- create_burden_averted_by_dp_graph(
-                              Attributable_burden_averted = Attributable_death_averted_dp,
-                              Associated_burden_averted   = Associated_death_averted_dp,
-                              ylim_max = 150000,
-                              ylabel = "Vaccine Avertable Deaths",
-                              title_name = "Conservative Scenario")
-
-# create table for avertable DALYs attributable to AMR by disease presentation
+# create table for avertable DALY estimates by disease presentation
 # -- conservative scenario
 
-Associated_daly_averted_dp   <- aggregate_impact_by_dp(data_input          = daly_associated_psa,
-                                                       DiseasePresentation = DiseasePresentation_daly)
+Associated_daly_averted_dp   <- 
+  aggregate_impact_by_dp(data_input          = daly_associated_psa,
+                         DiseasePresentation = DiseasePresentation_daly)
 
-Attributable_daly_averted_dp <- aggregate_impact_by_dp(data_input          = daly_attributable_psa,
-                                                       DiseasePresentation = DiseasePresentation_daly)
+Attributable_daly_averted_dp <- 
+  aggregate_impact_by_dp(data_input          = daly_attributable_psa,
+                         DiseasePresentation = DiseasePresentation_daly)
 
-daly_averted_by_dp_graph <- create_burden_averted_by_dp_graph(
-                              Attributable_burden_averted = Attributable_daly_averted_dp,
-                              Associated_burden_averted   = Associated_daly_averted_dp,
-                              ylim_max = 12500000,
-                              ylabel = "Vaccine Avertable DALYs",
-                              title_name = " ")
-
-# create table for avertable deaths attributable to AMR by disease presentation
+# create table for avertable death estimates by disease presentation
 # -- optimistic scenario
 
 Associated_death_averted_dp_opt   <- aggregate_impact_by_dp(
@@ -313,14 +299,7 @@ Attributable_death_averted_dp_opt <- aggregate_impact_by_dp(
   input_scenario      = "optimistic",
   DiseasePresentation = DiseasePresentation_death)
 
-death_averted_by_dp_graph_opt <- create_burden_averted_by_dp_graph(
-  Attributable_burden_averted = Attributable_death_averted_dp_opt,
-  Associated_burden_averted   = Associated_death_averted_dp_opt,
-  ylim_max = 360000,
-  ylabel = "Vaccine Avertable Deaths",
-  title_name = "Optimistic Scenario")
-
-# create table for avertable DALYs attributable to AMR by disease presentation
+# create table for avertable DALY estimates by disease presentation
 # -- optimistic scenario
 
 Associated_daly_averted_dp_opt   <- aggregate_impact_by_dp(
@@ -332,6 +311,53 @@ Attributable_daly_averted_dp_opt <- aggregate_impact_by_dp(
   data_input          = daly_attributable_psa,
   input_scenario      = "optimistic",
   DiseasePresentation = DiseasePresentation_daly)
+
+# ------------------------------------------------------------------------------
+# Table: vaccine avertable AMR health burden by infectious syndrome, 2019
+
+Table_avertible_burden_by_dp <- create_avertable_burden_table(
+  Associated_death_averted       = Associated_death_averted_dp,
+  Attributable_death_averted     = Attributable_death_averted_dp,
+  Attributable_daly_averted      = Attributable_daly_averted_dp,
+  Associated_daly_averted        = Associated_daly_averted_dp,
+  Attributable_death_averted_opt = Attributable_death_averted_dp_opt, 
+  Associated_death_averted_opt   = Associated_death_averted_dp_opt,
+  Attributable_daly_averted_opt  = Attributable_daly_averted_dp_opt, 
+  Associated_daly_averted_opt    = Associated_daly_averted_dp_opt)
+
+Table_avertible_burden_by_dp <- 
+  Table_avertible_burden_by_dp %>% arrange(Counts)
+
+fwrite (x    = Table_avertible_burden_by_dp,
+        file = file.path("tables", "Table_avertible_burden_by_infectious_syndrome.csv"))
+
+# ------------------------------------------------------------------------------
+# Figure 2: Vaccine impact by infectious syndrome, 2019
+
+# create graph with avertable AMR burden by infectious syndrome 
+# -- conservative scenario
+death_averted_by_dp_graph <- create_burden_averted_by_dp_graph(
+  Attributable_burden_averted = Attributable_death_averted_dp,
+  Associated_burden_averted   = Associated_death_averted_dp,
+  ylim_max = 150000,
+  ylabel = "Vaccine Avertable Deaths",
+  title_name = "Conservative Scenario")
+
+daly_averted_by_dp_graph <- create_burden_averted_by_dp_graph(
+  Attributable_burden_averted = Attributable_daly_averted_dp,
+  Associated_burden_averted   = Associated_daly_averted_dp,
+  ylim_max = 12500000,
+  ylabel = "Vaccine Avertable DALYs",
+  title_name = " ")
+
+# create graph with avertable AMR burden by infectious syndrome 
+# -- optimistic scenario
+death_averted_by_dp_graph_opt <- create_burden_averted_by_dp_graph(
+  Attributable_burden_averted = Attributable_death_averted_dp_opt,
+  Associated_burden_averted   = Associated_death_averted_dp_opt,
+  ylim_max = 360000,
+  ylabel = "Vaccine Avertable Deaths",
+  title_name = "Optimistic Scenario")
 
 daly_averted_by_dp_graph_opt <- create_burden_averted_by_dp_graph(
   Attributable_burden_averted = Attributable_daly_averted_dp_opt,
@@ -352,50 +378,91 @@ ggsave (filename = "Figure 2_burden_averted_by_dp.png",
         dpi = 600)
 
 # ------------------------------------------------------------------------------
-# Figure 3: Global vaccine avertable deaths (counts) attributable to and associated with 
+# global vaccine avertable deaths and DALYs attributable to and associated with 
 # bacterial antimicrobial resistance by pathogen, 2019
 
-# create table for avertable deaths attributable to AMR by pathogen
+# create table for avertable death estimates by pathogen
 # -- conservative scenario
-Associated_death_averted_pathogen <- aggregate_impact_by_pathogen(data_input=deaths_associated_psa,
-                                                                  pathogenlist=pathogenlist_death)
+Associated_death_averted_pathogen <- 
+  aggregate_impact_by_pathogen(data_input=deaths_associated_psa,
+                               pathogenlist=pathogenlist_death)
 
-Attributable_death_averted_pathogen <- aggregate_impact_by_pathogen(data_input=deaths_attributable_psa,
-                                                                    pathogenlist=pathogenlist_death)
+Attributable_death_averted_pathogen <- 
+  aggregate_impact_by_pathogen(data_input=deaths_attributable_psa,
+                               pathogenlist=pathogenlist_death)
 
+# create table for avertable DALY estimates by pathogen
+# -- conservative scenario
+Attributable_daly_averted_pathogen <- 
+  aggregate_impact_by_pathogen(data_input=daly_attributable_psa,
+                               pathogenlist=pathogenlist_daly)
+
+Associated_daly_averted_pathogen <- 
+  aggregate_impact_by_pathogen(data_input=daly_associated_psa,
+                               pathogenlist=pathogenlist_daly)
+
+# create table for avertable death estimates by pathogen
+# -- optimistic scenario
+Attributable_death_averted_pathogen_opt <- 
+  aggregate_impact_by_pathogen(data_input     = deaths_attributable_psa,
+                               input_scenario = "optimistic",
+                               pathogenlist   = pathogenlist_death)
+
+Associated_death_averted_pathogen_opt <- 
+  aggregate_impact_by_pathogen(data_input     = deaths_associated_psa,
+                               input_scenario = "optimistic",
+                               pathogenlist   = pathogenlist_death)
+
+# create table for avertable DALY estimates by pathogen
+# -- optimistic scenario
+Attributable_daly_averted_pathogen_opt <- 
+  aggregate_impact_by_pathogen(data_input     = daly_attributable_psa,
+                               input_scenario = "optimistic",
+                               pathogenlist   = pathogenlist_daly)
+
+Associated_daly_averted_pathogen_opt  <- 
+  aggregate_impact_by_pathogen(data_input     = daly_associated_psa,
+                               input_scenario = "optimistic",
+                               pathogenlist   = pathogenlist_daly)
+
+# -------------------------------------------------------------------------
+# Table: vaccine avertable AMR health burden by pathogen, 2019
+
+Table_avertible_burden_by_pathogen <- create_avertable_burden_table(
+  Associated_death_averted       = Associated_death_averted_pathogen,
+  Attributable_death_averted     = Attributable_death_averted_pathogen,
+  Attributable_daly_averted      = Attributable_daly_averted_pathogen,
+  Associated_daly_averted        = Associated_daly_averted_pathogen,
+  Attributable_death_averted_opt = Attributable_death_averted_pathogen_opt, 
+  Associated_death_averted_opt   = Associated_death_averted_pathogen_opt,
+  Attributable_daly_averted_opt  = Attributable_daly_averted_pathogen_opt, 
+  Associated_daly_averted_opt    = Associated_daly_averted_pathogen_opt)
+
+Table_avertible_burden_by_pathogen <- 
+  Table_avertible_burden_by_pathogen %>% arrange(Counts)
+
+fwrite (x    = Table_avertible_burden_by_pathogen,
+        file = file.path("tables", "Table_avertible_burden_by_pathogen.csv"))
+
+# -------------------------------------------------------------------------
+# Figure 3: vaccine impact by pathogen, 2019
+
+# create graph with avertable AMR burden by pathogen -- conservative scenario
 death_averted_by_pathogen_graph <- create_burden_averted_by_pathogen_graph(
-                                    Attributable_burden_averted = Attributable_death_averted_pathogen,
-                                    Associated_burden_averted   = Associated_death_averted_pathogen,
-                                    ylim_max = 100000,
-                                    ylabel = "Vaccine Avertable Deaths",
-                                    title_name = "Conservative Scenario")
-
-# create table for avertable DALYs attributable to AMR by pathogen
-# -- conservative scenario
-Attributable_daly_averted_pathogen <- aggregate_impact_by_pathogen(data_input=daly_attributable_psa,
-                                                                   pathogenlist=pathogenlist_daly)
-
-Associated_daly_averted_pathogen <- aggregate_impact_by_pathogen(data_input=daly_associated_psa,
-                                                                 pathogenlist=pathogenlist_daly)
+  Attributable_burden_averted = Attributable_death_averted_pathogen,
+  Associated_burden_averted   = Associated_death_averted_pathogen,
+  ylim_max = 100000,
+  ylabel = "Vaccine Avertable Deaths",
+  title_name = "Conservative Scenario")
 
 daly_averted_by_pathogen_graph <- create_burden_averted_by_pathogen_graph(
-                                    Attributable_burden_averted = Attributable_daly_averted_pathogen,
-                                    Associated_burden_averted   = Associated_daly_averted_pathogen,
-                                    ylim_max = 9000000,
-                                    ylabel = "Vaccine Avertable DALYs",
-                                    title_name = " ")
+  Attributable_burden_averted = Attributable_daly_averted_pathogen,
+  Associated_burden_averted   = Associated_daly_averted_pathogen,
+  ylim_max = 9000000,
+  ylabel = "Vaccine Avertable DALYs",
+  title_name = " ")
 
-# create table for avertable deaths attributable to AMR by pathogen
-# -- optimistic scenario
-Attributable_death_averted_pathogen_opt <- aggregate_impact_by_pathogen(data_input     = deaths_attributable_psa,
-                                                                        input_scenario = "optimistic",
-                                                                        pathogenlist   = pathogenlist_death)
-
-Associated_death_averted_pathogen_opt <- aggregate_impact_by_pathogen(data_input     = deaths_associated_psa,
-                                                                      input_scenario = "optimistic",
-                                                                      pathogenlist   = pathogenlist_death)
-
-
+# create graph with avertable AMR burden by pathogen -- optimistic scenario
 death_averted_by_pathogen_graph_opt <- create_burden_averted_by_pathogen_graph(
   Attributable_burden_averted = Attributable_death_averted_pathogen_opt,
   Associated_burden_averted   = Associated_death_averted_pathogen_opt,
@@ -403,26 +470,12 @@ death_averted_by_pathogen_graph_opt <- create_burden_averted_by_pathogen_graph(
   ylabel = "Vaccine Avertable Deaths",
   title_name = "Optimistic Scenario")
 
-# create table for avertable DALYs attributable to AMR by pathogen
-# -- optimistic scenario
-Attributable_daly_averted_pathogen_opt <- aggregate_impact_by_pathogen(data_input     = daly_attributable_psa,
-                                                                       input_scenario = "optimistic",
-                                                                       pathogenlist   = pathogenlist_daly)
-
-Associated_daly_averted_pathogen_opt   <- aggregate_impact_by_pathogen(data_input     = daly_associated_psa,
-                                                                       input_scenario = "optimistic",
-                                                                       pathogenlist   = pathogenlist_daly)
-
 daly_averted_by_pathogen_graph_opt <- create_burden_averted_by_pathogen_graph(
   Attributable_burden_averted = Attributable_daly_averted_pathogen_opt,
   Associated_burden_averted   = Associated_daly_averted_pathogen_opt,
   ylim_max = 12500000,
   ylabel = "Vaccine Avertable DALYs",
   title_name = " ")
-
-# create table for estimates of vaccine avertable AMR burdens by pathogen
-create_avertable_by_pathogen_table(
-  avertable_burden_file = file.path("tables", "Table_vaccine_impact_for_main_anlaysis.csv"))
 
 # create [Figure 3]
 death_averted_by_pathogen_graph/daly_averted_by_pathogen_graph/

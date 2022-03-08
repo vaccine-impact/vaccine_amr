@@ -11,7 +11,7 @@ Klebsiella pneumoniae,0.7,0.7,6 months,All,0,Not applicable,No
 Klebsiella pneumoniae,0.7,0.7,5 years,All,"4 week (effective at 6 week), 60 year","under 5, 60 years and above",Yes
 Mycobacterium tuberculosis,0.5,0.7,10 years,All,60 year,above 10,Yes
 Mycobacterium tuberculosis,0.8,0.7,10 years,All,60 year,above 10,No
-Neisseria gonorrhoeae,0.7,0.7,10 years,gonorrhoea and chlamydia,10 year,10 to 34 year,Yes
+Neisseria gonorrhoeae,0.7,0.7,10 years,gonorrhoea and chlamydia,15 year,10 to 34 year,Yes
 Non-typhoidal Salmonella,0.8,0.7,5 years,All,4 week (effective at 6 week),under 5,Yes
 Pseudomonas aeruginosa,0.7,0.7,1 year,"BSI, LRI and thorax infections",60 year,60 years and above,Yes
 Salmonella Paratyphi,0.7,0.7,5 years,All,4 week (effective at 6 week),under 5,Yes
