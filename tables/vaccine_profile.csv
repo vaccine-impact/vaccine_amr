@@ -1,22 +1,22 @@
-Pathogen,Efficacy,Coverage,Duration,DP,VC,VO,MainAnalysis
-Acinetobacter baumannii,0.7,0.7,5 years,BSI,60 year,60 years and above,Yes
-Acinetobacter baumannii,0.7,0.7,5 years,All,60 year,60 years and above,No
-Enterococcus faecium,0.7,0.7,5 years,All,60 year,60 years and above,Yes
-Escherichia coli,0.6,0.7,2 years,Diarrhoea,4 week (effective at 6 week),under 5,No
-Escherichia coli,0.7,0.7,5 years,All,"4 week (effective at 6 week), 60 year","under 5, 60 years and above",No
-Escherichia coli,0.7,0.7,2 years,UTI,"4 week (effective at 6 week), 60 year","under 5, 60 years and above",Yes
-Group A Streptococcus,0.7,0.7,5 years,All,4 week (effective at 6 week),under 5,Yes
-Haemophilus influenzae,0.9,0.9,5 years,All,10 week (effective at 12 week),under 5,Yes
-Klebsiella pneumoniae,0.7,0.7,6 months,All,0,Not applicable,No
-Klebsiella pneumoniae,0.7,0.7,5 years,All,"4 week (effective at 6 week), 60 year","under 5, 60 years and above",Yes
-Mycobacterium tuberculosis,0.5,0.7,10 years,All,60 year,above 10,Yes
-Mycobacterium tuberculosis,0.8,0.7,10 years,All,60 year,above 10,No
-Neisseria gonorrhoeae,0.7,0.7,10 years,gonorrhoea and chlamydia,15 year,10 to 34 year,Yes
-Non-typhoidal Salmonella,0.8,0.7,5 years,All,4 week (effective at 6 week),under 5,Yes
-Pseudomonas aeruginosa,0.7,0.7,1 year,"BSI, LRI and thorax infections",60 year,60 years and above,Yes
-Salmonella Paratyphi,0.7,0.7,5 years,All,4 week (effective at 6 week),under 5,Yes
-Salmonella Typhi,0.85,0.7,20 years,All,9 month,below 35,Yes
-Shigella spp.,0.6,0.7,5 years,All,4 week (effective at 6 week),under 5,Yes
-Staphylococcus aureus,0.6,0.7,2 years,All,"4 week (effective at 6 week), 60 year","under 5, 60 years and above",Yes
-Streptococcus pneumoniae,0.9,0.9,5 years,"BSI, CNS infections, Cardiac infections, LRI",10 week (effective at 12 week),under 5,No
-Streptococcus pneumoniae,0.7,0.9,2 years,"BSI, CNS infections, Cardiac infections, LRI",10 week (effective at 12 week),under 5,Yes
+Vaccine_pathogen,Pathogen,Efficacy,Coverage,Duration,DP,VC,VO,MainAnalysis,HBG
+Acinetobacter baumannii #1,Acinetobacter baumannii,0.7,0.7,5 years,BSI,6 weeks & elderly age group,All age groups,No,70 years
+Acinetobacter baumannii #2,Acinetobacter baumannii,0.7,0.7,5 years,All,6 weeks & elderly age group,All age groups,Yes,70 years
+Enterococcus faecium,Enterococcus faecium,0.7,0.7,5 years,All,6 weeks & elderly age group,All age groups,Yes,65 years
+Enterotoxigenic Escherichia coli (ETEC),Escherichia coli,0.6,0.7,5 years,Diarrhoea,6 months,6 months,Yes,
+Extraintestinal Pathogenic Escherichia coli (ExPEC) #1,Escherichia coli,0.7,0.7,5 years,BSI,6 weeks & elderly age group,All age groups,Yes,75 years
+Extraintestinal Pathogenic Escherichia coli (ExPEC) #2,Escherichia coli,0.7,0.7,5 years,UTI,6 weeks & elderly age group,All age groups,Yes,75 years
+Group A streptococcus (GAS),Group A Streptococcus,0.7,0.7,5 years,All,6 weeks,6 weeks,Yes,
+Haemophilus influenzae type B (Hib),Haemophilus influenzae,0.9,0.9,5 years,All,6 weeks,6 weeks,Yes,
+Klebsiella pneumoniae #1,Klebsiella pneumoniae,0.7,0.7,6 months,BSI,0 weeks (maternal),0 weeks (maternal),Yes,
+Klebsiella pneumoniae #2,Klebsiella pneumoniae,0.7,0.7,5 years,All,6 weeks & elderly age group,All age groups,Yes,70 years
+Mycobacterium tuberculosis #1,Mycobacterium tuberculosis,0.5,0.7,10 years,All,15 years,All age groups,No,65 years
+Mycobacterium tuberculosis #2,Mycobacterium tuberculosis,0.8,0.7,10 years,All,15 years,All age groups,Yes,65 years
+Neisseria gonorrhoeae,Neisseria gonorrhoeae,0.7,0.7,10 years,gonorrhoea and chlamydia,15 years,15 years,Yes,
+non-typhoidal Salmonella,Non-typhoidal Salmonella,0.8,0.7,5 years,All,6 weeks,6 weeks,Yes,
+Pseudomonas aeruginosa,Pseudomonas aeruginosa,0.7,0.7,5 years,"BSI, LRI and thorax infections",6 weeks & elderly age group,All age groups,Yes,75 years
+Salmonella paratyphi,Salmonella Paratyphi,0.7,0.7,5 years,All,9 months,9 months,Yes,
+Salmonella Typhi,Salmonella Typhi,0.85,0.7,15 years,All,9 months,9 months,Yes,
+Shigella,Shigella spp.,0.6,0.7,5 years,All,6 months,6 months,Yes,
+Staphylococcus aureus,Staphylococcus aureus,0.6,0.7,5 years,All,6 weeks & elderly age group,All age groups,Yes,75 years
+Streptococcus pneumoniae #1,Streptococcus pneumoniae,0.9,0.9,5 years,"BSI, CNS infections, Cardiac infections, LRI",6 weeks,6 weeks & elderly age group,No,75 years
+Streptococcus pneumoniae #2,Streptococcus pneumoniae,0.7,0.9,5 years,"BSI, CNS infections, Cardiac infections, LRI",6 weeks,6 weeks & elderly age group,Yes,75 years

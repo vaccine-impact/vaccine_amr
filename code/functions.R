@@ -16,7 +16,7 @@ existing_vaccine_coverage <- function(year,
                                       pcv_coverage_file){
   
   # import WPP population data
-  population_file <- read_excel("data/WPP population by age.xlsx",
+  population_file <- read_excel("data/WPP_population_by_age.xlsx",
                                 col_names = FALSE)
   
   names(population_file) <- lapply(population_file[13, ], as.character)
@@ -29,7 +29,7 @@ existing_vaccine_coverage <- function(year,
   
  # ----------------------------------------------------------------------------
   # import ISO3 information data
-  WPP_iso3 <- read_excel("data/WPP locations.XLSX", 
+  WPP_iso3 <- read_excel("data/WPP_locations.XLSX", 
                          col_names = FALSE)
   
   names(WPP_iso3) <- lapply(WPP_iso3[13, ], as.character)
@@ -320,27 +320,35 @@ create_burden_table <- function(AMR_burden,
 # create and clean up the data frame of WHO vaccine profile
 
 create_vaccine_profile_table <- function(vaccine_profile,
-                                         vaccine_profile_file,
-                                         main_analysis = "Yes"){
+                                         vaccine_profile_file){
   
-  vaccine_profile <- vaccine_profile[, c(2, 3, 4, 5, 9, 10, 11, 12)]
+  vaccine_profile <- vaccine_profile[, c("Vaccine - Pathogen", 
+                                         "Pathogen", 
+                                         "Efficacy (%)",
+                                         "Coverage in target group",
+                                         "Duration of protection",
+                                         "Disease presentation",
+                                         "Age of vaccination (baseline)",
+                                         "Age of vaccination (maximum potential)",
+                                         "Main analysis",
+                                         "Elderly age group with highest burden")]
   
   vaccine_profile <- vaccine_profile %>%
-    rename("Efficacy"     = "Efficacy (%)",
+    rename("Vaccine_pathogen" = "Vaccine - Pathogen",
+           "Efficacy"     = "Efficacy (%)",
            "Coverage"     = "Coverage in target group",
            "Duration"     = "Duration of protection",
            "DP"           = "Disease presentation",
-           "VC"           = "Vaccination (conservative scenario - 1 time vaccination)",
-           "VO"           = "Vaccination (optimistic scenario - plus repeat/booster vaccinations)",
-           "MainAnalysis" = "Main analysis")
+           "VC"           = "Age of vaccination (baseline)",
+           "VO"           = "Age of vaccination (maximum potential)",
+           "MainAnalysis" = "Main analysis",
+           "HBG"          = "Elderly age group with highest burden")
   
   vaccine_profile$Efficacy <- vaccine_profile$Efficacy * 1/100
   vaccine_profile$Coverage <- vaccine_profile$Coverage * 1/100
   
   fwrite (x    = vaccine_profile, 
           file = vaccine_profile_file)
-  
-  vaccine_profile <- vaccine_profile %>% filter(MainAnalysis == main_analysis)
   
   return(vaccine_profile)
 } # end of function -- create_vaccine_profile_table
@@ -352,19 +360,48 @@ create_combined_table <- function(death_burden_dt,
                                   vaccine_profile_dt,
                                   attributable_burden_file,
                                   associated_burden_file){
-
-# create combined table
-  combined_table <- left_join(death_burden_dt, vaccine_profile_dt, 
-                              by=c("Pathogen" = "Pathogen"))
-  combined_table <- data.table(combined_table)
   
-# Streptococcus pneumoniae vaccine specification
+  # filter vaccines for inclusion in the main anlaysis
+  vaccine_profile <- vaccine_profile_dt %>% 
+    filter(MainAnalysis == "Yes")
+  
+  vaccine_profile <- data.table(vaccine_profile[-c(3:4, 8), -1])
+
+  vaccine_profile[Pathogen == "Escherichia coli", DP := "BSI, Diarrhoea, UTI"]
+
+  # create combined table
+  combined_table <- left_join(death_burden_dt, vaccine_profile, 
+                              by=c("Pathogen" = "Pathogen"))
+
+  # Streptococcus pneumoniae vaccine specification
   combined_table[Pathogen             == "Streptococcus pneumoniae" &
                  Disease_presentation == "LRI and thorax infections",
                  Efficacy             := 0.5]
   
-# separate burden attributable to AMR and associated with AMR  
+  # Escherichia coli vaccine specification
+  combined_table[Pathogen             == "Escherichia coli" &
+                 Disease_presentation == "Diarrhoea",
+                 Efficacy             := 0.6]
   
+  combined_table[Pathogen             == "Escherichia coli" &
+                 Disease_presentation == "Diarrhoea",
+                 VC                   := "6 months"]
+  
+  combined_table[Pathogen             == "Escherichia coli" &
+                 Disease_presentation == "Diarrhoea",
+                 VO                   := "6 months"]
+  
+  
+  # Using maternal and infant vaccines
+  combined_table[Pathogen == "Klebsiella pneumoniae" & Disease_presentation == "BSI" &
+                   (Age_group=="EN" | Age_group=="LN" | Age_group=="PN"), 
+                 VC := "0 weeks ~"]
+  
+  combined_table[Pathogen == "Klebsiella pneumoniae" & Disease_presentation == "BSI" &
+                   (Age_group=="EN" | Age_group=="LN" | Age_group=="PN"), 
+                 VO := "0 weeks ~"]
+  
+  # separate burden attributable to AMR and associated with AMR  
   attributable_burden <- combined_table[, -c("Associated_resistant_mean",
                                               "Associated_resistant_lower",
                                               "Associated_resistant_upper")]
@@ -580,166 +617,174 @@ create_burden_by_pathogen_graph <- function(pathogen,
 # applying vaccine impact on vaccine target population
 
 # applying vaccine target age group
-  estimate_vaccine_impact <- function(i, data, burden_psa = burden_psa,
+  estimate_vaccine_impact <- function(i, 
+                                      data, 
+                                      burden_psa = burden_psa,
                                       scenario = "conservative"){
   
   if(is.numeric(i) == TRUE) {
-    vaccine_age <- data %>%
+    va <- data %>%
       filter(run_id == i)
   } else {
-    vaccine_age <- data
+    va <- data
   }
+
+    va <- data.table(va)  
   
   if((scenario == "optimistic") == TRUE){
-  vaccine_age <- vaccine_age %>%
-    mutate(va_age =
-             
-             ifelse(((VC=="4 week (effective at 6 week)" & VO=="under 5") |
-                     (VC=="4 week (effective at 6 week), 60 year" &
-                      VO == "under 5, 60 years and above")) & 
-                     Age_group == "PN", 
-                     burden_psa * Efficacy * Coverage * 47/48,
-             ifelse(((VC=="4 week (effective at 6 week)" & VO=="under 5") |
-                     (VC=="4 week (effective at 6 week), 60 year" &
-                      VO == "under 5, 60 years and above")) &
-                     Age_group == "1 to 4", 
-                     burden_psa * Efficacy * Coverage,
-             ifelse(((VC=="4 week (effective at 6 week)" & VO=="under 5") |
-                     (VC=="4 week (effective at 6 week), 60 year" &
-                      VO == "under 5, 60 years and above")) & 
-                      Age_group == "5 to 9", 
-                     burden_psa * Efficacy * Coverage * 1/5 *5/52,
-                                                
-             ifelse(VC=="10 week (effective at 12 week)" & VO=="under 5" &
-                    Age_group == "PN",
-                    burden_psa * Efficacy * Coverage * 41/48,
-             ifelse(VC=="10 week (effective at 12 week)" & VO=="under 5" & 
-                    Age_group == "1 to 4", 
-                    burden_psa * Efficacy * Coverage,
-             ifelse(VC=="10 week (effective at 12 week)" & VO=="under 5" & 
-                    Age_group == "5 to 9", 
-                    burden_psa * Efficacy * Coverage * 1/5 * 11/52,
-
-             ifelse(VC=="9 month" & VO=="below 35" & 
-                    Age_group == "PN",
-                    burden_psa * Efficacy * Coverage * 4/11,
-             ifelse(VC=="9 month" & VO=="below 35" & 
-                   (Age_group == "1 to 4"   | Age_group == "5 to 9"|
-                    Age_group == "10 to 14" | Age_group == "15 to 19"|
-                    Age_group == "20 to 24" | Age_group == "25 to 29"|
-                    Age_group == "30 to 34"), 
-                    burden_psa * Efficacy * Coverage,
-
-             ifelse((VO == "10 to 34 year" | VO == "above 10") & 
-                   (Age_group == "10 to 14"| Age_group == "15 to 19"|
-                    Age_group == "20 to 24"| Age_group == "25 to 29"|
-                    Age_group == "30 to 34"),
-                    burden_psa * Efficacy * Coverage,                  
-                                       
-             ifelse(VO == "above 10" &
-                   (Age_group == "35 to 39"| 
-                    Age_group == "40 to 44"| Age_group == "45 to 49"|
-                    Age_group == "50 to 54"| Age_group == "55 to 59"),
-                    burden_psa * Efficacy * Coverage,                         
+    va[, va_age := 0]
     
-             ifelse((VO=="60 years and above"|VO=="under 5, 60 years and above"|
-                     VO=="above 10") & 
-                   (Age_group == "60 to 64"| Age_group == "65 to 69"|
-                    Age_group == "70 to 74"| Age_group == "75 to 79"| 
-                    Age_group == "80 to 84"| Age_group == "85 to 89"|
-                    Age_group == "90 to 94"| Age_group == "95 plus"),
-                    burden_psa * Efficacy * Coverage,                    
+    va[VO=="0 weeks (maternal)" & Duration=="6 months" & 
+         (Age_group=="EN" | Age_group=="LN"),
+       va_age := burden_psa * Efficacy * Coverage]
+    va[VO=="0 weeks (maternal)" & Duration=="6 months" & 
+         (Age_group=="PN"),
+       va_age := burden_psa * Efficacy * Coverage * 5/11]
+    
+    va[(VO=="6 weeks" | 
+          VO == "6 weeks & elderly age group") &
+         Duration=="5 years" & Age_group == "PN",
+       va_age := burden_psa * Efficacy * Coverage * 45/48]
+    va[(VO=="6 weeks" | 
+          VO == "6 weeks & elderly age group") &
+         Duration=="5 years" & Age_group == "1 to 4",
+       va_age := burden_psa * Efficacy * Coverage]
+    va[(VO=="6 weeks" | 
+          VO == "6 weeks & elderly age group") &
+         Duration=="5 years" & Age_group == "5 to 9",
+       va_age := burden_psa * Efficacy * Coverage * 1/5 * 7/52]
+
+    va[VO=="6 months" & Duration=="5 years" & Age_group == "PN",
+       va_age := burden_psa * Efficacy * Coverage * 7/11]       
+    va[VO=="6 months" & Duration=="5 years" & Age_group == "1 to 4",
+       va_age := burden_psa * Efficacy * Coverage]       
+    va[VO=="6 months" & Duration=="5 years" & Age_group == "5 to 9",
+       va_age := burden_psa * Efficacy * Coverage * 1/5 * 5/12]       
+    
+    va[VO=="9 months" & Duration=="5 years" & Age_group == "PN",
+       va_age := burden_psa * Efficacy * Coverage * 4/11]      
+    va[VO=="9 months" & Duration=="5 years" & Age_group == "1 to 4",
+       va_age := burden_psa * Efficacy * Coverage]       
+    va[VO=="9 months" & Duration=="5 years" & Age_group == "5 to 9",
+       va_age := burden_psa * Efficacy * Coverage * 1/5 * 8/12]    
+    
+    va[VO=="9 months" & Duration=="15 years" & Age_group == "PN",
+       va_age := burden_psa * Efficacy * Coverage * 4/11] 
+    va[VO=="9 months" & Duration=="15 years" &
+         (Age_group == "1 to 4"| Age_group == "5 to 9"| Age_group == "10 to 14"),
+       va_age := burden_psa * Efficacy * Coverage] 
+    va[VO=="9 months" & Duration=="15 years" & Age_group == "15 to 19",
+       va_age := burden_psa * Efficacy * Coverage * 1/5 * 8/12] 
+    
+    va[VO=="15 years" & Duration=="10 years" & 
+         (Age_group == "15 to 19"| Age_group == "20 to 24"),
+       va_age := burden_psa * Efficacy * Coverage] 
+                                                                                                               
+    va[(VO=="All age groups" | VO=="6 weeks & elderly age group") &
+         HBG=="65 years" & Duration=="5 years" & 
+         Age_group == "65 to 69",
+       va_age := burden_psa * Efficacy * Coverage]   
+    va[(VO=="All age groups" | VO=="6 weeks & elderly age group") &
+         HBG=="65 years" & Duration=="10 years" & 
+         (Age_group == "65 to 69"| Age_group == "70 to 74"),
+       va_age := burden_psa * Efficacy * Coverage] 
+                
+    va[(VO=="All age groups" | VO=="6 weeks & elderly age group") &
+         HBG=="70 years" & Duration=="5 years" & 
+         Age_group == "70 to 74",
+       va_age := burden_psa * Efficacy * Coverage] 
                                                                                                                                     
-                     0))))))))))))
+    va[(VO=="All age groups" | VO=="6 weeks & elderly age group") &
+         HBG=="75 years" & Duration=="5 years" & 
+         Age_group == "75 to 79",
+       va_age := burden_psa * Efficacy * Coverage] 
+    
+    # using both vaccines for Klebsiella pneumoniae   
+    va[Pathogen == "Klebsiella pneumoniae" & 
+         Disease_presentation == "BSI" & VO == "0 weeks ~" & 
+         (Age_group=="EN" | Age_group=="LN" | Age_group=="PN"),
+       va_age := burden_psa * Efficacy * Coverage]
+    
+    va[VO=="All age groups", va_age := burden_psa * Efficacy * Coverage]
     
   } else {
-  vaccine_age <- vaccine_age %>%
-    mutate(va_age =
-            ifelse(VC=="0" & Duration=="6 months" &
-                   (Age_group=="EN" | Age_group=="LN"),
-                   burden_psa * Efficacy * Coverage,
-            ifelse(VC=="0" & Duration=="6 months" & 
-                   Age_group=="PN",
-                   burden_psa * Efficacy * Coverage * 5/11,
-             
-            ifelse((VC=="4 week (effective at 6 week)" | 
-                   VC == "4 week (effective at 6 week), 60 year") &
-                   Duration=="2 years" & Age_group == "PN", 
-                   burden_psa * Efficacy * Coverage * 47/48,
-            ifelse((VC=="4 week (effective at 6 week)" | 
-                   VC == "4 week (effective at 6 week), 60 year") &
-                   Duration=="2 years" & Age_group == "1 to 4", 
-                burden_psa * Efficacy * Coverage * (1/4 + 1/4*5/52),
-             
-             
-            ifelse((VC=="4 week (effective at 6 week)" | 
-                   VC=="4 week (effective at 6 week), 60 year") & 
-                   Duration=="5 years" & Age_group == "PN", 
-                   burden_psa * Efficacy * Coverage * 47/48,
-            ifelse((VC=="4 week (effective at 6 week)"| 
-                    VC=="4 week (effective at 6 week), 60 year") & 
-                    Duration=="5 years" & Age_group == "1 to 4", 
-                   burden_psa * Efficacy * Coverage,
-            ifelse((VC=="4 week (effective at 6 week)" | 
-                   VC=="4 week (effective at 6 week), 60 year") & 
-                   Duration=="5 years" & Age_group == "5 to 9", 
-                   burden_psa * Efficacy * Coverage * 1/5 *5/52,
-                                        
-                   
-            ifelse(VC=="10 week (effective at 12 week)" & Duration=="2 years" 
-                   & Age_group == "PN", 
-                   burden_psa * Efficacy * Coverage * 41/48,
-            ifelse(VC=="10 week (effective at 12 week)" & Duration=="2 years" 
-                   & Age_group == "1 to 4", 
-                   burden_psa * Efficacy * Coverage * (1/4 + 1/4 * 11/52),
-                                                    
-                                                                                    
-            ifelse(VC=="10 week (effective at 12 week)" & Duration=="5 years"
-                   & Age_group == "PN",
-                   burden_psa * Efficacy * Coverage * 41/48,
-            ifelse(VC=="10 week (effective at 12 week)" & Duration=="5 years" 
-                   & Age_group == "1 to 4", 
-                   burden_psa * Efficacy * Coverage,
-            ifelse(VC=="10 week (effective at 12 week)" & Duration=="5 years" 
-                   & Age_group == "5 to 9", 
-                   burden_psa * Efficacy * Coverage * 1/5 * 11/52,
-                   
-                   
-            ifelse(VC=="9 month" & Duration=="20 years"
-                   & Age_group == "PN",
-                   burden_psa * Efficacy * Coverage * 4/11,
-            ifelse(VC=="9 month" & Duration=="20 years" 
-                   & (Age_group == "1 to 4"   | Age_group == "5 to 9"|
-                      Age_group == "10 to 14" | Age_group == "15 to 19"), 
-                   burden_psa * Efficacy * Coverage,
-            ifelse(VC=="9 month" & Duration=="20 years" 
-                   & Age_group == "20 to 24", 
-                   burden_psa * Efficacy * Coverage * 1/5 * 8/12,
-                   
-            ifelse(VC == "15 year" & Duration=="10 years" & 
-                  (Age_group == "15 to 19"| Age_group == "20 to 24"),
-                  burden_psa * Efficacy * Coverage,
-                                                             
-            ifelse(VC=="4 week (effective at 6 week), 60 year" & 
-                   Duration=="2 years" & Age_group == "60 to 64", 
-                   burden_psa * Efficacy * Coverage * 2/5,                    
-                                                                                                                                                                                           
-            ifelse(VC=="60 year" & Duration=="1 year" & Age_group == "60 to 64", 
-                   burden_psa * Efficacy * Coverage * 1/5,
-                   
-            ifelse((VC=="60 year" | VC== "4 week (effective at 6 week), 60 year") & 
-                   Duration=="5 years" & Age_group == "60 to 64", 
-                   burden_psa * Efficacy * Coverage,
-                   
-            ifelse(VC=="60 year" & Duration=="10 years" & 
-                   (Age_group == "60 to 64"| Age_group == "65 to 69"), 
-                  burden_psa * Efficacy * Coverage,
-                                 
-                   0)))))))))))))))))))))
+    va[, va_age := 0]
+    
+    va[VC=="0 weeks (maternal)" & Duration=="6 months" & 
+         (Age_group=="EN" | Age_group=="LN"),
+       va_age := burden_psa * Efficacy * Coverage]
+    va[VC=="0 weeks (maternal)" & Duration=="6 months" & 
+         (Age_group=="PN"),
+       va_age := burden_psa * Efficacy * Coverage * 5/11]
+    
+    va[(VC=="6 weeks" | 
+          VC == "6 weeks & elderly age group") &
+         Duration=="5 years" & Age_group == "PN",
+       va_age := burden_psa * Efficacy * Coverage * 45/48]
+    va[(VC=="6 weeks" | 
+          VC == "6 weeks & elderly age group") &
+         Duration=="5 years" & Age_group == "1 to 4",
+       va_age := burden_psa * Efficacy * Coverage]
+    va[(VC=="6 weeks" | 
+          VC == "6 weeks & elderly age group") &
+         Duration=="5 years" & Age_group == "5 to 9",
+       va_age := burden_psa * Efficacy * Coverage * 1/5 * 7/52]
+    
+    va[VC=="6 months" & Duration=="5 years" & Age_group == "PN",
+       va_age := burden_psa * Efficacy * Coverage * 7/11]       
+    va[VC=="6 months" & Duration=="5 years" & Age_group == "1 to 4",
+       va_age := burden_psa * Efficacy * Coverage]       
+    va[VC=="6 months" & Duration=="5 years" & Age_group == "5 to 9",
+       va_age := burden_psa * Efficacy * Coverage * 1/5 * 5/12]       
+    
+    va[VC=="9 months" & Duration=="5 years" & Age_group == "PN",
+       va_age := burden_psa * Efficacy * Coverage * 4/11]       
+    va[VC=="9 months" & Duration=="5 years" & Age_group == "1 to 4",
+       va_age := burden_psa * Efficacy * Coverage]       
+    va[VC=="9 months" & Duration=="5 years" & Age_group == "5 to 9",
+       va_age := burden_psa * Efficacy * Coverage * 1/5 * 8/12]    
+    
+    va[VC=="9 months" & Duration=="15 years" & Age_group == "PN",
+       va_age := burden_psa * Efficacy * Coverage * 4/11] 
+    va[VC=="9 months" & Duration=="15 years" &
+         (Age_group == "1 to 4"| Age_group == "5 to 9"| Age_group == "10 to 14"),
+       va_age := burden_psa * Efficacy * Coverage] 
+    va[VC=="9 months" & Duration=="15 years" & Age_group == "15 to 19",
+       va_age := burden_psa * Efficacy * Coverage * 1/5 * 8/12] 
+    
+    va[VC=="15 years" & Duration=="10 years" & 
+         (Age_group == "15 to 19"| Age_group == "20 to 24"),
+       va_age := burden_psa * Efficacy * Coverage] 
+    
+    va[VC== "6 weeks & elderly age group" &
+         HBG=="65 years" & Duration=="5 years" & 
+         Age_group == "65 to 69",
+       va_age := burden_psa * Efficacy * Coverage]   
+    va[VC== "6 weeks & elderly age group" &
+         HBG=="65 years" & Duration=="10 years" & 
+         (Age_group == "65 to 69"| Age_group == "70 to 74"),
+       va_age := burden_psa * Efficacy * Coverage] 
+    
+    va[VC== "6 weeks & elderly age group" &
+         HBG=="70 years" & Duration=="5 years" & 
+         Age_group == "70 to 74",
+       va_age := burden_psa * Efficacy * Coverage] 
+    
+    va[VC== "6 weeks & elderly age group" &
+         HBG=="75 years" & Duration=="5 years" & 
+         Age_group == "75 to 79",
+       va_age := burden_psa * Efficacy * Coverage] 
+    
+    # using both vaccines for Klebsiella pneumoniae   
+    va[Pathogen == "Klebsiella pneumoniae" & 
+         Disease_presentation == "BSI" & VO == "0 weeks ~" & 
+         (Age_group=="EN" | Age_group=="LN" | Age_group=="PN"),
+       va_age := burden_psa * Efficacy * Coverage]
+    
   }
-  
+    
   # applying vaccine target disease presentation
-  vaccine_impact <- data.table(vaccine_age)
+  vaccine_impact <- va
   
   vaccine_impact[, va_health_burden := 0]
   
@@ -756,7 +801,12 @@ create_burden_by_pathogen_graph <- function(pathogen,
                        Disease_presentation == "CNS infections" | 
                        Disease_presentation == "Cardiac infections" |
                        Disease_presentation == "LRI and thorax infections")) |
-                   
+
+                   (DP  == "BSI, Diarrhoea, UTI" & 
+                      (Disease_presentation == "BSI" | 
+                       Disease_presentation == "Diarrhoea" | 
+                       Disease_presentation == "UTI")) |
+                                      
                    (DP  == "Diarrhoea" & Disease_presentation == "Diarrhoea") |  
                    
                    (DP  == "LRI" & Disease_presentation == "LRI and thorax infections") |
@@ -779,61 +829,71 @@ create_burden_by_pathogen_graph <- function(pathogen,
 # [table in appendix] vaccine avertable health burdens associated with and attributable
 # to AMR by WHO region, pathogen, disease presentation, and age group
   
-  update_death_burden <- function(combined_dt,
+  update_death_burden <- function(input_associated,
+                                  input_attributable,
                                   burden_dt,
                                   AMR_burden_data_updated_file,
                                   input_scenario){
+        
+  associated_mean <- data.table(input_associated)
+  associated_mean[, burden_psa := burden_mean_value]
+  associated_mean <- 
+    estimate_vaccine_impact(i = "ANY", data = associated_mean,
+                            scenario = input_scenario)[,va_health_burden]    
     
-  associated_mean     <- estimate_vaccine_impact(i = "ANY", data = combined_dt, 
-                                                 burden_psa = combined_dt$Associated_resistant_mean,
-                                                 scenario = input_scenario)[,va_health_burden]
-    
-    
-  associated_lower    <- estimate_vaccine_impact(i = "ANY", data = combined_dt, 
-                                                 burden_psa = combined_dt$Associated_resistant_lower,
-                                                 scenario = input_scenario)[,va_health_burden]
-    
-  associated_upper    <- estimate_vaccine_impact(i = "ANY", data = combined_dt,
-                                                 burden_psa = combined_dt$Associated_resistant_upper,
-                                                 scenario = input_scenario)[,va_health_burden]
-    
-    
-  attributable_mean   <- estimate_vaccine_impact(i = "ANY", data = combined_dt, 
-                                                 burden_psa = combined_dt$Attributable_resistance_mean,
-                                                 scenario = input_scenario)[,va_health_burden]
-    
-    
-  attributable_lower  <- estimate_vaccine_impact(i = "ANY", data = combined_dt, 
-                                                 burden_psa = combined_dt$Attributable_resistance_lower,
-                                                 scenario = input_scenario)[,va_health_burden]
-    
-    
-  attributable_upper  <- estimate_vaccine_impact(i = "ANY", data = combined_dt, 
-                                                 burden_psa = combined_dt$Attributable_resistance_upper,
-                                                 scenario = input_scenario)[,va_health_burden]
-    
-  dt <- data.table("vaccine_avertable_deaths_associated_with_resistance_(mean)"   =  associated_mean,
-                  "vaccine_avertable_deaths_associated_with_resistance_(lower)"  =  associated_lower,
-                  "vaccine_avertable_deaths_associated_with_resistance_(upper)"  =  associated_upper,
-                  "vaccine_avertable_deaths_attributable_to_resistance_(mean)"   =  attributable_mean,
-                  "vaccine_avertable_deaths_attributable_to_resistance_(lower)"  =  attributable_lower,
-                  "vaccine_avertable_deaths_attributable_to_resistance_(upper)"  =  attributable_upper)
+  associated_lower <- data.table(input_associated)
+  associated_lower[, burden_psa := burden_lower_value]
+  associated_lower <-
+    estimate_vaccine_impact(i = "ANY", data = associated_lower,
+                            scenario = input_scenario)[,va_health_burden]    
+  
+  associated_upper <- data.table(input_associated)
+  associated_upper[, burden_psa := burden_upper_value]
+  associated_upper <-
+    estimate_vaccine_impact(i = "ANY", data = associated_upper,
+                            scenario = input_scenario)[,va_health_burden]    
+  
+  attributable_mean <- data.table(input_attributable)
+  attributable_mean[, burden_psa := burden_mean_value]
+  attributable_mean <-
+    estimate_vaccine_impact(i = "ANY", data = attributable_mean,
+                            scenario = input_scenario)[,va_health_burden]    
+  
+  attributable_lower <- data.table(input_attributable)
+  attributable_lower[, burden_psa := burden_lower_value]
+  attributable_lower <-
+    estimate_vaccine_impact(i = "ANY", data = attributable_lower,
+                            scenario = input_scenario)[,va_health_burden]    
+  
+  attributable_upper <- data.table(input_attributable)
+  attributable_upper[, burden_psa := burden_upper_value]
+  attributable_upper <-
+    estimate_vaccine_impact(i = "ANY", data = attributable_upper,
+                            scenario = input_scenario)[,va_health_burden]    
+  
+  dt <- data.table("vaccine avertable-associated with resistance (mean)"   =  associated_mean,
+                   "vaccine avertable-associated with resistance (lower)"  =  associated_lower,
+                   "vaccine avertable-associated with resistance (upper)"  =  associated_upper,
+                   "vaccine avertable-attributable to resistance (mean)"   =  attributable_mean,
+                   "vaccine avertable-attributable to resistance (lower)"  =  attributable_lower,
+                   "vaccine avertable-attributable to resistance (upper)"  =  attributable_upper)
     
   AMR_burden_data_updated <- cbind(burden_dt, dt)
     
   AMR_burden_data_updated <- AMR_burden_data_updated %>%
-    rename("deaths associated with resistance (mean)"   =  "Associated_resistant_mean",
-           "deaths associated with resistance (lower)"  =  "Associated_resistant_lower",
-           "deaths associated with resistance (upper)"  =  "Associated_resistant_upper",
-           "deaths attributable to resistance (mean)"   =  "Attributable_resistance_mean",
-           "deaths attributable to resistance (lower)"  =  "Attributable_resistance_lower",
-           "deaths attributable to resistance (upper)"  =  "Attributable_resistance_upper")
+    rename("associated with resistance (mean)"   =  "Associated_resistant_mean",
+           "associated with resistance (lower)"  =  "Associated_resistant_lower",
+           "associated with resistance (upper)"  =  "Associated_resistant_upper",
+           "attributable to resistance (mean)"   =  "Attributable_resistance_mean",
+           "attributable to resistance (lower)"  =  "Attributable_resistance_lower",
+           "attributable to resistance (upper)"  =  "Attributable_resistance_upper")
   
   AMR_burden_data_updated <- AMR_burden_data_updated[,-c("hib_vaccine_coverage_2019",
                                                         "hib_vaccine_coverage_2018",
                                                         "pcv_vaccine_coverage_2019",
                                                         "pcv_vaccine_coverage_2018")]
-  AMR_burden_data_updated <- AMR_burden_data_updated %>% 
+
+    AMR_burden_data_updated <- AMR_burden_data_updated %>% 
     arrange(Pathogen, WHO_region, Disease_presentation, Age_group)
     
     # save as xlsx
@@ -847,7 +907,7 @@ create_burden_by_pathogen_graph <- function(pathogen,
 
   aggregate_impact_by_region <- function(input_data,
                                          input_scenario = "conservative"){
-    
+   
     impact_by_region <- data.table(WHO_region     = character(),
                                    averted_burden = numeric(),
                                    run_id         = numeric())
@@ -912,12 +972,12 @@ create_burden_by_pathogen_graph <- function(pathogen,
   # create vaccine avertable burden table
   
   create_avertable_burden_table <- function(Associated_death_averted,
-                                            Associated_daly_averted,
                                             Attributable_death_averted,
+                                            Associated_daly_averted,
                                             Attributable_daly_averted,
                                             Associated_death_averted_opt,
-                                            Associated_daly_averted_opt,
                                             Attributable_death_averted_opt,
+                                            Associated_daly_averted_opt,
                                             Attributable_daly_averted_opt){
     
     avertable_death <-
@@ -1193,10 +1253,10 @@ create_burden_averted_by_pathogen_graph <- function(Attributable_burden_averted,
 # further analysis for pathogen with multiple vaccine options
 
   estimate_burden_averted_add  <- function(pathogen,
-                                         vaccine_type,
-                                         input_data,
-                                         name_value,
-                                         scenario_input = "conservative"){
+                                           vaccine_type,
+                                           input_data,
+                                           name_value,
+                                           scenario_input = "conservative"){
   
   burden_attributable_add <- input_data %>%
     filter(Pathogen == pathogen)
@@ -1241,29 +1301,36 @@ create_burden_averted_by_pathogen_graph <- function(Attributable_burden_averted,
 create_burden_table_add <- function(pathogen_input,
                                     vaccine_type_input){
 
-  deaths_attributable <- 
-    estimate_burden_averted_add(pathogen = pathogen_input,
-                                vaccine_type = vaccine_type_input,
-                                input_data = deaths_attributable_psa,
-                                name_value = "deaths_attributable")
-  
   deaths_associated <-
     estimate_burden_averted_add(pathogen = pathogen_input,
                                 vaccine_type = vaccine_type_input,
                                 input_data = deaths_associated_psa,
                                 name_value = "deaths_associated")
-  
-  daly_attributable <-
+
+  deaths_attributable <- 
     estimate_burden_averted_add(pathogen = pathogen_input,
                                 vaccine_type = vaccine_type_input,
-                                input_data = daly_attributable_psa,
-                                name_value = "daly_attributable")
-  
+                                input_data = deaths_attributable_psa,
+                                name_value = "deaths_attributable")
+
   daly_associated <-
     estimate_burden_averted_add(pathogen = pathogen_input,
                                 vaccine_type = vaccine_type_input,
                                 input_data = daly_associated_psa,
                                 name_value = "daly_associated")
+    
+  daly_attributable <-
+    estimate_burden_averted_add(pathogen = pathogen_input,
+                                vaccine_type = vaccine_type_input,
+                                input_data = daly_attributable_psa,
+                                name_value = "daly_attributable")
+
+  deaths_associated_opt <-
+    estimate_burden_averted_add(pathogen = pathogen_input,
+                                vaccine_type = vaccine_type_input,
+                                input_data = deaths_associated_psa,
+                                name_value = "deaths_associated_opt",
+                                scenario_input = "optimistic")
   
   deaths_attributable_opt <- 
     estimate_burden_averted_add(pathogen = pathogen_input,
@@ -1272,11 +1339,11 @@ create_burden_table_add <- function(pathogen_input,
                                 name_value = "deaths_attributable_opt",
                                 scenario_input = "optimistic")
   
-  deaths_associated_opt <-
+  daly_associated_opt <-
     estimate_burden_averted_add(pathogen = pathogen_input,
                                 vaccine_type = vaccine_type_input,
-                                input_data = deaths_associated_psa,
-                                name_value = "deaths_associated_opt",
+                                input_data = daly_associated_psa,
+                                name_value = "daly_associated_opt",
                                 scenario_input = "optimistic")
   
   daly_attributable_opt <-
@@ -1286,13 +1353,6 @@ create_burden_table_add <- function(pathogen_input,
                                 name_value = "daly_attributable_opt",
                                 scenario_input = "optimistic")
   
-  daly_associated_opt <-
-    estimate_burden_averted_add(pathogen = pathogen_input,
-                                vaccine_type = vaccine_type_input,
-                                input_data = daly_associated_psa,
-                                name_value = "daly_associated_opt",
-                                scenario_input = "optimistic")
-
   burden_table_add <- 
     data.table(pathogen                 = pathogen_input,
                deaths_associated        = deaths_associated$"deaths_associated",
