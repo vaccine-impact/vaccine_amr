@@ -123,7 +123,7 @@ lapply(pathogenlist_daly, create_burden_by_pathogen_graph,
 # estimate vaccine averted AMR deaths & uncertainty analysis
 
 set.seed (3)  # seed for random number generator
-run <- 400 # number of runs for probabilistic sensitivity analysis
+run <- 1000 # number of runs for probabilistic sensitivity analysis
 
 # psa for deaths attributable to and associated with AMR
 deaths_associated_psa <- uncertainty_analysis_baseline(

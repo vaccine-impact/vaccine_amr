@@ -1062,7 +1062,8 @@ ggplot(burden_averted_by_region,
   theme_classic() +
   theme(legend.position = c(0.8, 0.9)) +
   ggtitle(title_name) +
-  theme(plot.title = element_text(hjust=-0.2, vjust=3, size = 20))
+  theme(plot.title = element_text(hjust=-0.2, vjust=3, size = 20)) +
+  theme(axis.text.x = element_text(angle = 30, vjust = 1, hjust=1))
 
 } # end of function -- create_burden_averted_by_region_graph
 
