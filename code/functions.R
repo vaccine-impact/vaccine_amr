@@ -1251,7 +1251,7 @@ create_burden_averted_by_pathogen_graph <- function(Attributable_burden_averted,
   
 } # end of function -- create_burden_averted_by_pathogen_graph
 # ------------------------------------------------------------------------------
-# further analysis for pathogen with multiple vaccine options
+# Appendix -- further analysis for pathogen with multiple vaccine options
 
   estimate_burden_averted_add  <- function(pathogen,
                                            vaccine_type,
@@ -1367,4 +1367,100 @@ create_burden_table_add <- function(pathogen_input,
   
   return(burden_table_add)} # end of function -- create_burden_table_add
 
+# ------------------------------------------------------------------------------
+# Appendix -- vaccine avertable burdens by infectious syndrome and pathogen
+
+aggregate_impact_by_dp_pathogen <- function(data_input, 
+                                            input_scenario = "conservative",
+                                            input_rep){
+  
+  # create table for avertable burden to AMR by disease presentation
+  impact_by_dp <- data.table(Disease_presentation = character(),
+                             Pathogen             = character(),
+                             averted_burden       = numeric(), 
+                             run_id               = numeric())
+  
+  for(i in 1:run){
+    dt <- estimate_vaccine_impact(i, data = data_input, scenario = "conservative")
+    dt <- dt %>%
+      group_by(Disease_presentation, Pathogen, run_id) %>%
+      summarise(averted_burden = sum(va_health_burden), .groups = 'drop')
+    impact_by_dp <- rbindlist (list (impact_by_dp, dt),
+                               use.names = TRUE)
+  }
+  
+  impact_by_dp[, number := rep(input_rep, run)]
+  
+  # -------------------------------------------------------------------------
+  
+  burden_averted_dp    <- data.table("50%"=numeric(), "2.5%"=numeric(), "97.5%"=numeric())
+  
+  impact_by_dp_dt      <- impact_by_dp
+  
+  for(i in input_rep){
+    dt <- impact_by_dp_dt %>% filter(number == i)
+    dt <- quantile(x = dt$averted_burden, probs = c (0.5, 0.025, 0.975))
+    dt <- data.table(t(dt))
+    burden_averted_dp <- rbindlist (list (burden_averted_dp, dt),
+                                    use.names = FALSE)
+  }
+  
+  burden_averted <- cbind(data.table(impact_by_dp[input_rep,1:2], burden_averted_dp))
+  
+  return(burden_averted)} # end of function -- aggregate_impact_by_dp_pathogen
+
+# ------------------------------------------------------------------------------
+# create graph of vaccine impact by infectious syndrome and pathogen
+
+burden_averted_by_dp_pat <- function(data_input, image_file){
+  
+  data_input <- data_input[, 1:3] 
+  
+  colnames(data_input) <- 
+    c("Disease_presentation", "Pathogen", "median")
+  
+  data_input <- data_input %>%
+    filter(median != 0)
+  
+  BSI <- data_input %>%
+    filter(Disease_presentation == "BSI") %>%
+    arrange(median)
+  
+  BSI$Pathogen <- gsub("Group A Streptococcus", "Others", BSI$Pathogen)
+  
+  BSI$Pathogen <- gsub("Non-typhoidal Salmonella", "Others", BSI$Pathogen)
+  
+  BSI$Pathogen <- gsub("Salmonella Typhi", "Others", BSI$Pathogen)
+  
+  BSI$Pathogen <- gsub("Enterococcus faecium", "Others", BSI$Pathogen)
+  
+  BSI$Pathogen <- gsub("Pseudomonas aeruginosa", "Others", BSI$Pathogen)
+  
+  BSI <- BSI %>% group_by(Disease_presentation, Pathogen) %>%
+    summarise(median=sum(median), .groups = 'drop')
+  
+  LRI <- data_input %>%
+    filter(Disease_presentation == "LRI and thorax infections")
+  
+  others <- data.frame("Disease_presentation" = "Others",
+                       "Pathogen"             = " ",
+                       "median"               = sum(data_input$median) 
+                       - sum(BSI$median) - sum(LRI$median))
+  
+  dp_by_pathogen <- rbind(BSI, LRI, others)
+  
+  dp_by_pathogen <- dp_by_pathogen %>% arrange(Disease_presentation, median)
+  
+  png(image_file, 
+      width = 10, height = 10, res = 1000, units="in")
+  
+  PieDonut(dp_by_pathogen, aes(pies = Disease_presentation, donuts = Pathogen, count = median),
+           showPieName=FALSE, showRatioThreshold = 0, start = 4,
+           r0 = 0, r1 = 0.5, r2 = 0.6,
+           pieAlpha = 0.7, donutAlpha = 0.7,
+           labelpositionThreshold=1,
+           titlesize = 5)
+  
+  dev.off()
+} # end of function -- burden_averted_by_dp_pat
 # ------------------------------------------------------------------------------

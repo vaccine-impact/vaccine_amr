@@ -19,6 +19,9 @@ library (rriskDistributions)
 library (formattable)
 library (patchwork)
 
+devtools::install_github("cardiomoon/webr")
+library (webr)
+
 # remove all objects from workspace
 rm (list = ls ())
 
@@ -610,6 +613,42 @@ AMR_daly_data_updated <- update_death_burden(
   AMR_burden_data_updated_file = file.path ("tables", "AMR_dalys_data_optimistic.csv"),
   input_scenario               = "optimistic")
 
+# ------------------------------------------------------------------------------
+# Appendix -- vaccine avertable deaths by infectious syndrome and pathogen
+
+deaths_associated_dp_pathogen <- 
+  aggregate_impact_by_dp_pathogen(data_input = deaths_associated_psa,
+                                  input_rep  = 1:62)
+
+deaths_attributable_dp_pathogen <- 
+  aggregate_impact_by_dp_pathogen(data_input = deaths_attributable_psa,
+                                  input_rep  = 1:62)
+
+daly_associated_dp_pathogen <- 
+  aggregate_impact_by_dp_pathogen(data_input = daly_associated_psa,
+                                  input_rep  = 1:63)
+
+daly_attributable_dp_pathogen <- 
+  aggregate_impact_by_dp_pathogen(data_input = daly_attributable_psa,
+                                  input_rep  = 1:61)
+
+# create graph of vaccine impact by infectious syndrome and pathogen
+
+burden_averted_by_dp_pat(data_input = deaths_associated_dp_pathogen, 
+                         image_file = file.path("figures", 
+                                                "deaths_associated_dp_pat.png"))
+
+burden_averted_by_dp_pat(data_input = deaths_attributable_dp_pathogen, 
+                         image_file = file.path("figures", 
+                                                "deaths_attributable_dp_pat.png"))
+
+burden_averted_by_dp_pat(data_input = daly_associated_dp_pathogen, 
+                         image_file = file.path("figures", 
+                                                "daly_associated_dp_pat.png"))
+
+burden_averted_by_dp_pat(data_input = daly_attributable_dp_pathogen, 
+                         image_file = file.path("figures", 
+                                                "daly_attributable_dp_pat.png"))
 # ------------------------------------------------------------------------------
 # return to source directory
 setwd (source_wd)
