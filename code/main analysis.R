@@ -93,7 +93,7 @@ combined_dt <-
 
 # create combined table: vaccine profile + disease burden (DALYs)
 # create separate burden file for health burdens attributable to AMR and associated with AMR  
-daly_combined_dt <- 
+daly_combined_dt <-
   create_combined_table(death_burden_dt          = daly_burden_dt, 
                         vaccine_profile_dt       = vaccine_profile_dt,
                         attributable_burden_file = file.path("tables", "daly_attributable_burden.csv"),
@@ -108,7 +108,7 @@ daly_combined_dt <-
 options(scipen=999)
 
 pathogenlist_death <- unique(death_burden_dt$Pathogen)
-pathogenlist_daly <- unique(daly_burden_dt$Pathogen)
+pathogenlist_daly  <- unique(daly_burden_dt$Pathogen)
 
 lapply(pathogenlist_death, create_burden_by_pathogen_graph, 
        input_data = combined_dt, ylabel = "Number of Death Associated with AMR",
@@ -126,7 +126,7 @@ lapply(pathogenlist_daly, create_burden_by_pathogen_graph,
 # estimate vaccine averted AMR deaths & uncertainty analysis
 
 set.seed (3)  # seed for random number generator
-run <- 1000 # number of runs for probabilistic sensitivity analysis
+run <- 100 # number of runs for probabilistic sensitivity analysis
 
 # psa for deaths attributable to and associated with AMR
 deaths_associated_psa <- uncertainty_analysis_baseline(
@@ -500,7 +500,7 @@ ggsave (filename = "Figure3_burden_averted_by_pathogen.png",
         dpi = 600)
 
 # ------------------------------------------------------------------------------
-# further analysis for pathogen with multiple vaccine options
+# further analysis -- vaccine avertable burden of corresponding vaccines
 
 # vaccine profile with multiple options
 vaccine_profile_dt_add <- read_csv(file.path("tables", "vaccine_profile.csv"))
@@ -575,7 +575,75 @@ vaccine_impact_add <- bind_rows(list(
 vaccine_impact_table_add <- cbind(vaccine_profile_dt_add, vaccine_impact_add)
 
 fwrite (x    = vaccine_impact_table_add, 
-        file = file.path("tables", "Table_vaccine_impact_for_multiple_vaccine_profiles.csv"))
+        file = file.path("tables", "Table_avertable_burden_of_corresponding_vaccines.csv"))
+
+# ------------------------------------------------------------------------------
+# further analysis 
+# -- the incremental impact of expanding coverage of PCV and Hib vaccines
+# -- on baseline scenario
+# percentage increase in vaccine avertable burden by scaling up exiting coverage
+
+# the impact of the expanding coverage of Hib vacccine
+data.table(vaccine_impact_table_add)[
+  Vaccine_pathogen == "Haemophilus influenzae type B (Hib)",][,c(1,12:15)]
+
+# Vaccine deaths_associated  deaths_attributable daly_associated daly_attributable
+# Hib     26,830             6,107               2,355,960       525,215
+
+# incremental impact of Hib vaccine on deaths associated with AMR
+(26830 - estimate_existing_vaccine_impact(
+  input_data = deaths_associated_psa)[Counts == "Haemophilus influenzae",]$'50%')/ 
+  estimate_existing_vaccine_impact(
+  input_data = deaths_associated_psa)[Counts == "Haemophilus influenzae",]$'50%'
+
+# incremental impact of Hib vaccine on deaths attributable to AMR
+(6107 - estimate_existing_vaccine_impact(
+  input_data = deaths_attributable_psa)[Counts == "Haemophilus influenzae",]$'50%')/ 
+  estimate_existing_vaccine_impact(
+  input_data = deaths_attributable_psa)[Counts == "Haemophilus influenzae",]$'50%'
+
+# incremental impact of Hib vaccine on dalys associated with AMR
+(2355960 - estimate_existing_vaccine_impact(
+  input_data = daly_associated_psa)[Counts == "Haemophilus influenzae",]$'50%')/ 
+  estimate_existing_vaccine_impact(
+    input_data = daly_associated_psa)[Counts == "Haemophilus influenzae",]$'50%'
+
+# incremental impact of Hib vaccine on dalys attributable to AMR
+(525215 - estimate_existing_vaccine_impact(
+  input_data = daly_attributable_psa)[Counts == "Haemophilus influenzae",]$'50%')/ 
+  estimate_existing_vaccine_impact(
+    input_data = daly_attributable_psa)[Counts == "Haemophilus influenzae",]$'50%'
+
+
+# the impact of the expanding coverage of PCV
+data.table(vaccine_impact_table_add)[
+  Vaccine_pathogen == "Streptococcus pneumoniae #1",][,c(1,12:15)]
+
+# Vaccine deaths_associated  deaths_attributable daly_associated daly_attributable
+# PCV     78,710             16,039              6,900,773       1,415,135
+
+(78710 - estimate_existing_vaccine_impact(
+  input_data = deaths_associated_psa)[Counts == "Streptococcus pneumoniae",]$'50%')/ 
+  estimate_existing_vaccine_impact(
+    input_data = deaths_associated_psa)[Counts == "Streptococcus pneumoniae",]$'50%'
+
+# incremental impact of Hib vaccine on deaths attributable to AMR
+(16039 - estimate_existing_vaccine_impact(
+  input_data = deaths_attributable_psa)[Counts == "Streptococcus pneumoniae",]$'50%')/ 
+  estimate_existing_vaccine_impact(
+    input_data = deaths_attributable_psa)[Counts == "Streptococcus pneumoniae",]$'50%'
+
+# incremental impact of Hib vaccine on dalys associated with AMR
+(6900773 - estimate_existing_vaccine_impact(
+  input_data = daly_associated_psa)[Counts == "Streptococcus pneumoniae",]$'50%')/ 
+  estimate_existing_vaccine_impact(
+    input_data = daly_associated_psa)[Counts == "Streptococcus pneumoniae",]$'50%'
+
+# incremental impact of Hib vaccine on dalys attributable to AMR
+(1415135 - estimate_existing_vaccine_impact(
+  input_data = daly_attributable_psa)[Counts == "Streptococcus pneumoniae",]$'50%')/ 
+  estimate_existing_vaccine_impact(
+    input_data = daly_attributable_psa)[Counts == "Streptococcus pneumoniae",]$'50%'
 
 # ------------------------------------------------------------------------------
 # [table in appendix] vaccine avertable health burdens associated with and attributable
