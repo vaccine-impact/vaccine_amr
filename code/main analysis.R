@@ -233,7 +233,7 @@ fwrite (x    = Table_avertible_burden_by_region,
 death_averted_by_region_graph <- create_burden_averted_by_region_graph(
   Attributable_burden_averted = Attributable_death_averted_re,
   Associated_burden_averted   = Associated_death_averted_re,
-  ylim_max                    = 200000,
+  ylim_max                    = 220000,
   ylabel                      = "Vaccine Avertable Deaths",
   title_name                  = "Conservative Scenario")
 

@@ -4555,142 +4555,142 @@ Western Pacific,UTI,90 to 94,Klebsiella pneumoniae,2000,1000,3000,1000,0,1000,0,
 Western Pacific,UTI,95 plus,Klebsiella pneumoniae,1000,1000,1000,0,0,0,0,0,0,0,0,0
 Africa,TB,EN,Mycobacterium tuberculosis,0,0,0,0,0,0,0,0,0,0,0,0
 Africa,TB,LN,Mycobacterium tuberculosis,0,0,0,0,0,0,0,0,0,0,0,0
-Africa,TB,PN,Mycobacterium tuberculosis,165000,99000,271000,70000,15000,155000,0,0,0,0,0,0
-Africa,TB,1 to 4,Mycobacterium tuberculosis,184000,108000,306000,73000,15000,165000,0,0,0,0,0,0
-Africa,TB,5 to 9,Mycobacterium tuberculosis,42000,26000,66000,14000,3000,33000,0,0,0,0,0,0
-Africa,TB,10 to 14,Mycobacterium tuberculosis,28000,18000,44000,11000,2000,24000,0,0,0,0,0,0
+Africa,TB,PN,Mycobacterium tuberculosis,165000,99000,271000,70000,15000,155000,92400,55440,151760,39200,8400,86800
+Africa,TB,1 to 4,Mycobacterium tuberculosis,184000,108000,306000,73000,15000,165000,103040,60480,171360,40880,8400,92400
+Africa,TB,5 to 9,Mycobacterium tuberculosis,42000,26000,66000,14000,3000,33000,23520,14560,36960,7840,1680,18480
+Africa,TB,10 to 14,Mycobacterium tuberculosis,28000,18000,44000,11000,2000,24000,15680,10080,24640,6160,1120,13440
 Africa,TB,15 to 19,Mycobacterium tuberculosis,68000,43000,105000,26000,6000,58000,38080,24080,58800,14560,3360,32480
 Africa,TB,20 to 24,Mycobacterium tuberculosis,117000,75000,181000,45000,10000,98000,65520,42000,101360,25200,5600,54880
-Africa,TB,25 to 29,Mycobacterium tuberculosis,143000,92000,215000,57000,13000,124000,0,0,0,0,0,0
-Africa,TB,30 to 34,Mycobacterium tuberculosis,153000,100000,232000,61000,13000,135000,0,0,0,0,0,0
-Africa,TB,35 to 39,Mycobacterium tuberculosis,147000,96000,227000,60000,13000,133000,0,0,0,0,0,0
-Africa,TB,40 to 44,Mycobacterium tuberculosis,137000,88000,206000,56000,12000,124000,0,0,0,0,0,0
-Africa,TB,45 to 49,Mycobacterium tuberculosis,133000,85000,205000,55000,12000,122000,0,0,0,0,0,0
-Africa,TB,50 to 54,Mycobacterium tuberculosis,132000,86000,203000,55000,12000,120000,0,0,0,0,0,0
-Africa,TB,55 to 59,Mycobacterium tuberculosis,116000,75000,177000,48000,10000,107000,0,0,0,0,0,0
-Africa,TB,60 to 64,Mycobacterium tuberculosis,85000,56000,130000,35000,8000,78000,0,0,0,0,0,0
-Africa,TB,65 to 69,Mycobacterium tuberculosis,67000,44000,103000,28000,6000,62000,0,0,0,0,0,0
-Africa,TB,70 to 74,Mycobacterium tuberculosis,55000,36000,84000,23000,5000,51000,0,0,0,0,0,0
-Africa,TB,75 to 79,Mycobacterium tuberculosis,37000,24000,58000,15000,3000,34000,0,0,0,0,0,0
-Africa,TB,80 to 84,Mycobacterium tuberculosis,23000,15000,36000,10000,2000,21000,0,0,0,0,0,0
-Africa,TB,85 to 89,Mycobacterium tuberculosis,11000,7000,17000,4000,1000,10000,0,0,0,0,0,0
-Africa,TB,90 to 94,Mycobacterium tuberculosis,3000,2000,5000,1000,0,3000,0,0,0,0,0,0
-Africa,TB,95 plus,Mycobacterium tuberculosis,1000,1000,2000,0,0,1000,0,0,0,0,0,0
+Africa,TB,25 to 29,Mycobacterium tuberculosis,143000,92000,215000,57000,13000,124000,80080,51520,120400,31920,7280,69440
+Africa,TB,30 to 34,Mycobacterium tuberculosis,153000,100000,232000,61000,13000,135000,85680,56000,129920,34160,7280,75600
+Africa,TB,35 to 39,Mycobacterium tuberculosis,147000,96000,227000,60000,13000,133000,82320,53760,127120,33600,7280,74480
+Africa,TB,40 to 44,Mycobacterium tuberculosis,137000,88000,206000,56000,12000,124000,76720,49280,115360,31360,6720,69440
+Africa,TB,45 to 49,Mycobacterium tuberculosis,133000,85000,205000,55000,12000,122000,74480,47600,114800,30800,6720,68320
+Africa,TB,50 to 54,Mycobacterium tuberculosis,132000,86000,203000,55000,12000,120000,73920,48160,113680,30800,6720,67200
+Africa,TB,55 to 59,Mycobacterium tuberculosis,116000,75000,177000,48000,10000,107000,64960,42000,99120,26880,5600,59920
+Africa,TB,60 to 64,Mycobacterium tuberculosis,85000,56000,130000,35000,8000,78000,47600,31360,72800,19600,4480,43680
+Africa,TB,65 to 69,Mycobacterium tuberculosis,67000,44000,103000,28000,6000,62000,37520,24640,57680,15680,3360,34720
+Africa,TB,70 to 74,Mycobacterium tuberculosis,55000,36000,84000,23000,5000,51000,30800,20160,47040,12880,2800,28560
+Africa,TB,75 to 79,Mycobacterium tuberculosis,37000,24000,58000,15000,3000,34000,20720,13440,32480,8400,1680,19040
+Africa,TB,80 to 84,Mycobacterium tuberculosis,23000,15000,36000,10000,2000,21000,12880,8400,20160,5600,1120,11760
+Africa,TB,85 to 89,Mycobacterium tuberculosis,11000,7000,17000,4000,1000,10000,6160,3920,9520,2240,560,5600
+Africa,TB,90 to 94,Mycobacterium tuberculosis,3000,2000,5000,1000,0,3000,1680,1120,2800,560,0,1680
+Africa,TB,95 plus,Mycobacterium tuberculosis,1000,1000,2000,0,0,1000,560,560,1120,0,0,560
 Americas,TB,EN,Mycobacterium tuberculosis,0,0,0,0,0,0,0,0,0,0,0,0
 Americas,TB,LN,Mycobacterium tuberculosis,0,0,0,0,0,0,0,0,0,0,0,0
-Americas,TB,PN,Mycobacterium tuberculosis,2000,1000,4000,1000,0,2000,0,0,0,0,0,0
-Americas,TB,1 to 4,Mycobacterium tuberculosis,2000,1000,3000,1000,0,2000,0,0,0,0,0,0
-Americas,TB,5 to 9,Mycobacterium tuberculosis,1000,1000,2000,0,0,1000,0,0,0,0,0,0
-Americas,TB,10 to 14,Mycobacterium tuberculosis,1000,1000,2000,0,0,1000,0,0,0,0,0,0
+Americas,TB,PN,Mycobacterium tuberculosis,2000,1000,4000,1000,0,2000,1120,560,2240,560,0,1120
+Americas,TB,1 to 4,Mycobacterium tuberculosis,2000,1000,3000,1000,0,2000,1120,560,1680,560,0,1120
+Americas,TB,5 to 9,Mycobacterium tuberculosis,1000,1000,2000,0,0,1000,560,560,1120,0,0,560
+Americas,TB,10 to 14,Mycobacterium tuberculosis,1000,1000,2000,0,0,1000,560,560,1120,0,0,560
 Americas,TB,15 to 19,Mycobacterium tuberculosis,3000,2000,4000,1000,0,2000,1680,1120,2240,560,0,1120
 Americas,TB,20 to 24,Mycobacterium tuberculosis,6000,4000,10000,2000,1000,5000,3360,2240,5600,1120,560,2800
-Americas,TB,25 to 29,Mycobacterium tuberculosis,7000,4000,11000,3000,1000,6000,0,0,0,0,0,0
-Americas,TB,30 to 34,Mycobacterium tuberculosis,7000,4000,11000,3000,1000,6000,0,0,0,0,0,0
-Americas,TB,35 to 39,Mycobacterium tuberculosis,7000,4000,12000,3000,1000,7000,0,0,0,0,0,0
-Americas,TB,40 to 44,Mycobacterium tuberculosis,7000,4000,12000,3000,1000,7000,0,0,0,0,0,0
-Americas,TB,45 to 49,Mycobacterium tuberculosis,7000,5000,12000,3000,1000,7000,0,0,0,0,0,0
-Americas,TB,50 to 54,Mycobacterium tuberculosis,7000,5000,12000,3000,1000,7000,0,0,0,0,0,0
-Americas,TB,55 to 59,Mycobacterium tuberculosis,7000,4000,12000,3000,1000,7000,0,0,0,0,0,0
-Americas,TB,60 to 64,Mycobacterium tuberculosis,6000,4000,10000,3000,1000,6000,0,0,0,0,0,0
-Americas,TB,65 to 69,Mycobacterium tuberculosis,5000,3000,8000,2000,1000,5000,0,0,0,0,0,0
-Americas,TB,70 to 74,Mycobacterium tuberculosis,5000,3000,7000,2000,0,4000,0,0,0,0,0,0
-Americas,TB,75 to 79,Mycobacterium tuberculosis,3000,2000,5000,1000,0,3000,0,0,0,0,0,0
-Americas,TB,80 to 84,Mycobacterium tuberculosis,2000,1000,3000,1000,0,2000,0,0,0,0,0,0
-Americas,TB,85 to 89,Mycobacterium tuberculosis,1000,1000,2000,0,0,1000,0,0,0,0,0,0
-Americas,TB,90 to 94,Mycobacterium tuberculosis,0,0,1000,0,0,0,0,0,0,0,0,0
+Americas,TB,25 to 29,Mycobacterium tuberculosis,7000,4000,11000,3000,1000,6000,3920,2240,6160,1680,560,3360
+Americas,TB,30 to 34,Mycobacterium tuberculosis,7000,4000,11000,3000,1000,6000,3920,2240,6160,1680,560,3360
+Americas,TB,35 to 39,Mycobacterium tuberculosis,7000,4000,12000,3000,1000,7000,3920,2240,6720,1680,560,3920
+Americas,TB,40 to 44,Mycobacterium tuberculosis,7000,4000,12000,3000,1000,7000,3920,2240,6720,1680,560,3920
+Americas,TB,45 to 49,Mycobacterium tuberculosis,7000,5000,12000,3000,1000,7000,3920,2800,6720,1680,560,3920
+Americas,TB,50 to 54,Mycobacterium tuberculosis,7000,5000,12000,3000,1000,7000,3920,2800,6720,1680,560,3920
+Americas,TB,55 to 59,Mycobacterium tuberculosis,7000,4000,12000,3000,1000,7000,3920,2240,6720,1680,560,3920
+Americas,TB,60 to 64,Mycobacterium tuberculosis,6000,4000,10000,3000,1000,6000,3360,2240,5600,1680,560,3360
+Americas,TB,65 to 69,Mycobacterium tuberculosis,5000,3000,8000,2000,1000,5000,2800,1680,4480,1120,560,2800
+Americas,TB,70 to 74,Mycobacterium tuberculosis,5000,3000,7000,2000,0,4000,2800,1680,3920,1120,0,2240
+Americas,TB,75 to 79,Mycobacterium tuberculosis,3000,2000,5000,1000,0,3000,1680,1120,2800,560,0,1680
+Americas,TB,80 to 84,Mycobacterium tuberculosis,2000,1000,3000,1000,0,2000,1120,560,1680,560,0,1120
+Americas,TB,85 to 89,Mycobacterium tuberculosis,1000,1000,2000,0,0,1000,560,560,1120,0,0,560
+Americas,TB,90 to 94,Mycobacterium tuberculosis,0,0,1000,0,0,0,0,0,560,0,0,0
 Americas,TB,95 plus,Mycobacterium tuberculosis,0,0,0,0,0,0,0,0,0,0,0,0
 Eastern Mediterranean,TB,EN,Mycobacterium tuberculosis,0,0,0,0,0,0,0,0,0,0,0,0
 Eastern Mediterranean,TB,LN,Mycobacterium tuberculosis,0,0,0,0,0,0,0,0,0,0,0,0
-Eastern Mediterranean,TB,PN,Mycobacterium tuberculosis,68000,33000,128000,30000,6000,76000,0,0,0,0,0,0
-Eastern Mediterranean,TB,1 to 4,Mycobacterium tuberculosis,67000,37000,115000,28000,6000,65000,0,0,0,0,0,0
-Eastern Mediterranean,TB,5 to 9,Mycobacterium tuberculosis,36000,19000,66000,13000,3000,33000,0,0,0,0,0,0
-Eastern Mediterranean,TB,10 to 14,Mycobacterium tuberculosis,27000,14000,48000,10000,2000,25000,0,0,0,0,0,0
+Eastern Mediterranean,TB,PN,Mycobacterium tuberculosis,68000,33000,128000,30000,6000,76000,38080,18480,71680,16800,3360,42560
+Eastern Mediterranean,TB,1 to 4,Mycobacterium tuberculosis,67000,37000,115000,28000,6000,65000,37520,20720,64400,15680,3360,36400
+Eastern Mediterranean,TB,5 to 9,Mycobacterium tuberculosis,36000,19000,66000,13000,3000,33000,20160,10640,36960,7280,1680,18480
+Eastern Mediterranean,TB,10 to 14,Mycobacterium tuberculosis,27000,14000,48000,10000,2000,25000,15120,7840,26880,5600,1120,14000
 Eastern Mediterranean,TB,15 to 19,Mycobacterium tuberculosis,44000,24000,76000,17000,4000,41000,24640,13440,42560,9520,2240,22960
 Eastern Mediterranean,TB,20 to 24,Mycobacterium tuberculosis,63000,35000,108000,25000,5000,59000,35280,19600,60480,14000,2800,33040
-Eastern Mediterranean,TB,25 to 29,Mycobacterium tuberculosis,67000,36000,116000,27000,6000,66000,0,0,0,0,0,0
-Eastern Mediterranean,TB,30 to 34,Mycobacterium tuberculosis,70000,38000,124000,28000,6000,69000,0,0,0,0,0,0
-Eastern Mediterranean,TB,35 to 39,Mycobacterium tuberculosis,71000,38000,123000,29000,6000,69000,0,0,0,0,0,0
-Eastern Mediterranean,TB,40 to 44,Mycobacterium tuberculosis,67000,36000,117000,28000,6000,67000,0,0,0,0,0,0
-Eastern Mediterranean,TB,45 to 49,Mycobacterium tuberculosis,61000,33000,107000,25000,5000,62000,0,0,0,0,0,0
-Eastern Mediterranean,TB,50 to 54,Mycobacterium tuberculosis,54000,29000,95000,22000,5000,53000,0,0,0,0,0,0
-Eastern Mediterranean,TB,55 to 59,Mycobacterium tuberculosis,47000,26000,84000,20000,4000,47000,0,0,0,0,0,0
-Eastern Mediterranean,TB,60 to 64,Mycobacterium tuberculosis,39000,21000,69000,16000,3000,41000,0,0,0,0,0,0
-Eastern Mediterranean,TB,65 to 69,Mycobacterium tuberculosis,30000,17000,53000,13000,3000,31000,0,0,0,0,0,0
-Eastern Mediterranean,TB,70 to 74,Mycobacterium tuberculosis,24000,13000,43000,10000,2000,25000,0,0,0,0,0,0
-Eastern Mediterranean,TB,75 to 79,Mycobacterium tuberculosis,15000,8000,27000,6000,1000,15000,0,0,0,0,0,0
-Eastern Mediterranean,TB,80 to 84,Mycobacterium tuberculosis,9000,5000,15000,4000,1000,9000,0,0,0,0,0,0
-Eastern Mediterranean,TB,85 to 89,Mycobacterium tuberculosis,3000,2000,6000,1000,0,3000,0,0,0,0,0,0
-Eastern Mediterranean,TB,90 to 94,Mycobacterium tuberculosis,1000,0,1000,0,0,1000,0,0,0,0,0,0
+Eastern Mediterranean,TB,25 to 29,Mycobacterium tuberculosis,67000,36000,116000,27000,6000,66000,37520,20160,64960,15120,3360,36960
+Eastern Mediterranean,TB,30 to 34,Mycobacterium tuberculosis,70000,38000,124000,28000,6000,69000,39200,21280,69440,15680,3360,38640
+Eastern Mediterranean,TB,35 to 39,Mycobacterium tuberculosis,71000,38000,123000,29000,6000,69000,39760,21280,68880,16240,3360,38640
+Eastern Mediterranean,TB,40 to 44,Mycobacterium tuberculosis,67000,36000,117000,28000,6000,67000,37520,20160,65520,15680,3360,37520
+Eastern Mediterranean,TB,45 to 49,Mycobacterium tuberculosis,61000,33000,107000,25000,5000,62000,34160,18480,59920,14000,2800,34720
+Eastern Mediterranean,TB,50 to 54,Mycobacterium tuberculosis,54000,29000,95000,22000,5000,53000,30240,16240,53200,12320,2800,29680
+Eastern Mediterranean,TB,55 to 59,Mycobacterium tuberculosis,47000,26000,84000,20000,4000,47000,26320,14560,47040,11200,2240,26320
+Eastern Mediterranean,TB,60 to 64,Mycobacterium tuberculosis,39000,21000,69000,16000,3000,41000,21840,11760,38640,8960,1680,22960
+Eastern Mediterranean,TB,65 to 69,Mycobacterium tuberculosis,30000,17000,53000,13000,3000,31000,16800,9520,29680,7280,1680,17360
+Eastern Mediterranean,TB,70 to 74,Mycobacterium tuberculosis,24000,13000,43000,10000,2000,25000,13440,7280,24080,5600,1120,14000
+Eastern Mediterranean,TB,75 to 79,Mycobacterium tuberculosis,15000,8000,27000,6000,1000,15000,8400,4480,15120,3360,560,8400
+Eastern Mediterranean,TB,80 to 84,Mycobacterium tuberculosis,9000,5000,15000,4000,1000,9000,5040,2800,8400,2240,560,5040
+Eastern Mediterranean,TB,85 to 89,Mycobacterium tuberculosis,3000,2000,6000,1000,0,3000,1680,1120,3360,560,0,1680
+Eastern Mediterranean,TB,90 to 94,Mycobacterium tuberculosis,1000,0,1000,0,0,1000,560,0,560,0,0,560
 Eastern Mediterranean,TB,95 plus,Mycobacterium tuberculosis,0,0,0,0,0,0,0,0,0,0,0,0
 Europe,TB,EN,Mycobacterium tuberculosis,0,0,0,0,0,0,0,0,0,0,0,0
 Europe,TB,LN,Mycobacterium tuberculosis,0,0,0,0,0,0,0,0,0,0,0,0
-Europe,TB,PN,Mycobacterium tuberculosis,10000,7000,14000,5000,2000,9000,0,0,0,0,0,0
-Europe,TB,1 to 4,Mycobacterium tuberculosis,6000,4000,8000,3000,1000,5000,0,0,0,0,0,0
-Europe,TB,5 to 9,Mycobacterium tuberculosis,2000,2000,3000,1000,0,1000,0,0,0,0,0,0
-Europe,TB,10 to 14,Mycobacterium tuberculosis,2000,1000,2000,1000,0,1000,0,0,0,0,0,0
+Europe,TB,PN,Mycobacterium tuberculosis,10000,7000,14000,5000,2000,9000,5600,3920,7840,2800,1120,5040
+Europe,TB,1 to 4,Mycobacterium tuberculosis,6000,4000,8000,3000,1000,5000,3360,2240,4480,1680,560,2800
+Europe,TB,5 to 9,Mycobacterium tuberculosis,2000,2000,3000,1000,0,1000,1120,1120,1680,560,0,560
+Europe,TB,10 to 14,Mycobacterium tuberculosis,2000,1000,2000,1000,0,1000,1120,560,1120,560,0,560
 Europe,TB,15 to 19,Mycobacterium tuberculosis,5000,4000,6000,2000,1000,3000,2800,2240,3360,1120,560,1680
 Europe,TB,20 to 24,Mycobacterium tuberculosis,21000,16000,27000,8000,3000,14000,11760,8960,15120,4480,1680,7840
-Europe,TB,25 to 29,Mycobacterium tuberculosis,40000,31000,50000,16000,7000,27000,0,0,0,0,0,0
-Europe,TB,30 to 34,Mycobacterium tuberculosis,57000,44000,72000,24000,9000,40000,0,0,0,0,0,0
-Europe,TB,35 to 39,Mycobacterium tuberculosis,49000,37000,62000,21000,8000,35000,0,0,0,0,0,0
-Europe,TB,40 to 44,Mycobacterium tuberculosis,47000,36000,59000,20000,8000,34000,0,0,0,0,0,0
-Europe,TB,45 to 49,Mycobacterium tuberculosis,70000,53000,90000,32000,12000,53000,0,0,0,0,0,0
-Europe,TB,50 to 54,Mycobacterium tuberculosis,60000,45000,77000,27000,11000,45000,0,0,0,0,0,0
-Europe,TB,55 to 59,Mycobacterium tuberculosis,55000,42000,72000,25000,10000,42000,0,0,0,0,0,0
-Europe,TB,60 to 64,Mycobacterium tuberculosis,37000,28000,48000,17000,6000,29000,0,0,0,0,0,0
-Europe,TB,65 to 69,Mycobacterium tuberculosis,19000,14000,24000,8000,3000,14000,0,0,0,0,0,0
-Europe,TB,70 to 74,Mycobacterium tuberculosis,9000,7000,11000,4000,1000,6000,0,0,0,0,0,0
-Europe,TB,75 to 79,Mycobacterium tuberculosis,5000,4000,7000,2000,1000,4000,0,0,0,0,0,0
-Europe,TB,80 to 84,Mycobacterium tuberculosis,4000,3000,5000,2000,1000,3000,0,0,0,0,0,0
-Europe,TB,85 to 89,Mycobacterium tuberculosis,2000,1000,3000,1000,0,1000,0,0,0,0,0,0
-Europe,TB,90 to 94,Mycobacterium tuberculosis,1000,0,1000,0,0,1000,0,0,0,0,0,0
+Europe,TB,25 to 29,Mycobacterium tuberculosis,40000,31000,50000,16000,7000,27000,22400,17360,28000,8960,3920,15120
+Europe,TB,30 to 34,Mycobacterium tuberculosis,57000,44000,72000,24000,9000,40000,31920,24640,40320,13440,5040,22400
+Europe,TB,35 to 39,Mycobacterium tuberculosis,49000,37000,62000,21000,8000,35000,27440,20720,34720,11760,4480,19600
+Europe,TB,40 to 44,Mycobacterium tuberculosis,47000,36000,59000,20000,8000,34000,26320,20160,33040,11200,4480,19040
+Europe,TB,45 to 49,Mycobacterium tuberculosis,70000,53000,90000,32000,12000,53000,39200,29680,50400,17920,6720,29680
+Europe,TB,50 to 54,Mycobacterium tuberculosis,60000,45000,77000,27000,11000,45000,33600,25200,43120,15120,6160,25200
+Europe,TB,55 to 59,Mycobacterium tuberculosis,55000,42000,72000,25000,10000,42000,30800,23520,40320,14000,5600,23520
+Europe,TB,60 to 64,Mycobacterium tuberculosis,37000,28000,48000,17000,6000,29000,20720,15680,26880,9520,3360,16240
+Europe,TB,65 to 69,Mycobacterium tuberculosis,19000,14000,24000,8000,3000,14000,10640,7840,13440,4480,1680,7840
+Europe,TB,70 to 74,Mycobacterium tuberculosis,9000,7000,11000,4000,1000,6000,5040,3920,6160,2240,560,3360
+Europe,TB,75 to 79,Mycobacterium tuberculosis,5000,4000,7000,2000,1000,4000,2800,2240,3920,1120,560,2240
+Europe,TB,80 to 84,Mycobacterium tuberculosis,4000,3000,5000,2000,1000,3000,2240,1680,2800,1120,560,1680
+Europe,TB,85 to 89,Mycobacterium tuberculosis,2000,1000,3000,1000,0,1000,1120,560,1680,560,0,560
+Europe,TB,90 to 94,Mycobacterium tuberculosis,1000,0,1000,0,0,1000,560,0,560,0,0,560
 Europe,TB,95 plus,Mycobacterium tuberculosis,0,0,0,0,0,0,0,0,0,0,0,0
 South-East Asia,TB,EN,Mycobacterium tuberculosis,0,0,0,0,0,0,0,0,0,0,0,0
 South-East Asia,TB,LN,Mycobacterium tuberculosis,0,0,0,0,0,0,0,0,0,0,0,0
-South-East Asia,TB,PN,Mycobacterium tuberculosis,78000,38000,141000,32000,6000,82000,0,0,0,0,0,0
-South-East Asia,TB,1 to 4,Mycobacterium tuberculosis,51000,26000,94000,19000,4000,52000,0,0,0,0,0,0
-South-East Asia,TB,5 to 9,Mycobacterium tuberculosis,38000,21000,66000,12000,2000,30000,0,0,0,0,0,0
-South-East Asia,TB,10 to 14,Mycobacterium tuberculosis,45000,24000,77000,15000,3000,37000,0,0,0,0,0,0
+South-East Asia,TB,PN,Mycobacterium tuberculosis,78000,38000,141000,32000,6000,82000,43680,21280,78960,17920,3360,45920
+South-East Asia,TB,1 to 4,Mycobacterium tuberculosis,51000,26000,94000,19000,4000,52000,28560,14560,52640,10640,2240,29120
+South-East Asia,TB,5 to 9,Mycobacterium tuberculosis,38000,21000,66000,12000,2000,30000,21280,11760,36960,6720,1120,16800
+South-East Asia,TB,10 to 14,Mycobacterium tuberculosis,45000,24000,77000,15000,3000,37000,25200,13440,43120,8400,1680,20720
 South-East Asia,TB,15 to 19,Mycobacterium tuberculosis,99000,55000,174000,35000,7000,89000,55440,30800,97440,19600,3920,49840
 South-East Asia,TB,20 to 24,Mycobacterium tuberculosis,184000,100000,324000,64000,12000,158000,103040,56000,181440,35840,6720,88480
-South-East Asia,TB,25 to 29,Mycobacterium tuberculosis,235000,129000,410000,86000,15000,218000,0,0,0,0,0,0
-South-East Asia,TB,30 to 34,Mycobacterium tuberculosis,308000,166000,540000,112000,20000,278000,0,0,0,0,0,0
-South-East Asia,TB,35 to 39,Mycobacterium tuberculosis,351000,186000,621000,133000,24000,341000,0,0,0,0,0,0
-South-East Asia,TB,40 to 44,Mycobacterium tuberculosis,361000,194000,639000,137000,24000,341000,0,0,0,0,0,0
-South-East Asia,TB,45 to 49,Mycobacterium tuberculosis,355000,192000,638000,137000,25000,346000,0,0,0,0,0,0
-South-East Asia,TB,50 to 54,Mycobacterium tuberculosis,385000,204000,671000,148000,26000,373000,0,0,0,0,0,0
-South-East Asia,TB,55 to 59,Mycobacterium tuberculosis,373000,198000,669000,144000,26000,361000,0,0,0,0,0,0
-South-East Asia,TB,60 to 64,Mycobacterium tuberculosis,324000,175000,572000,125000,23000,308000,0,0,0,0,0,0
-South-East Asia,TB,65 to 69,Mycobacterium tuberculosis,277000,150000,481000,108000,19000,274000,0,0,0,0,0,0
-South-East Asia,TB,70 to 74,Mycobacterium tuberculosis,224000,122000,386000,86000,16000,213000,0,0,0,0,0,0
-South-East Asia,TB,75 to 79,Mycobacterium tuberculosis,148000,79000,257000,56000,10000,137000,0,0,0,0,0,0
-South-East Asia,TB,80 to 84,Mycobacterium tuberculosis,96000,51000,169000,37000,7000,91000,0,0,0,0,0,0
-South-East Asia,TB,85 to 89,Mycobacterium tuberculosis,32000,17000,54000,12000,2000,29000,0,0,0,0,0,0
-South-East Asia,TB,90 to 94,Mycobacterium tuberculosis,8000,4000,13000,3000,1000,7000,0,0,0,0,0,0
-South-East Asia,TB,95 plus,Mycobacterium tuberculosis,1000,1000,2000,0,0,1000,0,0,0,0,0,0
+South-East Asia,TB,25 to 29,Mycobacterium tuberculosis,235000,129000,410000,86000,15000,218000,131600,72240,229600,48160,8400,122080
+South-East Asia,TB,30 to 34,Mycobacterium tuberculosis,308000,166000,540000,112000,20000,278000,172480,92960,302400,62720,11200,155680
+South-East Asia,TB,35 to 39,Mycobacterium tuberculosis,351000,186000,621000,133000,24000,341000,196560,104160,347760,74480,13440,190960
+South-East Asia,TB,40 to 44,Mycobacterium tuberculosis,361000,194000,639000,137000,24000,341000,202160,108640,357840,76720,13440,190960
+South-East Asia,TB,45 to 49,Mycobacterium tuberculosis,355000,192000,638000,137000,25000,346000,198800,107520,357280,76720,14000,193760
+South-East Asia,TB,50 to 54,Mycobacterium tuberculosis,385000,204000,671000,148000,26000,373000,215600,114240,375760,82880,14560,208880
+South-East Asia,TB,55 to 59,Mycobacterium tuberculosis,373000,198000,669000,144000,26000,361000,208880,110880,374640,80640,14560,202160
+South-East Asia,TB,60 to 64,Mycobacterium tuberculosis,324000,175000,572000,125000,23000,308000,181440,98000,320320,70000,12880,172480
+South-East Asia,TB,65 to 69,Mycobacterium tuberculosis,277000,150000,481000,108000,19000,274000,155120,84000,269360,60480,10640,153440
+South-East Asia,TB,70 to 74,Mycobacterium tuberculosis,224000,122000,386000,86000,16000,213000,125440,68320,216160,48160,8960,119280
+South-East Asia,TB,75 to 79,Mycobacterium tuberculosis,148000,79000,257000,56000,10000,137000,82880,44240,143920,31360,5600,76720
+South-East Asia,TB,80 to 84,Mycobacterium tuberculosis,96000,51000,169000,37000,7000,91000,53760,28560,94640,20720,3920,50960
+South-East Asia,TB,85 to 89,Mycobacterium tuberculosis,32000,17000,54000,12000,2000,29000,17920,9520,30240,6720,1120,16240
+South-East Asia,TB,90 to 94,Mycobacterium tuberculosis,8000,4000,13000,3000,1000,7000,4480,2240,7280,1680,560,3920
+South-East Asia,TB,95 plus,Mycobacterium tuberculosis,1000,1000,2000,0,0,1000,560,560,1120,0,0,560
 Western Pacific,TB,EN,Mycobacterium tuberculosis,0,0,0,0,0,0,0,0,0,0,0,0
 Western Pacific,TB,LN,Mycobacterium tuberculosis,0,0,0,0,0,0,0,0,0,0,0,0
-Western Pacific,TB,PN,Mycobacterium tuberculosis,13000,9000,20000,5000,1000,10000,0,0,0,0,0,0
-Western Pacific,TB,1 to 4,Mycobacterium tuberculosis,11000,7000,17000,3000,1000,7000,0,0,0,0,0,0
-Western Pacific,TB,5 to 9,Mycobacterium tuberculosis,9000,6000,13000,2000,1000,4000,0,0,0,0,0,0
-Western Pacific,TB,10 to 14,Mycobacterium tuberculosis,6000,4000,9000,2000,1000,4000,0,0,0,0,0,0
+Western Pacific,TB,PN,Mycobacterium tuberculosis,13000,9000,20000,5000,1000,10000,7280,5040,11200,2800,560,5600
+Western Pacific,TB,1 to 4,Mycobacterium tuberculosis,11000,7000,17000,3000,1000,7000,6160,3920,9520,1680,560,3920
+Western Pacific,TB,5 to 9,Mycobacterium tuberculosis,9000,6000,13000,2000,1000,4000,5040,3360,7280,1120,560,2240
+Western Pacific,TB,10 to 14,Mycobacterium tuberculosis,6000,4000,9000,2000,1000,4000,3360,2240,5040,1120,560,2240
 Western Pacific,TB,15 to 19,Mycobacterium tuberculosis,11000,7000,15000,3000,1000,7000,6160,3920,8400,1680,560,3920
 Western Pacific,TB,20 to 24,Mycobacterium tuberculosis,27000,19000,41000,7000,2000,14000,15120,10640,22960,3920,1120,7840
-Western Pacific,TB,25 to 29,Mycobacterium tuberculosis,37000,26000,54000,10000,3000,21000,0,0,0,0,0,0
-Western Pacific,TB,30 to 34,Mycobacterium tuberculosis,37000,26000,54000,11000,3000,23000,0,0,0,0,0,0
-Western Pacific,TB,35 to 39,Mycobacterium tuberculosis,38000,27000,55000,12000,4000,24000,0,0,0,0,0,0
-Western Pacific,TB,40 to 44,Mycobacterium tuberculosis,40000,28000,59000,13000,4000,27000,0,0,0,0,0,0
-Western Pacific,TB,45 to 49,Mycobacterium tuberculosis,47000,33000,70000,15000,5000,31000,0,0,0,0,0,0
-Western Pacific,TB,50 to 54,Mycobacterium tuberculosis,53000,37000,79000,17000,5000,37000,0,0,0,0,0,0
-Western Pacific,TB,55 to 59,Mycobacterium tuberculosis,53000,37000,79000,18000,5000,38000,0,0,0,0,0,0
-Western Pacific,TB,60 to 64,Mycobacterium tuberculosis,54000,38000,82000,18000,5000,37000,0,0,0,0,0,0
-Western Pacific,TB,65 to 69,Mycobacterium tuberculosis,55000,39000,84000,17000,5000,37000,0,0,0,0,0,0
-Western Pacific,TB,70 to 74,Mycobacterium tuberculosis,51000,35000,78000,15000,5000,31000,0,0,0,0,0,0
-Western Pacific,TB,75 to 79,Mycobacterium tuberculosis,36000,25000,55000,11000,3000,24000,0,0,0,0,0,0
-Western Pacific,TB,80 to 84,Mycobacterium tuberculosis,25000,17000,38000,8000,2000,17000,0,0,0,0,0,0
-Western Pacific,TB,85 to 89,Mycobacterium tuberculosis,12000,8000,18000,4000,1000,8000,0,0,0,0,0,0
-Western Pacific,TB,90 to 94,Mycobacterium tuberculosis,3000,2000,5000,1000,0,2000,0,0,0,0,0,0
-Western Pacific,TB,95 plus,Mycobacterium tuberculosis,1000,0,1000,0,0,0,0,0,0,0,0,0
+Western Pacific,TB,25 to 29,Mycobacterium tuberculosis,37000,26000,54000,10000,3000,21000,20720,14560,30240,5600,1680,11760
+Western Pacific,TB,30 to 34,Mycobacterium tuberculosis,37000,26000,54000,11000,3000,23000,20720,14560,30240,6160,1680,12880
+Western Pacific,TB,35 to 39,Mycobacterium tuberculosis,38000,27000,55000,12000,4000,24000,21280,15120,30800,6720,2240,13440
+Western Pacific,TB,40 to 44,Mycobacterium tuberculosis,40000,28000,59000,13000,4000,27000,22400,15680,33040,7280,2240,15120
+Western Pacific,TB,45 to 49,Mycobacterium tuberculosis,47000,33000,70000,15000,5000,31000,26320,18480,39200,8400,2800,17360
+Western Pacific,TB,50 to 54,Mycobacterium tuberculosis,53000,37000,79000,17000,5000,37000,29680,20720,44240,9520,2800,20720
+Western Pacific,TB,55 to 59,Mycobacterium tuberculosis,53000,37000,79000,18000,5000,38000,29680,20720,44240,10080,2800,21280
+Western Pacific,TB,60 to 64,Mycobacterium tuberculosis,54000,38000,82000,18000,5000,37000,30240,21280,45920,10080,2800,20720
+Western Pacific,TB,65 to 69,Mycobacterium tuberculosis,55000,39000,84000,17000,5000,37000,30800,21840,47040,9520,2800,20720
+Western Pacific,TB,70 to 74,Mycobacterium tuberculosis,51000,35000,78000,15000,5000,31000,28560,19600,43680,8400,2800,17360
+Western Pacific,TB,75 to 79,Mycobacterium tuberculosis,36000,25000,55000,11000,3000,24000,20160,14000,30800,6160,1680,13440
+Western Pacific,TB,80 to 84,Mycobacterium tuberculosis,25000,17000,38000,8000,2000,17000,14000,9520,21280,4480,1120,9520
+Western Pacific,TB,85 to 89,Mycobacterium tuberculosis,12000,8000,18000,4000,1000,8000,6720,4480,10080,2240,560,4480
+Western Pacific,TB,90 to 94,Mycobacterium tuberculosis,3000,2000,5000,1000,0,2000,1680,1120,2800,560,0,1120
+Western Pacific,TB,95 plus,Mycobacterium tuberculosis,1000,0,1000,0,0,0,560,0,560,0,0,0
 Africa,Gonorrhoea and chlamydia,10 to 14,Neisseria gonorrhoeae,0,0,1000,0,0,0,0,0,0,0,0,0
 Africa,Gonorrhoea and chlamydia,15 to 19,Neisseria gonorrhoeae,2000,1000,3000,0,0,0,980,490,1470,0,0,0
 Africa,Gonorrhoea and chlamydia,20 to 24,Neisseria gonorrhoeae,2000,1000,5000,0,0,1000,980,490,2450,0,0,490
@@ -4803,7 +4803,7 @@ Africa,BSI,EN,Non-typhoidal Salmonella,16000,8000,28000,3000,0,8000,0,0,0,0,0,0
 Africa,BSI,LN,Non-typhoidal Salmonella,7000,3000,13000,1000,0,3000,0,0,0,0,0,0
 Africa,BSI,PN,Non-typhoidal Salmonella,5000,2000,9000,1000,0,2000,2625,1050,4725,525,0,1050
 Africa,BSI,1 to 4,Non-typhoidal Salmonella,2000,1000,5000,1000,0,1000,1120,560,2800,560,0,560
-Africa,BSI,5 to 9,Non-typhoidal Salmonella,0,0,1000,0,0,0,0,0,15.0769230769231,0,0,0
+Africa,BSI,5 to 9,Non-typhoidal Salmonella,0,0,1000,0,0,0,0,0,74.6666666666667,0,0,0
 Africa,BSI,10 to 14,Non-typhoidal Salmonella,0,0,1000,0,0,0,0,0,0,0,0,0
 Africa,BSI,15 to 19,Non-typhoidal Salmonella,1000,0,1000,0,0,0,0,0,0,0,0,0
 Africa,BSI,20 to 24,Non-typhoidal Salmonella,0,0,1000,0,0,0,0,0,0,0,0,0
@@ -4849,7 +4849,7 @@ Africa,Diarrhoea,EN,Non-typhoidal Salmonella,0,0,1000,0,0,0,0,0,0,0,0,0
 Africa,Diarrhoea,LN,Non-typhoidal Salmonella,1000,0,2000,0,0,1000,0,0,0,0,0,0
 Africa,Diarrhoea,PN,Non-typhoidal Salmonella,8000,1000,23000,2000,0,5000,4200,525,12075,1050,0,2625
 Africa,Diarrhoea,1 to 4,Non-typhoidal Salmonella,9000,0,34000,2000,0,9000,5040,0,19040,1120,0,5040
-Africa,Diarrhoea,5 to 9,Non-typhoidal Salmonella,1000,0,6000,0,0,1000,15.0769230769231,0,90.4615384615385,0,0,15.0769230769231
+Africa,Diarrhoea,5 to 9,Non-typhoidal Salmonella,1000,0,6000,0,0,1000,74.6666666666667,0,448,0,0,74.6666666666667
 Africa,Diarrhoea,10 to 14,Non-typhoidal Salmonella,1000,0,3000,0,0,0,0,0,0,0,0,0
 Africa,Diarrhoea,15 to 19,Non-typhoidal Salmonella,1000,0,3000,0,0,0,0,0,0,0,0,0
 Africa,Diarrhoea,20 to 24,Non-typhoidal Salmonella,1000,0,2000,0,0,0,0,0,0,0,0,0
@@ -4871,7 +4871,7 @@ Africa,Diarrhoea,95 plus,Non-typhoidal Salmonella,0,0,0,0,0,0,0,0,0,0,0,0
 Africa,"Typhoid, paratyphoid, and iNTS",LN,Non-typhoidal Salmonella,0,0,1000,0,0,0,0,0,0,0,0,0
 Africa,"Typhoid, paratyphoid, and iNTS",PN,Non-typhoidal Salmonella,6000,3000,11000,1000,0,3000,3150,1575,5775,525,0,1575
 Africa,"Typhoid, paratyphoid, and iNTS",1 to 4,Non-typhoidal Salmonella,21000,9000,41000,4000,1000,12000,11760,5040,22960,2240,560,6720
-Africa,"Typhoid, paratyphoid, and iNTS",5 to 9,Non-typhoidal Salmonella,5000,2000,11000,1000,0,3000,75.3846153846154,30.1538461538462,165.846153846154,15.0769230769231,0,45.2307692307692
+Africa,"Typhoid, paratyphoid, and iNTS",5 to 9,Non-typhoidal Salmonella,5000,2000,11000,1000,0,3000,373.333333333333,149.333333333333,821.333333333334,74.6666666666667,0,224
 Africa,"Typhoid, paratyphoid, and iNTS",10 to 14,Non-typhoidal Salmonella,2000,1000,3000,0,0,1000,0,0,0,0,0,0
 Africa,"Typhoid, paratyphoid, and iNTS",15 to 19,Non-typhoidal Salmonella,1000,0,2000,0,0,0,0,0,0,0,0,0
 Africa,"Typhoid, paratyphoid, and iNTS",20 to 24,Non-typhoidal Salmonella,1000,0,1000,0,0,0,0,0,0,0,0,0
@@ -4940,7 +4940,7 @@ Americas,Diarrhoea,EN,Non-typhoidal Salmonella,0,0,0,0,0,0,0,0,0,0,0,0
 Americas,Diarrhoea,LN,Non-typhoidal Salmonella,0,0,0,0,0,0,0,0,0,0,0,0
 Americas,Diarrhoea,PN,Non-typhoidal Salmonella,1000,0,2000,0,0,0,525,0,1050,0,0,0
 Americas,Diarrhoea,1 to 4,Non-typhoidal Salmonella,1000,0,3000,0,0,0,560,0,1680,0,0,0
-Americas,Diarrhoea,5 to 9,Non-typhoidal Salmonella,0,0,1000,0,0,0,0,0,15.0769230769231,0,0,0
+Americas,Diarrhoea,5 to 9,Non-typhoidal Salmonella,0,0,1000,0,0,0,0,0,74.6666666666667,0,0,0
 Americas,Diarrhoea,10 to 14,Non-typhoidal Salmonella,0,0,1000,0,0,0,0,0,0,0,0,0
 Americas,Diarrhoea,15 to 19,Non-typhoidal Salmonella,0,0,1000,0,0,0,0,0,0,0,0,0
 Americas,Diarrhoea,20 to 24,Non-typhoidal Salmonella,0,0,0,0,0,0,0,0,0,0,0,0
@@ -4985,7 +4985,7 @@ Eastern Mediterranean,BSI,EN,Non-typhoidal Salmonella,24000,7000,59000,5000,1000
 Eastern Mediterranean,BSI,LN,Non-typhoidal Salmonella,11000,4000,25000,2000,0,7000,0,0,0,0,0,0
 Eastern Mediterranean,BSI,PN,Non-typhoidal Salmonella,6000,2000,14000,1000,0,4000,3150,1050,7350,525,0,2100
 Eastern Mediterranean,BSI,1 to 4,Non-typhoidal Salmonella,3000,1000,7000,1000,0,2000,1680,560,3920,560,0,1120
-Eastern Mediterranean,BSI,5 to 9,Non-typhoidal Salmonella,1000,0,2000,0,0,1000,15.0769230769231,0,30.1538461538462,0,0,15.0769230769231
+Eastern Mediterranean,BSI,5 to 9,Non-typhoidal Salmonella,1000,0,2000,0,0,1000,74.6666666666667,0,149.333333333333,0,0,74.6666666666667
 Eastern Mediterranean,BSI,10 to 14,Non-typhoidal Salmonella,1000,0,1000,0,0,0,0,0,0,0,0,0
 Eastern Mediterranean,BSI,15 to 19,Non-typhoidal Salmonella,1000,0,2000,0,0,1000,0,0,0,0,0,0
 Eastern Mediterranean,BSI,20 to 24,Non-typhoidal Salmonella,1000,0,2000,0,0,0,0,0,0,0,0,0
@@ -5031,7 +5031,7 @@ Eastern Mediterranean,Diarrhoea,EN,Non-typhoidal Salmonella,0,0,1000,0,0,0,0,0,0
 Eastern Mediterranean,Diarrhoea,LN,Non-typhoidal Salmonella,1000,0,2000,0,0,0,0,0,0,0,0,0
 Eastern Mediterranean,Diarrhoea,PN,Non-typhoidal Salmonella,4000,0,17000,1000,0,4000,2100,0,8925,525,0,2100
 Eastern Mediterranean,Diarrhoea,1 to 4,Non-typhoidal Salmonella,3000,0,13000,0,0,2000,1680,0,7280,0,0,1120
-Eastern Mediterranean,Diarrhoea,5 to 9,Non-typhoidal Salmonella,0,0,2000,0,0,0,0,0,30.1538461538462,0,0,0
+Eastern Mediterranean,Diarrhoea,5 to 9,Non-typhoidal Salmonella,0,0,2000,0,0,0,0,0,149.333333333333,0,0,0
 Eastern Mediterranean,Diarrhoea,10 to 14,Non-typhoidal Salmonella,0,0,1000,0,0,0,0,0,0,0,0,0
 Eastern Mediterranean,Diarrhoea,15 to 19,Non-typhoidal Salmonella,0,0,1000,0,0,0,0,0,0,0,0,0
 Eastern Mediterranean,Diarrhoea,20 to 24,Non-typhoidal Salmonella,0,0,0,0,0,0,0,0,0,0,0,0
@@ -5053,7 +5053,7 @@ Eastern Mediterranean,Diarrhoea,95 plus,Non-typhoidal Salmonella,0,0,0,0,0,0,0,0
 Eastern Mediterranean,"Typhoid, paratyphoid, and iNTS",LN,Non-typhoidal Salmonella,0,0,0,0,0,0,0,0,0,0,0,0
 Eastern Mediterranean,"Typhoid, paratyphoid, and iNTS",PN,Non-typhoidal Salmonella,1000,0,3000,0,0,1000,525,0,1575,0,0,525
 Eastern Mediterranean,"Typhoid, paratyphoid, and iNTS",1 to 4,Non-typhoidal Salmonella,5000,1000,12000,1000,0,3000,2800,560,6720,560,0,1680
-Eastern Mediterranean,"Typhoid, paratyphoid, and iNTS",5 to 9,Non-typhoidal Salmonella,6000,2000,16000,1000,0,4000,90.4615384615385,30.1538461538462,241.230769230769,15.0769230769231,0,60.3076923076923
+Eastern Mediterranean,"Typhoid, paratyphoid, and iNTS",5 to 9,Non-typhoidal Salmonella,6000,2000,16000,1000,0,4000,448,149.333333333333,1194.66666666667,74.6666666666667,0,298.666666666667
 Eastern Mediterranean,"Typhoid, paratyphoid, and iNTS",10 to 14,Non-typhoidal Salmonella,3000,1000,7000,1000,0,2000,0,0,0,0,0,0
 Eastern Mediterranean,"Typhoid, paratyphoid, and iNTS",15 to 19,Non-typhoidal Salmonella,2000,0,4000,0,0,1000,0,0,0,0,0,0
 Eastern Mediterranean,"Typhoid, paratyphoid, and iNTS",20 to 24,Non-typhoidal Salmonella,1000,0,3000,0,0,1000,0,0,0,0,0,0
@@ -5122,7 +5122,7 @@ Europe,Diarrhoea,EN,Non-typhoidal Salmonella,0,0,0,0,0,0,0,0,0,0,0,0
 Europe,Diarrhoea,LN,Non-typhoidal Salmonella,0,0,0,0,0,0,0,0,0,0,0,0
 Europe,Diarrhoea,PN,Non-typhoidal Salmonella,0,0,1000,0,0,0,0,0,525,0,0,0
 Europe,Diarrhoea,1 to 4,Non-typhoidal Salmonella,1000,0,2000,0,0,0,560,0,1120,0,0,0
-Europe,Diarrhoea,5 to 9,Non-typhoidal Salmonella,0,0,1000,0,0,0,0,0,15.0769230769231,0,0,0
+Europe,Diarrhoea,5 to 9,Non-typhoidal Salmonella,0,0,1000,0,0,0,0,0,74.6666666666667,0,0,0
 Europe,Diarrhoea,10 to 14,Non-typhoidal Salmonella,0,0,1000,0,0,0,0,0,0,0,0,0
 Europe,Diarrhoea,15 to 19,Non-typhoidal Salmonella,0,0,1000,0,0,0,0,0,0,0,0,0
 Europe,Diarrhoea,20 to 24,Non-typhoidal Salmonella,0,0,1000,0,0,0,0,0,0,0,0,0
@@ -5167,7 +5167,7 @@ South-East Asia,BSI,EN,Non-typhoidal Salmonella,221000,103000,392000,46000,7000,
 South-East Asia,BSI,LN,Non-typhoidal Salmonella,88000,46000,141000,18000,3000,41000,0,0,0,0,0,0
 South-East Asia,BSI,PN,Non-typhoidal Salmonella,51000,24000,89000,11000,1000,25000,26775,12600,46725,5775,525,13125
 South-East Asia,BSI,1 to 4,Non-typhoidal Salmonella,17000,7000,32000,4000,0,9000,9520,3920,17920,2240,0,5040
-South-East Asia,BSI,5 to 9,Non-typhoidal Salmonella,7000,3000,14000,1000,0,4000,105.538461538462,45.2307692307692,211.076923076923,15.0769230769231,0,60.3076923076923
+South-East Asia,BSI,5 to 9,Non-typhoidal Salmonella,7000,3000,14000,1000,0,4000,522.666666666667,224,1045.33333333333,74.6666666666667,0,298.666666666667
 South-East Asia,BSI,10 to 14,Non-typhoidal Salmonella,7000,3000,12000,1000,0,3000,0,0,0,0,0,0
 South-East Asia,BSI,15 to 19,Non-typhoidal Salmonella,10000,4000,19000,2000,0,5000,0,0,0,0,0,0
 South-East Asia,BSI,20 to 24,Non-typhoidal Salmonella,11000,4000,22000,2000,0,6000,0,0,0,0,0,0
@@ -5190,7 +5190,7 @@ South-East Asia,Cardiac infections,EN,Non-typhoidal Salmonella,0,0,0,0,0,0,0,0,0
 South-East Asia,Cardiac infections,LN,Non-typhoidal Salmonella,0,0,0,0,0,0,0,0,0,0,0,0
 South-East Asia,Cardiac infections,PN,Non-typhoidal Salmonella,1000,0,1000,0,0,0,525,0,525,0,0,0
 South-East Asia,Cardiac infections,1 to 4,Non-typhoidal Salmonella,0,0,1000,0,0,0,0,0,560,0,0,0
-South-East Asia,Cardiac infections,5 to 9,Non-typhoidal Salmonella,0,0,1000,0,0,0,0,0,15.0769230769231,0,0,0
+South-East Asia,Cardiac infections,5 to 9,Non-typhoidal Salmonella,0,0,1000,0,0,0,0,0,74.6666666666667,0,0,0
 South-East Asia,Cardiac infections,10 to 14,Non-typhoidal Salmonella,0,0,1000,0,0,0,0,0,0,0,0,0
 South-East Asia,Cardiac infections,15 to 19,Non-typhoidal Salmonella,1000,0,1000,0,0,0,0,0,0,0,0,0
 South-East Asia,Cardiac infections,20 to 24,Non-typhoidal Salmonella,1000,0,2000,0,0,0,0,0,0,0,0,0
@@ -5213,7 +5213,7 @@ South-East Asia,Diarrhoea,EN,Non-typhoidal Salmonella,7000,1000,24000,2000,0,500
 South-East Asia,Diarrhoea,LN,Non-typhoidal Salmonella,11000,1000,33000,2000,0,7000,0,0,0,0,0,0
 South-East Asia,Diarrhoea,PN,Non-typhoidal Salmonella,57000,8000,168000,11000,1000,39000,29925,4200,88200,5775,525,20475
 South-East Asia,Diarrhoea,1 to 4,Non-typhoidal Salmonella,27000,0,114000,5000,0,23000,15120,0,63840,2800,0,12880
-South-East Asia,Diarrhoea,5 to 9,Non-typhoidal Salmonella,12000,0,55000,2000,0,8000,180.923076923077,0,829.230769230769,30.1538461538462,0,120.615384615385
+South-East Asia,Diarrhoea,5 to 9,Non-typhoidal Salmonella,12000,0,55000,2000,0,8000,896,0,4106.66666666667,149.333333333333,0,597.333333333333
 South-East Asia,Diarrhoea,10 to 14,Non-typhoidal Salmonella,9000,0,41000,1000,0,5000,0,0,0,0,0,0
 South-East Asia,Diarrhoea,15 to 19,Non-typhoidal Salmonella,5000,0,25000,1000,0,3000,0,0,0,0,0,0
 South-East Asia,Diarrhoea,20 to 24,Non-typhoidal Salmonella,4000,0,19000,0,0,3000,0,0,0,0,0,0
@@ -5235,7 +5235,7 @@ South-East Asia,Diarrhoea,95 plus,Non-typhoidal Salmonella,0,0,2000,0,0,0,0,0,0,
 South-East Asia,"Typhoid, paratyphoid, and iNTS",LN,Non-typhoidal Salmonella,0,0,1000,0,0,0,0,0,0,0,0,0
 South-East Asia,"Typhoid, paratyphoid, and iNTS",PN,Non-typhoidal Salmonella,7000,3000,12000,1000,0,3000,3675,1575,6300,525,0,1575
 South-East Asia,"Typhoid, paratyphoid, and iNTS",1 to 4,Non-typhoidal Salmonella,17000,8000,32000,4000,1000,8000,9520,4480,17920,2240,560,4480
-South-East Asia,"Typhoid, paratyphoid, and iNTS",5 to 9,Non-typhoidal Salmonella,20000,9000,39000,4000,1000,11000,301.538461538462,135.692307692308,588,60.3076923076923,15.0769230769231,165.846153846154
+South-East Asia,"Typhoid, paratyphoid, and iNTS",5 to 9,Non-typhoidal Salmonella,20000,9000,39000,4000,1000,11000,1493.33333333333,672,2912,298.666666666667,74.6666666666667,821.333333333334
 South-East Asia,"Typhoid, paratyphoid, and iNTS",10 to 14,Non-typhoidal Salmonella,14000,5000,28000,3000,0,8000,0,0,0,0,0,0
 South-East Asia,"Typhoid, paratyphoid, and iNTS",15 to 19,Non-typhoidal Salmonella,11000,4000,22000,2000,0,6000,0,0,0,0,0,0
 South-East Asia,"Typhoid, paratyphoid, and iNTS",20 to 24,Non-typhoidal Salmonella,8000,3000,18000,2000,0,4000,0,0,0,0,0,0
@@ -5258,7 +5258,7 @@ Western Pacific,BSI,EN,Non-typhoidal Salmonella,5000,3000,8000,1000,0,2000,0,0,0
 Western Pacific,BSI,LN,Non-typhoidal Salmonella,3000,2000,4000,1000,0,1000,0,0,0,0,0,0
 Western Pacific,BSI,PN,Non-typhoidal Salmonella,7000,4000,12000,1000,0,3000,3675,2100,6300,525,0,1575
 Western Pacific,BSI,1 to 4,Non-typhoidal Salmonella,2000,1000,4000,0,0,1000,1120,560,2240,0,0,560
-Western Pacific,BSI,5 to 9,Non-typhoidal Salmonella,1000,0,1000,0,0,0,15.0769230769231,0,15.0769230769231,0,0,0
+Western Pacific,BSI,5 to 9,Non-typhoidal Salmonella,1000,0,1000,0,0,0,74.6666666666667,0,74.6666666666667,0,0,0
 Western Pacific,BSI,10 to 14,Non-typhoidal Salmonella,1000,0,1000,0,0,0,0,0,0,0,0,0
 Western Pacific,BSI,15 to 19,Non-typhoidal Salmonella,1000,0,2000,0,0,0,0,0,0,0,0,0
 Western Pacific,BSI,20 to 24,Non-typhoidal Salmonella,1000,1000,3000,0,0,1000,0,0,0,0,0,0
@@ -5304,7 +5304,7 @@ Western Pacific,Diarrhoea,EN,Non-typhoidal Salmonella,0,0,1000,0,0,0,0,0,0,0,0,0
 Western Pacific,Diarrhoea,LN,Non-typhoidal Salmonella,1000,0,2000,0,0,0,0,0,0,0,0,0
 Western Pacific,Diarrhoea,PN,Non-typhoidal Salmonella,12000,2000,27000,2000,0,5000,6300,1050,14175,1050,0,2625
 Western Pacific,Diarrhoea,1 to 4,Non-typhoidal Salmonella,13000,0,45000,1000,0,5000,7280,0,25200,560,0,2800
-Western Pacific,Diarrhoea,5 to 9,Non-typhoidal Salmonella,6000,0,26000,0,0,2000,90.4615384615385,0,392,0,0,30.1538461538462
+Western Pacific,Diarrhoea,5 to 9,Non-typhoidal Salmonella,6000,0,26000,0,0,2000,448,0,1941.33333333333,0,0,149.333333333333
 Western Pacific,Diarrhoea,10 to 14,Non-typhoidal Salmonella,3000,0,13000,0,0,1000,0,0,0,0,0,0
 Western Pacific,Diarrhoea,15 to 19,Non-typhoidal Salmonella,2000,0,10000,0,0,1000,0,0,0,0,0,0
 Western Pacific,Diarrhoea,20 to 24,Non-typhoidal Salmonella,2000,0,10000,0,0,1000,0,0,0,0,0,0
@@ -5326,7 +5326,7 @@ Western Pacific,Diarrhoea,95 plus,Non-typhoidal Salmonella,0,0,1000,0,0,0,0,0,0,
 Western Pacific,"Typhoid, paratyphoid, and iNTS",LN,Non-typhoidal Salmonella,0,0,0,0,0,0,0,0,0,0,0,0
 Western Pacific,"Typhoid, paratyphoid, and iNTS",PN,Non-typhoidal Salmonella,1000,0,1000,0,0,0,525,0,525,0,0,0
 Western Pacific,"Typhoid, paratyphoid, and iNTS",1 to 4,Non-typhoidal Salmonella,3000,1000,5000,1000,0,1000,1680,560,2800,560,0,560
-Western Pacific,"Typhoid, paratyphoid, and iNTS",5 to 9,Non-typhoidal Salmonella,2000,1000,4000,0,0,1000,30.1538461538462,15.0769230769231,60.3076923076923,0,0,15.0769230769231
+Western Pacific,"Typhoid, paratyphoid, and iNTS",5 to 9,Non-typhoidal Salmonella,2000,1000,4000,0,0,1000,149.333333333333,74.6666666666667,298.666666666667,0,0,74.6666666666667
 Western Pacific,"Typhoid, paratyphoid, and iNTS",10 to 14,Non-typhoidal Salmonella,1000,0,3000,0,0,1000,0,0,0,0,0,0
 Western Pacific,"Typhoid, paratyphoid, and iNTS",15 to 19,Non-typhoidal Salmonella,1000,0,3000,0,0,1000,0,0,0,0,0,0
 Western Pacific,"Typhoid, paratyphoid, and iNTS",20 to 24,Non-typhoidal Salmonella,1000,0,2000,0,0,1000,0,0,0,0,0,0

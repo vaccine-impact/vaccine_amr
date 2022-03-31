@@ -328,8 +328,8 @@ create_vaccine_profile_table <- function(vaccine_profile,
                                          "Coverage in target group",
                                          "Duration of protection",
                                          "Disease presentation",
-                                         "Age of vaccination (baseline)",
-                                         "Age of vaccination (maximum potential)",
+                                         "Age of vaccination (Baseline)",
+                                         "Age of vaccination (High-potential)",
                                          "Main analysis",
                                          "Elderly age group with highest burden")]
   
@@ -339,8 +339,8 @@ create_vaccine_profile_table <- function(vaccine_profile,
            "Coverage"     = "Coverage in target group",
            "Duration"     = "Duration of protection",
            "DP"           = "Disease presentation",
-           "VC"           = "Age of vaccination (baseline)",
-           "VO"           = "Age of vaccination (maximum potential)",
+           "VC"           = "Age of vaccination (Baseline)",
+           "VO"           = "Age of vaccination (High-potential)",
            "MainAnalysis" = "Main analysis",
            "HBG"          = "Elderly age group with highest burden")
   
@@ -630,72 +630,86 @@ create_burden_by_pathogen_graph <- function(pathogen,
   if((scenario == "optimistic") == TRUE){
     va[, va_age := 0]
     
-    va[VO=="0 weeks (maternal)" & Duration=="6 months" & 
-         (Age_group=="EN" | Age_group=="LN"),
+    va[VO == "0 weeks (maternal)" & Duration == "6 months" & 
+         (Age_group == "EN" | Age_group == "LN"),
        va_age := burden_psa * Efficacy * Coverage]
-    va[VO=="0 weeks (maternal)" & Duration=="6 months" & 
+    va[VO == "0 weeks (maternal)" & Duration == "6 months" & 
          (Age_group=="PN"),
        va_age := burden_psa * Efficacy * Coverage * 5/11]
     
-    va[(VO=="6 weeks" | 
+    va[(VO == "6 weeks" | 
           VO == "6 weeks & elderly age group") &
-         Duration=="5 years" & Age_group == "PN",
+         Duration == "5 years" & Age_group == "PN",
        va_age := burden_psa * Efficacy * Coverage * 45/48]
-    va[(VO=="6 weeks" | 
+    va[(VO == "6 weeks" | 
           VO == "6 weeks & elderly age group") &
-         Duration=="5 years" & Age_group == "1 to 4",
+         Duration == "5 years" & Age_group == "1 to 4",
        va_age := burden_psa * Efficacy * Coverage]
-    va[(VO=="6 weeks" | 
+    va[(VO == "6 weeks" | 
           VO == "6 weeks & elderly age group") &
-         Duration=="5 years" & Age_group == "5 to 9",
+         Duration == "5 years" & Age_group == "5 to 9",
        va_age := burden_psa * Efficacy * Coverage * 1/5 * 7/52]
-
-    va[VO=="6 months" & Duration=="5 years" & Age_group == "PN",
-       va_age := burden_psa * Efficacy * Coverage * 7/11]       
-    va[VO=="6 months" & Duration=="5 years" & Age_group == "1 to 4",
+    
+    va[VO == "6 weeks & 9 months" & Duration == "5 years" & Age_group == "PN",
+       va_age := burden_psa * Efficacy * Coverage * 45/48]      
+    va[VO == "6 weeks & 9 months" & Duration == "5 years" & Age_group == "1 to 4",
        va_age := burden_psa * Efficacy * Coverage]       
-    va[VO=="6 months" & Duration=="5 years" & Age_group == "5 to 9",
+    va[VO == "6 weeks & 9 months" & Duration == "5 years" & Age_group == "5 to 9",
+       va_age := burden_psa * Efficacy * Coverage * 1/5 * 8/12]
+    
+    va[VO == "6 months" & Duration == "5 years" & Age_group == "PN",
+       va_age := burden_psa * Efficacy * Coverage * 7/11]       
+    va[VO == "6 months" & Duration == "5 years" & Age_group == "1 to 4",
+       va_age := burden_psa * Efficacy * Coverage]       
+    va[VO == "6 months" & Duration == "5 years" & Age_group == "5 to 9",
        va_age := burden_psa * Efficacy * Coverage * 1/5 * 5/12]       
     
-    va[VO=="9 months" & Duration=="5 years" & Age_group == "PN",
+    va[VO == "9 months" & Duration == "5 years" & Age_group == "PN",
        va_age := burden_psa * Efficacy * Coverage * 4/11]      
-    va[VO=="9 months" & Duration=="5 years" & Age_group == "1 to 4",
+    va[VO == "9 months" & Duration == "5 years" & Age_group == "1 to 4",
        va_age := burden_psa * Efficacy * Coverage]       
-    va[VO=="9 months" & Duration=="5 years" & Age_group == "5 to 9",
-       va_age := burden_psa * Efficacy * Coverage * 1/5 * 8/12]    
+    va[VO == "9 months" & Duration == "5 years" & Age_group == "5 to 9",
+       va_age := burden_psa * Efficacy * Coverage * 1/5 * 8/12]
     
-    va[VO=="9 months" & Duration=="15 years" & Age_group == "PN",
+    va[VO == "9 months" & Duration == "15 years" & Age_group == "PN",
        va_age := burden_psa * Efficacy * Coverage * 4/11] 
-    va[VO=="9 months" & Duration=="15 years" &
+    va[VO == "9 months" & Duration == "15 years" &
          (Age_group == "1 to 4"| Age_group == "5 to 9"| Age_group == "10 to 14"),
        va_age := burden_psa * Efficacy * Coverage] 
-    va[VO=="9 months" & Duration=="15 years" & Age_group == "15 to 19",
+    va[VO == "9 months" & Duration == "15 years" & Age_group == "15 to 19",
        va_age := burden_psa * Efficacy * Coverage * 1/5 * 8/12] 
     
-    va[VO=="15 years" & Duration=="10 years" & 
+    va[VO == "15 years" & Duration == "10 years" & 
          (Age_group == "15 to 19"| Age_group == "20 to 24"),
        va_age := burden_psa * Efficacy * Coverage] 
                                                                                                                
-    va[VO=="6 weeks & elderly age group" &
-         HBG=="65 years" & Duration=="5 years" & 
+    va[VO == "6 weeks & elderly age group" &
+         HBG == "65 years" & Duration == "5 years" & 
          Age_group == "65 to 69",
        va_age := burden_psa * Efficacy * Coverage]   
-    va[VO=="6 weeks & elderly age group" &
-         HBG=="65 years" & Duration=="10 years" & 
+    va[VO == "6 weeks & elderly age group" &
+         HBG == "65 years" & Duration == "10 years" & 
          (Age_group == "65 to 69"| Age_group == "70 to 74"),
        va_age := burden_psa * Efficacy * Coverage] 
                 
-    va[VO=="6 weeks & elderly age group" &
-         HBG=="70 years" & Duration=="5 years" & 
+    va[VO == "6 weeks & elderly age group" &
+         HBG == "70 years" & Duration == "5 years" & 
          Age_group == "70 to 74",
        va_age := burden_psa * Efficacy * Coverage] 
                                                                                                                                     
-    va[VO=="6 weeks & elderly age group" &
-         HBG=="75 years" & Duration=="5 years" & 
+    va[VO == "6 weeks & elderly age group" &
+         HBG == "75 years" & Duration == "5 years" & 
          Age_group == "75 to 79",
        va_age := burden_psa * Efficacy * Coverage]
     
-    va[VO=="All age groups", va_age := burden_psa * Efficacy * Coverage]
+    va[VO == "10 years + boost every 10 years" &
+         (Age_group != "EN"| Age_group != "LN" |
+          Age_group != "PN"| Age_group != "1 to 4"|
+          Age_group != "5 to 9"),
+       va_age := burden_psa * Efficacy * Coverage]
+    
+    va[(VO=="All age groups" | VO == "0 weeks + boost every 10 years"), 
+       va_age := burden_psa * Efficacy * Coverage]
 
     # using existing Hib vaccine efficacy
     va[Pathogen  == "Haemophilus influenzae" & Efficacy == "0.93" &
@@ -715,7 +729,7 @@ create_burden_by_pathogen_graph <- function(pathogen,
     
     va[Pathogen  == "Streptococcus pneumoniae" & 
          Disease_presentation == "LRI and thorax infections" &
-         VC == "6, 10, 14 weeks" & Age_group == "PN",
+         VO == "6, 10, 14 weeks" & Age_group == "PN",
        va_age := burden_psa * (3/48 + 4/48 * Coverage * 0.25 + 
                                  4/48 * Coverage * 0.25 + 37/48 * Coverage * 0.25)]
     
@@ -725,7 +739,7 @@ create_burden_by_pathogen_graph <- function(pathogen,
     
     va[Pathogen  == "Streptococcus pneumoniae" & 
          Disease_presentation == "LRI and thorax infections" &
-         VC == "6, 10, 14 weeks" & Age_group == "1 to 4",
+         VO == "6, 10, 14 weeks" & Age_group == "1 to 4",
        va_age := burden_psa * 0.25 * Coverage]
 
     va[Pathogen == "Streptococcus pneumoniae" &
@@ -740,70 +754,86 @@ create_burden_by_pathogen_graph <- function(pathogen,
   } else {
     va[, va_age := 0]
     
-    va[VC=="0 weeks (maternal)" & Duration=="6 months" & 
-         (Age_group=="EN" | Age_group=="LN"),
+    va[VC == "0 weeks (maternal)" & Duration == "6 months" & 
+         (Age_group == "EN" | Age_group == "LN"),
        va_age := burden_psa * Efficacy * Coverage]
-    va[VC=="0 weeks (maternal)" & Duration=="6 months" & 
-         (Age_group=="PN"),
+    va[VC == "0 weeks (maternal)" & Duration == "6 months" & 
+         (Age_group == "PN"),
        va_age := burden_psa * Efficacy * Coverage * 5/11]
     
-    va[(VC=="6 weeks" | 
+    va[(VC == "6 weeks" | 
           VC == "6 weeks & elderly age group") &
-         Duration=="5 years" & Age_group == "PN",
+         Duration == "5 years" & Age_group == "PN",
        va_age := burden_psa * Efficacy * Coverage * 45/48]
-    va[(VC=="6 weeks" | 
+    va[(VC == "6 weeks" | 
           VC == "6 weeks & elderly age group") &
-         Duration=="5 years" & Age_group == "1 to 4",
+         Duration == "5 years" & Age_group == "1 to 4",
        va_age := burden_psa * Efficacy * Coverage]
-    va[(VC=="6 weeks" | 
+    va[(VC == "6 weeks" | 
           VC == "6 weeks & elderly age group") &
          Duration=="5 years" & Age_group == "5 to 9",
        va_age := burden_psa * Efficacy * Coverage * 1/5 * 7/52]
     
-    va[VC=="6 months" & Duration=="5 years" & Age_group == "PN",
-       va_age := burden_psa * Efficacy * Coverage * 7/11]       
-    va[VC=="6 months" & Duration=="5 years" & Age_group == "1 to 4",
+    va[VC == "6 weeks & 9 months" & Duration == "5 years" & Age_group == "PN",
+       va_age := burden_psa * Efficacy * Coverage * 45/48]      
+    va[VC == "6 weeks & 9 months" & Duration == "5 years" & Age_group == "1 to 4",
        va_age := burden_psa * Efficacy * Coverage]       
-    va[VC=="6 months" & Duration=="5 years" & Age_group == "5 to 9",
+    va[VC == "6 weeks & 9 months" & Duration == "5 years" & Age_group == "5 to 9",
+       va_age := burden_psa * Efficacy * Coverage * 1/5 * 8/12]
+    
+    va[VC == "6 months" & Duration == "5 years" & Age_group == "PN",
+       va_age := burden_psa * Efficacy * Coverage * 7/11]       
+    va[VC == "6 months" & Duration == "5 years" & Age_group == "1 to 4",
+       va_age := burden_psa * Efficacy * Coverage]       
+    va[VC == "6 months" & Duration == "5 years" & Age_group == "5 to 9",
        va_age := burden_psa * Efficacy * Coverage * 1/5 * 5/12]       
     
-    va[VC=="9 months" & Duration=="5 years" & Age_group == "PN",
+    va[VC == "9 months" & Duration == "5 years" & Age_group == "PN",
        va_age := burden_psa * Efficacy * Coverage * 4/11]       
-    va[VC=="9 months" & Duration=="5 years" & Age_group == "1 to 4",
+    va[VC == "9 months" & Duration == "5 years" & Age_group == "1 to 4",
        va_age := burden_psa * Efficacy * Coverage]       
-    va[VC=="9 months" & Duration=="5 years" & Age_group == "5 to 9",
+    va[VC == "9 months" & Duration == "5 years" & Age_group == "5 to 9",
        va_age := burden_psa * Efficacy * Coverage * 1/5 * 8/12]    
     
-    va[VC=="9 months" & Duration=="15 years" & Age_group == "PN",
+    va[VC == "9 months" & Duration == "15 years" & Age_group == "PN",
        va_age := burden_psa * Efficacy * Coverage * 4/11] 
-    va[VC=="9 months" & Duration=="15 years" &
+    va[VC == "9 months" & Duration == "15 years" &
          (Age_group == "1 to 4"| Age_group == "5 to 9"| Age_group == "10 to 14"),
        va_age := burden_psa * Efficacy * Coverage] 
-    va[VC=="9 months" & Duration=="15 years" & Age_group == "15 to 19",
+    va[VC == "9 months" & Duration == "15 years" & Age_group == "15 to 19",
        va_age := burden_psa * Efficacy * Coverage * 1/5 * 8/12] 
     
-    va[VC=="15 years" & Duration=="10 years" & 
+    va[VC == "15 years" & Duration == "10 years" & 
          (Age_group == "15 to 19"| Age_group == "20 to 24"),
        va_age := burden_psa * Efficacy * Coverage] 
     
-    va[VC== "6 weeks & elderly age group" &
-         HBG=="65 years" & Duration=="5 years" & 
+    va[VC == "6 weeks & elderly age group" &
+         HBG == "65 years" & Duration == "5 years" & 
          Age_group == "65 to 69",
        va_age := burden_psa * Efficacy * Coverage]   
-    va[VC== "6 weeks & elderly age group" &
-         HBG=="65 years" & Duration=="10 years" & 
+    va[VC == "6 weeks & elderly age group" &
+         HBG == "65 years" & Duration == "10 years" & 
          (Age_group == "65 to 69"| Age_group == "70 to 74"),
        va_age := burden_psa * Efficacy * Coverage] 
     
-    va[VC== "6 weeks & elderly age group" &
-         HBG=="70 years" & Duration=="5 years" & 
+    va[VC == "6 weeks & elderly age group" &
+         HBG == "70 years" & Duration == "5 years" & 
          Age_group == "70 to 74",
        va_age := burden_psa * Efficacy * Coverage] 
     
-    va[VC== "6 weeks & elderly age group" &
-         HBG=="75 years" & Duration=="5 years" & 
+    va[VC == "6 weeks & elderly age group" &
+         HBG == "75 years" & Duration == "5 years" & 
          Age_group == "75 to 79",
        va_age := burden_psa * Efficacy * Coverage] 
+    
+    va[VC == "10 years + boost every 10 years" &
+         (Age_group != "EN"| Age_group != "LN" |
+          Age_group != "PN"| Age_group != "1 to 4"|
+          Age_group != "5 to 9"), 
+       va_age := burden_psa * Efficacy * Coverage]
+    
+    va[VC == "0 weeks + boost every 10 years", 
+       va_age := burden_psa * Efficacy * Coverage]
     
     # using both vaccines for Klebsiella pneumoniae   
     va[Pathogen == "Klebsiella pneumoniae" & 
@@ -827,17 +857,17 @@ create_burden_by_pathogen_graph <- function(pathogen,
         va_age := burden_psa * (3/48 + 4/48 * Coverage * 0.29 + 
                              4/48 * Coverage * 0.58 + 37/48 * Coverage * 0.58)]
     
-    va[Pathogen  == "Streptococcus pneumoniae" & 
+    va[Pathogen == "Streptococcus pneumoniae" & 
          Disease_presentation == "LRI and thorax infections" &
          VC == "6, 10, 14 weeks" & Age_group == "PN",
        va_age := burden_psa * (3/48 + 4/48 * Coverage * 0.25 + 
                              4/48 * Coverage * 0.25 + 37/48 * Coverage * 0.25)]
     
-    va[Pathogen  == "Streptococcus pneumoniae" &
+    va[Pathogen == "Streptococcus pneumoniae" &
          VC == "6, 10, 14 weeks" & Age_group == "1 to 4",
        va_age := burden_psa * 0.58 * Coverage]
     
-    va[Pathogen  == "Streptococcus pneumoniae" & 
+    va[Pathogen == "Streptococcus pneumoniae" & 
          Disease_presentation == "LRI and thorax infections" &
          VC == "6, 10, 14 weeks" & Age_group == "1 to 4",
        va_age := burden_psa * 0.25 * Coverage]
@@ -1290,25 +1320,25 @@ create_burden_averted_by_pathogen_graph <- function(Attributable_burden_averted,
   
   burden_averted_by_pathogen <- rbind(Associated_burden_averted, Attributable_burden_averted)
   
-  burden_averted_by_pathogen<-  burden_averted_by_pathogen %>% rename("lower_value" = "2.5%",
-                                                                      "median_value" = "50%",
-                                                                      "upper_value" = "97.5%")
+  burden_averted_by_pathogen <-  burden_averted_by_pathogen %>% rename("lower_value"  = "2.5%",
+                                                                       "median_value" = "50%",
+                                                                       "upper_value"  = "97.5%")
   
   ggplot(burden_averted_by_pathogen, 
        aes(x = reorder(Counts, -median_value), 
-           y=median_value, fill=Resistance,
-           width=ifelse(Resistance == "Associated with resistance", 0.8, 0.6))) +
-    geom_bar(stat = "identity", position="identity") +
+           y = median_value, fill = Resistance,
+           width = ifelse(Resistance == "Associated with resistance", 0.8, 0.6))) +
+    geom_bar(stat = "identity", position = "identity") +
     scale_fill_manual(values = c("lightsteelblue3","lightsteelblue4")) +
     labs(x = "Pathogen", y = paste(ylabel)) + 
     ylim(0,ylim_max) +
-    geom_errorbar(aes(ymin = lower_value, ymax = upper_value), width=0.15,
-                  size=0.5, position=position_dodge(0)) +
+    geom_errorbar(aes(ymin = lower_value, ymax = upper_value), width = 0.15,
+                  size = 0.5, position = position_dodge(0)) +
     theme_classic() +
     theme(legend.position = c(0.9, 0.9)) +
     ggtitle(title_name) +
-    theme(plot.title = element_text(hjust=-0.05, vjust=3, size = 20)) +
-    theme(axis.text.x = element_text(angle = 30, vjust = 1, hjust=1))
+    theme(plot.title = element_text(hjust = -0.05, vjust = 3, size = 20)) +
+    theme(axis.text.x = element_text(angle = 30, vjust = 1, hjust = 1))
   
 } # end of function -- create_burden_averted_by_pathogen_graph
 # ------------------------------------------------------------------------------
@@ -1582,15 +1612,16 @@ burden_averted_by_dp_pat <- function(data_input, image_file){
   BSI <- BSI %>% group_by(Disease_presentation, Pathogen) %>%
     summarise(median=sum(median), .groups = 'drop')
   
-  LRI <- data_input %>%
-    filter(Disease_presentation == "LRI and thorax infections")
+  LRI_TB <- data_input %>%
+    filter(Disease_presentation == "LRI and thorax infections"|
+           Disease_presentation == "TB")
   
   others <- data.frame("Disease_presentation" = "Others",
                        "Pathogen"             = " ",
                        "median"               = sum(data_input$median) 
-                       - sum(BSI$median) - sum(LRI$median))
+                       - sum(BSI$median) - sum(LRI_TB$median))
   
-  dp_by_pathogen <- rbind(BSI, LRI, others)
+  dp_by_pathogen <- rbind(BSI, LRI_TB, others)
   
   dp_by_pathogen <- dp_by_pathogen %>% arrange(Disease_presentation, median)
   
@@ -1598,11 +1629,11 @@ burden_averted_by_dp_pat <- function(data_input, image_file){
       width = 10, height = 10, res = 1000, units="in")
   
   PieDonut(dp_by_pathogen, aes(pies = Disease_presentation, donuts = Pathogen, count = median),
-           showPieName=FALSE, showRatioThreshold = 0, start = 4,
+           showPieName=FALSE, showRatioThreshold = 0, start = 4.2,
            r0 = 0, r1 = 0.5, r2 = 0.6,
            pieAlpha = 0.7, donutAlpha = 0.7,
            labelpositionThreshold=1,
-           titlesize = 5)
+           titlesize = 4.5)
   
   dev.off()
 } # end of function -- burden_averted_by_dp_pat
