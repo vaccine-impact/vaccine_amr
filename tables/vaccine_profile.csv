@@ -18,5 +18,5 @@ Salmonella paratyphi,Salmonella Paratyphi,0.7,0.7,5 years,All,9 months,9 months,
 Salmonella Typhi,Salmonella Typhi,0.85,0.7,15 years,All,9 months,9 months,Yes,
 Shigella,Shigella spp.,0.6,0.7,5 years,All,6 months,6 months,Yes,
 Staphylococcus aureus,Staphylococcus aureus,0.6,0.7,5 years,All,6 weeks & elderly age group,All age groups,Yes,75 years
-Streptococcus pneumoniae #1,Streptococcus pneumoniae,0.58,0.9,5 years,"BSI, CNS infections, Cardiac infections, LRI","6, 10, 14 weeks","6, 10, 14 weeks & elderly age group",No,75 years
-Streptococcus pneumoniae #2,Streptococcus pneumoniae,0.7,0.9,5 years,"BSI, CNS infections, Cardiac infections, LRI",6 weeks,6 weeks & elderly age group,Yes,75 years
+Streptococcus pneumoniae #1,Streptococcus pneumoniae,0.58,0.9,5 years,"BSI, CNS infections, Cardiac infections, LRI","6, 10, 14 weeks","6, 10, 14 weeks & elderly age group",Yes,75 years
+Streptococcus pneumoniae #2,Streptococcus pneumoniae,0.7,0.9,5 years,"BSI, CNS infections, Cardiac infections, LRI",6 weeks,6 weeks & elderly age group,No,75 years

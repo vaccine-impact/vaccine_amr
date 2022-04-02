@@ -127,7 +127,7 @@ existing_vaccine_coverage <- function(year,
 
 
 # ------------------------------------------------------------------------------
-# create and clean up the data frame of AMR burden
+# create and clean up the AMR burden data
 
 create_burden_table <- function(AMR_burden,
                                 burden_file){
@@ -147,10 +147,11 @@ create_burden_table <- function(AMR_burden,
                                  levels=unique(AMR_burden$Age_group), order=T)
   
   levels(AMR_burden$Age_group) <- c("EN", "LN", "PN",  "1 to 4", "5 to 9","10 to 14",
-                                    "15 to 19", "20 to 24", "25 to 29",  "30 to 34",
-                                    "35 to 39", "40 to 44", "45 to 49",  "50 to 54" ,      
+                                    "15 to 19", "20 to 24", "25 to 29", "30 to 34",
+                                    "35 to 39", "40 to 44", "45 to 49", "50 to 54" ,      
                                     "55 to 59", "60 to 64", "65 to 69", "70 to 74",
-                                    "75 to 79", "80 to 84", "85 to 89", "90 to 94", "95 plus")
+                                    "75 to 79", "80 to 84", "85 to 89", "90 to 94", 
+                                    "95 plus")
   
   AMR_burden <- AMR_burden %>%
     filter(AMR_burden$WHO_region != "unclassified")
@@ -182,42 +183,42 @@ create_burden_table <- function(AMR_burden,
   
   AMR_burden <- data.table(AMR_burden)
   
-  # apply pre-vaccine burden to HIB burden
+  # estimate HIB pre-vaccination burden
   AMR_burden[Pathogen  == "Haemophilus influenzae" & Age_group == "PN",
              Associated_resistant_mean := Associated_resistant_mean /
                (3/48 + 4/48 * (1 - hib_vaccine_coverage_2019 * 0.59) +
-                  4/48 * (1 - hib_vaccine_coverage_2019 * 0.92) + 
-                  37/48 * (1 - hib_vaccine_coverage_2019 * 0.93))]
+                       4/48 * (1 - hib_vaccine_coverage_2019 * 0.92) + 
+                      37/48 * (1 - hib_vaccine_coverage_2019 * 0.93))]
   
   AMR_burden[Pathogen  == "Haemophilus influenzae" & Age_group == "PN",
              Associated_resistant_lower := Associated_resistant_lower /
                (3/48 + 4/48 * (1 - hib_vaccine_coverage_2019 * 0.59) +
-                  4/48 * (1 - hib_vaccine_coverage_2019 * 0.92) + 
-                  37/48 * (1 - hib_vaccine_coverage_2019 * 0.93))]
+                       4/48 * (1 - hib_vaccine_coverage_2019 * 0.92) + 
+                      37/48 * (1 - hib_vaccine_coverage_2019 * 0.93))]
   
   AMR_burden[Pathogen  == "Haemophilus influenzae" & Age_group == "PN",
              Associated_resistant_upper := Associated_resistant_upper /
                (3/48 + 4/48 * (1 - hib_vaccine_coverage_2019 * 0.59) + 
-                  4/48 * (1 - hib_vaccine_coverage_2019 * 0.92) + 
-                  37/48 * (1 - hib_vaccine_coverage_2019 * 0.93))]
+                       4/48 * (1 - hib_vaccine_coverage_2019 * 0.92) + 
+                      37/48 * (1 - hib_vaccine_coverage_2019 * 0.93))]
   
   AMR_burden[Pathogen  == "Haemophilus influenzae" & Age_group == "PN",
              Attributable_resistance_mean := Attributable_resistance_mean /
                (3/48 + 4/48 * (1 - hib_vaccine_coverage_2019 *0.59) + 
-                  4/48 * (1 - hib_vaccine_coverage_2019 * 0.92) + 
-                  37/48 * (1 - hib_vaccine_coverage_2019 * 0.93))]
+                       4/48 * (1 - hib_vaccine_coverage_2019 * 0.92) + 
+                      37/48 * (1 - hib_vaccine_coverage_2019 * 0.93))]
   
   AMR_burden[Pathogen  == "Haemophilus influenzae" & Age_group == "PN",
              Attributable_resistance_lower := Attributable_resistance_lower /
                (3/48 + 4/48 * (1 - hib_vaccine_coverage_2019 *0.59) + 
-                  4/48 * (1 - hib_vaccine_coverage_2019 * 0.92) + 
-                  37/48 * (1 - hib_vaccine_coverage_2019 * 0.93))]
+                       4/48 * (1 - hib_vaccine_coverage_2019 * 0.92) + 
+                      37/48 * (1 - hib_vaccine_coverage_2019 * 0.93))]
   
   AMR_burden[Pathogen  == "Haemophilus influenzae" & Age_group == "PN",
              Attributable_resistance_upper := Attributable_resistance_upper /
                (3/48 + 4/48 * (1 - hib_vaccine_coverage_2019 *0.59) + 
-                  4/48 * (1 - hib_vaccine_coverage_2019 * 0.92) + 
-                  37/48 * (1 - hib_vaccine_coverage_2019 * 0.93))]
+                       4/48 * (1 - hib_vaccine_coverage_2019 * 0.92) + 
+                      37/48 * (1 - hib_vaccine_coverage_2019 * 0.93))]
   
   
   AMR_burden[Pathogen  == "Haemophilus influenzae" & Age_group == "1 to 4",
@@ -245,42 +246,42 @@ create_burden_table <- function(AMR_burden,
                (1 - hib_vaccine_coverage_2018 * 0.93)]
   
   
-  # apply pre-vaccine burden to streptococcus pneumoniae burden
+  # estimate streptococcus pneumoniae pre-vaccination burden
   AMR_burden[Pathogen  == "Streptococcus pneumoniae" & Age_group == "PN",
              Associated_resistant_mean := Associated_resistant_mean /
                (3/48 + 4/48 * (1 - hib_vaccine_coverage_2019 * 0.29) + 
-                  4/48 * (1 - pcv_vaccine_coverage_2019 * 0.58) + 
-                  37/48 * (1 - pcv_vaccine_coverage_2019 * 0.58))]
+                       4/48 * (1 - pcv_vaccine_coverage_2019 * 0.58) + 
+                      37/48 * (1 - pcv_vaccine_coverage_2019 * 0.58))]
   
   AMR_burden[Pathogen  == "Streptococcus pneumoniae" & Age_group == "PN",
              Associated_resistant_lower := Associated_resistant_lower /
                (3/48 + 4/48 * (1 - hib_vaccine_coverage_2019 * 0.29) + 
-                  4/48 * (1 - pcv_vaccine_coverage_2019 * 0.58) + 
-                  37/48 * (1 - pcv_vaccine_coverage_2019 * 0.58))]
+                       4/48 * (1 - pcv_vaccine_coverage_2019 * 0.58) + 
+                      37/48 * (1 - pcv_vaccine_coverage_2019 * 0.58))]
   
   AMR_burden[Pathogen  == "Streptococcus pneumoniae" & Age_group == "PN",
              Associated_resistant_upper := Associated_resistant_upper /
                (3/48 + 4/48 * (1 - hib_vaccine_coverage_2019 * 0.29) + 
-                  4/48 * (1 - pcv_vaccine_coverage_2019 * 0.58) + 
-                  37/48 * (1 - pcv_vaccine_coverage_2019 * 0.58))]
+                       4/48 * (1 - pcv_vaccine_coverage_2019 * 0.58) + 
+                      37/48 * (1 - pcv_vaccine_coverage_2019 * 0.58))]
   
   AMR_burden[Pathogen  == "Streptococcus pneumoniae" & Age_group == "PN",
              Attributable_resistance_mean := Attributable_resistance_mean /
                (3/48 + 4/48 * (1 - hib_vaccine_coverage_2019 * 0.29) + 
-                  4/48 * (1 - pcv_vaccine_coverage_2019 * 0.58) + 
-                  37/48 * (1 - pcv_vaccine_coverage_2019 * 0.58))]
+                       4/48 * (1 - pcv_vaccine_coverage_2019 * 0.58) + 
+                      37/48 * (1 - pcv_vaccine_coverage_2019 * 0.58))]
   
   AMR_burden[Pathogen  == "Streptococcus pneumoniae" & Age_group == "PN",
              Attributable_resistance_lower := Attributable_resistance_lower /
                (3/48 + 4/48 * (1 - hib_vaccine_coverage_2019 * 0.29) + 
-                  4/48 * (1 - pcv_vaccine_coverage_2019 * 0.58) + 
-                  37/48 * (1 - pcv_vaccine_coverage_2019 * 0.58))]
+                       4/48 * (1 - pcv_vaccine_coverage_2019 * 0.58) + 
+                      37/48 * (1 - pcv_vaccine_coverage_2019 * 0.58))]
   
   AMR_burden[Pathogen  == "Streptococcus pneumoniae" & Age_group == "PN",
              Attributable_resistance_upper := Attributable_resistance_upper /
                (3/48 + 4/48 * (1 - hib_vaccine_coverage_2019 * 0.29) + 
-                  4/48 * (1 - pcv_vaccine_coverage_2019 * 0.58) + 
-                  37/48 * (1 - pcv_vaccine_coverage_2019 * 0.58))]
+                       4/48 * (1 - pcv_vaccine_coverage_2019 * 0.58) + 
+                      37/48 * (1 - pcv_vaccine_coverage_2019 * 0.58))]
   
   
   AMR_burden[Pathogen  == "Streptococcus pneumoniae" & Age_group == "1 to 4",
@@ -376,7 +377,7 @@ create_combined_table <- function(death_burden_dt,
   # Streptococcus pneumoniae vaccine specification
   combined_table[Pathogen             == "Streptococcus pneumoniae" &
                  Disease_presentation == "LRI and thorax infections",
-                 Efficacy             := 0.5]
+                 Efficacy             := 0.25]
   
   # Escherichia coli vaccine specification
   combined_table[Pathogen             == "Escherichia coli" &
@@ -472,8 +473,8 @@ create_burden_by_pathogen_graph <- function(pathogen,
   # -------------------------------------------------------------------------  
   # minor changes to fit lognormal distribution
     burden_dt <- burden_dt[!(burden_dt$burden_mean_value == "0" & 
-                              burden_dt$burden_lower_value == "0" &  
-                               burden_dt$burden_upper_value == "0"),]
+                             burden_dt$burden_lower_value == "0" &  
+                             burden_dt$burden_upper_value == "0"),]
     
     if ((mode == "death") == TRUE) {
     # add a small value to zero to avoid log(0)
@@ -637,16 +638,13 @@ create_burden_by_pathogen_graph <- function(pathogen,
          (Age_group=="PN"),
        va_age := burden_psa * Efficacy * Coverage * 5/11]
     
-    va[(VO == "6 weeks" | 
-          VO == "6 weeks & elderly age group") &
+    va[(VO == "6 weeks" | VO == "6 weeks & elderly age group") &
          Duration == "5 years" & Age_group == "PN",
        va_age := burden_psa * Efficacy * Coverage * 45/48]
-    va[(VO == "6 weeks" | 
-          VO == "6 weeks & elderly age group") &
+    va[(VO == "6 weeks" | VO == "6 weeks & elderly age group") &
          Duration == "5 years" & Age_group == "1 to 4",
        va_age := burden_psa * Efficacy * Coverage]
-    va[(VO == "6 weeks" | 
-          VO == "6 weeks & elderly age group") &
+    va[(VO == "6 weeks" | VO == "6 weeks & elderly age group") &
          Duration == "5 years" & Age_group == "5 to 9",
        va_age := burden_psa * Efficacy * Coverage * 1/5 * 7/52]
     
@@ -712,44 +710,34 @@ create_burden_by_pathogen_graph <- function(pathogen,
        va_age := burden_psa * Efficacy * Coverage]
 
     # using existing Hib vaccine efficacy
-    va[Pathogen  == "Haemophilus influenzae" & Efficacy == "0.93" &
+    va[Pathogen == "Haemophilus influenzae" & Efficacy == "0.93" &
          VO == "6, 10, 14 weeks" & Age_group == "PN",
-       va_age := burden_psa * (3/48 + 4/48 * Coverage * 0.59 +
-                                 4/48 * Coverage * 0.92 + 37/48 * Coverage * 0.93)]
+       va_age := burden_psa * (4/48 * 0.59 * Coverage +
+                               4/48 * 0.92 * Coverage + 
+                              37/48 * 0.93 * Coverage)]
     
-    va[Pathogen  == "Haemophilus influenzae" & Efficacy == "0.93" &
+    va[Pathogen == "Haemophilus influenzae" & Efficacy == "0.93" &
          VO == "6, 10, 14 weeks" & Age_group == "1 to 4",
-       va_age := burden_psa * 0.93 * Coverage]
+       va_age := burden_psa * Efficacy * Coverage]
     
     # using existing PCV efficacy
-    va[Pathogen  == "Streptococcus pneumoniae" &
+    va[Pathogen == "Streptococcus pneumoniae" &
          VO == "6, 10, 14 weeks & elderly age group" & Age_group == "PN",
-       va_age := burden_psa * (3/48 + 4/48 * Coverage * 0.29 + 
-                                 4/48 * Coverage * 0.58 + 37/48 * Coverage * 0.58)]
+       va_age := burden_psa * (4/48 * 0.29 * Coverage + 
+                               4/48 * 0.58 * Coverage+ 
+                              37/48 * 0.58 * Coverage)]
     
-    va[Pathogen  == "Streptococcus pneumoniae" & 
-         Disease_presentation == "LRI and thorax infections" &
-         VO == "6, 10, 14 weeks" & Age_group == "PN",
-       va_age := burden_psa * (3/48 + 4/48 * Coverage * 0.25 + 
-                                 4/48 * Coverage * 0.25 + 37/48 * Coverage * 0.25)]
-    
-    va[Pathogen  == "Streptococcus pneumoniae" &
-         VO == "6, 10, 14 weeks & elderly age group" & Age_group == "1 to 4",
-       va_age := burden_psa * 0.58 * Coverage]
-    
-    va[Pathogen  == "Streptococcus pneumoniae" & 
-         Disease_presentation == "LRI and thorax infections" &
-         VO == "6, 10, 14 weeks" & Age_group == "1 to 4",
-       va_age := burden_psa * 0.25 * Coverage]
-
-    va[Pathogen == "Streptococcus pneumoniae" &
-         VO== "6, 10, 14 weeks & elderly age group" & Age_group == "75 to 79",
-       va_age := burden_psa * 0.58 * Coverage]
+    va[Pathogen == "Streptococcus pneumoniae" & 
+       Disease_presentation == "LRI and thorax infections" &
+         VO == "6, 10, 14 weeks & elderly age group" & Age_group == "PN",
+       va_age := burden_psa * (4/48 * 0.25 * Coverage + 
+                               4/48 * 0.25 * Coverage + 
+                              37/48 * 0.25 * Coverage)]
     
     va[Pathogen == "Streptococcus pneumoniae" &
-         Disease_presentation == "LRI and thorax infections" &
-         VO== "6, 10, 14 weeks & elderly age group" & Age_group == "75 to 79",
-       va_age := burden_psa * 0.25 * Coverage]
+         VO == "6, 10, 14 weeks & elderly age group" &
+       (Age_group == "1 to 4" | Age_group == "75 to 79"),
+       va_age := burden_psa * Efficacy * Coverage]
     
   } else {
     va[, va_age := 0]
@@ -843,9 +831,10 @@ create_burden_by_pathogen_graph <- function(pathogen,
     
     # using existing Hib vaccine efficacy
     va[Pathogen == "Haemophilus influenzae" & Efficacy == "0.93" &
-       VC == "6, 10, 14 weeks" & Age_group == "PN",
-        va_age := burden_psa * (3/48 + 4/48 * Coverage * 0.59 +
-                  4/48 * Coverage * 0.92 + 37/48 * Coverage * 0.93)]
+         VC == "6, 10, 14 weeks" & Age_group == "PN",
+       va_age := burden_psa * (4/48 * 0.59 * Coverage +
+                                4/48 * 0.92 * Coverage + 
+                               37/48 * 0.93 * Coverage)]
     
     va[Pathogen == "Haemophilus influenzae" & Efficacy == "0.93" &
         VC == "6, 10, 14 weeks" & Age_group == "1 to 4",
@@ -854,24 +843,21 @@ create_burden_by_pathogen_graph <- function(pathogen,
     # using existing PCV efficacy
     va[Pathogen == "Streptococcus pneumoniae" &
         VC == "6, 10, 14 weeks" & Age_group == "PN",
-        va_age := burden_psa * (3/48 + 4/48 * Coverage * 0.29 + 
-                             4/48 * Coverage * 0.58 + 37/48 * Coverage * 0.58)]
+      va_age := burden_psa * (4/48 * 0.29 * Coverage + 
+                              4/48 * 0.58 * Coverage + 
+                             37/48 * 0.58 * Coverage)]
     
     va[Pathogen == "Streptococcus pneumoniae" & 
          Disease_presentation == "LRI and thorax infections" &
          VC == "6, 10, 14 weeks" & Age_group == "PN",
-       va_age := burden_psa * (3/48 + 4/48 * Coverage * 0.25 + 
-                             4/48 * Coverage * 0.25 + 37/48 * Coverage * 0.25)]
+       va_age := burden_psa * (4/48 * 0.25 * Coverage + 
+                               4/48 * 0.25 * Coverage + 
+                              37/48 * 0.25 * Coverage)]
     
     va[Pathogen == "Streptococcus pneumoniae" &
          VC == "6, 10, 14 weeks" & Age_group == "1 to 4",
-       va_age := burden_psa * 0.58 * Coverage]
-    
-    va[Pathogen == "Streptococcus pneumoniae" & 
-         Disease_presentation == "LRI and thorax infections" &
-         VC == "6, 10, 14 weeks" & Age_group == "1 to 4",
-       va_age := burden_psa * 0.25 * Coverage]
-  }
+       va_age := burden_psa * Efficacy * Coverage]
+      }
     
   # applying vaccine target disease presentation
   vaccine_impact <- va
@@ -1470,24 +1456,24 @@ estimate_existing_vaccine_impact <- function(input_data){
   
   # using existing Hib vaccine efficacy
   va[Pathogen  == "Haemophilus influenzae" & Age_group == "PN",
-     va_age := burden_psa * (3/48 + 4/48 * hib_vaccine_coverage_2019 * 0.59 +
-                               4/48 * hib_vaccine_coverage_2019 * 0.92 + 
-                               37/48 * hib_vaccine_coverage_2019 * 0.93)]
+     va_age := burden_psa * (4/48 * hib_vaccine_coverage_2019 * 0.59 +
+                             4/48 * hib_vaccine_coverage_2019 * 0.92 + 
+                            37/48 * hib_vaccine_coverage_2019 * 0.93)]
   
   va[Pathogen  == "Haemophilus influenzae" & Age_group == "1 to 4",
      va_age := burden_psa * 0.93 * hib_vaccine_coverage_2018]
   
   # using existing PCV efficacy
   va[Pathogen  == "Streptococcus pneumoniae" & Age_group == "PN",
-     va_age := burden_psa * (3/48 + 4/48 * pcv_vaccine_coverage_2019 * 0.29 + 
-                               4/48 * pcv_vaccine_coverage_2019 * 0.58 + 
-                               37/48 * pcv_vaccine_coverage_2019 * 0.58)]
+     va_age := burden_psa * (4/48 * pcv_vaccine_coverage_2019 * 0.29 + 
+                             4/48 * pcv_vaccine_coverage_2019 * 0.58 + 
+                            37/48 * pcv_vaccine_coverage_2019 * 0.58)]
   
   va[Pathogen  == "Streptococcus pneumoniae" & Age_group == "PN" &
      Disease_presentation == "LRI and thorax infections" ,
-     va_age := burden_psa * (3/48 + 4/48 * pcv_vaccine_coverage_2019 * 0.25 + 
-                               4/48 * pcv_vaccine_coverage_2019 * 0.25 + 
-                               37/48 * pcv_vaccine_coverage_2019 * 0.25)]
+     va_age := burden_psa * (4/48 * pcv_vaccine_coverage_2019 * 0.25 + 
+                             4/48 * pcv_vaccine_coverage_2019 * 0.25 + 
+                            37/48 * pcv_vaccine_coverage_2019 * 0.25)]
   
   va[Pathogen  == "Streptococcus pneumoniae" & Age_group == "1 to 4",
      va_age := burden_psa * 0.58 * pcv_vaccine_coverage_2018]
