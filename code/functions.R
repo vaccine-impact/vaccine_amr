@@ -1330,11 +1330,11 @@ create_burden_averted_by_pathogen_graph <- function(Attributable_burden_averted,
 # ------------------------------------------------------------------------------
 # further analysis -- vaccine avertable burden of corresponding vaccines
 
-  estimate_burden_averted_add  <- function(pathogen,
-                                           vaccine_type,
-                                           input_data,
-                                           name_value,
-                                           scenario_input = "conservative"){
+estimate_burden_averted_add <- function(pathogen,
+                                        vaccine_type,
+                                        input_data,
+                                        name_value,
+                                        scenario_input = "conservative"){
   
   burden_add <- input_data %>%
     filter(Pathogen == pathogen)
@@ -1347,100 +1347,82 @@ create_burden_averted_by_pathogen_graph <- function(Attributable_burden_averted,
   burden_add[, VO:= vaccine_type[,"VO"]]
   burden_add[, MainAnalysis:= vaccine_type[,"MainAnalysis"]]
   burden_add[Pathogen == "Streptococcus pneumoniae" & 
-                            Efficacy == "0.58" & 
-                            Disease_presentation == "LRI and thorax infections",
-                          Efficacy := 0.25]
+               Efficacy == "0.58" & 
+               Disease_presentation == "LRI and thorax infections",
+             Efficacy := 0.25]
   burden_add[Pathogen == "Streptococcus pneumoniae" & 
-                            Efficacy == "0.7" & 
-                            Disease_presentation == "LRI and thorax infections",
-                          Efficacy := 0.5]
+               Efficacy == "0.7" & 
+               Disease_presentation == "LRI and thorax infections",
+             Efficacy := 0.5]
   
   burden_averted_add <- 
     aggregate_impact_by_pathogen(data_input = burden_add,
                                  input_scenario = scenario_input,
                                  pathogenlist = pathogen)
   
-  burden_averted_add [,2:4] <- 
-    lapply(burden_averted_add[,2:4], function(x) comma(x,  format = "d"))
-  
-  burden_averted_add [, paste(name_value) := paste(burden_averted_add$"50%","(",
-                                                   burden_averted_add$"2.5%","-",
-                                                   burden_averted_add$"97.5%",")")]
-  
-  burden_averted_add <- burden_averted_add [,c(1,5)]
-  
   return(burden_averted_add)} # end of function -- estimate_burden_averted_add
 
-  # -------------------------------------------------------------------------
+# -------------------------------------------------------------------------
 
 create_burden_table_add <- function(pathogen_input,
                                     vaccine_type_input){
-
+  
   deaths_associated <-
-    estimate_burden_averted_add(pathogen = pathogen_input,
-                                vaccine_type = vaccine_type_input,
-                                input_data = deaths_associated_psa,
-                                name_value = "deaths_associated")
-
+    edit_table(estimate_burden_averted_add(pathogen = pathogen_input,
+                                           vaccine_type = vaccine_type_input,
+                                           input_data = deaths_associated_psa))
+  
   deaths_attributable <- 
-    estimate_burden_averted_add(pathogen = pathogen_input,
-                                vaccine_type = vaccine_type_input,
-                                input_data = deaths_attributable_psa,
-                                name_value = "deaths_attributable")
-
+    edit_table(estimate_burden_averted_add(pathogen = pathogen_input,
+                                           vaccine_type = vaccine_type_input,
+                                           input_data = deaths_attributable_psa))
+  
   daly_associated <-
-    estimate_burden_averted_add(pathogen = pathogen_input,
-                                vaccine_type = vaccine_type_input,
-                                input_data = daly_associated_psa,
-                                name_value = "daly_associated")
-    
+    edit_table(estimate_burden_averted_add(pathogen = pathogen_input,
+                                           vaccine_type = vaccine_type_input,
+                                           input_data = daly_associated_psa))
+  
   daly_attributable <-
-    estimate_burden_averted_add(pathogen = pathogen_input,
-                                vaccine_type = vaccine_type_input,
-                                input_data = daly_attributable_psa,
-                                name_value = "daly_attributable")
-
+    edit_table(estimate_burden_averted_add(pathogen = pathogen_input,
+                                           vaccine_type = vaccine_type_input,
+                                           input_data = daly_attributable_psa))
+  
   deaths_associated_opt <-
-    estimate_burden_averted_add(pathogen = pathogen_input,
-                                vaccine_type = vaccine_type_input,
-                                input_data = deaths_associated_psa,
-                                name_value = "deaths_associated_opt",
-                                scenario_input = "optimistic")
+    edit_table(estimate_burden_averted_add(pathogen = pathogen_input,
+                                           vaccine_type = vaccine_type_input,
+                                           input_data = deaths_associated_psa,
+                                           scenario_input = "optimistic"))
   
   deaths_attributable_opt <- 
-    estimate_burden_averted_add(pathogen = pathogen_input,
-                                vaccine_type = vaccine_type_input,
-                                input_data = deaths_attributable_psa,
-                                name_value = "deaths_attributable_opt",
-                                scenario_input = "optimistic")
+    edit_table(estimate_burden_averted_add(pathogen = pathogen_input,
+                                           vaccine_type = vaccine_type_input,
+                                           input_data = deaths_attributable_psa,
+                                           scenario_input = "optimistic"))
   
   daly_associated_opt <-
-    estimate_burden_averted_add(pathogen = pathogen_input,
-                                vaccine_type = vaccine_type_input,
-                                input_data = daly_associated_psa,
-                                name_value = "daly_associated_opt",
-                                scenario_input = "optimistic")
+    edit_table(estimate_burden_averted_add(pathogen = pathogen_input,
+                                           vaccine_type = vaccine_type_input,
+                                           input_data = daly_associated_psa,
+                                           scenario_input = "optimistic"))
   
   daly_attributable_opt <-
-    estimate_burden_averted_add(pathogen = pathogen_input,
-                                vaccine_type = vaccine_type_input,
-                                input_data = daly_attributable_psa,
-                                name_value = "daly_attributable_opt",
-                                scenario_input = "optimistic")
+    edit_table(estimate_burden_averted_add(pathogen = pathogen_input,
+                                           vaccine_type = vaccine_type_input,
+                                           input_data = daly_attributable_psa,
+                                           scenario_input = "optimistic"))
   
   burden_table_add <- 
     data.table(pathogen                 = pathogen_input,
-               deaths_associated        = deaths_associated$"deaths_associated",
-               deaths_attributable      = deaths_attributable$"deaths_attributable",
-               daly_associated          = daly_associated$"daly_associated",
-               daly_attributable        = daly_attributable$"daly_attributable",
-               deaths_associated_opt    = deaths_associated_opt$"deaths_associated_opt",
-               deaths_attributable_opt  = deaths_attributable_opt$"deaths_attributable_opt",
-               daly_associated_opt      = daly_associated_opt$"daly_associated_opt",
-               daly_attributable_opt    = daly_attributable_opt$"daly_attributable_opt")
+               deaths_associated        = deaths_associated$"burden_averted",
+               deaths_attributable      = deaths_attributable$"burden_averted",
+               daly_associated          = daly_associated$"burden_averted",
+               daly_attributable        = daly_attributable$"burden_averted",
+               deaths_associated_opt    = deaths_associated_opt$"burden_averted",
+               deaths_attributable_opt  = deaths_attributable_opt$"burden_averted",
+               daly_associated_opt      = daly_associated_opt$"burden_averted",
+               daly_attributable_opt    = daly_attributable_opt$"burden_averted")
   
   return(burden_table_add)} # end of function -- create_burden_table_add
-
 # ------------------------------------------------------------------------------
 # further analysis -- vaccine avertable burden of existing vaccines
 

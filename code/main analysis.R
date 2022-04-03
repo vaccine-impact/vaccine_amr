@@ -583,65 +583,76 @@ fwrite (x    = vaccine_impact_table_add,
 # -- on baseline scenario
 # percentage increase in vaccine avertable burden by scaling up exiting coverage
 
-# the impact of the expanding coverage of Hib vacccine
-data.table(vaccine_impact_table_add)[
-  Vaccine_pathogen == "Haemophilus influenzae type B (Hib)",][,c(1,12:15)]
-
-# Vaccine deaths_associated  deaths_attributable daly_associated daly_attributable
-# Hib     26,830             6,107               2,355,960       525,215
-
 # incremental impact of Hib vaccine on deaths associated with AMR
-(26830 - estimate_existing_vaccine_impact(
-  input_data = deaths_associated_psa)[Counts == "Haemophilus influenzae",]$'50%')/ 
+(estimate_burden_averted_add(pathogen = "Haemophilus influenzae",
+                             vaccine_type = vaccine_profile_dt_add[8,],
+                             input_data = deaths_associated_psa)$'50%' - 
   estimate_existing_vaccine_impact(
-  input_data = deaths_associated_psa)[Counts == "Haemophilus influenzae",]$'50%'
+    input_data = deaths_associated_psa)[Counts == "Haemophilus influenzae",]$'50%')/ 
+  estimate_existing_vaccine_impact(
+    input_data = deaths_associated_psa)[Counts == "Haemophilus influenzae",]$'50%'
 
 # incremental impact of Hib vaccine on deaths attributable to AMR
-(6107 - estimate_existing_vaccine_impact(
-  input_data = deaths_attributable_psa)[Counts == "Haemophilus influenzae",]$'50%')/ 
+(estimate_burden_averted_add(pathogen = "Haemophilus influenzae",
+                             vaccine_type = vaccine_profile_dt_add[8,],
+                             input_data = deaths_attributable_psa)$'50%' - 
   estimate_existing_vaccine_impact(
-  input_data = deaths_attributable_psa)[Counts == "Haemophilus influenzae",]$'50%'
+    input_data = deaths_attributable_psa)[Counts == "Haemophilus influenzae",]$'50%')/ 
+  estimate_existing_vaccine_impact(
+    input_data = deaths_attributable_psa)[Counts == "Haemophilus influenzae",]$'50%'
 
 # incremental impact of Hib vaccine on dalys associated with AMR
-(2355960 - estimate_existing_vaccine_impact(
-  input_data = daly_associated_psa)[Counts == "Haemophilus influenzae",]$'50%')/ 
+(estimate_burden_averted_add(pathogen = "Haemophilus influenzae",
+                             vaccine_type = vaccine_profile_dt_add[8,],
+                             input_data = daly_associated_psa)$'50%' - 
+  estimate_existing_vaccine_impact(
+    input_data = daly_associated_psa)[Counts == "Haemophilus influenzae",]$'50%')/ 
   estimate_existing_vaccine_impact(
     input_data = daly_associated_psa)[Counts == "Haemophilus influenzae",]$'50%'
 
 # incremental impact of Hib vaccine on dalys attributable to AMR
-(525215 - estimate_existing_vaccine_impact(
-  input_data = daly_attributable_psa)[Counts == "Haemophilus influenzae",]$'50%')/ 
+(estimate_burden_averted_add(pathogen = "Haemophilus influenzae",
+                             vaccine_type = vaccine_profile_dt_add[8,],
+                             input_data = daly_attributable_psa)$'50%' - 
+  estimate_existing_vaccine_impact(
+    input_data = daly_attributable_psa)[Counts == "Haemophilus influenzae",]$'50%')/ 
   estimate_existing_vaccine_impact(
     input_data = daly_attributable_psa)[Counts == "Haemophilus influenzae",]$'50%'
 
 
-# the impact of the expanding coverage of PCV
-data.table(vaccine_impact_table_add)[
-  Vaccine_pathogen == "Streptococcus pneumoniae #1",][,c(1,12:15)]
-
-# Vaccine deaths_associated  deaths_attributable daly_associated daly_attributable
-# PCV     78,710             16,039              6,900,773       1,415,135
-
-(78710 - estimate_existing_vaccine_impact(
-  input_data = deaths_associated_psa)[Counts == "Streptococcus pneumoniae",]$'50%')/ 
+# incremental impact of PCV on deaths associated with AMR
+(estimate_burden_averted_add(pathogen = "Streptococcus pneumoniae",
+                            vaccine_type = vaccine_profile_dt_add[20,],
+                            input_data = deaths_associated_psa)$'50%' - 
+  estimate_existing_vaccine_impact(
+    input_data = deaths_associated_psa)[Counts == "Streptococcus pneumoniae",]$'50%')/ 
   estimate_existing_vaccine_impact(
     input_data = deaths_associated_psa)[Counts == "Streptococcus pneumoniae",]$'50%'
 
-# incremental impact of Hib vaccine on deaths attributable to AMR
-(16039 - estimate_existing_vaccine_impact(
-  input_data = deaths_attributable_psa)[Counts == "Streptococcus pneumoniae",]$'50%')/ 
+# incremental impact of PCV on deaths attributable to AMR
+(estimate_burden_averted_add(pathogen = "Streptococcus pneumoniae",
+                             vaccine_type = vaccine_profile_dt_add[20,],
+                             input_data = deaths_attributable_psa)$'50%' - 
+  estimate_existing_vaccine_impact(
+    input_data = deaths_attributable_psa)[Counts == "Streptococcus pneumoniae",]$'50%')/ 
   estimate_existing_vaccine_impact(
     input_data = deaths_attributable_psa)[Counts == "Streptococcus pneumoniae",]$'50%'
 
-# incremental impact of Hib vaccine on dalys associated with AMR
-(6900773 - estimate_existing_vaccine_impact(
-  input_data = daly_associated_psa)[Counts == "Streptococcus pneumoniae",]$'50%')/ 
+# incremental impact of PCV on dalys associated with AMR
+(estimate_burden_averted_add(pathogen = "Streptococcus pneumoniae",
+                             vaccine_type = vaccine_profile_dt_add[20,],
+                             input_data = daly_associated_psa)$'50%' - 
+  estimate_existing_vaccine_impact(
+    input_data = daly_associated_psa)[Counts == "Streptococcus pneumoniae",]$'50%')/ 
   estimate_existing_vaccine_impact(
     input_data = daly_associated_psa)[Counts == "Streptococcus pneumoniae",]$'50%'
 
-# incremental impact of Hib vaccine on dalys attributable to AMR
-(1415135 - estimate_existing_vaccine_impact(
-  input_data = daly_attributable_psa)[Counts == "Streptococcus pneumoniae",]$'50%')/ 
+# incremental impact of PCV on dalys attributable to AMR
+(estimate_burden_averted_add(pathogen = "Streptococcus pneumoniae",
+                             vaccine_type = vaccine_profile_dt_add[20,],
+                             input_data = daly_attributable_psa)$'50%' - 
+  estimate_existing_vaccine_impact(
+    input_data = daly_attributable_psa)[Counts == "Streptococcus pneumoniae",]$'50%')/ 
   estimate_existing_vaccine_impact(
     input_data = daly_attributable_psa)[Counts == "Streptococcus pneumoniae",]$'50%'
 
