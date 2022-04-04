@@ -308,6 +308,26 @@ create_burden_table <- function(AMR_burden,
              Attributable_resistance_upper := Attributable_resistance_upper /
                (1 - pcv_vaccine_coverage_2018 * 0.58)]
   
+  # apply the proportion of ETEC contribution to E. Coli diarrhoea burden
+  AMR_burden[Pathogen  == "Escherichia coli" & Disease_presentation == "Diarrhoea",
+             Associated_resistant_mean := Associated_resistant_mean * 0.4397]
+  
+  AMR_burden[Pathogen  == "Escherichia coli" & Disease_presentation == "Diarrhoea",
+             Associated_resistant_lower := Associated_resistant_lower * 0.4397]
+  
+  AMR_burden[Pathogen  == "Escherichia coli" & Disease_presentation == "Diarrhoea",
+             Associated_resistant_upper := Associated_resistant_upper * 0.4397]
+  
+  AMR_burden[Pathogen  == "Escherichia coli" & Disease_presentation == "Diarrhoea",
+             Attributable_resistance_mean := Attributable_resistance_mean * 0.4397]
+  
+  AMR_burden[Pathogen  == "Escherichia coli" & Disease_presentation == "Diarrhoea",
+             Attributable_resistance_lower := Attributable_resistance_lower * 0.4397]
+  
+  AMR_burden[Pathogen  == "Escherichia coli" & Disease_presentation == "Diarrhoea",
+             Attributable_resistance_upper := Attributable_resistance_upper * 0.4397]
+  
+  # save the file
   fwrite (x    = AMR_burden,
           file = burden_file)
   

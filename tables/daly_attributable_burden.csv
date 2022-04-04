@@ -730,67 +730,67 @@ Africa,CNS infections,95 plus,Haemophilus influenzae,0,0,0,0.734563443329044,0.7
 Africa,CNS infections,95 plus,Klebsiella pneumoniae,0,0,0,0.734563443329044,0.73119476863631,0.732250145196379,0.725805938162034,0.7,0.7,5 years,All,6 weeks & elderly age group,All age groups,Yes,70 years
 Africa,CNS infections,95 plus,Staphylococcus aureus,0,0,0,0.734563443329044,0.73119476863631,0.732250145196379,0.725805938162034,0.6,0.7,5 years,All,6 weeks & elderly age group,All age groups,Yes,75 years
 Africa,CNS infections,95 plus,Streptococcus pneumoniae,0,0,0,0.734563443329044,0.73119476863631,0.732250145196379,0.725805938162034,0.58,0.9,5 years,"BSI, CNS infections, Cardiac infections, LRI","6, 10, 14 weeks","6, 10, 14 weeks & elderly age group",Yes,75 years
-Africa,Diarrhoea,EN,Escherichia coli,6000,3000,12000,0.734563443329044,0.73119476863631,0.732250145196379,0.725805938162034,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
+Africa,Diarrhoea,EN,Escherichia coli,2638.2,1319.1,5276.4,0.734563443329044,0.73119476863631,0.732250145196379,0.725805938162034,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
 Africa,Diarrhoea,EN,Non-typhoidal Salmonella,0,0,0,0.734563443329044,0.73119476863631,0.732250145196379,0.725805938162034,0.8,0.7,5 years,All,6 weeks & 9 months,6 weeks & 9 months,Yes,
 Africa,Diarrhoea,EN,Shigella spp.,2000,0,6000,0.734563443329044,0.73119476863631,0.732250145196379,0.725805938162034,0.6,0.7,5 years,All,6 months,6 months,Yes,
-Africa,Diarrhoea,LN,Escherichia coli,14000,6000,26000,0.734563443329044,0.73119476863631,0.732250145196379,0.725805938162034,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
+Africa,Diarrhoea,LN,Escherichia coli,6155.8,2638.2,11432.2,0.734563443329044,0.73119476863631,0.732250145196379,0.725805938162034,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
 Africa,Diarrhoea,LN,Non-typhoidal Salmonella,0,0,1000,0.734563443329044,0.73119476863631,0.732250145196379,0.725805938162034,0.8,0.7,5 years,All,6 weeks & 9 months,6 weeks & 9 months,Yes,
 Africa,Diarrhoea,LN,Shigella spp.,6000,1000,14000,0.734563443329044,0.73119476863631,0.732250145196379,0.725805938162034,0.6,0.7,5 years,All,6 months,6 months,Yes,
-Africa,Diarrhoea,PN,Escherichia coli,144000,69000,267000,0.734563443329044,0.73119476863631,0.732250145196379,0.725805938162034,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
+Africa,Diarrhoea,PN,Escherichia coli,63316.8,30339.3,117399.9,0.734563443329044,0.73119476863631,0.732250145196379,0.725805938162034,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
 Africa,Diarrhoea,PN,Non-typhoidal Salmonella,2000,0,5000,0.734563443329044,0.73119476863631,0.732250145196379,0.725805938162034,0.8,0.7,5 years,All,6 weeks & 9 months,6 weeks & 9 months,Yes,
 Africa,Diarrhoea,PN,Shigella spp.,68000,9000,179000,0.734563443329044,0.73119476863631,0.732250145196379,0.725805938162034,0.6,0.7,5 years,All,6 months,6 months,Yes,
-Africa,Diarrhoea,1 to 4,Escherichia coli,114000,47000,222000,0.734563443329044,0.73119476863631,0.732250145196379,0.725805938162034,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
+Africa,Diarrhoea,1 to 4,Escherichia coli,50125.8,20665.9,97613.4,0.734563443329044,0.73119476863631,0.732250145196379,0.725805938162034,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
 Africa,Diarrhoea,1 to 4,Non-typhoidal Salmonella,2000,0,9000,0.734563443329044,0.73119476863631,0.732250145196379,0.725805938162034,0.8,0.7,5 years,All,6 weeks & 9 months,6 weeks & 9 months,Yes,
 Africa,Diarrhoea,1 to 4,Shigella spp.,67000,9000,173000,0.734563443329044,0.73119476863631,0.732250145196379,0.725805938162034,0.6,0.7,5 years,All,6 months,6 months,Yes,
-Africa,Diarrhoea,5 to 9,Escherichia coli,12000,4000,25000,0.734563443329044,0.73119476863631,0.732250145196379,0.725805938162034,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
+Africa,Diarrhoea,5 to 9,Escherichia coli,5276.4,1758.8,10992.5,0.734563443329044,0.73119476863631,0.732250145196379,0.725805938162034,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
 Africa,Diarrhoea,5 to 9,Non-typhoidal Salmonella,0,0,1000,0.734563443329044,0.73119476863631,0.732250145196379,0.725805938162034,0.8,0.7,5 years,All,6 weeks & 9 months,6 weeks & 9 months,Yes,
 Africa,Diarrhoea,5 to 9,Shigella spp.,5000,1000,14000,0.734563443329044,0.73119476863631,0.732250145196379,0.725805938162034,0.6,0.7,5 years,All,6 months,6 months,Yes,
-Africa,Diarrhoea,10 to 14,Escherichia coli,4000,2000,9000,0.734563443329044,0.73119476863631,0.732250145196379,0.725805938162034,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
+Africa,Diarrhoea,10 to 14,Escherichia coli,1758.8,879.4,3957.3,0.734563443329044,0.73119476863631,0.732250145196379,0.725805938162034,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
 Africa,Diarrhoea,10 to 14,Non-typhoidal Salmonella,0,0,0,0.734563443329044,0.73119476863631,0.732250145196379,0.725805938162034,0.8,0.7,5 years,All,6 weeks & 9 months,6 weeks & 9 months,Yes,
 Africa,Diarrhoea,10 to 14,Shigella spp.,2000,0,5000,0.734563443329044,0.73119476863631,0.732250145196379,0.725805938162034,0.6,0.7,5 years,All,6 months,6 months,Yes,
-Africa,Diarrhoea,15 to 19,Escherichia coli,4000,1000,8000,0.734563443329044,0.73119476863631,0.732250145196379,0.725805938162034,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
+Africa,Diarrhoea,15 to 19,Escherichia coli,1758.8,439.7,3517.6,0.734563443329044,0.73119476863631,0.732250145196379,0.725805938162034,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
 Africa,Diarrhoea,15 to 19,Non-typhoidal Salmonella,0,0,0,0.734563443329044,0.73119476863631,0.732250145196379,0.725805938162034,0.8,0.7,5 years,All,6 weeks & 9 months,6 weeks & 9 months,Yes,
 Africa,Diarrhoea,15 to 19,Shigella spp.,2000,0,5000,0.734563443329044,0.73119476863631,0.732250145196379,0.725805938162034,0.6,0.7,5 years,All,6 months,6 months,Yes,
-Africa,Diarrhoea,20 to 24,Escherichia coli,3000,1000,7000,0.734563443329044,0.73119476863631,0.732250145196379,0.725805938162034,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
+Africa,Diarrhoea,20 to 24,Escherichia coli,1319.1,439.7,3077.9,0.734563443329044,0.73119476863631,0.732250145196379,0.725805938162034,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
 Africa,Diarrhoea,20 to 24,Non-typhoidal Salmonella,0,0,0,0.734563443329044,0.73119476863631,0.732250145196379,0.725805938162034,0.8,0.7,5 years,All,6 weeks & 9 months,6 weeks & 9 months,Yes,
 Africa,Diarrhoea,20 to 24,Shigella spp.,2000,0,5000,0.734563443329044,0.73119476863631,0.732250145196379,0.725805938162034,0.6,0.7,5 years,All,6 months,6 months,Yes,
-Africa,Diarrhoea,25 to 29,Escherichia coli,2000,1000,5000,0.734563443329044,0.73119476863631,0.732250145196379,0.725805938162034,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
+Africa,Diarrhoea,25 to 29,Escherichia coli,879.4,439.7,2198.5,0.734563443329044,0.73119476863631,0.732250145196379,0.725805938162034,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
 Africa,Diarrhoea,25 to 29,Non-typhoidal Salmonella,0,0,0,0.734563443329044,0.73119476863631,0.732250145196379,0.725805938162034,0.8,0.7,5 years,All,6 weeks & 9 months,6 weeks & 9 months,Yes,
 Africa,Diarrhoea,25 to 29,Shigella spp.,1000,0,4000,0.734563443329044,0.73119476863631,0.732250145196379,0.725805938162034,0.6,0.7,5 years,All,6 months,6 months,Yes,
-Africa,Diarrhoea,30 to 34,Escherichia coli,2000,1000,4000,0.734563443329044,0.73119476863631,0.732250145196379,0.725805938162034,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
+Africa,Diarrhoea,30 to 34,Escherichia coli,879.4,439.7,1758.8,0.734563443329044,0.73119476863631,0.732250145196379,0.725805938162034,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
 Africa,Diarrhoea,30 to 34,Non-typhoidal Salmonella,0,0,0,0.734563443329044,0.73119476863631,0.732250145196379,0.725805938162034,0.8,0.7,5 years,All,6 weeks & 9 months,6 weeks & 9 months,Yes,
 Africa,Diarrhoea,30 to 34,Shigella spp.,1000,0,4000,0.734563443329044,0.73119476863631,0.732250145196379,0.725805938162034,0.6,0.7,5 years,All,6 months,6 months,Yes,
-Africa,Diarrhoea,35 to 39,Escherichia coli,2000,1000,3000,0.734563443329044,0.73119476863631,0.732250145196379,0.725805938162034,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
+Africa,Diarrhoea,35 to 39,Escherichia coli,879.4,439.7,1319.1,0.734563443329044,0.73119476863631,0.732250145196379,0.725805938162034,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
 Africa,Diarrhoea,35 to 39,Non-typhoidal Salmonella,0,0,0,0.734563443329044,0.73119476863631,0.732250145196379,0.725805938162034,0.8,0.7,5 years,All,6 weeks & 9 months,6 weeks & 9 months,Yes,
 Africa,Diarrhoea,35 to 39,Shigella spp.,1000,0,3000,0.734563443329044,0.73119476863631,0.732250145196379,0.725805938162034,0.6,0.7,5 years,All,6 months,6 months,Yes,
-Africa,Diarrhoea,40 to 44,Escherichia coli,1000,1000,3000,0.734563443329044,0.73119476863631,0.732250145196379,0.725805938162034,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
+Africa,Diarrhoea,40 to 44,Escherichia coli,439.7,439.7,1319.1,0.734563443329044,0.73119476863631,0.732250145196379,0.725805938162034,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
 Africa,Diarrhoea,40 to 44,Non-typhoidal Salmonella,0,0,0,0.734563443329044,0.73119476863631,0.732250145196379,0.725805938162034,0.8,0.7,5 years,All,6 weeks & 9 months,6 weeks & 9 months,Yes,
 Africa,Diarrhoea,40 to 44,Shigella spp.,1000,0,3000,0.734563443329044,0.73119476863631,0.732250145196379,0.725805938162034,0.6,0.7,5 years,All,6 months,6 months,Yes,
-Africa,Diarrhoea,45 to 49,Escherichia coli,1000,1000,3000,0.734563443329044,0.73119476863631,0.732250145196379,0.725805938162034,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
+Africa,Diarrhoea,45 to 49,Escherichia coli,439.7,439.7,1319.1,0.734563443329044,0.73119476863631,0.732250145196379,0.725805938162034,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
 Africa,Diarrhoea,45 to 49,Non-typhoidal Salmonella,0,0,0,0.734563443329044,0.73119476863631,0.732250145196379,0.725805938162034,0.8,0.7,5 years,All,6 weeks & 9 months,6 weeks & 9 months,Yes,
 Africa,Diarrhoea,45 to 49,Shigella spp.,1000,0,3000,0.734563443329044,0.73119476863631,0.732250145196379,0.725805938162034,0.6,0.7,5 years,All,6 months,6 months,Yes,
-Africa,Diarrhoea,50 to 54,Escherichia coli,1000,1000,3000,0.734563443329044,0.73119476863631,0.732250145196379,0.725805938162034,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
+Africa,Diarrhoea,50 to 54,Escherichia coli,439.7,439.7,1319.1,0.734563443329044,0.73119476863631,0.732250145196379,0.725805938162034,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
 Africa,Diarrhoea,50 to 54,Non-typhoidal Salmonella,0,0,0,0.734563443329044,0.73119476863631,0.732250145196379,0.725805938162034,0.8,0.7,5 years,All,6 weeks & 9 months,6 weeks & 9 months,Yes,
 Africa,Diarrhoea,50 to 54,Shigella spp.,1000,0,3000,0.734563443329044,0.73119476863631,0.732250145196379,0.725805938162034,0.6,0.7,5 years,All,6 months,6 months,Yes,
-Africa,Diarrhoea,55 to 59,Escherichia coli,2000,1000,3000,0.734563443329044,0.73119476863631,0.732250145196379,0.725805938162034,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
+Africa,Diarrhoea,55 to 59,Escherichia coli,879.4,439.7,1319.1,0.734563443329044,0.73119476863631,0.732250145196379,0.725805938162034,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
 Africa,Diarrhoea,55 to 59,Non-typhoidal Salmonella,0,0,0,0.734563443329044,0.73119476863631,0.732250145196379,0.725805938162034,0.8,0.7,5 years,All,6 weeks & 9 months,6 weeks & 9 months,Yes,
 Africa,Diarrhoea,55 to 59,Shigella spp.,1000,0,2000,0.734563443329044,0.73119476863631,0.732250145196379,0.725805938162034,0.6,0.7,5 years,All,6 months,6 months,Yes,
-Africa,Diarrhoea,60 to 64,Escherichia coli,2000,1000,4000,0.734563443329044,0.73119476863631,0.732250145196379,0.725805938162034,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
+Africa,Diarrhoea,60 to 64,Escherichia coli,879.4,439.7,1758.8,0.734563443329044,0.73119476863631,0.732250145196379,0.725805938162034,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
 Africa,Diarrhoea,60 to 64,Non-typhoidal Salmonella,0,0,0,0.734563443329044,0.73119476863631,0.732250145196379,0.725805938162034,0.8,0.7,5 years,All,6 weeks & 9 months,6 weeks & 9 months,Yes,
 Africa,Diarrhoea,60 to 64,Shigella spp.,1000,0,2000,0.734563443329044,0.73119476863631,0.732250145196379,0.725805938162034,0.6,0.7,5 years,All,6 months,6 months,Yes,
-Africa,Diarrhoea,65 to 69,Escherichia coli,2000,1000,3000,0.734563443329044,0.73119476863631,0.732250145196379,0.725805938162034,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
+Africa,Diarrhoea,65 to 69,Escherichia coli,879.4,439.7,1319.1,0.734563443329044,0.73119476863631,0.732250145196379,0.725805938162034,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
 Africa,Diarrhoea,65 to 69,Non-typhoidal Salmonella,0,0,0,0.734563443329044,0.73119476863631,0.732250145196379,0.725805938162034,0.8,0.7,5 years,All,6 weeks & 9 months,6 weeks & 9 months,Yes,
 Africa,Diarrhoea,65 to 69,Shigella spp.,1000,0,2000,0.734563443329044,0.73119476863631,0.732250145196379,0.725805938162034,0.6,0.7,5 years,All,6 months,6 months,Yes,
-Africa,Diarrhoea,70 to 74,Escherichia coli,1000,1000,3000,0.734563443329044,0.73119476863631,0.732250145196379,0.725805938162034,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
+Africa,Diarrhoea,70 to 74,Escherichia coli,439.7,439.7,1319.1,0.734563443329044,0.73119476863631,0.732250145196379,0.725805938162034,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
 Africa,Diarrhoea,70 to 74,Non-typhoidal Salmonella,0,0,0,0.734563443329044,0.73119476863631,0.732250145196379,0.725805938162034,0.8,0.7,5 years,All,6 weeks & 9 months,6 weeks & 9 months,Yes,
 Africa,Diarrhoea,70 to 74,Shigella spp.,1000,0,2000,0.734563443329044,0.73119476863631,0.732250145196379,0.725805938162034,0.6,0.7,5 years,All,6 months,6 months,Yes,
-Africa,Diarrhoea,75 to 79,Escherichia coli,1000,1000,3000,0.734563443329044,0.73119476863631,0.732250145196379,0.725805938162034,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
+Africa,Diarrhoea,75 to 79,Escherichia coli,439.7,439.7,1319.1,0.734563443329044,0.73119476863631,0.732250145196379,0.725805938162034,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
 Africa,Diarrhoea,75 to 79,Non-typhoidal Salmonella,0,0,0,0.734563443329044,0.73119476863631,0.732250145196379,0.725805938162034,0.8,0.7,5 years,All,6 weeks & 9 months,6 weeks & 9 months,Yes,
 Africa,Diarrhoea,75 to 79,Shigella spp.,1000,0,2000,0.734563443329044,0.73119476863631,0.732250145196379,0.725805938162034,0.6,0.7,5 years,All,6 months,6 months,Yes,
-Africa,Diarrhoea,80 to 84,Escherichia coli,1000,0,2000,0.734563443329044,0.73119476863631,0.732250145196379,0.725805938162034,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
+Africa,Diarrhoea,80 to 84,Escherichia coli,439.7,0,879.4,0.734563443329044,0.73119476863631,0.732250145196379,0.725805938162034,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
 Africa,Diarrhoea,80 to 84,Non-typhoidal Salmonella,0,0,0,0.734563443329044,0.73119476863631,0.732250145196379,0.725805938162034,0.8,0.7,5 years,All,6 weeks & 9 months,6 weeks & 9 months,Yes,
 Africa,Diarrhoea,80 to 84,Shigella spp.,1000,0,1000,0.734563443329044,0.73119476863631,0.732250145196379,0.725805938162034,0.6,0.7,5 years,All,6 months,6 months,Yes,
-Africa,Diarrhoea,85 to 89,Escherichia coli,1000,0,1000,0.734563443329044,0.73119476863631,0.732250145196379,0.725805938162034,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
+Africa,Diarrhoea,85 to 89,Escherichia coli,439.7,0,439.7,0.734563443329044,0.73119476863631,0.732250145196379,0.725805938162034,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
 Africa,Diarrhoea,85 to 89,Non-typhoidal Salmonella,0,0,0,0.734563443329044,0.73119476863631,0.732250145196379,0.725805938162034,0.8,0.7,5 years,All,6 weeks & 9 months,6 weeks & 9 months,Yes,
 Africa,Diarrhoea,85 to 89,Shigella spp.,0,0,1000,0.734563443329044,0.73119476863631,0.732250145196379,0.725805938162034,0.6,0.7,5 years,All,6 months,6 months,Yes,
 Africa,Diarrhoea,90 to 94,Escherichia coli,0,0,0,0.734563443329044,0.73119476863631,0.732250145196379,0.725805938162034,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
@@ -2179,10 +2179,10 @@ Americas,Diarrhoea,EN,Shigella spp.,0,0,0,0.833739995878764,0.869749874118342,0.
 Americas,Diarrhoea,LN,Escherichia coli,0,0,0,0.833739995878764,0.869749874118342,0.837098238974356,0.838336289633209,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
 Americas,Diarrhoea,LN,Non-typhoidal Salmonella,0,0,0,0.833739995878764,0.869749874118342,0.837098238974356,0.838336289633209,0.8,0.7,5 years,All,6 weeks & 9 months,6 weeks & 9 months,Yes,
 Americas,Diarrhoea,LN,Shigella spp.,0,0,0,0.833739995878764,0.869749874118342,0.837098238974356,0.838336289633209,0.6,0.7,5 years,All,6 months,6 months,Yes,
-Americas,Diarrhoea,PN,Escherichia coli,2000,1000,3000,0.833739995878764,0.869749874118342,0.837098238974356,0.838336289633209,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
+Americas,Diarrhoea,PN,Escherichia coli,879.4,439.7,1319.1,0.833739995878764,0.869749874118342,0.837098238974356,0.838336289633209,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
 Americas,Diarrhoea,PN,Non-typhoidal Salmonella,0,0,0,0.833739995878764,0.869749874118342,0.837098238974356,0.838336289633209,0.8,0.7,5 years,All,6 weeks & 9 months,6 weeks & 9 months,Yes,
 Americas,Diarrhoea,PN,Shigella spp.,1000,0,2000,0.833739995878764,0.869749874118342,0.837098238974356,0.838336289633209,0.6,0.7,5 years,All,6 months,6 months,Yes,
-Americas,Diarrhoea,1 to 4,Escherichia coli,1000,0,2000,0.833739995878764,0.869749874118342,0.837098238974356,0.838336289633209,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
+Americas,Diarrhoea,1 to 4,Escherichia coli,439.7,0,879.4,0.833739995878764,0.869749874118342,0.837098238974356,0.838336289633209,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
 Americas,Diarrhoea,1 to 4,Non-typhoidal Salmonella,0,0,0,0.833739995878764,0.869749874118342,0.837098238974356,0.838336289633209,0.8,0.7,5 years,All,6 weeks & 9 months,6 weeks & 9 months,Yes,
 Americas,Diarrhoea,1 to 4,Shigella spp.,0,0,1000,0.833739995878764,0.869749874118342,0.837098238974356,0.838336289633209,0.6,0.7,5 years,All,6 months,6 months,Yes,
 Americas,Diarrhoea,5 to 9,Escherichia coli,0,0,0,0.833739995878764,0.869749874118342,0.837098238974356,0.838336289633209,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
@@ -3616,70 +3616,70 @@ Eastern Mediterranean,CNS infections,95 plus,Haemophilus influenzae,0,0,0,0.8537
 Eastern Mediterranean,CNS infections,95 plus,Klebsiella pneumoniae,0,0,0,0.853799511286263,0.838837359009043,0.785338072281253,0.777989575579583,0.7,0.7,5 years,All,6 weeks & elderly age group,All age groups,Yes,70 years
 Eastern Mediterranean,CNS infections,95 plus,Staphylococcus aureus,0,0,0,0.853799511286263,0.838837359009043,0.785338072281253,0.777989575579583,0.6,0.7,5 years,All,6 weeks & elderly age group,All age groups,Yes,75 years
 Eastern Mediterranean,CNS infections,95 plus,Streptococcus pneumoniae,0,0,0,0.853799511286263,0.838837359009043,0.785338072281253,0.777989575579583,0.58,0.9,5 years,"BSI, CNS infections, Cardiac infections, LRI","6, 10, 14 weeks","6, 10, 14 weeks & elderly age group",Yes,75 years
-Eastern Mediterranean,Diarrhoea,EN,Escherichia coli,3000,1000,6000,0.853799511286263,0.838837359009043,0.785338072281253,0.777989575579583,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
+Eastern Mediterranean,Diarrhoea,EN,Escherichia coli,1319.1,439.7,2638.2,0.853799511286263,0.838837359009043,0.785338072281253,0.777989575579583,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
 Eastern Mediterranean,Diarrhoea,EN,Non-typhoidal Salmonella,0,0,0,0.853799511286263,0.838837359009043,0.785338072281253,0.777989575579583,0.8,0.7,5 years,All,6 weeks & 9 months,6 weeks & 9 months,Yes,
 Eastern Mediterranean,Diarrhoea,EN,Shigella spp.,1000,0,2000,0.853799511286263,0.838837359009043,0.785338072281253,0.777989575579583,0.6,0.7,5 years,All,6 months,6 months,Yes,
-Eastern Mediterranean,Diarrhoea,LN,Escherichia coli,6000,3000,12000,0.853799511286263,0.838837359009043,0.785338072281253,0.777989575579583,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
+Eastern Mediterranean,Diarrhoea,LN,Escherichia coli,2638.2,1319.1,5276.4,0.853799511286263,0.838837359009043,0.785338072281253,0.777989575579583,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
 Eastern Mediterranean,Diarrhoea,LN,Non-typhoidal Salmonella,0,0,0,0.853799511286263,0.838837359009043,0.785338072281253,0.777989575579583,0.8,0.7,5 years,All,6 weeks & 9 months,6 weeks & 9 months,Yes,
 Eastern Mediterranean,Diarrhoea,LN,Shigella spp.,2000,0,5000,0.853799511286263,0.838837359009043,0.785338072281253,0.777989575579583,0.6,0.7,5 years,All,6 months,6 months,Yes,
-Eastern Mediterranean,Diarrhoea,PN,Escherichia coli,50000,23000,100000,0.853799511286263,0.838837359009043,0.785338072281253,0.777989575579583,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
+Eastern Mediterranean,Diarrhoea,PN,Escherichia coli,21985,10113.1,43970,0.853799511286263,0.838837359009043,0.785338072281253,0.777989575579583,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
 Eastern Mediterranean,Diarrhoea,PN,Non-typhoidal Salmonella,1000,0,4000,0.853799511286263,0.838837359009043,0.785338072281253,0.777989575579583,0.8,0.7,5 years,All,6 weeks & 9 months,6 weeks & 9 months,Yes,
 Eastern Mediterranean,Diarrhoea,PN,Shigella spp.,15000,2000,40000,0.853799511286263,0.838837359009043,0.785338072281253,0.777989575579583,0.6,0.7,5 years,All,6 months,6 months,Yes,
-Eastern Mediterranean,Diarrhoea,1 to 4,Escherichia coli,26000,11000,52000,0.853799511286263,0.838837359009043,0.785338072281253,0.777989575579583,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
+Eastern Mediterranean,Diarrhoea,1 to 4,Escherichia coli,11432.2,4836.7,22864.4,0.853799511286263,0.838837359009043,0.785338072281253,0.777989575579583,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
 Eastern Mediterranean,Diarrhoea,1 to 4,Non-typhoidal Salmonella,0,0,2000,0.853799511286263,0.838837359009043,0.785338072281253,0.777989575579583,0.8,0.7,5 years,All,6 weeks & 9 months,6 weeks & 9 months,Yes,
 Eastern Mediterranean,Diarrhoea,1 to 4,Shigella spp.,11000,1000,31000,0.853799511286263,0.838837359009043,0.785338072281253,0.777989575579583,0.6,0.7,5 years,All,6 months,6 months,Yes,
-Eastern Mediterranean,Diarrhoea,5 to 9,Escherichia coli,4000,1000,9000,0.853799511286263,0.838837359009043,0.785338072281253,0.777989575579583,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
+Eastern Mediterranean,Diarrhoea,5 to 9,Escherichia coli,1758.8,439.7,3957.3,0.853799511286263,0.838837359009043,0.785338072281253,0.777989575579583,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
 Eastern Mediterranean,Diarrhoea,5 to 9,Non-typhoidal Salmonella,0,0,0,0.853799511286263,0.838837359009043,0.785338072281253,0.777989575579583,0.8,0.7,5 years,All,6 weeks & 9 months,6 weeks & 9 months,Yes,
 Eastern Mediterranean,Diarrhoea,5 to 9,Shigella spp.,2000,0,6000,0.853799511286263,0.838837359009043,0.785338072281253,0.777989575579583,0.6,0.7,5 years,All,6 months,6 months,Yes,
-Eastern Mediterranean,Diarrhoea,10 to 14,Escherichia coli,2000,1000,3000,0.853799511286263,0.838837359009043,0.785338072281253,0.777989575579583,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
+Eastern Mediterranean,Diarrhoea,10 to 14,Escherichia coli,879.4,439.7,1319.1,0.853799511286263,0.838837359009043,0.785338072281253,0.777989575579583,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
 Eastern Mediterranean,Diarrhoea,10 to 14,Non-typhoidal Salmonella,0,0,0,0.853799511286263,0.838837359009043,0.785338072281253,0.777989575579583,0.8,0.7,5 years,All,6 weeks & 9 months,6 weeks & 9 months,Yes,
 Eastern Mediterranean,Diarrhoea,10 to 14,Shigella spp.,1000,0,2000,0.853799511286263,0.838837359009043,0.785338072281253,0.777989575579583,0.6,0.7,5 years,All,6 months,6 months,Yes,
-Eastern Mediterranean,Diarrhoea,15 to 19,Escherichia coli,1000,0,2000,0.853799511286263,0.838837359009043,0.785338072281253,0.777989575579583,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
+Eastern Mediterranean,Diarrhoea,15 to 19,Escherichia coli,439.7,0,879.4,0.853799511286263,0.838837359009043,0.785338072281253,0.777989575579583,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
 Eastern Mediterranean,Diarrhoea,15 to 19,Non-typhoidal Salmonella,0,0,0,0.853799511286263,0.838837359009043,0.785338072281253,0.777989575579583,0.8,0.7,5 years,All,6 weeks & 9 months,6 weeks & 9 months,Yes,
 Eastern Mediterranean,Diarrhoea,15 to 19,Shigella spp.,0,0,1000,0.853799511286263,0.838837359009043,0.785338072281253,0.777989575579583,0.6,0.7,5 years,All,6 months,6 months,Yes,
-Eastern Mediterranean,Diarrhoea,20 to 24,Escherichia coli,1000,0,1000,0.853799511286263,0.838837359009043,0.785338072281253,0.777989575579583,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
+Eastern Mediterranean,Diarrhoea,20 to 24,Escherichia coli,439.7,0,439.7,0.853799511286263,0.838837359009043,0.785338072281253,0.777989575579583,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
 Eastern Mediterranean,Diarrhoea,20 to 24,Non-typhoidal Salmonella,0,0,0,0.853799511286263,0.838837359009043,0.785338072281253,0.777989575579583,0.8,0.7,5 years,All,6 weeks & 9 months,6 weeks & 9 months,Yes,
 Eastern Mediterranean,Diarrhoea,20 to 24,Shigella spp.,0,0,1000,0.853799511286263,0.838837359009043,0.785338072281253,0.777989575579583,0.6,0.7,5 years,All,6 months,6 months,Yes,
-Eastern Mediterranean,Diarrhoea,25 to 29,Escherichia coli,0,0,1000,0.853799511286263,0.838837359009043,0.785338072281253,0.777989575579583,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
+Eastern Mediterranean,Diarrhoea,25 to 29,Escherichia coli,0,0,439.7,0.853799511286263,0.838837359009043,0.785338072281253,0.777989575579583,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
 Eastern Mediterranean,Diarrhoea,25 to 29,Non-typhoidal Salmonella,0,0,0,0.853799511286263,0.838837359009043,0.785338072281253,0.777989575579583,0.8,0.7,5 years,All,6 weeks & 9 months,6 weeks & 9 months,Yes,
 Eastern Mediterranean,Diarrhoea,25 to 29,Shigella spp.,0,0,1000,0.853799511286263,0.838837359009043,0.785338072281253,0.777989575579583,0.6,0.7,5 years,All,6 months,6 months,Yes,
-Eastern Mediterranean,Diarrhoea,30 to 34,Escherichia coli,0,0,1000,0.853799511286263,0.838837359009043,0.785338072281253,0.777989575579583,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
+Eastern Mediterranean,Diarrhoea,30 to 34,Escherichia coli,0,0,439.7,0.853799511286263,0.838837359009043,0.785338072281253,0.777989575579583,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
 Eastern Mediterranean,Diarrhoea,30 to 34,Non-typhoidal Salmonella,0,0,0,0.853799511286263,0.838837359009043,0.785338072281253,0.777989575579583,0.8,0.7,5 years,All,6 weeks & 9 months,6 weeks & 9 months,Yes,
 Eastern Mediterranean,Diarrhoea,30 to 34,Shigella spp.,0,0,1000,0.853799511286263,0.838837359009043,0.785338072281253,0.777989575579583,0.6,0.7,5 years,All,6 months,6 months,Yes,
-Eastern Mediterranean,Diarrhoea,35 to 39,Escherichia coli,0,0,1000,0.853799511286263,0.838837359009043,0.785338072281253,0.777989575579583,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
+Eastern Mediterranean,Diarrhoea,35 to 39,Escherichia coli,0,0,439.7,0.853799511286263,0.838837359009043,0.785338072281253,0.777989575579583,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
 Eastern Mediterranean,Diarrhoea,35 to 39,Non-typhoidal Salmonella,0,0,0,0.853799511286263,0.838837359009043,0.785338072281253,0.777989575579583,0.8,0.7,5 years,All,6 weeks & 9 months,6 weeks & 9 months,Yes,
 Eastern Mediterranean,Diarrhoea,35 to 39,Shigella spp.,0,0,1000,0.853799511286263,0.838837359009043,0.785338072281253,0.777989575579583,0.6,0.7,5 years,All,6 months,6 months,Yes,
-Eastern Mediterranean,Diarrhoea,40 to 44,Escherichia coli,0,0,1000,0.853799511286263,0.838837359009043,0.785338072281253,0.777989575579583,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
+Eastern Mediterranean,Diarrhoea,40 to 44,Escherichia coli,0,0,439.7,0.853799511286263,0.838837359009043,0.785338072281253,0.777989575579583,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
 Eastern Mediterranean,Diarrhoea,40 to 44,Non-typhoidal Salmonella,0,0,0,0.853799511286263,0.838837359009043,0.785338072281253,0.777989575579583,0.8,0.7,5 years,All,6 weeks & 9 months,6 weeks & 9 months,Yes,
 Eastern Mediterranean,Diarrhoea,40 to 44,Shigella spp.,0,0,1000,0.853799511286263,0.838837359009043,0.785338072281253,0.777989575579583,0.6,0.7,5 years,All,6 months,6 months,Yes,
-Eastern Mediterranean,Diarrhoea,45 to 49,Escherichia coli,0,0,1000,0.853799511286263,0.838837359009043,0.785338072281253,0.777989575579583,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
+Eastern Mediterranean,Diarrhoea,45 to 49,Escherichia coli,0,0,439.7,0.853799511286263,0.838837359009043,0.785338072281253,0.777989575579583,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
 Eastern Mediterranean,Diarrhoea,45 to 49,Non-typhoidal Salmonella,0,0,0,0.853799511286263,0.838837359009043,0.785338072281253,0.777989575579583,0.8,0.7,5 years,All,6 weeks & 9 months,6 weeks & 9 months,Yes,
 Eastern Mediterranean,Diarrhoea,45 to 49,Shigella spp.,0,0,1000,0.853799511286263,0.838837359009043,0.785338072281253,0.777989575579583,0.6,0.7,5 years,All,6 months,6 months,Yes,
-Eastern Mediterranean,Diarrhoea,50 to 54,Escherichia coli,1000,0,1000,0.853799511286263,0.838837359009043,0.785338072281253,0.777989575579583,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
+Eastern Mediterranean,Diarrhoea,50 to 54,Escherichia coli,439.7,0,439.7,0.853799511286263,0.838837359009043,0.785338072281253,0.777989575579583,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
 Eastern Mediterranean,Diarrhoea,50 to 54,Non-typhoidal Salmonella,0,0,0,0.853799511286263,0.838837359009043,0.785338072281253,0.777989575579583,0.8,0.7,5 years,All,6 weeks & 9 months,6 weeks & 9 months,Yes,
 Eastern Mediterranean,Diarrhoea,50 to 54,Shigella spp.,0,0,1000,0.853799511286263,0.838837359009043,0.785338072281253,0.777989575579583,0.6,0.7,5 years,All,6 months,6 months,Yes,
-Eastern Mediterranean,Diarrhoea,55 to 59,Escherichia coli,1000,0,2000,0.853799511286263,0.838837359009043,0.785338072281253,0.777989575579583,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
+Eastern Mediterranean,Diarrhoea,55 to 59,Escherichia coli,439.7,0,879.4,0.853799511286263,0.838837359009043,0.785338072281253,0.777989575579583,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
 Eastern Mediterranean,Diarrhoea,55 to 59,Non-typhoidal Salmonella,0,0,0,0.853799511286263,0.838837359009043,0.785338072281253,0.777989575579583,0.8,0.7,5 years,All,6 weeks & 9 months,6 weeks & 9 months,Yes,
 Eastern Mediterranean,Diarrhoea,55 to 59,Shigella spp.,0,0,1000,0.853799511286263,0.838837359009043,0.785338072281253,0.777989575579583,0.6,0.7,5 years,All,6 months,6 months,Yes,
-Eastern Mediterranean,Diarrhoea,60 to 64,Escherichia coli,1000,0,3000,0.853799511286263,0.838837359009043,0.785338072281253,0.777989575579583,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
+Eastern Mediterranean,Diarrhoea,60 to 64,Escherichia coli,439.7,0,1319.1,0.853799511286263,0.838837359009043,0.785338072281253,0.777989575579583,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
 Eastern Mediterranean,Diarrhoea,60 to 64,Non-typhoidal Salmonella,0,0,0,0.853799511286263,0.838837359009043,0.785338072281253,0.777989575579583,0.8,0.7,5 years,All,6 weeks & 9 months,6 weeks & 9 months,Yes,
 Eastern Mediterranean,Diarrhoea,60 to 64,Shigella spp.,0,0,1000,0.853799511286263,0.838837359009043,0.785338072281253,0.777989575579583,0.6,0.7,5 years,All,6 months,6 months,Yes,
-Eastern Mediterranean,Diarrhoea,65 to 69,Escherichia coli,1000,0,3000,0.853799511286263,0.838837359009043,0.785338072281253,0.777989575579583,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
+Eastern Mediterranean,Diarrhoea,65 to 69,Escherichia coli,439.7,0,1319.1,0.853799511286263,0.838837359009043,0.785338072281253,0.777989575579583,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
 Eastern Mediterranean,Diarrhoea,65 to 69,Non-typhoidal Salmonella,0,0,0,0.853799511286263,0.838837359009043,0.785338072281253,0.777989575579583,0.8,0.7,5 years,All,6 weeks & 9 months,6 weeks & 9 months,Yes,
 Eastern Mediterranean,Diarrhoea,65 to 69,Shigella spp.,0,0,1000,0.853799511286263,0.838837359009043,0.785338072281253,0.777989575579583,0.6,0.7,5 years,All,6 months,6 months,Yes,
-Eastern Mediterranean,Diarrhoea,70 to 74,Escherichia coli,2000,1000,4000,0.853799511286263,0.838837359009043,0.785338072281253,0.777989575579583,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
+Eastern Mediterranean,Diarrhoea,70 to 74,Escherichia coli,879.4,439.7,1758.8,0.853799511286263,0.838837359009043,0.785338072281253,0.777989575579583,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
 Eastern Mediterranean,Diarrhoea,70 to 74,Non-typhoidal Salmonella,0,0,0,0.853799511286263,0.838837359009043,0.785338072281253,0.777989575579583,0.8,0.7,5 years,All,6 weeks & 9 months,6 weeks & 9 months,Yes,
 Eastern Mediterranean,Diarrhoea,70 to 74,Shigella spp.,0,0,1000,0.853799511286263,0.838837359009043,0.785338072281253,0.777989575579583,0.6,0.7,5 years,All,6 months,6 months,Yes,
-Eastern Mediterranean,Diarrhoea,75 to 79,Escherichia coli,2000,1000,4000,0.853799511286263,0.838837359009043,0.785338072281253,0.777989575579583,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
+Eastern Mediterranean,Diarrhoea,75 to 79,Escherichia coli,879.4,439.7,1758.8,0.853799511286263,0.838837359009043,0.785338072281253,0.777989575579583,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
 Eastern Mediterranean,Diarrhoea,75 to 79,Non-typhoidal Salmonella,0,0,0,0.853799511286263,0.838837359009043,0.785338072281253,0.777989575579583,0.8,0.7,5 years,All,6 weeks & 9 months,6 weeks & 9 months,Yes,
 Eastern Mediterranean,Diarrhoea,75 to 79,Shigella spp.,0,0,1000,0.853799511286263,0.838837359009043,0.785338072281253,0.777989575579583,0.6,0.7,5 years,All,6 months,6 months,Yes,
-Eastern Mediterranean,Diarrhoea,80 to 84,Escherichia coli,2000,1000,4000,0.853799511286263,0.838837359009043,0.785338072281253,0.777989575579583,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
+Eastern Mediterranean,Diarrhoea,80 to 84,Escherichia coli,879.4,439.7,1758.8,0.853799511286263,0.838837359009043,0.785338072281253,0.777989575579583,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
 Eastern Mediterranean,Diarrhoea,80 to 84,Non-typhoidal Salmonella,0,0,0,0.853799511286263,0.838837359009043,0.785338072281253,0.777989575579583,0.8,0.7,5 years,All,6 weeks & 9 months,6 weeks & 9 months,Yes,
 Eastern Mediterranean,Diarrhoea,80 to 84,Shigella spp.,0,0,1000,0.853799511286263,0.838837359009043,0.785338072281253,0.777989575579583,0.6,0.7,5 years,All,6 months,6 months,Yes,
-Eastern Mediterranean,Diarrhoea,85 to 89,Escherichia coli,1000,0,2000,0.853799511286263,0.838837359009043,0.785338072281253,0.777989575579583,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
+Eastern Mediterranean,Diarrhoea,85 to 89,Escherichia coli,439.7,0,879.4,0.853799511286263,0.838837359009043,0.785338072281253,0.777989575579583,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
 Eastern Mediterranean,Diarrhoea,85 to 89,Non-typhoidal Salmonella,0,0,0,0.853799511286263,0.838837359009043,0.785338072281253,0.777989575579583,0.8,0.7,5 years,All,6 weeks & 9 months,6 weeks & 9 months,Yes,
 Eastern Mediterranean,Diarrhoea,85 to 89,Shigella spp.,0,0,1000,0.853799511286263,0.838837359009043,0.785338072281253,0.777989575579583,0.6,0.7,5 years,All,6 months,6 months,Yes,
-Eastern Mediterranean,Diarrhoea,90 to 94,Escherichia coli,0,0,1000,0.853799511286263,0.838837359009043,0.785338072281253,0.777989575579583,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
+Eastern Mediterranean,Diarrhoea,90 to 94,Escherichia coli,0,0,439.7,0.853799511286263,0.838837359009043,0.785338072281253,0.777989575579583,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
 Eastern Mediterranean,Diarrhoea,90 to 94,Non-typhoidal Salmonella,0,0,0,0.853799511286263,0.838837359009043,0.785338072281253,0.777989575579583,0.8,0.7,5 years,All,6 weeks & 9 months,6 weeks & 9 months,Yes,
 Eastern Mediterranean,Diarrhoea,90 to 94,Shigella spp.,0,0,0,0.853799511286263,0.838837359009043,0.785338072281253,0.777989575579583,0.6,0.7,5 years,All,6 months,6 months,Yes,
 Eastern Mediterranean,Diarrhoea,95 plus,Escherichia coli,0,0,0,0.853799511286263,0.838837359009043,0.785338072281253,0.777989575579583,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
@@ -5065,13 +5065,13 @@ Europe,Diarrhoea,EN,Shigella spp.,0,0,0,0.94499645468668,0.932592278638088,0.898
 Europe,Diarrhoea,LN,Escherichia coli,0,0,0,0.94499645468668,0.932592278638088,0.898293750708671,0.891768204291917,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
 Europe,Diarrhoea,LN,Non-typhoidal Salmonella,0,0,0,0.94499645468668,0.932592278638088,0.898293750708671,0.891768204291917,0.8,0.7,5 years,All,6 weeks & 9 months,6 weeks & 9 months,Yes,
 Europe,Diarrhoea,LN,Shigella spp.,0,0,0,0.94499645468668,0.932592278638088,0.898293750708671,0.891768204291917,0.6,0.7,5 years,All,6 months,6 months,Yes,
-Europe,Diarrhoea,PN,Escherichia coli,1000,1000,2000,0.94499645468668,0.932592278638088,0.898293750708671,0.891768204291917,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
+Europe,Diarrhoea,PN,Escherichia coli,439.7,439.7,879.4,0.94499645468668,0.932592278638088,0.898293750708671,0.891768204291917,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
 Europe,Diarrhoea,PN,Non-typhoidal Salmonella,0,0,0,0.94499645468668,0.932592278638088,0.898293750708671,0.891768204291917,0.8,0.7,5 years,All,6 weeks & 9 months,6 weeks & 9 months,Yes,
 Europe,Diarrhoea,PN,Shigella spp.,0,0,1000,0.94499645468668,0.932592278638088,0.898293750708671,0.891768204291917,0.6,0.7,5 years,All,6 months,6 months,Yes,
-Europe,Diarrhoea,1 to 4,Escherichia coli,1000,0,1000,0.94499645468668,0.932592278638088,0.898293750708671,0.891768204291917,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
+Europe,Diarrhoea,1 to 4,Escherichia coli,439.7,0,439.7,0.94499645468668,0.932592278638088,0.898293750708671,0.891768204291917,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
 Europe,Diarrhoea,1 to 4,Non-typhoidal Salmonella,0,0,0,0.94499645468668,0.932592278638088,0.898293750708671,0.891768204291917,0.8,0.7,5 years,All,6 weeks & 9 months,6 weeks & 9 months,Yes,
 Europe,Diarrhoea,1 to 4,Shigella spp.,0,0,1000,0.94499645468668,0.932592278638088,0.898293750708671,0.891768204291917,0.6,0.7,5 years,All,6 months,6 months,Yes,
-Europe,Diarrhoea,5 to 9,Escherichia coli,0,0,1000,0.94499645468668,0.932592278638088,0.898293750708671,0.891768204291917,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
+Europe,Diarrhoea,5 to 9,Escherichia coli,0,0,439.7,0.94499645468668,0.932592278638088,0.898293750708671,0.891768204291917,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
 Europe,Diarrhoea,5 to 9,Non-typhoidal Salmonella,0,0,0,0.94499645468668,0.932592278638088,0.898293750708671,0.891768204291917,0.8,0.7,5 years,All,6 weeks & 9 months,6 weeks & 9 months,Yes,
 Europe,Diarrhoea,5 to 9,Shigella spp.,0,0,0,0.94499645468668,0.932592278638088,0.898293750708671,0.891768204291917,0.6,0.7,5 years,All,6 months,6 months,Yes,
 Europe,Diarrhoea,10 to 14,Escherichia coli,0,0,0,0.94499645468668,0.932592278638088,0.898293750708671,0.891768204291917,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
@@ -5104,22 +5104,22 @@ Europe,Diarrhoea,50 to 54,Shigella spp.,0,0,0,0.94499645468668,0.932592278638088
 Europe,Diarrhoea,55 to 59,Escherichia coli,0,0,0,0.94499645468668,0.932592278638088,0.898293750708671,0.891768204291917,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
 Europe,Diarrhoea,55 to 59,Non-typhoidal Salmonella,0,0,0,0.94499645468668,0.932592278638088,0.898293750708671,0.891768204291917,0.8,0.7,5 years,All,6 weeks & 9 months,6 weeks & 9 months,Yes,
 Europe,Diarrhoea,55 to 59,Shigella spp.,0,0,0,0.94499645468668,0.932592278638088,0.898293750708671,0.891768204291917,0.6,0.7,5 years,All,6 months,6 months,Yes,
-Europe,Diarrhoea,60 to 64,Escherichia coli,0,0,1000,0.94499645468668,0.932592278638088,0.898293750708671,0.891768204291917,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
+Europe,Diarrhoea,60 to 64,Escherichia coli,0,0,439.7,0.94499645468668,0.932592278638088,0.898293750708671,0.891768204291917,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
 Europe,Diarrhoea,60 to 64,Non-typhoidal Salmonella,0,0,0,0.94499645468668,0.932592278638088,0.898293750708671,0.891768204291917,0.8,0.7,5 years,All,6 weeks & 9 months,6 weeks & 9 months,Yes,
 Europe,Diarrhoea,60 to 64,Shigella spp.,0,0,0,0.94499645468668,0.932592278638088,0.898293750708671,0.891768204291917,0.6,0.7,5 years,All,6 months,6 months,Yes,
-Europe,Diarrhoea,65 to 69,Escherichia coli,0,0,1000,0.94499645468668,0.932592278638088,0.898293750708671,0.891768204291917,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
+Europe,Diarrhoea,65 to 69,Escherichia coli,0,0,439.7,0.94499645468668,0.932592278638088,0.898293750708671,0.891768204291917,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
 Europe,Diarrhoea,65 to 69,Non-typhoidal Salmonella,0,0,0,0.94499645468668,0.932592278638088,0.898293750708671,0.891768204291917,0.8,0.7,5 years,All,6 weeks & 9 months,6 weeks & 9 months,Yes,
 Europe,Diarrhoea,65 to 69,Shigella spp.,0,0,0,0.94499645468668,0.932592278638088,0.898293750708671,0.891768204291917,0.6,0.7,5 years,All,6 months,6 months,Yes,
-Europe,Diarrhoea,70 to 74,Escherichia coli,0,0,1000,0.94499645468668,0.932592278638088,0.898293750708671,0.891768204291917,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
+Europe,Diarrhoea,70 to 74,Escherichia coli,0,0,439.7,0.94499645468668,0.932592278638088,0.898293750708671,0.891768204291917,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
 Europe,Diarrhoea,70 to 74,Non-typhoidal Salmonella,0,0,0,0.94499645468668,0.932592278638088,0.898293750708671,0.891768204291917,0.8,0.7,5 years,All,6 weeks & 9 months,6 weeks & 9 months,Yes,
 Europe,Diarrhoea,70 to 74,Shigella spp.,0,0,0,0.94499645468668,0.932592278638088,0.898293750708671,0.891768204291917,0.6,0.7,5 years,All,6 months,6 months,Yes,
-Europe,Diarrhoea,75 to 79,Escherichia coli,0,0,1000,0.94499645468668,0.932592278638088,0.898293750708671,0.891768204291917,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
+Europe,Diarrhoea,75 to 79,Escherichia coli,0,0,439.7,0.94499645468668,0.932592278638088,0.898293750708671,0.891768204291917,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
 Europe,Diarrhoea,75 to 79,Non-typhoidal Salmonella,0,0,0,0.94499645468668,0.932592278638088,0.898293750708671,0.891768204291917,0.8,0.7,5 years,All,6 weeks & 9 months,6 weeks & 9 months,Yes,
 Europe,Diarrhoea,75 to 79,Shigella spp.,0,0,0,0.94499645468668,0.932592278638088,0.898293750708671,0.891768204291917,0.6,0.7,5 years,All,6 months,6 months,Yes,
-Europe,Diarrhoea,80 to 84,Escherichia coli,0,0,1000,0.94499645468668,0.932592278638088,0.898293750708671,0.891768204291917,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
+Europe,Diarrhoea,80 to 84,Escherichia coli,0,0,439.7,0.94499645468668,0.932592278638088,0.898293750708671,0.891768204291917,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
 Europe,Diarrhoea,80 to 84,Non-typhoidal Salmonella,0,0,0,0.94499645468668,0.932592278638088,0.898293750708671,0.891768204291917,0.8,0.7,5 years,All,6 weeks & 9 months,6 weeks & 9 months,Yes,
 Europe,Diarrhoea,80 to 84,Shigella spp.,0,0,0,0.94499645468668,0.932592278638088,0.898293750708671,0.891768204291917,0.6,0.7,5 years,All,6 months,6 months,Yes,
-Europe,Diarrhoea,85 to 89,Escherichia coli,0,0,1000,0.94499645468668,0.932592278638088,0.898293750708671,0.891768204291917,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
+Europe,Diarrhoea,85 to 89,Escherichia coli,0,0,439.7,0.94499645468668,0.932592278638088,0.898293750708671,0.891768204291917,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
 Europe,Diarrhoea,85 to 89,Non-typhoidal Salmonella,0,0,0,0.94499645468668,0.932592278638088,0.898293750708671,0.891768204291917,0.8,0.7,5 years,All,6 weeks & 9 months,6 weeks & 9 months,Yes,
 Europe,Diarrhoea,85 to 89,Shigella spp.,0,0,0,0.94499645468668,0.932592278638088,0.898293750708671,0.891768204291917,0.6,0.7,5 years,All,6 months,6 months,Yes,
 Europe,Diarrhoea,90 to 94,Escherichia coli,0,0,0,0.94499645468668,0.932592278638088,0.898293750708671,0.891768204291917,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
@@ -6502,73 +6502,73 @@ South-East Asia,CNS infections,95 plus,Haemophilus influenzae,0,0,0,0.9093272142
 South-East Asia,CNS infections,95 plus,Klebsiella pneumoniae,0,0,0,0.90932721424683,0.901911192921846,0.23935025135275,0.170810133556347,0.7,0.7,5 years,All,6 weeks & elderly age group,All age groups,Yes,70 years
 South-East Asia,CNS infections,95 plus,Staphylococcus aureus,0,0,0,0.90932721424683,0.901911192921846,0.23935025135275,0.170810133556347,0.6,0.7,5 years,All,6 weeks & elderly age group,All age groups,Yes,75 years
 South-East Asia,CNS infections,95 plus,Streptococcus pneumoniae,0,0,0,0.90932721424683,0.901911192921846,0.23935025135275,0.170810133556347,0.58,0.9,5 years,"BSI, CNS infections, Cardiac infections, LRI","6, 10, 14 weeks","6, 10, 14 weeks & elderly age group",Yes,75 years
-South-East Asia,Diarrhoea,EN,Escherichia coli,9000,4000,18000,0.90932721424683,0.901911192921846,0.23935025135275,0.170810133556347,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
+South-East Asia,Diarrhoea,EN,Escherichia coli,3957.3,1758.8,7914.6,0.90932721424683,0.901911192921846,0.23935025135275,0.170810133556347,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
 South-East Asia,Diarrhoea,EN,Non-typhoidal Salmonella,2000,0,5000,0.90932721424683,0.901911192921846,0.23935025135275,0.170810133556347,0.8,0.7,5 years,All,6 weeks & 9 months,6 weeks & 9 months,Yes,
 South-East Asia,Diarrhoea,EN,Shigella spp.,4000,0,11000,0.90932721424683,0.901911192921846,0.23935025135275,0.170810133556347,0.6,0.7,5 years,All,6 months,6 months,Yes,
-South-East Asia,Diarrhoea,LN,Escherichia coli,14000,6000,27000,0.90932721424683,0.901911192921846,0.23935025135275,0.170810133556347,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
+South-East Asia,Diarrhoea,LN,Escherichia coli,6155.8,2638.2,11871.9,0.90932721424683,0.901911192921846,0.23935025135275,0.170810133556347,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
 South-East Asia,Diarrhoea,LN,Non-typhoidal Salmonella,2000,0,7000,0.90932721424683,0.901911192921846,0.23935025135275,0.170810133556347,0.8,0.7,5 years,All,6 weeks & 9 months,6 weeks & 9 months,Yes,
 South-East Asia,Diarrhoea,LN,Shigella spp.,5000,1000,16000,0.90932721424683,0.901911192921846,0.23935025135275,0.170810133556347,0.6,0.7,5 years,All,6 months,6 months,Yes,
-South-East Asia,Diarrhoea,PN,Escherichia coli,81000,39000,155000,0.90932721424683,0.901911192921846,0.23935025135275,0.170810133556347,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
+South-East Asia,Diarrhoea,PN,Escherichia coli,35615.7,17148.3,68153.5,0.90932721424683,0.901911192921846,0.23935025135275,0.170810133556347,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
 South-East Asia,Diarrhoea,PN,Non-typhoidal Salmonella,11000,1000,39000,0.90932721424683,0.901911192921846,0.23935025135275,0.170810133556347,0.8,0.7,5 years,All,6 weeks & 9 months,6 weeks & 9 months,Yes,
 South-East Asia,Diarrhoea,PN,Shigella spp.,29000,3000,85000,0.90932721424683,0.901911192921846,0.23935025135275,0.170810133556347,0.6,0.7,5 years,All,6 months,6 months,Yes,
-South-East Asia,Diarrhoea,1 to 4,Escherichia coli,37000,17000,69000,0.90932721424683,0.901911192921846,0.23935025135275,0.170810133556347,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
+South-East Asia,Diarrhoea,1 to 4,Escherichia coli,16268.9,7474.9,30339.3,0.90932721424683,0.901911192921846,0.23935025135275,0.170810133556347,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
 South-East Asia,Diarrhoea,1 to 4,Non-typhoidal Salmonella,5000,0,23000,0.90932721424683,0.901911192921846,0.23935025135275,0.170810133556347,0.8,0.7,5 years,All,6 weeks & 9 months,6 weeks & 9 months,Yes,
 South-East Asia,Diarrhoea,1 to 4,Shigella spp.,17000,2000,51000,0.90932721424683,0.901911192921846,0.23935025135275,0.170810133556347,0.6,0.7,5 years,All,6 months,6 months,Yes,
-South-East Asia,Diarrhoea,5 to 9,Escherichia coli,15000,5000,36000,0.90932721424683,0.901911192921846,0.23935025135275,0.170810133556347,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
+South-East Asia,Diarrhoea,5 to 9,Escherichia coli,6595.5,2198.5,15829.2,0.90932721424683,0.901911192921846,0.23935025135275,0.170810133556347,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
 South-East Asia,Diarrhoea,5 to 9,Non-typhoidal Salmonella,2000,0,8000,0.90932721424683,0.901911192921846,0.23935025135275,0.170810133556347,0.8,0.7,5 years,All,6 weeks & 9 months,6 weeks & 9 months,Yes,
 South-East Asia,Diarrhoea,5 to 9,Shigella spp.,9000,1000,29000,0.90932721424683,0.901911192921846,0.23935025135275,0.170810133556347,0.6,0.7,5 years,All,6 months,6 months,Yes,
-South-East Asia,Diarrhoea,10 to 14,Escherichia coli,8000,3000,19000,0.90932721424683,0.901911192921846,0.23935025135275,0.170810133556347,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
+South-East Asia,Diarrhoea,10 to 14,Escherichia coli,3517.6,1319.1,8354.3,0.90932721424683,0.901911192921846,0.23935025135275,0.170810133556347,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
 South-East Asia,Diarrhoea,10 to 14,Non-typhoidal Salmonella,1000,0,5000,0.90932721424683,0.901911192921846,0.23935025135275,0.170810133556347,0.8,0.7,5 years,All,6 weeks & 9 months,6 weeks & 9 months,Yes,
 South-East Asia,Diarrhoea,10 to 14,Shigella spp.,5000,1000,15000,0.90932721424683,0.901911192921846,0.23935025135275,0.170810133556347,0.6,0.7,5 years,All,6 months,6 months,Yes,
-South-East Asia,Diarrhoea,15 to 19,Escherichia coli,5000,2000,12000,0.90932721424683,0.901911192921846,0.23935025135275,0.170810133556347,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
+South-East Asia,Diarrhoea,15 to 19,Escherichia coli,2198.5,879.4,5276.4,0.90932721424683,0.901911192921846,0.23935025135275,0.170810133556347,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
 South-East Asia,Diarrhoea,15 to 19,Non-typhoidal Salmonella,1000,0,3000,0.90932721424683,0.901911192921846,0.23935025135275,0.170810133556347,0.8,0.7,5 years,All,6 weeks & 9 months,6 weeks & 9 months,Yes,
 South-East Asia,Diarrhoea,15 to 19,Shigella spp.,3000,0,11000,0.90932721424683,0.901911192921846,0.23935025135275,0.170810133556347,0.6,0.7,5 years,All,6 months,6 months,Yes,
-South-East Asia,Diarrhoea,20 to 24,Escherichia coli,4000,1000,10000,0.90932721424683,0.901911192921846,0.23935025135275,0.170810133556347,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
+South-East Asia,Diarrhoea,20 to 24,Escherichia coli,1758.8,439.7,4397,0.90932721424683,0.901911192921846,0.23935025135275,0.170810133556347,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
 South-East Asia,Diarrhoea,20 to 24,Non-typhoidal Salmonella,0,0,3000,0.90932721424683,0.901911192921846,0.23935025135275,0.170810133556347,0.8,0.7,5 years,All,6 weeks & 9 months,6 weeks & 9 months,Yes,
 South-East Asia,Diarrhoea,20 to 24,Shigella spp.,3000,0,10000,0.90932721424683,0.901911192921846,0.23935025135275,0.170810133556347,0.6,0.7,5 years,All,6 months,6 months,Yes,
-South-East Asia,Diarrhoea,25 to 29,Escherichia coli,3000,1000,7000,0.90932721424683,0.901911192921846,0.23935025135275,0.170810133556347,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
+South-East Asia,Diarrhoea,25 to 29,Escherichia coli,1319.1,439.7,3077.9,0.90932721424683,0.901911192921846,0.23935025135275,0.170810133556347,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
 South-East Asia,Diarrhoea,25 to 29,Non-typhoidal Salmonella,0,0,2000,0.90932721424683,0.901911192921846,0.23935025135275,0.170810133556347,0.8,0.7,5 years,All,6 weeks & 9 months,6 weeks & 9 months,Yes,
 South-East Asia,Diarrhoea,25 to 29,Shigella spp.,3000,0,8000,0.90932721424683,0.901911192921846,0.23935025135275,0.170810133556347,0.6,0.7,5 years,All,6 months,6 months,Yes,
-South-East Asia,Diarrhoea,30 to 34,Escherichia coli,2000,1000,5000,0.90932721424683,0.901911192921846,0.23935025135275,0.170810133556347,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
+South-East Asia,Diarrhoea,30 to 34,Escherichia coli,879.4,439.7,2198.5,0.90932721424683,0.901911192921846,0.23935025135275,0.170810133556347,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
 South-East Asia,Diarrhoea,30 to 34,Non-typhoidal Salmonella,0,0,3000,0.90932721424683,0.901911192921846,0.23935025135275,0.170810133556347,0.8,0.7,5 years,All,6 weeks & 9 months,6 weeks & 9 months,Yes,
 South-East Asia,Diarrhoea,30 to 34,Shigella spp.,2000,0,8000,0.90932721424683,0.901911192921846,0.23935025135275,0.170810133556347,0.6,0.7,5 years,All,6 months,6 months,Yes,
-South-East Asia,Diarrhoea,35 to 39,Escherichia coli,2000,1000,4000,0.90932721424683,0.901911192921846,0.23935025135275,0.170810133556347,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
+South-East Asia,Diarrhoea,35 to 39,Escherichia coli,879.4,439.7,1758.8,0.90932721424683,0.901911192921846,0.23935025135275,0.170810133556347,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
 South-East Asia,Diarrhoea,35 to 39,Non-typhoidal Salmonella,1000,0,3000,0.90932721424683,0.901911192921846,0.23935025135275,0.170810133556347,0.8,0.7,5 years,All,6 weeks & 9 months,6 weeks & 9 months,Yes,
 South-East Asia,Diarrhoea,35 to 39,Shigella spp.,3000,0,8000,0.90932721424683,0.901911192921846,0.23935025135275,0.170810133556347,0.6,0.7,5 years,All,6 months,6 months,Yes,
-South-East Asia,Diarrhoea,40 to 44,Escherichia coli,2000,1000,4000,0.90932721424683,0.901911192921846,0.23935025135275,0.170810133556347,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
+South-East Asia,Diarrhoea,40 to 44,Escherichia coli,879.4,439.7,1758.8,0.90932721424683,0.901911192921846,0.23935025135275,0.170810133556347,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
 South-East Asia,Diarrhoea,40 to 44,Non-typhoidal Salmonella,1000,0,3000,0.90932721424683,0.901911192921846,0.23935025135275,0.170810133556347,0.8,0.7,5 years,All,6 weeks & 9 months,6 weeks & 9 months,Yes,
 South-East Asia,Diarrhoea,40 to 44,Shigella spp.,2000,0,7000,0.90932721424683,0.901911192921846,0.23935025135275,0.170810133556347,0.6,0.7,5 years,All,6 months,6 months,Yes,
-South-East Asia,Diarrhoea,45 to 49,Escherichia coli,3000,1000,6000,0.90932721424683,0.901911192921846,0.23935025135275,0.170810133556347,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
+South-East Asia,Diarrhoea,45 to 49,Escherichia coli,1319.1,439.7,2638.2,0.90932721424683,0.901911192921846,0.23935025135275,0.170810133556347,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
 South-East Asia,Diarrhoea,45 to 49,Non-typhoidal Salmonella,1000,0,3000,0.90932721424683,0.901911192921846,0.23935025135275,0.170810133556347,0.8,0.7,5 years,All,6 weeks & 9 months,6 weeks & 9 months,Yes,
 South-East Asia,Diarrhoea,45 to 49,Shigella spp.,2000,0,6000,0.90932721424683,0.901911192921846,0.23935025135275,0.170810133556347,0.6,0.7,5 years,All,6 months,6 months,Yes,
-South-East Asia,Diarrhoea,50 to 54,Escherichia coli,4000,1000,9000,0.90932721424683,0.901911192921846,0.23935025135275,0.170810133556347,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
+South-East Asia,Diarrhoea,50 to 54,Escherichia coli,1758.8,439.7,3957.3,0.90932721424683,0.901911192921846,0.23935025135275,0.170810133556347,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
 South-East Asia,Diarrhoea,50 to 54,Non-typhoidal Salmonella,1000,0,5000,0.90932721424683,0.901911192921846,0.23935025135275,0.170810133556347,0.8,0.7,5 years,All,6 weeks & 9 months,6 weeks & 9 months,Yes,
 South-East Asia,Diarrhoea,50 to 54,Shigella spp.,2000,0,7000,0.90932721424683,0.901911192921846,0.23935025135275,0.170810133556347,0.6,0.7,5 years,All,6 months,6 months,Yes,
-South-East Asia,Diarrhoea,55 to 59,Escherichia coli,5000,2000,12000,0.90932721424683,0.901911192921846,0.23935025135275,0.170810133556347,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
+South-East Asia,Diarrhoea,55 to 59,Escherichia coli,2198.5,879.4,5276.4,0.90932721424683,0.901911192921846,0.23935025135275,0.170810133556347,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
 South-East Asia,Diarrhoea,55 to 59,Non-typhoidal Salmonella,1000,0,5000,0.90932721424683,0.901911192921846,0.23935025135275,0.170810133556347,0.8,0.7,5 years,All,6 weeks & 9 months,6 weeks & 9 months,Yes,
 South-East Asia,Diarrhoea,55 to 59,Shigella spp.,2000,0,6000,0.90932721424683,0.901911192921846,0.23935025135275,0.170810133556347,0.6,0.7,5 years,All,6 months,6 months,Yes,
-South-East Asia,Diarrhoea,60 to 64,Escherichia coli,9000,3000,20000,0.90932721424683,0.901911192921846,0.23935025135275,0.170810133556347,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
+South-East Asia,Diarrhoea,60 to 64,Escherichia coli,3957.3,1319.1,8794,0.90932721424683,0.901911192921846,0.23935025135275,0.170810133556347,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
 South-East Asia,Diarrhoea,60 to 64,Non-typhoidal Salmonella,2000,0,8000,0.90932721424683,0.901911192921846,0.23935025135275,0.170810133556347,0.8,0.7,5 years,All,6 weeks & 9 months,6 weeks & 9 months,Yes,
 South-East Asia,Diarrhoea,60 to 64,Shigella spp.,2000,0,8000,0.90932721424683,0.901911192921846,0.23935025135275,0.170810133556347,0.6,0.7,5 years,All,6 months,6 months,Yes,
-South-East Asia,Diarrhoea,65 to 69,Escherichia coli,14000,5000,31000,0.90932721424683,0.901911192921846,0.23935025135275,0.170810133556347,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
+South-East Asia,Diarrhoea,65 to 69,Escherichia coli,6155.8,2198.5,13630.7,0.90932721424683,0.901911192921846,0.23935025135275,0.170810133556347,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
 South-East Asia,Diarrhoea,65 to 69,Non-typhoidal Salmonella,2000,0,9000,0.90932721424683,0.901911192921846,0.23935025135275,0.170810133556347,0.8,0.7,5 years,All,6 weeks & 9 months,6 weeks & 9 months,Yes,
 South-East Asia,Diarrhoea,65 to 69,Shigella spp.,4000,0,11000,0.90932721424683,0.901911192921846,0.23935025135275,0.170810133556347,0.6,0.7,5 years,All,6 months,6 months,Yes,
-South-East Asia,Diarrhoea,70 to 74,Escherichia coli,19000,6000,42000,0.90932721424683,0.901911192921846,0.23935025135275,0.170810133556347,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
+South-East Asia,Diarrhoea,70 to 74,Escherichia coli,8354.3,2638.2,18467.4,0.90932721424683,0.901911192921846,0.23935025135275,0.170810133556347,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
 South-East Asia,Diarrhoea,70 to 74,Non-typhoidal Salmonella,2000,0,11000,0.90932721424683,0.901911192921846,0.23935025135275,0.170810133556347,0.8,0.7,5 years,All,6 weeks & 9 months,6 weeks & 9 months,Yes,
 South-East Asia,Diarrhoea,70 to 74,Shigella spp.,5000,1000,16000,0.90932721424683,0.901911192921846,0.23935025135275,0.170810133556347,0.6,0.7,5 years,All,6 months,6 months,Yes,
-South-East Asia,Diarrhoea,75 to 79,Escherichia coli,19000,7000,43000,0.90932721424683,0.901911192921846,0.23935025135275,0.170810133556347,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
+South-East Asia,Diarrhoea,75 to 79,Escherichia coli,8354.3,3077.9,18907.1,0.90932721424683,0.901911192921846,0.23935025135275,0.170810133556347,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
 South-East Asia,Diarrhoea,75 to 79,Non-typhoidal Salmonella,2000,0,10000,0.90932721424683,0.901911192921846,0.23935025135275,0.170810133556347,0.8,0.7,5 years,All,6 weeks & 9 months,6 weeks & 9 months,Yes,
 South-East Asia,Diarrhoea,75 to 79,Shigella spp.,6000,1000,16000,0.90932721424683,0.901911192921846,0.23935025135275,0.170810133556347,0.6,0.7,5 years,All,6 months,6 months,Yes,
-South-East Asia,Diarrhoea,80 to 84,Escherichia coli,21000,7000,47000,0.90932721424683,0.901911192921846,0.23935025135275,0.170810133556347,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
+South-East Asia,Diarrhoea,80 to 84,Escherichia coli,9233.7,3077.9,20665.9,0.90932721424683,0.901911192921846,0.23935025135275,0.170810133556347,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
 South-East Asia,Diarrhoea,80 to 84,Non-typhoidal Salmonella,2000,0,9000,0.90932721424683,0.901911192921846,0.23935025135275,0.170810133556347,0.8,0.7,5 years,All,6 weeks & 9 months,6 weeks & 9 months,Yes,
 South-East Asia,Diarrhoea,80 to 84,Shigella spp.,6000,1000,18000,0.90932721424683,0.901911192921846,0.23935025135275,0.170810133556347,0.6,0.7,5 years,All,6 months,6 months,Yes,
-South-East Asia,Diarrhoea,85 to 89,Escherichia coli,11000,4000,26000,0.90932721424683,0.901911192921846,0.23935025135275,0.170810133556347,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
+South-East Asia,Diarrhoea,85 to 89,Escherichia coli,4836.7,1758.8,11432.2,0.90932721424683,0.901911192921846,0.23935025135275,0.170810133556347,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
 South-East Asia,Diarrhoea,85 to 89,Non-typhoidal Salmonella,1000,0,4000,0.90932721424683,0.901911192921846,0.23935025135275,0.170810133556347,0.8,0.7,5 years,All,6 weeks & 9 months,6 weeks & 9 months,Yes,
 South-East Asia,Diarrhoea,85 to 89,Shigella spp.,3000,0,10000,0.90932721424683,0.901911192921846,0.23935025135275,0.170810133556347,0.6,0.7,5 years,All,6 months,6 months,Yes,
-South-East Asia,Diarrhoea,90 to 94,Escherichia coli,5000,2000,11000,0.90932721424683,0.901911192921846,0.23935025135275,0.170810133556347,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
+South-East Asia,Diarrhoea,90 to 94,Escherichia coli,2198.5,879.4,4836.7,0.90932721424683,0.901911192921846,0.23935025135275,0.170810133556347,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
 South-East Asia,Diarrhoea,90 to 94,Non-typhoidal Salmonella,0,0,2000,0.90932721424683,0.901911192921846,0.23935025135275,0.170810133556347,0.8,0.7,5 years,All,6 weeks & 9 months,6 weeks & 9 months,Yes,
 South-East Asia,Diarrhoea,90 to 94,Shigella spp.,1000,0,4000,0.90932721424683,0.901911192921846,0.23935025135275,0.170810133556347,0.6,0.7,5 years,All,6 months,6 months,Yes,
-South-East Asia,Diarrhoea,95 plus,Escherichia coli,1000,0,3000,0.90932721424683,0.901911192921846,0.23935025135275,0.170810133556347,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
+South-East Asia,Diarrhoea,95 plus,Escherichia coli,439.7,0,1319.1,0.90932721424683,0.901911192921846,0.23935025135275,0.170810133556347,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
 South-East Asia,Diarrhoea,95 plus,Non-typhoidal Salmonella,0,0,0,0.90932721424683,0.901911192921846,0.23935025135275,0.170810133556347,0.8,0.7,5 years,All,6 weeks & 9 months,6 weeks & 9 months,Yes,
 South-East Asia,Diarrhoea,95 plus,Shigella spp.,0,0,1000,0.90932721424683,0.901911192921846,0.23935025135275,0.170810133556347,0.6,0.7,5 years,All,6 months,6 months,Yes,
 South-East Asia,Intra-abdominal infections,EN,Enterococcus faecium,0,0,1000,0.90932721424683,0.901911192921846,0.23935025135275,0.170810133556347,0.7,0.7,5 years,All,6 weeks & elderly age group,All age groups,Yes,65 years
@@ -7951,10 +7951,10 @@ Western Pacific,Diarrhoea,EN,Shigella spp.,0,0,0,0.864156806467036,0.84009034723
 Western Pacific,Diarrhoea,LN,Escherichia coli,0,0,0,0.864156806467036,0.840090347235015,0.714453836846204,0.672518860922747,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
 Western Pacific,Diarrhoea,LN,Non-typhoidal Salmonella,0,0,0,0.864156806467036,0.840090347235015,0.714453836846204,0.672518860922747,0.8,0.7,5 years,All,6 weeks & 9 months,6 weeks & 9 months,Yes,
 Western Pacific,Diarrhoea,LN,Shigella spp.,0,0,0,0.864156806467036,0.840090347235015,0.714453836846204,0.672518860922747,0.6,0.7,5 years,All,6 months,6 months,Yes,
-Western Pacific,Diarrhoea,PN,Escherichia coli,1000,1000,3000,0.864156806467036,0.840090347235015,0.714453836846204,0.672518860922747,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
+Western Pacific,Diarrhoea,PN,Escherichia coli,439.7,439.7,1319.1,0.864156806467036,0.840090347235015,0.714453836846204,0.672518860922747,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
 Western Pacific,Diarrhoea,PN,Non-typhoidal Salmonella,2000,0,5000,0.864156806467036,0.840090347235015,0.714453836846204,0.672518860922747,0.8,0.7,5 years,All,6 weeks & 9 months,6 weeks & 9 months,Yes,
 Western Pacific,Diarrhoea,PN,Shigella spp.,2000,0,4000,0.864156806467036,0.840090347235015,0.714453836846204,0.672518860922747,0.6,0.7,5 years,All,6 months,6 months,Yes,
-Western Pacific,Diarrhoea,1 to 4,Escherichia coli,1000,0,2000,0.864156806467036,0.840090347235015,0.714453836846204,0.672518860922747,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
+Western Pacific,Diarrhoea,1 to 4,Escherichia coli,439.7,0,879.4,0.864156806467036,0.840090347235015,0.714453836846204,0.672518860922747,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years
 Western Pacific,Diarrhoea,1 to 4,Non-typhoidal Salmonella,1000,0,5000,0.864156806467036,0.840090347235015,0.714453836846204,0.672518860922747,0.8,0.7,5 years,All,6 weeks & 9 months,6 weeks & 9 months,Yes,
 Western Pacific,Diarrhoea,1 to 4,Shigella spp.,1000,0,2000,0.864156806467036,0.840090347235015,0.714453836846204,0.672518860922747,0.6,0.7,5 years,All,6 months,6 months,Yes,
 Western Pacific,Diarrhoea,5 to 9,Escherichia coli,0,0,0,0.864156806467036,0.840090347235015,0.714453836846204,0.672518860922747,0.6,0.7,5 years,"BSI, Diarrhoea, UTI",6 months,6 months,Yes,75 years

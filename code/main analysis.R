@@ -57,6 +57,8 @@ existing_vaccine_coverage (year = "2018",
 # create data table of AMR burden (deaths) classified 
 # by pathogen, WHO region, disease presentation, and age groups
 
+options(scipen=999)
+
 death_burden_dt <- read_excel(file.path("data", "IHME_AMR_burden.xlsx"),
                                     col_names = FALSE)             
 
@@ -105,7 +107,6 @@ daly_combined_dt <-
 # ------------------------------------------------------------------------------
 # AMR burden by pathogen across all age groups:
 # the outputs were used to find out the age group with the highest burdens
-options(scipen=999)
 
 pathogenlist_death <- unique(death_burden_dt$Pathogen)
 pathogenlist_daly  <- unique(daly_burden_dt$Pathogen)
@@ -233,14 +234,14 @@ fwrite (x    = Table_avertible_burden_by_region,
 death_averted_by_region_graph <- create_burden_averted_by_region_graph(
   Attributable_burden_averted = Attributable_death_averted_re,
   Associated_burden_averted   = Associated_death_averted_re,
-  ylim_max                    = 220000,
+  ylim_max                    = 180000,
   ylabel                      = "Vaccine Avertable Deaths",
   title_name                  = "Conservative Scenario")
 
 daly_averted_by_region_graph <- create_burden_averted_by_region_graph(
   Attributable_burden_averted = Attributable_daly_averted_re,
   Associated_burden_averted   = Associated_daly_averted_re,
-  ylim_max                    = 17000000,
+  ylim_max                    = 15000000,
   ylabel                      = "Vaccine Avertable DALYs",
   title_name                  = " ")
 
@@ -255,7 +256,7 @@ death_averted_by_region_graph_opt <- create_burden_averted_by_region_graph(
 daly_averted_by_region_graph_opt <- create_burden_averted_by_region_graph(
   Attributable_burden_averted = Attributable_daly_averted_re_opt,
   Associated_burden_averted   = Associated_daly_averted_re_opt,
-  ylim_max                    = 25000000,
+  ylim_max                    = 22000000,
   ylabel                      = "Vaccine Avertable DALYs",
   title_name                  = " ")
 
@@ -350,14 +351,14 @@ fwrite (x    = Table_avertible_burden_by_dp,
 death_averted_by_dp_graph <- create_burden_averted_by_dp_graph(
   Attributable_burden_averted = Attributable_death_averted_dp,
   Associated_burden_averted   = Associated_death_averted_dp,
-  ylim_max = 240000,
+  ylim_max = 180000,
   ylabel = "Vaccine Avertable Deaths",
   title_name = "Conservative Scenario")
 
 daly_averted_by_dp_graph <- create_burden_averted_by_dp_graph(
   Attributable_burden_averted = Attributable_daly_averted_dp,
   Associated_burden_averted   = Associated_daly_averted_dp,
-  ylim_max = 18000000,
+  ylim_max = 12500000,
   ylabel = "Vaccine Avertable DALYs",
   title_name = " ")
 
@@ -373,7 +374,7 @@ death_averted_by_dp_graph_opt <- create_burden_averted_by_dp_graph(
 daly_averted_by_dp_graph_opt <- create_burden_averted_by_dp_graph(
   Attributable_burden_averted = Attributable_daly_averted_dp_opt,
   Associated_burden_averted   = Associated_daly_averted_dp_opt,
-  ylim_max = 30000000,
+  ylim_max = 25000000,
   ylabel = "Vaccine Avertable DALYs",
   title_name = " ")
 
@@ -462,14 +463,14 @@ ggsave (filename = "Figure 2_burden_averted_by_dp.png",
 death_averted_by_pathogen_graph <- create_burden_averted_by_pathogen_graph(
   Attributable_burden_averted = Attributable_death_averted_pathogen,
   Associated_burden_averted   = Associated_death_averted_pathogen,
-  ylim_max = 150000,
+  ylim_max = 135000,
   ylabel = "Vaccine Avertable Deaths",
   title_name = "Conservative Scenario")
 
 daly_averted_by_pathogen_graph <- create_burden_averted_by_pathogen_graph(
   Attributable_burden_averted = Attributable_daly_averted_pathogen,
   Associated_burden_averted   = Associated_daly_averted_pathogen,
-  ylim_max = 12500000,
+  ylim_max = 7000000,
   ylabel = "Vaccine Avertable DALYs",
   title_name = " ")
 
