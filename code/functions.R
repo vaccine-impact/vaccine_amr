@@ -308,25 +308,6 @@ create_burden_table <- function(AMR_burden,
              Attributable_resistance_upper := Attributable_resistance_upper /
                (1 - pcv_vaccine_coverage_2018 * 0.58)]
   
-  # apply the proportion of ETEC contribution to E. Coli diarrhoea burden
-  AMR_burden[Pathogen  == "Escherichia coli" & Disease_presentation == "Diarrhoea",
-             Associated_resistant_mean := Associated_resistant_mean * 0.4397]
-  
-  AMR_burden[Pathogen  == "Escherichia coli" & Disease_presentation == "Diarrhoea",
-             Associated_resistant_lower := Associated_resistant_lower * 0.4397]
-  
-  AMR_burden[Pathogen  == "Escherichia coli" & Disease_presentation == "Diarrhoea",
-             Associated_resistant_upper := Associated_resistant_upper * 0.4397]
-  
-  AMR_burden[Pathogen  == "Escherichia coli" & Disease_presentation == "Diarrhoea",
-             Attributable_resistance_mean := Attributable_resistance_mean * 0.4397]
-  
-  AMR_burden[Pathogen  == "Escherichia coli" & Disease_presentation == "Diarrhoea",
-             Attributable_resistance_lower := Attributable_resistance_lower * 0.4397]
-  
-  AMR_burden[Pathogen  == "Escherichia coli" & Disease_presentation == "Diarrhoea",
-             Attributable_resistance_upper := Attributable_resistance_upper * 0.4397]
-  
   # save the file
   fwrite (x    = AMR_burden,
           file = burden_file)
@@ -386,7 +367,7 @@ create_combined_table <- function(death_burden_dt,
   vaccine_profile <- vaccine_profile_dt %>% 
     filter(MainAnalysis == "Yes")
   
-  vaccine_profile <- data.table(vaccine_profile[-c(3:4, 8), -1])
+  vaccine_profile <- data.table(vaccine_profile[-c(3:4,8), -1])
 
   vaccine_profile[Pathogen == "Escherichia coli", DP := "BSI, Diarrhoea, UTI"]
 
@@ -759,6 +740,11 @@ create_burden_by_pathogen_graph <- function(pathogen,
        (Age_group == "1 to 4" | Age_group == "75 to 79"),
        va_age := burden_psa * Efficacy * Coverage]
     
+    
+    # apply vaccine assumptions to the ETEC proportion of the disease
+    va[Pathogen == "Escherichia coli" & Disease_presentation == "Diarrhoea",
+       va_age := va_age * 0.4397]
+
   } else {
     va[, va_age := 0]
     
@@ -877,6 +863,11 @@ create_burden_by_pathogen_graph <- function(pathogen,
     va[Pathogen == "Streptococcus pneumoniae" &
          VC == "6, 10, 14 weeks" & Age_group == "1 to 4",
        va_age := burden_psa * Efficacy * Coverage]
+    
+    # apply vaccine assumptions to the ETEC proportion of the disease
+    va[Pathogen == "Escherichia coli" & Disease_presentation == "Diarrhoea",
+       va_age := va_age * 0.4397]
+    
       }
     
   # applying vaccine target disease presentation
