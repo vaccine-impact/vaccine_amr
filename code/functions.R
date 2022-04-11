@@ -1150,7 +1150,7 @@ ggplot(burden_averted_by_region,
   theme_classic() +
   theme(legend.position = c(0.8, 0.9)) +
   ggtitle(title_name) +
-  theme(plot.title = element_text(hjust=-0.2, vjust=3, size = 20)) +
+  theme(plot.title = element_text(hjust=-0.1, vjust=3, size = 20)) +
   theme(axis.text.x = element_text(angle = 30, vjust = 1, hjust=1))
 
 } # end of function -- create_burden_averted_by_region_graph
@@ -1229,7 +1229,7 @@ create_burden_averted_by_dp_graph <- function(Attributable_burden_averted,
     burden_averted_by_dp$Counts <- gsub("Intra-abdominal infections", "Intra-abdominal",
                                         burden_averted_by_dp$Counts)
     
-    burden_averted_by_dp$Counts <- gsub("TB", "TB",
+    burden_averted_by_dp$Counts <- gsub("TB", "Tuberculosis",
                                         burden_averted_by_dp$Counts)
     
     burden_averted_by_dp$Counts <- gsub("LRI and thorax infections", "LRI+",
