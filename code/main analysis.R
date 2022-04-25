@@ -19,7 +19,7 @@ library (rriskDistributions)
 library (formattable)
 library (patchwork)
 
-devtools::install_github("cardiomoon/webr")
+# devtools::install_github("cardiomoon/webr")
 library (webr)
 
 # remove all objects from workspace
@@ -127,7 +127,7 @@ lapply(pathogenlist_daly, create_burden_by_pathogen_graph,
 # estimate vaccine averted AMR deaths & uncertainty analysis
 
 set.seed (3)  # seed for random number generator
-run <- 1000 # number of runs for probabilistic sensitivity analysis
+run <- 100 # number of runs for probabilistic sensitivity analysis
 
 # psa for deaths attributable to and associated with AMR
 deaths_associated_psa <- uncertainty_analysis_baseline(
@@ -696,7 +696,7 @@ AMR_daly_data_updated <- update_death_burden(
 # ------------------------------------------------------------------------------
 # Appendix -- vaccine avertable deaths by infectious syndrome and pathogen
 
-deaths_associated_dp_pathogen <- 
+deaths_associated_dp_pathogen   <- 
   aggregate_impact_by_dp_pathogen(data_input = deaths_associated_psa,
                                   input_rep  = 1:62)
 
@@ -704,11 +704,11 @@ deaths_attributable_dp_pathogen <-
   aggregate_impact_by_dp_pathogen(data_input = deaths_attributable_psa,
                                   input_rep  = 1:62)
 
-daly_associated_dp_pathogen <- 
+daly_associated_dp_pathogen     <- 
   aggregate_impact_by_dp_pathogen(data_input = daly_associated_psa,
                                   input_rep  = 1:63)
 
-daly_attributable_dp_pathogen <- 
+daly_attributable_dp_pathogen   <- 
   aggregate_impact_by_dp_pathogen(data_input = daly_attributable_psa,
                                   input_rep  = 1:61)
 
