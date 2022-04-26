@@ -289,7 +289,7 @@ Attributable_daly_averted_re_inc <- aggregate_impact_by_region(
   input_data = read_csv(file.path("tables", "daly_attributable_psa.csv")),
   mode       = "incremental")
 # ------------------------------------------------------------------------------
-# Table 2: vaccine avertable AMR health burden globally and by WHO region, 2019
+# Table: vaccine avertable AMR health burden globally and by WHO region, 2019
 
 Table_avertible_burden_by_region <- create_avertable_burden_table(
   Associated_death_averted       = Associated_death_averted_re,
@@ -306,7 +306,7 @@ Table_avertible_burden_by_region <- create_avertable_burden_table(
   Attributable_daly_averted_inc  = Attributable_daly_averted_re_inc)
 
 fwrite (x    = Table_avertible_burden_by_region,
-        file = file.path("tables", "Table2_avertible_burden_by_region.csv"))
+        file = file.path("tables", "Table_avertible_burden_by_region.csv"))
 
 # ------------------------------------------------------------------------------
 # Figure: Vaccine impact by WHO region, 2019
@@ -780,83 +780,47 @@ ggsave (filename = "Figure_burden_averted_by_vaccine_profile.png",
 
 
 # ------------------------------------------------------------------------------
-# further analysis -- to be updated
-# -- the incremental impact of expanding coverage of PCV and Hib vaccines
-# -- on baseline scenario
-# percentage increase in vaccine avertable burden by scaling up exiting coverage
+# further analysis
+# -- the impact of current coverage of PCV and Hib vaccines
+# -- baseline scenario
 
-# incremental impact of Hib vaccine on deaths associated with AMR
-(estimate_burden_averted_add(pathogen = "Haemophilus influenzae",
-                             vaccine_type = vaccine_profile_dt_add[8,],
-                             input_data = deaths_associated_psa)$'50%' - 
-  estimate_existing_vaccine_impact(
-    input_data = deaths_associated_psa)[Counts == "Haemophilus influenzae",]$'50%')/ 
-  estimate_existing_vaccine_impact(
-    input_data = deaths_associated_psa)[Counts == "Haemophilus influenzae",]$'50%'
+vaccine_impact_current <- bind_rows(list(
+# impact of current coverage of Hib vaccine on deaths associated with AMR
+edit_table(estimate_existing_vaccine_impact(
+    input_data = deaths_associated_psa)[Counts == "Haemophilus influenzae",]),
 
-# incremental impact of Hib vaccine on deaths attributable to AMR
-(estimate_burden_averted_add(pathogen = "Haemophilus influenzae",
-                             vaccine_type = vaccine_profile_dt_add[8,],
-                             input_data = deaths_attributable_psa)$'50%' - 
-  estimate_existing_vaccine_impact(
-    input_data = deaths_attributable_psa)[Counts == "Haemophilus influenzae",]$'50%')/ 
-  estimate_existing_vaccine_impact(
-    input_data = deaths_attributable_psa)[Counts == "Haemophilus influenzae",]$'50%'
+# impact of current coverage of Hib vaccine on deaths attributable to AMR
+edit_table(estimate_existing_vaccine_impact(
+    input_data = deaths_attributable_psa)[Counts == "Haemophilus influenzae",]),
 
-# incremental impact of Hib vaccine on dalys associated with AMR
-(estimate_burden_averted_add(pathogen = "Haemophilus influenzae",
-                             vaccine_type = vaccine_profile_dt_add[8,],
-                             input_data = daly_associated_psa)$'50%' - 
-  estimate_existing_vaccine_impact(
-    input_data = daly_associated_psa)[Counts == "Haemophilus influenzae",]$'50%')/ 
-  estimate_existing_vaccine_impact(
-    input_data = daly_associated_psa)[Counts == "Haemophilus influenzae",]$'50%'
+# impact of current coverage of Hib vaccine on dalys associated with AMR
+edit_table(estimate_existing_vaccine_impact(
+    input_data = daly_associated_psa)[Counts == "Haemophilus influenzae",]),
 
-# incremental impact of Hib vaccine on dalys attributable to AMR
-(estimate_burden_averted_add(pathogen = "Haemophilus influenzae",
-                             vaccine_type = vaccine_profile_dt_add[8,],
-                             input_data = daly_attributable_psa)$'50%' - 
-  estimate_existing_vaccine_impact(
-    input_data = daly_attributable_psa)[Counts == "Haemophilus influenzae",]$'50%')/ 
-  estimate_existing_vaccine_impact(
-    input_data = daly_attributable_psa)[Counts == "Haemophilus influenzae",]$'50%'
+# impact of current coverage of Hib vaccine on dalys attributable to AMR
+edit_table(estimate_existing_vaccine_impact(
+    input_data = daly_attributable_psa)[Counts == "Haemophilus influenzae",]),
 
+# impact of current coverage of PCV on deaths associated with AMR
+edit_table(estimate_existing_vaccine_impact(
+    input_data = deaths_associated_psa)[Counts == "Streptococcus pneumoniae",]),
 
-# incremental impact of PCV on deaths associated with AMR
-(estimate_burden_averted_add(pathogen = "Streptococcus pneumoniae",
-                            vaccine_type = vaccine_profile_dt_add[20,],
-                            input_data = deaths_associated_psa)$'50%' - 
-  estimate_existing_vaccine_impact(
-    input_data = deaths_associated_psa)[Counts == "Streptococcus pneumoniae",]$'50%')/ 
-  estimate_existing_vaccine_impact(
-    input_data = deaths_associated_psa)[Counts == "Streptococcus pneumoniae",]$'50%'
+# impact of current coverage of PCV on deaths attributable to AMR
+edit_table(estimate_existing_vaccine_impact(
+    input_data = deaths_attributable_psa)[Counts == "Streptococcus pneumoniae",]),
 
-# incremental impact of PCV on deaths attributable to AMR
-(estimate_burden_averted_add(pathogen = "Streptococcus pneumoniae",
-                             vaccine_type = vaccine_profile_dt_add[20,],
-                             input_data = deaths_attributable_psa)$'50%' - 
-  estimate_existing_vaccine_impact(
-    input_data = deaths_attributable_psa)[Counts == "Streptococcus pneumoniae",]$'50%')/ 
-  estimate_existing_vaccine_impact(
-    input_data = deaths_attributable_psa)[Counts == "Streptococcus pneumoniae",]$'50%'
+# impact of current coverage of PCV on dalys associated with AMR
+edit_table(estimate_existing_vaccine_impact(
+    input_data = daly_associated_psa)[Counts == "Streptococcus pneumoniae",]),
 
-# incremental impact of PCV on dalys associated with AMR
-(estimate_burden_averted_add(pathogen = "Streptococcus pneumoniae",
-                             vaccine_type = vaccine_profile_dt_add[20,],
-                             input_data = daly_associated_psa)$'50%' - 
-  estimate_existing_vaccine_impact(
-    input_data = daly_associated_psa)[Counts == "Streptococcus pneumoniae",]$'50%')/ 
-  estimate_existing_vaccine_impact(
-    input_data = daly_associated_psa)[Counts == "Streptococcus pneumoniae",]$'50%'
+# impact of current coverage of PCV on dalys attributable to AMR
+edit_table(estimate_existing_vaccine_impact(
+    input_data = daly_attributable_psa)[Counts == "Streptococcus pneumoniae",])))
 
-# incremental impact of PCV on dalys attributable to AMR
-(estimate_burden_averted_add(pathogen = "Streptococcus pneumoniae",
-                             vaccine_type = vaccine_profile_dt_add[20,],
-                             input_data = daly_attributable_psa)$'50%' - 
-  estimate_existing_vaccine_impact(
-    input_data = daly_attributable_psa)[Counts == "Streptococcus pneumoniae",]$'50%')/ 
-  estimate_existing_vaccine_impact(
-    input_data = daly_attributable_psa)[Counts == "Streptococcus pneumoniae",]$'50%'
+vaccine_impact_current$type <- rep(c("death_associated", "death_attributable", "daly_associated", "daly_attributable"), 2)
+
+fwrite (x    = vaccine_impact_current,
+        file = file.path("tables", "Table_avertible_burden_with_current_coverage.csv"))
 
 # ------------------------------------------------------------------------------
 # [table in appendix] vaccine avertable health burdens associated with and attributable
