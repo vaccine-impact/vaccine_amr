@@ -619,19 +619,10 @@ create_burden_by_pathogen_graph <- function(pathogen,
 # applying vaccine impact on vaccine target population
 
 # applying vaccine target age group
-  estimate_vaccine_impact <- function(i, 
-                                      data, 
-                                      burden_psa = burden_psa,
+  estimate_vaccine_impact <- function(data,
                                       scenario = "conservative"){
   
-  if(is.numeric(i) == TRUE) {
-    va <- data %>%
-      filter(run_id == i)
-  } else {
-    va <- data
-  }
-
-    va <- data.table(va)  
+  va <- data.table(data)
   
   if((scenario == "optimistic") == TRUE){
     va[, va_age := 0]
@@ -918,8 +909,8 @@ create_burden_by_pathogen_graph <- function(pathogen,
   
     
 #-------------------------------------------------------------------------------
-# [table in appendix] vaccine avertable health burdens associated with and attributable
-# to AMR by WHO region, pathogen, disease presentation, and age group
+# [table in appendix] vaccine avertable health burdens associated with and 
+# attributable to AMR by WHO region, pathogen, disease presentation, and age group
   
   update_death_burden <- function(input_associated,
                                   input_attributable,
@@ -930,37 +921,37 @@ create_burden_by_pathogen_graph <- function(pathogen,
   associated_mean <- data.table(input_associated)
   associated_mean[, burden_psa := burden_mean_value]
   associated_mean <- 
-    estimate_vaccine_impact(i = "ANY", data = associated_mean,
+    estimate_vaccine_impact(data = associated_mean,
                             scenario = input_scenario)[,va_health_burden]    
     
   associated_lower <- data.table(input_associated)
   associated_lower[, burden_psa := burden_lower_value]
   associated_lower <-
-    estimate_vaccine_impact(i = "ANY", data = associated_lower,
+    estimate_vaccine_impact(data = associated_lower,
                             scenario = input_scenario)[,va_health_burden]    
   
   associated_upper <- data.table(input_associated)
   associated_upper[, burden_psa := burden_upper_value]
   associated_upper <-
-    estimate_vaccine_impact(i = "ANY", data = associated_upper,
+    estimate_vaccine_impact(data = associated_upper,
                             scenario = input_scenario)[,va_health_burden]    
   
   attributable_mean <- data.table(input_attributable)
   attributable_mean[, burden_psa := burden_mean_value]
   attributable_mean <-
-    estimate_vaccine_impact(i = "ANY", data = attributable_mean,
+    estimate_vaccine_impact(data = attributable_mean,
                             scenario = input_scenario)[,va_health_burden]    
   
   attributable_lower <- data.table(input_attributable)
   attributable_lower[, burden_psa := burden_lower_value]
   attributable_lower <-
-    estimate_vaccine_impact(i = "ANY", data = attributable_lower,
+    estimate_vaccine_impact(data = attributable_lower,
                             scenario = input_scenario)[,va_health_burden]    
   
   attributable_upper <- data.table(input_attributable)
   attributable_upper[, burden_psa := burden_upper_value]
   attributable_upper <-
-    estimate_vaccine_impact(i = "ANY", data = attributable_upper,
+    estimate_vaccine_impact(data = attributable_upper,
                             scenario = input_scenario)[,va_health_burden]    
   
   dt <- data.table("vaccine avertable-associated with resistance (mean)"   =  associated_mean,
@@ -994,40 +985,44 @@ create_burden_by_pathogen_graph <- function(pathogen,
     
  return(AMR_burden_data_updated)}
 #-------------------------------------------------------------------------------
+  
+  
+  
+#-------------------------------------------------------------------------------
+  
 # deaths and DALYs associated with and attributable to bacterial antimicrobial resistance
 # globally and by WHO_region, 2019
 
-  aggregate_impact_by_region <- function(input_data,
-                                         input_scenario = "conservative"){
+  aggregate_impact_by_region <- function(input_data, 
+                                         mode){
    
-    impact_by_region <- data.table(WHO_region     = character(),
-                                   averted_burden = numeric(),
-                                   run_id         = numeric())
+    if (mode == "incremental") {
+      input_data$va_health_burden <- input_data$va_incre
+      
+    } else if (mode == "high_potential") {
+      input_data$va_health_burden <- input_data$va_high
+      
+    } else {
+      input_data$va_health_burden <- input_data$va_base
+    }
     
-    for(i in 1:run){
-      dt <- estimate_vaccine_impact(i, data= input_data, scenario = input_scenario)
-      dt <- dt %>%
+    impact_by_region <- input_data %>%
         group_by(WHO_region, run_id) %>%
         summarise(averted_burden=sum(va_health_burden), .groups = 'drop')
-      impact_by_region <- rbindlist (list (impact_by_region, dt),
-                                     use.names = TRUE)} 
-    
-# -------------------------------------------------------------------------
+  # -------------------------------------------------------------------------
     WHOregion <- unique(death_burden_dt$WHO_region)
     
     burden_averted_regional <- data.table("50%"=numeric(), "2.5%"=numeric(), "97.5%"=numeric())
     
-    impact_by_region_dt <- impact_by_region
-    
     for(i in WHOregion){
-      dt <- impact_by_region_dt %>% filter(WHO_region == i)
+      dt <- impact_by_region %>% filter(WHO_region == i)
       dt <- quantile(x = dt$averted_burden, probs = c (0.5, 0.025, 0.975))
       dt <- data.table(t(dt))
       burden_averted_regional <- rbindlist (list (burden_averted_regional, dt),
                                             use.names = FALSE)
     }
     
-    burden_averted_global <- impact_by_region_dt %>%
+    burden_averted_global <- impact_by_region %>%
       group_by(run_id) %>%
       summarise(averted_burden=sum(averted_burden), .groups = 'drop')
     
@@ -1070,7 +1065,11 @@ create_burden_by_pathogen_graph <- function(pathogen,
                                             Associated_death_averted_opt,
                                             Attributable_death_averted_opt,
                                             Associated_daly_averted_opt,
-                                            Attributable_daly_averted_opt){
+                                            Attributable_daly_averted_opt,
+                                            Associated_death_averted_inc,
+                                            Attributable_death_averted_inc, 
+                                            Associated_daly_averted_inc,
+                                            Attributable_daly_averted_inc){
     
     avertable_death <-
       data.table(Associated_death_averted   = edit_table(Associated_death_averted)[,1:2],
@@ -1086,11 +1085,11 @@ create_burden_by_pathogen_graph <- function(pathogen,
     
     avertable_burden_con <- 
       avertable_burden_con %>% 
-      rename("Counts"                     = "Associated_death_averted.Counts",
-             "Associated_death_averted"   = "Associated_death_averted.burden_averted",
-             "Attributable_death_averted" = "Attributable_death_averted.burden_averted",
-             "Associated_daly_averted"    = "Associated_daly_averted.burden_averted",
-             "Attributable_daly_averted"  = "Attributable_daly_averted.burden_averted")
+      rename("Counts"                      = "Associated_death_averted.Counts",
+             "Associated_death_baseline"   = "Associated_death_averted.burden_averted",
+             "Attributable_death_baseline" = "Attributable_death_averted.burden_averted",
+             "Associated_daly_baseline"    = "Associated_daly_averted.burden_averted",
+             "Attributable_daly_baseline"  = "Attributable_daly_averted.burden_averted")
     
   # -------------------------------------------------------------------------
     avertable_death_opt <-
@@ -1106,22 +1105,42 @@ create_burden_by_pathogen_graph <- function(pathogen,
                                             = "Associated_daly_averted_opt.Counts"))
     avertable_burden_opt <- 
       avertable_burden_opt %>% 
-      rename("Counts"                         = "Associated_death_averted_opt.Counts",
-             "Associated_death_averted_opt"   = "Associated_death_averted_opt.burden_averted",
-             "Attributable_death_averted_opt" = "Attributable_death_averted_opt.burden_averted",
-             "Associated_daly_averted_opt"    = "Associated_daly_averted_opt.burden_averted",
-             "Attributable_daly_averted_opt"  = "Attributable_daly_averted_opt.burden_averted")
+      rename("Counts"                            = "Associated_death_averted_opt.Counts",
+             "Associated_death_high-potential"   = "Associated_death_averted_opt.burden_averted",
+             "Attributable_death_high-potential" = "Attributable_death_averted_opt.burden_averted",
+             "Associated_daly_high-potential"    = "Associated_daly_averted_opt.burden_averted",
+             "Attributable_daly_high-potential"  = "Attributable_daly_averted_opt.burden_averted")
+    # -------------------------------------------------------------------------
+    avertable_death_inc <-
+      data.table(Associated_death_averted_inc   = edit_table(Associated_death_averted_inc)[,1:2],
+                 Attributable_death_averted_inc = edit_table(Attributable_death_averted_inc)[,2])
+    
+    avertable_daly_inc <-
+      data.table(Associated_daly_averted_inc    = edit_table(Associated_daly_averted_inc)[,1:2],
+                 Attributable_daly_averted_inc  = edit_table(Attributable_daly_averted_inc)[,2])
+    
+    avertable_burden_inc <- right_join(avertable_death_inc, avertable_daly_inc, 
+                                       by=c("Associated_death_averted_inc.Counts"
+                                            = "Associated_daly_averted_inc.Counts"))
+    avertable_burden_inc <- 
+      avertable_burden_inc %>% 
+      rename("Counts"                         = "Associated_death_averted_inc.Counts",
+             "Associated_death_incremental"   = "Associated_death_averted_inc.burden_averted",
+             "Attributable_death_incremental" = "Attributable_death_averted_inc.burden_averted",
+             "Associated_daly_incremental"    = "Associated_daly_averted_inc.burden_averted",
+             "Attributable_daly_incremental"  = "Attributable_daly_averted_inc.burden_averted")
     
     avertable_burden <- left_join(avertable_burden_con, 
                                   avertable_burden_opt,
-                                  by = c("Counts" = "Counts"))
-    
+                                  by = "Counts") %>%
+                        left_join(., avertable_burden_inc, by= "Counts")
+  
     return(avertable_burden)
     
   }# end of function -- create_avertable_burden_table
   
 # ------------------------------------------------------------------------------
-# create graph for vaccine impact by WHO region (Figure 1)
+# create graph for vaccine impact by WHO region
   
 create_burden_averted_by_region_graph  <- function(Attributable_burden_averted,
                                                    Associated_burden_averted,
@@ -1160,35 +1179,37 @@ ggplot(burden_averted_by_region,
 } # end of function -- create_burden_averted_by_region_graph
 
 # ------------------------------------------------------------------------------
+
+
+
+# -------------------------------------------------------------------------
 # global vaccine avertable deaths and DALYs attributable to and associated with 
 # bacterial antimicrobial resistance by infectious syndrome, 2019
 
-aggregate_impact_by_dp <- function(data_input, 
-                                   input_scenario = "conservative",
-                                   DiseasePresentation){
+aggregate_impact_by_dp <- function(input_data, 
+                                   DiseasePresentation,
+                                   mode){
   
-  # create table for avertable burden to AMR by disease presentation
-  impact_by_dp <- data.table(Disease_presentation = character(),
-                             averted_burden       = numeric(),
-                             run_id               = numeric())
+  if (mode == "incremental") {
+    input_data$va_health_burden <- input_data$va_incre
+    
+  } else if (mode == "high_potential") {
+    input_data$va_health_burden <- input_data$va_high
+    
+  } else {
+    input_data$va_health_burden <- input_data$va_base
+  }
   
-  for(i in 1:run){
-    dt <- estimate_vaccine_impact(i, data = data_input, scenario = input_scenario)
-    dt <- dt %>%
+  impact_by_dp <- input_data %>%
       group_by(Disease_presentation, run_id) %>%
       summarise(averted_burden = sum(va_health_burden), .groups = 'drop')
-    impact_by_dp <- rbindlist (list (impact_by_dp, dt),
-                               use.names = TRUE) 
-  }
   
   # -------------------------------------------------------------------------
   
   burden_averted_dp <- data.table("50%"=numeric(), "2.5%"=numeric(), "97.5%"=numeric())
   
-  impact_by_dp_dt   <- impact_by_dp
-  
   for(i in DiseasePresentation){
-    dt <- impact_by_dp_dt %>% filter(Disease_presentation == i)
+    dt <- impact_by_dp %>% filter(Disease_presentation == i)
     dt <- quantile(x = dt$averted_burden, probs = c (0.5, 0.025, 0.975))
     dt <- data.table(t(dt))
     burden_averted_dp <- rbindlist (list (burden_averted_dp, dt),
@@ -1202,7 +1223,11 @@ aggregate_impact_by_dp <- function(data_input,
   return(burden_averted)} # end of function -- aggregate_impact_by_dp
 
 # -------------------------------------------------------------------------
-# create graph for vaccine impact by infectious syndrome (Figure 2)
+
+
+
+# -------------------------------------------------------------------------
+# create graph for vaccine impact by infectious syndrome
 
 create_burden_averted_by_dp_graph <- function(Attributable_burden_averted,
                                               Associated_burden_averted,
@@ -1262,37 +1287,38 @@ ggplot(burden_averted_by_dp,
     theme_classic() +
     theme(legend.position = c(0.9, 0.9)) +
     ggtitle(title_name) +
-    theme(plot.title = element_text(hjust=-0.05, vjust=3, size = 20))
-    
+    theme(plot.title = element_text(hjust=-0.05, vjust=3, size = 20)) +
+    theme(axis.text.x = element_text(angle = 30, vjust = 1, hjust=1))
+
   } # end of function -- create_burden_averted_by_dp_graph
 
 # ------------------------------------------------------------------------------
 # global vaccine avertable deaths and DALYs attributable to and associated with 
 # bacterial antimicrobial resistance by pathogen, 2019
 
-aggregate_impact_by_pathogen <- function(data_input, 
-                                         input_scenario = "conservative",
-                                         pathogenlist){
+aggregate_impact_by_pathogen <- function(input_data, 
+                                         pathogenlist,
+                                         mode){
   
-  impact_by_pathogen <- data.table(Pathogen             = character(), 
-                                   averted_burden       = numeric(), 
-                                   run_id               = numeric())
+  if (mode == "incremental") {
+    input_data$va_health_burden <- input_data$va_incre
+    
+  } else if (mode == "high_potential") {
+    input_data$va_health_burden <- input_data$va_high
+    
+  } else {
+    input_data$va_health_burden <- input_data$va_base
+  }
   
-  for(i in 1:run){
-    dt <- estimate_vaccine_impact(i, data = data_input, scenario = input_scenario)
-    dt <- dt %>%
+    impact_by_pathogen <- input_data %>%
       group_by(Pathogen, run_id) %>%
       summarise(averted_burden = sum(va_health_burden), .groups = 'drop')
-    impact_by_pathogen <- rbindlist (list (impact_by_pathogen, dt),
-                                     use.names = TRUE)
-  }
+    
   # -------------------------------------------------------------------------
   burden_averted_pathogen <- data.table("50%"=numeric(), "2.5%"=numeric(), "97.5%"=numeric())
   
-  impact_by_pathogen_dt <- impact_by_pathogen
-  
   for(i in pathogenlist){
-    dt <- impact_by_pathogen_dt %>% filter(Pathogen == i)
+    dt <- impact_by_pathogen %>% filter(Pathogen == i)
     dt <- quantile(x = dt$averted_burden, probs = c (0.5, 0.025, 0.975))
     dt <- data.table(t(dt))
     burden_averted_pathogen <- rbindlist (list (burden_averted_pathogen, dt),
@@ -1306,7 +1332,7 @@ aggregate_impact_by_pathogen <- function(data_input,
   return(Burden_Averted)} # end of function -- aggregate_impact_by_pathogen
 
 # -------------------------------------------------------------------------
-# create graph for vaccine impact by pathogen (Figure 3)
+# create graph for vaccine impact by pathogen
 
 create_burden_averted_by_pathogen_graph <- function(Attributable_burden_averted,
                                                     Associated_burden_averted,
@@ -1339,19 +1365,18 @@ create_burden_averted_by_pathogen_graph <- function(Attributable_burden_averted,
     theme(legend.position = c(0.9, 0.9)) +
     ggtitle(title_name) +
     theme(plot.title = element_text(hjust = -0.05, vjust = 3, size = 20)) +
-    theme(axis.text.x = element_text(angle = 30, vjust = 1, hjust = 1))
+    theme(axis.text.x = element_text(angle = 60, vjust = 1, hjust = 1))
   
 } # end of function -- create_burden_averted_by_pathogen_graph
 # ------------------------------------------------------------------------------
-# further analysis -- vaccine avertable burden of corresponding vaccines
+# vaccine avertable burden of corresponding vaccines
 
 estimate_burden_averted_add <- function(pathogen,
                                         vaccine_type,
-                                        input_data,
-                                        name_value,
-                                        scenario_input = "conservative"){
+                                        data_input,
+                                        mode_input){
   
-  burden_add <- input_data %>%
+  burden_add <- data.table(data_input) %>%
     filter(Pathogen == pathogen)
   
   burden_add[, Efficacy:= vaccine_type[,"Efficacy"]]
@@ -1370,74 +1395,179 @@ estimate_burden_averted_add <- function(pathogen,
                Disease_presentation == "LRI and thorax infections",
              Efficacy := 0.5]
   
+  burden_add$va_base <- 
+    estimate_vaccine_impact(data     = burden_add,
+                            scenario = "conservative")[, va_health_burden]
+  
+  burden_add$va_high <- 
+    estimate_vaccine_impact(data     = burden_add,
+                            scenario = "optimistic")[, va_health_burden]
+  
+  burden_add$va_incre <- 
+    burden_add$va_high - burden_add$va_base
+  
   burden_averted_add <- 
-    aggregate_impact_by_pathogen(data_input = burden_add,
-                                 input_scenario = scenario_input,
+    aggregate_impact_by_pathogen(input_data   = burden_add,
+                                 mode         = mode_input,
                                  pathogenlist = pathogen)
   
   return(burden_averted_add)} # end of function -- estimate_burden_averted_add
 
 # -------------------------------------------------------------------------
+# estimate vaccine impact on the corresponding pathogen
 
-create_burden_table_add <- function(pathogen_input,
-                                    vaccine_type_input){
+vaccine_imapct_by_vaccine <- function(data_in,
+                                      mode_in){
+
+  vaccine_impact_by_vaccine <- bind_rows(list(
   
-  deaths_associated <-
-    edit_table(estimate_burden_averted_add(pathogen = pathogen_input,
-                                           vaccine_type = vaccine_type_input,
-                                           input_data = deaths_associated_psa))
+  estimate_burden_averted_add(pathogen       = "Acinetobacter baumannii",
+                              vaccine_type   = vaccine_profile_dt_add[1,],
+                              data_input     = data_in,
+                              mode_input     = mode_in),
   
-  deaths_attributable <- 
-    edit_table(estimate_burden_averted_add(pathogen = pathogen_input,
-                                           vaccine_type = vaccine_type_input,
-                                           input_data = deaths_attributable_psa))
+  estimate_burden_averted_add(pathogen       = "Acinetobacter baumannii",
+                              vaccine_type   = vaccine_profile_dt_add[2,],
+                              data_input     = data_in,
+                              mode_input     = mode_in),
   
-  daly_associated <-
-    edit_table(estimate_burden_averted_add(pathogen = pathogen_input,
-                                           vaccine_type = vaccine_type_input,
-                                           input_data = daly_associated_psa))
+  estimate_burden_averted_add(pathogen       = "Enterococcus faecium",
+                              vaccine_type   = vaccine_profile_dt_add[3,],
+                              data_input     = data_in,
+                              mode_input     = mode_in),
   
-  daly_attributable <-
-    edit_table(estimate_burden_averted_add(pathogen = pathogen_input,
-                                           vaccine_type = vaccine_type_input,
-                                           input_data = daly_attributable_psa))
+  estimate_burden_averted_add(pathogen       = "Escherichia coli",
+                              vaccine_type   = vaccine_profile_dt_add[4,],
+                              data_input     = data_in,
+                              mode_input     = mode_in),
   
-  deaths_associated_opt <-
-    edit_table(estimate_burden_averted_add(pathogen = pathogen_input,
-                                           vaccine_type = vaccine_type_input,
-                                           input_data = deaths_associated_psa,
-                                           scenario_input = "optimistic"))
+  estimate_burden_averted_add(pathogen       = "Escherichia coli",
+                              vaccine_type   = vaccine_profile_dt_add[5,],
+                              data_input     = data_in,
+                              mode_input     = mode_in),
   
-  deaths_attributable_opt <- 
-    edit_table(estimate_burden_averted_add(pathogen = pathogen_input,
-                                           vaccine_type = vaccine_type_input,
-                                           input_data = deaths_attributable_psa,
-                                           scenario_input = "optimistic"))
+  estimate_burden_averted_add(pathogen       = "Escherichia coli",
+                              vaccine_type   = vaccine_profile_dt_add[6,],
+                              data_input     = data_in,
+                              mode_input     = mode_in),
   
-  daly_associated_opt <-
-    edit_table(estimate_burden_averted_add(pathogen = pathogen_input,
-                                           vaccine_type = vaccine_type_input,
-                                           input_data = daly_associated_psa,
-                                           scenario_input = "optimistic"))
+  estimate_burden_averted_add(pathogen       = "Group A Streptococcus",
+                              vaccine_type   = vaccine_profile_dt_add[7,],
+                              data_input     = data_in,
+                              mode_input     = mode_in),
   
-  daly_attributable_opt <-
-    edit_table(estimate_burden_averted_add(pathogen = pathogen_input,
-                                           vaccine_type = vaccine_type_input,
-                                           input_data = daly_attributable_psa,
-                                           scenario_input = "optimistic"))
+  estimate_burden_averted_add(pathogen       = "Haemophilus influenzae",
+                              vaccine_type   = vaccine_profile_dt_add[8,],
+                              data_input     = data_in,
+                              mode_input     = mode_in),
   
-  burden_table_add <- 
-    data.table(pathogen                 = pathogen_input,
-               deaths_associated        = deaths_associated$"burden_averted",
-               deaths_attributable      = deaths_attributable$"burden_averted",
-               daly_associated          = daly_associated$"burden_averted",
-               daly_attributable        = daly_attributable$"burden_averted",
-               deaths_associated_opt    = deaths_associated_opt$"burden_averted",
-               deaths_attributable_opt  = deaths_attributable_opt$"burden_averted",
-               daly_associated_opt      = daly_associated_opt$"burden_averted",
-               daly_attributable_opt    = daly_attributable_opt$"burden_averted")
+  estimate_burden_averted_add(pathogen       = "Klebsiella pneumoniae",
+                              vaccine_type   = vaccine_profile_dt_add[9,],
+                              data_input     = data_in,
+                              mode_input     = mode_in),
   
-  return(burden_table_add)} # end of function -- create_burden_table_add
+  estimate_burden_averted_add(pathogen       = "Klebsiella pneumoniae",
+                              vaccine_type   = vaccine_profile_dt_add[10,],
+                              data_input     = data_in,
+                              mode_input     = mode_in),
+  
+  estimate_burden_averted_add(pathogen       = "Mycobacterium tuberculosis",
+                              vaccine_type   = vaccine_profile_dt_add[11,],
+                              data_input     = data_in,
+                              mode_input     = mode_in),
+  
+  estimate_burden_averted_add(pathogen       = "Mycobacterium tuberculosis",
+                              vaccine_type   = vaccine_profile_dt_add[12,],
+                              data_input     = data_in,
+                              mode_input     = mode_in),
+  
+  estimate_burden_averted_add(pathogen       = "Neisseria gonorrhoeae",
+                              vaccine_type   = vaccine_profile_dt_add[13,],
+                              data_input     = data_in,
+                              mode_input     = mode_in),
+  
+  estimate_burden_averted_add(pathogen       = "Non-typhoidal Salmonella",
+                              vaccine_type   = vaccine_profile_dt_add[14,],
+                              data_input     = data_in,
+                              mode_input     = mode_in),
+  
+  estimate_burden_averted_add(pathogen       = "Pseudomonas aeruginosa",
+                              vaccine_type   = vaccine_profile_dt_add[15,],
+                              data_input     = data_in,
+                              mode_input     = mode_in),
+  
+  estimate_burden_averted_add(pathogen       = "Salmonella Paratyphi",
+                              vaccine_type   = vaccine_profile_dt_add[16,],
+                              data_input     = data_in,
+                              mode_input     = mode_in),
+  
+  estimate_burden_averted_add(pathogen       = "Salmonella Typhi",
+                              vaccine_type   = vaccine_profile_dt_add[17,],
+                              data_input     = data_in,
+                              mode_input     = mode_in),
+  
+  estimate_burden_averted_add(pathogen       = "Shigella spp.",
+                              vaccine_type   = vaccine_profile_dt_add[18,],
+                              data_input     = data_in,
+                              mode_input     = mode_in),
+  
+  estimate_burden_averted_add(pathogen       = "Staphylococcus aureus",
+                              vaccine_type   = vaccine_profile_dt_add[19,],
+                              data_input     = data_in,
+                              mode_input     = mode_in),
+  
+  estimate_burden_averted_add(pathogen       = "Streptococcus pneumoniae",
+                              vaccine_type   = vaccine_profile_dt_add[20,],
+                              data_input     = data_in,
+                              mode_input     = mode_in),
+  
+  estimate_burden_averted_add(pathogen       = "Streptococcus pneumoniae",
+                              vaccine_type   = vaccine_profile_dt_add[21,],
+                              data_input     = data_in,
+                              mode_input     = mode_in)))
+  
+  vaccine_impact_by_vaccine$Counts <- vaccine_profile_dt_add$Vaccine_pathogen
+
+  return(vaccine_impact_by_vaccine)} # end of function -- vaccine_imapct_by_vaccine
+
+# -------------------------------------------------------------------------
+create_burden_averted_by_vp_graph <- function(Attributable_burden_averted,
+                                              Associated_burden_averted,
+                                              ylim_max,
+                                              ylabel,
+                                              title_name){
+  
+  Associated_burden_averted$Resistance    <- "Associated with resistance" 
+  
+  Attributable_burden_averted$Resistance  <- "Attributable to resistance" 
+  
+  burden_averted_by_pathogen <- rbind(Associated_burden_averted, Attributable_burden_averted)
+  
+  burden_averted_by_pathogen <-  burden_averted_by_pathogen %>% rename("lower_value"  = "2.5%",
+                                                                       "median_value" = "50%",
+                                                                       "upper_value"  = "97.5%")
+  
+  ggplot(burden_averted_by_pathogen, 
+         aes(x = reorder(Counts, -median_value), 
+             y = median_value, fill = Resistance,
+             width = ifelse(Resistance == "Associated with resistance", 0.8, 0.6))) +
+    geom_bar(stat = "identity", position = "identity") +
+    scale_fill_manual(values = c("lightsteelblue3","lightsteelblue4")) +
+    labs(x = "Vaccine", y = paste(ylabel)) + 
+    ylim(0,ylim_max) +
+    geom_errorbar(aes(ymin = lower_value, ymax = upper_value), width = 0.15,
+                  size = 0.5, position = position_dodge(0)) +
+    theme_classic() +
+    theme(legend.position = c(0.9, 0.9)) +
+    ggtitle(title_name) +
+    theme(plot.title = element_text(hjust = -0.05, vjust = 3, size = 20)) +
+    theme(axis.text.x = element_text(angle = 60, vjust = 1, hjust = 1))
+  
+} # end of function -- create_burden_averted_by_vaccine_profile_graph
+# ------------------------------------------------------------------------------
+
+
+
 # ------------------------------------------------------------------------------
 # further analysis -- vaccine avertable burden of existing vaccines
 
@@ -1526,42 +1656,32 @@ estimate_existing_vaccine_impact <- function(input_data){
 # ------------------------------------------------------------------------------
 # Appendix -- vaccine avertable burdens by infectious syndrome and pathogen
 
-aggregate_impact_by_dp_pathogen <- function(data_input, 
-                                            input_scenario = "conservative",
-                                            input_rep){
+aggregate_impact_by_dp_pathogen <- function(input_data, 
+                                            input_rep,
+                                            mode){
   
-  # create table for avertable burden to AMR by disease presentation
-  impact_by_dp <- data.table(Disease_presentation = character(),
-                             Pathogen             = character(),
-                             averted_burden       = numeric(),
-                             run_id               = numeric())
-  
-  for(i in 1:run){
-    dt <- estimate_vaccine_impact(i, data = data_input, scenario = "conservative")
-    dt <- dt %>%
+  input_data$va_health_burden <- input_data$va_base
+
+  impact_by_dp_p <- input_data %>%
       group_by(Disease_presentation, Pathogen, run_id) %>%
       summarise(averted_burden = sum(va_health_burden), .groups = 'drop')
-    impact_by_dp <- rbindlist (list (impact_by_dp, dt),
-                               use.names = TRUE)
-  }
-  
-  impact_by_dp[, number := rep(input_rep, run)]
+
+  impact_by_dp_p$number <- rep(input_rep, each=run)
   
   # -------------------------------------------------------------------------
   
   burden_averted_dp    <- data.table("50%"=numeric(), "2.5%"=numeric(), "97.5%"=numeric())
   
-  impact_by_dp_dt      <- impact_by_dp
-  
   for(i in input_rep){
-    dt <- impact_by_dp_dt %>% filter(number == i)
+    dt <- impact_by_dp_p %>% filter(number == i)
     dt <- quantile(x = dt$averted_burden, probs = c (0.5, 0.025, 0.975))
     dt <- data.table(t(dt))
     burden_averted_dp <- rbindlist (list (burden_averted_dp, dt),
                                     use.names = FALSE)
   }
   
-  burden_averted <- cbind(data.table(impact_by_dp[input_rep,1:2], burden_averted_dp))
+  burden_averted <- cbind(data.table(impact_by_dp_p[impact_by_dp_p$run_id == "1",1:2], 
+                                     burden_averted_dp))
   
   return(burden_averted)} # end of function -- aggregate_impact_by_dp_pathogen
 
