@@ -102,7 +102,30 @@ daly_combined_dt <-
                         attributable_burden_file = file.path("tables", "daly_attributable_burden.csv"),
                         associated_burden_file   = file.path("tables", "daly_associated_burden.csv"))
 # ------------------------------------------------------------------------------
+# estimate pre-vaccine burden for existing vaccines -- HIB vaccine & PCV
+estimate_prevaccination_burden(
+  burden_input = read_csv(file.path("tables", "susceptible_burden.csv")),
+  burden_file  = file.path("tables", "susceptible_burden.csv"))
 
+estimate_prevaccination_burden(
+  burden_input = read_csv(file.path("tables", "associated_burden.csv")),
+  burden_file  = file.path("tables", "associated_burden.csv"))
+
+estimate_prevaccination_burden(
+  burden_input = read_csv(file.path("tables", "attributable_burden.csv")),
+  burden_file  = file.path("tables", "attributable_burden.csv"))
+
+estimate_prevaccination_burden(
+  burden_input = read_csv(file.path("tables", "daly_susceptible_burden.csv")),
+  burden_file  = file.path("tables", "daly_susceptible_burden.csv"))
+
+estimate_prevaccination_burden(
+  burden_input = read_csv(file.path("tables", "daly_associated_burden.csv")),
+  burden_file  = file.path("tables", "daly_associated_burden.csv"))
+
+estimate_prevaccination_burden(
+  burden_input = read_csv(file.path("tables", "daly_attributable_burden.csv")),
+  burden_file  = file.path("tables", "daly_attributable_burden.csv"))
 # ------------------------------------------------------------------------------
 
 

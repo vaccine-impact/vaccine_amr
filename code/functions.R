@@ -131,7 +131,7 @@ existing_vaccine_coverage <- function(year,
 
 create_burden_table <- function(AMR_burden,
                                 burden_file){
-
+  
   AMR_burden <- AMR_burden[-c(1:2),]
   
   names(AMR_burden) <- c("WHO_region", "Disease_presentation","Age_group","Pathogen",
@@ -157,164 +157,14 @@ create_burden_table <- function(AMR_burden,
   AMR_burden <- AMR_burden %>%
     filter(AMR_burden$WHO_region != "unclassified")
   
-# ------------------------------------------------------------------------------  
-  # estimate pre-vaccine burden for existing vaccines -- HIB vaccine & PCV
-  
-  # import current vaccine coverage estimates by region  
-  hib_coverage_2019 <- read_csv("tables/hib coverage 2019.csv")
-  hib_coverage_2018 <- read_csv("tables/hib coverage 2018.csv")
-  
-  pcv_coverage_2019 <- read_csv("tables/pcv coverage 2019.csv")
-  pcv_coverage_2018 <- read_csv("tables/pcv coverage 2018.csv")
-  
-  hib_coverage <- data.table (WHO_region = c("Africa", "Americas", "Eastern Mediterranean", 
-                                             "Europe", "South-East Asia", "Western Pacific"), 
-                              hib_vaccine_coverage_2019 = hib_coverage_2019$vaccine_coverage,
-                              hib_vaccine_coverage_2018 = hib_coverage_2018$vaccine_coverage)
-  
-  pcv_coverage <- data.table (WHO_region = c("Africa", "Americas", "Eastern Mediterranean", 
-                                             "Europe", "South-East Asia", "Western Pacific"), 
-                              pcv_vaccine_coverage_2019 = pcv_coverage_2019$vaccine_coverage,
-                              pcv_vaccine_coverage_2018 = pcv_coverage_2018$vaccine_coverage)
-  
-  # substitute the current burden estimates to pre-vaccine burden estimates for existing vaccines
-  AMR_burden <- left_join(AMR_burden, hib_coverage, by=c("WHO_region" = "WHO_region"))
-  
-  AMR_burden <- left_join(AMR_burden, pcv_coverage, by=c("WHO_region" = "WHO_region"))
-  
-  AMR_burden <- data.table(AMR_burden)
-  
-  # estimate HIB pre-vaccination burden
-  AMR_burden[Pathogen  == "Haemophilus influenzae" & Age_group == "PN",
-             Associated_resistant_mean := Associated_resistant_mean /
-               (3/48 + 4/48 * (1 - hib_vaccine_coverage_2019 * 0.59 * 0.95) +
-                       4/48 * (1 - hib_vaccine_coverage_2019 * 0.92 * 0.95) + 
-                      37/48 * (1 - hib_vaccine_coverage_2019 * 0.93 * 0.95))]
-  
-  AMR_burden[Pathogen  == "Haemophilus influenzae" & Age_group == "PN",
-             Associated_resistant_lower := Associated_resistant_lower /
-               (3/48 + 4/48 * (1 - hib_vaccine_coverage_2019 * 0.59 * 0.95) +
-                       4/48 * (1 - hib_vaccine_coverage_2019 * 0.92 * 0.95) + 
-                      37/48 * (1 - hib_vaccine_coverage_2019 * 0.93 * 0.95))]
-  
-  AMR_burden[Pathogen  == "Haemophilus influenzae" & Age_group == "PN",
-             Associated_resistant_upper := Associated_resistant_upper /
-               (3/48 + 4/48 * (1 - hib_vaccine_coverage_2019 * 0.59 * 0.95) + 
-                       4/48 * (1 - hib_vaccine_coverage_2019 * 0.92 * 0.95) + 
-                      37/48 * (1 - hib_vaccine_coverage_2019 * 0.93 * 0.95))]
-  
-  AMR_burden[Pathogen  == "Haemophilus influenzae" & Age_group == "PN",
-             Attributable_resistance_mean := Attributable_resistance_mean /
-               (3/48 + 4/48 * (1 - hib_vaccine_coverage_2019 * 0.59 * 0.95) + 
-                       4/48 * (1 - hib_vaccine_coverage_2019 * 0.92 * 0.95) + 
-                      37/48 * (1 - hib_vaccine_coverage_2019 * 0.93 * 0.95))]
-  
-  AMR_burden[Pathogen  == "Haemophilus influenzae" & Age_group == "PN",
-             Attributable_resistance_lower := Attributable_resistance_lower /
-               (3/48 + 4/48 * (1 - hib_vaccine_coverage_2019 * 0.59 * 0.95) + 
-                       4/48 * (1 - hib_vaccine_coverage_2019 * 0.92 * 0.95) + 
-                      37/48 * (1 - hib_vaccine_coverage_2019 * 0.93 * 0.95))]
-  
-  AMR_burden[Pathogen  == "Haemophilus influenzae" & Age_group == "PN",
-             Attributable_resistance_upper := Attributable_resistance_upper /
-               (3/48 + 4/48 * (1 - hib_vaccine_coverage_2019 * 0.59 * 0.95) + 
-                       4/48 * (1 - hib_vaccine_coverage_2019 * 0.92 * 0.95) + 
-                      37/48 * (1 - hib_vaccine_coverage_2019 * 0.93 * 0.95))]
-  
-  AMR_burden[Pathogen  == "Haemophilus influenzae" & Age_group == "1 to 4",
-             Associated_resistant_mean := Associated_resistant_mean /
-               (1 - hib_vaccine_coverage_2018 * 0.93 * 0.95)]
-  
-  AMR_burden[Pathogen  == "Haemophilus influenzae" & Age_group == "1 to 4",
-             Associated_resistant_lower := Associated_resistant_lower /
-               (1 - hib_vaccine_coverage_2018 * 0.93 * 0.95)]
-  
-  AMR_burden[Pathogen  == "Haemophilus influenzae" & Age_group == "1 to 4",
-             Associated_resistant_upper := Associated_resistant_upper /
-               (1 - hib_vaccine_coverage_2018 * 0.93 * 0.95)]
-  
-  AMR_burden[Pathogen  == "Haemophilus influenzae" & Age_group == "1 to 4",
-             Attributable_resistance_mean := Attributable_resistance_mean /
-               (1 - hib_vaccine_coverage_2018 * 0.93 * 0.95)]
-  
-  AMR_burden[Pathogen  == "Haemophilus influenzae" & Age_group == "1 to 4",
-             Attributable_resistance_lower := Attributable_resistance_lower /
-               (1 - hib_vaccine_coverage_2018 * 0.93 * 0.95)]
-  
-  AMR_burden[Pathogen  == "Haemophilus influenzae" & Age_group == "1 to 4",
-             Attributable_resistance_upper := Attributable_resistance_upper /
-               (1 - hib_vaccine_coverage_2018 * 0.93 * 0.95)]
-  
-  
-  # estimate streptococcus pneumoniae pre-vaccination burden
-  AMR_burden[Pathogen  == "Streptococcus pneumoniae" & Age_group == "PN",
-             Associated_resistant_mean := Associated_resistant_mean /
-               (3/48 + 4/48 * (1 - hib_vaccine_coverage_2019 * 0.29) + 
-                       4/48 * (1 - pcv_vaccine_coverage_2019 * 0.58) + 
-                      37/48 * (1 - pcv_vaccine_coverage_2019 * 0.58))]
-  
-  AMR_burden[Pathogen  == "Streptococcus pneumoniae" & Age_group == "PN",
-             Associated_resistant_lower := Associated_resistant_lower /
-               (3/48 + 4/48 * (1 - hib_vaccine_coverage_2019 * 0.29) + 
-                       4/48 * (1 - pcv_vaccine_coverage_2019 * 0.58) + 
-                      37/48 * (1 - pcv_vaccine_coverage_2019 * 0.58))]
-  
-  AMR_burden[Pathogen  == "Streptococcus pneumoniae" & Age_group == "PN",
-             Associated_resistant_upper := Associated_resistant_upper /
-               (3/48 + 4/48 * (1 - hib_vaccine_coverage_2019 * 0.29) + 
-                       4/48 * (1 - pcv_vaccine_coverage_2019 * 0.58) + 
-                      37/48 * (1 - pcv_vaccine_coverage_2019 * 0.58))]
-  
-  AMR_burden[Pathogen  == "Streptococcus pneumoniae" & Age_group == "PN",
-             Attributable_resistance_mean := Attributable_resistance_mean /
-               (3/48 + 4/48 * (1 - hib_vaccine_coverage_2019 * 0.29) + 
-                       4/48 * (1 - pcv_vaccine_coverage_2019 * 0.58) + 
-                      37/48 * (1 - pcv_vaccine_coverage_2019 * 0.58))]
-  
-  AMR_burden[Pathogen  == "Streptococcus pneumoniae" & Age_group == "PN",
-             Attributable_resistance_lower := Attributable_resistance_lower /
-               (3/48 + 4/48 * (1 - hib_vaccine_coverage_2019 * 0.29) + 
-                       4/48 * (1 - pcv_vaccine_coverage_2019 * 0.58) + 
-                      37/48 * (1 - pcv_vaccine_coverage_2019 * 0.58))]
-  
-  AMR_burden[Pathogen  == "Streptococcus pneumoniae" & Age_group == "PN",
-             Attributable_resistance_upper := Attributable_resistance_upper /
-               (3/48 + 4/48 * (1 - hib_vaccine_coverage_2019 * 0.29) + 
-                       4/48 * (1 - pcv_vaccine_coverage_2019 * 0.58) + 
-                      37/48 * (1 - pcv_vaccine_coverage_2019 * 0.58))]
-  
-  AMR_burden[Pathogen  == "Streptococcus pneumoniae" & Age_group == "1 to 4",
-             Associated_resistant_mean := Associated_resistant_mean /
-               (1 - pcv_vaccine_coverage_2018 * 0.58)]
-  
-  AMR_burden[Pathogen  == "Streptococcus pneumoniae" & Age_group == "1 to 4",
-             Associated_resistant_lower := Associated_resistant_lower /
-               (1 - pcv_vaccine_coverage_2018 * 0.58)]
-  
-  AMR_burden[Pathogen  == "Streptococcus pneumoniae" & Age_group == "1 to 4",
-             Associated_resistant_upper := Associated_resistant_upper /
-               (1 - pcv_vaccine_coverage_2018 * 0.58)]
-  
-  AMR_burden[Pathogen  == "Streptococcus pneumoniae" & Age_group == "1 to 4",
-             Attributable_resistance_mean := Attributable_resistance_mean /
-               (1 - pcv_vaccine_coverage_2018 * 0.58)]
-  
-  AMR_burden[Pathogen  == "Streptococcus pneumoniae" & Age_group == "1 to 4",
-             Attributable_resistance_lower := Attributable_resistance_lower /
-               (1 - pcv_vaccine_coverage_2018 * 0.58)]
-  
-  AMR_burden[Pathogen  == "Streptococcus pneumoniae" & Age_group == "1 to 4",
-             Attributable_resistance_upper := Attributable_resistance_upper /
-               (1 - pcv_vaccine_coverage_2018 * 0.58)]
-  
   # save the file
   fwrite (x    = AMR_burden,
           file = burden_file)
   
   return(AMR_burden)
 } # end of function -- create_burden_table
+# ------------------------------------------------------------------------------  
 
-# ------------------------------------------------------------------------------
 
 
 # ------------------------------------------------------------------------------
@@ -372,8 +222,8 @@ create_combined_table <- function(death_burden_dt,
   vaccine_profile[Pathogen == "Escherichia coli", DP := "BSI, Diarrhoea, UTI"]
 
   # create combined table
-  combined_table <- left_join(death_burden_dt, vaccine_profile,
-                              by=c("Pathogen" = "Pathogen"))
+  combined_table <- data.table(left_join(death_burden_dt, vaccine_profile,
+                                         by=c("Pathogen" = "Pathogen")))
 
   # Streptococcus pneumoniae vaccine specification
   combined_table[Pathogen             == "Streptococcus pneumoniae" &
@@ -448,6 +298,108 @@ create_combined_table <- function(death_burden_dt,
   return(combined_table)
   
 } # end of function -- create_combined_table
+# ------------------------------------------------------------------------------
+# estimate pre-vaccine burden for existing vaccines -- HIB vaccine & PCV
+
+estimate_prevaccination_burden <- function(burden_input,
+                                           burden_file){
+  
+  # import current vaccine coverage estimates by region  
+  hib_coverage_2019 <- read_csv("tables/hib coverage 2019.csv")
+  hib_coverage_2018 <- read_csv("tables/hib coverage 2018.csv")
+  
+  pcv_coverage_2019 <- read_csv("tables/pcv coverage 2019.csv")
+  pcv_coverage_2018 <- read_csv("tables/pcv coverage 2018.csv")
+  
+  hib_coverage <- data.table (WHO_region = c("Africa", "Americas", "Eastern Mediterranean", 
+                                             "Europe", "South-East Asia", "Western Pacific"), 
+                              hib_vaccine_coverage_2019 = hib_coverage_2019$vaccine_coverage,
+                              hib_vaccine_coverage_2018 = hib_coverage_2018$vaccine_coverage)
+  
+  pcv_coverage <- data.table (WHO_region = c("Africa", "Americas", "Eastern Mediterranean", 
+                                             "Europe", "South-East Asia", "Western Pacific"), 
+                              pcv_vaccine_coverage_2019 = pcv_coverage_2019$vaccine_coverage,
+                              pcv_vaccine_coverage_2018 = pcv_coverage_2018$vaccine_coverage)
+  
+  # substitute the current burden estimates to pre-vaccine burden estimates for existing vaccines
+  AMR_burden <- burden_input
+  
+  AMR_burden <- left_join(AMR_burden, hib_coverage, by=c("WHO_region" = "WHO_region"))
+  
+  AMR_burden <- left_join(AMR_burden, pcv_coverage, by=c("WHO_region" = "WHO_region"))
+  
+  AMR_burden <- data.table(AMR_burden)
+  
+  # estimate HIB pre-vaccination burden
+  AMR_burden[Pathogen  == "Haemophilus influenzae" & Age_group == "PN",
+             burden_mean_value := burden_mean_value /
+               (3/48 + 4/48 * (1 - hib_vaccine_coverage_2019 * 0.59 * 0.95) +
+                  4/48 * (1 - hib_vaccine_coverage_2019 * 0.92 * 0.95) + 
+                  37/48 * (1 - hib_vaccine_coverage_2019 * 0.93 * 0.95))]
+  
+  AMR_burden[Pathogen  == "Haemophilus influenzae" & Age_group == "PN",
+             burden_lower_value := burden_lower_value /
+               (3/48 + 4/48 * (1 - hib_vaccine_coverage_2019 * 0.59 * 0.95) +
+                  4/48 * (1 - hib_vaccine_coverage_2019 * 0.92 * 0.95) + 
+                  37/48 * (1 - hib_vaccine_coverage_2019 * 0.93 * 0.95))]
+  
+  AMR_burden[Pathogen  == "Haemophilus influenzae" & Age_group == "PN",
+             burden_upper_value := burden_upper_value /
+               (3/48 + 4/48 * (1 - hib_vaccine_coverage_2019 * 0.59 * 0.95) + 
+                  4/48 * (1 - hib_vaccine_coverage_2019 * 0.92 * 0.95) + 
+                  37/48 * (1 - hib_vaccine_coverage_2019 * 0.93 * 0.95))]
+  
+  AMR_burden[Pathogen  == "Haemophilus influenzae" & Age_group == "1 to 4",
+             burden_mean_value := burden_mean_value /
+               (1 - hib_vaccine_coverage_2018 * 0.93 * 0.95)]
+  
+  AMR_burden[Pathogen  == "Haemophilus influenzae" & Age_group == "1 to 4",
+             burden_lower_value := burden_lower_value /
+               (1 - hib_vaccine_coverage_2018 * 0.93 * 0.95)]
+  
+  AMR_burden[Pathogen  == "Haemophilus influenzae" & Age_group == "1 to 4",
+             burden_upper_value := burden_upper_value /
+               (1 - hib_vaccine_coverage_2018 * 0.93 * 0.95)]
+  
+  # estimate streptococcus pneumoniae pre-vaccination burden
+  AMR_burden[Pathogen  == "Streptococcus pneumoniae" & Age_group == "PN",
+             burden_mean_value := burden_mean_value /
+               (3/48 + 4/48 * (1 - hib_vaccine_coverage_2019 * 0.29) + 
+                  4/48 * (1 - pcv_vaccine_coverage_2019 * 0.58) + 
+                  37/48 * (1 - pcv_vaccine_coverage_2019 * 0.58))]
+  
+  AMR_burden[Pathogen  == "Streptococcus pneumoniae" & Age_group == "PN",
+             burden_lower_value := burden_lower_value /
+               (3/48 + 4/48 * (1 - hib_vaccine_coverage_2019 * 0.29) + 
+                  4/48 * (1 - pcv_vaccine_coverage_2019 * 0.58) + 
+                  37/48 * (1 - pcv_vaccine_coverage_2019 * 0.58))]
+  
+  AMR_burden[Pathogen  == "Streptococcus pneumoniae" & Age_group == "PN",
+             burden_upper_value := burden_upper_value /
+               (3/48 + 4/48 * (1 - hib_vaccine_coverage_2019 * 0.29) + 
+                  4/48 * (1 - pcv_vaccine_coverage_2019 * 0.58) + 
+                  37/48 * (1 - pcv_vaccine_coverage_2019 * 0.58))]
+  
+  AMR_burden[Pathogen  == "Streptococcus pneumoniae" & Age_group == "1 to 4",
+             burden_mean_value := burden_mean_value /
+               (1 - pcv_vaccine_coverage_2018 * 0.58)]
+  
+  AMR_burden[Pathogen  == "Streptococcus pneumoniae" & Age_group == "1 to 4",
+             burden_lower_value := burden_lower_value /
+               (1 - pcv_vaccine_coverage_2018 * 0.58)]
+  
+  AMR_burden[Pathogen  == "Streptococcus pneumoniae" & Age_group == "1 to 4",
+             burden_upper_value := burden_upper_value /
+               (1 - pcv_vaccine_coverage_2018 * 0.58)]
+  
+  # save the file
+  fwrite (x    = AMR_burden,
+          file = burden_file)
+  
+} # end of function -- estimate_prevaccination_burden
+# ------------------------------------------------------------------------------
+
+
 
 # ------------------------------------------------------------------------------
 # create burden trend graph by pathogen across all age groups
@@ -938,7 +890,7 @@ create_burden_by_pathogen_graph <- function(pathogen,
                                   burden_dt,
                                   AMR_burden_data_updated_file,
                                   input_scenario){
-        
+    
   associated_mean <- data.table(input_associated)
   associated_mean[, burden_psa := burden_mean_value]
   associated_mean <- 
@@ -992,11 +944,6 @@ create_burden_by_pathogen_graph <- function(pathogen,
            "attributable to resistance (lower)"  =  "Attributable_resistance_lower",
            "attributable to resistance (upper)"  =  "Attributable_resistance_upper")
   
-  AMR_burden_data_updated <- AMR_burden_data_updated[,-c("hib_vaccine_coverage_2019",
-                                                        "hib_vaccine_coverage_2018",
-                                                        "pcv_vaccine_coverage_2019",
-                                                        "pcv_vaccine_coverage_2018")]
-
     AMR_burden_data_updated <- AMR_burden_data_updated %>% 
     arrange(Pathogen, WHO_region, Disease_presentation, Age_group)
     
