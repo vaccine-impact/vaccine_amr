@@ -537,7 +537,13 @@ create_burden_by_pathogen_graph <- function(pathogen,
                     Pathogen == "Haemophilus influenzae"),
                
                burden_mean_value:= burden_mean_value * 0.94]
-    }  
+    
+    burden_dt[WHO_region == "Africa" &
+                Disease_presentation == "Cardiac infections" & 
+                Age_group == "PN" & 
+                Pathogen == "Streptococcus pneumoniae",
+              burden_mean_value := burden_mean_value + 0.05]
+  }
   # ----------------------------------------------------------------------------
   # log-normal distribution
   burden_dt [, burden_sd_log := suppressMessages (suppressWarnings (get.lnorm.par (
@@ -1052,25 +1058,35 @@ create_burden_by_pathogen_graph <- function(pathogen,
   # create vaccine avertable burden table
   
   create_avertable_burden_table <- function(Associated_death_averted,
-                                            Attributable_death_averted,
-                                            Associated_daly_averted,
-                                            Attributable_daly_averted,
                                             Associated_death_averted_opt,
-                                            Attributable_death_averted_opt,
-                                            Associated_daly_averted_opt,
-                                            Attributable_daly_averted_opt,
                                             Associated_death_averted_inc,
-                                            Attributable_death_averted_inc, 
+                                            Associated_daly_averted,
+                                            Associated_daly_averted_opt,
                                             Associated_daly_averted_inc,
-                                            Attributable_daly_averted_inc){
+                                            
+                                            Attributable_death_averted,
+                                            Attributable_death_averted_opt,
+                                            Attributable_death_averted_inc, 
+                                            Attributable_daly_averted,
+                                            Attributable_daly_averted_opt,
+                                            Attributable_daly_averted_inc,
+                                            
+                                            Susceptible_death_averted,
+                                            Susceptible_death_averted_opt,
+                                            Susceptible_death_averted_inc, 
+                                            Susceptible_daly_averted,
+                                            Susceptible_daly_averted_opt,
+                                            Susceptible_daly_averted_inc){
     
     avertable_death <-
       data.table(Associated_death_averted   = edit_table(Associated_death_averted)[,1:2],
-                 Attributable_death_averted = edit_table(Attributable_death_averted)[,2])
+                 Attributable_death_averted = edit_table(Attributable_death_averted)[,2],
+                 Susceptible_death_averted  = edit_table(Susceptible_death_averted)[,2])
     
     avertable_daly <-
       data.table(Associated_daly_averted    = edit_table(Associated_daly_averted)[,1:2],
-                 Attributable_daly_averted  = edit_table(Attributable_daly_averted)[,2])
+                 Attributable_daly_averted  = edit_table(Attributable_daly_averted)[,2],
+                 Susceptible_daly_averted   = edit_table(Susceptible_daly_averted)[,2])
     
     avertable_burden_con <- right_join(avertable_death, avertable_daly, 
                                        by = c("Associated_death_averted.Counts"
@@ -1081,17 +1097,21 @@ create_burden_by_pathogen_graph <- function(pathogen,
       rename("Counts"                      = "Associated_death_averted.Counts",
              "Associated_death_baseline"   = "Associated_death_averted.burden_averted",
              "Attributable_death_baseline" = "Attributable_death_averted.burden_averted",
+             "Susceptible_death_baseline"  = "Susceptible_death_averted.burden_averted",
              "Associated_daly_baseline"    = "Associated_daly_averted.burden_averted",
-             "Attributable_daly_baseline"  = "Attributable_daly_averted.burden_averted")
+             "Attributable_daly_baseline"  = "Attributable_daly_averted.burden_averted",
+             "Susceptible_daly_baseline"   = "Susceptible_daly_averted.burden_averted")
     
   # -------------------------------------------------------------------------
     avertable_death_opt <-
       data.table(Associated_death_averted_opt   = edit_table(Associated_death_averted_opt)[,1:2],
-                 Attributable_death_averted_opt = edit_table(Attributable_death_averted_opt)[,2])
+                 Attributable_death_averted_opt = edit_table(Attributable_death_averted_opt)[,2],
+                 Susceptible_death_averted_opt  = edit_table(Susceptible_death_averted_opt)[,2])
     
     avertable_daly_opt <-
       data.table(Associated_daly_averted_opt    = edit_table(Associated_daly_averted_opt)[,1:2],
-                 Attributable_daly_averted_opt  = edit_table(Attributable_daly_averted_opt)[,2])
+                 Attributable_daly_averted_opt  = edit_table(Attributable_daly_averted_opt)[,2],
+                 Susceptible_daly_averted_opt   = edit_table(Susceptible_daly_averted_opt)[,2])
     
     avertable_burden_opt <- right_join(avertable_death_opt, avertable_daly_opt, 
                                        by=c("Associated_death_averted_opt.Counts"
@@ -1101,16 +1121,20 @@ create_burden_by_pathogen_graph <- function(pathogen,
       rename("Counts"                            = "Associated_death_averted_opt.Counts",
              "Associated_death_high-potential"   = "Associated_death_averted_opt.burden_averted",
              "Attributable_death_high-potential" = "Attributable_death_averted_opt.burden_averted",
+             "Susceptible_death_high-potential"  = "Susceptible_death_averted_opt.burden_averted",
              "Associated_daly_high-potential"    = "Associated_daly_averted_opt.burden_averted",
-             "Attributable_daly_high-potential"  = "Attributable_daly_averted_opt.burden_averted")
+             "Attributable_daly_high-potential"  = "Attributable_daly_averted_opt.burden_averted",
+             "Susceptible_daly_high-potential"   = "Susceptible_daly_averted_opt.burden_averted")
     # -------------------------------------------------------------------------
     avertable_death_inc <-
       data.table(Associated_death_averted_inc   = edit_table(Associated_death_averted_inc)[,1:2],
-                 Attributable_death_averted_inc = edit_table(Attributable_death_averted_inc)[,2])
+                 Attributable_death_averted_inc = edit_table(Attributable_death_averted_inc)[,2],
+                 Susceptible_death_averted_inc  = edit_table(Susceptible_death_averted_inc)[,2])
     
     avertable_daly_inc <-
       data.table(Associated_daly_averted_inc    = edit_table(Associated_daly_averted_inc)[,1:2],
-                 Attributable_daly_averted_inc  = edit_table(Attributable_daly_averted_inc)[,2])
+                 Attributable_daly_averted_inc  = edit_table(Attributable_daly_averted_inc)[,2],
+                 Susceptible_daly_averted_inc   = edit_table(Susceptible_daly_averted_inc)[,2])
     
     avertable_burden_inc <- right_join(avertable_death_inc, avertable_daly_inc, 
                                        by=c("Associated_death_averted_inc.Counts"
@@ -1120,8 +1144,10 @@ create_burden_by_pathogen_graph <- function(pathogen,
       rename("Counts"                         = "Associated_death_averted_inc.Counts",
              "Associated_death_incremental"   = "Associated_death_averted_inc.burden_averted",
              "Attributable_death_incremental" = "Attributable_death_averted_inc.burden_averted",
+             "Susceptible_death_incremental"  = "Susceptible_death_averted_inc.burden_averted",
              "Associated_daly_incremental"    = "Associated_daly_averted_inc.burden_averted",
-             "Attributable_daly_incremental"  = "Attributable_daly_averted_inc.burden_averted")
+             "Attributable_daly_incremental"  = "Attributable_daly_averted_inc.burden_averted",
+             "Susceptible_daly_incremental"   = "Susceptible_daly_averted_inc.burden_averted")
     
     avertable_burden <- left_join(avertable_burden_con, 
                                   avertable_burden_opt,
