@@ -534,9 +534,9 @@ create_burden_by_pathogen_graph <- function(pathogen,
                  (WHO_region == "Africa" &
                     Disease_presentation == "LRI and thorax infections" & 
                     Age_group == "1 to 4" & 
-                    Pathogen == "Haemophilus influenzae")
+                    Pathogen == "Haemophilus influenzae"),
                
-               , burden_mean_value:= burden_mean_value * 0.94]
+               burden_mean_value:= burden_mean_value * 0.94]
     }  
   # ----------------------------------------------------------------------------
   # log-normal distribution
@@ -885,73 +885,98 @@ create_burden_by_pathogen_graph <- function(pathogen,
 # [table in appendix] vaccine avertable health burdens associated with and 
 # attributable to AMR by WHO region, pathogen, disease presentation, and age group
   
-  update_death_burden <- function(input_associated,
+  update_death_burden <- function(input_susceptible,
+                                  input_associated,
                                   input_attributable,
                                   burden_dt,
                                   AMR_burden_data_updated_file,
                                   input_scenario){
     
-  associated_mean <- data.table(input_associated)
-  associated_mean[, burden_psa := burden_mean_value]
-  associated_mean <- 
-    estimate_vaccine_impact(data = associated_mean,
-                            scenario = input_scenario)[,va_health_burden]    
+    susceptible_mean <- data.table(input_susceptible)
+    susceptible_mean[, burden_psa := burden_mean_value]
+    susceptible_mean <- 
+      estimate_vaccine_impact(data = susceptible_mean,
+                              scenario = input_scenario)[,va_health_burden]    
     
-  associated_lower <- data.table(input_associated)
-  associated_lower[, burden_psa := burden_lower_value]
-  associated_lower <-
-    estimate_vaccine_impact(data = associated_lower,
-                            scenario = input_scenario)[,va_health_burden]    
-  
-  associated_upper <- data.table(input_associated)
-  associated_upper[, burden_psa := burden_upper_value]
-  associated_upper <-
-    estimate_vaccine_impact(data = associated_upper,
-                            scenario = input_scenario)[,va_health_burden]    
-  
-  attributable_mean <- data.table(input_attributable)
-  attributable_mean[, burden_psa := burden_mean_value]
-  attributable_mean <-
-    estimate_vaccine_impact(data = attributable_mean,
-                            scenario = input_scenario)[,va_health_burden]    
-  
-  attributable_lower <- data.table(input_attributable)
-  attributable_lower[, burden_psa := burden_lower_value]
-  attributable_lower <-
-    estimate_vaccine_impact(data = attributable_lower,
-                            scenario = input_scenario)[,va_health_burden]    
-  
-  attributable_upper <- data.table(input_attributable)
-  attributable_upper[, burden_psa := burden_upper_value]
-  attributable_upper <-
-    estimate_vaccine_impact(data = attributable_upper,
-                            scenario = input_scenario)[,va_health_burden]    
-  
-  dt <- data.table("vaccine avertable-associated with resistance (mean)"   =  associated_mean,
-                   "vaccine avertable-associated with resistance (lower)"  =  associated_lower,
-                   "vaccine avertable-associated with resistance (upper)"  =  associated_upper,
-                   "vaccine avertable-attributable to resistance (mean)"   =  attributable_mean,
-                   "vaccine avertable-attributable to resistance (lower)"  =  attributable_lower,
-                   "vaccine avertable-attributable to resistance (upper)"  =  attributable_upper)
+    susceptible_lower <- data.table(input_susceptible)
+    susceptible_lower[, burden_psa := burden_lower_value]
+    susceptible_lower <-
+      estimate_vaccine_impact(data = susceptible_lower,
+                              scenario = input_scenario)[,va_health_burden]    
     
-  AMR_burden_data_updated <- cbind(burden_dt, dt)
+    susceptible_upper <- data.table(input_susceptible)
+    susceptible_upper[, burden_psa := burden_upper_value]
+    susceptible_upper <-
+      estimate_vaccine_impact(data = susceptible_upper,
+                              scenario = input_scenario)[,va_health_burden]
     
-  AMR_burden_data_updated <- AMR_burden_data_updated %>%
-    rename("associated with resistance (mean)"   =  "Associated_resistant_mean",
-           "associated with resistance (lower)"  =  "Associated_resistant_lower",
-           "associated with resistance (upper)"  =  "Associated_resistant_upper",
-           "attributable to resistance (mean)"   =  "Attributable_resistance_mean",
-           "attributable to resistance (lower)"  =  "Attributable_resistance_lower",
-           "attributable to resistance (upper)"  =  "Attributable_resistance_upper")
-  
+    associated_mean <- data.table(input_associated)
+    associated_mean[, burden_psa := burden_mean_value]
+    associated_mean <- 
+      estimate_vaccine_impact(data = associated_mean,
+                              scenario = input_scenario)[,va_health_burden]    
+    
+    associated_lower <- data.table(input_associated)
+    associated_lower[, burden_psa := burden_lower_value]
+    associated_lower <-
+      estimate_vaccine_impact(data = associated_lower,
+                              scenario = input_scenario)[,va_health_burden]    
+    
+    associated_upper <- data.table(input_associated)
+    associated_upper[, burden_psa := burden_upper_value]
+    associated_upper <-
+      estimate_vaccine_impact(data = associated_upper,
+                              scenario = input_scenario)[,va_health_burden]    
+    
+    attributable_mean <- data.table(input_attributable)
+    attributable_mean[, burden_psa := burden_mean_value]
+    attributable_mean <-
+      estimate_vaccine_impact(data = attributable_mean,
+                              scenario = input_scenario)[,va_health_burden]    
+    
+    attributable_lower <- data.table(input_attributable)
+    attributable_lower[, burden_psa := burden_lower_value]
+    attributable_lower <-
+      estimate_vaccine_impact(data = attributable_lower,
+                              scenario = input_scenario)[,va_health_burden]    
+    
+    attributable_upper <- data.table(input_attributable)
+    attributable_upper[, burden_psa := burden_upper_value]
+    attributable_upper <-
+      estimate_vaccine_impact(data = attributable_upper,
+                              scenario = input_scenario)[,va_health_burden]    
+    
+    dt <- data.table("vaccine avertable-susceptible (mean)"                 = susceptible_mean,
+                     "vaccine avertable-susceptible (lower)"                = susceptible_lower,
+                     "vaccine avertable-susceptible (upper)"                = susceptible_upper,
+                     "vaccine avertable-associated with resistance (mean)"  = associated_mean,
+                     "vaccine avertable-associated with resistance (lower)" = associated_lower,
+                     "vaccine avertable-associated with resistance (upper)" = associated_upper,
+                     "vaccine avertable-attributable to resistance (mean)"  = attributable_mean,
+                     "vaccine avertable-attributable to resistance (lower)" = attributable_lower,
+                     "vaccine avertable-attributable to resistance (upper)" = attributable_upper)
+    
+    AMR_burden_data_updated <- cbind(burden_dt, dt)
+    
+    AMR_burden_data_updated <- AMR_burden_data_updated %>%
+      rename("associated with susceptible (mean)"  = "Susceptible_mean",
+             "associated with susceptible (lower)" = "Susceptible_lower",
+             "associated with susceptible (upper)" = "Susceptible_upper",
+             "associated with resistance (mean)"   = "Associated_resistant_mean",
+             "associated with resistance (lower)"  = "Associated_resistant_lower",
+             "associated with resistance (upper)"  = "Associated_resistant_upper",
+             "attributable to resistance (mean)"   = "Attributable_resistance_mean",
+             "attributable to resistance (lower)"  = "Attributable_resistance_lower",
+             "attributable to resistance (upper)"  = "Attributable_resistance_upper")
+    
     AMR_burden_data_updated <- AMR_burden_data_updated %>% 
-    arrange(Pathogen, WHO_region, Disease_presentation, Age_group)
+      arrange(Pathogen, WHO_region, Disease_presentation, Age_group)
     
     # save as xlsx
-  fwrite (x    = AMR_burden_data_updated,
-          file = AMR_burden_data_updated_file)
+    fwrite (x    = AMR_burden_data_updated,
+            file = AMR_burden_data_updated_file)
     
- return(AMR_burden_data_updated)}
+    return(AMR_burden_data_updated)}
 #-------------------------------------------------------------------------------
   
   

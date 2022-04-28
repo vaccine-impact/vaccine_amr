@@ -856,6 +856,7 @@ fwrite (x    = vaccine_impact_current,
 
 # create vaccine avertable burden file -- Baseline Scenario
 AMR_death_data_updated <- update_death_burden(
+  input_susceptible            = read_csv(file.path("tables", "susceptible_burden.csv")),
   input_associated             = read_csv(file.path("tables", "associated_burden.csv")),
   input_attributable           = read_csv(file.path("tables", "attributable_burden.csv")),
   burden_dt                    = death_burden_dt,
@@ -863,6 +864,7 @@ AMR_death_data_updated <- update_death_burden(
   input_scenario               = "conservative")
 
 AMR_daly_data_updated <- update_death_burden(
+  input_susceptible            = read_csv(file.path("tables", "susceptible_burden.csv")),
   input_associated             = read_csv(file.path("tables", "daly_associated_burden.csv")),
   input_attributable           = read_csv(file.path("tables", "daly_attributable_burden.csv")),
   burden_dt                    = daly_burden_dt,
@@ -871,6 +873,7 @@ AMR_daly_data_updated <- update_death_burden(
 
 # create vaccine avertable burden file -- High-potential Scenario
 AMR_death_data_updated <- update_death_burden(
+  input_susceptible            = read_csv(file.path("tables", "susceptible_burden.csv")),
   input_associated             = read_csv(file.path("tables", "associated_burden.csv")),
   input_attributable           = read_csv(file.path("tables", "attributable_burden.csv")),
   burden_dt                    = death_burden_dt,
@@ -878,6 +881,7 @@ AMR_death_data_updated <- update_death_burden(
   input_scenario               = "optimistic")
 
 AMR_daly_data_updated <- update_death_burden(
+  input_susceptible            = read_csv(file.path("tables", "susceptible_burden.csv")),
   input_associated             = read_csv(file.path("tables", "daly_associated_burden.csv")),
   input_attributable           = read_csv(file.path("tables", "daly_attributable_burden.csv")),
   burden_dt                    = daly_burden_dt,
