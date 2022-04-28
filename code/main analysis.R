@@ -77,19 +77,19 @@ daly_burden_dt <- create_burden_table(AMR_burden = daly_burden_dt,
 # ------------------------------------------------------------------------------
 # create data table of vaccine profile
 vaccine_profile_file <-
-  read_excel(file.path("data", "Vaccine_profile_assumptions.xlsx"), 
+  read_excel(file.path("data", "Vaccine_profile_assumptions.xlsx"),
              sheet = "Vaccine profile _ input")
 
 vaccine_profile_dt <- 
   create_vaccine_profile_table(vaccine_profile = vaccine_profile_file,
                                vaccine_profile_file = file.path("tables", "vaccine_profile.csv"))
-
 # ------------------------------------------------------------------------------
 # create combined table: vaccine profile + disease burden (deaths)
 # create separate burden file for health burdens attributable to AMR and associated with AMR  
 combined_dt <- 
   create_combined_table(death_burden_dt          = death_burden_dt, 
                         vaccine_profile_dt       = vaccine_profile_dt,
+                        susceptible_burden_file  = file.path("tables", "susceptible_burden.csv"),
                         attributable_burden_file = file.path("tables", "attributable_burden.csv"),
                         associated_burden_file   = file.path("tables", "associated_burden.csv"))
 
@@ -98,8 +98,11 @@ combined_dt <-
 daly_combined_dt <-
   create_combined_table(death_burden_dt          = daly_burden_dt, 
                         vaccine_profile_dt       = vaccine_profile_dt,
+                        susceptible_burden_file  = file.path("tables", "daly_susceptible_burden.csv"),
                         attributable_burden_file = file.path("tables", "daly_attributable_burden.csv"),
                         associated_burden_file   = file.path("tables", "daly_associated_burden.csv"))
+# ------------------------------------------------------------------------------
+
 # ------------------------------------------------------------------------------
 
 

@@ -132,16 +132,17 @@ existing_vaccine_coverage <- function(year,
 create_burden_table <- function(AMR_burden,
                                 burden_file){
 
-  AMR_burden <- AMR_burden[-c(1:2), -c(5:7)]
+  AMR_burden <- AMR_burden[-c(1:2),]
   
-  names(AMR_burden) <- c("WHO_region", "Disease_presentation","Age_group","Pathogen", 
+  names(AMR_burden) <- c("WHO_region", "Disease_presentation","Age_group","Pathogen",
+                         "Susceptible_mean", "Susceptible_lower", "Susceptible_upper",
                          "Associated_resistant_mean", "Associated_resistant_lower",
                          "Associated_resistant_upper", "Attributable_resistance_mean",
                          "Attributable_resistance_lower", "Attributable_resistance_upper")
   
-  AMR_burden[,5:10] <- lapply(AMR_burden[,5:10], function(x) gsub(",", "", x))
+  AMR_burden[,5:13] <- lapply(AMR_burden[,5:13], function(x) gsub(",", "", x))
   
-  AMR_burden[,5:10] <- lapply(AMR_burden[,5:10], as.numeric)
+  AMR_burden[,5:13] <- lapply(AMR_burden[,5:13], as.numeric)
   
   AMR_burden$Age_group <- factor(AMR_burden$Age_group, 
                                  levels=unique(AMR_burden$Age_group), order=T)
@@ -220,7 +221,6 @@ create_burden_table <- function(AMR_burden,
                        4/48 * (1 - hib_vaccine_coverage_2019 * 0.92 * 0.95) + 
                       37/48 * (1 - hib_vaccine_coverage_2019 * 0.93 * 0.95))]
   
-  
   AMR_burden[Pathogen  == "Haemophilus influenzae" & Age_group == "1 to 4",
              Associated_resistant_mean := Associated_resistant_mean /
                (1 - hib_vaccine_coverage_2018 * 0.93 * 0.95)]
@@ -282,7 +282,6 @@ create_burden_table <- function(AMR_burden,
                (3/48 + 4/48 * (1 - hib_vaccine_coverage_2019 * 0.29) + 
                        4/48 * (1 - pcv_vaccine_coverage_2019 * 0.58) + 
                       37/48 * (1 - pcv_vaccine_coverage_2019 * 0.58))]
-  
   
   AMR_burden[Pathogen  == "Streptococcus pneumoniae" & Age_group == "1 to 4",
              Associated_resistant_mean := Associated_resistant_mean /
@@ -360,6 +359,7 @@ create_vaccine_profile_table <- function(vaccine_profile,
 
 create_combined_table <- function(death_burden_dt,
                                   vaccine_profile_dt,
+                                  susceptible_burden_file,
                                   attributable_burden_file,
                                   associated_burden_file){
   
@@ -399,20 +399,23 @@ create_combined_table <- function(death_burden_dt,
                    (Age_group=="EN" | Age_group=="LN" | Age_group=="PN"), 
                  VC := "0 weeks ~"]
   
-  # separate burden attributable to AMR and associated with AMR  
-  attributable_burden <- combined_table[, -c("Associated_resistant_mean",
-                                              "Associated_resistant_lower",
-                                              "Associated_resistant_upper")]
+  # separate burden type
+  susceptible_burden <- combined_table[, -c("Associated_resistant_mean",
+                                            "Associated_resistant_lower",
+                                            "Associated_resistant_upper",
+                                            "Attributable_resistance_lower",
+                                            "Attributable_resistance_mean",
+                                            "Attributable_resistance_upper")]
   
-  attributable_burden <- attributable_burden %>% 
-    rename("burden_lower_value" = "Attributable_resistance_lower",
-           "burden_mean_value"  = "Attributable_resistance_mean",
-           "burden_upper_value" = "Attributable_resistance_upper")
+  susceptible_burden  <- susceptible_burden  %>% 
+    rename("burden_lower_value" = "Susceptible_lower",
+           "burden_mean_value"  = "Susceptible_mean",
+           "burden_upper_value" = "Susceptible_upper")
   
-   fwrite (x    = attributable_burden,
-           file = attributable_burden_file)
-  
-  associated_burden <- combined_table[, -c("Attributable_resistance_mean",
+  associated_burden <- combined_table[, -c("Susceptible_lower",
+                                           "Susceptible_mean",
+                                           "Susceptible_upper",
+                                           "Attributable_resistance_mean",
                                            "Attributable_resistance_lower",
                                            "Attributable_resistance_upper")]
   
@@ -421,8 +424,26 @@ create_combined_table <- function(death_burden_dt,
            "burden_mean_value"  = "Associated_resistant_mean",
            "burden_upper_value" = "Associated_resistant_upper")
   
+  attributable_burden <- combined_table[, -c("Susceptible_lower",
+                                             "Susceptible_mean",
+                                             "Susceptible_upper",
+                                             "Associated_resistant_mean",
+                                             "Associated_resistant_lower",
+                                             "Associated_resistant_upper")]
+  
+  attributable_burden <- attributable_burden %>% 
+    rename("burden_lower_value" = "Attributable_resistance_lower",
+           "burden_mean_value"  = "Attributable_resistance_mean",
+           "burden_upper_value" = "Attributable_resistance_upper")
+  
+  fwrite (x    = susceptible_burden,
+          file = susceptible_burden_file)
+  
   fwrite (x    = associated_burden,
           file = associated_burden_file)
+  
+  fwrite (x    = attributable_burden,
+          file = attributable_burden_file)
   
   return(combined_table)
   
@@ -1625,16 +1646,11 @@ estimate_existing_vaccine_impact <- function(input_data){
                  va_health_burden := va_age]
   
   # aggregate impact by run_id
-  impact_by_pathogen <- data.table(Pathogen             = character(), 
-                                   averted_burden       = numeric(), 
-                                   run_id               = numeric())
-  
-  
   impact_by_pathogen <- vaccine_impact %>%
     group_by(Pathogen, run_id) %>%
     summarise(averted_burden = sum(va_health_burden), .groups = 'drop')
   
-    # aggregate impact by pathogen
+  # aggregate impact by pathogen
   burden_averted_pathogen <- data.table("50%"=numeric(), "2.5%"=numeric(), "97.5%"=numeric())
   
   existingvaccine <- c("Haemophilus influenzae", "Streptococcus pneumoniae")
