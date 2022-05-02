@@ -443,7 +443,6 @@ create_burden_by_pathogen_graph <- function(pathogen,
                                            mode){
   
   burden_dt <- data.table(data)
-
   # -------------------------------------------------------------------------  
   # minor changes to fit lognormal distribution
     burden_dt <- burden_dt[!(burden_dt$burden_mean_value == "0" & 
@@ -813,7 +812,7 @@ create_burden_by_pathogen_graph <- function(pathogen,
     va[Pathogen == "Haemophilus influenzae" & Efficacy == "0.93" &
          VC == "6, 10, 14 weeks" & Age_group == "PN",
        va_age := burden_psa * (4/48 * 0.59 * Coverage +
-                                4/48 * 0.92 * Coverage + 
+                               4/48 * 0.92 * Coverage + 
                                37/48 * 0.93 * Coverage) * 0.95]
     
     va[Pathogen == "Haemophilus influenzae" & Efficacy == "0.93" &
@@ -900,9 +899,12 @@ create_burden_by_pathogen_graph <- function(pathogen,
     
     susceptible_mean <- data.table(input_susceptible)
     susceptible_mean[, burden_psa := burden_mean_value]
-    susceptible_mean <- 
-      estimate_vaccine_impact(data = susceptible_mean,
-                              scenario = input_scenario)[,va_health_burden]    
+    susceptible_mean <-
+      estimate_vaccine_impact(data     = susceptible_mean,
+                              scenario = input_scenario)[
+     , c("WHO_region", "Disease_presentation", "Age_group", "Pathogen", "va_health_burden")]
+    susceptible_mean <- susceptible_mean %>%
+      rename("susceptible_mean"  = "va_health_burden")
     
     susceptible_lower <- data.table(input_susceptible)
     susceptible_lower[, burden_psa := burden_lower_value]
@@ -916,17 +918,23 @@ create_burden_by_pathogen_graph <- function(pathogen,
       estimate_vaccine_impact(data = susceptible_upper,
                               scenario = input_scenario)[,va_health_burden]
     
+    susceptible_dt <- cbind(susceptible_mean, susceptible_lower, susceptible_upper)
+    
     associated_mean <- data.table(input_associated)
     associated_mean[, burden_psa := burden_mean_value]
     associated_mean <- 
       estimate_vaccine_impact(data = associated_mean,
-                              scenario = input_scenario)[,va_health_burden]    
+                              scenario = input_scenario)[
+    , c("WHO_region", "Disease_presentation", "Age_group", "Pathogen", "va_health_burden")]
+    associated_mean <- associated_mean %>%
+      rename("associated_mean"  = "va_health_burden")
     
     associated_lower <- data.table(input_associated)
     associated_lower[, burden_psa := burden_lower_value]
     associated_lower <-
       estimate_vaccine_impact(data = associated_lower,
-                              scenario = input_scenario)[,va_health_burden]    
+                              scenario = input_scenario)[
+                                ,va_health_burden]    
     
     associated_upper <- data.table(input_associated)
     associated_upper[, burden_psa := burden_upper_value]
@@ -934,11 +942,17 @@ create_burden_by_pathogen_graph <- function(pathogen,
       estimate_vaccine_impact(data = associated_upper,
                               scenario = input_scenario)[,va_health_burden]    
     
+    associated_dt <- cbind(associated_mean, associated_lower, associated_upper)
+    
+    
     attributable_mean <- data.table(input_attributable)
     attributable_mean[, burden_psa := burden_mean_value]
     attributable_mean <-
       estimate_vaccine_impact(data = attributable_mean,
-                              scenario = input_scenario)[,va_health_burden]    
+                              scenario = input_scenario)[
+    , c("WHO_region", "Disease_presentation", "Age_group", "Pathogen", "va_health_burden")] 
+    attributable_mean <- attributable_mean %>%
+      rename("attributable_mean"  = "va_health_burden")
     
     attributable_lower <- data.table(input_attributable)
     attributable_lower[, burden_psa := burden_lower_value]
@@ -952,18 +966,29 @@ create_burden_by_pathogen_graph <- function(pathogen,
       estimate_vaccine_impact(data = attributable_upper,
                               scenario = input_scenario)[,va_health_burden]    
     
-    dt <- data.table("vaccine avertable-susceptible (mean)"                 = susceptible_mean,
-                     "vaccine avertable-susceptible (lower)"                = susceptible_lower,
-                     "vaccine avertable-susceptible (upper)"                = susceptible_upper,
-                     "vaccine avertable-associated with resistance (mean)"  = associated_mean,
-                     "vaccine avertable-associated with resistance (lower)" = associated_lower,
-                     "vaccine avertable-associated with resistance (upper)" = associated_upper,
-                     "vaccine avertable-attributable to resistance (mean)"  = attributable_mean,
-                     "vaccine avertable-attributable to resistance (lower)" = attributable_lower,
-                     "vaccine avertable-attributable to resistance (upper)" = attributable_upper)
+    attributable_dt <- cbind(attributable_mean, attributable_lower, attributable_upper)
     
-    AMR_burden_data_updated <- cbind(burden_dt, dt)
+    dt <- merge(susceptible_dt, associated_dt, 
+                    by = c("WHO_region", "Disease_presentation", "Age_group", "Pathogen"), all=TRUE) %>%
+          merge(., attributable_dt, 
+                by = c("WHO_region", "Disease_presentation", "Age_group", "Pathogen"), all=TRUE)
     
+    dt[is.na(dt)] <- 0
+  
+    dt <- dt %>% rename(
+      "vaccine avertable-susceptible (mean)"                 = susceptible_mean,
+      "vaccine avertable-susceptible (lower)"                = susceptible_lower,
+      "vaccine avertable-susceptible (upper)"                = susceptible_upper,
+      "vaccine avertable-associated with resistance (mean)"  = associated_mean,
+      "vaccine avertable-associated with resistance (lower)" = associated_lower,
+      "vaccine avertable-associated with resistance (upper)" = associated_upper,
+      "vaccine avertable-attributable to resistance (mean)"  = attributable_mean,
+      "vaccine avertable-attributable to resistance (lower)" = attributable_lower,
+      "vaccine avertable-attributable to resistance (upper)" = attributable_upper)
+      
+    AMR_burden_data_updated <- merge(burden_dt, dt,
+                                     by = c("WHO_region", "Disease_presentation", "Age_group", "Pathogen"), all=TRUE)
+  
     AMR_burden_data_updated <- AMR_burden_data_updated %>%
       rename("associated with susceptible (mean)"  = "Susceptible_mean",
              "associated with susceptible (lower)" = "Susceptible_lower",
@@ -1304,7 +1329,7 @@ ggplot(burden_averted_by_dp,
     geom_errorbar(aes(ymin=lower_value, ymax=upper_value), width=0.15,
                   size=0.5, position=position_dodge(0)) +
     theme_classic() +
-    theme(legend.position = c(0.9, 0.9)) +
+    theme(legend.position = c(0.8, 0.9)) +
     ggtitle(title_name) +
     theme(plot.title = element_text(hjust=-0.05, vjust=3, size = 20)) +
     theme(axis.text.x = element_text(angle = 30, vjust = 1, hjust=1))
@@ -1381,9 +1406,9 @@ create_burden_averted_by_pathogen_graph <- function(Attributable_burden_averted,
     geom_errorbar(aes(ymin = lower_value, ymax = upper_value), width = 0.15,
                   size = 0.5, position = position_dodge(0)) +
     theme_classic() +
-    theme(legend.position = c(0.9, 0.9)) +
+    theme(legend.position = c(0.8, 0.9)) +
     ggtitle(title_name) +
-    theme(plot.title = element_text(hjust = -0.05, vjust = 3, size = 20)) +
+    theme(plot.title = element_text(hjust = -0.05, vjust = 3, size = 0)) +
     theme(axis.text.x = element_text(angle = 60, vjust = 1, hjust = 1))
   
 } # end of function -- create_burden_averted_by_pathogen_graph
@@ -1577,7 +1602,7 @@ create_burden_averted_by_vp_graph <- function(Attributable_burden_averted,
     geom_errorbar(aes(ymin = lower_value, ymax = upper_value), width = 0.15,
                   size = 0.5, position = position_dodge(0)) +
     theme_classic() +
-    theme(legend.position = c(0.9, 0.9)) +
+    theme(legend.position = c(0.8, 0.9)) +
     ggtitle(title_name) +
     theme(plot.title = element_text(hjust = -0.05, vjust = 3, size = 20)) +
     theme(axis.text.x = element_text(angle = 60, vjust = 1, hjust = 1))
