@@ -1727,7 +1727,7 @@ aggregate_impact_by_dp_pathogen <- function(input_data,
 # ------------------------------------------------------------------------------
 # create graph of vaccine impact by infectious syndrome and pathogen
 
-burden_averted_by_dp_pat <- function(data_input, image_file){
+burden_averted_by_dp_pat <- function(data_input, image_png, image_eps){
   
   data_input <- data_input[, 1:3] 
   
@@ -1770,8 +1770,7 @@ burden_averted_by_dp_pat <- function(data_input, image_file){
   
   dp_by_pathogen <- dp_by_pathogen %>% arrange(Disease_presentation, median)
   
-  png(image_file, 
-      width = 10, height = 10, res = 1000, units="in")
+  png(image_png, width = 10, height = 10, res = 1000, units="in")
   
   PieDonut(dp_by_pathogen, aes(pies = Disease_presentation, donuts = Pathogen, count = median),
            showPieName=FALSE, showRatioThreshold = 0, start = 4.2,
@@ -1781,5 +1780,17 @@ burden_averted_by_dp_pat <- function(data_input, image_file){
            titlesize = 4.5)
   
   dev.off()
+  
+  cairo_ps(filename = image_eps, width = 10, height = 10)
+
+  PieDonut(dp_by_pathogen, aes(pies = Disease_presentation, donuts = Pathogen, count = median),
+           showPieName=FALSE, showRatioThreshold = 0, start = 4.2,
+           r0 = 0, r1 = 0.5, r2 = 0.6,
+           pieAlpha = 0.7, donutAlpha = 0.7,
+           labelpositionThreshold=1,
+           titlesize = 4.5)
+
+  dev.off()  
+  
 } # end of function -- burden_averted_by_dp_pat
 # ------------------------------------------------------------------------------

@@ -5,7 +5,7 @@
 # to estimate the vaccine avertable bacterial antimicrobial resistance burden
 # based on profiles of existing and future vaccines
 # at the global and regional levels
-------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
 # load libraries
 library (readr)
 library (readxl)
@@ -18,6 +18,7 @@ library (ggplot2)
 library (rriskDistributions)
 library (formattable)
 library (patchwork)
+library (Cairo)
 
 # devtools::install_github("cardiomoon/webr")
 library (webr)
@@ -290,6 +291,8 @@ fwrite (x    = daly_susceptible_psa,
 
 
 # ------------------------------------------------------------------------------
+memory.limit(size = 20000)
+
 # deaths and DALYs associated with and attributable to AMR
 # globally and by WHO region, 2019
 
@@ -449,6 +452,12 @@ ggsave (filename = "Figure_avertable_burden_by_region.png",
         width = 6, 
         height = 8, 
         dpi = 600)
+
+ggsave (filename = "Figure_avertable_burden_by_region.eps",
+        path = "figures",
+        device = "eps",
+        width = 7, 
+        height = 7)
 
 # ------------------------------------------------------------------------------
 # global vaccine avertable deaths and DALYs attributable to and associated with 
@@ -633,6 +642,12 @@ ggsave (filename = "Figure_avertable_burden_by_dp.png",
         height = 8, 
         dpi = 600)
 
+ggsave (filename = "Figure_avertable_burden_by_dp.eps",
+        path = "figures",
+        device = "eps",
+        width = 7, 
+        height = 7)
+
 # ------------------------------------------------------------------------------
 # global vaccine avertable deaths and DALYs attributable to and associated with 
 # bacterial antimicrobial resistance by pathogen, 2019
@@ -811,6 +826,12 @@ ggsave (filename = "Figure_burden_averted_by_pathogen.png",
         height = 8,
         dpi = 600)
 
+ggsave (filename = "Figure_avertable_burden_by_pathogen.eps",
+        path = "figures",
+        device = "eps",
+        width = 7, 
+        height = 7)
+
 # ------------------------------------------------------------------------------
 # global vaccine avertable deaths and DALYs attributable to and associated with 
 # bacterial antimicrobial resistance by vaccine profiles, 2019
@@ -974,6 +995,13 @@ ggsave (filename = "Figure_burden_averted_by_vaccine_profile.png",
         width = 6, 
         height = 8,
         dpi = 600)
+
+ggsave (filename = "Figure_avertable_burden_by_vaccine_profile.eps",
+        path = "figures",
+        device = "eps",
+        width = 7, 
+        height = 7)
+
 # ------------------------------------------------------------------------------
 
 
@@ -1083,20 +1111,28 @@ daly_attributable_dp_pathogen   <-
 # create graph of vaccine impact by infectious syndrome and pathogen
 
 burden_averted_by_dp_pat(data_input = deaths_associated_dp_pathogen, 
-                         image_file = file.path("figures", 
-                                                "deaths_associated_dp_pat.png"))
+                         image_png  = file.path("figures", 
+                                                "Figure_deaths_associated_dp_pat.png"),
+                         image_eps  = file.path("figures", 
+                                                "Figure_deaths_associated_dp_pat.eps"))
 
 burden_averted_by_dp_pat(data_input = deaths_attributable_dp_pathogen, 
-                         image_file = file.path("figures", 
-                                                "deaths_attributable_dp_pat.png"))
+                         image_png  = file.path("figures", 
+                                                "Figure_deaths_attributable_dp_pat.png"),
+                         image_eps  = file.path("figures", 
+                                                "Figure_deaths_attributable_dp_pat.eps"))
 
 burden_averted_by_dp_pat(data_input = daly_associated_dp_pathogen, 
-                         image_file = file.path("figures", 
-                                                "daly_associated_dp_pat.png"))
+                         image_png  = file.path("figures", 
+                                                "Figure_daly_associated_dp_pat.png"),
+                         image_eps  = file.path("figures", 
+                                                "Figure_daly_associated_dp_pat.eps"))
 
 burden_averted_by_dp_pat(data_input = daly_attributable_dp_pathogen, 
-                         image_file = file.path("figures", 
-                                                "daly_attributable_dp_pat.png"))
+                         image_png  = file.path("figures", 
+                                                "Figure_daly_attributable_dp_pat.png"),
+                         image_eps  = file.path("figures", 
+                                                "Figure_daly_attributable_dp_pat.eps"))
 # ------------------------------------------------------------------------------
 
 
