@@ -15,7 +15,7 @@ All functions for the main analysis
 Input data used for the analysis
 
 - figures
-Figures in the paper (main part, appendix) 
+Figures in the paper
 
 - tables
-Tables in the paper (main part, appendix)
+Generated tables

@@ -1,16 +1,16 @@
 Vaccine_pathogen,Pathogen,Efficacy,Coverage,Duration,DP,VC,VO,MainAnalysis,HBG
-Acinetobacter baumannii #1,Acinetobacter baumannii,0.7,0.7,5 years,BSI,6 weeks & elderly age group,All age groups,No,70 years
-Acinetobacter baumannii #2,Acinetobacter baumannii,0.7,0.7,5 years,All,6 weeks & elderly age group,All age groups,Yes,70 years
+Acinetobacter baumannii - BSI,Acinetobacter baumannii,0.7,0.7,5 years,BSI,6 weeks & elderly age group,All age groups,No,70 years
+Acinetobacter baumannii - all,Acinetobacter baumannii,0.7,0.7,5 years,All,6 weeks & elderly age group,All age groups,Yes,70 years
 Enterococcus faecium,Enterococcus faecium,0.7,0.7,5 years,All,6 weeks & elderly age group,All age groups,Yes,65 years
 ETEC,Escherichia coli,0.6,0.7,5 years,Diarrhoea,6 months,6 months,Yes,
-ExPEC #1,Escherichia coli,0.7,0.7,5 years,BSI,6 weeks & elderly age group,All age groups,Yes,75 years
-ExPEC #2,Escherichia coli,0.7,0.7,5 years,UTI,6 weeks & elderly age group,All age groups,Yes,75 years
+ExPEC - BSI,Escherichia coli,0.7,0.7,5 years,BSI,6 weeks & elderly age group,All age groups,Yes,75 years
+ExPEC - UTI,Escherichia coli,0.7,0.7,5 years,UTI,6 weeks & elderly age group,All age groups,Yes,75 years
 Group A streptococcus,Group A Streptococcus,0.7,0.7,5 years,All,6 weeks,6 weeks,Yes,
 Haemophilus influenzae type B,Haemophilus influenzae,0.93,0.9,5 years,All,"6, 10, 14 weeks","6, 10, 14 weeks",Yes,
-Klebsiella pneumoniae #1,Klebsiella pneumoniae,0.7,0.7,6 months,BSI,0 weeks (maternal),0 weeks (maternal),Yes,
-Klebsiella pneumoniae #2,Klebsiella pneumoniae,0.7,0.7,5 years,All,6 weeks & elderly age group,All age groups,Yes,70 years
-Mycobacterium tuberculosis #1,Mycobacterium tuberculosis,0.5,0.7,10 years,All,10 years + boost every 10 years,10 years + boost every 10 years,No,
-Mycobacterium tuberculosis #2,Mycobacterium tuberculosis,0.8,0.7,10 years,All,0 weeks + boost every 10 years,0 weeks + boost every 10 years,Yes,
+Klebsiella pneumoniae - BSI,Klebsiella pneumoniae,0.7,0.7,6 months,BSI,0 weeks (maternal),0 weeks (maternal),Yes,
+Klebsiella pneumoniae - all,Klebsiella pneumoniae,0.7,0.7,5 years,All,6 weeks & elderly age group,All age groups,Yes,70 years
+Mycobacterium tuberculosis - M72,Mycobacterium tuberculosis,0.5,0.7,10 years,All,10 years + boost every 10 years,10 years + boost every 10 years,No,
+Mycobacterium tuberculosis - Improved,Mycobacterium tuberculosis,0.8,0.7,10 years,All,0 weeks + boost every 10 years,0 weeks + boost every 10 years,Yes,
 Neisseria gonorrhoeae,Neisseria gonorrhoeae,0.7,0.7,10 years,gonorrhoea and chlamydia,15 years,15 years,Yes,
 Non-typhoidal Salmonella,Non-typhoidal Salmonella,0.8,0.7,5 years,All,6 weeks & 9 months,6 weeks & 9 months,Yes,
 Pseudomonas aeruginosa,Pseudomonas aeruginosa,0.7,0.7,5 years,"BSI, LRI and thorax infections",6 weeks & elderly age group,All age groups,Yes,75 years
@@ -18,5 +18,5 @@ Salmonella paratyphi,Salmonella Paratyphi,0.7,0.7,5 years,All,9 months,9 months,
 Salmonella Typhi,Salmonella Typhi,0.85,0.7,15 years,All,9 months,9 months,Yes,
 Shigella,Shigella spp.,0.6,0.7,5 years,All,6 months,6 months,Yes,
 Staphylococcus aureus,Staphylococcus aureus,0.6,0.7,5 years,All,6 weeks & elderly age group,All age groups,Yes,75 years
-Streptococcus pneumoniae #1,Streptococcus pneumoniae,0.58,0.9,5 years,"BSI, CNS infections, Cardiac infections, LRI","6, 10, 14 weeks","6, 10, 14 weeks & elderly age group",Yes,75 years
-Streptococcus pneumoniae #2,Streptococcus pneumoniae,0.7,0.9,5 years,"BSI, CNS infections, Cardiac infections, LRI",6 weeks,6 weeks & elderly age group,No,75 years
+Streptococcus pneumoniae,Streptococcus pneumoniae,0.58,0.9,5 years,"BSI, CNS infections, Cardiac infections, LRI","6, 10, 14 weeks","6, 10, 14 weeks & elderly age group",Yes,75 years
+Streptococcus pneumoniae - Improved,Streptococcus pneumoniae,0.7,0.9,5 years,"BSI, CNS infections, Cardiac infections, LRI",6 weeks,6 weeks & elderly age group,No,75 years

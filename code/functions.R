@@ -813,7 +813,7 @@ create_burden_by_pathogen_graph <- function(pathogen,
          VC == "6, 10, 14 weeks" & Age_group == "PN",
        va_age := burden_psa * (4/48 * 0.59 * Coverage +
                                4/48 * 0.92 * Coverage + 
-                               37/48 * 0.93 * Coverage) * 0.95]
+                              37/48 * 0.93 * Coverage) * 0.95]
     
     va[Pathogen == "Haemophilus influenzae" & Efficacy == "0.93" &
         VC == "6, 10, 14 weeks" & Age_group == "1 to 4",
@@ -943,7 +943,6 @@ create_burden_by_pathogen_graph <- function(pathogen,
                               scenario = input_scenario)[,va_health_burden]    
     
     associated_dt <- cbind(associated_mean, associated_lower, associated_upper)
-    
     
     attributable_mean <- data.table(input_attributable)
     attributable_mean[, burden_psa := burden_mean_value]
@@ -1181,46 +1180,49 @@ create_burden_by_pathogen_graph <- function(pathogen,
   
     return(avertable_burden)
     
-  }# end of function -- create_avertable_burden_table
+  } # end of function -- create_avertable_burden_table
   
 # ------------------------------------------------------------------------------
 # create graph for vaccine impact by WHO region
   
-create_burden_averted_by_region_graph  <- function(Attributable_burden_averted,
-                                                   Associated_burden_averted,
-                                                   ylim_max,
-                                                   ylabel,
-                                                   title_name){
-
-Associated_burden_averted$Resistance   <- "Associated with resistance"
-
-Attributable_burden_averted$Resistance <- "Attributable to resistance" 
-  
-burden_averted_by_region <- rbind(Associated_burden_averted, Attributable_burden_averted)
-
-burden_averted_by_region <- burden_averted_by_region %>% rename("lower_value"  = "2.5%",
-                                                                "median_value" = "50%",
-                                                                "upper_value"  = "97.5%")
-
-burden_averted_by_region  <- burden_averted_by_region %>% filter(Counts != "Global")
-                   
-ggplot(burden_averted_by_region, 
-       aes(x = reorder(Counts, -median_value), 
-           y=median_value, fill=Resistance,
-           width=ifelse(Resistance == "Associated with resistance", 0.8, 0.6))) +
-  geom_bar(stat = "identity", position="dodge") +
-  scale_fill_manual(values = c("lightsteelblue3","lightsteelblue4")) +
-  labs(x = "WHO region", y = paste(ylabel)) +
-  ylim(0, ylim_max) +
-  geom_errorbar(aes(ymin=lower_value, ymax=upper_value), width=0.15,
-                size=0.5, position=position_dodge(0)) +
-  theme_classic() +
-  theme(legend.position = c(0.8, 0.9)) +
-  ggtitle(title_name) +
-  theme(plot.title = element_text(hjust=-0.1, vjust=3, size = 20)) +
-  theme(axis.text.x = element_text(angle = 30, vjust = 1, hjust=1))
-
-} # end of function -- create_burden_averted_by_region_graph
+  create_burden_averted_by_region_graph  <- function(Attributable_burden_averted,
+                                                     Associated_burden_averted,
+                                                     ylabel,
+                                                     title_name){
+    
+    Associated_burden_averted$Resistance   <- "Associated with resistance"
+    
+    Attributable_burden_averted$Resistance <- "Attributable to resistance"
+    
+    burden_averted_by_region <- rbind(Associated_burden_averted, Attributable_burden_averted)
+    
+    burden_averted_by_region <- burden_averted_by_region %>% rename("lower_value"  = "2.5%",
+                                                                    "median_value" = "50%",
+                                                                    "upper_value"  = "97.5%")
+    
+    burden_averted_by_region  <- burden_averted_by_region %>% filter(Counts != "Global")
+    
+    level_order <- burden_averted_by_region %>% filter(Resistance == "Associated with resistance")
+    
+    level_order <- as.matrix(level_order[order(-`median_value`),][,1])[,1]
+    
+    ggplot(burden_averted_by_region,
+           aes(x = factor(Counts, level = level_order),
+               y = median_value, fill = Resistance,
+               width=ifelse(Resistance == "Associated with resistance", 0.8, 0.6))) +
+      geom_bar(stat = "identity", position="dodge") +
+      scale_fill_manual(values = c("lightsteelblue3","lightsteelblue4")) +
+      labs(x = "WHO region", y = paste(ylabel)) +
+      geom_errorbar(aes(ymin=lower_value, ymax=upper_value), width=0.15,
+                    size=0.5, position=position_dodge(0)) +
+      theme_classic() +
+      theme(legend.position = c(0.8, 0.9)) +
+      theme(plot.title = element_text(hjust=-0.1, vjust=3, size = 20)) +
+      theme(axis.text.x = element_text(angle = 30, vjust = 1, hjust=1)) +
+      scale_y_continuous(labels = comma_format(accuracy = 1)) +
+      ggtitle("  ")
+    
+  } # end of function -- create_burden_averted_by_region_graph
 
 # ------------------------------------------------------------------------------
 
@@ -1275,66 +1277,68 @@ aggregate_impact_by_dp <- function(input_data,
 
 create_burden_averted_by_dp_graph <- function(Attributable_burden_averted,
                                               Associated_burden_averted,
-                                              ylim_max,
-                                              ylabel,
-                                              title_name){
+                                              ylabel){
   
   Associated_burden_averted$Resistance   <- "Associated with resistance" 
   
   Attributable_burden_averted$Resistance <- "Attributable to resistance" 
   
   
-    burden_averted_by_dp <- rbind(Associated_burden_averted, Attributable_burden_averted)
+  burden_averted_by_dp <- rbind(Associated_burden_averted, Attributable_burden_averted)
   
-    burden_averted_by_dp <-  burden_averted_by_dp %>% rename("lower_value"  = "2.5%",
-                                                             "median_value" = "50%",
-                                                             "upper_value"  = "97.5%")
-
-    burden_averted_by_dp$Counts <- gsub("Bone and joint infections", "Bone+",
-                                        burden_averted_by_dp$Counts)
+  burden_averted_by_dp <-  burden_averted_by_dp %>% rename("lower_value"  = "2.5%",
+                                                           "median_value" = "50%",
+                                                           "upper_value"  = "97.5%")
+  
+  burden_averted_by_dp$Counts <- gsub("Bone and joint infections", "Bone+",
+                                      burden_averted_by_dp$Counts)
+  
+  burden_averted_by_dp$Counts <- gsub("Cardiac infections", "Cardiac",
+                                      burden_averted_by_dp$Counts)
+  
+  burden_averted_by_dp$Counts <- gsub("CNS infections", "CNS",
+                                      burden_averted_by_dp$Counts)
+  
+  burden_averted_by_dp$Counts <- gsub("Intra-abdominal infections", "Intra-abdominal",
+                                      burden_averted_by_dp$Counts)
+  
+  burden_averted_by_dp$Counts <- gsub("TB", "Tuberculosis",
+                                      burden_averted_by_dp$Counts)
+  
+  burden_averted_by_dp$Counts <- gsub("LRI and thorax infections", "LRI+",
+                                      burden_averted_by_dp$Counts)
+  
+  burden_averted_by_dp$Counts <- gsub("Bacterial skin infections", "Skin",
+                                      burden_averted_by_dp$Counts)
+  
+  burden_averted_by_dp$Counts <- gsub("Typhoid, paratyphoid, and iNTS", "TF/PF/iNTS",
+                                      burden_averted_by_dp$Counts)
+  
+  burden_averted_by_dp$Counts <- gsub("Gonorrhoea and chlamydia", "GC/CT",
+                                      burden_averted_by_dp$Counts)
+  
+  level_order <- burden_averted_by_dp %>% filter(Resistance == "Associated with resistance")
+  
+  level_order <- as.matrix(level_order[order(-`median_value`),][,1])[,1]
+  
+  ggplot(burden_averted_by_dp, 
+         aes(x = factor(Counts, level = level_order),
+             y = median_value, fill = Resistance,
+             width=ifelse(Resistance == "Associated with resistance", 0.8, 0.6))) +
     
-    burden_averted_by_dp$Counts <- gsub("Cardiac infections", "Cardiac",
-                                        burden_averted_by_dp$Counts)
-    
-    burden_averted_by_dp$Counts <- gsub("CNS infections", "CNS",
-                                        burden_averted_by_dp$Counts)
-    
-    burden_averted_by_dp$Counts <- gsub("Intra-abdominal infections", "Intra-abdominal",
-                                        burden_averted_by_dp$Counts)
-    
-    burden_averted_by_dp$Counts <- gsub("TB", "Tuberculosis",
-                                        burden_averted_by_dp$Counts)
-    
-    burden_averted_by_dp$Counts <- gsub("LRI and thorax infections", "LRI+",
-                                        burden_averted_by_dp$Counts)
-    
-    burden_averted_by_dp$Counts <- gsub("Bacterial skin infections", "Skin",
-                                        burden_averted_by_dp$Counts)
-    
-    burden_averted_by_dp$Counts <- gsub("Typhoid, paratyphoid, and iNTS", "TF/PF/iNTS",
-                                        burden_averted_by_dp$Counts)
-    
-    burden_averted_by_dp$Counts <- gsub("Gonorrhoea and chlamydia", "GC/CT",
-                                        burden_averted_by_dp$Counts)
-    
-ggplot(burden_averted_by_dp, 
-       aes(x = reorder(Counts, -median_value),
-           y = median_value, fill = Resistance,
-           width=ifelse(Resistance == "Associated with resistance", 0.8, 0.6))) +
-
-  geom_bar(stat = "identity", position="identity") +
+    geom_bar(stat = "identity", position="identity") +
     scale_fill_manual(values = c("lightsteelblue3","lightsteelblue4")) +
     labs(x = "Infectious syndrome", y = paste(ylabel)) + 
-    ylim(0,ylim_max) +
-    geom_errorbar(aes(ymin=lower_value, ymax=upper_value), width=0.15,
-                  size=0.5, position=position_dodge(0)) +
+    geom_errorbar(aes(ymin= lower_value, ymax=upper_value), width=0.15,
+                  size = 0.5, position=position_dodge(0)) +
     theme_classic() +
     theme(legend.position = c(0.8, 0.9)) +
-    ggtitle(title_name) +
-    theme(plot.title = element_text(hjust=-0.05, vjust=3, size = 20)) +
-    theme(axis.text.x = element_text(angle = 30, vjust = 1, hjust=1))
-
-  } # end of function -- create_burden_averted_by_dp_graph
+    theme(plot.title = element_text(hjust = -0.05, vjust = 3, size = 20)) +
+    theme(axis.text.x = element_text(angle = 30, vjust = 1, hjust = 1)) +
+    scale_y_continuous(labels = comma_format(accuracy = 1)) +
+    ggtitle("  ")
+  
+} # end of function -- create_burden_averted_by_dp_graph
 
 # ------------------------------------------------------------------------------
 # global vaccine avertable deaths and DALYs attributable to and associated with 
@@ -1376,43 +1380,6 @@ aggregate_impact_by_pathogen <- function(input_data,
   return(Burden_Averted)} # end of function -- aggregate_impact_by_pathogen
 
 # -------------------------------------------------------------------------
-# create graph for vaccine impact by pathogen
-
-create_burden_averted_by_pathogen_graph <- function(Attributable_burden_averted,
-                                                    Associated_burden_averted,
-                                                    ylim_max,
-                                                    ylabel,
-                                                    title_name){
-  
-  Associated_burden_averted$Resistance    <- "Associated with resistance" 
-  
-  Attributable_burden_averted$Resistance  <- "Attributable to resistance" 
-  
-  
-  burden_averted_by_pathogen <- rbind(Associated_burden_averted, Attributable_burden_averted)
-  
-  burden_averted_by_pathogen <-  burden_averted_by_pathogen %>% rename("lower_value"  = "2.5%",
-                                                                       "median_value" = "50%",
-                                                                       "upper_value"  = "97.5%")
-  
-  ggplot(burden_averted_by_pathogen, 
-       aes(x = reorder(Counts, -median_value), 
-           y = median_value, fill = Resistance,
-           width = ifelse(Resistance == "Associated with resistance", 0.8, 0.6))) +
-    geom_bar(stat = "identity", position = "identity") +
-    scale_fill_manual(values = c("lightsteelblue3","lightsteelblue4")) +
-    labs(x = "Pathogen", y = paste(ylabel)) + 
-    ylim(0,ylim_max) +
-    geom_errorbar(aes(ymin = lower_value, ymax = upper_value), width = 0.15,
-                  size = 0.5, position = position_dodge(0)) +
-    theme_classic() +
-    theme(legend.position = c(0.8, 0.9)) +
-    ggtitle(title_name) +
-    theme(plot.title = element_text(hjust = -0.05, vjust = 3, size = 0)) +
-    theme(axis.text.x = element_text(angle = 60, vjust = 1, hjust = 1))
-  
-} # end of function -- create_burden_averted_by_pathogen_graph
-# ------------------------------------------------------------------------------
 # vaccine avertable burden of corresponding vaccines
 
 estimate_burden_averted_add <- function(pathogen,
@@ -1577,9 +1544,8 @@ vaccine_imapct_by_vaccine <- function(data_in,
 # -------------------------------------------------------------------------
 create_burden_averted_by_vp_graph <- function(Attributable_burden_averted,
                                               Associated_burden_averted,
-                                              ylim_max,
                                               ylabel,
-                                              title_name){
+                                              ylim_max){
   
   Associated_burden_averted$Resistance    <- "Associated with resistance" 
   
@@ -1591,21 +1557,25 @@ create_burden_averted_by_vp_graph <- function(Attributable_burden_averted,
                                                                        "median_value" = "50%",
                                                                        "upper_value"  = "97.5%")
   
+  level_order <- burden_averted_by_pathogen %>% filter(Resistance == "Associated with resistance")
+  
+  level_order <- as.matrix(level_order[order(-`median_value`),][,1])[,1]
+  
   ggplot(burden_averted_by_pathogen, 
-         aes(x = reorder(Counts, -median_value), 
+         aes(x = factor(Counts, level = level_order), 
              y = median_value, fill = Resistance,
              width = ifelse(Resistance == "Associated with resistance", 0.8, 0.6))) +
     geom_bar(stat = "identity", position = "identity") +
     scale_fill_manual(values = c("lightsteelblue3","lightsteelblue4")) +
-    labs(x = "Vaccine", y = paste(ylabel)) + 
-    ylim(0,ylim_max) +
+    labs(x = "Vaccine", y = paste(ylabel)) +
     geom_errorbar(aes(ymin = lower_value, ymax = upper_value), width = 0.15,
                   size = 0.5, position = position_dodge(0)) +
     theme_classic() +
     theme(legend.position = c(0.8, 0.9)) +
-    ggtitle(title_name) +
     theme(plot.title = element_text(hjust = -0.05, vjust = 3, size = 20)) +
-    theme(axis.text.x = element_text(angle = 60, vjust = 1, hjust = 1))
+    theme(axis.text.x = element_text(angle = 60, vjust = 1, hjust = 1)) +
+    scale_y_continuous(labels = comma_format(accuracy = 1), limits = c(0, ylim_max)) +
+    ggtitle("  ")
   
 } # end of function -- create_burden_averted_by_vaccine_profile_graph
 # ------------------------------------------------------------------------------
@@ -1695,7 +1665,7 @@ estimate_existing_vaccine_impact <- function(input_data){
 # ------------------------------------------------------------------------------
 # Appendix -- vaccine avertable burdens by infectious syndrome and pathogen
 
-aggregate_impact_by_dp_pathogen <- function(input_data, 
+aggregate_impact_by_dp_pathogen <- function(input_data,
                                             input_rep,
                                             mode){
   
