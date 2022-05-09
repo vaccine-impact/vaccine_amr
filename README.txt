@@ -15,7 +15,7 @@ All functions for the main analysis
 Input data used for the analysis
 
 - figures
-Figures in the paper
+All figures generated through the code
 
 - tables
-Generated tables
+All tables generated through the code
