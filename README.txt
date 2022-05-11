@@ -1,3 +1,7 @@
+Global and regional burden of attributable and associated bacterial antimicrobial resistance avertable by vaccination: modelling study
+Chaelin Kim, Marianne Holm, Isabel Frost, Mateusz Hasso-Agopsowicz, Kaja Abbas
+medRxiv 2022.05.08.22274821; doi: https://doi.org/10.1101/2022.05.08.22274821
+
 --------------------------------------------------------------------------------  
 Vaccine Avertable AMR Health Burden
 --------------------------------------------------------------------------------  
