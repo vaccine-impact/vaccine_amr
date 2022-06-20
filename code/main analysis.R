@@ -56,13 +56,12 @@ existing_vaccine_coverage (year = "2018",
 # ------------------------------------------------------------------------------
 # create data table of AMR burden (deaths) classified 
 # by pathogen, WHO region, disease presentation, and age groups
-
 options(scipen=999)
 
 death_burden_dt <- read_excel(file.path("data", "IHME_AMR_burden.xlsx"),
-                                    col_names = FALSE)             
+                              col_names = FALSE)             
 
-death_burden_dt <- create_burden_table(AMR_burden = death_burden_dt,
+death_burden_dt <- create_burden_table(AMR_burden  = death_burden_dt,
                                        burden_file = file.path ("tables", "AMR_death_burden.csv"))
 
 # create data table of AMR burden (DALYs) classified
@@ -86,7 +85,7 @@ vaccine_profile_dt <-
 # ------------------------------------------------------------------------------
 # create combined table: vaccine profile + disease burden (deaths)
 # create separate burden file for health burdens attributable to AMR and associated with AMR  
-combined_dt <- 
+combined_dt <-
   create_combined_table(death_burden_dt          = death_burden_dt, 
                         vaccine_profile_dt       = vaccine_profile_dt,
                         susceptible_burden_file  = file.path("tables", "susceptible_burden.csv"),
@@ -132,7 +131,7 @@ estimate_prevaccination_burden(
 
 # ------------------------------------------------------------------------------
 # AMR burden by pathogen across all age groups:
-# the outputs were used to find out the age group with the highest burdens
+# the outputs were used to find out the age group with the highest burden
 
 pathogenlist_death <- unique(death_burden_dt$Pathogen)
 pathogenlist_daly  <- unique(daly_burden_dt$Pathogen)
@@ -577,7 +576,7 @@ fwrite (x    = Table_avertible_burden_by_dp,
 # ------------------------------------------------------------------------------
 # Figure: Vaccine impact by infectious syndrome, 2019
 
-# create graph with avertable AMR burden by infectious syndrome 
+# create graph with avertable AMR burden by infectious syndrome
 # -- Baseline Scenario
 death_averted_by_dp_graph <- create_burden_averted_by_dp_graph(
   Attributable_burden_averted = Attributable_death_averted_dp,
