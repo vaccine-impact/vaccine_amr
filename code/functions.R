@@ -215,9 +215,7 @@ create_vaccine_profile_table <- function(vaccine_profile,
   # filter vaccines for inclusion in the main analysis
   vaccine_profile <- vaccine_profile_dt %>% filter(MainAnalysis == "Yes")
   
-  vaccine_profile <- data.table(vaccine_profile[-c(3:4,8), -1])
-
-  vaccine_profile[Pathogen == "Escherichia coli", DP := "BSI, Diarrhoea, UTI"]
+  vaccine_profile <- data.table(vaccine_profile[-c(3,7), -1])
 
   # create combined table
   combined_table <- data.table(left_join(death_burden_dt, vaccine_profile,
