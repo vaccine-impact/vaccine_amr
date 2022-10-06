@@ -1381,9 +1381,9 @@ Western Pacific,UTI,90 to 94,Enterococcus faecium,0,0,0,2000,1000,3000,0,0,1000,
 Western Pacific,UTI,95 plus,Enterococcus faecium,0,0,0,1000,0,1000,0,0,0,0,0,0,490,0,490,0,0,0
 Africa,Bacterial skin infections,EN,Escherichia coli,0,0,1000,2000,0,16000,1000,0,4000,0,0,0,0,0,0,0,0,0
 Africa,Bacterial skin infections,LN,Escherichia coli,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Africa,Bacterial skin infections,PN,Escherichia coli,0,0,1000,4000,1000,14000,1000,0,3000,0,0,0,0,0,0,0,0,0
-Africa,Bacterial skin infections,1 to 4,Escherichia coli,0,0,1000,4000,1000,12000,1000,0,3000,0,0,0,0,0,0,0,0,0
-Africa,Bacterial skin infections,5 to 9,Escherichia coli,0,0,0,1000,0,3000,0,0,1000,0,0,0,0,0,0,0,0,0
+Africa,Bacterial skin infections,PN,Escherichia coli,0,0,1000,4000,1000,14000,1000,0,3000,0,0,459.375,1837.5,459.375,6431.25,459.375,0,1378.125
+Africa,Bacterial skin infections,1 to 4,Escherichia coli,0,0,1000,4000,1000,12000,1000,0,3000,0,0,490,1960,490,5880,490,0,1470
+Africa,Bacterial skin infections,5 to 9,Escherichia coli,0,0,0,1000,0,3000,0,0,1000,0,0,0,13.1923076923077,0,39.5769230769231,0,0,13.1923076923077
 Africa,Bacterial skin infections,10 to 14,Escherichia coli,0,0,0,1000,0,3000,0,0,1000,0,0,0,0,0,0,0,0,0
 Africa,Bacterial skin infections,15 to 19,Escherichia coli,0,0,0,2000,1000,6000,1000,0,1000,0,0,0,0,0,0,0,0,0
 Africa,Bacterial skin infections,20 to 24,Escherichia coli,0,0,0,2000,0,6000,1000,0,1000,0,0,0,0,0,0,0,0,0
@@ -1397,16 +1397,16 @@ Africa,Bacterial skin infections,55 to 59,Escherichia coli,0,0,1000,3000,1000,80
 Africa,Bacterial skin infections,60 to 64,Escherichia coli,0,0,1000,4000,1000,10000,1000,0,2000,0,0,0,0,0,0,0,0,0
 Africa,Bacterial skin infections,65 to 69,Escherichia coli,0,0,1000,4000,1000,11000,1000,0,3000,0,0,0,0,0,0,0,0,0
 Africa,Bacterial skin infections,70 to 74,Escherichia coli,0,0,1000,3000,1000,9000,1000,0,3000,0,0,0,0,0,0,0,0,0
-Africa,Bacterial skin infections,75 to 79,Escherichia coli,0,0,1000,4000,1000,10000,1000,0,3000,0,0,0,0,0,0,0,0,0
+Africa,Bacterial skin infections,75 to 79,Escherichia coli,0,0,1000,4000,1000,10000,1000,0,3000,0,0,490,1960,490,4900,490,0,1470
 Africa,Bacterial skin infections,80 to 84,Escherichia coli,0,0,0,3000,0,7000,1000,0,2000,0,0,0,0,0,0,0,0,0
 Africa,Bacterial skin infections,85 to 89,Escherichia coli,0,0,0,1000,0,3000,0,0,1000,0,0,0,0,0,0,0,0,0
 Africa,Bacterial skin infections,90 to 94,Escherichia coli,0,0,0,0,0,1000,0,0,0,0,0,0,0,0,0,0,0,0
 Africa,Bacterial skin infections,95 plus,Escherichia coli,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 Africa,Bone and joint infections,EN,Escherichia coli,0,0,0,1000,0,3000,0,0,1000,0,0,0,0,0,0,0,0,0
 Africa,Bone and joint infections,LN,Escherichia coli,0,0,0,1000,0,4000,0,0,1000,0,0,0,0,0,0,0,0,0
-Africa,Bone and joint infections,PN,Escherichia coli,0,0,0,1000,0,4000,0,0,1000,0,0,0,0,0,0,0,0,0
-Africa,Bone and joint infections,1 to 4,Escherichia coli,0,0,0,2000,0,5000,0,0,1000,0,0,0,0,0,0,0,0,0
-Africa,Bone and joint infections,5 to 9,Escherichia coli,0,0,0,0,0,1000,0,0,0,0,0,0,0,0,0,0,0,0
+Africa,Bone and joint infections,PN,Escherichia coli,0,0,0,1000,0,4000,0,0,1000,0,0,0,459.375,0,1837.5,0,0,459.375
+Africa,Bone and joint infections,1 to 4,Escherichia coli,0,0,0,2000,0,5000,0,0,1000,0,0,0,980,0,2450,0,0,490
+Africa,Bone and joint infections,5 to 9,Escherichia coli,0,0,0,0,0,1000,0,0,0,0,0,0,0,0,13.1923076923077,0,0,0
 Africa,Bone and joint infections,10 to 14,Escherichia coli,0,0,0,1000,0,3000,0,0,1000,0,0,0,0,0,0,0,0,0
 Africa,Bone and joint infections,15 to 19,Escherichia coli,0,0,0,1000,0,2000,0,0,1000,0,0,0,0,0,0,0,0,0
 Africa,Bone and joint infections,20 to 24,Escherichia coli,0,0,0,0,0,1000,0,0,0,0,0,0,0,0,0,0,0,0
@@ -1420,39 +1420,39 @@ Africa,Bone and joint infections,55 to 59,Escherichia coli,0,0,0,1000,0,1000,0,0
 Africa,Bone and joint infections,60 to 64,Escherichia coli,0,0,0,1000,0,1000,0,0,0,0,0,0,0,0,0,0,0,0
 Africa,Bone and joint infections,65 to 69,Escherichia coli,0,0,0,1000,0,1000,0,0,0,0,0,0,0,0,0,0,0,0
 Africa,Bone and joint infections,70 to 74,Escherichia coli,0,0,0,1000,0,2000,0,0,0,0,0,0,0,0,0,0,0,0
-Africa,Bone and joint infections,75 to 79,Escherichia coli,0,0,0,1000,0,2000,0,0,0,0,0,0,0,0,0,0,0,0
+Africa,Bone and joint infections,75 to 79,Escherichia coli,0,0,0,1000,0,2000,0,0,0,0,0,0,490,0,980,0,0,0
 Africa,Bone and joint infections,80 to 84,Escherichia coli,0,0,0,1000,0,1000,0,0,0,0,0,0,0,0,0,0,0,0
 Africa,Bone and joint infections,85 to 89,Escherichia coli,0,0,0,0,0,1000,0,0,0,0,0,0,0,0,0,0,0,0
 Africa,Bone and joint infections,90 to 94,Escherichia coli,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 Africa,Bone and joint infections,95 plus,Escherichia coli,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Africa,BSI,EN,Escherichia coli,30000,20000,46000,460000,305000,680000,116000,73000,178000,14700,9800,22540,225400,149450,333200,56840,35770,87220
-Africa,BSI,LN,Escherichia coli,12000,8000,15000,176000,130000,232000,44000,31000,64000,5880,3920,7350,86240,63700,113680,21560,15190,31360
-Africa,BSI,PN,Escherichia coli,6000,4000,10000,88000,52000,139000,22000,12000,36000,2940,1960,4900,43120,25480,68110,10780,5880,17640
+Africa,BSI,EN,Escherichia coli,30000,20000,46000,460000,305000,680000,116000,73000,178000,0,0,0,0,0,0,0,0,0
+Africa,BSI,LN,Escherichia coli,12000,8000,15000,176000,130000,232000,44000,31000,64000,0,0,0,0,0,0,0,0,0
+Africa,BSI,PN,Escherichia coli,6000,4000,10000,88000,52000,139000,22000,12000,36000,2756.25,1837.5,4593.75,40425,23887.5,63853.125,10106.25,5512.5,16537.5
 Africa,BSI,1 to 4,Escherichia coli,3000,2000,6000,56000,28000,97000,14000,7000,25000,1470,980,2940,27440,13720,47530,6860,3430,12250
-Africa,BSI,5 to 9,Escherichia coli,1000,1000,2000,20000,10000,32000,5000,3000,8000,490,490,980,9800,4900,15680,2450,1470,3920
-Africa,BSI,10 to 14,Escherichia coli,1000,1000,1000,14000,8000,22000,4000,2000,6000,490,490,490,6860,3920,10780,1960,980,2940
-Africa,BSI,15 to 19,Escherichia coli,1000,1000,2000,20000,12000,31000,5000,3000,8000,490,490,980,9800,5880,15190,2450,1470,3920
-Africa,BSI,20 to 24,Escherichia coli,1000,1000,2000,16000,10000,24000,4000,2000,6000,490,490,980,7840,4900,11760,1960,980,2940
-Africa,BSI,25 to 29,Escherichia coli,1000,1000,2000,13000,8000,21000,3000,2000,5000,490,490,980,6370,3920,10290,1470,980,2450
-Africa,BSI,30 to 34,Escherichia coli,1000,1000,2000,13000,8000,21000,3000,2000,5000,490,490,980,6370,3920,10290,1470,980,2450
-Africa,BSI,35 to 39,Escherichia coli,1000,1000,2000,14000,8000,23000,3000,2000,6000,490,490,980,6860,3920,11270,1470,980,2940
-Africa,BSI,40 to 44,Escherichia coli,1000,1000,2000,15000,9000,24000,4000,2000,6000,490,490,980,7350,4410,11760,1960,980,2940
-Africa,BSI,45 to 49,Escherichia coli,1000,1000,2000,17000,9000,28000,4000,2000,7000,490,490,980,8330,4410,13720,1960,980,3430
-Africa,BSI,50 to 54,Escherichia coli,2000,1000,4000,28000,15000,45000,7000,4000,11000,980,490,1960,13720,7350,22050,3430,1960,5390
-Africa,BSI,55 to 59,Escherichia coli,2000,1000,4000,29000,16000,46000,7000,4000,12000,980,490,1960,14210,7840,22540,3430,1960,5880
-Africa,BSI,60 to 64,Escherichia coli,2000,1000,4000,30000,17000,49000,7000,4000,13000,980,490,1960,14700,8330,24010,3430,1960,6370
-Africa,BSI,65 to 69,Escherichia coli,2000,1000,4000,30000,17000,46000,7000,4000,12000,980,490,1960,14700,8330,22540,3430,1960,5880
-Africa,BSI,70 to 74,Escherichia coli,3000,1000,5000,37000,18000,65000,9000,4000,17000,1470,490,2450,18130,8820,31850,4410,1960,8330
+Africa,BSI,5 to 9,Escherichia coli,1000,1000,2000,20000,10000,32000,5000,3000,8000,13.1923076923077,13.1923076923077,26.3846153846154,263.846153846154,131.923076923077,422.153846153846,65.9615384615385,39.5769230769231,105.538461538462
+Africa,BSI,10 to 14,Escherichia coli,1000,1000,1000,14000,8000,22000,4000,2000,6000,0,0,0,0,0,0,0,0,0
+Africa,BSI,15 to 19,Escherichia coli,1000,1000,2000,20000,12000,31000,5000,3000,8000,0,0,0,0,0,0,0,0,0
+Africa,BSI,20 to 24,Escherichia coli,1000,1000,2000,16000,10000,24000,4000,2000,6000,0,0,0,0,0,0,0,0,0
+Africa,BSI,25 to 29,Escherichia coli,1000,1000,2000,13000,8000,21000,3000,2000,5000,0,0,0,0,0,0,0,0,0
+Africa,BSI,30 to 34,Escherichia coli,1000,1000,2000,13000,8000,21000,3000,2000,5000,0,0,0,0,0,0,0,0,0
+Africa,BSI,35 to 39,Escherichia coli,1000,1000,2000,14000,8000,23000,3000,2000,6000,0,0,0,0,0,0,0,0,0
+Africa,BSI,40 to 44,Escherichia coli,1000,1000,2000,15000,9000,24000,4000,2000,6000,0,0,0,0,0,0,0,0,0
+Africa,BSI,45 to 49,Escherichia coli,1000,1000,2000,17000,9000,28000,4000,2000,7000,0,0,0,0,0,0,0,0,0
+Africa,BSI,50 to 54,Escherichia coli,2000,1000,4000,28000,15000,45000,7000,4000,11000,0,0,0,0,0,0,0,0,0
+Africa,BSI,55 to 59,Escherichia coli,2000,1000,4000,29000,16000,46000,7000,4000,12000,0,0,0,0,0,0,0,0,0
+Africa,BSI,60 to 64,Escherichia coli,2000,1000,4000,30000,17000,49000,7000,4000,13000,0,0,0,0,0,0,0,0,0
+Africa,BSI,65 to 69,Escherichia coli,2000,1000,4000,30000,17000,46000,7000,4000,12000,0,0,0,0,0,0,0,0,0
+Africa,BSI,70 to 74,Escherichia coli,3000,1000,5000,37000,18000,65000,9000,4000,17000,0,0,0,0,0,0,0,0,0
 Africa,BSI,75 to 79,Escherichia coli,2000,1000,4000,30000,15000,52000,7000,4000,13000,980,490,1960,14700,7350,25480,3430,1960,6370
-Africa,BSI,80 to 84,Escherichia coli,2000,1000,3000,20000,10000,34000,5000,2000,9000,980,490,1470,9800,4900,16660,2450,980,4410
-Africa,BSI,85 to 89,Escherichia coli,1000,0,2000,11000,5000,19000,3000,1000,5000,490,0,980,5390,2450,9310,1470,490,2450
-Africa,BSI,90 to 94,Escherichia coli,0,0,1000,4000,2000,6000,1000,0,2000,0,0,490,1960,980,2940,490,0,980
-Africa,BSI,95 plus,Escherichia coli,0,0,0,1000,0,2000,0,0,0,0,0,0,490,0,980,0,0,0
+Africa,BSI,80 to 84,Escherichia coli,2000,1000,3000,20000,10000,34000,5000,2000,9000,0,0,0,0,0,0,0,0,0
+Africa,BSI,85 to 89,Escherichia coli,1000,0,2000,11000,5000,19000,3000,1000,5000,0,0,0,0,0,0,0,0,0
+Africa,BSI,90 to 94,Escherichia coli,0,0,1000,4000,2000,6000,1000,0,2000,0,0,0,0,0,0,0,0,0
+Africa,BSI,95 plus,Escherichia coli,0,0,0,1000,0,2000,0,0,0,0,0,0,0,0,0,0,0,0
 Africa,Cardiac infections,EN,Escherichia coli,0,0,0,0,0,1000,0,0,0,0,0,0,0,0,0,0,0,0
 Africa,Cardiac infections,LN,Escherichia coli,0,0,0,0,0,1000,0,0,0,0,0,0,0,0,0,0,0,0
-Africa,Cardiac infections,PN,Escherichia coli,0,0,0,1000,1000,2000,0,0,1000,0,0,0,0,0,0,0,0,0
-Africa,Cardiac infections,1 to 4,Escherichia coli,0,0,0,1000,0,1000,0,0,0,0,0,0,0,0,0,0,0,0
-Africa,Cardiac infections,5 to 9,Escherichia coli,0,0,0,1000,0,1000,0,0,0,0,0,0,0,0,0,0,0,0
+Africa,Cardiac infections,PN,Escherichia coli,0,0,0,1000,1000,2000,0,0,1000,0,0,0,459.375,459.375,918.75,0,0,459.375
+Africa,Cardiac infections,1 to 4,Escherichia coli,0,0,0,1000,0,1000,0,0,0,0,0,0,490,0,490,0,0,0
+Africa,Cardiac infections,5 to 9,Escherichia coli,0,0,0,1000,0,1000,0,0,0,0,0,0,13.1923076923077,0,13.1923076923077,0,0,0
 Africa,Cardiac infections,10 to 14,Escherichia coli,0,0,0,1000,0,1000,0,0,0,0,0,0,0,0,0,0,0,0
 Africa,Cardiac infections,15 to 19,Escherichia coli,0,0,0,1000,0,1000,0,0,0,0,0,0,0,0,0,0,0,0
 Africa,Cardiac infections,20 to 24,Escherichia coli,0,0,0,1000,1000,1000,0,0,0,0,0,0,0,0,0,0,0,0
@@ -1466,16 +1466,16 @@ Africa,Cardiac infections,55 to 59,Escherichia coli,0,0,0,1000,1000,2000,0,0,0,0
 Africa,Cardiac infections,60 to 64,Escherichia coli,0,0,0,1000,1000,1000,0,0,0,0,0,0,0,0,0,0,0,0
 Africa,Cardiac infections,65 to 69,Escherichia coli,0,0,0,1000,1000,1000,0,0,0,0,0,0,0,0,0,0,0,0
 Africa,Cardiac infections,70 to 74,Escherichia coli,0,0,0,1000,1000,1000,0,0,0,0,0,0,0,0,0,0,0,0
-Africa,Cardiac infections,75 to 79,Escherichia coli,0,0,0,1000,1000,1000,0,0,0,0,0,0,0,0,0,0,0,0
+Africa,Cardiac infections,75 to 79,Escherichia coli,0,0,0,1000,1000,1000,0,0,0,0,0,0,490,490,490,0,0,0
 Africa,Cardiac infections,80 to 84,Escherichia coli,0,0,0,1000,0,1000,0,0,0,0,0,0,0,0,0,0,0,0
 Africa,Cardiac infections,85 to 89,Escherichia coli,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 Africa,Cardiac infections,90 to 94,Escherichia coli,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 Africa,Cardiac infections,95 plus,Escherichia coli,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 Africa,CNS infections,EN,Escherichia coli,2000,1000,3000,36000,19000,60000,9000,4000,16000,0,0,0,0,0,0,0,0,0
 Africa,CNS infections,LN,Escherichia coli,2000,1000,3000,36000,20000,60000,9000,5000,16000,0,0,0,0,0,0,0,0,0
-Africa,CNS infections,PN,Escherichia coli,16000,10000,25000,314000,192000,502000,80000,47000,133000,0,0,0,0,0,0,0,0,0
-Africa,CNS infections,1 to 4,Escherichia coli,14000,8000,22000,307000,178000,496000,79000,44000,132000,0,0,0,0,0,0,0,0,0
-Africa,CNS infections,5 to 9,Escherichia coli,2000,1000,3000,35000,21000,55000,9000,5000,15000,0,0,0,0,0,0,0,0,0
+Africa,CNS infections,PN,Escherichia coli,16000,10000,25000,314000,192000,502000,80000,47000,133000,7350,4593.75,11484.375,144243.75,88200,230606.25,36750,21590.625,61096.875
+Africa,CNS infections,1 to 4,Escherichia coli,14000,8000,22000,307000,178000,496000,79000,44000,132000,6860,3920,10780,150430,87220,243040,38710,21560,64680
+Africa,CNS infections,5 to 9,Escherichia coli,2000,1000,3000,35000,21000,55000,9000,5000,15000,26.3846153846154,13.1923076923077,39.5769230769231,461.730769230769,277.038461538462,725.576923076923,118.730769230769,65.9615384615385,197.884615384615
 Africa,CNS infections,10 to 14,Escherichia coli,2000,1000,2000,25000,16000,36000,6000,4000,10000,0,0,0,0,0,0,0,0,0
 Africa,CNS infections,15 to 19,Escherichia coli,2000,1000,2000,24000,16000,35000,6000,4000,9000,0,0,0,0,0,0,0,0,0
 Africa,CNS infections,20 to 24,Escherichia coli,1000,1000,2000,19000,12000,27000,5000,3000,7000,0,0,0,0,0,0,0,0,0
@@ -1489,7 +1489,7 @@ Africa,CNS infections,55 to 59,Escherichia coli,1000,0,1000,9000,6000,12000,2000
 Africa,CNS infections,60 to 64,Escherichia coli,1000,0,1000,8000,6000,11000,2000,1000,3000,0,0,0,0,0,0,0,0,0
 Africa,CNS infections,65 to 69,Escherichia coli,0,0,1000,6000,4000,8000,2000,1000,2000,0,0,0,0,0,0,0,0,0
 Africa,CNS infections,70 to 74,Escherichia coli,0,0,1000,6000,4000,9000,2000,1000,2000,0,0,0,0,0,0,0,0,0
-Africa,CNS infections,75 to 79,Escherichia coli,0,0,0,4000,2000,5000,1000,1000,1000,0,0,0,0,0,0,0,0,0
+Africa,CNS infections,75 to 79,Escherichia coli,0,0,0,4000,2000,5000,1000,1000,1000,0,0,0,1960,980,2450,490,490,490
 Africa,CNS infections,80 to 84,Escherichia coli,0,0,0,2000,2000,3000,1000,0,1000,0,0,0,0,0,0,0,0,0
 Africa,CNS infections,85 to 89,Escherichia coli,0,0,0,1000,1000,2000,0,0,0,0,0,0,0,0,0,0,0,0
 Africa,CNS infections,90 to 94,Escherichia coli,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
@@ -1519,9 +1519,9 @@ Africa,Diarrhoea,90 to 94,Escherichia coli,0,0,0,1000,0,2000,0,0,0,0,0,0,0,0,0,0
 Africa,Diarrhoea,95 plus,Escherichia coli,0,0,0,0,0,1000,0,0,0,0,0,0,0,0,0,0,0,0
 Africa,Intra-abdominal infections,EN,Escherichia coli,1000,1000,2000,18000,10000,28000,4000,2000,7000,0,0,0,0,0,0,0,0,0
 Africa,Intra-abdominal infections,LN,Escherichia coli,1000,0,1000,12000,7000,20000,3000,2000,5000,0,0,0,0,0,0,0,0,0
-Africa,Intra-abdominal infections,PN,Escherichia coli,4000,2000,7000,64000,33000,108000,16000,8000,29000,0,0,0,0,0,0,0,0,0
-Africa,Intra-abdominal infections,1 to 4,Escherichia coli,4000,2000,7000,77000,40000,129000,20000,10000,35000,0,0,0,0,0,0,0,0,0
-Africa,Intra-abdominal infections,5 to 9,Escherichia coli,2000,1000,3000,31000,18000,49000,8000,4000,13000,0,0,0,0,0,0,0,0,0
+Africa,Intra-abdominal infections,PN,Escherichia coli,4000,2000,7000,64000,33000,108000,16000,8000,29000,1837.5,918.75,3215.625,29400,15159.375,49612.5,7350,3675,13321.875
+Africa,Intra-abdominal infections,1 to 4,Escherichia coli,4000,2000,7000,77000,40000,129000,20000,10000,35000,1960,980,3430,37730,19600,63210,9800,4900,17150
+Africa,Intra-abdominal infections,5 to 9,Escherichia coli,2000,1000,3000,31000,18000,49000,8000,4000,13000,26.3846153846154,13.1923076923077,39.5769230769231,408.961538461538,237.461538461539,646.423076923077,105.538461538462,52.7692307692308,171.5
 Africa,Intra-abdominal infections,10 to 14,Escherichia coli,2000,1000,3000,28000,17000,42000,7000,4000,11000,0,0,0,0,0,0,0,0,0
 Africa,Intra-abdominal infections,15 to 19,Escherichia coli,3000,2000,5000,45000,25000,71000,11000,6000,19000,0,0,0,0,0,0,0,0,0
 Africa,Intra-abdominal infections,20 to 24,Escherichia coli,3000,1000,5000,39000,19000,68000,10000,5000,18000,0,0,0,0,0,0,0,0,0
@@ -1535,16 +1535,16 @@ Africa,Intra-abdominal infections,55 to 59,Escherichia coli,5000,3000,7000,73000
 Africa,Intra-abdominal infections,60 to 64,Escherichia coli,6000,4000,8000,80000,52000,115000,20000,12000,31000,0,0,0,0,0,0,0,0,0
 Africa,Intra-abdominal infections,65 to 69,Escherichia coli,5000,4000,7000,72000,50000,97000,18000,12000,26000,0,0,0,0,0,0,0,0,0
 Africa,Intra-abdominal infections,70 to 74,Escherichia coli,4000,3000,6000,63000,40000,88000,16000,10000,24000,0,0,0,0,0,0,0,0,0
-Africa,Intra-abdominal infections,75 to 79,Escherichia coli,3000,2000,4000,49000,34000,66000,12000,8000,18000,0,0,0,0,0,0,0,0,0
+Africa,Intra-abdominal infections,75 to 79,Escherichia coli,3000,2000,4000,49000,34000,66000,12000,8000,18000,1470,980,1960,24010,16660,32340,5880,3920,8820
 Africa,Intra-abdominal infections,80 to 84,Escherichia coli,2000,2000,3000,31000,22000,41000,8000,5000,11000,0,0,0,0,0,0,0,0,0
 Africa,Intra-abdominal infections,85 to 89,Escherichia coli,1000,1000,1000,13000,9000,18000,3000,2000,5000,0,0,0,0,0,0,0,0,0
 Africa,Intra-abdominal infections,90 to 94,Escherichia coli,0,0,0,4000,3000,6000,1000,1000,1000,0,0,0,0,0,0,0,0,0
 Africa,Intra-abdominal infections,95 plus,Escherichia coli,0,0,0,1000,1000,1000,0,0,0,0,0,0,0,0,0,0,0,0
 Africa,LRI and thorax infections,EN,Escherichia coli,137000,93000,198000,2254000,1528000,3203000,571000,364000,843000,0,0,0,0,0,0,0,0,0
 Africa,LRI and thorax infections,LN,Escherichia coli,25000,17000,36000,445000,308000,646000,113000,74000,166000,0,0,0,0,0,0,0,0,0
-Africa,LRI and thorax infections,PN,Escherichia coli,39000,28000,53000,646000,482000,889000,164000,114000,230000,0,0,0,0,0,0,0,0,0
-Africa,LRI and thorax infections,1 to 4,Escherichia coli,25000,17000,35000,459000,322000,647000,117000,77000,171000,0,0,0,0,0,0,0,0,0
-Africa,LRI and thorax infections,5 to 9,Escherichia coli,2000,2000,3000,32000,24000,43000,8000,6000,11000,0,0,0,0,0,0,0,0,0
+Africa,LRI and thorax infections,PN,Escherichia coli,39000,28000,53000,646000,482000,889000,164000,114000,230000,17915.625,12862.5,24346.875,296756.25,221418.75,408384.375,75337.5,52368.75,105656.25
+Africa,LRI and thorax infections,1 to 4,Escherichia coli,25000,17000,35000,459000,322000,647000,117000,77000,171000,12250,8330,17150,224910,157780,317030,57330,37730,83790
+Africa,LRI and thorax infections,5 to 9,Escherichia coli,2000,2000,3000,32000,24000,43000,8000,6000,11000,26.3846153846154,26.3846153846154,39.5769230769231,422.153846153846,316.615384615385,567.269230769231,105.538461538462,79.1538461538462,145.115384615385
 Africa,LRI and thorax infections,10 to 14,Escherichia coli,1000,1000,1000,16000,12000,21000,4000,3000,5000,0,0,0,0,0,0,0,0,0
 Africa,LRI and thorax infections,15 to 19,Escherichia coli,1000,1000,1000,15000,12000,20000,4000,3000,5000,0,0,0,0,0,0,0,0,0
 Africa,LRI and thorax infections,20 to 24,Escherichia coli,1000,1000,1000,14000,11000,18000,4000,3000,5000,0,0,0,0,0,0,0,0,0
@@ -1558,39 +1558,39 @@ Africa,LRI and thorax infections,55 to 59,Escherichia coli,3000,2000,4000,38000,
 Africa,LRI and thorax infections,60 to 64,Escherichia coli,3000,3000,4000,43000,35000,55000,11000,8000,14000,0,0,0,0,0,0,0,0,0
 Africa,LRI and thorax infections,65 to 69,Escherichia coli,3000,3000,4000,42000,34000,52000,10000,8000,14000,0,0,0,0,0,0,0,0,0
 Africa,LRI and thorax infections,70 to 74,Escherichia coli,3000,2000,4000,38000,30000,49000,9000,7000,13000,0,0,0,0,0,0,0,0,0
-Africa,LRI and thorax infections,75 to 79,Escherichia coli,2000,2000,3000,33000,26000,42000,8000,6000,11000,0,0,0,0,0,0,0,0,0
+Africa,LRI and thorax infections,75 to 79,Escherichia coli,2000,2000,3000,33000,26000,42000,8000,6000,11000,980,980,1470,16170,12740,20580,3920,2940,5390
 Africa,LRI and thorax infections,80 to 84,Escherichia coli,2000,1000,2000,24000,19000,29000,6000,4000,8000,0,0,0,0,0,0,0,0,0
 Africa,LRI and thorax infections,85 to 89,Escherichia coli,1000,1000,1000,12000,10000,15000,3000,2000,4000,0,0,0,0,0,0,0,0,0
 Africa,LRI and thorax infections,90 to 94,Escherichia coli,0,0,0,4000,3000,6000,1000,1000,1000,0,0,0,0,0,0,0,0,0
 Africa,LRI and thorax infections,95 plus,Escherichia coli,0,0,0,1000,1000,2000,0,0,0,0,0,0,0,0,0,0,0,0
-Africa,UTI,EN,Escherichia coli,0,0,0,2000,1000,5000,1000,0,1000,0,0,0,980,490,2450,490,0,490
-Africa,UTI,LN,Escherichia coli,0,0,0,1000,1000,3000,0,0,1000,0,0,0,490,490,1470,0,0,490
-Africa,UTI,PN,Escherichia coli,1000,0,1000,13000,9000,18000,3000,2000,5000,490,0,490,6370,4410,8820,1470,980,2450
+Africa,UTI,EN,Escherichia coli,0,0,0,2000,1000,5000,1000,0,1000,0,0,0,0,0,0,0,0,0
+Africa,UTI,LN,Escherichia coli,0,0,0,1000,1000,3000,0,0,1000,0,0,0,0,0,0,0,0,0
+Africa,UTI,PN,Escherichia coli,1000,0,1000,13000,9000,18000,3000,2000,5000,459.375,0,459.375,5971.875,4134.375,8268.75,1378.125,918.75,2296.875
 Africa,UTI,1 to 4,Escherichia coli,1000,0,1000,10000,6000,16000,3000,1000,4000,490,0,490,4900,2940,7840,1470,490,1960
-Africa,UTI,5 to 9,Escherichia coli,0,0,0,4000,3000,6000,1000,1000,2000,0,0,0,1960,1470,2940,490,490,980
-Africa,UTI,10 to 14,Escherichia coli,0,0,0,3000,2000,4000,1000,0,1000,0,0,0,1470,980,1960,490,0,490
-Africa,UTI,15 to 19,Escherichia coli,1000,0,1000,8000,5000,11000,2000,1000,3000,490,0,490,3920,2450,5390,980,490,1470
-Africa,UTI,20 to 24,Escherichia coli,1000,1000,1000,13000,10000,18000,3000,2000,5000,490,490,490,6370,4900,8820,1470,980,2450
-Africa,UTI,25 to 29,Escherichia coli,0,0,1000,5000,3000,7000,1000,1000,2000,0,0,490,2450,1470,3430,490,490,980
-Africa,UTI,30 to 34,Escherichia coli,1000,0,1000,7000,4000,10000,2000,1000,2000,490,0,490,3430,1960,4900,980,490,980
-Africa,UTI,35 to 39,Escherichia coli,0,0,1000,6000,4000,9000,2000,1000,2000,0,0,490,2940,1960,4410,980,490,980
-Africa,UTI,40 to 44,Escherichia coli,0,0,1000,6000,4000,9000,2000,1000,2000,0,0,490,2940,1960,4410,980,490,980
-Africa,UTI,45 to 49,Escherichia coli,1000,0,1000,7000,4000,10000,2000,1000,3000,490,0,490,3430,1960,4900,980,490,1470
-Africa,UTI,50 to 54,Escherichia coli,1000,1000,1000,12000,8000,16000,3000,2000,4000,490,490,490,5880,3920,7840,1470,980,1960
-Africa,UTI,55 to 59,Escherichia coli,1000,0,1000,8000,5000,11000,2000,1000,3000,490,0,490,3920,2450,5390,980,490,1470
-Africa,UTI,60 to 64,Escherichia coli,1000,0,1000,9000,5000,14000,2000,1000,4000,490,0,490,4410,2450,6860,980,490,1960
-Africa,UTI,65 to 69,Escherichia coli,1000,0,1000,10000,6000,14000,2000,1000,4000,490,0,490,4900,2940,6860,980,490,1960
-Africa,UTI,70 to 74,Escherichia coli,1000,0,1000,9000,6000,13000,2000,1000,3000,490,0,490,4410,2940,6370,980,490,1470
+Africa,UTI,5 to 9,Escherichia coli,0,0,0,4000,3000,6000,1000,1000,2000,0,0,0,52.7692307692308,39.5769230769231,79.1538461538462,13.1923076923077,13.1923076923077,26.3846153846154
+Africa,UTI,10 to 14,Escherichia coli,0,0,0,3000,2000,4000,1000,0,1000,0,0,0,0,0,0,0,0,0
+Africa,UTI,15 to 19,Escherichia coli,1000,0,1000,8000,5000,11000,2000,1000,3000,0,0,0,0,0,0,0,0,0
+Africa,UTI,20 to 24,Escherichia coli,1000,1000,1000,13000,10000,18000,3000,2000,5000,0,0,0,0,0,0,0,0,0
+Africa,UTI,25 to 29,Escherichia coli,0,0,1000,5000,3000,7000,1000,1000,2000,0,0,0,0,0,0,0,0,0
+Africa,UTI,30 to 34,Escherichia coli,1000,0,1000,7000,4000,10000,2000,1000,2000,0,0,0,0,0,0,0,0,0
+Africa,UTI,35 to 39,Escherichia coli,0,0,1000,6000,4000,9000,2000,1000,2000,0,0,0,0,0,0,0,0,0
+Africa,UTI,40 to 44,Escherichia coli,0,0,1000,6000,4000,9000,2000,1000,2000,0,0,0,0,0,0,0,0,0
+Africa,UTI,45 to 49,Escherichia coli,1000,0,1000,7000,4000,10000,2000,1000,3000,0,0,0,0,0,0,0,0,0
+Africa,UTI,50 to 54,Escherichia coli,1000,1000,1000,12000,8000,16000,3000,2000,4000,0,0,0,0,0,0,0,0,0
+Africa,UTI,55 to 59,Escherichia coli,1000,0,1000,8000,5000,11000,2000,1000,3000,0,0,0,0,0,0,0,0,0
+Africa,UTI,60 to 64,Escherichia coli,1000,0,1000,9000,5000,14000,2000,1000,4000,0,0,0,0,0,0,0,0,0
+Africa,UTI,65 to 69,Escherichia coli,1000,0,1000,10000,6000,14000,2000,1000,4000,0,0,0,0,0,0,0,0,0
+Africa,UTI,70 to 74,Escherichia coli,1000,0,1000,9000,6000,13000,2000,1000,3000,0,0,0,0,0,0,0,0,0
 Africa,UTI,75 to 79,Escherichia coli,1000,0,1000,7000,4000,9000,2000,1000,2000,490,0,490,3430,1960,4410,980,490,980
-Africa,UTI,80 to 84,Escherichia coli,0,0,1000,6000,4000,8000,1000,1000,2000,0,0,490,2940,1960,3920,490,490,980
-Africa,UTI,85 to 89,Escherichia coli,0,0,0,3000,2000,4000,1000,0,1000,0,0,0,1470,980,1960,490,0,490
-Africa,UTI,90 to 94,Escherichia coli,0,0,0,1000,1000,2000,0,0,0,0,0,0,490,490,980,0,0,0
+Africa,UTI,80 to 84,Escherichia coli,0,0,1000,6000,4000,8000,1000,1000,2000,0,0,0,0,0,0,0,0,0
+Africa,UTI,85 to 89,Escherichia coli,0,0,0,3000,2000,4000,1000,0,1000,0,0,0,0,0,0,0,0,0
+Africa,UTI,90 to 94,Escherichia coli,0,0,0,1000,1000,2000,0,0,0,0,0,0,0,0,0,0,0,0
 Africa,UTI,95 plus,Escherichia coli,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 Americas,Bacterial skin infections,EN,Escherichia coli,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 Americas,Bacterial skin infections,LN,Escherichia coli,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Americas,Bacterial skin infections,PN,Escherichia coli,0,0,0,1000,0,2000,0,0,0,0,0,0,0,0,0,0,0,0
-Americas,Bacterial skin infections,1 to 4,Escherichia coli,0,0,0,1000,0,2000,0,0,0,0,0,0,0,0,0,0,0,0
-Americas,Bacterial skin infections,5 to 9,Escherichia coli,0,0,0,0,0,1000,0,0,0,0,0,0,0,0,0,0,0,0
+Americas,Bacterial skin infections,PN,Escherichia coli,0,0,0,1000,0,2000,0,0,0,0,0,0,459.375,0,918.75,0,0,0
+Americas,Bacterial skin infections,1 to 4,Escherichia coli,0,0,0,1000,0,2000,0,0,0,0,0,0,490,0,980,0,0,0
+Americas,Bacterial skin infections,5 to 9,Escherichia coli,0,0,0,0,0,1000,0,0,0,0,0,0,0,0,13.1923076923077,0,0,0
 Americas,Bacterial skin infections,10 to 14,Escherichia coli,0,0,0,0,0,1000,0,0,0,0,0,0,0,0,0,0,0,0
 Americas,Bacterial skin infections,15 to 19,Escherichia coli,0,0,0,1000,0,1000,0,0,0,0,0,0,0,0,0,0,0,0
 Americas,Bacterial skin infections,20 to 24,Escherichia coli,0,0,0,1000,0,2000,0,0,0,0,0,0,0,0,0,0,0,0
@@ -1604,7 +1604,7 @@ Americas,Bacterial skin infections,55 to 59,Escherichia coli,1000,0,3000,5000,20
 Americas,Bacterial skin infections,60 to 64,Escherichia coli,1000,1000,3000,6000,2000,12000,1000,0,3000,0,0,0,0,0,0,0,0,0
 Americas,Bacterial skin infections,65 to 69,Escherichia coli,2000,1000,3000,6000,2000,12000,1000,0,3000,0,0,0,0,0,0,0,0,0
 Americas,Bacterial skin infections,70 to 74,Escherichia coli,1000,0,3000,5000,2000,11000,1000,0,3000,0,0,0,0,0,0,0,0,0
-Americas,Bacterial skin infections,75 to 79,Escherichia coli,1000,0,3000,4000,2000,10000,1000,0,2000,0,0,0,0,0,0,0,0,0
+Americas,Bacterial skin infections,75 to 79,Escherichia coli,1000,0,3000,4000,2000,10000,1000,0,2000,490,0,1470,1960,980,4900,490,0,980
 Americas,Bacterial skin infections,80 to 84,Escherichia coli,1000,0,2000,4000,1000,8000,1000,0,2000,0,0,0,0,0,0,0,0,0
 Americas,Bacterial skin infections,85 to 89,Escherichia coli,1000,0,2000,3000,1000,6000,1000,0,1000,0,0,0,0,0,0,0,0,0
 Americas,Bacterial skin infections,90 to 94,Escherichia coli,0,0,1000,1000,1000,3000,0,0,1000,0,0,0,0,0,0,0,0,0
@@ -1627,37 +1627,37 @@ Americas,Bone and joint infections,55 to 59,Escherichia coli,0,0,0,1000,0,1000,0
 Americas,Bone and joint infections,60 to 64,Escherichia coli,0,0,0,1000,0,2000,0,0,0,0,0,0,0,0,0,0,0,0
 Americas,Bone and joint infections,65 to 69,Escherichia coli,0,0,0,1000,0,1000,0,0,0,0,0,0,0,0,0,0,0,0
 Americas,Bone and joint infections,70 to 74,Escherichia coli,0,0,1000,1000,0,2000,0,0,1000,0,0,0,0,0,0,0,0,0
-Americas,Bone and joint infections,75 to 79,Escherichia coli,0,0,0,1000,0,2000,0,0,0,0,0,0,0,0,0,0,0,0
+Americas,Bone and joint infections,75 to 79,Escherichia coli,0,0,0,1000,0,2000,0,0,0,0,0,0,490,0,980,0,0,0
 Americas,Bone and joint infections,80 to 84,Escherichia coli,0,0,0,1000,0,1000,0,0,0,0,0,0,0,0,0,0,0,0
 Americas,Bone and joint infections,85 to 89,Escherichia coli,0,0,0,0,0,1000,0,0,0,0,0,0,0,0,0,0,0,0
 Americas,Bone and joint infections,90 to 94,Escherichia coli,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 Americas,Bone and joint infections,95 plus,Escherichia coli,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Americas,BSI,EN,Escherichia coli,9000,6000,14000,52000,36000,76000,12000,8000,18000,4410,2940,6860,25480,17640,37240,5880,3920,8820
-Americas,BSI,LN,Escherichia coli,6000,4000,8000,34000,24000,47000,8000,5000,12000,2940,1960,3920,16660,11760,23030,3920,2450,5880
-Americas,BSI,PN,Escherichia coli,5000,3000,7000,25000,16000,37000,6000,4000,9000,2450,1470,3430,12250,7840,18130,2940,1960,4410
+Americas,BSI,EN,Escherichia coli,9000,6000,14000,52000,36000,76000,12000,8000,18000,0,0,0,0,0,0,0,0,0
+Americas,BSI,LN,Escherichia coli,6000,4000,8000,34000,24000,47000,8000,5000,12000,0,0,0,0,0,0,0,0,0
+Americas,BSI,PN,Escherichia coli,5000,3000,7000,25000,16000,37000,6000,4000,9000,2296.875,1378.125,3215.625,11484.375,7350,16996.875,2756.25,1837.5,4134.375
 Americas,BSI,1 to 4,Escherichia coli,1000,0,2000,5000,2000,8000,1000,1000,2000,490,0,980,2450,980,3920,490,490,980
-Americas,BSI,5 to 9,Escherichia coli,1000,0,1000,4000,2000,7000,1000,0,2000,490,0,490,1960,980,3430,490,0,980
-Americas,BSI,10 to 14,Escherichia coli,1000,0,1000,4000,2000,6000,1000,0,2000,490,0,490,1960,980,2940,490,0,980
-Americas,BSI,15 to 19,Escherichia coli,1000,1000,2000,6000,3000,10000,1000,1000,2000,490,490,980,2940,1470,4900,490,490,980
-Americas,BSI,20 to 24,Escherichia coli,2000,1000,3000,8000,4000,13000,2000,1000,3000,980,490,1470,3920,1960,6370,980,490,1470
-Americas,BSI,25 to 29,Escherichia coli,2000,1000,3000,8000,4000,14000,2000,1000,3000,980,490,1470,3920,1960,6860,980,490,1470
-Americas,BSI,30 to 34,Escherichia coli,2000,1000,4000,9000,4000,16000,2000,1000,4000,980,490,1960,4410,1960,7840,980,490,1960
-Americas,BSI,35 to 39,Escherichia coli,3000,1000,5000,11000,5000,19000,3000,1000,5000,1470,490,2450,5390,2450,9310,1470,490,2450
-Americas,BSI,40 to 44,Escherichia coli,3000,2000,6000,13000,6000,21000,3000,1000,5000,1470,980,2940,6370,2940,10290,1470,490,2450
-Americas,BSI,45 to 49,Escherichia coli,4000,2000,8000,17000,8000,29000,4000,2000,7000,1960,980,3920,8330,3920,14210,1960,980,3430
-Americas,BSI,50 to 54,Escherichia coli,10000,5000,17000,38000,20000,62000,9000,5000,15000,4900,2450,8330,18620,9800,30380,4410,2450,7350
-Americas,BSI,55 to 59,Escherichia coli,13000,7000,22000,48000,26000,77000,11000,6000,19000,6370,3430,10780,23520,12740,37730,5390,2940,9310
-Americas,BSI,60 to 64,Escherichia coli,15000,9000,25000,54000,30000,87000,13000,7000,21000,7350,4410,12250,26460,14700,42630,6370,3430,10290
-Americas,BSI,65 to 69,Escherichia coli,15000,9000,24000,54000,31000,83000,12000,7000,20000,7350,4410,11760,26460,15190,40670,5880,3430,9800
-Americas,BSI,70 to 74,Escherichia coli,23000,11000,40000,78000,39000,136000,18000,9000,33000,11270,5390,19600,38220,19110,66640,8820,4410,16170
+Americas,BSI,5 to 9,Escherichia coli,1000,0,1000,4000,2000,7000,1000,0,2000,13.1923076923077,0,13.1923076923077,52.7692307692308,26.3846153846154,92.3461538461538,13.1923076923077,0,26.3846153846154
+Americas,BSI,10 to 14,Escherichia coli,1000,0,1000,4000,2000,6000,1000,0,2000,0,0,0,0,0,0,0,0,0
+Americas,BSI,15 to 19,Escherichia coli,1000,1000,2000,6000,3000,10000,1000,1000,2000,0,0,0,0,0,0,0,0,0
+Americas,BSI,20 to 24,Escherichia coli,2000,1000,3000,8000,4000,13000,2000,1000,3000,0,0,0,0,0,0,0,0,0
+Americas,BSI,25 to 29,Escherichia coli,2000,1000,3000,8000,4000,14000,2000,1000,3000,0,0,0,0,0,0,0,0,0
+Americas,BSI,30 to 34,Escherichia coli,2000,1000,4000,9000,4000,16000,2000,1000,4000,0,0,0,0,0,0,0,0,0
+Americas,BSI,35 to 39,Escherichia coli,3000,1000,5000,11000,5000,19000,3000,1000,5000,0,0,0,0,0,0,0,0,0
+Americas,BSI,40 to 44,Escherichia coli,3000,2000,6000,13000,6000,21000,3000,1000,5000,0,0,0,0,0,0,0,0,0
+Americas,BSI,45 to 49,Escherichia coli,4000,2000,8000,17000,8000,29000,4000,2000,7000,0,0,0,0,0,0,0,0,0
+Americas,BSI,50 to 54,Escherichia coli,10000,5000,17000,38000,20000,62000,9000,5000,15000,0,0,0,0,0,0,0,0,0
+Americas,BSI,55 to 59,Escherichia coli,13000,7000,22000,48000,26000,77000,11000,6000,19000,0,0,0,0,0,0,0,0,0
+Americas,BSI,60 to 64,Escherichia coli,15000,9000,25000,54000,30000,87000,13000,7000,21000,0,0,0,0,0,0,0,0,0
+Americas,BSI,65 to 69,Escherichia coli,15000,9000,24000,54000,31000,83000,12000,7000,20000,0,0,0,0,0,0,0,0,0
+Americas,BSI,70 to 74,Escherichia coli,23000,11000,40000,78000,39000,136000,18000,9000,33000,0,0,0,0,0,0,0,0,0
 Americas,BSI,75 to 79,Escherichia coli,17000,9000,29000,58000,30000,99000,13000,7000,24000,8330,4410,14210,28420,14700,48510,6370,3430,11760
-Americas,BSI,80 to 84,Escherichia coli,12000,7000,20000,43000,23000,71000,10000,5000,17000,5880,3430,9800,21070,11270,34790,4900,2450,8330
-Americas,BSI,85 to 89,Escherichia coli,8000,4000,14000,28000,14000,49000,7000,3000,12000,3920,1960,6860,13720,6860,24010,3430,1470,5880
-Americas,BSI,90 to 94,Escherichia coli,4000,2000,8000,13000,6000,25000,3000,1000,6000,1960,980,3920,6370,2940,12250,1470,490,2940
-Americas,BSI,95 plus,Escherichia coli,2000,1000,3000,5000,2000,10000,1000,0,2000,980,490,1470,2450,980,4900,490,0,980
+Americas,BSI,80 to 84,Escherichia coli,12000,7000,20000,43000,23000,71000,10000,5000,17000,0,0,0,0,0,0,0,0,0
+Americas,BSI,85 to 89,Escherichia coli,8000,4000,14000,28000,14000,49000,7000,3000,12000,0,0,0,0,0,0,0,0,0
+Americas,BSI,90 to 94,Escherichia coli,4000,2000,8000,13000,6000,25000,3000,1000,6000,0,0,0,0,0,0,0,0,0
+Americas,BSI,95 plus,Escherichia coli,2000,1000,3000,5000,2000,10000,1000,0,2000,0,0,0,0,0,0,0,0,0
 Americas,Cardiac infections,EN,Escherichia coli,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 Americas,Cardiac infections,LN,Escherichia coli,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Americas,Cardiac infections,PN,Escherichia coli,0,0,0,0,0,1000,0,0,0,0,0,0,0,0,0,0,0,0
+Americas,Cardiac infections,PN,Escherichia coli,0,0,0,0,0,1000,0,0,0,0,0,0,0,0,459.375,0,0,0
 Americas,Cardiac infections,1 to 4,Escherichia coli,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 Americas,Cardiac infections,5 to 9,Escherichia coli,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 Americas,Cardiac infections,10 to 14,Escherichia coli,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
@@ -1673,16 +1673,16 @@ Americas,Cardiac infections,55 to 59,Escherichia coli,1000,1000,1000,3000,2000,4
 Americas,Cardiac infections,60 to 64,Escherichia coli,1000,1000,1000,3000,2000,4000,1000,0,1000,0,0,0,0,0,0,0,0,0
 Americas,Cardiac infections,65 to 69,Escherichia coli,1000,1000,1000,3000,2000,4000,1000,0,1000,0,0,0,0,0,0,0,0,0
 Americas,Cardiac infections,70 to 74,Escherichia coli,2000,1000,2000,5000,3000,7000,1000,1000,2000,0,0,0,0,0,0,0,0,0
-Americas,Cardiac infections,75 to 79,Escherichia coli,2000,1000,2000,4000,3000,6000,1000,1000,1000,0,0,0,0,0,0,0,0,0
+Americas,Cardiac infections,75 to 79,Escherichia coli,2000,1000,2000,4000,3000,6000,1000,1000,1000,980,490,980,1960,1470,2940,490,490,490
 Americas,Cardiac infections,80 to 84,Escherichia coli,1000,1000,2000,4000,2000,5000,1000,1000,1000,0,0,0,0,0,0,0,0,0
 Americas,Cardiac infections,85 to 89,Escherichia coli,1000,1000,1000,3000,2000,4000,1000,0,1000,0,0,0,0,0,0,0,0,0
 Americas,Cardiac infections,90 to 94,Escherichia coli,1000,0,1000,2000,1000,2000,0,0,1000,0,0,0,0,0,0,0,0,0
 Americas,Cardiac infections,95 plus,Escherichia coli,0,0,1000,1000,0,1000,0,0,0,0,0,0,0,0,0,0,0,0
 Americas,CNS infections,EN,Escherichia coli,0,0,0,1000,0,1000,0,0,0,0,0,0,0,0,0,0,0,0
 Americas,CNS infections,LN,Escherichia coli,0,0,0,2000,1000,3000,0,0,1000,0,0,0,0,0,0,0,0,0
-Americas,CNS infections,PN,Escherichia coli,2000,1000,3000,11000,7000,17000,3000,2000,4000,0,0,0,0,0,0,0,0,0
-Americas,CNS infections,1 to 4,Escherichia coli,1000,1000,2000,7000,4000,11000,2000,1000,3000,0,0,0,0,0,0,0,0,0
-Americas,CNS infections,5 to 9,Escherichia coli,0,0,0,1000,1000,2000,0,0,1000,0,0,0,0,0,0,0,0,0
+Americas,CNS infections,PN,Escherichia coli,2000,1000,3000,11000,7000,17000,3000,2000,4000,918.75,459.375,1378.125,5053.125,3215.625,7809.375,1378.125,918.75,1837.5
+Americas,CNS infections,1 to 4,Escherichia coli,1000,1000,2000,7000,4000,11000,2000,1000,3000,490,490,980,3430,1960,5390,980,490,1470
+Americas,CNS infections,5 to 9,Escherichia coli,0,0,0,1000,1000,2000,0,0,1000,0,0,0,13.1923076923077,13.1923076923077,26.3846153846154,0,0,13.1923076923077
 Americas,CNS infections,10 to 14,Escherichia coli,0,0,0,1000,1000,2000,0,0,0,0,0,0,0,0,0,0,0,0
 Americas,CNS infections,15 to 19,Escherichia coli,0,0,0,1000,1000,2000,0,0,0,0,0,0,0,0,0,0,0,0
 Americas,CNS infections,20 to 24,Escherichia coli,0,0,0,1000,1000,2000,0,0,0,0,0,0,0,0,0,0,0,0
@@ -1696,7 +1696,7 @@ Americas,CNS infections,55 to 59,Escherichia coli,0,0,1000,1000,1000,2000,0,0,10
 Americas,CNS infections,60 to 64,Escherichia coli,0,0,1000,1000,1000,2000,0,0,1000,0,0,0,0,0,0,0,0,0
 Americas,CNS infections,65 to 69,Escherichia coli,0,0,0,1000,1000,2000,0,0,0,0,0,0,0,0,0,0,0,0
 Americas,CNS infections,70 to 74,Escherichia coli,0,0,0,1000,1000,2000,0,0,0,0,0,0,0,0,0,0,0,0
-Americas,CNS infections,75 to 79,Escherichia coli,0,0,0,1000,0,1000,0,0,0,0,0,0,0,0,0,0,0,0
+Americas,CNS infections,75 to 79,Escherichia coli,0,0,0,1000,0,1000,0,0,0,0,0,0,490,0,490,0,0,0
 Americas,CNS infections,80 to 84,Escherichia coli,0,0,0,0,0,1000,0,0,0,0,0,0,0,0,0,0,0,0
 Americas,CNS infections,85 to 89,Escherichia coli,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 Americas,CNS infections,90 to 94,Escherichia coli,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
@@ -1726,9 +1726,9 @@ Americas,Diarrhoea,90 to 94,Escherichia coli,0,0,0,0,0,1000,0,0,0,0,0,0,0,0,0,0,
 Americas,Diarrhoea,95 plus,Escherichia coli,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 Americas,Intra-abdominal infections,EN,Escherichia coli,0,0,0,1000,1000,2000,0,0,1000,0,0,0,0,0,0,0,0,0
 Americas,Intra-abdominal infections,LN,Escherichia coli,0,0,0,1000,1000,2000,0,0,1000,0,0,0,0,0,0,0,0,0
-Americas,Intra-abdominal infections,PN,Escherichia coli,4000,2000,7000,18000,9000,33000,4000,2000,8000,0,0,0,0,0,0,0,0,0
-Americas,Intra-abdominal infections,1 to 4,Escherichia coli,2000,1000,3000,11000,7000,18000,3000,2000,5000,0,0,0,0,0,0,0,0,0
-Americas,Intra-abdominal infections,5 to 9,Escherichia coli,1000,1000,1000,6000,4000,9000,2000,1000,2000,0,0,0,0,0,0,0,0,0
+Americas,Intra-abdominal infections,PN,Escherichia coli,4000,2000,7000,18000,9000,33000,4000,2000,8000,1837.5,918.75,3215.625,8268.75,4134.375,15159.375,1837.5,918.75,3675
+Americas,Intra-abdominal infections,1 to 4,Escherichia coli,2000,1000,3000,11000,7000,18000,3000,2000,5000,980,490,1470,5390,3430,8820,1470,980,2450
+Americas,Intra-abdominal infections,5 to 9,Escherichia coli,1000,1000,1000,6000,4000,9000,2000,1000,2000,13.1923076923077,13.1923076923077,13.1923076923077,79.1538461538462,52.7692307692308,118.730769230769,26.3846153846154,13.1923076923077,26.3846153846154
 Americas,Intra-abdominal infections,10 to 14,Escherichia coli,1000,1000,1000,6000,4000,8000,1000,1000,2000,0,0,0,0,0,0,0,0,0
 Americas,Intra-abdominal infections,15 to 19,Escherichia coli,2000,1000,2000,9000,5000,14000,2000,1000,3000,0,0,0,0,0,0,0,0,0
 Americas,Intra-abdominal infections,20 to 24,Escherichia coli,2000,1000,4000,13000,7000,21000,3000,2000,5000,0,0,0,0,0,0,0,0,0
@@ -1742,16 +1742,16 @@ Americas,Intra-abdominal infections,55 to 59,Escherichia coli,26000,17000,37000,
 Americas,Intra-abdominal infections,60 to 64,Escherichia coli,27000,17000,38000,102000,67000,145000,24000,15000,35000,0,0,0,0,0,0,0,0,0
 Americas,Intra-abdominal infections,65 to 69,Escherichia coli,23000,16000,32000,89000,64000,119000,21000,14000,30000,0,0,0,0,0,0,0,0,0
 Americas,Intra-abdominal infections,70 to 74,Escherichia coli,24000,16000,36000,93000,61000,134000,22000,14000,33000,0,0,0,0,0,0,0,0,0
-Americas,Intra-abdominal infections,75 to 79,Escherichia coli,19000,13000,27000,73000,51000,101000,17000,11000,25000,0,0,0,0,0,0,0,0,0
+Americas,Intra-abdominal infections,75 to 79,Escherichia coli,19000,13000,27000,73000,51000,101000,17000,11000,25000,9310,6370,13230,35770,24990,49490,8330,5390,12250
 Americas,Intra-abdominal infections,80 to 84,Escherichia coli,14000,10000,20000,52000,37000,73000,12000,8000,18000,0,0,0,0,0,0,0,0,0
 Americas,Intra-abdominal infections,85 to 89,Escherichia coli,9000,6000,13000,33000,22000,46000,8000,5000,11000,0,0,0,0,0,0,0,0,0
 Americas,Intra-abdominal infections,90 to 94,Escherichia coli,5000,3000,7000,15000,9000,22000,4000,2000,5000,0,0,0,0,0,0,0,0,0
 Americas,Intra-abdominal infections,95 plus,Escherichia coli,2000,1000,3000,5000,3000,8000,1000,1000,2000,0,0,0,0,0,0,0,0,0
 Americas,LRI and thorax infections,EN,Escherichia coli,14000,7000,24000,91000,52000,146000,22000,12000,38000,0,0,0,0,0,0,0,0,0
 Americas,LRI and thorax infections,LN,Escherichia coli,4000,2000,6000,28000,19000,41000,7000,4000,11000,0,0,0,0,0,0,0,0,0
-Americas,LRI and thorax infections,PN,Escherichia coli,6000,4000,8000,37000,27000,51000,9000,6000,13000,0,0,0,0,0,0,0,0,0
-Americas,LRI and thorax infections,1 to 4,Escherichia coli,2000,1000,3000,15000,11000,20000,4000,3000,5000,0,0,0,0,0,0,0,0,0
-Americas,LRI and thorax infections,5 to 9,Escherichia coli,0,0,1000,3000,2000,4000,1000,1000,1000,0,0,0,0,0,0,0,0,0
+Americas,LRI and thorax infections,PN,Escherichia coli,6000,4000,8000,37000,27000,51000,9000,6000,13000,2756.25,1837.5,3675,16996.875,12403.125,23428.125,4134.375,2756.25,5971.875
+Americas,LRI and thorax infections,1 to 4,Escherichia coli,2000,1000,3000,15000,11000,20000,4000,3000,5000,980,490,1470,7350,5390,9800,1960,1470,2450
+Americas,LRI and thorax infections,5 to 9,Escherichia coli,0,0,1000,3000,2000,4000,1000,1000,1000,0,0,13.1923076923077,39.5769230769231,26.3846153846154,52.7692307692308,13.1923076923077,13.1923076923077,13.1923076923077
 Americas,LRI and thorax infections,10 to 14,Escherichia coli,0,0,0,2000,2000,3000,1000,0,1000,0,0,0,0,0,0,0,0,0
 Americas,LRI and thorax infections,15 to 19,Escherichia coli,0,0,1000,3000,2000,3000,1000,0,1000,0,0,0,0,0,0,0,0,0
 Americas,LRI and thorax infections,20 to 24,Escherichia coli,1000,0,1000,3000,2000,4000,1000,1000,1000,0,0,0,0,0,0,0,0,0
@@ -1765,39 +1765,39 @@ Americas,LRI and thorax infections,55 to 59,Escherichia coli,5000,3000,6000,1900
 Americas,LRI and thorax infections,60 to 64,Escherichia coli,6000,4000,7000,22000,17000,29000,5000,4000,7000,0,0,0,0,0,0,0,0,0
 Americas,LRI and thorax infections,65 to 69,Escherichia coli,6000,5000,8000,24000,18000,30000,5000,4000,7000,0,0,0,0,0,0,0,0,0
 Americas,LRI and thorax infections,70 to 74,Escherichia coli,7000,5000,9000,25000,19000,35000,6000,4000,8000,0,0,0,0,0,0,0,0,0
-Americas,LRI and thorax infections,75 to 79,Escherichia coli,6000,5000,8000,24000,19000,31000,6000,4000,8000,0,0,0,0,0,0,0,0,0
+Americas,LRI and thorax infections,75 to 79,Escherichia coli,6000,5000,8000,24000,19000,31000,6000,4000,8000,2940,2450,3920,11760,9310,15190,2940,1960,3920
 Americas,LRI and thorax infections,80 to 84,Escherichia coli,6000,5000,7000,22000,18000,27000,5000,4000,7000,0,0,0,0,0,0,0,0,0
 Americas,LRI and thorax infections,85 to 89,Escherichia coli,5000,4000,6000,17000,14000,21000,4000,3000,5000,0,0,0,0,0,0,0,0,0
 Americas,LRI and thorax infections,90 to 94,Escherichia coli,3000,2000,3000,10000,8000,12000,2000,2000,3000,0,0,0,0,0,0,0,0,0
 Americas,LRI and thorax infections,95 plus,Escherichia coli,1000,1000,2000,5000,4000,6000,1000,1000,1000,0,0,0,0,0,0,0,0,0
-Americas,UTI,EN,Escherichia coli,0,0,0,0,0,1000,0,0,0,0,0,0,0,0,490,0,0,0
-Americas,UTI,LN,Escherichia coli,0,0,0,1000,0,1000,0,0,0,0,0,0,490,0,490,0,0,0
-Americas,UTI,PN,Escherichia coli,2000,1000,2000,8000,6000,10000,2000,1000,3000,980,490,980,3920,2940,4900,980,490,1470
+Americas,UTI,EN,Escherichia coli,0,0,0,0,0,1000,0,0,0,0,0,0,0,0,0,0,0,0
+Americas,UTI,LN,Escherichia coli,0,0,0,1000,0,1000,0,0,0,0,0,0,0,0,0,0,0,0
+Americas,UTI,PN,Escherichia coli,2000,1000,2000,8000,6000,10000,2000,1000,3000,918.75,459.375,918.75,3675,2756.25,4593.75,918.75,459.375,1378.125
 Americas,UTI,1 to 4,Escherichia coli,1000,1000,1000,4000,3000,6000,1000,1000,1000,490,490,490,1960,1470,2940,490,490,490
-Americas,UTI,5 to 9,Escherichia coli,1000,0,1000,3000,2000,4000,1000,0,1000,490,0,490,1470,980,1960,490,0,490
-Americas,UTI,10 to 14,Escherichia coli,1000,0,1000,3000,2000,3000,1000,0,1000,490,0,490,1470,980,1470,490,0,490
-Americas,UTI,15 to 19,Escherichia coli,1000,1000,1000,4000,3000,6000,1000,1000,1000,490,490,490,1960,1470,2940,490,490,490
-Americas,UTI,20 to 24,Escherichia coli,1000,1000,2000,6000,5000,8000,1000,1000,2000,490,490,980,2940,2450,3920,490,490,980
-Americas,UTI,25 to 29,Escherichia coli,2000,1000,2000,7000,6000,9000,2000,1000,2000,980,490,980,3430,2940,4410,980,490,980
-Americas,UTI,30 to 34,Escherichia coli,2000,2000,2000,8000,7000,11000,2000,1000,2000,980,980,980,3920,3430,5390,980,490,980
-Americas,UTI,35 to 39,Escherichia coli,2000,2000,3000,10000,8000,13000,2000,2000,3000,980,980,1470,4900,3920,6370,980,980,1470
-Americas,UTI,40 to 44,Escherichia coli,3000,2000,4000,14000,11000,18000,3000,2000,4000,1470,980,1960,6860,5390,8820,1470,980,1960
-Americas,UTI,45 to 49,Escherichia coli,4000,3000,5000,17000,13000,22000,4000,3000,6000,1960,1470,2450,8330,6370,10780,1960,1470,2940
-Americas,UTI,50 to 54,Escherichia coli,5000,4000,6000,21000,17000,27000,5000,4000,7000,2450,1960,2940,10290,8330,13230,2450,1960,3430
-Americas,UTI,55 to 59,Escherichia coli,7000,5000,9000,28000,21000,35000,6000,5000,9000,3430,2450,4410,13720,10290,17150,2940,2450,4410
-Americas,UTI,60 to 64,Escherichia coli,9000,7000,11000,33000,25000,42000,8000,6000,10000,4410,3430,5390,16170,12250,20580,3920,2940,4900
-Americas,UTI,65 to 69,Escherichia coli,10000,8000,12000,37000,29000,45000,8000,6000,11000,4900,3920,5880,18130,14210,22050,3920,2940,5390
-Americas,UTI,70 to 74,Escherichia coli,13000,10000,16000,45000,36000,57000,10000,8000,14000,6370,4900,7840,22050,17640,27930,4900,3920,6860
+Americas,UTI,5 to 9,Escherichia coli,1000,0,1000,3000,2000,4000,1000,0,1000,13.1923076923077,0,13.1923076923077,39.5769230769231,26.3846153846154,52.7692307692308,13.1923076923077,0,13.1923076923077
+Americas,UTI,10 to 14,Escherichia coli,1000,0,1000,3000,2000,3000,1000,0,1000,0,0,0,0,0,0,0,0,0
+Americas,UTI,15 to 19,Escherichia coli,1000,1000,1000,4000,3000,6000,1000,1000,1000,0,0,0,0,0,0,0,0,0
+Americas,UTI,20 to 24,Escherichia coli,1000,1000,2000,6000,5000,8000,1000,1000,2000,0,0,0,0,0,0,0,0,0
+Americas,UTI,25 to 29,Escherichia coli,2000,1000,2000,7000,6000,9000,2000,1000,2000,0,0,0,0,0,0,0,0,0
+Americas,UTI,30 to 34,Escherichia coli,2000,2000,2000,8000,7000,11000,2000,1000,2000,0,0,0,0,0,0,0,0,0
+Americas,UTI,35 to 39,Escherichia coli,2000,2000,3000,10000,8000,13000,2000,2000,3000,0,0,0,0,0,0,0,0,0
+Americas,UTI,40 to 44,Escherichia coli,3000,2000,4000,14000,11000,18000,3000,2000,4000,0,0,0,0,0,0,0,0,0
+Americas,UTI,45 to 49,Escherichia coli,4000,3000,5000,17000,13000,22000,4000,3000,6000,0,0,0,0,0,0,0,0,0
+Americas,UTI,50 to 54,Escherichia coli,5000,4000,6000,21000,17000,27000,5000,4000,7000,0,0,0,0,0,0,0,0,0
+Americas,UTI,55 to 59,Escherichia coli,7000,5000,9000,28000,21000,35000,6000,5000,9000,0,0,0,0,0,0,0,0,0
+Americas,UTI,60 to 64,Escherichia coli,9000,7000,11000,33000,25000,42000,8000,6000,10000,0,0,0,0,0,0,0,0,0
+Americas,UTI,65 to 69,Escherichia coli,10000,8000,12000,37000,29000,45000,8000,6000,11000,0,0,0,0,0,0,0,0,0
+Americas,UTI,70 to 74,Escherichia coli,13000,10000,16000,45000,36000,57000,10000,8000,14000,0,0,0,0,0,0,0,0,0
 Americas,UTI,75 to 79,Escherichia coli,14000,11000,16000,47000,38000,56000,11000,8000,14000,6860,5390,7840,23030,18620,27440,5390,3920,6860
-Americas,UTI,80 to 84,Escherichia coli,13000,11000,15000,44000,36000,51000,10000,8000,13000,6370,5390,7350,21560,17640,24990,4900,3920,6370
-Americas,UTI,85 to 89,Escherichia coli,11000,9000,13000,35000,29000,40000,8000,6000,10000,5390,4410,6370,17150,14210,19600,3920,2940,4900
-Americas,UTI,90 to 94,Escherichia coli,7000,6000,8000,21000,17000,24000,5000,4000,6000,3430,2940,3920,10290,8330,11760,2450,1960,2940
-Americas,UTI,95 plus,Escherichia coli,3000,3000,4000,9000,7000,11000,2000,2000,3000,1470,1470,1960,4410,3430,5390,980,980,1470
+Americas,UTI,80 to 84,Escherichia coli,13000,11000,15000,44000,36000,51000,10000,8000,13000,0,0,0,0,0,0,0,0,0
+Americas,UTI,85 to 89,Escherichia coli,11000,9000,13000,35000,29000,40000,8000,6000,10000,0,0,0,0,0,0,0,0,0
+Americas,UTI,90 to 94,Escherichia coli,7000,6000,8000,21000,17000,24000,5000,4000,6000,0,0,0,0,0,0,0,0,0
+Americas,UTI,95 plus,Escherichia coli,3000,3000,4000,9000,7000,11000,2000,2000,3000,0,0,0,0,0,0,0,0,0
 Eastern Mediterranean,Bacterial skin infections,EN,Escherichia coli,0,0,0,0,0,1000,0,0,0,0,0,0,0,0,0,0,0,0
 Eastern Mediterranean,Bacterial skin infections,LN,Escherichia coli,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Eastern Mediterranean,Bacterial skin infections,PN,Escherichia coli,0,0,0,1000,0,2000,0,0,1000,0,0,0,0,0,0,0,0,0
-Eastern Mediterranean,Bacterial skin infections,1 to 4,Escherichia coli,0,0,0,1000,0,2000,0,0,1000,0,0,0,0,0,0,0,0,0
-Eastern Mediterranean,Bacterial skin infections,5 to 9,Escherichia coli,0,0,0,1000,0,1000,0,0,0,0,0,0,0,0,0,0,0,0
+Eastern Mediterranean,Bacterial skin infections,PN,Escherichia coli,0,0,0,1000,0,2000,0,0,1000,0,0,0,459.375,0,918.75,0,0,459.375
+Eastern Mediterranean,Bacterial skin infections,1 to 4,Escherichia coli,0,0,0,1000,0,2000,0,0,1000,0,0,0,490,0,980,0,0,490
+Eastern Mediterranean,Bacterial skin infections,5 to 9,Escherichia coli,0,0,0,1000,0,1000,0,0,0,0,0,0,13.1923076923077,0,13.1923076923077,0,0,0
 Eastern Mediterranean,Bacterial skin infections,10 to 14,Escherichia coli,0,0,0,0,0,1000,0,0,0,0,0,0,0,0,0,0,0,0
 Eastern Mediterranean,Bacterial skin infections,15 to 19,Escherichia coli,0,0,0,1000,0,2000,0,0,1000,0,0,0,0,0,0,0,0,0
 Eastern Mediterranean,Bacterial skin infections,20 to 24,Escherichia coli,0,0,0,1000,0,2000,0,0,1000,0,0,0,0,0,0,0,0,0
@@ -1811,16 +1811,16 @@ Eastern Mediterranean,Bacterial skin infections,55 to 59,Escherichia coli,0,0,0,
 Eastern Mediterranean,Bacterial skin infections,60 to 64,Escherichia coli,0,0,0,3000,0,7000,1000,0,2000,0,0,0,0,0,0,0,0,0
 Eastern Mediterranean,Bacterial skin infections,65 to 69,Escherichia coli,0,0,0,3000,1000,7000,1000,0,2000,0,0,0,0,0,0,0,0,0
 Eastern Mediterranean,Bacterial skin infections,70 to 74,Escherichia coli,0,0,0,2000,0,6000,1000,0,2000,0,0,0,0,0,0,0,0,0
-Eastern Mediterranean,Bacterial skin infections,75 to 79,Escherichia coli,0,0,0,2000,0,5000,1000,0,1000,0,0,0,0,0,0,0,0,0
+Eastern Mediterranean,Bacterial skin infections,75 to 79,Escherichia coli,0,0,0,2000,0,5000,1000,0,1000,0,0,0,980,0,2450,490,0,490
 Eastern Mediterranean,Bacterial skin infections,80 to 84,Escherichia coli,0,0,0,1000,0,3000,0,0,1000,0,0,0,0,0,0,0,0,0
 Eastern Mediterranean,Bacterial skin infections,85 to 89,Escherichia coli,0,0,0,1000,0,2000,0,0,0,0,0,0,0,0,0,0,0,0
 Eastern Mediterranean,Bacterial skin infections,90 to 94,Escherichia coli,0,0,0,0,0,1000,0,0,0,0,0,0,0,0,0,0,0,0
 Eastern Mediterranean,Bacterial skin infections,95 plus,Escherichia coli,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 Eastern Mediterranean,Bone and joint infections,EN,Escherichia coli,0,0,0,3000,0,8000,1000,0,2000,0,0,0,0,0,0,0,0,0
 Eastern Mediterranean,Bone and joint infections,LN,Escherichia coli,0,0,0,1000,0,3000,0,0,1000,0,0,0,0,0,0,0,0,0
-Eastern Mediterranean,Bone and joint infections,PN,Escherichia coli,0,0,0,1000,0,2000,0,0,1000,0,0,0,0,0,0,0,0,0
-Eastern Mediterranean,Bone and joint infections,1 to 4,Escherichia coli,0,0,0,0,0,1000,0,0,0,0,0,0,0,0,0,0,0,0
-Eastern Mediterranean,Bone and joint infections,5 to 9,Escherichia coli,0,0,0,0,0,1000,0,0,0,0,0,0,0,0,0,0,0,0
+Eastern Mediterranean,Bone and joint infections,PN,Escherichia coli,0,0,0,1000,0,2000,0,0,1000,0,0,0,459.375,0,918.75,0,0,459.375
+Eastern Mediterranean,Bone and joint infections,1 to 4,Escherichia coli,0,0,0,0,0,1000,0,0,0,0,0,0,0,0,490,0,0,0
+Eastern Mediterranean,Bone and joint infections,5 to 9,Escherichia coli,0,0,0,0,0,1000,0,0,0,0,0,0,0,0,13.1923076923077,0,0,0
 Eastern Mediterranean,Bone and joint infections,10 to 14,Escherichia coli,0,0,0,0,0,1000,0,0,0,0,0,0,0,0,0,0,0,0
 Eastern Mediterranean,Bone and joint infections,15 to 19,Escherichia coli,0,0,0,0,0,1000,0,0,0,0,0,0,0,0,0,0,0,0
 Eastern Mediterranean,Bone and joint infections,20 to 24,Escherichia coli,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
@@ -1834,39 +1834,39 @@ Eastern Mediterranean,Bone and joint infections,55 to 59,Escherichia coli,0,0,0,
 Eastern Mediterranean,Bone and joint infections,60 to 64,Escherichia coli,0,0,0,0,0,1000,0,0,0,0,0,0,0,0,0,0,0,0
 Eastern Mediterranean,Bone and joint infections,65 to 69,Escherichia coli,0,0,0,0,0,1000,0,0,0,0,0,0,0,0,0,0,0,0
 Eastern Mediterranean,Bone and joint infections,70 to 74,Escherichia coli,0,0,0,1000,0,2000,0,0,0,0,0,0,0,0,0,0,0,0
-Eastern Mediterranean,Bone and joint infections,75 to 79,Escherichia coli,0,0,0,0,0,1000,0,0,0,0,0,0,0,0,0,0,0,0
+Eastern Mediterranean,Bone and joint infections,75 to 79,Escherichia coli,0,0,0,0,0,1000,0,0,0,0,0,0,0,0,490,0,0,0
 Eastern Mediterranean,Bone and joint infections,80 to 84,Escherichia coli,0,0,0,0,0,1000,0,0,0,0,0,0,0,0,0,0,0,0
 Eastern Mediterranean,Bone and joint infections,85 to 89,Escherichia coli,0,0,0,0,0,1000,0,0,0,0,0,0,0,0,0,0,0,0
 Eastern Mediterranean,Bone and joint infections,90 to 94,Escherichia coli,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 Eastern Mediterranean,Bone and joint infections,95 plus,Escherichia coli,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Eastern Mediterranean,BSI,EN,Escherichia coli,6000,3000,11000,166000,93000,280000,48000,25000,82000,2940,1470,5390,81340,45570,137200,23520,12250,40180
-Eastern Mediterranean,BSI,LN,Escherichia coli,4000,2000,5000,87000,58000,124000,25000,15000,38000,1960,980,2450,42630,28420,60760,12250,7350,18620
-Eastern Mediterranean,BSI,PN,Escherichia coli,2000,1000,3000,33000,18000,54000,9000,5000,16000,980,490,1470,16170,8820,26460,4410,2450,7840
+Eastern Mediterranean,BSI,EN,Escherichia coli,6000,3000,11000,166000,93000,280000,48000,25000,82000,0,0,0,0,0,0,0,0,0
+Eastern Mediterranean,BSI,LN,Escherichia coli,4000,2000,5000,87000,58000,124000,25000,15000,38000,0,0,0,0,0,0,0,0,0
+Eastern Mediterranean,BSI,PN,Escherichia coli,2000,1000,3000,33000,18000,54000,9000,5000,16000,918.75,459.375,1378.125,15159.375,8268.75,24806.25,4134.375,2296.875,7350
 Eastern Mediterranean,BSI,1 to 4,Escherichia coli,1000,0,1000,13000,7000,22000,4000,2000,6000,490,0,490,6370,3430,10780,1960,980,2940
-Eastern Mediterranean,BSI,5 to 9,Escherichia coli,0,0,1000,10000,5000,17000,3000,1000,5000,0,0,490,4900,2450,8330,1470,490,2450
-Eastern Mediterranean,BSI,10 to 14,Escherichia coli,0,0,1000,7000,4000,12000,2000,1000,3000,0,0,490,3430,1960,5880,980,490,1470
-Eastern Mediterranean,BSI,15 to 19,Escherichia coli,0,0,1000,9000,5000,15000,3000,1000,4000,0,0,490,4410,2450,7350,1470,490,1960
-Eastern Mediterranean,BSI,20 to 24,Escherichia coli,0,0,1000,8000,4000,14000,2000,1000,4000,0,0,490,3920,1960,6860,980,490,1960
-Eastern Mediterranean,BSI,25 to 29,Escherichia coli,0,0,1000,6000,3000,11000,2000,1000,3000,0,0,490,2940,1470,5390,980,490,1470
-Eastern Mediterranean,BSI,30 to 34,Escherichia coli,0,0,1000,6000,3000,12000,2000,1000,3000,0,0,490,2940,1470,5880,980,490,1470
-Eastern Mediterranean,BSI,35 to 39,Escherichia coli,1000,0,1000,7000,4000,13000,2000,1000,4000,490,0,490,3430,1960,6370,980,490,1960
-Eastern Mediterranean,BSI,40 to 44,Escherichia coli,1000,0,1000,8000,4000,14000,2000,1000,4000,490,0,490,3920,1960,6860,980,490,1960
-Eastern Mediterranean,BSI,45 to 49,Escherichia coli,1000,0,1000,10000,5000,19000,3000,1000,5000,490,0,490,4900,2450,9310,1470,490,2450
-Eastern Mediterranean,BSI,50 to 54,Escherichia coli,1000,1000,2000,22000,12000,37000,6000,3000,11000,490,490,980,10780,5880,18130,2940,1470,5390
-Eastern Mediterranean,BSI,55 to 59,Escherichia coli,1000,1000,2000,24000,13000,39000,7000,4000,12000,490,490,980,11760,6370,19110,3430,1960,5880
-Eastern Mediterranean,BSI,60 to 64,Escherichia coli,2000,1000,2000,27000,14000,43000,8000,4000,13000,980,490,980,13230,6860,21070,3920,1960,6370
-Eastern Mediterranean,BSI,65 to 69,Escherichia coli,1000,1000,2000,25000,15000,39000,7000,4000,12000,490,490,980,12250,7350,19110,3430,1960,5880
-Eastern Mediterranean,BSI,70 to 74,Escherichia coli,2000,1000,3000,32000,16000,56000,9000,4000,17000,980,490,1470,15680,7840,27440,4410,1960,8330
+Eastern Mediterranean,BSI,5 to 9,Escherichia coli,0,0,1000,10000,5000,17000,3000,1000,5000,0,0,13.1923076923077,131.923076923077,65.9615384615385,224.269230769231,39.5769230769231,13.1923076923077,65.9615384615385
+Eastern Mediterranean,BSI,10 to 14,Escherichia coli,0,0,1000,7000,4000,12000,2000,1000,3000,0,0,0,0,0,0,0,0,0
+Eastern Mediterranean,BSI,15 to 19,Escherichia coli,0,0,1000,9000,5000,15000,3000,1000,4000,0,0,0,0,0,0,0,0,0
+Eastern Mediterranean,BSI,20 to 24,Escherichia coli,0,0,1000,8000,4000,14000,2000,1000,4000,0,0,0,0,0,0,0,0,0
+Eastern Mediterranean,BSI,25 to 29,Escherichia coli,0,0,1000,6000,3000,11000,2000,1000,3000,0,0,0,0,0,0,0,0,0
+Eastern Mediterranean,BSI,30 to 34,Escherichia coli,0,0,1000,6000,3000,12000,2000,1000,3000,0,0,0,0,0,0,0,0,0
+Eastern Mediterranean,BSI,35 to 39,Escherichia coli,1000,0,1000,7000,4000,13000,2000,1000,4000,0,0,0,0,0,0,0,0,0
+Eastern Mediterranean,BSI,40 to 44,Escherichia coli,1000,0,1000,8000,4000,14000,2000,1000,4000,0,0,0,0,0,0,0,0,0
+Eastern Mediterranean,BSI,45 to 49,Escherichia coli,1000,0,1000,10000,5000,19000,3000,1000,5000,0,0,0,0,0,0,0,0,0
+Eastern Mediterranean,BSI,50 to 54,Escherichia coli,1000,1000,2000,22000,12000,37000,6000,3000,11000,0,0,0,0,0,0,0,0,0
+Eastern Mediterranean,BSI,55 to 59,Escherichia coli,1000,1000,2000,24000,13000,39000,7000,4000,12000,0,0,0,0,0,0,0,0,0
+Eastern Mediterranean,BSI,60 to 64,Escherichia coli,2000,1000,2000,27000,14000,43000,8000,4000,13000,0,0,0,0,0,0,0,0,0
+Eastern Mediterranean,BSI,65 to 69,Escherichia coli,1000,1000,2000,25000,15000,39000,7000,4000,12000,0,0,0,0,0,0,0,0,0
+Eastern Mediterranean,BSI,70 to 74,Escherichia coli,2000,1000,3000,32000,16000,56000,9000,4000,17000,0,0,0,0,0,0,0,0,0
 Eastern Mediterranean,BSI,75 to 79,Escherichia coli,1000,1000,2000,23000,12000,40000,7000,3000,12000,490,490,980,11270,5880,19600,3430,1470,5880
-Eastern Mediterranean,BSI,80 to 84,Escherichia coli,1000,0,1000,15000,8000,25000,4000,2000,7000,490,0,490,7350,3920,12250,1960,980,3430
-Eastern Mediterranean,BSI,85 to 89,Escherichia coli,0,0,1000,8000,4000,13000,2000,1000,4000,0,0,490,3920,1960,6370,980,490,1960
-Eastern Mediterranean,BSI,90 to 94,Escherichia coli,0,0,0,3000,1000,5000,1000,0,1000,0,0,0,1470,490,2450,490,0,490
-Eastern Mediterranean,BSI,95 plus,Escherichia coli,0,0,0,1000,0,1000,0,0,0,0,0,0,490,0,490,0,0,0
+Eastern Mediterranean,BSI,80 to 84,Escherichia coli,1000,0,1000,15000,8000,25000,4000,2000,7000,0,0,0,0,0,0,0,0,0
+Eastern Mediterranean,BSI,85 to 89,Escherichia coli,0,0,1000,8000,4000,13000,2000,1000,4000,0,0,0,0,0,0,0,0,0
+Eastern Mediterranean,BSI,90 to 94,Escherichia coli,0,0,0,3000,1000,5000,1000,0,1000,0,0,0,0,0,0,0,0,0
+Eastern Mediterranean,BSI,95 plus,Escherichia coli,0,0,0,1000,0,1000,0,0,0,0,0,0,0,0,0,0,0,0
 Eastern Mediterranean,Cardiac infections,EN,Escherichia coli,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 Eastern Mediterranean,Cardiac infections,LN,Escherichia coli,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Eastern Mediterranean,Cardiac infections,PN,Escherichia coli,0,0,0,0,0,1000,0,0,0,0,0,0,0,0,0,0,0,0
-Eastern Mediterranean,Cardiac infections,1 to 4,Escherichia coli,0,0,0,0,0,1000,0,0,0,0,0,0,0,0,0,0,0,0
-Eastern Mediterranean,Cardiac infections,5 to 9,Escherichia coli,0,0,0,1000,0,1000,0,0,0,0,0,0,0,0,0,0,0,0
+Eastern Mediterranean,Cardiac infections,PN,Escherichia coli,0,0,0,0,0,1000,0,0,0,0,0,0,0,0,459.375,0,0,0
+Eastern Mediterranean,Cardiac infections,1 to 4,Escherichia coli,0,0,0,0,0,1000,0,0,0,0,0,0,0,0,490,0,0,0
+Eastern Mediterranean,Cardiac infections,5 to 9,Escherichia coli,0,0,0,1000,0,1000,0,0,0,0,0,0,13.1923076923077,0,13.1923076923077,0,0,0
 Eastern Mediterranean,Cardiac infections,10 to 14,Escherichia coli,0,0,0,0,0,1000,0,0,0,0,0,0,0,0,0,0,0,0
 Eastern Mediterranean,Cardiac infections,15 to 19,Escherichia coli,0,0,0,1000,0,1000,0,0,0,0,0,0,0,0,0,0,0,0
 Eastern Mediterranean,Cardiac infections,20 to 24,Escherichia coli,0,0,0,1000,0,1000,0,0,0,0,0,0,0,0,0,0,0,0
@@ -1880,16 +1880,16 @@ Eastern Mediterranean,Cardiac infections,55 to 59,Escherichia coli,0,0,0,1000,10
 Eastern Mediterranean,Cardiac infections,60 to 64,Escherichia coli,0,0,0,1000,1000,1000,0,0,0,0,0,0,0,0,0,0,0,0
 Eastern Mediterranean,Cardiac infections,65 to 69,Escherichia coli,0,0,0,1000,1000,1000,0,0,0,0,0,0,0,0,0,0,0,0
 Eastern Mediterranean,Cardiac infections,70 to 74,Escherichia coli,0,0,0,1000,1000,1000,0,0,0,0,0,0,0,0,0,0,0,0
-Eastern Mediterranean,Cardiac infections,75 to 79,Escherichia coli,0,0,0,1000,1000,1000,0,0,0,0,0,0,0,0,0,0,0,0
+Eastern Mediterranean,Cardiac infections,75 to 79,Escherichia coli,0,0,0,1000,1000,1000,0,0,0,0,0,0,490,490,490,0,0,0
 Eastern Mediterranean,Cardiac infections,80 to 84,Escherichia coli,0,0,0,1000,0,1000,0,0,0,0,0,0,0,0,0,0,0,0
 Eastern Mediterranean,Cardiac infections,85 to 89,Escherichia coli,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 Eastern Mediterranean,Cardiac infections,90 to 94,Escherichia coli,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 Eastern Mediterranean,Cardiac infections,95 plus,Escherichia coli,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 Eastern Mediterranean,CNS infections,EN,Escherichia coli,0,0,1000,11000,4000,28000,3000,1000,8000,0,0,0,0,0,0,0,0,0
 Eastern Mediterranean,CNS infections,LN,Escherichia coli,0,0,1000,10000,5000,18000,3000,1000,5000,0,0,0,0,0,0,0,0,0
-Eastern Mediterranean,CNS infections,PN,Escherichia coli,3000,2000,5000,70000,40000,116000,20000,11000,33000,0,0,0,0,0,0,0,0,0
-Eastern Mediterranean,CNS infections,1 to 4,Escherichia coli,2000,1000,4000,61000,38000,94000,17000,10000,29000,0,0,0,0,0,0,0,0,0
-Eastern Mediterranean,CNS infections,5 to 9,Escherichia coli,0,0,1000,11000,7000,18000,3000,2000,5000,0,0,0,0,0,0,0,0,0
+Eastern Mediterranean,CNS infections,PN,Escherichia coli,3000,2000,5000,70000,40000,116000,20000,11000,33000,1378.125,918.75,2296.875,32156.25,18375,53287.5,9187.5,5053.125,15159.375
+Eastern Mediterranean,CNS infections,1 to 4,Escherichia coli,2000,1000,4000,61000,38000,94000,17000,10000,29000,980,490,1960,29890,18620,46060,8330,4900,14210
+Eastern Mediterranean,CNS infections,5 to 9,Escherichia coli,0,0,1000,11000,7000,18000,3000,2000,5000,0,0,13.1923076923077,145.115384615385,92.3461538461538,237.461538461539,39.5769230769231,26.3846153846154,65.9615384615385
 Eastern Mediterranean,CNS infections,10 to 14,Escherichia coli,0,0,1000,7000,5000,11000,2000,1000,3000,0,0,0,0,0,0,0,0,0
 Eastern Mediterranean,CNS infections,15 to 19,Escherichia coli,0,0,0,6000,4000,10000,2000,1000,3000,0,0,0,0,0,0,0,0,0
 Eastern Mediterranean,CNS infections,20 to 24,Escherichia coli,0,0,0,5000,3000,7000,1000,1000,2000,0,0,0,0,0,0,0,0,0
@@ -1903,7 +1903,7 @@ Eastern Mediterranean,CNS infections,55 to 59,Escherichia coli,0,0,0,2000,2000,4
 Eastern Mediterranean,CNS infections,60 to 64,Escherichia coli,0,0,0,2000,1000,3000,1000,0,1000,0,0,0,0,0,0,0,0,0
 Eastern Mediterranean,CNS infections,65 to 69,Escherichia coli,0,0,0,2000,1000,2000,0,0,1000,0,0,0,0,0,0,0,0,0
 Eastern Mediterranean,CNS infections,70 to 74,Escherichia coli,0,0,0,1000,1000,2000,0,0,1000,0,0,0,0,0,0,0,0,0
-Eastern Mediterranean,CNS infections,75 to 79,Escherichia coli,0,0,0,1000,1000,2000,0,0,0,0,0,0,0,0,0,0,0,0
+Eastern Mediterranean,CNS infections,75 to 79,Escherichia coli,0,0,0,1000,1000,2000,0,0,0,0,0,0,490,490,980,0,0,0
 Eastern Mediterranean,CNS infections,80 to 84,Escherichia coli,0,0,0,0,0,1000,0,0,0,0,0,0,0,0,0,0,0,0
 Eastern Mediterranean,CNS infections,85 to 89,Escherichia coli,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 Eastern Mediterranean,CNS infections,90 to 94,Escherichia coli,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
@@ -1933,9 +1933,9 @@ Eastern Mediterranean,Diarrhoea,90 to 94,Escherichia coli,0,0,0,1000,0,3000,0,0,
 Eastern Mediterranean,Diarrhoea,95 plus,Escherichia coli,0,0,0,0,0,1000,0,0,0,0,0,0,0,0,0,0,0,0
 Eastern Mediterranean,Intra-abdominal infections,EN,Escherichia coli,0,0,0,3000,2000,5000,1000,0,1000,0,0,0,0,0,0,0,0,0
 Eastern Mediterranean,Intra-abdominal infections,LN,Escherichia coli,0,0,0,3000,1000,5000,1000,0,1000,0,0,0,0,0,0,0,0,0
-Eastern Mediterranean,Intra-abdominal infections,PN,Escherichia coli,1000,0,2000,16000,8000,27000,4000,2000,8000,0,0,0,0,0,0,0,0,0
-Eastern Mediterranean,Intra-abdominal infections,1 to 4,Escherichia coli,1000,0,1000,15000,8000,26000,4000,2000,8000,0,0,0,0,0,0,0,0,0
-Eastern Mediterranean,Intra-abdominal infections,5 to 9,Escherichia coli,1000,0,1000,13000,7000,21000,4000,2000,6000,0,0,0,0,0,0,0,0,0
+Eastern Mediterranean,Intra-abdominal infections,PN,Escherichia coli,1000,0,2000,16000,8000,27000,4000,2000,8000,459.375,0,918.75,7350,3675,12403.125,1837.5,918.75,3675
+Eastern Mediterranean,Intra-abdominal infections,1 to 4,Escherichia coli,1000,0,1000,15000,8000,26000,4000,2000,8000,490,0,490,7350,3920,12740,1960,980,3920
+Eastern Mediterranean,Intra-abdominal infections,5 to 9,Escherichia coli,1000,0,1000,13000,7000,21000,4000,2000,6000,13.1923076923077,0,13.1923076923077,171.5,92.3461538461538,277.038461538462,52.7692307692308,26.3846153846154,79.1538461538462
 Eastern Mediterranean,Intra-abdominal infections,10 to 14,Escherichia coli,0,0,1000,11000,6000,17000,3000,2000,5000,0,0,0,0,0,0,0,0,0
 Eastern Mediterranean,Intra-abdominal infections,15 to 19,Escherichia coli,1000,1000,2000,23000,13000,37000,7000,4000,11000,0,0,0,0,0,0,0,0,0
 Eastern Mediterranean,Intra-abdominal infections,20 to 24,Escherichia coli,1000,0,2000,23000,11000,41000,7000,3000,12000,0,0,0,0,0,0,0,0,0
@@ -1949,16 +1949,16 @@ Eastern Mediterranean,Intra-abdominal infections,55 to 59,Escherichia coli,2000,
 Eastern Mediterranean,Intra-abdominal infections,60 to 64,Escherichia coli,3000,2000,4000,54000,33000,83000,16000,9000,25000,0,0,0,0,0,0,0,0,0
 Eastern Mediterranean,Intra-abdominal infections,65 to 69,Escherichia coli,2000,1000,3000,49000,33000,71000,14000,9000,22000,0,0,0,0,0,0,0,0,0
 Eastern Mediterranean,Intra-abdominal infections,70 to 74,Escherichia coli,2000,1000,3000,50000,30000,76000,14000,8000,23000,0,0,0,0,0,0,0,0,0
-Eastern Mediterranean,Intra-abdominal infections,75 to 79,Escherichia coli,2000,1000,3000,38000,25000,56000,11000,7000,17000,0,0,0,0,0,0,0,0,0
+Eastern Mediterranean,Intra-abdominal infections,75 to 79,Escherichia coli,2000,1000,3000,38000,25000,56000,11000,7000,17000,980,490,1470,18620,12250,27440,5390,3430,8330
 Eastern Mediterranean,Intra-abdominal infections,80 to 84,Escherichia coli,1000,1000,2000,24000,16000,34000,7000,4000,10000,0,0,0,0,0,0,0,0,0
 Eastern Mediterranean,Intra-abdominal infections,85 to 89,Escherichia coli,1000,0,1000,11000,8000,17000,3000,2000,5000,0,0,0,0,0,0,0,0,0
 Eastern Mediterranean,Intra-abdominal infections,90 to 94,Escherichia coli,0,0,0,4000,2000,5000,1000,1000,2000,0,0,0,0,0,0,0,0,0
 Eastern Mediterranean,Intra-abdominal infections,95 plus,Escherichia coli,0,0,0,1000,0,1000,0,0,0,0,0,0,0,0,0,0,0,0
 Eastern Mediterranean,LRI and thorax infections,EN,Escherichia coli,31000,19000,47000,736000,468000,1101000,209000,125000,323000,0,0,0,0,0,0,0,0,0
 Eastern Mediterranean,LRI and thorax infections,LN,Escherichia coli,10000,6000,14000,228000,159000,325000,65000,42000,99000,0,0,0,0,0,0,0,0,0
-Eastern Mediterranean,LRI and thorax infections,PN,Escherichia coli,9000,6000,13000,186000,130000,260000,52000,33000,76000,0,0,0,0,0,0,0,0,0
-Eastern Mediterranean,LRI and thorax infections,1 to 4,Escherichia coli,4000,3000,6000,93000,67000,123000,26000,18000,37000,0,0,0,0,0,0,0,0,0
-Eastern Mediterranean,LRI and thorax infections,5 to 9,Escherichia coli,1000,0,1000,13000,10000,18000,4000,3000,5000,0,0,0,0,0,0,0,0,0
+Eastern Mediterranean,LRI and thorax infections,PN,Escherichia coli,9000,6000,13000,186000,130000,260000,52000,33000,76000,4134.375,2756.25,5971.875,85443.75,59718.75,119437.5,23887.5,15159.375,34912.5
+Eastern Mediterranean,LRI and thorax infections,1 to 4,Escherichia coli,4000,3000,6000,93000,67000,123000,26000,18000,37000,1960,1470,2940,45570,32830,60270,12740,8820,18130
+Eastern Mediterranean,LRI and thorax infections,5 to 9,Escherichia coli,1000,0,1000,13000,10000,18000,4000,3000,5000,13.1923076923077,0,13.1923076923077,171.5,131.923076923077,237.461538461539,52.7692307692308,39.5769230769231,65.9615384615385
 Eastern Mediterranean,LRI and thorax infections,10 to 14,Escherichia coli,0,0,0,6000,5000,7000,2000,1000,2000,0,0,0,0,0,0,0,0,0
 Eastern Mediterranean,LRI and thorax infections,15 to 19,Escherichia coli,0,0,0,4000,3000,6000,1000,1000,2000,0,0,0,0,0,0,0,0,0
 Eastern Mediterranean,LRI and thorax infections,20 to 24,Escherichia coli,0,0,0,4000,3000,5000,1000,1000,2000,0,0,0,0,0,0,0,0,0
@@ -1972,34 +1972,34 @@ Eastern Mediterranean,LRI and thorax infections,55 to 59,Escherichia coli,1000,0
 Eastern Mediterranean,LRI and thorax infections,60 to 64,Escherichia coli,1000,1000,1000,13000,9000,18000,4000,2000,5000,0,0,0,0,0,0,0,0,0
 Eastern Mediterranean,LRI and thorax infections,65 to 69,Escherichia coli,1000,1000,1000,13000,9000,18000,4000,2000,5000,0,0,0,0,0,0,0,0,0
 Eastern Mediterranean,LRI and thorax infections,70 to 74,Escherichia coli,1000,0,1000,13000,9000,20000,4000,2000,6000,0,0,0,0,0,0,0,0,0
-Eastern Mediterranean,LRI and thorax infections,75 to 79,Escherichia coli,1000,0,1000,11000,7000,15000,3000,2000,5000,0,0,0,0,0,0,0,0,0
+Eastern Mediterranean,LRI and thorax infections,75 to 79,Escherichia coli,1000,0,1000,11000,7000,15000,3000,2000,5000,490,0,490,5390,3430,7350,1470,980,2450
 Eastern Mediterranean,LRI and thorax infections,80 to 84,Escherichia coli,0,0,1000,8000,5000,10000,2000,1000,3000,0,0,0,0,0,0,0,0,0
 Eastern Mediterranean,LRI and thorax infections,85 to 89,Escherichia coli,0,0,0,4000,3000,6000,1000,1000,2000,0,0,0,0,0,0,0,0,0
 Eastern Mediterranean,LRI and thorax infections,90 to 94,Escherichia coli,0,0,0,1000,1000,2000,0,0,1000,0,0,0,0,0,0,0,0,0
 Eastern Mediterranean,LRI and thorax infections,95 plus,Escherichia coli,0,0,0,0,0,1000,0,0,0,0,0,0,0,0,0,0,0,0
-Eastern Mediterranean,UTI,EN,Escherichia coli,0,0,0,3000,1000,5000,1000,0,2000,0,0,0,1470,490,2450,490,0,980
-Eastern Mediterranean,UTI,LN,Escherichia coli,0,0,0,2000,1000,4000,1000,0,1000,0,0,0,980,490,1960,490,0,490
-Eastern Mediterranean,UTI,PN,Escherichia coli,0,0,1000,9000,5000,14000,2000,1000,4000,0,0,490,4410,2450,6860,980,490,1960
+Eastern Mediterranean,UTI,EN,Escherichia coli,0,0,0,3000,1000,5000,1000,0,2000,0,0,0,0,0,0,0,0,0
+Eastern Mediterranean,UTI,LN,Escherichia coli,0,0,0,2000,1000,4000,1000,0,1000,0,0,0,0,0,0,0,0,0
+Eastern Mediterranean,UTI,PN,Escherichia coli,0,0,1000,9000,5000,14000,2000,1000,4000,0,0,459.375,4134.375,2296.875,6431.25,918.75,459.375,1837.5
 Eastern Mediterranean,UTI,1 to 4,Escherichia coli,0,0,0,9000,5000,13000,2000,1000,4000,0,0,0,4410,2450,6370,980,490,1960
-Eastern Mediterranean,UTI,5 to 9,Escherichia coli,0,0,0,7000,4000,11000,2000,1000,3000,0,0,0,3430,1960,5390,980,490,1470
-Eastern Mediterranean,UTI,10 to 14,Escherichia coli,0,0,0,5000,3000,7000,1000,1000,2000,0,0,0,2450,1470,3430,490,490,980
-Eastern Mediterranean,UTI,15 to 19,Escherichia coli,0,0,0,8000,6000,11000,2000,1000,3000,0,0,0,3920,2940,5390,980,490,1470
-Eastern Mediterranean,UTI,20 to 24,Escherichia coli,0,0,1000,10000,7000,13000,3000,2000,4000,0,0,490,4900,3430,6370,1470,980,1960
-Eastern Mediterranean,UTI,25 to 29,Escherichia coli,0,0,0,8000,5000,10000,2000,1000,3000,0,0,0,3920,2450,4900,980,490,1470
-Eastern Mediterranean,UTI,30 to 34,Escherichia coli,0,0,0,7000,5000,10000,2000,1000,3000,0,0,0,3430,2450,4900,980,490,1470
-Eastern Mediterranean,UTI,35 to 39,Escherichia coli,0,0,0,7000,5000,11000,2000,1000,3000,0,0,0,3430,2450,5390,980,490,1470
-Eastern Mediterranean,UTI,40 to 44,Escherichia coli,0,0,1000,9000,6000,12000,2000,2000,4000,0,0,490,4410,2940,5880,980,980,1960
-Eastern Mediterranean,UTI,45 to 49,Escherichia coli,0,0,1000,9000,6000,13000,3000,2000,4000,0,0,490,4410,2940,6370,1470,980,1960
-Eastern Mediterranean,UTI,50 to 54,Escherichia coli,0,0,1000,10000,7000,14000,3000,2000,4000,0,0,490,4900,3430,6860,1470,980,1960
-Eastern Mediterranean,UTI,55 to 59,Escherichia coli,0,0,1000,11000,7000,16000,3000,2000,5000,0,0,490,5390,3430,7840,1470,980,2450
-Eastern Mediterranean,UTI,60 to 64,Escherichia coli,1000,0,1000,11000,7000,17000,3000,2000,5000,490,0,490,5390,3430,8330,1470,980,2450
-Eastern Mediterranean,UTI,65 to 69,Escherichia coli,1000,0,1000,11000,8000,17000,3000,2000,5000,490,0,490,5390,3920,8330,1470,980,2450
-Eastern Mediterranean,UTI,70 to 74,Escherichia coli,1000,0,1000,11000,7000,17000,3000,2000,5000,490,0,490,5390,3430,8330,1470,980,2450
+Eastern Mediterranean,UTI,5 to 9,Escherichia coli,0,0,0,7000,4000,11000,2000,1000,3000,0,0,0,92.3461538461538,52.7692307692308,145.115384615385,26.3846153846154,13.1923076923077,39.5769230769231
+Eastern Mediterranean,UTI,10 to 14,Escherichia coli,0,0,0,5000,3000,7000,1000,1000,2000,0,0,0,0,0,0,0,0,0
+Eastern Mediterranean,UTI,15 to 19,Escherichia coli,0,0,0,8000,6000,11000,2000,1000,3000,0,0,0,0,0,0,0,0,0
+Eastern Mediterranean,UTI,20 to 24,Escherichia coli,0,0,1000,10000,7000,13000,3000,2000,4000,0,0,0,0,0,0,0,0,0
+Eastern Mediterranean,UTI,25 to 29,Escherichia coli,0,0,0,8000,5000,10000,2000,1000,3000,0,0,0,0,0,0,0,0,0
+Eastern Mediterranean,UTI,30 to 34,Escherichia coli,0,0,0,7000,5000,10000,2000,1000,3000,0,0,0,0,0,0,0,0,0
+Eastern Mediterranean,UTI,35 to 39,Escherichia coli,0,0,0,7000,5000,11000,2000,1000,3000,0,0,0,0,0,0,0,0,0
+Eastern Mediterranean,UTI,40 to 44,Escherichia coli,0,0,1000,9000,6000,12000,2000,2000,4000,0,0,0,0,0,0,0,0,0
+Eastern Mediterranean,UTI,45 to 49,Escherichia coli,0,0,1000,9000,6000,13000,3000,2000,4000,0,0,0,0,0,0,0,0,0
+Eastern Mediterranean,UTI,50 to 54,Escherichia coli,0,0,1000,10000,7000,14000,3000,2000,4000,0,0,0,0,0,0,0,0,0
+Eastern Mediterranean,UTI,55 to 59,Escherichia coli,0,0,1000,11000,7000,16000,3000,2000,5000,0,0,0,0,0,0,0,0,0
+Eastern Mediterranean,UTI,60 to 64,Escherichia coli,1000,0,1000,11000,7000,17000,3000,2000,5000,0,0,0,0,0,0,0,0,0
+Eastern Mediterranean,UTI,65 to 69,Escherichia coli,1000,0,1000,11000,8000,17000,3000,2000,5000,0,0,0,0,0,0,0,0,0
+Eastern Mediterranean,UTI,70 to 74,Escherichia coli,1000,0,1000,11000,7000,17000,3000,2000,5000,0,0,0,0,0,0,0,0,0
 Eastern Mediterranean,UTI,75 to 79,Escherichia coli,0,0,1000,9000,6000,13000,3000,2000,4000,0,0,490,4410,2940,6370,1470,980,1960
-Eastern Mediterranean,UTI,80 to 84,Escherichia coli,0,0,1000,6000,4000,9000,2000,1000,3000,0,0,490,2940,1960,4410,980,490,1470
-Eastern Mediterranean,UTI,85 to 89,Escherichia coli,0,0,0,4000,2000,5000,1000,1000,2000,0,0,0,1960,980,2450,490,490,980
-Eastern Mediterranean,UTI,90 to 94,Escherichia coli,0,0,0,1000,1000,2000,0,0,1000,0,0,0,490,490,980,0,0,490
-Eastern Mediterranean,UTI,95 plus,Escherichia coli,0,0,0,0,0,1000,0,0,0,0,0,0,0,0,490,0,0,0
+Eastern Mediterranean,UTI,80 to 84,Escherichia coli,0,0,1000,6000,4000,9000,2000,1000,3000,0,0,0,0,0,0,0,0,0
+Eastern Mediterranean,UTI,85 to 89,Escherichia coli,0,0,0,4000,2000,5000,1000,1000,2000,0,0,0,0,0,0,0,0,0
+Eastern Mediterranean,UTI,90 to 94,Escherichia coli,0,0,0,1000,1000,2000,0,0,1000,0,0,0,0,0,0,0,0,0
+Eastern Mediterranean,UTI,95 plus,Escherichia coli,0,0,0,0,0,1000,0,0,0,0,0,0,0,0,0,0,0,0
 Europe,Bacterial skin infections,EN,Escherichia coli,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 Europe,Bacterial skin infections,LN,Escherichia coli,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 Europe,Bacterial skin infections,PN,Escherichia coli,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
@@ -2018,7 +2018,7 @@ Europe,Bacterial skin infections,55 to 59,Escherichia coli,1000,0,2000,4000,1000
 Europe,Bacterial skin infections,60 to 64,Escherichia coli,1000,0,3000,5000,1000,12000,1000,0,3000,0,0,0,0,0,0,0,0,0
 Europe,Bacterial skin infections,65 to 69,Escherichia coli,1000,0,3000,5000,2000,12000,1000,0,3000,0,0,0,0,0,0,0,0,0
 Europe,Bacterial skin infections,70 to 74,Escherichia coli,1000,0,3000,4000,1000,11000,1000,0,3000,0,0,0,0,0,0,0,0,0
-Europe,Bacterial skin infections,75 to 79,Escherichia coli,1000,0,3000,4000,1000,11000,1000,0,3000,0,0,0,0,0,0,0,0,0
+Europe,Bacterial skin infections,75 to 79,Escherichia coli,1000,0,3000,4000,1000,11000,1000,0,3000,490,0,1470,1960,490,5390,490,0,1470
 Europe,Bacterial skin infections,80 to 84,Escherichia coli,1000,1000,3000,5000,2000,11000,1000,0,3000,0,0,0,0,0,0,0,0,0
 Europe,Bacterial skin infections,85 to 89,Escherichia coli,1000,0,3000,3000,1000,8000,1000,0,2000,0,0,0,0,0,0,0,0,0
 Europe,Bacterial skin infections,90 to 94,Escherichia coli,1000,0,2000,2000,1000,4000,0,0,1000,0,0,0,0,0,0,0,0,0
@@ -2041,34 +2041,34 @@ Europe,Bone and joint infections,55 to 59,Escherichia coli,0,0,0,1000,0,1000,0,0
 Europe,Bone and joint infections,60 to 64,Escherichia coli,0,0,0,1000,0,1000,0,0,0,0,0,0,0,0,0,0,0,0
 Europe,Bone and joint infections,65 to 69,Escherichia coli,0,0,0,1000,0,1000,0,0,0,0,0,0,0,0,0,0,0,0
 Europe,Bone and joint infections,70 to 74,Escherichia coli,0,0,1000,1000,0,2000,0,0,0,0,0,0,0,0,0,0,0,0
-Europe,Bone and joint infections,75 to 79,Escherichia coli,0,0,1000,1000,0,2000,0,0,0,0,0,0,0,0,0,0,0,0
+Europe,Bone and joint infections,75 to 79,Escherichia coli,0,0,1000,1000,0,2000,0,0,0,0,0,490,490,0,980,0,0,0
 Europe,Bone and joint infections,80 to 84,Escherichia coli,0,0,0,1000,0,1000,0,0,0,0,0,0,0,0,0,0,0,0
 Europe,Bone and joint infections,85 to 89,Escherichia coli,0,0,0,0,0,1000,0,0,0,0,0,0,0,0,0,0,0,0
 Europe,Bone and joint infections,90 to 94,Escherichia coli,0,0,0,0,0,1000,0,0,0,0,0,0,0,0,0,0,0,0
 Europe,Bone and joint infections,95 plus,Escherichia coli,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Europe,BSI,EN,Escherichia coli,5000,3000,8000,23000,15000,36000,6000,4000,9000,2450,1470,3920,11270,7350,17640,2940,1960,4410
-Europe,BSI,LN,Escherichia coli,4000,3000,6000,19000,13000,28000,5000,3000,7000,1960,1470,2940,9310,6370,13720,2450,1470,3430
-Europe,BSI,PN,Escherichia coli,2000,1000,3000,10000,6000,16000,3000,2000,4000,980,490,1470,4900,2940,7840,1470,980,1960
+Europe,BSI,EN,Escherichia coli,5000,3000,8000,23000,15000,36000,6000,4000,9000,0,0,0,0,0,0,0,0,0
+Europe,BSI,LN,Escherichia coli,4000,3000,6000,19000,13000,28000,5000,3000,7000,0,0,0,0,0,0,0,0,0
+Europe,BSI,PN,Escherichia coli,2000,1000,3000,10000,6000,16000,3000,2000,4000,918.75,459.375,1378.125,4593.75,2756.25,7350,1378.125,918.75,1837.5
 Europe,BSI,1 to 4,Escherichia coli,1000,0,2000,4000,2000,7000,1000,0,2000,490,0,980,1960,980,3430,490,0,980
-Europe,BSI,5 to 9,Escherichia coli,1000,0,2000,4000,2000,7000,1000,0,2000,490,0,980,1960,980,3430,490,0,980
-Europe,BSI,10 to 14,Escherichia coli,1000,0,1000,3000,2000,6000,1000,0,1000,490,0,490,1470,980,2940,490,0,490
-Europe,BSI,15 to 19,Escherichia coli,1000,1000,2000,5000,2000,9000,1000,1000,2000,490,490,980,2450,980,4410,490,490,980
-Europe,BSI,20 to 24,Escherichia coli,2000,1000,4000,8000,4000,14000,2000,1000,3000,980,490,1960,3920,1960,6860,980,490,1470
-Europe,BSI,25 to 29,Escherichia coli,3000,1000,5000,13000,6000,21000,3000,1000,6000,1470,490,2450,6370,2940,10290,1470,490,2940
-Europe,BSI,30 to 34,Escherichia coli,5000,2000,8000,20000,10000,36000,5000,2000,9000,2450,980,3920,9800,4900,17640,2450,980,4410
-Europe,BSI,35 to 39,Escherichia coli,6000,3000,10000,26000,12000,45000,6000,3000,12000,2940,1470,4900,12740,5880,22050,2940,1470,5880
-Europe,BSI,40 to 44,Escherichia coli,7000,4000,12000,30000,15000,50000,7000,3000,13000,3430,1960,5880,14700,7350,24500,3430,1470,6370
-Europe,BSI,45 to 49,Escherichia coli,10000,5000,17000,38000,18000,67000,9000,4000,17000,4900,2450,8330,18620,8820,32830,4410,1960,8330
-Europe,BSI,50 to 54,Escherichia coli,23000,12000,38000,84000,44000,137000,20000,10000,34000,11270,5880,18620,41160,21560,67130,9800,4900,16660
-Europe,BSI,55 to 59,Escherichia coli,30000,17000,50000,113000,63000,186000,27000,15000,46000,14700,8330,24500,55370,30870,91140,13230,7350,22540
-Europe,BSI,60 to 64,Escherichia coli,36000,20000,59000,136000,74000,224000,33000,17000,55000,17640,9800,28910,66640,36260,109760,16170,8330,26950
-Europe,BSI,65 to 69,Escherichia coli,39000,23000,60000,140000,84000,217000,34000,19000,54000,19110,11270,29400,68600,41160,106330,16660,9310,26460
-Europe,BSI,70 to 74,Escherichia coli,55000,28000,96000,184000,94000,324000,44000,22000,77000,26950,13720,47040,90160,46060,158760,21560,10780,37730
+Europe,BSI,5 to 9,Escherichia coli,1000,0,2000,4000,2000,7000,1000,0,2000,13.1923076923077,0,26.3846153846154,52.7692307692308,26.3846153846154,92.3461538461538,13.1923076923077,0,26.3846153846154
+Europe,BSI,10 to 14,Escherichia coli,1000,0,1000,3000,2000,6000,1000,0,1000,0,0,0,0,0,0,0,0,0
+Europe,BSI,15 to 19,Escherichia coli,1000,1000,2000,5000,2000,9000,1000,1000,2000,0,0,0,0,0,0,0,0,0
+Europe,BSI,20 to 24,Escherichia coli,2000,1000,4000,8000,4000,14000,2000,1000,3000,0,0,0,0,0,0,0,0,0
+Europe,BSI,25 to 29,Escherichia coli,3000,1000,5000,13000,6000,21000,3000,1000,6000,0,0,0,0,0,0,0,0,0
+Europe,BSI,30 to 34,Escherichia coli,5000,2000,8000,20000,10000,36000,5000,2000,9000,0,0,0,0,0,0,0,0,0
+Europe,BSI,35 to 39,Escherichia coli,6000,3000,10000,26000,12000,45000,6000,3000,12000,0,0,0,0,0,0,0,0,0
+Europe,BSI,40 to 44,Escherichia coli,7000,4000,12000,30000,15000,50000,7000,3000,13000,0,0,0,0,0,0,0,0,0
+Europe,BSI,45 to 49,Escherichia coli,10000,5000,17000,38000,18000,67000,9000,4000,17000,0,0,0,0,0,0,0,0,0
+Europe,BSI,50 to 54,Escherichia coli,23000,12000,38000,84000,44000,137000,20000,10000,34000,0,0,0,0,0,0,0,0,0
+Europe,BSI,55 to 59,Escherichia coli,30000,17000,50000,113000,63000,186000,27000,15000,46000,0,0,0,0,0,0,0,0,0
+Europe,BSI,60 to 64,Escherichia coli,36000,20000,59000,136000,74000,224000,33000,17000,55000,0,0,0,0,0,0,0,0,0
+Europe,BSI,65 to 69,Escherichia coli,39000,23000,60000,140000,84000,217000,34000,19000,54000,0,0,0,0,0,0,0,0,0
+Europe,BSI,70 to 74,Escherichia coli,55000,28000,96000,184000,94000,324000,44000,22000,77000,0,0,0,0,0,0,0,0,0
 Europe,BSI,75 to 79,Escherichia coli,44000,22000,75000,144000,73000,247000,34000,17000,60000,21560,10780,36750,70560,35770,121030,16660,8330,29400
-Europe,BSI,80 to 84,Escherichia coli,42000,22000,69000,137000,74000,226000,32000,17000,56000,20580,10780,33810,67130,36260,110740,15680,8330,27440
-Europe,BSI,85 to 89,Escherichia coli,29000,15000,49000,87000,45000,151000,20000,10000,36000,14210,7350,24010,42630,22050,73990,9800,4900,17640
-Europe,BSI,90 to 94,Escherichia coli,14000,6000,26000,40000,19000,76000,9000,4000,18000,6860,2940,12740,19600,9310,37240,4410,1960,8820
-Europe,BSI,95 plus,Escherichia coli,4000,2000,8000,11000,5000,22000,3000,1000,5000,1960,980,3920,5390,2450,10780,1470,490,2450
+Europe,BSI,80 to 84,Escherichia coli,42000,22000,69000,137000,74000,226000,32000,17000,56000,0,0,0,0,0,0,0,0,0
+Europe,BSI,85 to 89,Escherichia coli,29000,15000,49000,87000,45000,151000,20000,10000,36000,0,0,0,0,0,0,0,0,0
+Europe,BSI,90 to 94,Escherichia coli,14000,6000,26000,40000,19000,76000,9000,4000,18000,0,0,0,0,0,0,0,0,0
+Europe,BSI,95 plus,Escherichia coli,4000,2000,8000,11000,5000,22000,3000,1000,5000,0,0,0,0,0,0,0,0,0
 Europe,Cardiac infections,EN,Escherichia coli,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 Europe,Cardiac infections,LN,Escherichia coli,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 Europe,Cardiac infections,PN,Escherichia coli,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
@@ -2087,16 +2087,16 @@ Europe,Cardiac infections,55 to 59,Escherichia coli,2000,1000,4000,8000,5000,130
 Europe,Cardiac infections,60 to 64,Escherichia coli,3000,2000,5000,10000,6000,16000,2000,1000,4000,0,0,0,0,0,0,0,0,0
 Europe,Cardiac infections,65 to 69,Escherichia coli,3000,2000,5000,11000,7000,17000,3000,2000,4000,0,0,0,0,0,0,0,0,0
 Europe,Cardiac infections,70 to 74,Escherichia coli,5000,4000,8000,15000,10000,24000,3000,2000,6000,0,0,0,0,0,0,0,0,0
-Europe,Cardiac infections,75 to 79,Escherichia coli,6000,4000,9000,16000,10000,24000,4000,2000,6000,0,0,0,0,0,0,0,0,0
+Europe,Cardiac infections,75 to 79,Escherichia coli,6000,4000,9000,16000,10000,24000,4000,2000,6000,2940,1960,4410,7840,4900,11760,1960,980,2940
 Europe,Cardiac infections,80 to 84,Escherichia coli,7000,4000,10000,18000,12000,26000,4000,2000,6000,0,0,0,0,0,0,0,0,0
 Europe,Cardiac infections,85 to 89,Escherichia coli,6000,3000,8000,14000,9000,20000,3000,2000,5000,0,0,0,0,0,0,0,0,0
 Europe,Cardiac infections,90 to 94,Escherichia coli,3000,2000,4000,7000,4000,11000,2000,1000,2000,0,0,0,0,0,0,0,0,0
 Europe,Cardiac infections,95 plus,Escherichia coli,1000,1000,2000,2000,1000,4000,1000,0,1000,0,0,0,0,0,0,0,0,0
 Europe,CNS infections,EN,Escherichia coli,0,0,0,0,0,1000,0,0,0,0,0,0,0,0,0,0,0,0
 Europe,CNS infections,LN,Escherichia coli,0,0,0,0,0,1000,0,0,0,0,0,0,0,0,0,0,0,0
-Europe,CNS infections,PN,Escherichia coli,1000,0,1000,3000,2000,5000,1000,0,1000,0,0,0,0,0,0,0,0,0
-Europe,CNS infections,1 to 4,Escherichia coli,0,0,1000,2000,1000,3000,1000,0,1000,0,0,0,0,0,0,0,0,0
-Europe,CNS infections,5 to 9,Escherichia coli,0,0,0,1000,0,1000,0,0,0,0,0,0,0,0,0,0,0,0
+Europe,CNS infections,PN,Escherichia coli,1000,0,1000,3000,2000,5000,1000,0,1000,459.375,0,459.375,1378.125,918.75,2296.875,459.375,0,459.375
+Europe,CNS infections,1 to 4,Escherichia coli,0,0,1000,2000,1000,3000,1000,0,1000,0,0,490,980,490,1470,490,0,490
+Europe,CNS infections,5 to 9,Escherichia coli,0,0,0,1000,0,1000,0,0,0,0,0,0,13.1923076923077,0,13.1923076923077,0,0,0
 Europe,CNS infections,10 to 14,Escherichia coli,0,0,0,0,0,1000,0,0,0,0,0,0,0,0,0,0,0,0
 Europe,CNS infections,15 to 19,Escherichia coli,0,0,0,0,0,1000,0,0,0,0,0,0,0,0,0,0,0,0
 Europe,CNS infections,20 to 24,Escherichia coli,0,0,0,1000,0,1000,0,0,0,0,0,0,0,0,0,0,0,0
@@ -2110,7 +2110,7 @@ Europe,CNS infections,55 to 59,Escherichia coli,0,0,1000,1000,1000,3000,0,0,1000
 Europe,CNS infections,60 to 64,Escherichia coli,0,0,1000,1000,1000,2000,0,0,1000,0,0,0,0,0,0,0,0,0
 Europe,CNS infections,65 to 69,Escherichia coli,0,0,1000,1000,1000,2000,0,0,0,0,0,0,0,0,0,0,0,0
 Europe,CNS infections,70 to 74,Escherichia coli,0,0,1000,1000,0,2000,0,0,0,0,0,0,0,0,0,0,0,0
-Europe,CNS infections,75 to 79,Escherichia coli,0,0,0,1000,0,1000,0,0,0,0,0,0,0,0,0,0,0,0
+Europe,CNS infections,75 to 79,Escherichia coli,0,0,0,1000,0,1000,0,0,0,0,0,0,490,0,490,0,0,0
 Europe,CNS infections,80 to 84,Escherichia coli,0,0,0,0,0,1000,0,0,0,0,0,0,0,0,0,0,0,0
 Europe,CNS infections,85 to 89,Escherichia coli,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 Europe,CNS infections,90 to 94,Escherichia coli,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
@@ -2140,9 +2140,9 @@ Europe,Diarrhoea,90 to 94,Escherichia coli,0,0,1000,1000,0,2000,0,0,0,0,0,0,0,0,
 Europe,Diarrhoea,95 plus,Escherichia coli,0,0,0,0,0,1000,0,0,0,0,0,0,0,0,0,0,0,0
 Europe,Intra-abdominal infections,EN,Escherichia coli,0,0,0,0,0,1000,0,0,0,0,0,0,0,0,0,0,0,0
 Europe,Intra-abdominal infections,LN,Escherichia coli,0,0,0,1000,0,1000,0,0,0,0,0,0,0,0,0,0,0,0
-Europe,Intra-abdominal infections,PN,Escherichia coli,1000,0,3000,5000,2000,11000,1000,1000,3000,0,0,0,0,0,0,0,0,0
-Europe,Intra-abdominal infections,1 to 4,Escherichia coli,1000,0,1000,3000,2000,5000,1000,0,1000,0,0,0,0,0,0,0,0,0
-Europe,Intra-abdominal infections,5 to 9,Escherichia coli,0,0,1000,2000,1000,4000,1000,0,1000,0,0,0,0,0,0,0,0,0
+Europe,Intra-abdominal infections,PN,Escherichia coli,1000,0,3000,5000,2000,11000,1000,1000,3000,459.375,0,1378.125,2296.875,918.75,5053.125,459.375,459.375,1378.125
+Europe,Intra-abdominal infections,1 to 4,Escherichia coli,1000,0,1000,3000,2000,5000,1000,0,1000,490,0,490,1470,980,2450,490,0,490
+Europe,Intra-abdominal infections,5 to 9,Escherichia coli,0,0,1000,2000,1000,4000,1000,0,1000,0,0,13.1923076923077,26.3846153846154,13.1923076923077,52.7692307692308,13.1923076923077,0,13.1923076923077
 Europe,Intra-abdominal infections,10 to 14,Escherichia coli,0,0,1000,2000,1000,3000,0,0,1000,0,0,0,0,0,0,0,0,0
 Europe,Intra-abdominal infections,15 to 19,Escherichia coli,1000,0,1000,4000,2000,6000,1000,0,2000,0,0,0,0,0,0,0,0,0
 Europe,Intra-abdominal infections,20 to 24,Escherichia coli,1000,1000,2000,7000,3000,11000,2000,1000,3000,0,0,0,0,0,0,0,0,0
@@ -2156,16 +2156,16 @@ Europe,Intra-abdominal infections,55 to 59,Escherichia coli,25000,16000,35000,99
 Europe,Intra-abdominal infections,60 to 64,Escherichia coli,26000,17000,37000,103000,66000,148000,25000,15000,37000,0,0,0,0,0,0,0,0,0
 Europe,Intra-abdominal infections,65 to 69,Escherichia coli,24000,16000,33000,89000,61000,123000,21000,14000,31000,0,0,0,0,0,0,0,0,0
 Europe,Intra-abdominal infections,70 to 74,Escherichia coli,25000,15000,37000,85000,53000,127000,20000,12000,32000,0,0,0,0,0,0,0,0,0
-Europe,Intra-abdominal infections,75 to 79,Escherichia coli,22000,15000,32000,73000,49000,104000,17000,11000,26000,0,0,0,0,0,0,0,0,0
+Europe,Intra-abdominal infections,75 to 79,Escherichia coli,22000,15000,32000,73000,49000,104000,17000,11000,26000,10780,7350,15680,35770,24010,50960,8330,5390,12740
 Europe,Intra-abdominal infections,80 to 84,Escherichia coli,22000,15000,31000,70000,49000,100000,16000,11000,25000,0,0,0,0,0,0,0,0,0
 Europe,Intra-abdominal infections,85 to 89,Escherichia coli,15000,10000,22000,45000,30000,64000,10000,7000,16000,0,0,0,0,0,0,0,0,0
 Europe,Intra-abdominal infections,90 to 94,Escherichia coli,8000,5000,12000,22000,13000,33000,5000,3000,8000,0,0,0,0,0,0,0,0,0
 Europe,Intra-abdominal infections,95 plus,Escherichia coli,2000,1000,4000,6000,3000,10000,1000,1000,2000,0,0,0,0,0,0,0,0,0
 Europe,LRI and thorax infections,EN,Escherichia coli,5000,3000,7000,31000,19000,48000,8000,5000,13000,0,0,0,0,0,0,0,0,0
 Europe,LRI and thorax infections,LN,Escherichia coli,3000,2000,4000,17000,12000,23000,4000,3000,6000,0,0,0,0,0,0,0,0,0
-Europe,LRI and thorax infections,PN,Escherichia coli,3000,2000,4000,19000,15000,25000,5000,4000,7000,0,0,0,0,0,0,0,0,0
-Europe,LRI and thorax infections,1 to 4,Escherichia coli,1000,1000,2000,8000,6000,10000,2000,1000,3000,0,0,0,0,0,0,0,0,0
-Europe,LRI and thorax infections,5 to 9,Escherichia coli,0,0,0,2000,2000,2000,0,0,1000,0,0,0,0,0,0,0,0,0
+Europe,LRI and thorax infections,PN,Escherichia coli,3000,2000,4000,19000,15000,25000,5000,4000,7000,1378.125,918.75,1837.5,8728.125,6890.625,11484.375,2296.875,1837.5,3215.625
+Europe,LRI and thorax infections,1 to 4,Escherichia coli,1000,1000,2000,8000,6000,10000,2000,1000,3000,490,490,980,3920,2940,4900,980,490,1470
+Europe,LRI and thorax infections,5 to 9,Escherichia coli,0,0,0,2000,2000,2000,0,0,1000,0,0,0,26.3846153846154,26.3846153846154,26.3846153846154,0,0,13.1923076923077
 Europe,LRI and thorax infections,10 to 14,Escherichia coli,0,0,0,1000,1000,1000,0,0,0,0,0,0,0,0,0,0,0,0
 Europe,LRI and thorax infections,15 to 19,Escherichia coli,0,0,0,1000,1000,1000,0,0,0,0,0,0,0,0,0,0,0,0
 Europe,LRI and thorax infections,20 to 24,Escherichia coli,0,0,0,1000,1000,2000,0,0,0,0,0,0,0,0,0,0,0,0
@@ -2179,39 +2179,39 @@ Europe,LRI and thorax infections,55 to 59,Escherichia coli,3000,2000,4000,14000,
 Europe,LRI and thorax infections,60 to 64,Escherichia coli,3000,2000,5000,16000,12000,21000,4000,3000,6000,0,0,0,0,0,0,0,0,0
 Europe,LRI and thorax infections,65 to 69,Escherichia coli,4000,3000,5000,15000,11000,20000,4000,3000,5000,0,0,0,0,0,0,0,0,0
 Europe,LRI and thorax infections,70 to 74,Escherichia coli,4000,3000,6000,15000,10000,22000,4000,2000,6000,0,0,0,0,0,0,0,0,0
-Europe,LRI and thorax infections,75 to 79,Escherichia coli,4000,3000,6000,14000,10000,20000,3000,2000,5000,0,0,0,0,0,0,0,0,0
+Europe,LRI and thorax infections,75 to 79,Escherichia coli,4000,3000,6000,14000,10000,20000,3000,2000,5000,1960,1470,2940,6860,4900,9800,1470,980,2450
 Europe,LRI and thorax infections,80 to 84,Escherichia coli,5000,4000,6000,16000,13000,21000,4000,3000,5000,0,0,0,0,0,0,0,0,0
 Europe,LRI and thorax infections,85 to 89,Escherichia coli,5000,4000,5000,13000,11000,17000,3000,2000,4000,0,0,0,0,0,0,0,0,0
 Europe,LRI and thorax infections,90 to 94,Escherichia coli,3000,2000,4000,8000,7000,10000,2000,1000,2000,0,0,0,0,0,0,0,0,0
 Europe,LRI and thorax infections,95 plus,Escherichia coli,1000,1000,1000,3000,2000,4000,1000,1000,1000,0,0,0,0,0,0,0,0,0
 Europe,UTI,EN,Escherichia coli,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 Europe,UTI,LN,Escherichia coli,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Europe,UTI,PN,Escherichia coli,0,0,0,1000,1000,2000,0,0,0,0,0,0,490,490,980,0,0,0
+Europe,UTI,PN,Escherichia coli,0,0,0,1000,1000,2000,0,0,0,0,0,0,459.375,459.375,918.75,0,0,0
 Europe,UTI,1 to 4,Escherichia coli,0,0,0,2000,1000,2000,0,0,1000,0,0,0,980,490,980,0,0,490
-Europe,UTI,5 to 9,Escherichia coli,0,0,0,2000,1000,2000,0,0,1000,0,0,0,980,490,980,0,0,490
-Europe,UTI,10 to 14,Escherichia coli,0,0,0,2000,1000,2000,0,0,1000,0,0,0,980,490,980,0,0,490
-Europe,UTI,15 to 19,Escherichia coli,1000,0,1000,3000,2000,4000,1000,1000,1000,490,0,490,1470,980,1960,490,490,490
-Europe,UTI,20 to 24,Escherichia coli,1000,1000,1000,5000,4000,6000,1000,1000,1000,490,490,490,2450,1960,2940,490,490,490
-Europe,UTI,25 to 29,Escherichia coli,1000,1000,2000,7000,6000,8000,2000,1000,2000,490,490,980,3430,2940,3920,980,490,980
-Europe,UTI,30 to 34,Escherichia coli,2000,1000,2000,9000,7000,11000,2000,2000,3000,980,490,980,4410,3430,5390,980,980,1470
-Europe,UTI,35 to 39,Escherichia coli,2000,1000,2000,10000,8000,12000,2000,2000,3000,980,490,980,4900,3920,5880,980,980,1470
-Europe,UTI,40 to 44,Escherichia coli,2000,2000,3000,12000,9000,16000,3000,2000,4000,980,980,1470,5880,4410,7840,1470,980,1960
-Europe,UTI,45 to 49,Escherichia coli,3000,2000,4000,14000,11000,20000,3000,2000,5000,1470,980,1960,6860,5390,9800,1470,980,2450
-Europe,UTI,50 to 54,Escherichia coli,4000,3000,5000,16000,13000,22000,4000,3000,6000,1960,1470,2450,7840,6370,10780,1960,1470,2940
-Europe,UTI,55 to 59,Escherichia coli,5000,4000,7000,23000,18000,32000,6000,4000,8000,2450,1960,3430,11270,8820,15680,2940,1960,3920
-Europe,UTI,60 to 64,Escherichia coli,6000,5000,9000,29000,23000,40000,7000,5000,10000,2940,2450,4410,14210,11270,19600,3430,2450,4900
-Europe,UTI,65 to 69,Escherichia coli,8000,6000,10000,33000,26000,43000,8000,6000,11000,3920,2940,4900,16170,12740,21070,3920,2940,5390
-Europe,UTI,70 to 74,Escherichia coli,10000,7000,13000,36000,27000,49000,9000,6000,12000,4900,3430,6370,17640,13230,24010,4410,2940,5880
+Europe,UTI,5 to 9,Escherichia coli,0,0,0,2000,1000,2000,0,0,1000,0,0,0,26.3846153846154,13.1923076923077,26.3846153846154,0,0,13.1923076923077
+Europe,UTI,10 to 14,Escherichia coli,0,0,0,2000,1000,2000,0,0,1000,0,0,0,0,0,0,0,0,0
+Europe,UTI,15 to 19,Escherichia coli,1000,0,1000,3000,2000,4000,1000,1000,1000,0,0,0,0,0,0,0,0,0
+Europe,UTI,20 to 24,Escherichia coli,1000,1000,1000,5000,4000,6000,1000,1000,1000,0,0,0,0,0,0,0,0,0
+Europe,UTI,25 to 29,Escherichia coli,1000,1000,2000,7000,6000,8000,2000,1000,2000,0,0,0,0,0,0,0,0,0
+Europe,UTI,30 to 34,Escherichia coli,2000,1000,2000,9000,7000,11000,2000,2000,3000,0,0,0,0,0,0,0,0,0
+Europe,UTI,35 to 39,Escherichia coli,2000,1000,2000,10000,8000,12000,2000,2000,3000,0,0,0,0,0,0,0,0,0
+Europe,UTI,40 to 44,Escherichia coli,2000,2000,3000,12000,9000,16000,3000,2000,4000,0,0,0,0,0,0,0,0,0
+Europe,UTI,45 to 49,Escherichia coli,3000,2000,4000,14000,11000,20000,3000,2000,5000,0,0,0,0,0,0,0,0,0
+Europe,UTI,50 to 54,Escherichia coli,4000,3000,5000,16000,13000,22000,4000,3000,6000,0,0,0,0,0,0,0,0,0
+Europe,UTI,55 to 59,Escherichia coli,5000,4000,7000,23000,18000,32000,6000,4000,8000,0,0,0,0,0,0,0,0,0
+Europe,UTI,60 to 64,Escherichia coli,6000,5000,9000,29000,23000,40000,7000,5000,10000,0,0,0,0,0,0,0,0,0
+Europe,UTI,65 to 69,Escherichia coli,8000,6000,10000,33000,26000,43000,8000,6000,11000,0,0,0,0,0,0,0,0,0
+Europe,UTI,70 to 74,Escherichia coli,10000,7000,13000,36000,27000,49000,9000,6000,12000,0,0,0,0,0,0,0,0,0
 Europe,UTI,75 to 79,Escherichia coli,11000,9000,14000,37000,30000,48000,9000,6000,12000,5390,4410,6860,18130,14700,23520,4410,2940,5880
-Europe,UTI,80 to 84,Escherichia coli,14000,11000,17000,44000,35000,55000,10000,8000,14000,6860,5390,8330,21560,17150,26950,4900,3920,6860
-Europe,UTI,85 to 89,Escherichia coli,13000,10000,15000,35000,27000,43000,8000,6000,10000,6370,4900,7350,17150,13230,21070,3920,2940,4900
-Europe,UTI,90 to 94,Escherichia coli,8000,6000,10000,21000,17000,26000,5000,4000,6000,3920,2940,4900,10290,8330,12740,2450,1960,2940
-Europe,UTI,95 plus,Escherichia coli,3000,2000,4000,8000,6000,9000,2000,1000,2000,1470,980,1960,3920,2940,4410,980,490,980
+Europe,UTI,80 to 84,Escherichia coli,14000,11000,17000,44000,35000,55000,10000,8000,14000,0,0,0,0,0,0,0,0,0
+Europe,UTI,85 to 89,Escherichia coli,13000,10000,15000,35000,27000,43000,8000,6000,10000,0,0,0,0,0,0,0,0,0
+Europe,UTI,90 to 94,Escherichia coli,8000,6000,10000,21000,17000,26000,5000,4000,6000,0,0,0,0,0,0,0,0,0
+Europe,UTI,95 plus,Escherichia coli,3000,2000,4000,8000,6000,9000,2000,1000,2000,0,0,0,0,0,0,0,0,0
 South-East Asia,Bacterial skin infections,EN,Escherichia coli,0,0,0,0,0,1000,0,0,0,0,0,0,0,0,0,0,0,0
 South-East Asia,Bacterial skin infections,LN,Escherichia coli,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-South-East Asia,Bacterial skin infections,PN,Escherichia coli,0,0,0,4000,1000,13000,1000,0,4000,0,0,0,0,0,0,0,0,0
-South-East Asia,Bacterial skin infections,1 to 4,Escherichia coli,0,0,0,2000,0,7000,1000,0,2000,0,0,0,0,0,0,0,0,0
-South-East Asia,Bacterial skin infections,5 to 9,Escherichia coli,0,0,0,2000,0,3000,0,0,1000,0,0,0,0,0,0,0,0,0
+South-East Asia,Bacterial skin infections,PN,Escherichia coli,0,0,0,4000,1000,13000,1000,0,4000,0,0,0,1837.5,459.375,5971.875,459.375,0,1837.5
+South-East Asia,Bacterial skin infections,1 to 4,Escherichia coli,0,0,0,2000,0,7000,1000,0,2000,0,0,0,980,0,3430,490,0,980
+South-East Asia,Bacterial skin infections,5 to 9,Escherichia coli,0,0,0,2000,0,3000,0,0,1000,0,0,0,26.3846153846154,0,39.5769230769231,0,0,13.1923076923077
 South-East Asia,Bacterial skin infections,10 to 14,Escherichia coli,0,0,0,2000,1000,4000,1000,0,1000,0,0,0,0,0,0,0,0,0
 South-East Asia,Bacterial skin infections,15 to 19,Escherichia coli,0,0,0,2000,1000,5000,1000,0,2000,0,0,0,0,0,0,0,0,0
 South-East Asia,Bacterial skin infections,20 to 24,Escherichia coli,0,0,0,2000,1000,6000,1000,0,2000,0,0,0,0,0,0,0,0,0
@@ -2225,16 +2225,16 @@ South-East Asia,Bacterial skin infections,55 to 59,Escherichia coli,0,0,1000,900
 South-East Asia,Bacterial skin infections,60 to 64,Escherichia coli,1000,0,1000,12000,3000,30000,4000,1000,9000,0,0,0,0,0,0,0,0,0
 South-East Asia,Bacterial skin infections,65 to 69,Escherichia coli,1000,0,1000,13000,3000,33000,4000,1000,10000,0,0,0,0,0,0,0,0,0
 South-East Asia,Bacterial skin infections,70 to 74,Escherichia coli,0,0,1000,10000,2000,28000,3000,1000,9000,0,0,0,0,0,0,0,0,0
-South-East Asia,Bacterial skin infections,75 to 79,Escherichia coli,0,0,1000,9000,2000,24000,3000,1000,8000,0,0,0,0,0,0,0,0,0
+South-East Asia,Bacterial skin infections,75 to 79,Escherichia coli,0,0,1000,9000,2000,24000,3000,1000,8000,0,0,490,4410,980,11760,1470,490,3920
 South-East Asia,Bacterial skin infections,80 to 84,Escherichia coli,0,0,1000,7000,2000,17000,2000,0,5000,0,0,0,0,0,0,0,0,0
 South-East Asia,Bacterial skin infections,85 to 89,Escherichia coli,0,0,0,3000,1000,8000,1000,0,3000,0,0,0,0,0,0,0,0,0
 South-East Asia,Bacterial skin infections,90 to 94,Escherichia coli,0,0,0,1000,0,3000,0,0,1000,0,0,0,0,0,0,0,0,0
 South-East Asia,Bacterial skin infections,95 plus,Escherichia coli,0,0,0,0,0,1000,0,0,0,0,0,0,0,0,0,0,0,0
 South-East Asia,Bone and joint infections,EN,Escherichia coli,0,0,0,0,0,1000,0,0,0,0,0,0,0,0,0,0,0,0
 South-East Asia,Bone and joint infections,LN,Escherichia coli,0,0,0,0,0,1000,0,0,0,0,0,0,0,0,0,0,0,0
-South-East Asia,Bone and joint infections,PN,Escherichia coli,0,0,0,1000,0,2000,0,0,1000,0,0,0,0,0,0,0,0,0
-South-East Asia,Bone and joint infections,1 to 4,Escherichia coli,0,0,0,0,0,1000,0,0,0,0,0,0,0,0,0,0,0,0
-South-East Asia,Bone and joint infections,5 to 9,Escherichia coli,0,0,0,0,0,1000,0,0,0,0,0,0,0,0,0,0,0,0
+South-East Asia,Bone and joint infections,PN,Escherichia coli,0,0,0,1000,0,2000,0,0,1000,0,0,0,459.375,0,918.75,0,0,459.375
+South-East Asia,Bone and joint infections,1 to 4,Escherichia coli,0,0,0,0,0,1000,0,0,0,0,0,0,0,0,490,0,0,0
+South-East Asia,Bone and joint infections,5 to 9,Escherichia coli,0,0,0,0,0,1000,0,0,0,0,0,0,0,0,13.1923076923077,0,0,0
 South-East Asia,Bone and joint infections,10 to 14,Escherichia coli,0,0,0,1000,0,2000,0,0,1000,0,0,0,0,0,0,0,0,0
 South-East Asia,Bone and joint infections,15 to 19,Escherichia coli,0,0,0,0,0,1000,0,0,0,0,0,0,0,0,0,0,0,0
 South-East Asia,Bone and joint infections,20 to 24,Escherichia coli,0,0,0,0,0,1000,0,0,0,0,0,0,0,0,0,0,0,0
@@ -2248,39 +2248,39 @@ South-East Asia,Bone and joint infections,55 to 59,Escherichia coli,0,0,0,1000,0
 South-East Asia,Bone and joint infections,60 to 64,Escherichia coli,0,0,0,2000,0,4000,1000,0,1000,0,0,0,0,0,0,0,0,0
 South-East Asia,Bone and joint infections,65 to 69,Escherichia coli,0,0,0,2000,1000,5000,1000,0,1000,0,0,0,0,0,0,0,0,0
 South-East Asia,Bone and joint infections,70 to 74,Escherichia coli,0,0,0,3000,1000,7000,1000,0,2000,0,0,0,0,0,0,0,0,0
-South-East Asia,Bone and joint infections,75 to 79,Escherichia coli,0,0,0,3000,1000,6000,1000,0,2000,0,0,0,0,0,0,0,0,0
+South-East Asia,Bone and joint infections,75 to 79,Escherichia coli,0,0,0,3000,1000,6000,1000,0,2000,0,0,0,1470,490,2940,490,0,980
 South-East Asia,Bone and joint infections,80 to 84,Escherichia coli,0,0,0,2000,1000,5000,1000,0,1000,0,0,0,0,0,0,0,0,0
 South-East Asia,Bone and joint infections,85 to 89,Escherichia coli,0,0,0,1000,0,2000,0,0,1000,0,0,0,0,0,0,0,0,0
 South-East Asia,Bone and joint infections,90 to 94,Escherichia coli,0,0,0,0,0,1000,0,0,0,0,0,0,0,0,0,0,0,0
 South-East Asia,Bone and joint infections,95 plus,Escherichia coli,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-South-East Asia,BSI,EN,Escherichia coli,7000,4000,11000,192000,121000,303000,59000,36000,96000,3430,1960,5390,94080,59290,148470,28910,17640,47040
-South-East Asia,BSI,LN,Escherichia coli,3000,2000,4000,75000,53000,103000,23000,16000,33000,1470,980,1960,36750,25970,50470,11270,7840,16170
-South-East Asia,BSI,PN,Escherichia coli,1000,1000,1000,24000,14000,38000,7000,4000,12000,490,490,490,11760,6860,18620,3430,1960,5880
+South-East Asia,BSI,EN,Escherichia coli,7000,4000,11000,192000,121000,303000,59000,36000,96000,0,0,0,0,0,0,0,0,0
+South-East Asia,BSI,LN,Escherichia coli,3000,2000,4000,75000,53000,103000,23000,16000,33000,0,0,0,0,0,0,0,0,0
+South-East Asia,BSI,PN,Escherichia coli,1000,1000,1000,24000,14000,38000,7000,4000,12000,459.375,459.375,459.375,11025,6431.25,17456.25,3215.625,1837.5,5512.5
 South-East Asia,BSI,1 to 4,Escherichia coli,0,0,1000,8000,4000,13000,2000,1000,4000,0,0,490,3920,1960,6370,980,490,1960
-South-East Asia,BSI,5 to 9,Escherichia coli,0,0,1000,9000,5000,16000,3000,1000,5000,0,0,490,4410,2450,7840,1470,490,2450
-South-East Asia,BSI,10 to 14,Escherichia coli,0,0,1000,8000,4000,14000,3000,1000,4000,0,0,490,3920,1960,6860,1470,490,1960
-South-East Asia,BSI,15 to 19,Escherichia coli,0,0,1000,12000,6000,20000,4000,2000,6000,0,0,490,5880,2940,9800,1960,980,2940
-South-East Asia,BSI,20 to 24,Escherichia coli,0,0,1000,11000,6000,20000,4000,2000,6000,0,0,490,5390,2940,9800,1960,980,2940
-South-East Asia,BSI,25 to 29,Escherichia coli,0,0,1000,9000,4000,16000,3000,1000,5000,0,0,490,4410,1960,7840,1470,490,2450
-South-East Asia,BSI,30 to 34,Escherichia coli,0,0,1000,9000,4000,16000,3000,1000,5000,0,0,490,4410,1960,7840,1470,490,2450
-South-East Asia,BSI,35 to 39,Escherichia coli,0,0,1000,11000,5000,20000,3000,1000,6000,0,0,490,5390,2450,9800,1470,490,2940
-South-East Asia,BSI,40 to 44,Escherichia coli,1000,0,1000,13000,6000,23000,4000,2000,7000,490,0,490,6370,2940,11270,1960,980,3430
-South-East Asia,BSI,45 to 49,Escherichia coli,1000,0,2000,19000,9000,33000,6000,3000,11000,490,0,980,9310,4410,16170,2940,1470,5390
-South-East Asia,BSI,50 to 54,Escherichia coli,2000,1000,4000,50000,26000,87000,15000,7000,26000,980,490,1960,24500,12740,42630,7350,3430,12740
-South-East Asia,BSI,55 to 59,Escherichia coli,3000,1000,4000,58000,31000,96000,18000,9000,31000,1470,490,1960,28420,15190,47040,8820,4410,15190
-South-East Asia,BSI,60 to 64,Escherichia coli,3000,2000,5000,69000,37000,114000,21000,11000,37000,1470,980,2450,33810,18130,55860,10290,5390,18130
-South-East Asia,BSI,65 to 69,Escherichia coli,3000,2000,5000,74000,42000,118000,23000,12000,38000,1470,980,2450,36260,20580,57820,11270,5880,18620
-South-East Asia,BSI,70 to 74,Escherichia coli,4000,2000,8000,101000,49000,183000,31000,14000,59000,1960,980,3920,49490,24010,89670,15190,6860,28910
+South-East Asia,BSI,5 to 9,Escherichia coli,0,0,1000,9000,5000,16000,3000,1000,5000,0,0,13.1923076923077,118.730769230769,65.9615384615385,211.076923076923,39.5769230769231,13.1923076923077,65.9615384615385
+South-East Asia,BSI,10 to 14,Escherichia coli,0,0,1000,8000,4000,14000,3000,1000,4000,0,0,0,0,0,0,0,0,0
+South-East Asia,BSI,15 to 19,Escherichia coli,0,0,1000,12000,6000,20000,4000,2000,6000,0,0,0,0,0,0,0,0,0
+South-East Asia,BSI,20 to 24,Escherichia coli,0,0,1000,11000,6000,20000,4000,2000,6000,0,0,0,0,0,0,0,0,0
+South-East Asia,BSI,25 to 29,Escherichia coli,0,0,1000,9000,4000,16000,3000,1000,5000,0,0,0,0,0,0,0,0,0
+South-East Asia,BSI,30 to 34,Escherichia coli,0,0,1000,9000,4000,16000,3000,1000,5000,0,0,0,0,0,0,0,0,0
+South-East Asia,BSI,35 to 39,Escherichia coli,0,0,1000,11000,5000,20000,3000,1000,6000,0,0,0,0,0,0,0,0,0
+South-East Asia,BSI,40 to 44,Escherichia coli,1000,0,1000,13000,6000,23000,4000,2000,7000,0,0,0,0,0,0,0,0,0
+South-East Asia,BSI,45 to 49,Escherichia coli,1000,0,2000,19000,9000,33000,6000,3000,11000,0,0,0,0,0,0,0,0,0
+South-East Asia,BSI,50 to 54,Escherichia coli,2000,1000,4000,50000,26000,87000,15000,7000,26000,0,0,0,0,0,0,0,0,0
+South-East Asia,BSI,55 to 59,Escherichia coli,3000,1000,4000,58000,31000,96000,18000,9000,31000,0,0,0,0,0,0,0,0,0
+South-East Asia,BSI,60 to 64,Escherichia coli,3000,2000,5000,69000,37000,114000,21000,11000,37000,0,0,0,0,0,0,0,0,0
+South-East Asia,BSI,65 to 69,Escherichia coli,3000,2000,5000,74000,42000,118000,23000,12000,38000,0,0,0,0,0,0,0,0,0
+South-East Asia,BSI,70 to 74,Escherichia coli,4000,2000,8000,101000,49000,183000,31000,14000,59000,0,0,0,0,0,0,0,0,0
 South-East Asia,BSI,75 to 79,Escherichia coli,3000,2000,6000,76000,37000,138000,23000,11000,44000,1470,980,2940,37240,18130,67620,11270,5390,21560
-South-East Asia,BSI,80 to 84,Escherichia coli,2000,1000,4000,54000,27000,93000,17000,8000,30000,980,490,1960,26460,13230,45570,8330,3920,14700
-South-East Asia,BSI,85 to 89,Escherichia coli,1000,1000,2000,26000,13000,46000,8000,4000,15000,490,490,980,12740,6370,22540,3920,1960,7350
-South-East Asia,BSI,90 to 94,Escherichia coli,0,0,1000,9000,4000,17000,3000,1000,5000,0,0,490,4410,1960,8330,1470,490,2450
-South-East Asia,BSI,95 plus,Escherichia coli,0,0,0,2000,1000,3000,0,0,1000,0,0,0,980,490,1470,0,0,490
+South-East Asia,BSI,80 to 84,Escherichia coli,2000,1000,4000,54000,27000,93000,17000,8000,30000,0,0,0,0,0,0,0,0,0
+South-East Asia,BSI,85 to 89,Escherichia coli,1000,1000,2000,26000,13000,46000,8000,4000,15000,0,0,0,0,0,0,0,0,0
+South-East Asia,BSI,90 to 94,Escherichia coli,0,0,1000,9000,4000,17000,3000,1000,5000,0,0,0,0,0,0,0,0,0
+South-East Asia,BSI,95 plus,Escherichia coli,0,0,0,2000,1000,3000,0,0,1000,0,0,0,0,0,0,0,0,0
 South-East Asia,Cardiac infections,EN,Escherichia coli,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 South-East Asia,Cardiac infections,LN,Escherichia coli,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-South-East Asia,Cardiac infections,PN,Escherichia coli,0,0,0,0,0,1000,0,0,0,0,0,0,0,0,0,0,0,0
+South-East Asia,Cardiac infections,PN,Escherichia coli,0,0,0,0,0,1000,0,0,0,0,0,0,0,0,459.375,0,0,0
 South-East Asia,Cardiac infections,1 to 4,Escherichia coli,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-South-East Asia,Cardiac infections,5 to 9,Escherichia coli,0,0,0,0,0,1000,0,0,0,0,0,0,0,0,0,0,0,0
+South-East Asia,Cardiac infections,5 to 9,Escherichia coli,0,0,0,0,0,1000,0,0,0,0,0,0,0,0,13.1923076923077,0,0,0
 South-East Asia,Cardiac infections,10 to 14,Escherichia coli,0,0,0,0,0,1000,0,0,0,0,0,0,0,0,0,0,0,0
 South-East Asia,Cardiac infections,15 to 19,Escherichia coli,0,0,0,1000,1000,1000,0,0,0,0,0,0,0,0,0,0,0,0
 South-East Asia,Cardiac infections,20 to 24,Escherichia coli,0,0,0,1000,1000,2000,0,0,0,0,0,0,0,0,0,0,0,0
@@ -2294,16 +2294,16 @@ South-East Asia,Cardiac infections,55 to 59,Escherichia coli,0,0,0,2000,2000,300
 South-East Asia,Cardiac infections,60 to 64,Escherichia coli,0,0,0,2000,2000,3000,1000,0,1000,0,0,0,0,0,0,0,0,0
 South-East Asia,Cardiac infections,65 to 69,Escherichia coli,0,0,0,2000,2000,3000,1000,0,1000,0,0,0,0,0,0,0,0,0
 South-East Asia,Cardiac infections,70 to 74,Escherichia coli,0,0,0,3000,2000,4000,1000,1000,1000,0,0,0,0,0,0,0,0,0
-South-East Asia,Cardiac infections,75 to 79,Escherichia coli,0,0,0,3000,2000,4000,1000,1000,1000,0,0,0,0,0,0,0,0,0
+South-East Asia,Cardiac infections,75 to 79,Escherichia coli,0,0,0,3000,2000,4000,1000,1000,1000,0,0,0,1470,980,1960,490,490,490
 South-East Asia,Cardiac infections,80 to 84,Escherichia coli,0,0,0,2000,1000,3000,1000,0,1000,0,0,0,0,0,0,0,0,0
 South-East Asia,Cardiac infections,85 to 89,Escherichia coli,0,0,0,1000,1000,1000,0,0,0,0,0,0,0,0,0,0,0,0
 South-East Asia,Cardiac infections,90 to 94,Escherichia coli,0,0,0,0,0,1000,0,0,0,0,0,0,0,0,0,0,0,0
 South-East Asia,Cardiac infections,95 plus,Escherichia coli,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 South-East Asia,CNS infections,EN,Escherichia coli,0,0,1000,8000,4000,17000,3000,1000,6000,0,0,0,0,0,0,0,0,0
 South-East Asia,CNS infections,LN,Escherichia coli,0,0,1000,10000,6000,17000,3000,2000,5000,0,0,0,0,0,0,0,0,0
-South-East Asia,CNS infections,PN,Escherichia coli,2000,2000,4000,66000,44000,98000,20000,12000,31000,0,0,0,0,0,0,0,0,0
-South-East Asia,CNS infections,1 to 4,Escherichia coli,1000,1000,2000,38000,26000,58000,12000,7000,18000,0,0,0,0,0,0,0,0,0
-South-East Asia,CNS infections,5 to 9,Escherichia coli,0,0,1000,13000,8000,20000,4000,2000,6000,0,0,0,0,0,0,0,0,0
+South-East Asia,CNS infections,PN,Escherichia coli,2000,2000,4000,66000,44000,98000,20000,12000,31000,918.75,918.75,1837.5,30318.75,20212.5,45018.75,9187.5,5512.5,14240.625
+South-East Asia,CNS infections,1 to 4,Escherichia coli,1000,1000,2000,38000,26000,58000,12000,7000,18000,490,490,980,18620,12740,28420,5880,3430,8820
+South-East Asia,CNS infections,5 to 9,Escherichia coli,0,0,1000,13000,8000,20000,4000,2000,6000,0,0,13.1923076923077,171.5,105.538461538462,263.846153846154,52.7692307692308,26.3846153846154,79.1538461538462
 South-East Asia,CNS infections,10 to 14,Escherichia coli,0,0,1000,11000,7000,17000,3000,2000,5000,0,0,0,0,0,0,0,0,0
 South-East Asia,CNS infections,15 to 19,Escherichia coli,0,0,1000,10000,7000,15000,3000,2000,5000,0,0,0,0,0,0,0,0,0
 South-East Asia,CNS infections,20 to 24,Escherichia coli,0,0,0,9000,6000,13000,3000,2000,4000,0,0,0,0,0,0,0,0,0
@@ -2317,7 +2317,7 @@ South-East Asia,CNS infections,55 to 59,Escherichia coli,0,0,0,8000,5000,12000,2
 South-East Asia,CNS infections,60 to 64,Escherichia coli,0,0,0,6000,4000,10000,2000,1000,3000,0,0,0,0,0,0,0,0,0
 South-East Asia,CNS infections,65 to 69,Escherichia coli,0,0,0,5000,3000,8000,2000,1000,3000,0,0,0,0,0,0,0,0,0
 South-East Asia,CNS infections,70 to 74,Escherichia coli,0,0,0,5000,3000,8000,1000,1000,2000,0,0,0,0,0,0,0,0,0
-South-East Asia,CNS infections,75 to 79,Escherichia coli,0,0,0,4000,2000,6000,1000,1000,2000,0,0,0,0,0,0,0,0,0
+South-East Asia,CNS infections,75 to 79,Escherichia coli,0,0,0,4000,2000,6000,1000,1000,2000,0,0,0,1960,980,2940,490,490,980
 South-East Asia,CNS infections,80 to 84,Escherichia coli,0,0,0,2000,1000,3000,1000,0,1000,0,0,0,0,0,0,0,0,0
 South-East Asia,CNS infections,85 to 89,Escherichia coli,0,0,0,1000,1000,1000,0,0,0,0,0,0,0,0,0,0,0,0
 South-East Asia,CNS infections,90 to 94,Escherichia coli,0,0,0,0,0,1000,0,0,0,0,0,0,0,0,0,0,0,0
@@ -2347,9 +2347,9 @@ South-East Asia,Diarrhoea,90 to 94,Escherichia coli,0,0,1000,15000,6000,35000,50
 South-East Asia,Diarrhoea,95 plus,Escherichia coli,0,0,0,4000,2000,9000,1000,0,3000,0,0,0,0,0,0,0,0,0
 South-East Asia,Intra-abdominal infections,EN,Escherichia coli,0,0,0,5000,2000,8000,1000,1000,2000,0,0,0,0,0,0,0,0,0
 South-East Asia,Intra-abdominal infections,LN,Escherichia coli,0,0,0,5000,3000,9000,2000,1000,3000,0,0,0,0,0,0,0,0,0
-South-East Asia,Intra-abdominal infections,PN,Escherichia coli,1000,1000,2000,32000,17000,53000,10000,5000,16000,0,0,0,0,0,0,0,0,0
-South-East Asia,Intra-abdominal infections,1 to 4,Escherichia coli,1000,1000,2000,28000,15000,46000,8000,4000,14000,0,0,0,0,0,0,0,0,0
-South-East Asia,Intra-abdominal infections,5 to 9,Escherichia coli,1000,1000,2000,26000,15000,40000,8000,4000,13000,0,0,0,0,0,0,0,0,0
+South-East Asia,Intra-abdominal infections,PN,Escherichia coli,1000,1000,2000,32000,17000,53000,10000,5000,16000,459.375,459.375,918.75,14700,7809.375,24346.875,4593.75,2296.875,7350
+South-East Asia,Intra-abdominal infections,1 to 4,Escherichia coli,1000,1000,2000,28000,15000,46000,8000,4000,14000,490,490,980,13720,7350,22540,3920,1960,6860
+South-East Asia,Intra-abdominal infections,5 to 9,Escherichia coli,1000,1000,2000,26000,15000,40000,8000,4000,13000,13.1923076923077,13.1923076923077,26.3846153846154,343,197.884615384615,527.692307692308,105.538461538462,52.7692307692308,171.5
 South-East Asia,Intra-abdominal infections,10 to 14,Escherichia coli,1000,1000,1000,23000,15000,35000,7000,4000,11000,0,0,0,0,0,0,0,0,0
 South-East Asia,Intra-abdominal infections,15 to 19,Escherichia coli,3000,2000,4000,76000,46000,110000,24000,14000,36000,0,0,0,0,0,0,0,0,0
 South-East Asia,Intra-abdominal infections,20 to 24,Escherichia coli,3000,2000,5000,82000,43000,132000,25000,13000,43000,0,0,0,0,0,0,0,0,0
@@ -2363,16 +2363,16 @@ South-East Asia,Intra-abdominal infections,55 to 59,Escherichia coli,8000,5000,1
 South-East Asia,Intra-abdominal infections,60 to 64,Escherichia coli,8000,5000,12000,192000,124000,273000,58000,36000,88000,0,0,0,0,0,0,0,0,0
 South-East Asia,Intra-abdominal infections,65 to 69,Escherichia coli,8000,5000,11000,181000,125000,244000,55000,37000,78000,0,0,0,0,0,0,0,0,0
 South-East Asia,Intra-abdominal infections,70 to 74,Escherichia coli,7000,5000,11000,171000,109000,250000,52000,32000,78000,0,0,0,0,0,0,0,0,0
-South-East Asia,Intra-abdominal infections,75 to 79,Escherichia coli,6000,4000,8000,126000,84000,177000,38000,25000,55000,0,0,0,0,0,0,0,0,0
+South-East Asia,Intra-abdominal infections,75 to 79,Escherichia coli,6000,4000,8000,126000,84000,177000,38000,25000,55000,2940,1960,3920,61740,41160,86730,18620,12250,26950
 South-East Asia,Intra-abdominal infections,80 to 84,Escherichia coli,4000,3000,5000,84000,58000,117000,25000,17000,37000,0,0,0,0,0,0,0,0,0
 South-East Asia,Intra-abdominal infections,85 to 89,Escherichia coli,2000,1000,3000,37000,25000,52000,11000,7000,16000,0,0,0,0,0,0,0,0,0
 South-East Asia,Intra-abdominal infections,90 to 94,Escherichia coli,1000,0,1000,12000,8000,17000,4000,2000,5000,0,0,0,0,0,0,0,0,0
 South-East Asia,Intra-abdominal infections,95 plus,Escherichia coli,0,0,0,3000,2000,4000,1000,0,1000,0,0,0,0,0,0,0,0,0
 South-East Asia,LRI and thorax infections,EN,Escherichia coli,43000,27000,65000,1316000,847000,1926000,412000,255000,627000,0,0,0,0,0,0,0,0,0
 South-East Asia,LRI and thorax infections,LN,Escherichia coli,10000,7000,15000,317000,224000,442000,100000,66000,148000,0,0,0,0,0,0,0,0,0
-South-East Asia,LRI and thorax infections,PN,Escherichia coli,8000,6000,11000,228000,171000,298000,71000,50000,99000,0,0,0,0,0,0,0,0,0
-South-East Asia,LRI and thorax infections,1 to 4,Escherichia coli,3000,2000,4000,81000,57000,111000,25000,17000,36000,0,0,0,0,0,0,0,0,0
-South-East Asia,LRI and thorax infections,5 to 9,Escherichia coli,1000,0,1000,15000,12000,20000,5000,3000,6000,0,0,0,0,0,0,0,0,0
+South-East Asia,LRI and thorax infections,PN,Escherichia coli,8000,6000,11000,228000,171000,298000,71000,50000,99000,3675,2756.25,5053.125,104737.5,78553.125,136893.75,32615.625,22968.75,45478.125
+South-East Asia,LRI and thorax infections,1 to 4,Escherichia coli,3000,2000,4000,81000,57000,111000,25000,17000,36000,1470,980,1960,39690,27930,54390,12250,8330,17640
+South-East Asia,LRI and thorax infections,5 to 9,Escherichia coli,1000,0,1000,15000,12000,20000,5000,3000,6000,13.1923076923077,0,13.1923076923077,197.884615384615,158.307692307692,263.846153846154,65.9615384615385,39.5769230769231,79.1538461538462
 South-East Asia,LRI and thorax infections,10 to 14,Escherichia coli,0,0,0,8000,6000,10000,3000,2000,3000,0,0,0,0,0,0,0,0,0
 South-East Asia,LRI and thorax infections,15 to 19,Escherichia coli,0,0,0,7000,5000,9000,2000,2000,3000,0,0,0,0,0,0,0,0,0
 South-East Asia,LRI and thorax infections,20 to 24,Escherichia coli,0,0,0,7000,5000,9000,2000,2000,3000,0,0,0,0,0,0,0,0,0
@@ -2386,39 +2386,39 @@ South-East Asia,LRI and thorax infections,55 to 59,Escherichia coli,2000,1000,20
 South-East Asia,LRI and thorax infections,60 to 64,Escherichia coli,2000,2000,3000,54000,40000,74000,17000,11000,24000,0,0,0,0,0,0,0,0,0
 South-East Asia,LRI and thorax infections,65 to 69,Escherichia coli,3000,2000,4000,66000,50000,88000,20000,14000,28000,0,0,0,0,0,0,0,0,0
 South-East Asia,LRI and thorax infections,70 to 74,Escherichia coli,3000,2000,4000,66000,44000,98000,20000,13000,31000,0,0,0,0,0,0,0,0,0
-South-East Asia,LRI and thorax infections,75 to 79,Escherichia coli,2000,2000,3000,54000,38000,78000,17000,11000,25000,0,0,0,0,0,0,0,0,0
+South-East Asia,LRI and thorax infections,75 to 79,Escherichia coli,2000,2000,3000,54000,38000,78000,17000,11000,25000,980,980,1470,26460,18620,38220,8330,5390,12250
 South-East Asia,LRI and thorax infections,80 to 84,Escherichia coli,2000,1000,2000,43000,31000,59000,13000,9000,19000,0,0,0,0,0,0,0,0,0
 South-East Asia,LRI and thorax infections,85 to 89,Escherichia coli,1000,1000,1000,20000,14000,28000,6000,4000,9000,0,0,0,0,0,0,0,0,0
 South-East Asia,LRI and thorax infections,90 to 94,Escherichia coli,0,0,0,7000,5000,10000,2000,1000,3000,0,0,0,0,0,0,0,0,0
 South-East Asia,LRI and thorax infections,95 plus,Escherichia coli,0,0,0,1000,1000,2000,0,0,1000,0,0,0,0,0,0,0,0,0
-South-East Asia,UTI,EN,Escherichia coli,0,0,0,3000,1000,6000,1000,0,2000,0,0,0,1470,490,2940,490,0,980
-South-East Asia,UTI,LN,Escherichia coli,0,0,0,3000,2000,5000,1000,1000,2000,0,0,0,1470,980,2450,490,490,980
-South-East Asia,UTI,PN,Escherichia coli,1000,0,1000,19000,12000,31000,6000,4000,10000,490,0,490,9310,5880,15190,2940,1960,4900
+South-East Asia,UTI,EN,Escherichia coli,0,0,0,3000,1000,6000,1000,0,2000,0,0,0,0,0,0,0,0,0
+South-East Asia,UTI,LN,Escherichia coli,0,0,0,3000,2000,5000,1000,1000,2000,0,0,0,0,0,0,0,0,0
+South-East Asia,UTI,PN,Escherichia coli,1000,0,1000,19000,12000,31000,6000,4000,10000,459.375,0,459.375,8728.125,5512.5,14240.625,2756.25,1837.5,4593.75
 South-East Asia,UTI,1 to 4,Escherichia coli,0,0,1000,13000,9000,19000,4000,3000,6000,0,0,490,6370,4410,9310,1960,1470,2940
-South-East Asia,UTI,5 to 9,Escherichia coli,0,0,1000,12000,8000,16000,4000,2000,5000,0,0,490,5880,3920,7840,1960,980,2450
-South-East Asia,UTI,10 to 14,Escherichia coli,0,0,1000,12000,9000,15000,4000,3000,5000,0,0,490,5880,4410,7350,1960,1470,2450
-South-East Asia,UTI,15 to 19,Escherichia coli,1000,1000,1000,25000,19000,31000,8000,6000,10000,490,490,490,12250,9310,15190,3920,2940,4900
-South-East Asia,UTI,20 to 24,Escherichia coli,1000,1000,2000,36000,28000,44000,11000,8000,14000,490,490,980,17640,13720,21560,5390,3920,6860
-South-East Asia,UTI,25 to 29,Escherichia coli,1000,1000,1000,32000,25000,39000,10000,7000,12000,490,490,490,15680,12250,19110,4900,3430,5880
-South-East Asia,UTI,30 to 34,Escherichia coli,1000,1000,2000,33000,27000,41000,10000,8000,13000,490,490,980,16170,13230,20090,4900,3920,6370
-South-East Asia,UTI,35 to 39,Escherichia coli,1000,1000,2000,35000,28000,43000,11000,8000,14000,490,490,980,17150,13720,21070,5390,3920,6860
-South-East Asia,UTI,40 to 44,Escherichia coli,2000,1000,2000,43000,34000,53000,13000,10000,17000,980,490,980,21070,16660,25970,6370,4900,8330
-South-East Asia,UTI,45 to 49,Escherichia coli,2000,1000,3000,47000,36000,59000,14000,10000,19000,980,490,1470,23030,17640,28910,6860,4900,9310
-South-East Asia,UTI,50 to 54,Escherichia coli,2000,2000,3000,56000,43000,70000,17000,12000,23000,980,980,1470,27440,21070,34300,8330,5880,11270
-South-East Asia,UTI,55 to 59,Escherichia coli,3000,2000,4000,64000,47000,82000,19000,14000,26000,1470,980,1960,31360,23030,40180,9310,6860,12740
-South-East Asia,UTI,60 to 64,Escherichia coli,3000,2000,4000,69000,51000,89000,21000,15000,29000,1470,980,1960,33810,24990,43610,10290,7350,14210
-South-East Asia,UTI,65 to 69,Escherichia coli,3000,2000,4000,77000,56000,98000,24000,17000,32000,1470,980,1960,37730,27440,48020,11760,8330,15680
-South-East Asia,UTI,70 to 74,Escherichia coli,3000,2000,4000,73000,54000,96000,23000,16000,31000,1470,980,1960,35770,26460,47040,11270,7840,15190
+South-East Asia,UTI,5 to 9,Escherichia coli,0,0,1000,12000,8000,16000,4000,2000,5000,0,0,13.1923076923077,158.307692307692,105.538461538462,211.076923076923,52.7692307692308,26.3846153846154,65.9615384615385
+South-East Asia,UTI,10 to 14,Escherichia coli,0,0,1000,12000,9000,15000,4000,3000,5000,0,0,0,0,0,0,0,0,0
+South-East Asia,UTI,15 to 19,Escherichia coli,1000,1000,1000,25000,19000,31000,8000,6000,10000,0,0,0,0,0,0,0,0,0
+South-East Asia,UTI,20 to 24,Escherichia coli,1000,1000,2000,36000,28000,44000,11000,8000,14000,0,0,0,0,0,0,0,0,0
+South-East Asia,UTI,25 to 29,Escherichia coli,1000,1000,1000,32000,25000,39000,10000,7000,12000,0,0,0,0,0,0,0,0,0
+South-East Asia,UTI,30 to 34,Escherichia coli,1000,1000,2000,33000,27000,41000,10000,8000,13000,0,0,0,0,0,0,0,0,0
+South-East Asia,UTI,35 to 39,Escherichia coli,1000,1000,2000,35000,28000,43000,11000,8000,14000,0,0,0,0,0,0,0,0,0
+South-East Asia,UTI,40 to 44,Escherichia coli,2000,1000,2000,43000,34000,53000,13000,10000,17000,0,0,0,0,0,0,0,0,0
+South-East Asia,UTI,45 to 49,Escherichia coli,2000,1000,3000,47000,36000,59000,14000,10000,19000,0,0,0,0,0,0,0,0,0
+South-East Asia,UTI,50 to 54,Escherichia coli,2000,2000,3000,56000,43000,70000,17000,12000,23000,0,0,0,0,0,0,0,0,0
+South-East Asia,UTI,55 to 59,Escherichia coli,3000,2000,4000,64000,47000,82000,19000,14000,26000,0,0,0,0,0,0,0,0,0
+South-East Asia,UTI,60 to 64,Escherichia coli,3000,2000,4000,69000,51000,89000,21000,15000,29000,0,0,0,0,0,0,0,0,0
+South-East Asia,UTI,65 to 69,Escherichia coli,3000,2000,4000,77000,56000,98000,24000,17000,32000,0,0,0,0,0,0,0,0,0
+South-East Asia,UTI,70 to 74,Escherichia coli,3000,2000,4000,73000,54000,96000,23000,16000,31000,0,0,0,0,0,0,0,0,0
 South-East Asia,UTI,75 to 79,Escherichia coli,2000,2000,3000,60000,44000,78000,18000,13000,25000,980,980,1470,29400,21560,38220,8820,6370,12250
-South-East Asia,UTI,80 to 84,Escherichia coli,2000,1000,2000,43000,32000,55000,13000,9000,18000,980,490,980,21070,15680,26950,6370,4410,8820
-South-East Asia,UTI,85 to 89,Escherichia coli,1000,1000,1000,21000,16000,27000,7000,5000,9000,490,490,490,10290,7840,13230,3430,2450,4410
-South-East Asia,UTI,90 to 94,Escherichia coli,0,0,1000,8000,6000,11000,3000,2000,3000,0,0,490,3920,2940,5390,1470,980,1470
-South-East Asia,UTI,95 plus,Escherichia coli,0,0,0,2000,1000,3000,1000,0,1000,0,0,0,980,490,1470,490,0,490
+South-East Asia,UTI,80 to 84,Escherichia coli,2000,1000,2000,43000,32000,55000,13000,9000,18000,0,0,0,0,0,0,0,0,0
+South-East Asia,UTI,85 to 89,Escherichia coli,1000,1000,1000,21000,16000,27000,7000,5000,9000,0,0,0,0,0,0,0,0,0
+South-East Asia,UTI,90 to 94,Escherichia coli,0,0,1000,8000,6000,11000,3000,2000,3000,0,0,0,0,0,0,0,0,0
+South-East Asia,UTI,95 plus,Escherichia coli,0,0,0,2000,1000,3000,1000,0,1000,0,0,0,0,0,0,0,0,0
 Western Pacific,Bacterial skin infections,EN,Escherichia coli,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 Western Pacific,Bacterial skin infections,LN,Escherichia coli,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Western Pacific,Bacterial skin infections,PN,Escherichia coli,0,0,0,1000,0,2000,0,0,0,0,0,0,0,0,0,0,0,0
-Western Pacific,Bacterial skin infections,1 to 4,Escherichia coli,0,0,0,1000,0,1000,0,0,0,0,0,0,0,0,0,0,0,0
-Western Pacific,Bacterial skin infections,5 to 9,Escherichia coli,0,0,0,0,0,1000,0,0,0,0,0,0,0,0,0,0,0,0
+Western Pacific,Bacterial skin infections,PN,Escherichia coli,0,0,0,1000,0,2000,0,0,0,0,0,0,459.375,0,918.75,0,0,0
+Western Pacific,Bacterial skin infections,1 to 4,Escherichia coli,0,0,0,1000,0,1000,0,0,0,0,0,0,490,0,490,0,0,0
+Western Pacific,Bacterial skin infections,5 to 9,Escherichia coli,0,0,0,0,0,1000,0,0,0,0,0,0,0,0,13.1923076923077,0,0,0
 Western Pacific,Bacterial skin infections,10 to 14,Escherichia coli,0,0,0,0,0,1000,0,0,0,0,0,0,0,0,0,0,0,0
 Western Pacific,Bacterial skin infections,15 to 19,Escherichia coli,0,0,0,1000,0,1000,0,0,0,0,0,0,0,0,0,0,0,0
 Western Pacific,Bacterial skin infections,20 to 24,Escherichia coli,0,0,0,1000,0,2000,0,0,1000,0,0,0,0,0,0,0,0,0
@@ -2432,7 +2432,7 @@ Western Pacific,Bacterial skin infections,55 to 59,Escherichia coli,1000,0,3000,
 Western Pacific,Bacterial skin infections,60 to 64,Escherichia coli,1000,0,3000,9000,2000,24000,2000,0,6000,0,0,0,0,0,0,0,0,0
 Western Pacific,Bacterial skin infections,65 to 69,Escherichia coli,1000,0,4000,11000,2000,27000,3000,1000,7000,0,0,0,0,0,0,0,0,0
 Western Pacific,Bacterial skin infections,70 to 74,Escherichia coli,1000,0,4000,9000,2000,26000,2000,1000,6000,0,0,0,0,0,0,0,0,0
-Western Pacific,Bacterial skin infections,75 to 79,Escherichia coli,1000,0,3000,8000,2000,22000,2000,0,6000,0,0,0,0,0,0,0,0,0
+Western Pacific,Bacterial skin infections,75 to 79,Escherichia coli,1000,0,3000,8000,2000,22000,2000,0,6000,490,0,1470,3920,980,10780,980,0,2940
 Western Pacific,Bacterial skin infections,80 to 84,Escherichia coli,1000,0,3000,7000,2000,17000,2000,0,5000,0,0,0,0,0,0,0,0,0
 Western Pacific,Bacterial skin infections,85 to 89,Escherichia coli,1000,0,2000,4000,1000,10000,1000,0,3000,0,0,0,0,0,0,0,0,0
 Western Pacific,Bacterial skin infections,90 to 94,Escherichia coli,0,0,1000,2000,1000,4000,0,0,1000,0,0,0,0,0,0,0,0,0
@@ -2455,37 +2455,37 @@ Western Pacific,Bone and joint infections,55 to 59,Escherichia coli,0,0,0,1000,0
 Western Pacific,Bone and joint infections,60 to 64,Escherichia coli,0,0,0,1000,0,3000,0,0,1000,0,0,0,0,0,0,0,0,0
 Western Pacific,Bone and joint infections,65 to 69,Escherichia coli,0,0,0,1000,0,3000,0,0,1000,0,0,0,0,0,0,0,0,0
 Western Pacific,Bone and joint infections,70 to 74,Escherichia coli,0,0,1000,2000,1000,5000,0,0,1000,0,0,0,0,0,0,0,0,0
-Western Pacific,Bone and joint infections,75 to 79,Escherichia coli,0,0,1000,1000,0,3000,0,0,1000,0,0,0,0,0,0,0,0,0
+Western Pacific,Bone and joint infections,75 to 79,Escherichia coli,0,0,1000,1000,0,3000,0,0,1000,0,0,490,490,0,1470,0,0,490
 Western Pacific,Bone and joint infections,80 to 84,Escherichia coli,0,0,0,1000,0,3000,0,0,1000,0,0,0,0,0,0,0,0,0
 Western Pacific,Bone and joint infections,85 to 89,Escherichia coli,0,0,0,1000,0,2000,0,0,0,0,0,0,0,0,0,0,0,0
 Western Pacific,Bone and joint infections,90 to 94,Escherichia coli,0,0,0,0,0,1000,0,0,0,0,0,0,0,0,0,0,0,0
 Western Pacific,Bone and joint infections,95 plus,Escherichia coli,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Western Pacific,BSI,EN,Escherichia coli,4000,3000,7000,31000,21000,46000,8000,5000,13000,1960,1470,3430,15190,10290,22540,3920,2450,6370
-Western Pacific,BSI,LN,Escherichia coli,2000,2000,3000,17000,12000,23000,4000,3000,6000,980,980,1470,8330,5880,11270,1960,1470,2940
-Western Pacific,BSI,PN,Escherichia coli,2000,1000,3000,15000,10000,22000,4000,2000,6000,980,490,1470,7350,4900,10780,1960,980,2940
+Western Pacific,BSI,EN,Escherichia coli,4000,3000,7000,31000,21000,46000,8000,5000,13000,0,0,0,0,0,0,0,0,0
+Western Pacific,BSI,LN,Escherichia coli,2000,2000,3000,17000,12000,23000,4000,3000,6000,0,0,0,0,0,0,0,0,0
+Western Pacific,BSI,PN,Escherichia coli,2000,1000,3000,15000,10000,22000,4000,2000,6000,918.75,459.375,1378.125,6890.625,4593.75,10106.25,1837.5,918.75,2756.25
 Western Pacific,BSI,1 to 4,Escherichia coli,1000,0,1000,5000,2000,8000,1000,1000,2000,490,0,490,2450,980,3920,490,490,980
-Western Pacific,BSI,5 to 9,Escherichia coli,1000,0,1000,4000,2000,7000,1000,1000,2000,490,0,490,1960,980,3430,490,490,980
-Western Pacific,BSI,10 to 14,Escherichia coli,0,0,1000,3000,2000,5000,1000,0,1000,0,0,490,1470,980,2450,490,0,490
-Western Pacific,BSI,15 to 19,Escherichia coli,1000,0,1000,4000,2000,7000,1000,1000,2000,490,0,490,1960,980,3430,490,490,980
-Western Pacific,BSI,20 to 24,Escherichia coli,1000,0,1000,6000,3000,10000,2000,1000,3000,490,0,490,2940,1470,4900,980,490,1470
-Western Pacific,BSI,25 to 29,Escherichia coli,1000,0,2000,8000,4000,13000,2000,1000,4000,490,0,980,3920,1960,6370,980,490,1960
-Western Pacific,BSI,30 to 34,Escherichia coli,2000,1000,3000,11000,5000,21000,3000,1000,5000,980,490,1470,5390,2450,10290,1470,490,2450
-Western Pacific,BSI,35 to 39,Escherichia coli,2000,1000,3000,13000,6000,23000,3000,1000,6000,980,490,1470,6370,2940,11270,1470,490,2940
-Western Pacific,BSI,40 to 44,Escherichia coli,2000,1000,4000,17000,8000,30000,4000,2000,8000,980,490,1960,8330,3920,14700,1960,980,3920
-Western Pacific,BSI,45 to 49,Escherichia coli,4000,2000,7000,26000,12000,46000,7000,3000,12000,1960,980,3430,12740,5880,22540,3430,1470,5880
-Western Pacific,BSI,50 to 54,Escherichia coli,9000,5000,15000,65000,35000,106000,17000,9000,29000,4410,2450,7350,31850,17150,51940,8330,4410,14210
-Western Pacific,BSI,55 to 59,Escherichia coli,10000,6000,16000,69000,40000,109000,18000,10000,30000,4900,2940,7840,33810,19600,53410,8820,4900,14700
-Western Pacific,BSI,60 to 64,Escherichia coli,11000,6000,17000,74000,41000,118000,19000,10000,32000,5390,2940,8330,36260,20090,57820,9310,4900,15680
-Western Pacific,BSI,65 to 69,Escherichia coli,13000,8000,19000,82000,51000,125000,21000,12000,35000,6370,3920,9310,40180,24990,61250,10290,5880,17150
-Western Pacific,BSI,70 to 74,Escherichia coli,20000,11000,34000,120000,64000,205000,31000,16000,56000,9800,5390,16660,58800,31360,100450,15190,7840,27440
+Western Pacific,BSI,5 to 9,Escherichia coli,1000,0,1000,4000,2000,7000,1000,1000,2000,13.1923076923077,0,13.1923076923077,52.7692307692308,26.3846153846154,92.3461538461538,13.1923076923077,13.1923076923077,26.3846153846154
+Western Pacific,BSI,10 to 14,Escherichia coli,0,0,1000,3000,2000,5000,1000,0,1000,0,0,0,0,0,0,0,0,0
+Western Pacific,BSI,15 to 19,Escherichia coli,1000,0,1000,4000,2000,7000,1000,1000,2000,0,0,0,0,0,0,0,0,0
+Western Pacific,BSI,20 to 24,Escherichia coli,1000,0,1000,6000,3000,10000,2000,1000,3000,0,0,0,0,0,0,0,0,0
+Western Pacific,BSI,25 to 29,Escherichia coli,1000,0,2000,8000,4000,13000,2000,1000,4000,0,0,0,0,0,0,0,0,0
+Western Pacific,BSI,30 to 34,Escherichia coli,2000,1000,3000,11000,5000,21000,3000,1000,5000,0,0,0,0,0,0,0,0,0
+Western Pacific,BSI,35 to 39,Escherichia coli,2000,1000,3000,13000,6000,23000,3000,1000,6000,0,0,0,0,0,0,0,0,0
+Western Pacific,BSI,40 to 44,Escherichia coli,2000,1000,4000,17000,8000,30000,4000,2000,8000,0,0,0,0,0,0,0,0,0
+Western Pacific,BSI,45 to 49,Escherichia coli,4000,2000,7000,26000,12000,46000,7000,3000,12000,0,0,0,0,0,0,0,0,0
+Western Pacific,BSI,50 to 54,Escherichia coli,9000,5000,15000,65000,35000,106000,17000,9000,29000,0,0,0,0,0,0,0,0,0
+Western Pacific,BSI,55 to 59,Escherichia coli,10000,6000,16000,69000,40000,109000,18000,10000,30000,0,0,0,0,0,0,0,0,0
+Western Pacific,BSI,60 to 64,Escherichia coli,11000,6000,17000,74000,41000,118000,19000,10000,32000,0,0,0,0,0,0,0,0,0
+Western Pacific,BSI,65 to 69,Escherichia coli,13000,8000,19000,82000,51000,125000,21000,12000,35000,0,0,0,0,0,0,0,0,0
+Western Pacific,BSI,70 to 74,Escherichia coli,20000,11000,34000,120000,64000,205000,31000,16000,56000,0,0,0,0,0,0,0,0,0
 Western Pacific,BSI,75 to 79,Escherichia coli,14000,7000,24000,82000,42000,140000,21000,10000,38000,6860,3430,11760,40180,20580,68600,10290,4900,18620
-Western Pacific,BSI,80 to 84,Escherichia coli,11000,6000,18000,64000,35000,105000,16000,8000,29000,5390,2940,8820,31360,17150,51450,7840,3920,14210
-Western Pacific,BSI,85 to 89,Escherichia coli,7000,4000,12000,37000,19000,64000,10000,5000,17000,3430,1960,5880,18130,9310,31360,4900,2450,8330
-Western Pacific,BSI,90 to 94,Escherichia coli,3000,1000,5000,12000,5000,22000,3000,1000,6000,1470,490,2450,5880,2450,10780,1470,490,2940
-Western Pacific,BSI,95 plus,Escherichia coli,1000,0,2000,3000,1000,7000,1000,0,2000,490,0,980,1470,490,3430,490,0,980
+Western Pacific,BSI,80 to 84,Escherichia coli,11000,6000,18000,64000,35000,105000,16000,8000,29000,0,0,0,0,0,0,0,0,0
+Western Pacific,BSI,85 to 89,Escherichia coli,7000,4000,12000,37000,19000,64000,10000,5000,17000,0,0,0,0,0,0,0,0,0
+Western Pacific,BSI,90 to 94,Escherichia coli,3000,1000,5000,12000,5000,22000,3000,1000,6000,0,0,0,0,0,0,0,0,0
+Western Pacific,BSI,95 plus,Escherichia coli,1000,0,2000,3000,1000,7000,1000,0,2000,0,0,0,0,0,0,0,0,0
 Western Pacific,Cardiac infections,EN,Escherichia coli,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 Western Pacific,Cardiac infections,LN,Escherichia coli,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Western Pacific,Cardiac infections,PN,Escherichia coli,0,0,0,0,0,1000,0,0,0,0,0,0,0,0,0,0,0,0
+Western Pacific,Cardiac infections,PN,Escherichia coli,0,0,0,0,0,1000,0,0,0,0,0,0,0,0,459.375,0,0,0
 Western Pacific,Cardiac infections,1 to 4,Escherichia coli,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 Western Pacific,Cardiac infections,5 to 9,Escherichia coli,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 Western Pacific,Cardiac infections,10 to 14,Escherichia coli,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
@@ -2501,16 +2501,16 @@ Western Pacific,Cardiac infections,55 to 59,Escherichia coli,0,0,1000,2000,1000,
 Western Pacific,Cardiac infections,60 to 64,Escherichia coli,0,0,1000,2000,1000,4000,1000,0,1000,0,0,0,0,0,0,0,0,0
 Western Pacific,Cardiac infections,65 to 69,Escherichia coli,0,0,1000,3000,2000,4000,1000,0,1000,0,0,0,0,0,0,0,0,0
 Western Pacific,Cardiac infections,70 to 74,Escherichia coli,1000,1000,1000,4000,2000,6000,1000,1000,2000,0,0,0,0,0,0,0,0,0
-Western Pacific,Cardiac infections,75 to 79,Escherichia coli,1000,1000,1000,3000,2000,6000,1000,1000,1000,0,0,0,0,0,0,0,0,0
+Western Pacific,Cardiac infections,75 to 79,Escherichia coli,1000,1000,1000,3000,2000,6000,1000,1000,1000,490,490,490,1470,980,2940,490,490,490
 Western Pacific,Cardiac infections,80 to 84,Escherichia coli,1000,1000,1000,3000,2000,5000,1000,0,1000,0,0,0,0,0,0,0,0,0
 Western Pacific,Cardiac infections,85 to 89,Escherichia coli,1000,0,1000,2000,1000,3000,1000,0,1000,0,0,0,0,0,0,0,0,0
 Western Pacific,Cardiac infections,90 to 94,Escherichia coli,1000,0,1000,1000,1000,2000,0,0,0,0,0,0,0,0,0,0,0,0
 Western Pacific,Cardiac infections,95 plus,Escherichia coli,0,0,0,1000,0,1000,0,0,0,0,0,0,0,0,0,0,0,0
 Western Pacific,CNS infections,EN,Escherichia coli,0,0,0,1000,0,1000,0,0,0,0,0,0,0,0,0,0,0,0
 Western Pacific,CNS infections,LN,Escherichia coli,0,0,0,1000,1000,2000,0,0,1000,0,0,0,0,0,0,0,0,0
-Western Pacific,CNS infections,PN,Escherichia coli,2000,1000,3000,15000,10000,21000,4000,2000,6000,0,0,0,0,0,0,0,0,0
-Western Pacific,CNS infections,1 to 4,Escherichia coli,1000,1000,2000,9000,5000,13000,2000,1000,3000,0,0,0,0,0,0,0,0,0
-Western Pacific,CNS infections,5 to 9,Escherichia coli,0,0,0,2000,1000,3000,1000,0,1000,0,0,0,0,0,0,0,0,0
+Western Pacific,CNS infections,PN,Escherichia coli,2000,1000,3000,15000,10000,21000,4000,2000,6000,918.75,459.375,1378.125,6890.625,4593.75,9646.875,1837.5,918.75,2756.25
+Western Pacific,CNS infections,1 to 4,Escherichia coli,1000,1000,2000,9000,5000,13000,2000,1000,3000,490,490,980,4410,2450,6370,980,490,1470
+Western Pacific,CNS infections,5 to 9,Escherichia coli,0,0,0,2000,1000,3000,1000,0,1000,0,0,0,26.3846153846154,13.1923076923077,39.5769230769231,13.1923076923077,0,13.1923076923077
 Western Pacific,CNS infections,10 to 14,Escherichia coli,0,0,0,1000,1000,2000,0,0,1000,0,0,0,0,0,0,0,0,0
 Western Pacific,CNS infections,15 to 19,Escherichia coli,0,0,0,1000,1000,2000,0,0,1000,0,0,0,0,0,0,0,0,0
 Western Pacific,CNS infections,20 to 24,Escherichia coli,0,0,0,1000,1000,2000,0,0,1000,0,0,0,0,0,0,0,0,0
@@ -2524,7 +2524,7 @@ Western Pacific,CNS infections,55 to 59,Escherichia coli,0,0,1000,2000,1000,5000
 Western Pacific,CNS infections,60 to 64,Escherichia coli,0,0,1000,2000,1000,5000,1000,0,1000,0,0,0,0,0,0,0,0,0
 Western Pacific,CNS infections,65 to 69,Escherichia coli,0,0,1000,2000,1000,4000,1000,0,1000,0,0,0,0,0,0,0,0,0
 Western Pacific,CNS infections,70 to 74,Escherichia coli,0,0,1000,2000,1000,4000,0,0,1000,0,0,0,0,0,0,0,0,0
-Western Pacific,CNS infections,75 to 79,Escherichia coli,0,0,0,1000,1000,2000,0,0,1000,0,0,0,0,0,0,0,0,0
+Western Pacific,CNS infections,75 to 79,Escherichia coli,0,0,0,1000,1000,2000,0,0,1000,0,0,0,490,490,980,0,0,490
 Western Pacific,CNS infections,80 to 84,Escherichia coli,0,0,0,1000,1000,2000,0,0,0,0,0,0,0,0,0,0,0,0
 Western Pacific,CNS infections,85 to 89,Escherichia coli,0,0,0,0,0,1000,0,0,0,0,0,0,0,0,0,0,0,0
 Western Pacific,CNS infections,90 to 94,Escherichia coli,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
@@ -2554,9 +2554,9 @@ Western Pacific,Diarrhoea,90 to 94,Escherichia coli,0,0,0,0,0,1000,0,0,0,0,0,0,0
 Western Pacific,Diarrhoea,95 plus,Escherichia coli,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 Western Pacific,Intra-abdominal infections,EN,Escherichia coli,0,0,0,1000,1000,2000,0,0,1000,0,0,0,0,0,0,0,0,0
 Western Pacific,Intra-abdominal infections,LN,Escherichia coli,0,0,0,2000,1000,3000,0,0,1000,0,0,0,0,0,0,0,0,0
-Western Pacific,Intra-abdominal infections,PN,Escherichia coli,3000,1000,5000,23000,11000,43000,6000,3000,11000,0,0,0,0,0,0,0,0,0
-Western Pacific,Intra-abdominal infections,1 to 4,Escherichia coli,1000,1000,2000,10000,5000,17000,2000,1000,4000,0,0,0,0,0,0,0,0,0
-Western Pacific,Intra-abdominal infections,5 to 9,Escherichia coli,1000,0,1000,6000,3000,10000,2000,1000,3000,0,0,0,0,0,0,0,0,0
+Western Pacific,Intra-abdominal infections,PN,Escherichia coli,3000,1000,5000,23000,11000,43000,6000,3000,11000,1378.125,459.375,2296.875,10565.625,5053.125,19753.125,2756.25,1378.125,5053.125
+Western Pacific,Intra-abdominal infections,1 to 4,Escherichia coli,1000,1000,2000,10000,5000,17000,2000,1000,4000,490,490,980,4900,2450,8330,980,490,1960
+Western Pacific,Intra-abdominal infections,5 to 9,Escherichia coli,1000,0,1000,6000,3000,10000,2000,1000,3000,13.1923076923077,0,13.1923076923077,79.1538461538462,39.5769230769231,131.923076923077,26.3846153846154,13.1923076923077,39.5769230769231
 Western Pacific,Intra-abdominal infections,10 to 14,Escherichia coli,1000,0,1000,4000,2000,7000,1000,1000,2000,0,0,0,0,0,0,0,0,0
 Western Pacific,Intra-abdominal infections,15 to 19,Escherichia coli,1000,0,2000,7000,4000,13000,2000,1000,3000,0,0,0,0,0,0,0,0,0
 Western Pacific,Intra-abdominal infections,20 to 24,Escherichia coli,1000,1000,3000,11000,6000,21000,3000,1000,6000,0,0,0,0,0,0,0,0,0
@@ -2570,16 +2570,16 @@ Western Pacific,Intra-abdominal infections,55 to 59,Escherichia coli,16000,10000
 Western Pacific,Intra-abdominal infections,60 to 64,Escherichia coli,16000,9000,27000,115000,69000,185000,30000,17000,52000,0,0,0,0,0,0,0,0,0
 Western Pacific,Intra-abdominal infections,65 to 69,Escherichia coli,17000,11000,26000,116000,75000,174000,30000,18000,49000,0,0,0,0,0,0,0,0,0
 Western Pacific,Intra-abdominal infections,70 to 74,Escherichia coli,19000,11000,31000,120000,68000,198000,31000,17000,54000,0,0,0,0,0,0,0,0,0
-Western Pacific,Intra-abdominal infections,75 to 79,Escherichia coli,16000,10000,25000,96000,61000,150000,25000,15000,42000,0,0,0,0,0,0,0,0,0
+Western Pacific,Intra-abdominal infections,75 to 79,Escherichia coli,16000,10000,25000,96000,61000,150000,25000,15000,42000,7840,4900,12250,47040,29890,73500,12250,7350,20580
 Western Pacific,Intra-abdominal infections,80 to 84,Escherichia coli,13000,8000,20000,74000,48000,115000,19000,11000,32000,0,0,0,0,0,0,0,0,0
 Western Pacific,Intra-abdominal infections,85 to 89,Escherichia coli,9000,5000,13000,44000,28000,67000,11000,7000,19000,0,0,0,0,0,0,0,0,0
 Western Pacific,Intra-abdominal infections,90 to 94,Escherichia coli,4000,2000,6000,15000,9000,24000,4000,2000,6000,0,0,0,0,0,0,0,0,0
 Western Pacific,Intra-abdominal infections,95 plus,Escherichia coli,2000,1000,3000,5000,3000,8000,1000,1000,2000,0,0,0,0,0,0,0,0,0
 Western Pacific,LRI and thorax infections,EN,Escherichia coli,15000,9000,22000,124000,80000,187000,32000,20000,51000,0,0,0,0,0,0,0,0,0
 Western Pacific,LRI and thorax infections,LN,Escherichia coli,4000,3000,6000,39000,29000,53000,10000,7000,15000,0,0,0,0,0,0,0,0,0
-Western Pacific,LRI and thorax infections,PN,Escherichia coli,7000,5000,9000,58000,46000,72000,15000,11000,20000,0,0,0,0,0,0,0,0,0
-Western Pacific,LRI and thorax infections,1 to 4,Escherichia coli,3000,2000,4000,22000,17000,28000,6000,4000,8000,0,0,0,0,0,0,0,0,0
-Western Pacific,LRI and thorax infections,5 to 9,Escherichia coli,1000,0,1000,4000,3000,5000,1000,1000,1000,0,0,0,0,0,0,0,0,0
+Western Pacific,LRI and thorax infections,PN,Escherichia coli,7000,5000,9000,58000,46000,72000,15000,11000,20000,3215.625,2296.875,4134.375,26643.75,21131.25,33075,6890.625,5053.125,9187.5
+Western Pacific,LRI and thorax infections,1 to 4,Escherichia coli,3000,2000,4000,22000,17000,28000,6000,4000,8000,1470,980,1960,10780,8330,13720,2940,1960,3920
+Western Pacific,LRI and thorax infections,5 to 9,Escherichia coli,1000,0,1000,4000,3000,5000,1000,1000,1000,13.1923076923077,0,13.1923076923077,52.7692307692308,39.5769230769231,65.9615384615385,13.1923076923077,13.1923076923077,13.1923076923077
 Western Pacific,LRI and thorax infections,10 to 14,Escherichia coli,0,0,0,2000,2000,2000,1000,0,1000,0,0,0,0,0,0,0,0,0
 Western Pacific,LRI and thorax infections,15 to 19,Escherichia coli,0,0,0,2000,2000,3000,1000,0,1000,0,0,0,0,0,0,0,0,0
 Western Pacific,LRI and thorax infections,20 to 24,Escherichia coli,0,0,0,3000,2000,3000,1000,0,1000,0,0,0,0,0,0,0,0,0
@@ -2593,34 +2593,34 @@ Western Pacific,LRI and thorax infections,55 to 59,Escherichia coli,3000,2000,40
 Western Pacific,LRI and thorax infections,60 to 64,Escherichia coli,3000,3000,5000,23000,16000,32000,6000,4000,9000,0,0,0,0,0,0,0,0,0
 Western Pacific,LRI and thorax infections,65 to 69,Escherichia coli,4000,3000,6000,29000,21000,39000,7000,5000,11000,0,0,0,0,0,0,0,0,0
 Western Pacific,LRI and thorax infections,70 to 74,Escherichia coli,6000,4000,8000,34000,23000,51000,9000,5000,14000,0,0,0,0,0,0,0,0,0
-Western Pacific,LRI and thorax infections,75 to 79,Escherichia coli,6000,4000,7000,33000,24000,46000,8000,6000,12000,0,0,0,0,0,0,0,0,0
+Western Pacific,LRI and thorax infections,75 to 79,Escherichia coli,6000,4000,7000,33000,24000,46000,8000,6000,12000,2940,1960,3430,16170,11760,22540,3920,2940,5880
 Western Pacific,LRI and thorax infections,80 to 84,Escherichia coli,6000,5000,7000,33000,26000,43000,9000,6000,12000,0,0,0,0,0,0,0,0,0
 Western Pacific,LRI and thorax infections,85 to 89,Escherichia coli,5000,4000,6000,24000,19000,30000,6000,4000,8000,0,0,0,0,0,0,0,0,0
 Western Pacific,LRI and thorax infections,90 to 94,Escherichia coli,3000,2000,3000,10000,8000,12000,3000,2000,3000,0,0,0,0,0,0,0,0,0
 Western Pacific,LRI and thorax infections,95 plus,Escherichia coli,1000,1000,1000,4000,3000,5000,1000,1000,1000,0,0,0,0,0,0,0,0,0
-Western Pacific,UTI,EN,Escherichia coli,0,0,0,0,0,1000,0,0,0,0,0,0,0,0,490,0,0,0
-Western Pacific,UTI,LN,Escherichia coli,0,0,0,0,0,1000,0,0,0,0,0,0,0,0,490,0,0,0
-Western Pacific,UTI,PN,Escherichia coli,0,0,1000,2000,2000,4000,1000,0,1000,0,0,490,980,980,1960,490,0,490
+Western Pacific,UTI,EN,Escherichia coli,0,0,0,0,0,1000,0,0,0,0,0,0,0,0,0,0,0,0
+Western Pacific,UTI,LN,Escherichia coli,0,0,0,0,0,1000,0,0,0,0,0,0,0,0,0,0,0,0
+Western Pacific,UTI,PN,Escherichia coli,0,0,1000,2000,2000,4000,1000,0,1000,0,0,459.375,918.75,918.75,1837.5,459.375,0,459.375
 Western Pacific,UTI,1 to 4,Escherichia coli,0,0,1000,2000,2000,4000,1000,0,1000,0,0,490,980,980,1960,490,0,490
-Western Pacific,UTI,5 to 9,Escherichia coli,0,0,1000,2000,2000,3000,1000,0,1000,0,0,490,980,980,1470,490,0,490
-Western Pacific,UTI,10 to 14,Escherichia coli,0,0,0,2000,2000,3000,0,0,1000,0,0,0,980,980,1470,0,0,490
-Western Pacific,UTI,15 to 19,Escherichia coli,0,0,1000,3000,2000,4000,1000,1000,1000,0,0,490,1470,980,1960,490,490,490
-Western Pacific,UTI,20 to 24,Escherichia coli,1000,1000,1000,4000,3000,6000,1000,1000,2000,490,490,490,1960,1470,2940,490,490,980
-Western Pacific,UTI,25 to 29,Escherichia coli,1000,1000,1000,6000,4000,8000,1000,1000,2000,490,490,490,2940,1960,3920,490,490,980
-Western Pacific,UTI,30 to 34,Escherichia coli,1000,1000,2000,8000,6000,12000,2000,1000,3000,490,490,980,3920,2940,5880,980,490,1470
-Western Pacific,UTI,35 to 39,Escherichia coli,1000,1000,2000,9000,7000,13000,2000,2000,3000,490,490,980,4410,3430,6370,980,980,1470
-Western Pacific,UTI,40 to 44,Escherichia coli,2000,1000,3000,14000,10000,22000,4000,2000,6000,980,490,1470,6860,4900,10780,1960,980,2940
-Western Pacific,UTI,45 to 49,Escherichia coli,3000,2000,4000,20000,13000,30000,5000,3000,8000,1470,980,1960,9800,6370,14700,2450,1470,3920
-Western Pacific,UTI,50 to 54,Escherichia coli,3000,2000,5000,24000,16000,36000,6000,4000,10000,1470,980,2450,11760,7840,17640,2940,1960,4900
-Western Pacific,UTI,55 to 59,Escherichia coli,4000,2000,6000,26000,15000,42000,7000,4000,11000,1960,980,2940,12740,7350,20580,3430,1960,5390
-Western Pacific,UTI,60 to 64,Escherichia coli,4000,3000,7000,28000,17000,47000,7000,4000,13000,1960,1470,3430,13720,8330,23030,3430,1960,6370
-Western Pacific,UTI,65 to 69,Escherichia coli,5000,3000,8000,33000,19000,54000,8000,5000,14000,2450,1470,3920,16170,9310,26460,3920,2450,6860
-Western Pacific,UTI,70 to 74,Escherichia coli,6000,4000,10000,38000,21000,65000,10000,5000,17000,2940,1960,4900,18620,10290,31850,4900,2450,8330
+Western Pacific,UTI,5 to 9,Escherichia coli,0,0,1000,2000,2000,3000,1000,0,1000,0,0,13.1923076923077,26.3846153846154,26.3846153846154,39.5769230769231,13.1923076923077,0,13.1923076923077
+Western Pacific,UTI,10 to 14,Escherichia coli,0,0,0,2000,2000,3000,0,0,1000,0,0,0,0,0,0,0,0,0
+Western Pacific,UTI,15 to 19,Escherichia coli,0,0,1000,3000,2000,4000,1000,1000,1000,0,0,0,0,0,0,0,0,0
+Western Pacific,UTI,20 to 24,Escherichia coli,1000,1000,1000,4000,3000,6000,1000,1000,2000,0,0,0,0,0,0,0,0,0
+Western Pacific,UTI,25 to 29,Escherichia coli,1000,1000,1000,6000,4000,8000,1000,1000,2000,0,0,0,0,0,0,0,0,0
+Western Pacific,UTI,30 to 34,Escherichia coli,1000,1000,2000,8000,6000,12000,2000,1000,3000,0,0,0,0,0,0,0,0,0
+Western Pacific,UTI,35 to 39,Escherichia coli,1000,1000,2000,9000,7000,13000,2000,2000,3000,0,0,0,0,0,0,0,0,0
+Western Pacific,UTI,40 to 44,Escherichia coli,2000,1000,3000,14000,10000,22000,4000,2000,6000,0,0,0,0,0,0,0,0,0
+Western Pacific,UTI,45 to 49,Escherichia coli,3000,2000,4000,20000,13000,30000,5000,3000,8000,0,0,0,0,0,0,0,0,0
+Western Pacific,UTI,50 to 54,Escherichia coli,3000,2000,5000,24000,16000,36000,6000,4000,10000,0,0,0,0,0,0,0,0,0
+Western Pacific,UTI,55 to 59,Escherichia coli,4000,2000,6000,26000,15000,42000,7000,4000,11000,0,0,0,0,0,0,0,0,0
+Western Pacific,UTI,60 to 64,Escherichia coli,4000,3000,7000,28000,17000,47000,7000,4000,13000,0,0,0,0,0,0,0,0,0
+Western Pacific,UTI,65 to 69,Escherichia coli,5000,3000,8000,33000,19000,54000,8000,5000,14000,0,0,0,0,0,0,0,0,0
+Western Pacific,UTI,70 to 74,Escherichia coli,6000,4000,10000,38000,21000,65000,10000,5000,17000,0,0,0,0,0,0,0,0,0
 Western Pacific,UTI,75 to 79,Escherichia coli,6000,4000,9000,33000,20000,52000,8000,5000,14000,2940,1960,4410,16170,9800,25480,3920,2450,6860
-Western Pacific,UTI,80 to 84,Escherichia coli,6000,4000,8000,30000,19000,45000,8000,5000,12000,2940,1960,3920,14700,9310,22050,3920,2450,5880
-Western Pacific,UTI,85 to 89,Escherichia coli,5000,4000,7000,21000,14000,31000,5000,3000,8000,2450,1960,3430,10290,6860,15190,2450,1470,3920
-Western Pacific,UTI,90 to 94,Escherichia coli,3000,2000,4000,10000,7000,13000,2000,2000,4000,1470,980,1960,4900,3430,6370,980,980,1960
-Western Pacific,UTI,95 plus,Escherichia coli,2000,1000,2000,5000,3000,6000,1000,1000,2000,980,490,980,2450,1470,2940,490,490,980
+Western Pacific,UTI,80 to 84,Escherichia coli,6000,4000,8000,30000,19000,45000,8000,5000,12000,0,0,0,0,0,0,0,0,0
+Western Pacific,UTI,85 to 89,Escherichia coli,5000,4000,7000,21000,14000,31000,5000,3000,8000,0,0,0,0,0,0,0,0,0
+Western Pacific,UTI,90 to 94,Escherichia coli,3000,2000,4000,10000,7000,13000,2000,2000,4000,0,0,0,0,0,0,0,0,0
+Western Pacific,UTI,95 plus,Escherichia coli,2000,1000,2000,5000,3000,6000,1000,1000,2000,0,0,0,0,0,0,0,0,0
 Africa,Bacterial skin infections,EN,Group A Streptococcus,14000,0,95000,2000,0,17000,0,0,2000,0,0,0,0,0,0,0,0,0
 Africa,Bacterial skin infections,LN,Group A Streptococcus,0,0,3000,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 Africa,Bacterial skin infections,PN,Group A Streptococcus,25000,14000,42000,4000,2000,7000,0,0,1000,11484.375,6431.25,19293.75,1837.5,918.75,3215.625,0,0,459.375

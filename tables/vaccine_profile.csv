@@ -3,8 +3,9 @@ Acinetobacter baumannii - BSI,Acinetobacter baumannii,0.7,0.7,5 years,BSI,6 week
 Acinetobacter baumannii - all,Acinetobacter baumannii,0.7,0.7,5 years,All,6 weeks & elderly age group,All age groups,Yes,70 years
 Enterococcus faecium,Enterococcus faecium,0.7,0.7,5 years,All,6 weeks & elderly age group,All age groups,Yes,65 years
 ETEC,Escherichia coli,0.6,0.7,5 years,Diarrhoea,6 months,6 months,Yes,
-ExPEC - BSI,Escherichia coli,0.7,0.7,5 years,BSI,6 weeks & elderly age group,All age groups,Yes,75 years
-ExPEC - UTI,Escherichia coli,0.7,0.7,5 years,UTI,6 weeks & elderly age group,All age groups,Yes,75 years
+ExPEC - BSI,Escherichia coli,0.7,0.7,5 years,BSI,6 weeks & elderly age group,All age groups,No,75 years
+ExPEC - UTI,Escherichia coli,0.7,0.7,5 years,UTI,6 weeks & elderly age group,All age groups,No,75 years
+E. coli - all,Escherichia coli,0.7,0.7,5 years,All except Diarrhoea,6 weeks & elderly age group,6 weeks & elderly age group,Yes,75 years
 Group A streptococcus,Group A Streptococcus,0.7,0.7,5 years,All,6 weeks,6 weeks,Yes,
 Haemophilus influenzae type B,Haemophilus influenzae,0.93,0.9,5 years,All,"6, 10, 14 weeks","6, 10, 14 weeks",Yes,
 Klebsiella pneumoniae - BSI,Klebsiella pneumoniae,0.7,0.7,6 months,BSI,0 weeks (maternal),0 weeks (maternal),Yes,

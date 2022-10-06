@@ -245,7 +245,10 @@ create_vaccine_profile_table <- function(vaccine_profile,
   combined_table[Pathogen             == "Escherichia coli" &
                  Disease_presentation == "Diarrhoea",
                  VO                   := "6 months"]
-
+  
+  combined_table[Pathogen             == "Escherichia coli" &
+                 Disease_presentation == "Diarrhoea",
+                 DP                   := "Diarrhoea"]
   
   # Using maternal and infant vaccines
   combined_table[Pathogen == "Klebsiella pneumoniae" & Disease_presentation == "BSI" &
@@ -884,6 +887,9 @@ create_burden_by_pathogen_graph <- function(pathogen,
   
   vaccine_impact[DP  == "All" |
                    
+                   (DP  == "All except Diarrhoea" &
+                      Disease_presentation != "Diarrhoea") |
+                   
                    (DP  == "BSI" & Disease_presentation == "BSI") |
                    
                    (DP  == "BSI, LRI and thorax infections" & 
@@ -1498,18 +1504,18 @@ vaccine_imapct_by_vaccine <- function(data_in,
                               vaccine_type   = vaccine_profile_dt_add[6,],
                               data_input     = data_in,
                               mode_input     = mode_in),
-  
-  estimate_burden_averted_add(pathogen       = "Group A Streptococcus",
+
+  estimate_burden_averted_add(pathogen       = "Escherichia coli",
                               vaccine_type   = vaccine_profile_dt_add[7,],
                               data_input     = data_in,
                               mode_input     = mode_in),
   
-  estimate_burden_averted_add(pathogen       = "Haemophilus influenzae",
+  estimate_burden_averted_add(pathogen       = "Group A Streptococcus",
                               vaccine_type   = vaccine_profile_dt_add[8,],
                               data_input     = data_in,
                               mode_input     = mode_in),
   
-  estimate_burden_averted_add(pathogen       = "Klebsiella pneumoniae",
+  estimate_burden_averted_add(pathogen       = "Haemophilus influenzae",
                               vaccine_type   = vaccine_profile_dt_add[9,],
                               data_input     = data_in,
                               mode_input     = mode_in),
@@ -1519,7 +1525,7 @@ vaccine_imapct_by_vaccine <- function(data_in,
                               data_input     = data_in,
                               mode_input     = mode_in),
   
-  estimate_burden_averted_add(pathogen       = "Mycobacterium tuberculosis",
+  estimate_burden_averted_add(pathogen       = "Klebsiella pneumoniae",
                               vaccine_type   = vaccine_profile_dt_add[11,],
                               data_input     = data_in,
                               mode_input     = mode_in),
@@ -1529,48 +1535,53 @@ vaccine_imapct_by_vaccine <- function(data_in,
                               data_input     = data_in,
                               mode_input     = mode_in),
   
-  estimate_burden_averted_add(pathogen       = "Neisseria gonorrhoeae",
+  estimate_burden_averted_add(pathogen       = "Mycobacterium tuberculosis",
                               vaccine_type   = vaccine_profile_dt_add[13,],
                               data_input     = data_in,
                               mode_input     = mode_in),
   
-  estimate_burden_averted_add(pathogen       = "Non-typhoidal Salmonella",
+  estimate_burden_averted_add(pathogen       = "Neisseria gonorrhoeae",
                               vaccine_type   = vaccine_profile_dt_add[14,],
                               data_input     = data_in,
                               mode_input     = mode_in),
   
-  estimate_burden_averted_add(pathogen       = "Pseudomonas aeruginosa",
+  estimate_burden_averted_add(pathogen       = "Non-typhoidal Salmonella",
                               vaccine_type   = vaccine_profile_dt_add[15,],
                               data_input     = data_in,
                               mode_input     = mode_in),
   
-  estimate_burden_averted_add(pathogen       = "Salmonella Paratyphi",
+  estimate_burden_averted_add(pathogen       = "Pseudomonas aeruginosa",
                               vaccine_type   = vaccine_profile_dt_add[16,],
                               data_input     = data_in,
                               mode_input     = mode_in),
   
-  estimate_burden_averted_add(pathogen       = "Salmonella Typhi",
+  estimate_burden_averted_add(pathogen       = "Salmonella Paratyphi",
                               vaccine_type   = vaccine_profile_dt_add[17,],
                               data_input     = data_in,
                               mode_input     = mode_in),
   
-  estimate_burden_averted_add(pathogen       = "Shigella spp.",
+  estimate_burden_averted_add(pathogen       = "Salmonella Typhi",
                               vaccine_type   = vaccine_profile_dt_add[18,],
                               data_input     = data_in,
                               mode_input     = mode_in),
   
-  estimate_burden_averted_add(pathogen       = "Staphylococcus aureus",
+  estimate_burden_averted_add(pathogen       = "Shigella spp.",
                               vaccine_type   = vaccine_profile_dt_add[19,],
                               data_input     = data_in,
                               mode_input     = mode_in),
   
-  estimate_burden_averted_add(pathogen       = "Streptococcus pneumoniae",
+  estimate_burden_averted_add(pathogen       = "Staphylococcus aureus",
                               vaccine_type   = vaccine_profile_dt_add[20,],
                               data_input     = data_in,
                               mode_input     = mode_in),
   
   estimate_burden_averted_add(pathogen       = "Streptococcus pneumoniae",
                               vaccine_type   = vaccine_profile_dt_add[21,],
+                              data_input     = data_in,
+                              mode_input     = mode_in),
+  
+  estimate_burden_averted_add(pathogen       = "Streptococcus pneumoniae",
+                              vaccine_type   = vaccine_profile_dt_add[22,],
                               data_input     = data_in,
                               mode_input     = mode_in)))
   
