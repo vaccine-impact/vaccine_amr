@@ -1,9 +1,9 @@
 Counts,burden_averted,type
-Haemophilus influenzae,"12,777 ( 11,476 - 14,257 )",death_associated
-Haemophilus influenzae,"2,929 ( 2,435 - 3,563 )",death_attributable
-Haemophilus influenzae,"1,115,404 ( 996,201 - 1,249,056 )",daly_associated
-Haemophilus influenzae,"249,714 ( 209,095 - 301,044 )",daly_attributable
-Streptococcus pneumoniae,"53,972 ( 48,661 - 59,796 )",death_associated
-Streptococcus pneumoniae,"11,017 ( 9,450 - 12,943 )",death_attributable
-Streptococcus pneumoniae,"4,725,401 ( 4,209,223 - 5,267,777 )",daly_associated
-Streptococcus pneumoniae,"969,959 ( 840,443 - 1,122,031 )",daly_attributable
+Haemophilus influenzae,"11,318 (9,690 - 13,114)",death_associated
+Haemophilus influenzae,"2,573 (2,136 - 3,140)",death_attributable
+Haemophilus influenzae,"979,389 (850,220 - 1,160,202)",daly_associated
+Haemophilus influenzae,"218,984 (175,303 - 268,832)",daly_attributable
+Streptococcus pneumoniae,"44,251 (37,185 - 51,580)",death_associated
+Streptococcus pneumoniae,"9,149 (7,635 - 11,205)",death_attributable
+Streptococcus pneumoniae,"3,835,992 (3,311,704 - 4,492,991)",daly_associated
+Streptococcus pneumoniae,"800,903 (663,501 - 951,714)",daly_attributable

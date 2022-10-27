@@ -17,6 +17,7 @@ library (scales)
 library (data.table)
 library (ggplot2)
 library (rriskDistributions)
+library (msm)
 library (formattable)
 library (patchwork)
 library (Cairo)
@@ -133,39 +134,43 @@ estimate_prevaccination_burden(
 # AMR burden by pathogen across all age groups:
 # the outputs were used to find out the age group with the highest burden
 
-pathogenlist_death <- unique(death_burden_dt$Pathogen)
-pathogenlist_daly  <- unique(daly_burden_dt$Pathogen)
+# pathogenlist_death <- unique(death_burden_dt$Pathogen)
+# pathogenlist_daly  <- unique(daly_burden_dt$Pathogen)
 
-lapply(pathogenlist_death, create_burden_by_pathogen_graph, 
-       input_data = combined_dt, ylabel = "Number of Death Associated with AMR",
-       burden_type = "deaths")
+# lapply(pathogenlist_death, create_burden_by_pathogen_graph, 
+#        input_data = combined_dt, ylabel = "Number of Death Associated with AMR",
+#        burden_type = "deaths")
 
-lapply(pathogenlist_daly, create_burden_by_pathogen_graph, 
-       input_data = daly_combined_dt, ylabel = "Number of DALY Associated with AMR",
-       burden_type = "dalys")
+# lapply(pathogenlist_daly, create_burden_by_pathogen_graph, 
+#        input_data = daly_combined_dt, ylabel = "Number of DALY Associated with AMR",
+#        burden_type = "dalys")
 # ------------------------------------------------------------------------------
 
 
 
 # ------------------------------------------------------------------------------
 # estimate vaccine averted AMR burden & uncertainty analysis baseline
+memory.limit(size = 200000)
 
 set.seed (3)  # seed for random number generator
-run <- 1000 # number of runs for probabilistic sensitivity analysis
+run <- 400 # number of runs for probabilistic sensitivity analysis
 
-# vaccine avertable burden psa for deaths associated with AMR
+# baseline for uncertainty analysis -- deaths associated with AMR
 deaths_associated_psa <- uncertainty_analysis_baseline(
   psa       = run,
   tolerance = 0.001,
   data      = read_csv(file.path("tables", "associated_burden.csv")),
   mode      = "death")
 
+fwrite (x    = deaths_associated_psa,
+        file = file.path("tables", "deaths_associated_psa.csv"))
+
 deaths_associated_psa$va_base <- 
-  estimate_vaccine_impact(data     = deaths_associated_psa,
+  estimate_vaccine_impact(data     = read_csv(file.path("tables", "deaths_associated_psa.csv")),
                           scenario = "conservative")[, va_health_burden]
 
 deaths_associated_psa$va_high <- 
-  estimate_vaccine_impact(data     = deaths_associated_psa,
+  estimate_vaccine_impact(data     = read_csv(file.path("tables", "deaths_associated_psa.csv")),
                           scenario = "optimistic")[, va_health_burden]
 
 deaths_associated_psa$va_incre <- 
@@ -174,7 +179,7 @@ deaths_associated_psa$va_incre <-
 fwrite (x    = deaths_associated_psa,
         file = file.path("tables", "deaths_associated_psa.csv"))
 
-# vaccine avertable burden psa for deaths attributable to AMR
+# baseline for uncertainty analysis -- deaths attributable to AMR
 
 deaths_attributable_psa <- uncertainty_analysis_baseline(
   psa       = run,
@@ -182,12 +187,15 @@ deaths_attributable_psa <- uncertainty_analysis_baseline(
   data      = read_csv(file.path("tables", "attributable_burden.csv")),
   mode      = "death")
 
+fwrite (x    = deaths_attributable_psa,
+        file = file.path("tables", "deaths_attributable_psa.csv"))
+
 deaths_attributable_psa$va_base <- 
-  estimate_vaccine_impact(data     = deaths_attributable_psa,
+  estimate_vaccine_impact(data     = read_csv(file.path("tables", "deaths_attributable_psa.csv")),
                           scenario = "conservative")[, va_health_burden]
 
 deaths_attributable_psa$va_high <- 
-  estimate_vaccine_impact(data     = deaths_attributable_psa,
+  estimate_vaccine_impact(data     = read_csv(file.path("tables", "deaths_attributable_psa.csv")),
                           scenario = "optimistic")[, va_health_burden]
 
 deaths_attributable_psa$va_incre <- 
@@ -196,7 +204,7 @@ deaths_attributable_psa$va_incre <-
 fwrite (x    = deaths_attributable_psa,
         file = file.path("tables", "deaths_attributable_psa.csv"))
 
-# vaccine avertable burden psa for DALYs associated with AMR
+# baseline for uncertainty analysis -- DALYs associated with AMR
 
 daly_associated_psa <- uncertainty_analysis_baseline(
   psa       = run, 
@@ -204,12 +212,15 @@ daly_associated_psa <- uncertainty_analysis_baseline(
   data      = read_csv(file.path("tables", "daly_associated_burden.csv")),
   mode      = "daly")
 
+fwrite (x    = daly_associated_psa,
+        file = file.path("tables", "daly_associated_psa.csv"))
+
 daly_associated_psa$va_base <- 
-  estimate_vaccine_impact(data     = daly_associated_psa,
+  estimate_vaccine_impact(data     = read_csv(file.path("tables", "daly_associated_psa.csv")),
                           scenario = "conservative")[, va_health_burden]
 
 daly_associated_psa$va_high <- 
-  estimate_vaccine_impact(data     = daly_associated_psa,
+  estimate_vaccine_impact(data     = read_csv(file.path("tables", "daly_associated_psa.csv")),
                           scenario = "optimistic")[, va_health_burden]
 
 daly_associated_psa$va_incre <- 
@@ -218,7 +229,7 @@ daly_associated_psa$va_incre <-
 fwrite (x    = daly_associated_psa,
         file = file.path("tables", "daly_associated_psa.csv"))
 
-# vaccine avertable burden psa for DALYs attributable to AMR
+# baseline for uncertainty analysis -- DALYs attributable to AMR
 
 daly_attributable_psa <- uncertainty_analysis_baseline(
   psa       = run,
@@ -226,12 +237,15 @@ daly_attributable_psa <- uncertainty_analysis_baseline(
   data      = read_csv(file.path("tables", "daly_attributable_burden.csv")),
   mode      = "daly")
 
+fwrite (x    = daly_attributable_psa,
+        file = file.path("tables", "daly_attributable_psa.csv"))
+
 daly_attributable_psa$va_base <- 
-  estimate_vaccine_impact(data     = daly_attributable_psa,
+  estimate_vaccine_impact(data     = read_csv(file.path("tables", "daly_attributable_psa.csv")),
                           scenario = "conservative")[, va_health_burden]
 
 daly_attributable_psa$va_high <- 
-  estimate_vaccine_impact(data     = daly_attributable_psa,
+  estimate_vaccine_impact(data     = read_csv(file.path("tables", "daly_attributable_psa.csv")),
                           scenario = "optimistic")[, va_health_burden]
 
 daly_attributable_psa$va_incre <- 
@@ -240,54 +254,58 @@ daly_attributable_psa$va_incre <-
 fwrite (x    = daly_attributable_psa,
         file = file.path("tables", "daly_attributable_psa.csv"))
 
-# vaccine avertable burden psa for deaths associated with susceptible
-deaths_susceptible_psa <- uncertainty_analysis_baseline(
+# baseline for uncertainty analysis -- deaths associated with susceptible
+ deaths_susceptible_psa <- uncertainty_analysis_baseline(
   psa       = run,
   tolerance = 0.001,
   data      = read_csv(file.path("tables", "susceptible_burden.csv")),
   mode      = "death")
 
-deaths_susceptible_psa$va_base <- 
-  estimate_vaccine_impact(data     = deaths_susceptible_psa,
-                          scenario = "conservative")[, va_health_burden]
-
-deaths_susceptible_psa$va_high <- 
-  estimate_vaccine_impact(data     = deaths_susceptible_psa,
-                          scenario = "optimistic")[, va_health_burden]
-
-deaths_susceptible_psa$va_incre <- 
-  deaths_susceptible_psa$va_high - deaths_susceptible_psa$va_base
-
-fwrite (x    = deaths_susceptible_psa,
+ fwrite (x    = deaths_susceptible_psa,
         file = file.path("tables", "deaths_susceptible_psa.csv"))
 
-# vaccine avertable burden psa for DALYs associated with susceptible
-daly_susceptible_psa <- uncertainty_analysis_baseline(
-  psa       = run, 
-  tolerance = 0.001,
-  data      = read_csv(file.path("tables", "daly_susceptible_burden.csv")),
-  mode      = "daly")
-
-daly_susceptible_psa$va_base <- 
-  estimate_vaccine_impact(data     = daly_susceptible_psa,
+ deaths_susceptible_psa$va_base <- 
+  estimate_vaccine_impact(data     = read_csv(file.path("tables", "deaths_susceptible_psa.csv")),
                           scenario = "conservative")[, va_health_burden]
 
-daly_susceptible_psa$va_high <- 
-  estimate_vaccine_impact(data     = daly_susceptible_psa,
+ deaths_susceptible_psa$va_high <- 
+  estimate_vaccine_impact(data     = read_csv(file.path("tables", "deaths_susceptible_psa.csv")),
                           scenario = "optimistic")[, va_health_burden]
 
-daly_susceptible_psa$va_incre <- 
-  daly_susceptible_psa$va_high - daly_susceptible_psa$va_base
+ deaths_susceptible_psa$va_incre <- 
+  deaths_susceptible_psa$va_high - deaths_susceptible_psa$va_base
 
-fwrite (x    = daly_susceptible_psa,
-        file = file.path("tables", "daly_susceptible_psa.csv"))
+ fwrite (x    = deaths_susceptible_psa,
+        file = file.path("tables", "deaths_susceptible_psa.csv"))
+
+# baseline for uncertainty analysis -- DALYs associated with susceptible
+ daly_susceptible_psa <- uncertainty_analysis_baseline(
+   psa       = run, 
+   tolerance = 0.001,
+   data      = read_csv(file.path("tables", "daly_susceptible_burden.csv")),
+   mode      = "daly")
+
+ fwrite (x    = daly_susceptible_psa,
+         file = file.path("tables", "daly_susceptible_psa.csv"))
+
+ daly_susceptible_psa$va_base <- 
+   estimate_vaccine_impact(data     = read_csv(file.path("tables", "daly_susceptible_psa.csv")),
+                           scenario = "conservative")[, va_health_burden]
+
+ daly_susceptible_psa$va_high <- 
+   estimate_vaccine_impact(data     = read_csv(file.path("tables", "daly_susceptible_psa.csv")),
+                           scenario = "optimistic")[, va_health_burden]
+
+ daly_susceptible_psa$va_incre <- 
+   daly_susceptible_psa$va_high - daly_susceptible_psa$va_base
+
+ fwrite (x    = daly_susceptible_psa,
+         file = file.path("tables", "daly_susceptible_psa.csv"))
 # ------------------------------------------------------------------------------
 
 
 
 # ------------------------------------------------------------------------------
-memory.limit(size = 20000)
-
 # deaths and DALYs associated with and attributable to AMR
 # globally and by WHO region, 2019
 
@@ -738,20 +756,7 @@ daly_averted_by_vp_graph <- create_burden_averted_by_vp_graph(
   Attributable_burden_averted = Attributable_daly_averted_vp,
   Associated_burden_averted   = Associated_daly_averted_vp,
   ylabel = "Vaccine Avertable DALYs",
-  ylim_max = 13000000)
-
-# create graph with avertable AMR burden by vaccine profile -- High-potential Scenario
-death_averted_by_vp_graph_opt <- create_burden_averted_by_vp_graph(
-  Attributable_burden_averted = Attributable_death_averted_vp_opt,
-  Associated_burden_averted   = Associated_death_averted_vp_opt,
-  ylim_max = 350000,
-  ylabel = "Vaccine Avertable Deaths")
-
-daly_averted_by_vp_graph_opt <- create_burden_averted_by_vp_graph(
-  Attributable_burden_averted = Attributable_daly_averted_vp_opt,
-  Associated_burden_averted   = Associated_daly_averted_vp_opt,
-  ylim_max = 15000000,
-  ylabel = "Vaccine Avertable DALYs")
+  ylim_max = 11000000)
 
 # create Figure
 death_averted_by_vp_graph / daly_averted_by_vp_graph
@@ -766,8 +771,8 @@ ggsave (filename = "Figure_burden_averted_by_vaccine_profile.png",
 ggsave (filename = "Figure_avertable_burden_by_vaccine_profile.eps",
         path = "figures",
         device = "eps",
-        width = 7, 
-        height = 7)
+        width = 6, 
+        height = 10)
 
 # ------------------------------------------------------------------------------
 
@@ -781,41 +786,85 @@ ggsave (filename = "Figure_avertable_burden_by_vaccine_profile.eps",
 vaccine_impact_current <- bind_rows(list(
 # impact of current coverage of Hib vaccine on deaths associated with AMR
 edit_table(estimate_existing_vaccine_impact(
-    input_data = deaths_associated_psa)[Counts == "Haemophilus influenzae",]),
+    input_data = read_csv(file.path("tables", "deaths_associated_psa.csv")))[Counts == "Haemophilus influenzae",]),
 
 # impact of current coverage of Hib vaccine on deaths attributable to AMR
 edit_table(estimate_existing_vaccine_impact(
-    input_data = deaths_attributable_psa)[Counts == "Haemophilus influenzae",]),
+    input_data = read_csv(file.path("tables", "deaths_attributable_psa.csv")))[Counts == "Haemophilus influenzae",]),
 
 # impact of current coverage of Hib vaccine on dalys associated with AMR
 edit_table(estimate_existing_vaccine_impact(
-    input_data = daly_associated_psa)[Counts == "Haemophilus influenzae",]),
+    input_data = read_csv(file.path("tables", "daly_associated_psa.csv")))[Counts == "Haemophilus influenzae",]),
 
 # impact of current coverage of Hib vaccine on dalys attributable to AMR
 edit_table(estimate_existing_vaccine_impact(
-    input_data = daly_attributable_psa)[Counts == "Haemophilus influenzae",]),
+    input_data = read_csv(file.path("tables", "daly_attributable_psa.csv")))[Counts == "Haemophilus influenzae",]),
 
 # impact of current coverage of PCV on deaths associated with AMR
 edit_table(estimate_existing_vaccine_impact(
-    input_data = deaths_associated_psa)[Counts == "Streptococcus pneumoniae",]),
+    input_data = read_csv(file.path("tables", "deaths_associated_psa.csv")))[Counts == "Streptococcus pneumoniae",]),
 
 # impact of current coverage of PCV on deaths attributable to AMR
 edit_table(estimate_existing_vaccine_impact(
-    input_data = deaths_attributable_psa)[Counts == "Streptococcus pneumoniae",]),
+    input_data = read_csv(file.path("tables", "deaths_attributable_psa.csv")))[Counts == "Streptococcus pneumoniae",]),
 
 # impact of current coverage of PCV on dalys associated with AMR
 edit_table(estimate_existing_vaccine_impact(
-    input_data = daly_associated_psa)[Counts == "Streptococcus pneumoniae",]),
+    input_data = read_csv(file.path("tables", "daly_associated_psa.csv")))[Counts == "Streptococcus pneumoniae",]),
 
 # impact of current coverage of PCV on dalys attributable to AMR
 edit_table(estimate_existing_vaccine_impact(
-    input_data = daly_attributable_psa)[Counts == "Streptococcus pneumoniae",])))
+    input_data = read_csv(file.path("tables", "daly_attributable_psa.csv")))[Counts == "Streptococcus pneumoniae",])))
 
 vaccine_impact_current$type <- rep(c("death_associated", "death_attributable", "daly_associated", "daly_attributable"), 2)
 
 fwrite (x    = vaccine_impact_current,
         file = file.path("tables", "Table_avertible_burden_with_current_coverage.csv"))
 
+# ------------------------------------------------------------------------------
+# [graph in appendix] vaccine avertable deaths by infectious syndrome and pathogen
+
+deaths_associated_dp_pathogen   <- 
+  aggregate_impact_by_dp_pathogen(input_data = read_csv(file.path("tables", "deaths_associated_psa.csv")),
+                                  input_rep  = 1:62)
+
+deaths_attributable_dp_pathogen <- 
+  aggregate_impact_by_dp_pathogen(input_data = read_csv(file.path("tables", "deaths_attributable_psa.csv")),
+                                  input_rep  = 1:62)
+
+daly_associated_dp_pathogen     <- 
+  aggregate_impact_by_dp_pathogen(input_data = read_csv(file.path("tables", "daly_associated_psa.csv")),
+                                  input_rep  = 1:63)
+
+daly_attributable_dp_pathogen   <- 
+  aggregate_impact_by_dp_pathogen(input_data = read_csv(file.path("tables", "daly_attributable_psa.csv")),
+                                  input_rep  = 1:61)
+
+# create graph of vaccine impact by infectious syndrome and pathogen
+
+burden_averted_by_dp_pat(data_input = deaths_associated_dp_pathogen, 
+                         image_png  = file.path("figures", 
+                                                "Figure_deaths_associated_dp_pat.png"),
+                         image_eps  = file.path("figures", 
+                                                "Figure_deaths_associated_dp_pat.eps"))
+
+burden_averted_by_dp_pat(data_input = deaths_attributable_dp_pathogen, 
+                         image_png  = file.path("figures", 
+                                                "Figure_deaths_attributable_dp_pat.png"),
+                         image_eps  = file.path("figures", 
+                                                "Figure_deaths_attributable_dp_pat.eps"))
+
+burden_averted_by_dp_pat(data_input = daly_associated_dp_pathogen, 
+                         image_png  = file.path("figures", 
+                                                "Figure_daly_associated_dp_pat.png"),
+                         image_eps  = file.path("figures", 
+                                                "Figure_daly_associated_dp_pat.eps"))
+
+burden_averted_by_dp_pat(data_input = daly_attributable_dp_pathogen, 
+                         image_png  = file.path("figures", 
+                                                "Figure_daly_attributable_dp_pat.png"),
+                         image_eps  = file.path("figures", 
+                                                "Figure_daly_attributable_dp_pat.eps"))
 # ------------------------------------------------------------------------------
 # [table in appendix] vaccine avertable health burdens associated with and attributable
 # to AMR by WHO region, pathogen, disease presentation, and age group
@@ -855,51 +904,6 @@ AMR_daly_data_updated <- update_death_burden(
   burden_dt                    = daly_burden_dt,
   AMR_burden_data_updated_file = file.path ("tables", "AMR_daly_data_high_potential.csv"),
   input_scenario               = "optimistic")
-
-# ------------------------------------------------------------------------------
-# [graph in appendix] vaccine avertable deaths by infectious syndrome and pathogen
-
-deaths_associated_dp_pathogen   <- 
-  aggregate_impact_by_dp_pathogen(input_data = deaths_associated_psa,
-                                  input_rep  = 1:62)
-
-deaths_attributable_dp_pathogen <- 
-  aggregate_impact_by_dp_pathogen(input_data = deaths_attributable_psa,
-                                  input_rep  = 1:62)
-
-daly_associated_dp_pathogen     <- 
-  aggregate_impact_by_dp_pathogen(input_data = daly_associated_psa,
-                                  input_rep  = 1:63)
-
-daly_attributable_dp_pathogen   <- 
-  aggregate_impact_by_dp_pathogen(input_data = daly_attributable_psa,
-                                  input_rep  = 1:61)
-
-# create graph of vaccine impact by infectious syndrome and pathogen
-
-burden_averted_by_dp_pat(data_input = deaths_associated_dp_pathogen, 
-                         image_png  = file.path("figures", 
-                                                "Figure_deaths_associated_dp_pat.png"),
-                         image_eps  = file.path("figures", 
-                                                "Figure_deaths_associated_dp_pat.eps"))
-
-burden_averted_by_dp_pat(data_input = deaths_attributable_dp_pathogen, 
-                         image_png  = file.path("figures", 
-                                                "Figure_deaths_attributable_dp_pat.png"),
-                         image_eps  = file.path("figures", 
-                                                "Figure_deaths_attributable_dp_pat.eps"))
-
-burden_averted_by_dp_pat(data_input = daly_associated_dp_pathogen, 
-                         image_png  = file.path("figures", 
-                                                "Figure_daly_associated_dp_pat.png"),
-                         image_eps  = file.path("figures", 
-                                                "Figure_daly_associated_dp_pat.eps"))
-
-burden_averted_by_dp_pat(data_input = daly_attributable_dp_pathogen, 
-                         image_png  = file.path("figures", 
-                                                "Figure_daly_attributable_dp_pat.png"),
-                         image_eps  = file.path("figures", 
-                                                "Figure_daly_attributable_dp_pat.eps"))
 # ------------------------------------------------------------------------------
 
 
