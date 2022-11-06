@@ -150,7 +150,7 @@ estimate_prevaccination_burden(
 
 # ------------------------------------------------------------------------------
 # estimate vaccine averted AMR burden & uncertainty analysis baseline
-memory.limit(size = 200000)
+memory.limit(size = 20000)
 
 set.seed (3)  # seed for random number generator
 run <- 400 # number of runs for probabilistic sensitivity analysis
@@ -842,25 +842,29 @@ daly_attributable_dp_pathogen   <-
 
 # create graph of vaccine impact by infectious syndrome and pathogen
 
-burden_averted_by_dp_pat(data_input = deaths_associated_dp_pathogen, 
-                         image_png  = file.path("figures", 
-                                                "Figure_deaths_associated_dp_pat.png"),
-                         image_eps  = file.path("figures", 
-                                                "Figure_deaths_associated_dp_pat.eps"))
+burden_averted_by_dp_pat(data_input  = deaths_associated_dp_pathogen, 
+                         start_input = 3.6,
+                         image_png   = file.path("figures", 
+                                                 "Figure_deaths_associated_dp_pat.png"),
+                         image_eps   = file.path("figures", 
+                                                 "Figure_deaths_associated_dp_pat.eps"))
 
-burden_averted_by_dp_pat(data_input = deaths_attributable_dp_pathogen, 
-                         image_png  = file.path("figures", 
-                                                "Figure_deaths_attributable_dp_pat.png"),
-                         image_eps  = file.path("figures", 
-                                                "Figure_deaths_attributable_dp_pat.eps"))
+burden_averted_by_dp_pat(data_input  = deaths_attributable_dp_pathogen,
+                         start_input = 3.6,
+                         image_png   = file.path("figures", 
+                                                 "Figure_deaths_attributable_dp_pat.png"),
+                         image_eps   = file.path("figures", 
+                                                 "Figure_deaths_attributable_dp_pat.eps"))
 
-burden_averted_by_dp_pat(data_input = daly_associated_dp_pathogen, 
-                         image_png  = file.path("figures", 
-                                                "Figure_daly_associated_dp_pat.png"),
-                         image_eps  = file.path("figures", 
-                                                "Figure_daly_associated_dp_pat.eps"))
+burden_averted_by_dp_pat(data_input  = daly_associated_dp_pathogen, 
+                         start_input = 3.6,
+                         image_png   = file.path("figures", 
+                                                 "Figure_daly_associated_dp_pat.png"),
+                         image_eps   = file.path("figures", 
+                                                 "Figure_daly_associated_dp_pat.eps"))
 
-burden_averted_by_dp_pat(data_input = daly_attributable_dp_pathogen, 
+burden_averted_by_dp_pat(data_input = daly_attributable_dp_pathogen,
+                         start_input = 3.6,
                          image_png  = file.path("figures", 
                                                 "Figure_daly_attributable_dp_pat.png"),
                          image_eps  = file.path("figures", 
