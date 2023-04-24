@@ -310,11 +310,11 @@ estimate_prevaccination_burden <- function(burden_input,
                                            burden_file){
 
   # import current vaccine coverage estimates by region  
-  hib_coverage_2019 <- read_csv("tables/hib coverage 2019.csv")
-  hib_coverage_2018 <- read_csv("tables/hib coverage 2018.csv")
+  hib_coverage_2019 <- read_csv("tables/hib_coverage_2019.csv")
+  hib_coverage_2018 <- read_csv("tables/hib_coverage_2018.csv")
   
-  pcv_coverage_2019 <- read_csv("tables/pcv coverage 2019.csv")
-  pcv_coverage_2018 <- read_csv("tables/pcv coverage 2018.csv")
+  pcv_coverage_2019 <- read_csv("tables/pcv_coverage_2019.csv")
+  pcv_coverage_2018 <- read_csv("tables/pcv_coverage_2018.csv")
   
   hib_coverage <- data.table (WHO_region = c("Africa", "Americas", "Eastern Mediterranean", 
                                              "Europe", "South-East Asia", "Western Pacific"), 
@@ -477,13 +477,7 @@ create_burden_by_pathogen_graph <- function(pathogen,
     ggtitle(paste(pathogen)) +
     theme_classic() +
     theme(plot.title = element_text(hjust = 0.5))
-  
-  # save plot
-  ggsave (filename = paste(pathogen,"_",burden_type,".png"),
-          path = "figures",
-          width = 15,
-          height = 6,
-          dpi = 600)
+
 } # end of function -- create_burden_by_pathogen_graph
 
 # ------------------------------------------------------------------------------

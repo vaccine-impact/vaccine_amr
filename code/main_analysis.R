@@ -47,12 +47,12 @@ setwd ("../")
 # estimate regional vaccine coverage for existing vaccines in 2018 and 2019
 # - HIB vaccine, PCV
 existing_vaccine_coverage (year = "2019",
-                           hib_coverage_file = file.path("tables", "hib coverage 2019.csv"),
-                           pcv_coverage_file = file.path("tables", "pcv coverage 2019.csv"))
+                           hib_coverage_file = file.path("tables", "hib_coverage_2019.csv"),
+                           pcv_coverage_file = file.path("tables", "pcv_coverage_2019.csv"))
 
 existing_vaccine_coverage (year = "2018",
-                           hib_coverage_file = file.path("tables", "hib coverage 2018.csv"),
-                           pcv_coverage_file = file.path("tables", "pcv coverage 2018.csv"))
+                           hib_coverage_file = file.path("tables", "hib_coverage_2018.csv"),
+                           pcv_coverage_file = file.path("tables", "pcv_coverage_2018.csv"))
 
 # ------------------------------------------------------------------------------
 # create data table of AMR burden (deaths) classified 
