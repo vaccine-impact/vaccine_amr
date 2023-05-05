@@ -1,0 +1,331 @@
+WHO_region,Disease_presentation,Pathogen,vaccine_averted_burden
+Africa,BSI,Acinetobacter baumannii,"1,169 (771 - 1,685)"
+Africa,BSI,Enterococcus faecium,540 (389 - 802)
+Africa,BSI,Escherichia coli,"1,791 (1,233 - 2,785)"
+Africa,BSI,Group A Streptococcus,306 (196 - 480)
+Africa,BSI,Klebsiella pneumoniae,"18,510 (14,083 - 24,903)"
+Africa,BSI,Non-typhoidal Salmonella, 43 ( 26 -  77)
+Africa,BSI,Pseudomonas aeruginosa,"1,061 (706 - 1,477)"
+Africa,BSI,Salmonella Typhi,"2,423 (1,608 - 3,637)"
+Africa,BSI,Staphylococcus aureus,"871 (605 - 1,264)"
+Africa,BSI,Streptococcus pneumoniae,"3,895 (2,454 - 5,886)"
+Africa,Bacterial skin infections,Acinetobacter baumannii,103 ( 33 - 404)
+Africa,Bacterial skin infections,Escherichia coli,171 ( 76 - 410)
+Africa,Bacterial skin infections,Group A Streptococcus, 38 ( 23 -  60)
+Africa,Bacterial skin infections,Klebsiella pneumoniae, 63 ( 23 - 222)
+Africa,Bacterial skin infections,Staphylococcus aureus,586 (366 - 908)
+Africa,Bone and joint infections,Enterococcus faecium,  4 (  2 -   9)
+Africa,Bone and joint infections,Escherichia coli, 40 ( 22 -  79)
+Africa,Bone and joint infections,Group A Streptococcus,  2 (  1 -   7)
+Africa,Bone and joint infections,Klebsiella pneumoniae, 14 (  7 -  30)
+Africa,Bone and joint infections,Staphylococcus aureus, 52 ( 27 - 104)
+Africa,CNS infections,Escherichia coli,"3,552 (2,331 - 5,368)"
+Africa,CNS infections,Haemophilus influenzae,"2,275 (1,686 - 3,184)"
+Africa,CNS infections,Klebsiella pneumoniae,"4,662 (3,249 - 6,794)"
+Africa,CNS infections,Staphylococcus aureus,"1,390 (943 - 1,989)"
+Africa,CNS infections,Streptococcus pneumoniae,"7,140 (5,121 - 10,234)"
+Africa,Cardiac infections,Acinetobacter baumannii, 22 ( 16 -  31)
+Africa,Cardiac infections,Enterococcus faecium, 11 (  8 -  15)
+Africa,Cardiac infections,Escherichia coli, 39 ( 27 -  53)
+Africa,Cardiac infections,Group A Streptococcus,  3 (  2 -   5)
+Africa,Cardiac infections,Klebsiella pneumoniae, 89 ( 64 - 121)
+Africa,Cardiac infections,Salmonella Typhi, 45 ( 33 -  64)
+Africa,Cardiac infections,Staphylococcus aureus, 17 ( 12 -  23)
+Africa,Cardiac infections,Streptococcus pneumoniae, 53 ( 32 -  80)
+Africa,Diarrhoea,Escherichia coli,"1,688 (1,007 - 2,975)"
+Africa,Diarrhoea,Non-typhoidal Salmonella,105 ( 44 - 261)
+Africa,Diarrhoea,Shigella spp.,"2,598 (1,517 - 4,511)"
+Africa,Intra-abdominal infections,Enterococcus faecium,"988 (656 - 1,668)"
+Africa,Intra-abdominal infections,Escherichia coli,"2,390 (1,761 - 3,250)"
+Africa,Intra-abdominal infections,Klebsiella pneumoniae,"1,471 (941 - 2,208)"
+Africa,Intra-abdominal infections,Staphylococcus aureus,"1,154 (793 - 1,617)"
+Africa,LRI and thorax infections,Acinetobacter baumannii,"3,215 (2,175 - 4,758)"
+Africa,LRI and thorax infections,Escherichia coli,"7,077 (5,459 - 9,265)"
+Africa,LRI and thorax infections,Haemophilus influenzae,"5,698 (4,133 - 7,661)"
+Africa,LRI and thorax infections,Klebsiella pneumoniae,"14,602 (11,306 - 18,634)"
+Africa,LRI and thorax infections,Pseudomonas aeruginosa,"4,773 (3,658 - 6,034)"
+Africa,LRI and thorax infections,Staphylococcus aureus,"12,714 (9,706 - 16,138)"
+Africa,LRI and thorax infections,Streptococcus pneumoniae,"24,290 (17,178 - 32,679)"
+Africa,TB,Mycobacterium tuberculosis,"23,921 (21,304 - 27,426)"
+Africa,"Typhoid, paratyphoid, and iNTS",Non-typhoidal Salmonella,177 (106 - 353)
+Africa,"Typhoid, paratyphoid, and iNTS",Salmonella Paratyphi, 15 (  5 -  42)
+Africa,"Typhoid, paratyphoid, and iNTS",Salmonella Typhi,"5,971 (3,464 - 9,464)"
+Africa,UTI,Acinetobacter baumannii, 27 ( 15 -  50)
+Africa,UTI,Enterococcus faecium, 43 ( 26 -  71)
+Africa,UTI,Escherichia coli,340 (244 - 474)
+Africa,UTI,Klebsiella pneumoniae, 94 ( 65 - 136)
+Africa,UTI,Staphylococcus aureus, 51 ( 37 -  74)
+Americas,BSI,Acinetobacter baumannii,"1,600 (957 - 2,921)"
+Americas,BSI,Enterococcus faecium,"834 (518 - 1,309)"
+Americas,BSI,Escherichia coli,"1,944 (1,141 - 3,640)"
+Americas,BSI,Group A Streptococcus, 57 ( 38 -  88)
+Americas,BSI,Klebsiella pneumoniae,"2,821 (2,121 - 3,940)"
+Americas,BSI,Non-typhoidal Salmonella,  7 (  4 -  15)
+Americas,BSI,Pseudomonas aeruginosa,"840 (513 - 1,401)"
+Americas,BSI,Salmonella Typhi, 44 ( 31 -  65)
+Americas,BSI,Staphylococcus aureus,"1,905 (1,103 - 3,192)"
+Americas,BSI,Streptococcus pneumoniae,"654 (423 - 1,050)"
+Americas,Bacterial skin infections,Acinetobacter baumannii,100 ( 20 - 487)
+Americas,Bacterial skin infections,Escherichia coli,147 ( 65 - 347)
+Americas,Bacterial skin infections,Group A Streptococcus,  5 (  2 -   8)
+Americas,Bacterial skin infections,Klebsiella pneumoniae, 38 ( 10 - 132)
+Americas,Bacterial skin infections,Staphylococcus aureus,162 ( 86 - 306)
+Americas,Bone and joint infections,Enterococcus faecium,  2 (  1 -   6)
+Americas,Bone and joint infections,Escherichia coli, 24 ( 11 -  56)
+Americas,Bone and joint infections,Klebsiella pneumoniae,  5 (  2 -  13)
+Americas,Bone and joint infections,Staphylococcus aureus, 41 ( 16 - 110)
+Americas,CNS infections,Escherichia coli,115 ( 82 - 165)
+Americas,CNS infections,Haemophilus influenzae, 85 ( 61 - 122)
+Americas,CNS infections,Klebsiella pneumoniae,125 ( 92 - 175)
+Americas,CNS infections,Staphylococcus aureus, 41 ( 30 -  55)
+Americas,CNS infections,Streptococcus pneumoniae,211 (144 - 304)
+Americas,Cardiac infections,Acinetobacter baumannii, 93 ( 60 - 141)
+Americas,Cardiac infections,Enterococcus faecium, 48 ( 32 -  66)
+Americas,Cardiac infections,Escherichia coli,137 ( 94 - 201)
+Americas,Cardiac infections,Group A Streptococcus,  1 (  0 -   2)
+Americas,Cardiac infections,Klebsiella pneumoniae, 78 ( 57 - 117)
+Americas,Cardiac infections,Salmonella Typhi,  1 (  1 -   2)
+Americas,Cardiac infections,Staphylococcus aureus,144 ( 94 - 217)
+Americas,Cardiac infections,Streptococcus pneumoniae, 14 ( 10 -  22)
+Americas,Diarrhoea,Escherichia coli, 14 (  8 -  23)
+Americas,Diarrhoea,Non-typhoidal Salmonella,  4 (  1 -  11)
+Americas,Diarrhoea,Shigella spp., 21 ( 12 -  38)
+Americas,Intra-abdominal infections,Enterococcus faecium,"1,128 (776 - 1,686)"
+Americas,Intra-abdominal infections,Escherichia coli,"2,495 (1,637 - 3,652)"
+Americas,Intra-abdominal infections,Klebsiella pneumoniae,"1,064 (665 - 1,702)"
+Americas,Intra-abdominal infections,Staphylococcus aureus,"814 (582 - 1,202)"
+Americas,LRI and thorax infections,Acinetobacter baumannii,"1,078 (586 - 1,965)"
+Americas,LRI and thorax infections,Escherichia coli,"1,043 (753 - 1,403)"
+Americas,LRI and thorax infections,Haemophilus influenzae,269 (193 - 362)
+Americas,LRI and thorax infections,Klebsiella pneumoniae,"1,470 (1,099 - 1,980)"
+Americas,LRI and thorax infections,Pseudomonas aeruginosa,"1,513 (1,074 - 2,118)"
+Americas,LRI and thorax infections,Staphylococcus aureus,"3,727 (2,691 - 5,110)"
+Americas,LRI and thorax infections,Streptococcus pneumoniae,"1,392 (953 - 1,950)"
+Americas,TB,Mycobacterium tuberculosis,"1,399 (1,201 - 1,614)"
+Americas,"Typhoid, paratyphoid, and iNTS",Non-typhoidal Salmonella,  1 (  0 -   2)
+Americas,"Typhoid, paratyphoid, and iNTS",Salmonella Typhi,  4 (  2 -   7)
+Americas,UTI,Acinetobacter baumannii, 88 ( 47 - 174)
+Americas,UTI,Enterococcus faecium,161 ( 92 - 273)
+Americas,UTI,Escherichia coli,"1,564 (1,060 - 2,076)"
+Americas,UTI,Klebsiella pneumoniae,286 (186 - 432)
+Americas,UTI,Staphylococcus aureus,155 (109 - 226)
+Eastern Mediterranean,BSI,Acinetobacter baumannii,"1,229 (766 - 1,981)"
+Eastern Mediterranean,BSI,Enterococcus faecium,384 (259 - 576)
+Eastern Mediterranean,BSI,Escherichia coli,"1,006 (631 - 1,633)"
+Eastern Mediterranean,BSI,Group A Streptococcus, 54 ( 34 -  89)
+Eastern Mediterranean,BSI,Klebsiella pneumoniae,"6,803 (5,100 - 9,563)"
+Eastern Mediterranean,BSI,Non-typhoidal Salmonella, 60 ( 33 - 111)
+Eastern Mediterranean,BSI,Pseudomonas aeruginosa,636 (430 - 999)
+Eastern Mediterranean,BSI,Salmonella Typhi,595 (412 - 892)
+Eastern Mediterranean,BSI,Staphylococcus aureus,"709 (467 - 1,140)"
+Eastern Mediterranean,BSI,Streptococcus pneumoniae,"1,160 (709 - 1,805)"
+Eastern Mediterranean,Bacterial skin infections,Acinetobacter baumannii, 47 ( 11 - 181)
+Eastern Mediterranean,Bacterial skin infections,Escherichia coli, 66 ( 24 - 183)
+Eastern Mediterranean,Bacterial skin infections,Group A Streptococcus,  3 (  2 -   7)
+Eastern Mediterranean,Bacterial skin infections,Klebsiella pneumoniae, 22 (  6 - 122)
+Eastern Mediterranean,Bacterial skin infections,Staphylococcus aureus,152 ( 78 - 322)
+Eastern Mediterranean,Bone and joint infections,Enterococcus faecium,  3 (  1 -   7)
+Eastern Mediterranean,Bone and joint infections,Escherichia coli, 24 ( 11 -  49)
+Eastern Mediterranean,Bone and joint infections,Group A Streptococcus,  0 (  0 -   1)
+Eastern Mediterranean,Bone and joint infections,Klebsiella pneumoniae,  8 (  4 -  17)
+Eastern Mediterranean,Bone and joint infections,Staphylococcus aureus, 35 ( 17 -  80)
+Eastern Mediterranean,CNS infections,Escherichia coli,"742 (485 - 1,096)"
+Eastern Mediterranean,CNS infections,Haemophilus influenzae,728 (533 - 989)
+Eastern Mediterranean,CNS infections,Klebsiella pneumoniae,"834 (589 - 1,194)"
+Eastern Mediterranean,CNS infections,Staphylococcus aureus,310 (217 - 444)
+Eastern Mediterranean,CNS infections,Streptococcus pneumoniae,"1,352 (928 - 1,922)"
+Eastern Mediterranean,Cardiac infections,Acinetobacter baumannii, 41 ( 27 -  61)
+Eastern Mediterranean,Cardiac infections,Enterococcus faecium, 11 (  7 -  17)
+Eastern Mediterranean,Cardiac infections,Escherichia coli, 29 ( 19 -  42)
+Eastern Mediterranean,Cardiac infections,Group A Streptococcus,  0 (  0 -   1)
+Eastern Mediterranean,Cardiac infections,Klebsiella pneumoniae, 48 ( 34 -  68)
+Eastern Mediterranean,Cardiac infections,Non-typhoidal Salmonella,  0 (  0 -   1)
+Eastern Mediterranean,Cardiac infections,Salmonella Typhi, 17 ( 12 -  26)
+Eastern Mediterranean,Cardiac infections,Staphylococcus aureus, 22 ( 15 -  34)
+Eastern Mediterranean,Cardiac infections,Streptococcus pneumoniae, 24 ( 14 -  41)
+Eastern Mediterranean,Diarrhoea,Escherichia coli,420 (231 - 706)
+Eastern Mediterranean,Diarrhoea,Non-typhoidal Salmonella, 44 ( 17 - 141)
+Eastern Mediterranean,Diarrhoea,Shigella spp.,488 (257 - 907)
+Eastern Mediterranean,Intra-abdominal infections,Enterococcus faecium,586 (367 - 972)
+Eastern Mediterranean,Intra-abdominal infections,Escherichia coli,"1,355 (872 - 2,118)"
+Eastern Mediterranean,Intra-abdominal infections,Klebsiella pneumoniae,"807 (503 - 1,329)"
+Eastern Mediterranean,Intra-abdominal infections,Staphylococcus aureus,578 (349 - 829)
+Eastern Mediterranean,LRI and thorax infections,Acinetobacter baumannii,"1,359 (851 - 2,096)"
+Eastern Mediterranean,LRI and thorax infections,Escherichia coli,"1,884 (1,428 - 2,491)"
+Eastern Mediterranean,LRI and thorax infections,Haemophilus influenzae,"1,413 (1,035 - 1,962)"
+Eastern Mediterranean,LRI and thorax infections,Klebsiella pneumoniae,"3,674 (2,820 - 4,913)"
+Eastern Mediterranean,LRI and thorax infections,Pseudomonas aeruginosa,"1,666 (1,266 - 2,171)"
+Eastern Mediterranean,LRI and thorax infections,Staphylococcus aureus,"3,862 (3,050 - 5,027)"
+Eastern Mediterranean,LRI and thorax infections,Streptococcus pneumoniae,"6,166 (4,198 - 8,941)"
+Eastern Mediterranean,TB,Mycobacterium tuberculosis,"10,687 (9,191 - 12,835)"
+Eastern Mediterranean,"Typhoid, paratyphoid, and iNTS",Non-typhoidal Salmonella, 44 ( 23 -  93)
+Eastern Mediterranean,"Typhoid, paratyphoid, and iNTS",Salmonella Paratyphi,405 (204 - 866)
+Eastern Mediterranean,"Typhoid, paratyphoid, and iNTS",Salmonella Typhi,"6,737 (4,407 - 10,474)"
+Eastern Mediterranean,UTI,Acinetobacter baumannii, 60 ( 31 - 121)
+Eastern Mediterranean,UTI,Enterococcus faecium, 86 ( 43 - 166)
+Eastern Mediterranean,UTI,Escherichia coli,382 (268 - 549)
+Eastern Mediterranean,UTI,Klebsiella pneumoniae,123 ( 74 - 236)
+Eastern Mediterranean,UTI,Staphylococcus aureus, 67 ( 47 - 101)
+Europe,BSI,Acinetobacter baumannii,"867 (440 - 1,829)"
+Europe,BSI,Enterococcus faecium,"1,023 (568 - 1,718)"
+Europe,BSI,Escherichia coli,"4,613 (2,514 - 8,737)"
+Europe,BSI,Group A Streptococcus, 12 (  8 -  19)
+Europe,BSI,Klebsiella pneumoniae,"1,993 (1,278 - 3,523)"
+Europe,BSI,Non-typhoidal Salmonella,  1 (  0 -   2)
+Europe,BSI,Pseudomonas aeruginosa,"561 (310 - 1,063)"
+Europe,BSI,Salmonella Typhi, 11 (  8 -  16)
+Europe,BSI,Staphylococcus aureus,"1,384 (806 - 2,602)"
+Europe,BSI,Streptococcus pneumoniae,218 (141 - 327)
+Europe,Bacterial skin infections,Acinetobacter baumannii, 80 ( 18 - 334)
+Europe,Bacterial skin infections,Escherichia coli,146 ( 42 - 374)
+Europe,Bacterial skin infections,Klebsiella pneumoniae, 37 (  8 - 153)
+Europe,Bacterial skin infections,Staphylococcus aureus, 70 ( 29 - 167)
+Europe,Bone and joint infections,Enterococcus faecium,  2 (  1 -   5)
+Europe,Bone and joint infections,Escherichia coli, 23 ( 10 -  57)
+Europe,Bone and joint infections,Klebsiella pneumoniae,  4 (  1 -  12)
+Europe,Bone and joint infections,Staphylococcus aureus, 27 ( 12 -  70)
+Europe,CNS infections,Escherichia coli, 48 ( 33 -  68)
+Europe,CNS infections,Haemophilus influenzae, 16 ( 11 -  22)
+Europe,CNS infections,Klebsiella pneumoniae, 50 ( 37 -  71)
+Europe,CNS infections,Staphylococcus aureus, 13 (  9 -  19)
+Europe,CNS infections,Streptococcus pneumoniae, 48 ( 32 -  66)
+Europe,Cardiac infections,Acinetobacter baumannii, 63 ( 30 - 118)
+Europe,Cardiac infections,Enterococcus faecium, 75 ( 43 - 142)
+Europe,Cardiac infections,Escherichia coli,513 (305 - 816)
+Europe,Cardiac infections,Klebsiella pneumoniae,107 ( 63 - 190)
+Europe,Cardiac infections,Staphylococcus aureus,152 ( 91 - 245)
+Europe,Cardiac infections,Streptococcus pneumoniae,  4 (  2 -   7)
+Europe,Diarrhoea,Escherichia coli,  7 (  4 -  13)
+Europe,Diarrhoea,Non-typhoidal Salmonella,  0 (  0 -   1)
+Europe,Diarrhoea,Shigella spp.,  7 (  3 -  17)
+Europe,Intra-abdominal infections,Enterococcus faecium,"1,189 (768 - 1,782)"
+Europe,Intra-abdominal infections,Escherichia coli,"2,365 (1,448 - 3,670)"
+Europe,Intra-abdominal infections,Klebsiella pneumoniae,"987 (597 - 1,651)"
+Europe,Intra-abdominal infections,Staphylococcus aureus,520 (342 - 840)
+Europe,LRI and thorax infections,Acinetobacter baumannii,488 (266 - 960)
+Europe,LRI and thorax infections,Escherichia coli,613 (428 - 870)
+Europe,LRI and thorax infections,Haemophilus influenzae,127 ( 95 - 168)
+Europe,LRI and thorax infections,Klebsiella pneumoniae,"911 (675 - 1,263)"
+Europe,LRI and thorax infections,Pseudomonas aeruginosa,"969 (663 - 1,409)"
+Europe,LRI and thorax infections,Staphylococcus aureus,"1,915 (1,395 - 2,613)"
+Europe,LRI and thorax infections,Streptococcus pneumoniae,"753 (497 - 1,035)"
+Europe,TB,Mycobacterium tuberculosis,"6,661 (5,909 - 7,462)"
+Europe,"Typhoid, paratyphoid, and iNTS",Salmonella Typhi, 10 (  5 -  19)
+Europe,UTI,Acinetobacter baumannii, 91 ( 40 - 185)
+Europe,UTI,Enterococcus faecium,170 ( 89 - 351)
+Europe,UTI,Escherichia coli,"1,229 (807 - 1,716)"
+Europe,UTI,Klebsiella pneumoniae,298 (170 - 513)
+Europe,UTI,Staphylococcus aureus, 79 ( 53 - 123)
+South-East Asia,BSI,Acinetobacter baumannii,"4,764 (2,751 - 9,166)"
+South-East Asia,BSI,Enterococcus faecium,"865 (508 - 1,454)"
+South-East Asia,BSI,Escherichia coli,"2,645 (1,418 - 4,695)"
+South-East Asia,BSI,Group A Streptococcus, 46 ( 28 -  70)
+South-East Asia,BSI,Klebsiella pneumoniae,"9,610 (6,816 - 13,209)"
+South-East Asia,BSI,Non-typhoidal Salmonella,424 (255 - 646)
+South-East Asia,BSI,Pseudomonas aeruginosa,"1,979 (1,067 - 3,430)"
+South-East Asia,BSI,Salmonella Typhi,305 (215 - 441)
+South-East Asia,BSI,Staphylococcus aureus,"1,565 (912 - 3,213)"
+South-East Asia,BSI,Streptococcus pneumoniae,555 (349 - 837)
+South-East Asia,Bacterial skin infections,Acinetobacter baumannii,"253 ( 60 - 1,214)"
+South-East Asia,Bacterial skin infections,Escherichia coli,338 (144 - 889)
+South-East Asia,Bacterial skin infections,Group A Streptococcus, 13 (  9 -  20)
+South-East Asia,Bacterial skin infections,Klebsiella pneumoniae,127 ( 39 - 482)
+South-East Asia,Bacterial skin infections,Staphylococcus aureus,"696 (411 - 1,311)"
+South-East Asia,Bone and joint infections,Enterococcus faecium,  9 (  6 -  15)
+South-East Asia,Bone and joint infections,Escherichia coli, 87 ( 33 - 196)
+South-East Asia,Bone and joint infections,Klebsiella pneumoniae, 31 ( 12 -  75)
+South-East Asia,Bone and joint infections,Staphylococcus aureus,139 ( 60 - 340)
+South-East Asia,CNS infections,Escherichia coli,685 (510 - 919)
+South-East Asia,CNS infections,Haemophilus influenzae,304 (224 - 389)
+South-East Asia,CNS infections,Klebsiella pneumoniae,"825 (594 - 1,126)"
+South-East Asia,CNS infections,Staphylococcus aureus,249 (182 - 338)
+South-East Asia,CNS infections,Streptococcus pneumoniae,674 (492 - 919)
+South-East Asia,Cardiac infections,Acinetobacter baumannii,146 ( 96 - 220)
+South-East Asia,Cardiac infections,Enterococcus faecium, 27 ( 17 -  42)
+South-East Asia,Cardiac infections,Escherichia coli, 85 ( 56 - 128)
+South-East Asia,Cardiac infections,Group A Streptococcus,  0 (  0 -   1)
+South-East Asia,Cardiac infections,Klebsiella pneumoniae,113 ( 74 - 174)
+South-East Asia,Cardiac infections,Non-typhoidal Salmonella,  6 (  3 -  12)
+South-East Asia,Cardiac infections,Salmonella Typhi,  8 (  6 -  13)
+South-East Asia,Cardiac infections,Staphylococcus aureus, 51 ( 34 -  78)
+South-East Asia,Cardiac infections,Streptococcus pneumoniae,  9 (  5 -  14)
+South-East Asia,Diarrhoea,Escherichia coli,608 (340 - 992)
+South-East Asia,Diarrhoea,Non-typhoidal Salmonella,"505 (224 - 1,344)"
+South-East Asia,Diarrhoea,Shigella spp.,"911 (473 - 1,729)"
+South-East Asia,Intra-abdominal infections,Enterococcus faecium,"1,894 (1,190 - 3,127)"
+South-East Asia,Intra-abdominal infections,Escherichia coli,"4,399 (2,876 - 6,369)"
+South-East Asia,Intra-abdominal infections,Klebsiella pneumoniae,"2,713 (1,648 - 4,703)"
+South-East Asia,Intra-abdominal infections,Staphylococcus aureus,"1,512 (1,007 - 2,296)"
+South-East Asia,LRI and thorax infections,Acinetobacter baumannii,"5,814 (3,308 - 10,229)"
+South-East Asia,LRI and thorax infections,Escherichia coli,"3,365 (2,521 - 4,452)"
+South-East Asia,LRI and thorax infections,Haemophilus influenzae,"767 (553 - 1,034)"
+South-East Asia,LRI and thorax infections,Klebsiella pneumoniae,"6,023 (4,524 - 8,133)"
+South-East Asia,LRI and thorax infections,Pseudomonas aeruginosa,"3,718 (2,819 - 5,142)"
+South-East Asia,LRI and thorax infections,Staphylococcus aureus,"6,692 (5,108 - 8,934)"
+South-East Asia,LRI and thorax infections,Streptococcus pneumoniae,"6,768 (4,585 - 9,679)"
+South-East Asia,TB,Mycobacterium tuberculosis,"64,727 (54,327 - 76,642)"
+South-East Asia,"Typhoid, paratyphoid, and iNTS",Non-typhoidal Salmonella,167 (105 - 303)
+South-East Asia,"Typhoid, paratyphoid, and iNTS",Salmonella Paratyphi,"978 (448 - 2,155)"
+South-East Asia,"Typhoid, paratyphoid, and iNTS",Salmonella Typhi,"17,128 (10,554 - 26,268)"
+South-East Asia,UTI,Acinetobacter baumannii,174 ( 95 - 334)
+South-East Asia,UTI,Enterococcus faecium,313 (171 - 562)
+South-East Asia,UTI,Escherichia coli,"2,076 (1,428 - 2,976)"
+South-East Asia,UTI,Klebsiella pneumoniae,569 (364 - 838)
+South-East Asia,UTI,Staphylococcus aureus,282 (194 - 433)
+Western Pacific,BSI,Acinetobacter baumannii,"7,901 (4,462 - 14,451)"
+Western Pacific,BSI,Enterococcus faecium,"1,431 (847 - 2,502)"
+Western Pacific,BSI,Escherichia coli,"2,737 (1,479 - 4,971)"
+Western Pacific,BSI,Group A Streptococcus,201 (135 - 320)
+Western Pacific,BSI,Klebsiella pneumoniae,"3,051 (2,066 - 5,019)"
+Western Pacific,BSI,Non-typhoidal Salmonella, 59 ( 37 -  92)
+Western Pacific,BSI,Pseudomonas aeruginosa,"1,115 (612 - 1,994)"
+Western Pacific,BSI,Salmonella Typhi, 32 ( 23 -  46)
+Western Pacific,BSI,Staphylococcus aureus,"4,004 (2,322 - 8,039)"
+Western Pacific,BSI,Streptococcus pneumoniae,514 (345 - 809)
+Western Pacific,Bacterial skin infections,Acinetobacter baumannii,166 ( 35 - 709)
+Western Pacific,Bacterial skin infections,Escherichia coli,270 ( 94 - 736)
+Western Pacific,Bacterial skin infections,Group A Streptococcus, 14 (  7 -  27)
+Western Pacific,Bacterial skin infections,Klebsiella pneumoniae, 68 ( 20 - 297)
+Western Pacific,Bacterial skin infections,Staphylococcus aureus,222 (100 - 549)
+Western Pacific,Bone and joint infections,Enterococcus faecium,  4 (  1 -  11)
+Western Pacific,Bone and joint infections,Escherichia coli, 45 ( 19 - 123)
+Western Pacific,Bone and joint infections,Group A Streptococcus,  0 (  0 -   1)
+Western Pacific,Bone and joint infections,Klebsiella pneumoniae,  9 (  3 -  24)
+Western Pacific,Bone and joint infections,Staphylococcus aureus, 83 ( 34 - 203)
+Western Pacific,CNS infections,Escherichia coli,168 (124 - 230)
+Western Pacific,CNS infections,Haemophilus influenzae,254 (197 - 326)
+Western Pacific,CNS infections,Klebsiella pneumoniae,163 (122 - 236)
+Western Pacific,CNS infections,Staphylococcus aureus, 57 ( 43 -  76)
+Western Pacific,CNS infections,Streptococcus pneumoniae,217 (160 - 294)
+Western Pacific,Cardiac infections,Acinetobacter baumannii,220 (127 - 399)
+Western Pacific,Cardiac infections,Enterococcus faecium, 43 ( 26 -  75)
+Western Pacific,Cardiac infections,Escherichia coli,111 ( 63 - 196)
+Western Pacific,Cardiac infections,Group A Streptococcus,  7 (  4 -  13)
+Western Pacific,Cardiac infections,Klebsiella pneumoniae, 66 ( 38 - 114)
+Western Pacific,Cardiac infections,Non-typhoidal Salmonella,  2 (  1 -   3)
+Western Pacific,Cardiac infections,Salmonella Typhi,  1 (  0 -   1)
+Western Pacific,Cardiac infections,Staphylococcus aureus,166 ( 97 - 289)
+Western Pacific,Cardiac infections,Streptococcus pneumoniae, 17 ( 10 -  28)
+Western Pacific,Diarrhoea,Escherichia coli, 12 (  7 -  21)
+Western Pacific,Diarrhoea,Non-typhoidal Salmonella, 53 ( 23 - 112)
+Western Pacific,Diarrhoea,Shigella spp., 35 ( 20 -  63)
+Western Pacific,Intra-abdominal infections,Enterococcus faecium,"1,482 (907 - 2,383)"
+Western Pacific,Intra-abdominal infections,Escherichia coli,"3,302 (1,995 - 5,268)"
+Western Pacific,Intra-abdominal infections,Klebsiella pneumoniae,"1,190 (687 - 2,065)"
+Western Pacific,Intra-abdominal infections,Staphylococcus aureus,"1,098 (677 - 1,749)"
+Western Pacific,LRI and thorax infections,Acinetobacter baumannii,"1,352 (734 - 2,548)"
+Western Pacific,LRI and thorax infections,Escherichia coli,"1,493 (1,108 - 2,016)"
+Western Pacific,LRI and thorax infections,Haemophilus influenzae,"893 (633 - 1,161)"
+Western Pacific,LRI and thorax infections,Klebsiella pneumoniae,"1,723 (1,273 - 2,446)"
+Western Pacific,LRI and thorax infections,Pseudomonas aeruginosa,"1,412 (971 - 2,048)"
+Western Pacific,LRI and thorax infections,Staphylococcus aureus,"4,386 (3,273 - 6,213)"
+Western Pacific,LRI and thorax infections,Streptococcus pneumoniae,"2,311 (1,666 - 3,042)"
+Western Pacific,TB,Mycobacterium tuberculosis,"10,375 (8,947 - 11,822)"
+Western Pacific,"Typhoid, paratyphoid, and iNTS",Non-typhoidal Salmonella, 24 ( 14 -  39)
+Western Pacific,"Typhoid, paratyphoid, and iNTS",Salmonella Paratyphi, 23 ( 10 -  57)
+Western Pacific,"Typhoid, paratyphoid, and iNTS",Salmonella Typhi,522 (328 - 844)
+Western Pacific,UTI,Acinetobacter baumannii,161 ( 73 - 344)
+Western Pacific,UTI,Enterococcus faecium,257 (125 - 521)
+Western Pacific,UTI,Escherichia coli,"1,075 (647 - 1,858)"
+Western Pacific,UTI,Klebsiella pneumoniae,314 (151 - 640)
+Western Pacific,UTI,Staphylococcus aureus,138 ( 69 - 258)

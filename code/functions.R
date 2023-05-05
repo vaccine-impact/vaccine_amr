@@ -1720,7 +1720,7 @@ create_burden_averted_by_vp_graph <- function(Attributable_burden_averted,
 
 
 # ------------------------------------------------------------------------------
-# further analysis -- vaccine avertable burden of existing vaccines
+# vaccine avertable burden of existing vaccines
 
 estimate_existing_vaccine_impact <- function(input_data){
   
@@ -1815,11 +1815,14 @@ estimate_existing_vaccine_impact <- function(input_data){
   return(Burden_Averted)} # end of function -- estimate_existing_vaccine_impact
 
 # ------------------------------------------------------------------------------
-# Appendix -- vaccine avertable burdens by infectious syndrome and pathogen
+
+
+
+# ------------------------------------------------------------------------------
+# Vccine avertable burdens by infectious syndrome and pathogen
 
 aggregate_impact_by_dp_pathogen <- function(input_data,
-                                            input_rep,
-                                            mode){
+                                            input_rep){
   
   input_data$va_health_burden <- input_data$va_base
 
@@ -1851,7 +1854,7 @@ aggregate_impact_by_dp_pathogen <- function(input_data,
 
 burden_averted_by_dp_pat <- function(data_input, start_input, image_png, image_eps){
   
-  data_input <- data_input[, 1:3] 
+  data_input <- data_input[, 1:3]
   
   colnames(data_input) <- 
     c("Disease_presentation", "Pathogen", "median")
@@ -1915,6 +1918,58 @@ burden_averted_by_dp_pat <- function(data_input, start_input, image_png, image_e
   dev.off()  
   
 } # end of function -- burden_averted_by_dp_pat
+# ------------------------------------------------------------------------------
+# Vccine avertable burdens by region, infectious syndrome, and pathogen
+
+aggregate_impact_by_region_dp_pathogen <- function(input_data,
+                                                   input_rep,
+                                                   file_name){
+  
+  input_data$va_health_burden <- input_data$va_base
+  
+  impact_by_dp_p <- input_data %>%
+    group_by(WHO_region, Disease_presentation, Pathogen, run_id) %>%
+    summarise(averted_burden = sum(va_health_burden), .groups = 'drop')
+  
+  impact_by_dp_p$number <- rep(input_rep, each=run)
+  
+  # -------------------------------------------------------------------------
+  
+  burden_averted_dp    <- data.table("50%"=numeric(), "2.5%"=numeric(), "97.5%"=numeric())
+  
+  for(i in input_rep){
+    dt <- impact_by_dp_p %>% filter(number == i)
+    dt <- quantile(x = dt$averted_burden, probs = c (0.5, 0.025, 0.975))
+    dt <- data.table(t(dt))
+    burden_averted_dp <- rbindlist (list (burden_averted_dp, dt),
+                                    use.names = FALSE)
+  }
+  
+  burden_averted <- cbind(data.table(impact_by_dp_p[impact_by_dp_p$run_id == "1",1:3], 
+                                     burden_averted_dp))
+  
+  # edit table
+  burden_averted [,4:6] <- 
+    lapply(burden_averted[,4:6], function(x) comma(x,  format = "d"))
+  
+  burden_averted [, vaccine_averted_burden := 
+                    paste0(burden_averted$"50%"," (",
+                           burden_averted$"2.5%"," - ",
+                           burden_averted$"97.5%",")")]
+  
+  burden_averted <- burden_averted [!(burden_averted$`97.5%` < 1), ]
+  burden_averted <- burden_averted [, c(1:3,7)]
+  
+  # save the file
+  fwrite (x    = burden_averted,
+          file = file_name)
+  
+  return(burden_averted)} # end of function -- aggregate_impact_by_region_dp_pathogen
+
+# ------------------------------------------------------------------------------
+
+
+
 # ------------------------------------------------------------------------------
 # [table in appendix] vaccine avertable health burdens associated with and 
 # attributable to AMR by WHO region, pathogen, disease presentation, and age group

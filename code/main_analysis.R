@@ -400,7 +400,7 @@ Susceptible_daly_averted_re_inc <- aggregate_impact_by_region(
 # ------------------------------------------------------------------------------
 # Table: vaccine avertable AMR health burden globally and by WHO region, 2019
 
-Table_avertible_burden_by_region <- create_avertable_burden_table(
+Table_avertable_burden_by_region <- create_avertable_burden_table(
   Associated_death_averted       = Associated_death_averted_re,
   Associated_death_averted_opt   = Associated_death_averted_re_opt,
   Associated_death_averted_inc   = Associated_death_averted_re_inc,
@@ -420,8 +420,8 @@ Table_avertible_burden_by_region <- create_avertable_burden_table(
   Susceptible_daly_averted_opt   = Susceptible_daly_averted_re_opt,
   Susceptible_daly_averted_inc   = Susceptible_daly_averted_re_inc)
 
-fwrite (x    = Table_avertible_burden_by_region,
-        file = file.path("tables", "Table_avertible_burden_by_region.csv"))
+fwrite (x    = Table_avertable_burden_by_region,
+        file = file.path("tables", "Table_avertable_burden_by_region.csv"))
 
 # ------------------------------------------------------------------------------
 # Figure: vaccine impact by WHO region, 2019
@@ -565,7 +565,7 @@ Susceptible_daly_averted_dp_inc <- aggregate_impact_by_dp(
 # ------------------------------------------------------------------------------
 # Table: vaccine avertable AMR health burden by infectious syndrome, 2019
 
-Table_avertible_burden_by_dp <- create_avertable_burden_table(
+Table_avertable_burden_by_dp <- create_avertable_burden_table(
   Associated_death_averted       = Associated_death_averted_dp,
   Associated_death_averted_opt   = Associated_death_averted_dp_opt,
   Associated_death_averted_inc   = Associated_death_averted_dp_inc, 
@@ -585,11 +585,11 @@ Table_avertible_burden_by_dp <- create_avertable_burden_table(
   Susceptible_daly_averted_opt   = Susceptible_daly_averted_dp_opt,
   Susceptible_daly_averted_inc   = Susceptible_daly_averted_dp_inc)
 
-Table_avertible_burden_by_dp <- 
-  Table_avertible_burden_by_dp %>% arrange(Counts)
+Table_avertable_burden_by_dp <- 
+  Table_avertable_burden_by_dp %>% arrange(Counts)
 
-fwrite (x    = Table_avertible_burden_by_dp,
-        file = file.path("tables", "Table_avertible_burden_by_infectious_syndrome.csv"))
+fwrite (x    = Table_avertable_burden_by_dp,
+        file = file.path("tables", "Table_avertable_burden_by_infectious_syndrome.csv"))
 
 # ------------------------------------------------------------------------------
 # Figure: Vaccine impact by infectious syndrome, 2019
@@ -715,7 +715,7 @@ Susceptible_daly_averted_vp_inc <- vaccine_imapct_by_vaccine(
 # ------------------------------------------------------------------------------
 # Table: vaccine avertable AMR health burden by vaccine profile, 2019
 
-Table_avertible_burden_by_vp <- create_avertable_burden_table(
+Table_avertable_burden_by_vp <- create_avertable_burden_table(
   Associated_death_averted       = Associated_death_averted_vp,
   Associated_death_averted_opt   = Associated_death_averted_vp_opt,
   Associated_death_averted_inc   = Associated_death_averted_vp_inc,
@@ -735,12 +735,12 @@ Table_avertible_burden_by_vp <- create_avertable_burden_table(
   Susceptible_daly_averted_opt   = Susceptible_daly_averted_vp_opt,
   Susceptible_daly_averted_inc   = Susceptible_daly_averted_vp_inc)
 
-Table_avertible_burden_by_vp <- left_join(vaccine_profile_dt_add, 
-                                          Table_avertible_burden_by_vp,
+Table_avertable_burden_by_vp <- left_join(vaccine_profile_dt_add, 
+                                          Table_avertable_burden_by_vp,
                                           by = c("Vaccine_pathogen" = "Counts"))
 
-fwrite (x    = Table_avertible_burden_by_vp,
-        file = file.path("tables", "Table_avertible_burden_by_vaccine_profile.csv"))
+fwrite (x    = Table_avertable_burden_by_vp,
+        file = file.path("tables", "Table_avertable_burden_by_vaccine_profile.csv"))
 
 # ------------------------------------------------------------------------------
 # Figure: vaccine impact by vaccine profile, 2019
@@ -779,8 +779,7 @@ ggsave (filename = "Figure_avertable_burden_by_vaccine_profile.eps",
 
 
 # ------------------------------------------------------------------------------
-# further analysis
-# -- the impact of current coverage of PCV and Hib vaccines
+# PCV and Hib vaccine impact with current coverage
 # -- baseline scenario
 
 vaccine_impact_current <- bind_rows(list(
@@ -819,10 +818,10 @@ edit_table(estimate_existing_vaccine_impact(
 vaccine_impact_current$type <- rep(c("death_associated", "death_attributable", "daly_associated", "daly_attributable"), 2)
 
 fwrite (x    = vaccine_impact_current,
-        file = file.path("tables", "Table_avertible_burden_with_current_coverage.csv"))
+        file = file.path("tables", "Table_avertable_burden_with_current_coverage.csv"))
 
 # ------------------------------------------------------------------------------
-# [graph in appendix] vaccine avertable deaths by infectious syndrome and pathogen
+# Vaccine avertable deaths by infectious syndrome and pathogen
 
 deaths_associated_dp_pathogen   <- 
   aggregate_impact_by_dp_pathogen(input_data = read_csv(file.path("tables", "deaths_associated_psa.csv")),
@@ -869,8 +868,36 @@ burden_averted_by_dp_pat(data_input = daly_attributable_dp_pathogen,
                                                 "Figure_daly_attributable_dp_pat.png"),
                          image_eps  = file.path("figures", 
                                                 "Figure_daly_attributable_dp_pat.eps"))
+
 # ------------------------------------------------------------------------------
-# [table in appendix] vaccine avertable health burdens associated with and attributable
+
+
+
+# ------------------------------------------------------------------------------
+# [Table in appendix] vccine avertable burdens by region, infectious syndrome, and pathogen
+
+avertable_death_associated_combination   <- 
+  aggregate_impact_by_region_dp_pathogen(input_data = read_csv(file.path("tables", "deaths_associated_psa.csv")),
+                                         input_rep  = 1:372,
+                                         file_name = file.path ("tables", "Table_avertable_death_associated_combination.csv"))
+
+avertable_death_attributable_combination <- 
+  aggregate_impact_by_region_dp_pathogen(input_data = read_csv(file.path("tables", "deaths_attributable_psa.csv")),
+                                         input_rep  = 1:372,
+                                         file_name = file.path ("tables", "Table_avertable_death_attributable_combination.csv"))
+
+avertable_daly_associated_combination     <- 
+  aggregate_impact_by_region_dp_pathogen(input_data = read_csv(file.path("tables", "daly_associated_psa.csv")),
+                                         input_rep  = 1:357,
+                                         file_name = file.path ("tables", "Table_avertable_daly_associated_combination.csv"))
+
+avertable_daly_attributable_combination   <- 
+  aggregate_impact_by_region_dp_pathogen(input_data = read_csv(file.path("tables", "daly_attributable_psa.csv")),
+                                         input_rep  = 1:322,
+                                         file_name = file.path ("tables", "Table_avertable_daly_attributable_combination.csv"))
+
+# ------------------------------------------------------------------------------
+# [Table in appendix] vaccine avertable health burdens associated with and attributable
 # to AMR by WHO region, pathogen, disease presentation, and age group
 
 # vaccine avertable AMR burden estimates using the burden estimate median value
