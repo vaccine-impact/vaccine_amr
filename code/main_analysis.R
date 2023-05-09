@@ -856,17 +856,17 @@ burden_averted_by_dp_pat(data_input  = deaths_attributable_dp_pathogen,
                                                  "Figure_deaths_attributable_dp_pat.eps"))
 
 burden_averted_by_dp_pat(data_input  = daly_associated_dp_pathogen, 
-                         start_input = 3.6,
+                         start_input = 4.1,
                          image_png   = file.path("figures", 
                                                  "Figure_daly_associated_dp_pat.png"),
                          image_eps   = file.path("figures", 
                                                  "Figure_daly_associated_dp_pat.eps"))
 
-burden_averted_by_dp_pat(data_input = daly_attributable_dp_pathogen,
-                         start_input = 3.6,
-                         image_png  = file.path("figures", 
+burden_averted_by_dp_pat(data_input  = daly_attributable_dp_pathogen,
+                         start_input = 3.9,
+                         image_png   = file.path("figures", 
                                                 "Figure_daly_attributable_dp_pat.png"),
-                         image_eps  = file.path("figures", 
+                         image_eps   = file.path("figures", 
                                                 "Figure_daly_attributable_dp_pat.eps"))
 
 # ------------------------------------------------------------------------------
