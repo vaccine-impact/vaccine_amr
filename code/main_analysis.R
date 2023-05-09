@@ -22,6 +22,9 @@ library (formattable)
 library (patchwork)
 library (Cairo)
 library (webr)
+library (gridExtra)
+library (png)
+library (grid)
 
 # remove all objects from workspace
 rm (list = ls ())
@@ -150,7 +153,7 @@ estimate_prevaccination_burden(
 
 # ------------------------------------------------------------------------------
 # estimate vaccine averted AMR burden & uncertainty analysis baseline
-memory.limit(size = 20000)
+memory.limit(size = 200000)
 
 set.seed (3)  # seed for random number generator
 run <- 400 # number of runs for probabilistic sensitivity analysis
@@ -452,7 +455,6 @@ ggsave (filename = "Figure_avertable_burden_by_region.eps",
         device = "eps",
         width = 7, 
         height = 7)
-
 # ------------------------------------------------------------------------------
 # global vaccine avertable deaths and DALYs attributable to and associated with 
 # bacterial antimicrobial resistance by infectious syndrome, 2019
@@ -773,6 +775,34 @@ ggsave (filename = "Figure_avertable_burden_by_vaccine_profile.eps",
         device = "eps",
         width = 6, 
         height = 10)
+# ------------------------------------------------------------------------------
+# Figure 2. Vaccine impact on AMR burden by pathogen, infectious syndrome, and region
+# read the three PNG image files
+img1 <- readPNG("figures/Figure_burden_averted_by_vaccine_profile.png")
+img2 <- readPNG("figures/Figure_avertable_burden_by_dp.png")
+img3 <- readPNG("figures/Figure_avertable_burden_by_region.png")
+
+# convert the images to grobs
+g1 <- rasterGrob(img1, width = unit(3, "in"))
+g2 <- rasterGrob(img2, width = unit(3, "in"))
+g3 <- rasterGrob(img3, width = unit(3, "in"))
+
+# create captions for each image
+caption1 <- "Figure 2a"
+caption2 <- "Figure 2b"
+caption3 <- "Figure 2c"
+
+# create the layout
+pdf("figures/Figure_2.pdf", width = 11, height = 8.5)
+grid.arrange(
+  arrangeGrob(top = caption1, g1, vp = viewport(x = 0.5, y = 0.5, width = 1, height = 0.6)),
+  arrangeGrob(top = caption2, g2, vp = viewport(x = 0.5, y = 0.5, width = 1, height = 0.6)),
+  arrangeGrob(top = caption3, g3, vp = viewport(x = 0.5, y = 0.5, width = 1, height = 0.6)),
+  nrow = 1,
+  widths = c(0.35, 0.35, 0.35),
+  padding = unit(1, "cm")
+)
+dev.off()
 
 # ------------------------------------------------------------------------------
 
@@ -846,28 +876,72 @@ burden_averted_by_dp_pat(data_input  = deaths_associated_dp_pathogen,
                          image_png   = file.path("figures", 
                                                  "Figure_deaths_associated_dp_pat.png"),
                          image_eps   = file.path("figures", 
-                                                 "Figure_deaths_associated_dp_pat.eps"))
+                                                 "Figure_deaths_associated_dp_pat.eps"),
+                         image_pdf   = file.path("figures", 
+                                                 "Figure_3.pdf"))
 
 burden_averted_by_dp_pat(data_input  = deaths_attributable_dp_pathogen,
                          start_input = 3.6,
                          image_png   = file.path("figures", 
                                                  "Figure_deaths_attributable_dp_pat.png"),
                          image_eps   = file.path("figures", 
-                                                 "Figure_deaths_attributable_dp_pat.eps"))
+                                                 "Figure_deaths_attributable_dp_pat.eps"),
+                         image_pdf   = file.path("figures", 
+                                                 "Figure_deaths_attributable_dp_pat.pdf"))
 
 burden_averted_by_dp_pat(data_input  = daly_associated_dp_pathogen, 
                          start_input = 4.1,
                          image_png   = file.path("figures", 
                                                  "Figure_daly_associated_dp_pat.png"),
                          image_eps   = file.path("figures", 
-                                                 "Figure_daly_associated_dp_pat.eps"))
+                                                 "Figure_daly_associated_dp_pat.eps"),
+                         image_pdf   = file.path("figures", 
+                                                 "Figure_daly_associated_dp_pat.pdf"))
 
 burden_averted_by_dp_pat(data_input  = daly_attributable_dp_pathogen,
                          start_input = 3.9,
                          image_png   = file.path("figures", 
                                                 "Figure_daly_attributable_dp_pat.png"),
                          image_eps   = file.path("figures", 
-                                                "Figure_daly_attributable_dp_pat.eps"))
+                                                "Figure_daly_attributable_dp_pat.eps"),
+                         image_pdf   = file.path("figures", 
+                                                 "Figure_daly_attributable_dp_pat.pdf"))
+
+# ------------------------------------------------------------------------------
+# Appendix Figure A1
+
+# read the three PNG image files
+img1 <- readPNG("figures/Figure_deaths_attributable_dp_pat.png")
+img2 <- readPNG("figures/Figure_daly_associated_dp_pat.png")
+img3 <- readPNG("figures/Figure_daly_attributable_dp_pat.png")
+
+# convert the images to grobs
+g1 <- rasterGrob(img1, width = unit(6, "in"))
+g2 <- rasterGrob(img2, width = unit(6, "in"))
+g3 <- rasterGrob(img3, width = unit(6, "in"))
+
+# create captions for each image
+caption1 <- "Appendix Figure A1 (A)"
+caption2 <- "Appendix Figure A1 (B)"
+caption3 <- "Appendix Figure A1 (C)"
+
+# create the layout
+pdf("figures/Appendix_Figure_A1.pdf", width = 11, height = 8.5)
+grid.arrange(
+  arrangeGrob(top = caption1, g1, vp = viewport(x = 0.52, y = 0.5, width = 0.9, height = 0.6)),
+  arrangeGrob(top = caption2, g2, vp = viewport(x = 0.5, y = 0.5, width = 0.9, height = 0.6)),
+  nrow = 1,
+  widths = c(0.35, 0.35),
+  padding = unit(1, "cm")
+)
+
+grid.arrange(
+  arrangeGrob(top = caption3, g3, vp = viewport(x = 0.5, y = 0.5, width = 0.9, height = 0.6)),
+  nrow = 1,
+  widths = 0.6,
+  padding = unit(1, "cm")
+)
+dev.off()
 
 # ------------------------------------------------------------------------------
 
